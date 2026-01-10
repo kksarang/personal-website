@@ -58,8 +58,9 @@ const About = () => {
                                     </div>
                                     <hr className="border-gray-100 dark:border-slate-700" />
                                     <p className="text-gray-500 dark:text-gray-400 italic">
-                                        "Age is no barrier when it comes to travel and learning."
+                                        "Any fool can write code that a computer can understand. Good programmers write code that humans can understand."
                                     </p>
+
                                 </div>
                             </div>
                         </div>

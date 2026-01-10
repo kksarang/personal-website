@@ -1,5 +1,5 @@
 import React from 'react';
-import { Github, Linkedin, Mail, ArrowRight, Download } from 'lucide-react';
+import { Github, Linkedin, Mail, ArrowRight, Download, Instagram } from 'lucide-react';
 
 const Hero = () => {
     return (
@@ -49,8 +49,11 @@ const Hero = () => {
                                 <a href="https://www.linkedin.com/in/sarang-rajan/" target="_blank" rel="noopener noreferrer" className="p-2 text-gray-400 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors">
                                     <Linkedin className="w-6 h-6" />
                                 </a>
-                                <a href="mailto:sarangrajan@example.com" className="p-2 text-gray-400 hover:text-rose-500 transition-colors">
+                                <a href="mailto:kksarangrajan@gmail.com" className="p-2 text-gray-400 hover:text-rose-500 transition-colors">
                                     <Mail className="w-6 h-6" />
+                                </a>
+                                <a href="https://www.instagram.com/sarang_rajan/" target="_blank" rel="noopener noreferrer" className="p-2 text-gray-400 hover:text-pink-500 transition-colors">
+                                    <Instagram className="w-6 h-6" />
                                 </a>
                             </div>
                         </div>
