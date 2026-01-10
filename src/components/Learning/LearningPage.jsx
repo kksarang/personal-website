@@ -20,6 +20,14 @@ const LearningHero = () => (
                     Continuous improvement through hands-on practice, exploration, and real-world problem solving.
                 </p>
 
+                <div className="mb-12">
+                    <Link to="/learning/materials" className="inline-flex items-center px-8 py-4 bg-indigo-600 text-white rounded-xl font-bold shadow-lg shadow-indigo-500/30 hover:bg-indigo-700 hover:-translate-y-1 transition-all">
+                        <Code2 className="w-5 h-5 mr-2" />
+                        Explore Developer Resources
+                        <ArrowRight className="w-5 h-5 ml-2" />
+                    </Link>
+                </div>
+
                 {/* Floating Icons Representation - CSS Animation would be ideal here */}
                 <div className="flex justify-center gap-6 text-gray-400">
                     <Code2 className="w-8 h-8 hover:text-indigo-500 transition-colors" />

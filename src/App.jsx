@@ -9,6 +9,8 @@ import Projects from './components/Projects';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
 import LearningPage from './components/Learning/LearningPage';
+import LearningMaterials from './components/Learning/LearningMaterials';
+import MaterialDetail from './components/Learning/MaterialDetail';
 import LearningDetail from './components/Learning/LearningDetail';
 import ProjectDetail from './components/Projects/ProjectDetail';
 import WorkPage from './components/Work/WorkPage';
@@ -54,6 +56,8 @@ function App() {
               <Route path="/" element={<HomePage />} />
               <Route path="/work" element={<WorkPage />} />
               <Route path="/learning" element={<LearningPage />} />
+              <Route path="/learning/materials" element={<LearningMaterials />} />
+              <Route path="/learning/materials/:slug" element={<MaterialDetail />} />
               <Route path="/learning/:slug" element={<LearningDetail />} />
               <Route path="/our-projects/:projectSlug" element={<ProjectDetail />} />
             </Routes>
