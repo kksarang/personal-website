@@ -18,9 +18,9 @@ const About = () => {
                             <p className="text-gray-600 dark:text-gray-300 mb-6">
                                 I am a dedicated <strong>Mobile Application Developer</strong> and <strong>Team Lead</strong> with a passion for building robust and user-friendly applications. With years of experience in the mobile development landscape, I have successfully delivered projects ranging from native Android apps to cross-platform solutions using Flutter and React Native.
                             </p>
-                            <p className="text-gray-600 dark:text-gray-300 mb-6">
+                            {/* <p className="text-gray-600 dark:text-gray-300 mb-6">
                                 My philosophy centers on writing clean, maintainable code and dealing with complex problems by breaking them down into simpler, manageable tasks. As a leader, I mentor junior developers and ensure best practices are followed to maintain high-quality codebases.
-                            </p>
+                            </p> */}
 
                             <div className="grid grid-cols-2 gap-4 mt-8">
                                 <div className="p-4 bg-gray-50 dark:bg-slate-800 rounded-lg">
