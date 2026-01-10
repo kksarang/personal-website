@@ -56,7 +56,7 @@ const Footer = () => {
                     <div className="flex items-center space-x-1">
                         <span>Made with</span>
                         <Heart className="w-4 h-4 text-red-500 fill-current animate-pulse bg-red-500/20 rounded-full" />
-                        <span>using React & Tailwind</span>
+                        <span>kksystems - Sarang Rajan</span>
                     </div>
                 </div>
             </div>

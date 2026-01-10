@@ -1,5 +1,5 @@
 import React from 'react';
-import { Github, Linkedin, Mail, ArrowRight, Download, Instagram } from 'lucide-react';
+import { Github, Linkedin, Mail, ArrowRight, Download } from 'lucide-react';
 
 const Hero = () => {
     return (
@@ -52,9 +52,6 @@ const Hero = () => {
                                 <a href="mailto:kksarangrajan@gmail.com" className="p-2 text-gray-400 hover:text-rose-500 transition-colors">
                                     <Mail className="w-6 h-6" />
                                 </a>
-                                <a href="https://www.instagram.com/sarang_rajan/" target="_blank" rel="noopener noreferrer" className="p-2 text-gray-400 hover:text-pink-500 transition-colors">
-                                    <Instagram className="w-6 h-6" />
-                                </a>
                             </div>
                         </div>
                     </div>
@@ -73,21 +70,42 @@ const Hero = () => {
                                     <div className="w-3 h-3 rounded-full bg-yellow-500"></div>
                                     <div className="w-3 h-3 rounded-full bg-green-500"></div>
                                 </div>
-                                <pre className="font-mono text-sm text-gray-700 dark:text-gray-300">
+                                <pre className="text-sm leading-relaxed">
                                     <code>
-                                        <span className="text-indigo-600 dark:text-indigo-400">class</span> <span className="text-yellow-600 dark:text-yellow-400">Developer</span> {'{'}
-                                        {'\n'}  <span className="text-purple-600 dark:text-purple-400">constructor</span>() {'{'}
-                                        {'\n'}    <span className="text-blue-600 dark:text-blue-400">this</span>.name = <span className="text-green-600 dark:text-green-400">'Sarang Rajan'</span>;
-                                        {'\n'}    <span className="text-blue-600 dark:text-blue-400">this</span>.role = <span className="text-green-600 dark:text-green-400">'Mobile Lead'</span>;
-                                        {'\n'}    <span className="text-blue-600 dark:text-blue-400">this</span>.skills = [
-                                        {'\n'}      <span className="text-green-600 dark:text-green-400">'Flutter'</span>,
-                                        {'\n'}      <span className="text-green-600 dark:text-green-400">'Android'</span>,
-                                        {'\n'}      <span className="text-green-600 dark:text-green-400">'React Native'</span>
-                                        {'\n'}    ];
-                                        {'\n'}  {'}'}
-                                        {'\n'}{'}'}
+                                        <span className="text-indigo-600 dark:text-indigo-400">class</span>{' '}
+                                        <span className="text-yellow-600 dark:text-yellow-400">Developer</span> {'{'}
+                                        <br />
+                                        &nbsp;&nbsp;
+                                        <span className="text-purple-600 dark:text-purple-400">constructor</span>() {'{'}
+                                        <br />
+                                        &nbsp;&nbsp;&nbsp;&nbsp;
+                                        <span className="text-blue-600 dark:text-blue-400">this</span>.name ={' '}
+                                        <span className="text-green-600 dark:text-green-400">'Sarang Rajan'</span>;
+                                        <br />
+                                        &nbsp;&nbsp;&nbsp;&nbsp;
+                                        <span className="text-blue-600 dark:text-blue-400">this</span>.role ={' '}
+                                        <span className="text-green-600 dark:text-green-400">'Mobile Lead'</span>;
+                                        <br />
+                                        &nbsp;&nbsp;&nbsp;&nbsp;
+                                        <span className="text-blue-600 dark:text-blue-400">this</span>.skills = [
+                                        <br />
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        <span className="text-green-600 dark:text-green-400">'Flutter & React Native'</span>,
+                                        <br />
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        <span className="text-green-600 dark:text-green-400">'Android & iOS'</span>,
+                                        <br />
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        <span className="text-green-600 dark:text-green-400">'React.js & HTML5|CSS3'</span>
+                                        <br />
+                                        &nbsp;&nbsp;&nbsp;&nbsp;];
+                                        <br />
+                                        &nbsp;&nbsp;{'}'}
+                                        <br />
+                                        {'}'}
                                     </code>
                                 </pre>
+
                             </div>
                         </div>
                     </div>
