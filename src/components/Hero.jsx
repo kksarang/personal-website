@@ -16,7 +16,7 @@ const Hero = () => {
                         <p className="text-xl md:text-2xl text-gray-600 dark:text-gray-300 mb-8 font-medium">
                             Mobile Application Developer
                             <span className="block text-lg mt-2 font-normal text-gray-500 dark:text-gray-400">
-                                Flutter | Android (Native) | React Native
+                                Flutter | Android IOS(Native) | React Native
                             </span>
                         </p>
                         <p className="text-gray-600 dark:text-gray-400 max-w-2xl mb-10 text-lg leading-relaxed">
