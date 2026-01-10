@@ -21,9 +21,13 @@ const Footer = () => {
                 <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-2">
                     Sarang Rajan
                 </h3>
-                {/* <p className="text-gray-500 dark:text-gray-400 max-w-lg mb-8 leading-relaxed">
-                    Mobile Team Lead & Passionate Developer. I build apps that are not just functional, but delightful to use.
-                </p> */}
+                <p className="text-gray-500 dark:text-gray-400 max-w-lg mb-8 leading-relaxed text-center">
+                    Passionate Developer.
+                    <br />
+                    <span className="block text-center">
+                        I build apps that are not just functional, but delightful to use.
+                    </span>
+                </p>
 
                 {/* Social Icons */}
                 <div className="flex items-center space-x-6 mb-12">
