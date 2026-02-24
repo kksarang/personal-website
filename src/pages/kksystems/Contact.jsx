@@ -35,7 +35,7 @@ export default function Contact() {
 
                     <div className="animate-fade-in-up md:text-center flex flex-col md:items-center">
 
-                        <h1 className="text-5xl md:text-7xl font-extrabold text-white tracking-tight leading-[1.1] mb-6">
+                        <h1 className="text-4xl sm:text-5xl md:text-7xl font-extrabold text-white tracking-tight leading-[1.1] mb-6">
                             Let's build your next <br className="hidden md:block" />
                             <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-400 to-blue-500">
                                 great product.
@@ -49,14 +49,14 @@ export default function Contact() {
                 </div>
             </div>
 
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-24">
-                <div className="grid lg:grid-cols-2 gap-16">
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-16 md:mt-24">
+                <div className="grid lg:grid-cols-2 gap-8 lg:gap-16">
 
                     {/* LEFT COLUMN: CONTACT FORM & INFO */}
                     <div className="space-y-8 animate-fade-in-up animation-delay-100 flex flex-col h-full">
 
                         {/* 1. Direct Messaging Form */}
-                        <div className="bg-[#131521] border border-white/5 rounded-3xl p-8 lg:p-10 shadow-2xl relative overflow-hidden group">
+                        <div className="bg-[#131521] border border-white/5 rounded-3xl p-6 sm:p-8 lg:p-10 shadow-2xl relative overflow-hidden group">
                             <div className="absolute top-0 right-0 w-64 h-64 bg-indigo-500/10 rounded-full blur-[100px] transition-opacity duration-500 group-hover:opacity-100 opacity-50" />
 
                             <h3 className="text-2xl font-bold text-white mb-8 relative z-10 flex items-center gap-3">
@@ -121,7 +121,7 @@ export default function Contact() {
                         </div>
 
                         {/* Minimal About Block */}
-                        <div className="bg-[#131521] border border-white/5 rounded-3xl p-8 shadow-lg relative overflow-hidden">
+                        <div className="bg-[#131521] border border-white/5 rounded-3xl p-6 sm:p-8 shadow-lg relative overflow-hidden">
                             <h3 className="text-xl font-bold text-white mb-4">About kksystems</h3>
                             <p className="text-gray-400 leading-relaxed text-sm">
                                 We are a specialized architecture firm dedicated to engineering high-performance mobile applications and scalable backend systems. We believe in writing clean, maintainable code rather than relying on bloated templates, delivering authentic digital products that drive true enterprise value.
@@ -147,7 +147,7 @@ export default function Contact() {
                     <div className="space-y-8 animate-fade-in-up animation-delay-200 flex flex-col h-full">
 
                         {/* 2. Call Scheduling UI */}
-                        <div className="bg-[#131521] border border-white/5 rounded-3xl p-8 lg:p-10 shadow-2xl">
+                        <div className="bg-[#131521] border border-white/5 rounded-3xl p-6 sm:p-8 lg:p-10 shadow-2xl">
                             <h3 className="text-2xl font-bold text-white mb-6 flex items-center gap-3">
                                 <Calendar className="w-6 h-6 text-blue-400" />
                                 Schedule a Concept Call
@@ -211,7 +211,7 @@ export default function Contact() {
                         </div>
 
                         {/* 3. Location & Meta */}
-                        <div className="bg-gradient-to-br from-indigo-900/20 to-purple-900/20 border border-indigo-500/20 rounded-3xl p-8 lg:p-10 shadow-2xl relative overflow-hidden flex-1 flex flex-col">
+                        <div className="bg-gradient-to-br from-indigo-900/20 to-purple-900/20 border border-indigo-500/20 rounded-3xl p-6 sm:p-8 lg:p-10 shadow-2xl relative overflow-hidden flex-1 flex flex-col">
                             <div className="absolute top-0 right-0 w-32 h-32 bg-indigo-500/10 rounded-full blur-[50px] pointer-events-none" />
                             <div className="flex flex-col gap-6 relative z-10 w-full h-full">
                                 <div className="flex flex-col gap-3 flex-1">
@@ -234,34 +234,34 @@ export default function Contact() {
                                 </div>
                                 <div className="w-full h-[1px] bg-white/5" />
                                 <div className="flex items-start gap-4">
-                                    <Phone className="w-6 h-6 text-indigo-400 mt-1" />
-                                    <div>
+                                    <Phone className="w-6 h-6 text-indigo-400 mt-1 flex-shrink-0" />
+                                    <div className="min-w-0">
                                         <h4 className="text-white font-bold text-lg">Direct Line</h4>
-                                        <a href="tel:+919995254290" className="text-gray-400 mt-1 hover:text-indigo-400 transition-colors block">+91 9995254290</a>
+                                        <a href="tel:+919995254290" className="text-gray-400 mt-1 hover:text-indigo-400 transition-colors block truncate">+91 9995254290</a>
                                     </div>
                                 </div>
                                 <div className="w-full h-[1px] bg-white/5" />
                                 <div className="flex items-start gap-4">
-                                    <Globe className="w-6 h-6 text-blue-400 mt-1" />
-                                    <div>
+                                    <Globe className="w-6 h-6 text-blue-400 mt-1 flex-shrink-0" />
+                                    <div className="min-w-0">
                                         <h4 className="text-white font-bold text-lg">Official Website</h4>
-                                        <a href="https://www.sarangrajan.in/" target="_blank" rel="noreferrer" className="text-gray-400 mt-1 hover:text-blue-400 transition-colors block">sarangrajan.in</a>
+                                        <a href="https://www.sarangrajan.in/" target="_blank" rel="noreferrer" className="text-gray-400 mt-1 hover:text-blue-400 transition-colors block truncate">sarangrajan.in</a>
                                     </div>
                                 </div>
                                 <div className="w-full h-[1px] bg-white/5" />
-                                <div className="grid grid-cols-2 gap-4">
+                                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                                     <div className="flex items-start gap-4">
-                                        <Instagram className="w-6 h-6 text-pink-500 mt-1" />
-                                        <div>
+                                        <Instagram className="w-6 h-6 text-pink-500 mt-1 flex-shrink-0" />
+                                        <div className="min-w-0">
                                             <h4 className="text-white font-bold text-lg">Instagram</h4>
-                                            <a href="https://www.instagram.com/kksystems_offical/" target="_blank" rel="noreferrer" className="text-gray-400 mt-1 hover:text-pink-400 transition-colors block">@kksystems_offical</a>
+                                            <a href="https://www.instagram.com/kksystems_offical/" target="_blank" rel="noreferrer" className="text-gray-400 mt-1 hover:text-pink-400 transition-colors block truncate">@kksystems_offical</a>
                                         </div>
                                     </div>
                                     <div className="flex items-start gap-4">
-                                        <Github className="w-6 h-6 text-gray-300 mt-1" />
-                                        <div>
+                                        <Github className="w-6 h-6 text-gray-300 mt-1 flex-shrink-0" />
+                                        <div className="min-w-0">
                                             <h4 className="text-white font-bold text-lg">GitHub</h4>
-                                            <a href="https://github.com/kksarang" target="_blank" rel="noreferrer" className="text-gray-400 mt-1 hover:text-white transition-colors block">/kksarang</a>
+                                            <a href="https://github.com/kksarang" target="_blank" rel="noreferrer" className="text-gray-400 mt-1 hover:text-white transition-colors block truncate">/kksarang</a>
                                         </div>
                                     </div>
                                 </div>
