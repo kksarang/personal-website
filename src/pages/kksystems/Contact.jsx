@@ -129,7 +129,7 @@ export default function Contact() {
                         </div>
 
                         {/* Official Branding Logo */}
-                        <div className="rounded-3xl overflow-hidden border border-white/5 shadow-2xl relative group flex-1 min-h-[300px]">
+                        <div className="rounded-3xl overflow-hidden border border-white/5 shadow-2xl relative group h-56 xl:h-64">
                             <img
                                 src="/assets/images/gallery/10.jpg"
                                 alt="kksystems Official"
