@@ -29,8 +29,7 @@ const Navbar = () => {
         { title: 'About', href: '/#about', type: 'hash' },
         { title: 'Skills', href: '/#skills', type: 'hash' },
         { title: 'Experience', href: '/#experience', type: 'hash' },
-        { title: 'Work', href: '/work', type: 'page' },
-        { title: 'Learning', href: '/learning', type: 'page' },
+        { title: 'kksystems', href: '/kksystems', type: 'page' },
         { title: 'Contact', href: '/#contact', type: 'hash' },
     ];
 
@@ -58,10 +57,10 @@ const Navbar = () => {
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="flex items-center justify-between h-16">
                     <div className="flex-shrink-0 flex items-center">
-                        <Link to="/" className="flex items-center gap-2 font-bold text-xl text-indigo-600 dark:text-indigo-400">
+                        <a href="https://kksarang.github.io/kksarang/" rel="noreferrer" className="flex items-center gap-2 font-bold text-xl text-indigo-600 dark:text-indigo-400">
                             <Code2 className="w-8 h-8" />
                             <span>Sarang.R</span>
-                        </Link>
+                        </a>
                     </div>
 
                     <div className="hidden md:block">

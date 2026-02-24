@@ -1,42 +1,9 @@
 import React from 'react';
 import { ExternalLink, Github, PieChart, Split, Briefcase, ArrowRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import { projects } from '../data/projects';
 
 const Projects = () => {
-    const projects = [
-        {
-            title: "Expense Tracker & Budget Planner",
-            slug: "expenser-app",
-            description: "A comprehensive financial tool with daily-wise tracking, expense analytics, and budget planning. Features interactive dashboards, dark/light themes, and real-time state management using Riverpod.",
-            tags: ["Flutter", "Riverpod", "Interactive Charts", "Fintech UI"],
-            github: "#",
-            icon: <PieChart className="w-10 h-10 text-white" />
-        },
-        {
-            title: "Split Expense Flow",
-            slug: "split-expense-flow",
-            description: "Architected a guided multi-screen split bill experience. Replaces traditional single-page forms with a step-by-step flow: Create Split → Add Participants → Split Logic → Review.",
-            tags: ["Flutter", "Advanced Logic", "UX Design"],
-            github: "#",
-            icon: <Split className="w-10 h-10 text-white" />
-        },
-        {
-            title: "Business & Utility Apps Suite",
-            slug: "#", // No deep dive yet
-            description: "Led development of multiple internal tools and productivity apps. Handled end-to-end architecture, feature planning, and Play Store deployments.",
-            tags: ["Android (Native)", "React Native", "Flutter", "Enterprise"],
-            github: "#",
-            icon: <Briefcase className="w-10 h-10 text-white" />
-        },
-        {
-            title: "Sarang Connect",
-            slug: "#", // No deep dive yet
-            description: "Real-time communication app featuring instant messaging and user authentication. Built to demonstrate cleaner networking layers and reactive UI patterns.",
-            tags: ["Flutter", "Firebase", "Real-time DB"],
-            github: "https://github.com/kksarang",
-            icon: <ExternalLink className="w-10 h-10 text-white" />
-        }
-    ];
 
     return (
         <section id="projects" className="py-20 bg-gray-50 dark:bg-slate-800/50">
@@ -53,7 +20,11 @@ const Projects = () => {
                         <div key={index} className="group relative bg-white dark:bg-slate-900 rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 flex flex-col h-full border border-gray-100 dark:border-slate-700">
                             <div className="h-48 bg-gradient-to-r from-indigo-500 to-purple-600 flex items-center justify-center">
                                 <div className="transform group-hover:scale-110 transition-transform duration-300">
-                                    {project.icon}
+                                    {/* Icon placeholder for the shared data file where we omitted JSX */}
+                                    {index === 0 && <PieChart className="w-10 h-10 text-white" />}
+                                    {index === 1 && <Split className="w-10 h-10 text-white" />}
+                                    {index === 2 && <Briefcase className="w-10 h-10 text-white" />}
+                                    {index === 3 && <ExternalLink className="w-10 h-10 text-white" />}
                                 </div>
                             </div>
                             <div className="p-6 flex-1 flex flex-col">

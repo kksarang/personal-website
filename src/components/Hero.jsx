@@ -14,7 +14,7 @@ const Hero = () => {
                             Sarang <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-600 to-purple-600">Rajan</span>
                         </h1>
                         <p className="text-xl md:text-2xl text-gray-600 dark:text-gray-300 mb-8 font-medium">
-                            Mobile Application Developer
+                            Senior Full Stack Developer
                             <span className="block text-lg mt-2 font-normal text-gray-500 dark:text-gray-400">
                                 Flutter | Android IOS(Native) | React Native
                             </span>
@@ -70,41 +70,38 @@ const Hero = () => {
                                     <div className="w-3 h-3 rounded-full bg-yellow-500"></div>
                                     <div className="w-3 h-3 rounded-full bg-green-500"></div>
                                 </div>
-                                <pre className="text-sm leading-relaxed">
-                                    <code>
+                                <div className="text-sm leading-relaxed font-mono text-gray-800 dark:text-gray-200">
+                                    <div>
                                         <span className="text-indigo-600 dark:text-indigo-400">class</span>{' '}
                                         <span className="text-yellow-600 dark:text-yellow-400">Developer</span> {'{'}
-                                        <br />
-                                        &nbsp;&nbsp;
+                                    </div>
+                                    <div className="pl-4">
                                         <span className="text-purple-600 dark:text-purple-400">constructor</span>() {'{'}
-                                        <br />
-                                        &nbsp;&nbsp;&nbsp;&nbsp;
+                                    </div>
+                                    <div className="pl-8">
                                         <span className="text-blue-600 dark:text-blue-400">this</span>.name ={' '}
                                         <span className="text-green-600 dark:text-green-400">'Sarang Rajan'</span>;
-                                        <br />
-                                        &nbsp;&nbsp;&nbsp;&nbsp;
+                                    </div>
+                                    <div className="pl-8">
                                         <span className="text-blue-600 dark:text-blue-400">this</span>.role ={' '}
-                                        <span className="text-green-600 dark:text-green-400">'Mobile Lead'</span>;
-                                        <br />
-                                        &nbsp;&nbsp;&nbsp;&nbsp;
+                                        <span className="text-green-600 dark:text-green-400">'Senior Full Stack Developer'</span>;
+                                    </div>
+                                    <div className="pl-8">
                                         <span className="text-blue-600 dark:text-blue-400">this</span>.skills = [
-                                        <br />
-                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                    </div>
+                                    <div className="pl-12">
                                         <span className="text-green-600 dark:text-green-400">'Flutter & React Native'</span>,
-                                        <br />
-                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                    </div>
+                                    <div className="pl-12">
                                         <span className="text-green-600 dark:text-green-400">'Android & iOS'</span>,
-                                        <br />
-                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                    </div>
+                                    <div className="pl-12">
                                         <span className="text-green-600 dark:text-green-400">'React.js & HTML5|CSS3'</span>
-                                        <br />
-                                        &nbsp;&nbsp;&nbsp;&nbsp;];
-                                        <br />
-                                        &nbsp;&nbsp;{'}'}
-                                        <br />
-                                        {'}'}
-                                    </code>
-                                </pre>
+                                    </div>
+                                    <div className="pl-8">];</div>
+                                    <div className="pl-4">{'}'}</div>
+                                    <div>{'}'}</div>
+                                </div>
 
                             </div>
                         </div>
