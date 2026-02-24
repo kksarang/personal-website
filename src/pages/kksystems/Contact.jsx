@@ -129,7 +129,7 @@ export default function Contact() {
                         </div>
 
                         {/* Official Branding Logo */}
-                        <div className="rounded-3xl overflow-hidden border border-white/5 shadow-2xl relative group h-56 xl:h-64">
+                        <div className="rounded-3xl overflow-hidden border border-white/5 shadow-2xl relative group flex-1 min-h-[250px]">
                             <img
                                 src="/assets/images/gallery/10.jpg"
                                 alt="kksystems Official"
@@ -144,7 +144,7 @@ export default function Contact() {
                     </div>
 
                     {/* RIGHT COLUMN: SCHEDULING & LOCATION */}
-                    <div className="space-y-8 animate-fade-in-up animation-delay-200">
+                    <div className="space-y-8 animate-fade-in-up animation-delay-200 flex flex-col h-full">
 
                         {/* 2. Call Scheduling UI */}
                         <div className="bg-[#131521] border border-white/5 rounded-3xl p-8 lg:p-10 shadow-2xl">
@@ -211,15 +211,15 @@ export default function Contact() {
                         </div>
 
                         {/* 3. Location & Meta */}
-                        <div className="bg-gradient-to-br from-indigo-900/20 to-purple-900/20 border border-indigo-500/20 rounded-3xl p-8 lg:p-10 shadow-2xl relative overflow-hidden">
+                        <div className="bg-gradient-to-br from-indigo-900/20 to-purple-900/20 border border-indigo-500/20 rounded-3xl p-8 lg:p-10 shadow-2xl relative overflow-hidden flex-1 flex flex-col">
                             <div className="absolute top-0 right-0 w-32 h-32 bg-indigo-500/10 rounded-full blur-[50px] pointer-events-none" />
-                            <div className="flex flex-col gap-6 relative z-10 w-full">
-                                <div className="flex flex-col gap-3">
+                            <div className="flex flex-col gap-6 relative z-10 w-full h-full">
+                                <div className="flex flex-col gap-3 flex-1">
                                     <div className="flex items-center gap-3 mb-2">
                                         <MapPin className="w-6 h-6 text-indigo-400" />
                                         <h4 className="text-white font-bold text-lg">Office Location</h4>
                                     </div>
-                                    <div className="w-full h-48 rounded-2xl overflow-hidden border border-white/10 relative">
+                                    <div className="w-full h-full min-h-[192px] rounded-2xl overflow-hidden border border-white/10 relative">
                                         <iframe
                                             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3929.155700877546!2d76.33596541527339!3d10.004128092847957!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3b080c8e94a07a07%3A0x49f24b8d78ab498!2sKakkanad%2C%20Kerala!5e0!3m2!1sen!2sin!4v1689408453303!5m2!1sen!2sin"
                                             width="100%"

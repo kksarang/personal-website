@@ -5,8 +5,8 @@ import { Link, useLocation, useNavigate } from 'react-router-dom';
 const KksystemsNavbar = () => {
     const [isOpen, setIsOpen] = useState(false);
     const [isDark, setIsDark] = useState(() => {
-        if (localStorage.getItem('theme')) {
-            return localStorage.getItem('theme') === 'dark';
+        if (localStorage.getItem('kksystems-theme')) {
+            return localStorage.getItem('kksystems-theme') === 'dark';
         }
         return window.matchMedia('(prefers-color-scheme: dark)').matches;
     });
@@ -16,10 +16,10 @@ const KksystemsNavbar = () => {
     useEffect(() => {
         if (isDark) {
             document.documentElement.classList.add('dark');
-            localStorage.setItem('theme', 'dark');
+            localStorage.setItem('kksystems-theme', 'dark');
         } else {
             document.documentElement.classList.remove('dark');
-            localStorage.setItem('theme', 'light');
+            localStorage.setItem('kksystems-theme', 'light');
         }
     }, [isDark]);
 
