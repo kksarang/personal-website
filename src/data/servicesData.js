@@ -2,6 +2,7 @@ export const servicesData = {
     "mobile-app-development": {
         title: "Mobile App Development",
         overview: "Build powerful, scalable, and high-performance mobile applications for Android and iOS platforms.",
+        techStack: ["React Native", "Flutter", "Swift", "Kotlin", "Node.js", "Firebase"],
         typesTitle: "Types of Mobile Apps We Develop",
         types: [
             "Native Android Applications (Kotlin)",
@@ -35,11 +36,17 @@ export const servicesData = {
             "Admin Dashboard (if required)",
             "Complete Source Code",
             "Post-Launch Support"
+        ],
+        faqs: [
+            { q: "How long does it typically take to build an app?", a: "A basic MVP can be completed in 3-5 weeks, while complex applications with custom backends may take 10+ weeks depending on feature requirements." },
+            { q: "Will my app work on both iOS and Android?", a: "Yes, we specialize in cross-platform development using frameworks like Flutter and React Native to ensure seamless performance across all devices." },
+            { q: "Do you offer post-launch support and updates?", a: "Absolutely. We provide dedicated maintenance packages to ensure your app stays updated with the latest OS versions and security patches." }
         ]
     },
     "website-development": {
         title: "Website Development",
         overview: "We develop modern, responsive, and SEO-optimized websites tailored to your business goals.",
+        techStack: ["React.js", "Next.js", "Node.js", "Tailwind CSS", "MongoDB", "WordPress"],
         typesTitle: "Types of Websites",
         types: [
             "Business Websites",
@@ -70,11 +77,17 @@ export const servicesData = {
             "SEO-Friendly Structure",
             "CMS Integration (Optional)",
             "Hosting & Deployment Support"
+        ],
+        faqs: [
+            { q: "Will my website be mobile-friendly and responsive?", a: "Yes, every website we build is 100% responsive and strictly optimized to look stunning on mobile, tablet, and desktop screens." },
+            { q: "Is basic SEO included in the development?", a: "Yes, we implement technical on-page SEO best practices natively into the code to ensure better search engine rankings from day one." },
+            { q: "Can I update the website content myself?", a: "We can integrate easy-to-use CMS (Content Management Systems) so you can seamlessly update text, images, and blogs without deep technical knowledge." }
         ]
     },
     "ui-ux-design": {
         title: "UI/UX & Design",
         overview: "We design intuitive digital experiences that improve engagement and usability.",
+        techStack: ["Figma", "Adobe XD", "Illustrator", "Photoshop", "Framer", "Miro"],
         typesTitle: "Our Design Services",
         types: [
             "UI Strategy & Consultation",
@@ -105,11 +118,17 @@ export const servicesData = {
             "Design System Guidelines",
             "Exported Assets",
             "Source Files (Figma)"
+        ],
+        faqs: [
+            { q: "How many design revisions do you offer?", a: "We believe in collaborative design. We offer multiple revision cycles during the wireframing and initial UI phases to ensure the final product aligns perfectly with your vision." },
+            { q: "Do you design for both web and mobile platforms?", a: "Yes, we construct comprehensive, responsive design systems that cover everything from vertical mobile app screens to intricate web dashboards." },
+            { q: "Will I receive the original source files?", a: "Absolutely. Upon completion, we hand over all organized source files (typically Figma) along with exported transparent assets and rigid style guides." }
         ]
     },
     "social-media-marketing": {
         title: "Social Media Marketing",
         overview: "We help businesses grow their brand presence and engagement across social platforms.",
+        techStack: ["Meta Business Suite", "Hootsuite", "Canva", "Adobe Premiere", "Analytics"],
         typesTitle: "Platforms We Manage",
         types: [
             "Instagram",
@@ -137,15 +156,21 @@ export const servicesData = {
             "Growth Strategy",
             "Engagement Reports",
             "Audience Insights"
+        ],
+        faqs: [
+            { q: "Which social media platforms do you manage?", a: "We primarily focus on high-engagement networks like Instagram, Facebook, and LinkedIn, rigorously tailoring our content strategy to match the unique audience on each platform." },
+            { q: "Do you create the posts, graphics, and videos?", a: "Yes, our in-house creative design team crafts all graphics, carousels, and video snippets required for your monthly content calendar." },
+            { q: "How do you actively measure campaign success?", a: "We track key performance indicators (KPIs) like engagement rate, follower growth, organic reach, and ultimately, outbound link conversions, delivering highly transparent monthly reports." }
         ]
     },
     "digital-marketing": {
         title: "Digital Marketing",
         overview: "We provide data-driven marketing strategies focused on conversions and measurable growth.",
+        techStack: ["Google Ads", "Meta Ads", "Google Analytics", "SEMrush", "Ahrefs", "Mailchimp"],
         typesTitle: "Digital Marketing Services",
         types: [
             "SEO (Search Engine Optimization)",
-            "Google Ads Campaigns)",
+            "Google Ads Campaigns",
             "Meta Ads (Facebook & Instagram Ads)",
             "Lead Generation Campaigns",
             "Conversion Optimization"
@@ -171,6 +196,11 @@ export const servicesData = {
             "Performance Analytics",
             "Conversion Tracking Setup",
             "Scalable Growth Plan"
+        ],
+        faqs: [
+            { q: "How quickly can I securely see results from digital marketing?", a: "Paid advertising pipelines (Google/Meta Ads) can generate high-intent leads within days. Organic strategies like SEO generally take 3-6 months to show significant compounding growth." },
+            { q: "What is your core approach to paid advertising?", a: "We utilize highly targeted, hyper-specific data-driven campaigns focused exclusively on maximizing your Return on Ad Spend (ROAS) rather than just generating vanity clicks." },
+            { q: "Do you handle all campaign adjustments and daily optimizations?", a: "Yes, we continuously monitor multi-channel performance, running mathematical A/B tests on ad creatives and adjusting targeting parameters daily to ensure absolute peak efficiency." }
         ]
     }
 };

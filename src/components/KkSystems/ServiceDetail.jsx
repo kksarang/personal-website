@@ -114,6 +114,49 @@ const ServiceDetail = () => {
                                 </div>
                             </section>
 
+                            {/* TECHNOLOGIES WE USE */}
+                            {service.techStack && service.techStack.length > 0 && (
+                                <section>
+                                    <h2 className="text-3xl font-bold mb-8 flex items-center">
+                                        <span className="w-8 h-1 bg-cyan-500 mr-4 rounded-full"></span>
+                                        Technologies We Use
+                                    </h2>
+                                    <div className="flex flex-wrap gap-3">
+                                        {service.techStack.map((tech, idx) => (
+                                            <span
+                                                key={idx}
+                                                className="px-5 py-2.5 rounded-full bg-white/[0.03] border border-white/10 hover:border-cyan-500/50 hover:bg-cyan-500/10 text-gray-300 hover:text-white transition-all cursor-default shadow-sm"
+                                            >
+                                                {tech}
+                                            </span>
+                                        ))}
+                                    </div>
+                                </section>
+                            )}
+
+                            {/* FAQs */}
+                            {service.faqs && service.faqs.length > 0 && (
+                                <section>
+                                    <h2 className="text-3xl font-bold mb-8 flex items-center">
+                                        <span className="w-8 h-1 bg-pink-500 mr-4 rounded-full"></span>
+                                        Frequently Asked Questions
+                                    </h2>
+                                    <div className="space-y-4">
+                                        {service.faqs.map((faq, idx) => (
+                                            <div key={idx} className="p-6 rounded-2xl bg-white/[0.02] border border-white/5 hover:bg-white/[0.04] hover:border-white/10 transition-colors">
+                                                <h3 className="text-lg font-bold text-white mb-3 flex items-start">
+                                                    <span className="text-pink-500 mr-3 hidden sm:inline">Q.</span>
+                                                    {faq.q}
+                                                </h3>
+                                                <p className="text-gray-400 leading-relaxed sm:pl-7">
+                                                    {faq.a}
+                                                </p>
+                                            </div>
+                                        ))}
+                                    </div>
+                                </section>
+                            )}
+
                         </div>
 
                         {/* RIGHT COLUMN (Sidebar details) */}
