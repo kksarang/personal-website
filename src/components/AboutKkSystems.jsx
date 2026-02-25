@@ -12,7 +12,7 @@ const AboutKkSystems = () => {
                 {/* 1. SECTION HEADER (Matching About.jsx format) */}
                 <div className="text-center mb-16">
                     <h2 className="text-base text-indigo-600 dark:text-indigo-400 font-semibold tracking-wide uppercase">
-                        kk systems – Digital & Software Solutions Company
+                        kk systems – Digital & Software Solutions
                     </h2>
                     <p className="mt-2 text-3xl leading-8 font-extrabold tracking-tight text-gray-900 dark:text-white sm:text-4xl">
                         Building Powerful Digital Experiences
