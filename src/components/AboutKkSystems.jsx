@@ -77,7 +77,7 @@ const AboutKkSystems = () => {
                                 { title: "Mobile App Development", icon: Layers, desc: "Custom Android and iOS applications built using Flutter and React Native." },
                                 { title: "Website Development", icon: Globe, desc: "Responsive, SEO-optimized, and high-performance websites." },
                                 { title: "UI/UX Design", icon: Layout, desc: "Elegant, user-centered interface designs that improve engagement." },
-                                { title: "Branding & Creative Design", icon: PenTool, desc: "Professional logo design, social media creatives, & brand identity." }
+                                { title: "Branding & Digital Marketing", icon: PenTool, desc: "Professional logo design, digital marketing, social media creatives, & brand identity." }
                             ].map((service, idx) => (
                                 <div key={idx} className="p-5 bg-gray-50 dark:bg-slate-800 rounded-xl border border-gray-100 dark:border-slate-700 flex flex-col items-start gap-4">
                                     <div className="p-3 bg-white dark:bg-slate-900 rounded-lg shadow-sm">
