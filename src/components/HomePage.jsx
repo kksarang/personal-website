@@ -11,10 +11,10 @@ const HomePage = () => {
     return (
         <>
             <Hero />
-            <AboutKkSystems />
             <About />
             <Skills />
             <Experience />
+            <AboutKkSystems />
             <PhotoGallery />
             <Contact />
         </>
