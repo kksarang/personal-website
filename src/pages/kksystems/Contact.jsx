@@ -3,7 +3,6 @@ import { ArrowLeft, Mail, MapPin, Phone, Calendar, Clock, Send, CheckCircle2, In
 import { useNavigate } from 'react-router-dom';
 
 export default function Contact() {
-    const navigate = useNavigate();
     const [selectedDay, setSelectedDay] = useState(1); // Default to Tuesday
     const [selectedTime, setSelectedTime] = useState(null);
 
