@@ -18,6 +18,7 @@ import KksystemsWorkDetails from './pages/kksystems/WorkDetails';
 import KksystemsLearning from './pages/kksystems/Learning';
 import KksystemsLearningDetails from './pages/kksystems/LearningDetails';
 import KksystemsContact from './pages/kksystems/Contact';
+import ServiceDetail from './components/KkSystems/ServiceDetail';
 
 function App() {
   return (
@@ -38,6 +39,7 @@ function App() {
           {/* New Company Website Layout Wrap */}
           <Route path="/kksystems" element={<KksystemsLayout />}>
             <Route index element={<KksystemsHome />} />
+            <Route path="services/:slug" element={<ServiceDetail />} />
             <Route path="work" element={<KksystemsWork />} />
             <Route path="work/:id" element={<KksystemsWorkDetails />} />
             <Route path="learning" element={<KksystemsLearning />} />

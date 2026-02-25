@@ -1,8 +1,9 @@
 import React from 'react';
 import { Smartphone, Monitor, PaintBucket, Share2, Target } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
-const ServiceCard = ({ icon: Icon, title, technologies, description, colors }) => (
-    <div className={`p-8 rounded-3xl bg-white/[0.02] border border-white/5 backdrop-blur-sm group hover:bg-white/[0.04] transition-all duration-300 relative overflow-hidden flex flex-col h-full`}>
+const ServiceCard = ({ icon: Icon, title, technologies, description, colors, link }) => (
+    <Link to={link} className={`p-8 rounded-3xl bg-white/[0.02] border border-white/5 backdrop-blur-sm group hover:bg-white/[0.04] transition-all duration-300 relative overflow-hidden flex flex-col h-full block`}>
         {/* Glow effect on hover */}
         <div className={`absolute -inset-px opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-3xl bg-gradient-to-br ${colors.borderGradient}`} />
 
@@ -31,7 +32,7 @@ const ServiceCard = ({ icon: Icon, title, technologies, description, colors }) =
                 </p>
             )}
         </div>
-    </div>
+    </Link>
 );
 
 const Services = () => {
@@ -57,6 +58,7 @@ const Services = () => {
                     <ServiceCard
                         icon={Smartphone}
                         title="Mobile App Development"
+                        link="/kksystems/services/mobile-app-development"
                         technologies={[
                             'Flutter Applications',
                             'Native Android (Kotlin)',
@@ -78,6 +80,7 @@ const Services = () => {
                     <ServiceCard
                         icon={Monitor}
                         title="Website Development"
+                        link="/kksystems/services/website-development"
                         technologies={[
                             'Business Websites',
                             'E-Commerce Solutions',
@@ -99,6 +102,7 @@ const Services = () => {
                     <ServiceCard
                         icon={PaintBucket}
                         title="UI/UX & Design"
+                        link="/kksystems/services/ui-ux-design"
                         technologies={[
                             'UI/UX Strategy',
                             'Wireframing & Prototyping',
@@ -123,6 +127,7 @@ const Services = () => {
                     <ServiceCard
                         icon={Share2}
                         title="Social Media Marketing"
+                        link="/kksystems/services/social-media-marketing"
                         technologies={[
                             'Instagram & Facebook Marketing',
                             'Content Planning & Strategy',
@@ -143,6 +148,7 @@ const Services = () => {
                     <ServiceCard
                         icon={Target}
                         title="Digital Marketing"
+                        link="/kksystems/services/digital-marketing"
                         technologies={[
                             'SEO (Search Engine Optimization)',
                             'Google Ads Campaigns',
