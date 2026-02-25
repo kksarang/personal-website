@@ -68,7 +68,7 @@ const AboutKkSystems = () => {
                                     onClick={() => navigate('/kksystems')}
                                     className="inline-flex items-center px-8 py-3 rounded-2xl bg-gradient-to-r from-blue-600 to-indigo-600 text-white font-medium hover:scale-105 transition duration-300 shadow-lg"
                                 >
-                                    kksystems &rarr;
+                                    Explore kksystems &rarr;
                                 </button>
                             </div>
                         </div>
