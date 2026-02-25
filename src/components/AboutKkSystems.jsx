@@ -56,8 +56,10 @@ const AboutKkSystems = () => {
                                     "Performance-Focused Apps",
                                     "SEO-Optimized Websites",
                                     "Scalable Architecture",
-                                    "Strategic Social Media Growth",
+                                    "Creative Brand Positioning",
                                     "Data-Driven Digital Marketing",
+                                    "Conversion-Focused Campaigns",
+                                    "Performance Analytics & Reporting",
                                     "Long-Term Technical Support",
                                     "Affordable & Transparent Pricing"
                                 ].map((item, idx) => (
