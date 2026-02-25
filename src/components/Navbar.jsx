@@ -64,7 +64,7 @@ const Navbar = () => {
                     </div>
 
                     <div className="hidden md:block">
-                        <div className="ml-10 flex items-baseline space-x-4">
+                        <div className="ml-10 flex items-center space-x-4">
                             {navLinks.map((link) => (
                                 <a
                                     key={link.title}
