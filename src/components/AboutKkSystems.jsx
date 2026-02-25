@@ -20,14 +20,6 @@ const AboutKkSystems = () => {
                     <p className="mt-4 max-w-2xl text-xl text-gray-500 dark:text-gray-400 mx-auto">
                         We design and develop modern mobile applications, websites, and digital branding solutions that help businesses grow faster in the digital world.
                     </p>
-                    <div className="mt-8 flex justify-center gap-4">
-                        <button
-                            onClick={() => navigate('/kksystems/work')}
-                            className="inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-md shadow-sm text-white bg-indigo-600 hover:bg-indigo-700 transition"
-                        >
-                            View Our Work
-                        </button>
-                    </div>
                 </div>
 
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-start">
