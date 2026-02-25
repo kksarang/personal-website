@@ -84,21 +84,31 @@ const ServiceDetail = () => {
 
                             {/* DEVELOPMENT PROCESS */}
                             <section>
-                                <h2 className="text-3xl font-bold mb-8 flex items-center">
+                                <h2 className="text-3xl font-bold mb-10 flex items-center">
                                     <span className="w-8 h-1 bg-purple-500 mr-4 rounded-full"></span>
                                     {service.processTitle}
                                 </h2>
-                                <div className="space-y-6">
+                                <div className="space-y-0 relative before:absolute before:inset-0 before:ml-6 before:-translate-x-px md:before:mx-auto md:before:translate-x-0 before:h-full before:w-0.5 before:bg-gradient-to-b before:from-transparent before:via-purple-500/30 before:to-transparent">
                                     {service.process.map((stepItem, idx) => (
-                                        <div key={idx} className="flex flex-col sm:flex-row sm:items-center p-6 rounded-2xl bg-white/[0.02] border border-white/5 hover:bg-white/[0.04] transition-colors gap-4">
-                                            <div className="text-xl font-bold text-white min-w-[250px]">
-                                                {stepItem.step}
+                                        <div key={idx} className="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group is-active py-6">
+                                            {/* Number indicator */}
+                                            <div className="flex items-center justify-center w-12 h-12 rounded-full border-4 border-[#0A0B14] bg-white/[0.05] group-hover:bg-purple-500/20 text-indigo-300 font-bold shadow shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2 transition-colors duration-300 z-10 backdrop-blur-sm">
+                                                {idx + 1}
                                             </div>
-                                            {stepItem.desc && (
-                                                <div className="text-gray-400 border-l border-white/10 pl-4 sm:pl-6 ml-2 sm:ml-0">
-                                                    {stepItem.desc}
+
+                                            {/* Card content */}
+                                            <div className="w-[calc(100%-4rem)] md:w-[calc(50%-3rem)] p-6 rounded-2xl bg-white/[0.02] border border-white/5 group-hover:border-purple-500/30 group-hover:bg-white/[0.04] transition-all duration-300 shadow-xl">
+                                                <div className="flex flex-col gap-2">
+                                                    <h3 className="text-xl font-bold text-white group-hover:text-purple-300 transition-colors">
+                                                        {stepItem.step}
+                                                    </h3>
+                                                    {stepItem.desc && (
+                                                        <p className="text-gray-400 text-sm leading-relaxed">
+                                                            {stepItem.desc}
+                                                        </p>
+                                                    )}
                                                 </div>
-                                            )}
+                                            </div>
                                         </div>
                                     ))}
                                 </div>
@@ -156,12 +166,9 @@ const ServiceDetail = () => {
                                 Let's collaborate to build something exceptional that drives real growth for your business.
                             </p>
                             <div className="flex flex-col sm:flex-row justify-center gap-4">
-                                <button className="px-8 py-4 rounded-xl bg-white text-indigo-900 font-bold hover:bg-gray-100 transition-colors shadow-xl">
-                                    Start Your Project
-                                </button>
                                 <button
                                     onClick={() => navigate('/kksystems/contact')}
-                                    className="px-8 py-4 rounded-xl bg-indigo-600/20 text-white font-bold border border-indigo-500/30 hover:bg-indigo-600/40 transition-colors"
+                                    className="px-8 py-4 rounded-xl bg-white text-indigo-900 font-bold hover:bg-gray-100 transition-colors shadow-xl"
                                 >
                                     Contact kk systems
                                 </button>

@@ -14,13 +14,13 @@ export const servicesData = {
         ],
         processTitle: "Our Mobile App Development Process",
         process: [
-            { step: "1️⃣ Requirement Analysis", desc: "Understanding your idea, business model, and target audience." },
-            { step: "2️⃣ UI/UX Planning", desc: "Wireframing and user journey mapping." },
-            { step: "3️⃣ App Design", desc: "Modern, intuitive interface design." },
-            { step: "4️⃣ Development Phase", desc: "Frontend + Backend development with scalable architecture." },
-            { step: "5️⃣ Testing & QA", desc: "Performance testing, bug fixing, optimization." },
-            { step: "6️⃣ Deployment", desc: "App Store & Play Store publishing support." },
-            { step: "7️⃣ Maintenance & Support", desc: "Ongoing updates and technical support." }
+            { step: "Requirement Analysis", desc: "Understanding your idea, business model, and target audience to lay a robust roadmap for the application." },
+            { step: "UI/UX Planning", desc: "Crafting wireframes and user journey mapping to ensure the interface is intuitive and optimized for higher retention rates." },
+            { step: "App Design", desc: "Applying modern, visually striking aesthetics, brand colors, and accessible typography to the frontend." },
+            { step: "Development Phase", desc: "Constructing scalable frontend and backend architectures utilizing industry-leading mobile frameworks." },
+            { step: "Testing & QA", desc: "Rigorous performance testing, memory profiling, and cross-device bug fixing to ensure a butter-smooth user experience." },
+            { step: "Deployment", desc: "We manage the entire publishing process to ensure full compliance with App Store & Google Play guidelines." },
+            { step: "Maintenance & Support", desc: "Providing ongoing security updates, feature expansions, and technical support post-launch." }
         ],
         timeline: [
             "Basic App – 3 to 5 Weeks",
@@ -51,12 +51,12 @@ export const servicesData = {
         ],
         processTitle: "Website Development Process",
         process: [
-            { step: "1️⃣ Requirement & Planning", desc: "" },
-            { step: "2️⃣ Wireframe & Structure", desc: "" },
-            { step: "3️⃣ UI Design", desc: "" },
-            { step: "4️⃣ Development", desc: "" },
-            { step: "5️⃣ SEO Optimization", desc: "" },
-            { step: "6️⃣ Testing & Deployment", desc: "" }
+            { step: "Requirement & Planning", desc: "We begin by diagnosing your business objectives, target audience demographics, and core functional needs." },
+            { step: "Wireframe & Structure", desc: "Creating the skeletal framework of the website, establishing core navigation paths, and planning content hierarchy." },
+            { step: "UI Design", desc: "Elevating the wireframes into pixel-perfect, premium-grade mockups with strategic color palettes and micro-interactions." },
+            { step: "Development", desc: "Translating the designs into clean, semantic, and highly performant code with robust API and CMS integrations." },
+            { step: "SEO Optimization", desc: "Applying advanced on-page SEO best practices natively into the HTML structure to ensure maximum discoverability." },
+            { step: "Testing & Deployment", desc: "Conducting extensive cross-browser styling and load testing before securely migrating the site to your live host." }
         ],
         timeline: [
             "Basic Website – 1 to 2 Weeks",
@@ -87,11 +87,11 @@ export const servicesData = {
         ],
         processTitle: "Design Process",
         process: [
-            { step: "1️⃣ Research & Analysis", desc: "" },
-            { step: "2️⃣ Wireframe Creation", desc: "" },
-            { step: "3️⃣ Visual Design", desc: "" },
-            { step: "4️⃣ Prototype Testing", desc: "" },
-            { step: "5️⃣ Final Design Delivery", desc: "" }
+            { step: "Research & Analysis", desc: "Studying direct competitors and user psychology models to uncover what drives maximum interaction for your niche." },
+            { step: "Wireframe Creation", desc: "Drafting the foundational blueprint for screen layouts focusing entirely on layout flow over aesthetics." },
+            { step: "Visual Design", desc: "Injecting brand personality through bespoke typography, whitespace manipulation, and modern UI patterns like glassmorphism." },
+            { step: "Prototype Testing", desc: "Transforming static designs into clickable, interactive prototypes to validate assumptions before engineering starts." },
+            { step: "Final Design Delivery", desc: "Exporting organized design files alongside robust style guides and asset libraries for seamless developer handoff." }
         ],
         timeline: [
             "Logo Design – 3 to 5 Days",
@@ -119,12 +119,12 @@ export const servicesData = {
         ],
         processTitle: "Our Social Media Strategy Process",
         process: [
-            { step: "1️⃣ Brand Analysis", desc: "" },
-            { step: "2️⃣ Content Planning", desc: "" },
-            { step: "3️⃣ Creative Design", desc: "" },
-            { step: "4️⃣ Posting & Scheduling", desc: "" },
-            { step: "5️⃣ Engagement Monitoring", desc: "" },
-            { step: "6️⃣ Performance Tracking", desc: "" }
+            { step: "Brand Analysis", desc: "Auditing current social presence and identifying key differentiating factors to highlight across online channels." },
+            { step: "Content Planning", desc: "Curating a comprehensive monthly content calendar that perfectly aligns with your promotional cycle and goals." },
+            { step: "Creative Design", desc: "Designing thumb-stopping visuals, carousels, and video snippets tailored to network-specific algorithmic preferences." },
+            { step: "Posting & Scheduling", desc: "Deploying content at statistically optimal times using advanced automation and publishing tools." },
+            { step: "Engagement Monitoring", desc: "Proactively managing community feedback, sparking conversations, and fostering loyalty." },
+            { step: "Performance Tracking", desc: "Synthesizing data into actionable monthly reports demonstrating audience growth and key demographic shifts." }
         ],
         timeline: [
             "Minimum Strategy Plan – 1 Month",
@@ -145,19 +145,19 @@ export const servicesData = {
         typesTitle: "Digital Marketing Services",
         types: [
             "SEO (Search Engine Optimization)",
-            "Google Ads Campaigns",
+            "Google Ads Campaigns)",
             "Meta Ads (Facebook & Instagram Ads)",
             "Lead Generation Campaigns",
             "Conversion Optimization"
         ],
         processTitle: "Digital Marketing Workflow",
         process: [
-            { step: "1️⃣ Market & Competitor Research", desc: "" },
-            { step: "2️⃣ Strategy Planning", desc: "" },
-            { step: "3️⃣ Campaign Setup", desc: "" },
-            { step: "4️⃣ A/B Testing", desc: "" },
-            { step: "5️⃣ Optimization", desc: "" },
-            { step: "6️⃣ Analytics & Reporting", desc: "" }
+            { step: "Market & Competitor Research", desc: "Dissecting competitor ad strategies and keyword targeting grids to identify unexploited market opportunities." },
+            { step: "Strategy Planning", desc: "Allocating media budgets across primary channels with a sole mathematical focus on maximizing Return on Ad Spend (ROAS)." },
+            { step: "Campaign Setup", desc: "Building the digital infrastructure including tracking pixels, conversion funnels, and dynamic ad creatives." },
+            { step: "A/B Testing", desc: "Running multivariate tests pitting headlines, visuals, and targeting arrays against one another to identify peak performers." },
+            { step: "Optimization", desc: "Cruelly cutting underperforming ad sets and scaling budgets aggressively into highly profitable audiences." },
+            { step: "Analytics & Reporting", desc: "Delivering fully transparent dashboards showcasing real-time Cost Per Lead (CPL) and Customer Acquisition metrics." }
         ],
         timeline: [
             "SEO – 3 to 6 Months (Minimum)",
