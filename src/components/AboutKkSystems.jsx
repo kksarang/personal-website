@@ -58,6 +58,19 @@ const AboutKkSystems = () => {
                                     </div>
                                 ))}
                             </div>
+
+                            {/* NEW CTA BUTTON */}
+                            <div className="mt-10 items-start flex flex-col">
+                                <p className="text-gray-500 dark:text-gray-400 mb-4 font-medium">
+                                    Let’s build something exceptional together.
+                                </p>
+                                <button
+                                    onClick={() => navigate('/kksystems')}
+                                    className="inline-flex items-center px-8 py-3 rounded-2xl bg-gradient-to-r from-blue-600 to-indigo-600 text-white font-medium hover:scale-105 transition duration-300 shadow-lg"
+                                >
+                                    Explore kk systems &rarr;
+                                </button>
+                            </div>
                         </div>
 
                     </div>
