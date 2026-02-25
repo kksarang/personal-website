@@ -37,13 +37,13 @@ const AboutKkSystems = () => {
 
                         <div className="prose prose-lg dark:prose-invert text-gray-600 dark:text-gray-300">
                             <p>
-                                <strong>kk systems</strong> is a modern software development company founded by Sarang, focused on delivering high-quality digital solutions for startups, businesses, and entrepreneurs.
+                                <strong>kk systems</strong> is a modern software development & digital agency founded by Sarang, focused on delivering high-quality digital solutions for startups, businesses, and entrepreneurs.
                             </p>
                             <p>
-                                We specialize in Mobile App Development, iOS & Android Applications, Website Development, UI/UX Design, and Logo & Brand Identity.
+                                We specialize in Mobile App Development, Website Construction, UI/UX Design, Logo & Brand Identity, and comprehensive Digital & Social Media Marketing strategies.
                             </p>
                             <p className="border-l-4 border-indigo-500 pl-4 italic mt-6">
-                                Our mission is to transform ideas into scalable digital products with clean design, high performance, and long-term reliability. We don't just build applications — we build digital experiences.
+                                Our mission is to transform ideas into scalable digital products with clean design and performance-focused SEO marketing. We don't just build applications — we build digital experiences that drive real business growth.
                             </p>
                         </div>
 
