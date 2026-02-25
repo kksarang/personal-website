@@ -90,11 +90,7 @@ export const projects = [
             "Integrated direct contact and inquiry funnels"
         ],
         techStack: ["React.js v18", "Vite Frontend Tooling", "Tailwind CSS Layout", "Lucide React Icons", "Framer Motion"],
-        screenshots: [
-            "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-            "https://images.unsplash.com/photo-1497366216548-37526070297c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-            "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
-        ],
+        screenshots: [],
         storePerformance: null,
         userFeedback: [
             "The website perfectly captures our corporate identity. The service breakdown is incredibly clean and professional.",
