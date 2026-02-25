@@ -94,10 +94,8 @@ const AboutKkSystems = () => {
 
                 </div>
 
-                <div className="mt-16 text-center">
-                    <p className="text-lg font-bold text-indigo-600 dark:text-indigo-400 italic">
-                        "From Idea to App Store – We Build Complete Digital Products."
-                    </p>
+                <div className="mt-16 text-center flex justify-center">
+                    <div className="w-24 h-1 bg-indigo-500 rounded-full opacity-80" />
                 </div>
 
             </div>
