@@ -162,11 +162,6 @@ const Services = () => {
                     />
                 </div>
 
-                <div className="mt-16 text-center">
-                    <p className="text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-purple-400 italic">
-                        Complete Digital Solutions Under One Roof.
-                    </p>
-                </div>
             </div>
         </section>
     );
