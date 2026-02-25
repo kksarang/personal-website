@@ -1,12 +1,12 @@
 import React from 'react';
-import { Smartphone, Monitor, PaintBucket } from 'lucide-react';
+import { Smartphone, Monitor, PaintBucket, Share2, Target } from 'lucide-react';
 
-const ServiceCard = ({ icon: Icon, title, technologies, colors }) => (
-    <div className={`p-8 rounded-3xl bg-white/[0.02] border border-white/5 backdrop-blur-sm group hover:bg-white/[0.04] transition-all duration-300 relative overflow-hidden block`}>
+const ServiceCard = ({ icon: Icon, title, technologies, description, colors }) => (
+    <div className={`p-8 rounded-3xl bg-white/[0.02] border border-white/5 backdrop-blur-sm group hover:bg-white/[0.04] transition-all duration-300 relative overflow-hidden flex flex-col h-full`}>
         {/* Glow effect on hover */}
         <div className={`absolute -inset-px opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-3xl bg-gradient-to-br ${colors.borderGradient}`} />
 
-        <div className="relative z-10">
+        <div className="relative z-10 flex flex-col flex-grow">
             <div className={`w-14 h-14 rounded-2xl flex items-center justify-center mb-6 transition-transform group-hover:scale-110 duration-300 ${colors.badgeBg}`}>
                 <Icon className={`w-7 h-7 ${colors.iconColor}`} />
             </div>
@@ -16,14 +16,20 @@ const ServiceCard = ({ icon: Icon, title, technologies, colors }) => (
                 {title}
             </h3>
 
-            <ul className="space-y-3">
+            <ul className="space-y-3 mb-6 flex-grow">
                 {technologies.map((tech, idx) => (
-                    <li key={idx} className="flex items-center text-gray-400 group-hover:text-gray-300 transition-colors">
-                        <span className={`w-1.5 h-1.5 rounded-full mr-3 ${colors.dotColor}`} />
+                    <li key={idx} className="flex items-start text-sm text-gray-400 group-hover:text-gray-300 transition-colors">
+                        <span className={`w-1.5 h-1.5 rounded-full mr-3 mt-2 flex-shrink-0 ${colors.dotColor}`} />
                         {tech}
                     </li>
                 ))}
             </ul>
+
+            {description && (
+                <p className="text-gray-400 text-sm leading-relaxed mt-auto pt-4 border-t border-white/5 group-hover:text-gray-300 transition-colors">
+                    {description}
+                </p>
+            )}
         </div>
     </div>
 );
@@ -41,16 +47,25 @@ const Services = () => {
                     <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
                         Premium Digital Services
                     </h2>
-                    <p className="text-xl text-gray-400">
-                        We provide end-to-end development services to bring your innovative ideas to life.
+                    <p className="text-xl text-gray-400 mb-8">
+                        We provide end-to-end digital solutions to build, design, and grow your business in the modern digital world.
                     </p>
                 </div>
 
-                <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                {/* ROW 1 (3 Cards) */}
+                <div className="grid md:grid-cols-3 gap-8">
                     <ServiceCard
                         icon={Smartphone}
                         title="Mobile App Development"
-                        technologies={['Flutter Apps', 'Native Android (Kotlin)', 'iOS Applications', 'React Native']}
+                        technologies={[
+                            'Flutter Applications',
+                            'Native Android (Kotlin)',
+                            'iOS Applications',
+                            'Cross-Platform Apps',
+                            'App Store & Play Store Deployment',
+                            'App Maintenance & Support'
+                        ]}
+                        description="We build scalable, secure, and high-performance mobile applications tailored to your business goals."
                         colors={{
                             borderGradient: "from-purple-500/40 to-transparent",
                             badgeBg: "bg-purple-500/10",
@@ -63,7 +78,15 @@ const Services = () => {
                     <ServiceCard
                         icon={Monitor}
                         title="Website Development"
-                        technologies={['Business Websites', 'E-Commerce', 'Custom Web Applications', 'SEO Optimization', 'Content Management']}
+                        technologies={[
+                            'Business Websites',
+                            'E-Commerce Solutions',
+                            'Custom Web Applications',
+                            'SEO Optimization',
+                            'CMS Integration',
+                            'Website Maintenance'
+                        ]}
+                        description="We create responsive, fast, and SEO-friendly websites that strengthen your online presence."
                         colors={{
                             borderGradient: "from-blue-500/40 to-transparent",
                             badgeBg: "bg-blue-500/10",
@@ -76,7 +99,15 @@ const Services = () => {
                     <ServiceCard
                         icon={PaintBucket}
                         title="UI/UX & Design"
-                        technologies={['Professional Designers', 'Modern Interfaces', 'Brand Identity', 'Responsive Design']}
+                        technologies={[
+                            'UI/UX Strategy',
+                            'Wireframing & Prototyping',
+                            'Mobile & Web Interface Design',
+                            'Logo & Brand Identity',
+                            'Creative Posters',
+                            'Responsive Design Systems'
+                        ]}
+                        description="We design intuitive digital experiences that enhance engagement and usability."
                         colors={{
                             borderGradient: "from-indigo-500/40 to-transparent",
                             badgeBg: "bg-indigo-500/10",
@@ -85,6 +116,56 @@ const Services = () => {
                             dotColor: "bg-indigo-400"
                         }}
                     />
+                </div>
+
+                {/* ROW 2 (2 Cards - Centered) */}
+                <div className="grid md:grid-cols-2 gap-8 md:w-2/3 mx-auto mt-8">
+                    <ServiceCard
+                        icon={Share2}
+                        title="Social Media Marketing"
+                        technologies={[
+                            'Instagram & Facebook Marketing',
+                            'Content Planning & Strategy',
+                            'Creative Post Designs',
+                            'Social Media Management',
+                            'Audience Engagement Growth'
+                        ]}
+                        description="We help brands grow their social presence and connect effectively with their audience."
+                        colors={{
+                            borderGradient: "from-pink-500/40 to-transparent",
+                            badgeBg: "bg-pink-500/10",
+                            iconColor: "text-pink-400",
+                            textGradient: "from-pink-400 to-rose-400",
+                            dotColor: "bg-pink-400"
+                        }}
+                    />
+
+                    <ServiceCard
+                        icon={Target}
+                        title="Digital Marketing"
+                        technologies={[
+                            'SEO (Search Engine Optimization)',
+                            'Google Ads Campaigns',
+                            'Meta Ads Management',
+                            'Lead Generation Strategy',
+                            'Performance Marketing',
+                            'Analytics & Reporting'
+                        ]}
+                        description="We deliver measurable marketing results focused on ROI and sustainable growth."
+                        colors={{
+                            borderGradient: "from-emerald-500/40 to-transparent",
+                            badgeBg: "bg-emerald-500/10",
+                            iconColor: "text-emerald-400",
+                            textGradient: "from-emerald-400 to-teal-400",
+                            dotColor: "bg-emerald-400"
+                        }}
+                    />
+                </div>
+
+                <div className="mt-16 text-center">
+                    <p className="text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-purple-400 italic">
+                        Complete Digital Solutions Under One Roof.
+                    </p>
                 </div>
             </div>
         </section>
