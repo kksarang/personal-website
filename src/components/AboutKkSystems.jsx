@@ -1,5 +1,5 @@
 import React from 'react';
-import { Smartphone, Globe, Layout, PenTool, Layers, MonitorSmartphone, CheckCircle2 } from 'lucide-react';
+import { Globe, Layout, PenTool, Layers, CheckCircle2 } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 
 const AboutKkSystems = () => {
@@ -75,8 +75,6 @@ const AboutKkSystems = () => {
                         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                             {[
                                 { title: "Mobile App Development", icon: Layers, desc: "Custom Android and iOS applications built using Flutter and React Native." },
-                                { title: "iOS App Development", icon: Smartphone, desc: "Premium iPhone & iPad applications designed with top performance." },
-                                { title: "Android App Development", icon: MonitorSmartphone, desc: "Scalable and powerful Android applications optimized for all devices." },
                                 { title: "Website Development", icon: Globe, desc: "Responsive, SEO-optimized, and high-performance websites." },
                                 { title: "UI/UX Design", icon: Layout, desc: "Elegant, user-centered interface designs that improve engagement." },
                                 { title: "Branding & Creative Design", icon: PenTool, desc: "Professional logo design, social media creatives, & brand identity." }
