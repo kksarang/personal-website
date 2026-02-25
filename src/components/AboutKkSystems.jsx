@@ -42,9 +42,6 @@ const AboutKkSystems = () => {
                             <p>
                                 We specialize in Mobile App Development, Website Construction, UI/UX Design, Logo & Brand Identity, and comprehensive Digital & Social Media Marketing strategies.
                             </p>
-                            <p className="border-l-4 border-indigo-500 pl-4 italic mt-6">
-                                Our mission is to transform ideas into scalable digital products with clean design and performance-focused SEO marketing. We don't just build applications — we build digital experiences that drive real business growth.
-                            </p>
                         </div>
 
                         {/* WHY CHOOSE US */}
