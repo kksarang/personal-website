@@ -72,7 +72,7 @@ const PortfolioSection = () => {
     const navigate = useNavigate();
 
     // Select a few premium projects to display on the landing page
-    const featuredProjects = projects.filter(p => p.featured || p.id <= 4).slice(0, 4);
+    const featuredProjects = projects.filter(p => p.featured || p.id <= 2).slice(0, 2);
 
     const handleProjectClick = (slug) => {
         // Multi-page routing directly via string path, avoiding hash collisions.

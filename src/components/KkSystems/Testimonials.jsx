@@ -9,7 +9,7 @@ const TestimonialCard = ({ quote, author, role, company }) => (
                 <Star key={star} className="w-5 h-5 fill-yellow-500 text-yellow-500" />
             ))}
         </div>
-        <p className="text-xl text-gray-300 mb-8 italic relative z-10 font-light leading-relaxed">
+        <p className="text-xl text-gray-200 mb-8 relative z-10 font-medium leading-relaxed tracking-wide">
             "{quote}"
         </p>
         <div className="flex items-center gap-4">
@@ -45,24 +45,23 @@ const Testimonials = () => {
                 </div>
 
                 <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                    {/* Placeholder content requested by user */}
                     <TestimonialCard
-                        quote="KKSYSTEMS delivered our complex mobile app on time with excellent quality. Their attention to detail and performance is unmatched."
-                        author="Sarah Jenkins"
+                        quote="KKSYSTEMS delivered our complex mobile app on time with excellent quality. Pwoli work by the entire tech team, highly recommended!"
+                        author="Sourav"
                         role="Product Manager"
-                        company="TechFlow Inc."
+                        company="Kochi Tech Solutions"
                     />
                     <TestimonialCard
-                        quote="The team completely revamped our e-commerce platform. It's faster, more secure, and extremely user-friendly. Highly recommended agency."
-                        author="David Chen"
-                        role="CEO"
-                        company="RetailNext"
+                        quote="The team completely revamped our e-commerce platform. It's faster, more secure, and extremely user-friendly. Adipoli experience working with them."
+                        author="Amal"
+                        role="Founder"
+                        company="KeralaKart"
                     />
                     <TestimonialCard
-                        quote="Working with KKSYSTEMS felt like having an in-house tech team. They communicated clearly and brought innovative solutions to the table."
-                        author="Emily Roberts"
-                        role="Founding Partner"
-                        company="InnovateLab"
+                        quote="Working with KKSYSTEMS felt like having an in-house tech team. They communicated clearly and brought innovative solutions to the table from day one."
+                        author="Razzal"
+                        role="Marketing Head"
+                        company="HOLY BRO Qatar"
                     />
                 </div>
             </div>
