@@ -74,7 +74,7 @@ const AboutKkSystems = () => {
                         <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-6 border-b border-gray-100 dark:border-slate-800 pb-4">Our Core Services</h3>
                         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                             {[
-                                { title: "Mobile App Development", icon: Layers, desc: "Custom Android and iOS applications built using Flutter and React Native." },
+                                { title: "Mobile App Development", icon: Layers, desc: "Custom Android and iOS applications built using native technologies, Flutter, and React Native." },
                                 { title: "Website Development", icon: Globe, desc: "Responsive, SEO-optimized, and high-performance websites." },
                                 { title: "UI/UX Design", icon: Layout, desc: "Elegant, user-centered interface designs that improve engagement." },
                                 { title: "Branding & Digital Marketing", icon: PenTool, desc: "Professional logo design, digital marketing, social media creatives, & brand identity." }
