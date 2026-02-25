@@ -28,9 +28,14 @@ const Contact = () => {
                                 <Mail className="w-6 h-6 text-indigo-200 mt-1" />
                                 <div>
                                     <p className="font-medium text-lg">Email</p>
-                                    <a href="mailto:kksarangrajan@gmail.com" className="text-indigo-100 hover:text-white transition-colors">
-                                        kksarangrajan@gmail.com
-                                    </a>
+                                    <div className="flex flex-col gap-2 mt-1">
+                                        <a href="mailto:kksarangrajan@gmail.com" className="text-indigo-100 hover:text-white transition-colors">
+                                            kksarangrajan@gmail.com
+                                        </a>
+                                        <a href="mailto:kksystemspvtltd@gmail.com" className="text-indigo-100 hover:text-white transition-colors">
+                                            kksystemspvtltd@gmail.com
+                                        </a>
+                                    </div>
                                 </div>
                             </div>
 
