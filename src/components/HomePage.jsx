@@ -4,6 +4,7 @@ import AboutKkSystems from './AboutKkSystems';
 import About from './About';
 import Skills from './Skills';
 import Experience from './Experience';
+import PhotoGallery from './PhotoGallery';
 import Contact from './Contact';
 
 const HomePage = () => {
@@ -14,6 +15,7 @@ const HomePage = () => {
             <Skills />
             <Experience />
             <AboutKkSystems />
+            <PhotoGallery />
             <Contact />
         </>
     );
