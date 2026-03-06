@@ -1,5 +1,6 @@
 import React from 'react';
 import { Star, Smartphone, ShieldCheck, Zap } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 const PlayStoreShowcase = ({ project }) => {
     if (!project.playStoreShowcase) return null;
@@ -51,6 +52,14 @@ const PlayStoreShowcase = ({ project }) => {
                             >
                                 Install App
                             </a>
+                            {project.slug?.includes('expenser') && (
+                                <Link
+                                    to="/expenser"
+                                    className="mt-4 w-full block text-center py-3 bg-indigo-600 hover:bg-indigo-700 text-white font-semibold rounded-xl transition-colors shadow-lg shadow-indigo-500/20"
+                                >
+                                    More About Expenser
+                                </Link>
+                            )}
                         </div>
                     </div>
 

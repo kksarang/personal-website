@@ -19,6 +19,7 @@ import KksystemsLearning from './pages/kksystems/Learning';
 import KksystemsLearningDetails from './pages/kksystems/LearningDetails';
 import KksystemsContact from './pages/kksystems/Contact';
 import ServiceDetail from './components/KkSystems/ServiceDetail';
+import ExpenserLanding from './pages/ExpenserLanding';
 
 function App() {
   return (
@@ -46,6 +47,9 @@ function App() {
             <Route path="learning/:id" element={<KksystemsLearningDetails />} />
             <Route path="contact" element={<KksystemsContact />} />
           </Route>
+
+          {/* Expenser Landing Page */}
+          <Route path="/expenser" element={<ExpenserLanding />} />
         </Routes>
       </ErrorBoundary>
     </Router>

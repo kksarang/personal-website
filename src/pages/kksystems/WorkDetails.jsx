@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
-import { useParams, useNavigate } from 'react-router-dom';
-import { ArrowLeft, ExternalLink, Activity, Server, Target, Zap, CheckCircle2, LayoutTemplate, Smartphone, Star, Users, MessageSquare, Cloud } from 'lucide-react';
+import { useParams, useNavigate, Link } from 'react-router-dom';
+import { ArrowLeft, ArrowRight, ExternalLink, Activity, Server, Target, Zap, CheckCircle2, LayoutTemplate, Smartphone, Star, Users, MessageSquare, Cloud } from 'lucide-react';
 import { projects } from '../../data/projects';
 
 export default function WorkDetails() {
@@ -107,6 +107,16 @@ export default function WorkDetails() {
                                         Privacy Policy
                                         <ExternalLink className="w-4 h-4 opacity-70" />
                                     </a>
+                                )}
+
+                                {project.slug === 'expenser-app' && (
+                                    <Link
+                                        to="/expenser"
+                                        className="inline-flex items-center gap-2 px-8 py-4 rounded-xl bg-white text-indigo-900 font-bold hover:bg-gray-100 transition-all shadow-xl hover:scale-[1.02]"
+                                    >
+                                        View Product Page
+                                        <ArrowRight className="w-5 h-5" />
+                                    </Link>
                                 )}
                             </div>
                         </div>

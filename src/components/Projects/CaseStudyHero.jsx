@@ -1,5 +1,5 @@
 import React from 'react';
-import { ArrowLeft, Play, Layout, ChevronRight } from 'lucide-react';
+import { ArrowLeft, Play, Layout, ChevronRight, ArrowRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 const CaseStudyHero = ({ project }) => {
@@ -73,6 +73,15 @@ const CaseStudyHero = ({ project }) => {
                             <Layout className="w-5 h-5 mr-3 text-white/70 group-hover:text-white transition-colors" />
                             Play Console
                         </button>
+                        {project.slug?.includes('expenser') && (
+                            <Link
+                                to="/expenser"
+                                className="group inline-flex items-center px-8 py-4 bg-indigo-600 text-white rounded-xl font-medium text-lg hover:bg-indigo-700 transition-all shadow-lg shadow-indigo-600/20"
+                            >
+                                <ArrowRight className="w-5 h-5 mr-3 group-hover:translate-x-1 transition-transform" />
+                                More About Expenser
+                            </Link>
+                        )}
                     </div>
 
                     {/* Scroll Indicator */}
