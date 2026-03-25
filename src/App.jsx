@@ -18,8 +18,24 @@ import KksystemsWorkDetails from './pages/kksystems/WorkDetails';
 import KksystemsLearning from './pages/kksystems/Learning';
 import KksystemsLearningDetails from './pages/kksystems/LearningDetails';
 import KksystemsContact from './pages/kksystems/Contact';
+import LifeAtHexenity from './pages/kksystems/LifeAtHexenity';
 import ServiceDetail from './components/KkSystems/ServiceDetail';
 import ExpenserLanding from './pages/ExpenserLanding';
+
+// Solution Pages
+import MobileSolutions from './pages/kksystems/solutions/MobileSolutions';
+import WebSolutions from './pages/kksystems/solutions/WebSolutions';
+import ERPSolutions from './pages/kksystems/solutions/ERPSolutions';
+
+// ERP Imports
+import ERPDashboard from './pages/kksystems/erp/Dashboard';
+import ERPEmployees from './pages/kksystems/erp/Employees';
+import ERPInventory from './pages/kksystems/erp/Inventory';
+import ERPAnalytics from './pages/kksystems/erp/Analytics';
+import ERPCustomers from './pages/kksystems/erp/Customers';
+import ERPClients from './pages/kksystems/erp/Clients';
+import ERPProjects from './pages/kksystems/erp/Projects';
+import ERPSites from './pages/kksystems/erp/Sites';
 
 function KksystemsLegacyRedirect() {
   const location = useLocation();
@@ -61,7 +77,23 @@ function App() {
             <Route path="work/:id" element={<KksystemsWorkDetails />} />
             <Route path="learning" element={<KksystemsLearning />} />
             <Route path="learning/:id" element={<KksystemsLearningDetails />} />
+            <Route path="life-at-hexenity" element={<LifeAtHexenity />} />
             <Route path="contact" element={<KksystemsContact />} />
+
+            {/* ERP Routes */}
+            <Route path="erp/dashboard" element={<ERPDashboard />} />
+            <Route path="erp/employees" element={<ERPEmployees />} />
+            <Route path="erp/inventory" element={<ERPInventory />} />
+            <Route path="erp/analytics" element={<ERPAnalytics />} />
+            <Route path="erp/customers" element={<ERPCustomers />} />
+            <Route path="erp/clients" element={<ERPClients />} />
+            <Route path="erp/projects" element={<ERPProjects />} />
+            <Route path="erp/sites" element={<ERPSites />} />
+
+            {/* Solution Detail Pages */}
+            <Route path="solutions/mobile" element={<MobileSolutions />} />
+            <Route path="solutions/web" element={<WebSolutions />} />
+            <Route path="solutions/erp" element={<ERPSolutions />} />
           </Route>
 
           {/* Legacy: redirect old /kksystems URLs */}

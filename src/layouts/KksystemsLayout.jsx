@@ -1,6 +1,8 @@
 import React, { useEffect } from 'react';
 import { Outlet, useLocation } from 'react-router-dom';
 import KksystemsNavbar from '../components/KkSystems/KksystemsNavbar';
+import StickyCTA from '../components/KkSystems/StickyCTA';
+import CursorGlow from '../components/CursorGlow';
 
 const ScrollToSection = () => {
     const { hash } = useLocation();
@@ -27,9 +29,11 @@ const KksystemsLayout = () => {
         <div className="flex flex-col min-h-screen bg-white dark:bg-[#0A0B14] text-gray-900 dark:text-white font-sans transition-colors duration-300">
             <KksystemsNavbar />
             <ScrollToSection />
+            <CursorGlow />
             <main className="flex-grow">
                 <Outlet />
             </main>
+            <StickyCTA />
 
             {/* Simple matching footer for the agency */}
             <footer className="bg-gray-50 dark:bg-[#0A0B14] py-8 border-t border-gray-200 dark:border-white/10 text-center transition-colors duration-300">

@@ -28,7 +28,7 @@ const KksystemsNavbar = () => {
         { title: 'Services', href: '/hexenity#services' },
         { title: 'Work', href: '/hexenity/work' },
         { title: 'Learning', href: '/hexenity/learning' },
-        { title: 'hexenity', href: '/hexenity/hexenity' },
+        { title: 'Life at Hexenity', href: '/hexenity/life-at-hexenity' },
         { title: 'Contact', href: '/hexenity/contact' },
     ];
 
@@ -56,8 +56,17 @@ const KksystemsNavbar = () => {
         }
     };
 
+    const linkIsActive = (href) =>
+        location.pathname === href || (location.pathname.startsWith(href) && href !== '/hexenity');
+
     return (
-        <nav className="fixed top-0 z-50 w-full bg-white/90 dark:bg-[#0A0B14]/90 backdrop-blur-md border-b border-gray-200 dark:border-white/5 transition-colors duration-300">
+        <nav
+            className={`fixed top-0 z-50 w-full border-b backdrop-blur-[12px] transition-colors duration-300 ${
+                isDark
+                    ? 'border-white/10 bg-[rgba(11,15,25,0.72)]'
+                    : 'border-gray-200/80 bg-white/85'
+            }`}
+        >
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="flex items-center justify-between h-20">
                     <div className="flex-shrink-0 flex items-center">
@@ -67,7 +76,7 @@ const KksystemsNavbar = () => {
                             className="flex items-center group cursor-pointer"
                             aria-label="Go to Hexenity home"
                         >
-                            <h1 className="font-extrabold text-2xl tracking-tighter text-gray-900 dark:text-white group-hover:text-indigo-600 dark:group-hover:text-purple-400 transition-colors duration-300">
+                            <h1 className="font-inter font-extrabold text-2xl tracking-tighter bg-gradient-to-r from-[#4F46E5] via-[#7c3aed] to-[#9333EA] bg-clip-text text-transparent group-hover:opacity-90 transition-opacity duration-300">
                                 hexenity
                             </h1>
                         </Link>
@@ -75,19 +84,23 @@ const KksystemsNavbar = () => {
 
                     <div className="flex items-center gap-6">
                         <div className="hidden md:flex items-baseline space-x-6">
-                            {navLinks.map((link) => (
-                                <a
-                                    key={link.title}
-                                    href={link.href}
-                                    onClick={(e) => handleNavClick(e, link.href)}
-                                    className={`px-3 py-2 rounded-md text-sm font-medium transition-colors cursor-pointer ${location.pathname === link.href || (location.pathname.startsWith(link.href) && link.href !== '/hexenity')
-                                        ? 'text-indigo-600 bg-indigo-50 dark:text-white dark:bg-white/10'
-                                        : 'text-gray-600 hover:text-indigo-600 dark:text-gray-300 dark:hover:text-white'
+                            {navLinks.map((link) => {
+                                const active = linkIsActive(link.href);
+                                return (
+                                    <a
+                                        key={link.title}
+                                        href={link.href}
+                                        onClick={(e) => handleNavClick(e, link.href)}
+                                        className={`hexenity-nav-link px-2 py-2 cursor-pointer font-inter ${
+                                            active
+                                                ? 'hexenity-nav-link-active text-indigo-700 dark:text-white'
+                                                : 'text-gray-600 hover:text-indigo-600 dark:text-gray-400 dark:hover:text-white'
                                         }`}
-                                >
-                                    {link.title}
-                                </a>
-                            ))}
+                                    >
+                                        {link.title}
+                                    </a>
+                                );
+                            })}
                         </div>
                         <button
                             onClick={() => setIsDark(!isDark)}
@@ -110,21 +123,29 @@ const KksystemsNavbar = () => {
 
             {/* Mobile menu */}
             {isOpen && (
-                <div className="md:hidden bg-white dark:bg-[#0F111A] border-b border-gray-200 dark:border-white/10 transition-colors duration-300">
+                <div
+                    className={`md:hidden border-b transition-colors duration-300 ${
+                        isDark ? 'border-white/10 bg-[rgba(11,15,25,0.95)]' : 'border-gray-200 bg-white/95'
+                    }`}
+                >
                     <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
-                        {navLinks.map((link) => (
-                            <a
-                                key={link.title}
-                                href={link.href}
-                                onClick={(e) => handleNavClick(e, link.href)}
-                                    className={`block px-3 py-2 rounded-md text-base font-medium ${location.pathname === link.href || (location.pathname.startsWith(link.href) && link.href !== '/hexenity')
-                                    ? 'text-indigo-600 bg-indigo-50 dark:text-white dark:bg-white/10'
-                                    : 'text-gray-600 hover:text-indigo-600 hover:bg-gray-50 dark:text-gray-300 dark:hover:text-white dark:hover:bg-white/5'
+                        {navLinks.map((link) => {
+                            const active = linkIsActive(link.href);
+                            return (
+                                <a
+                                    key={link.title}
+                                    href={link.href}
+                                    onClick={(e) => handleNavClick(e, link.href)}
+                                    className={`block px-3 py-2 rounded-xl text-base font-inter font-medium hexenity-nav-link ${
+                                        active
+                                            ? 'hexenity-nav-link-active text-indigo-700 dark:text-white'
+                                            : 'text-gray-600 hover:text-indigo-600 dark:text-gray-300 dark:hover:text-white'
                                     }`}
-                            >
-                                {link.title}
-                            </a>
-                        ))}
+                                >
+                                    {link.title}
+                                </a>
+                            );
+                        })}
                     </div>
                 </div>
             )}

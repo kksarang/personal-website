@@ -2,15 +2,56 @@
 @tailwind components;
 @tailwind utilities;
 
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Outfit:wght@500;600;700;800;900&display=swap');
+
 html {
   scroll-behavior: smooth;
+  font-family: 'Inter', sans-serif;
 }
 
 @layer base {
   html {
     scroll-behavior: smooth;
+    font-family: 'Inter', sans-serif;
   }
   body {
-    @apply bg-white text-gray-900 dark:bg-slate-900 dark:text-white transition-colors duration-300;
+    @apply bg-white text-gray-900 dark:bg-[#0B0F19] dark:text-white transition-colors duration-300;
+    font-family: 'Inter', sans-serif;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Outfit', sans-serif;
+    @apply tracking-tight;
+  }
+}
+
+@layer components {
+  .hexenity-nav-link {
+    @apply relative inline-block pb-0.5 text-sm font-medium transition-colors duration-300;
+  }
+  .hexenity-nav-link::after {
+    content: '';
+    @apply absolute bottom-0 left-0 h-0.5 w-0 rounded-full transition-all duration-300 ease-out;
+    background: linear-gradient(90deg, #4f46e5, #9333ea);
+  }
+  .hexenity-nav-link:hover::after,
+  .hexenity-nav-link-active::after {
+    @apply w-full;
+  }
+
+  .hexenity-glass {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 16px;
+  }
+
+  .hexenity-glass-hover {
+    @apply transition-all duration-300 ease-out;
+  }
+  .hexenity-glass-hover:hover {
+    transform: translateY(-5px);
+    border-color: rgba(79, 70, 229, 0.35);
+    box-shadow: 0 12px 40px rgba(79, 70, 229, 0.12);
   }
 }
