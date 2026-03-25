@@ -13,7 +13,7 @@ const AboutCompany = () => {
                 {/* Top Section Header */}
                 <div className="text-center md:text-left mb-16 animate-fade-in-up">
                     <div className="inline-block px-4 py-2 rounded-full bg-indigo-500/10 border border-indigo-500/20 text-indigo-400 font-semibold mb-6 tracking-wide uppercase text-sm">
-                        About KKSYSTEMS
+                        About hexenity
                     </div>
                     <h2 className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-white tracking-tight">
                         Engineering Digital Excellence
@@ -25,7 +25,7 @@ const AboutCompany = () => {
                     {/* Left side text intro */}
                     <div className="space-y-8 animate-fade-in-up animation-delay-100">
                         <p className="text-xl text-gray-300 leading-relaxed font-light">
-                            KKSYSTEMS is a software engineering and digital solutions company specializing in scalable mobile and web applications.
+                        hexenity is a software engineering and digital solutions company specializing in scalable mobile and web applications.
                         </p>
                         <p className="text-xl text-gray-300 leading-relaxed font-light">
                             We design and develop high-performance systems tailored to business growth, focusing on clean architecture, modern technologies, and long-term maintainability.

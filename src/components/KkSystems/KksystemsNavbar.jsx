@@ -5,8 +5,8 @@ import { Link, useLocation, useNavigate } from 'react-router-dom';
 const KksystemsNavbar = () => {
     const [isOpen, setIsOpen] = useState(false);
     const [isDark, setIsDark] = useState(() => {
-        if (localStorage.getItem('kksystems-theme')) {
-            return localStorage.getItem('kksystems-theme') === 'dark';
+        if (localStorage.getItem('hexenity-theme')) {
+            return localStorage.getItem('hexenity-theme') === 'dark';
         }
         return window.matchMedia('(prefers-color-scheme: dark)').matches;
     });
@@ -16,19 +16,20 @@ const KksystemsNavbar = () => {
     useEffect(() => {
         if (isDark) {
             document.documentElement.classList.add('dark');
-            localStorage.setItem('kksystems-theme', 'dark');
+            localStorage.setItem('hexenity-theme', 'dark');
         } else {
             document.documentElement.classList.remove('dark');
-            localStorage.setItem('kksystems-theme', 'light');
+            localStorage.setItem('hexenity-theme', 'light');
         }
     }, [isDark]);
 
     const navLinks = [
-        { title: 'Home', href: '/kksystems' },
-        { title: 'Services', href: '/kksystems#services' },
-        { title: 'Work', href: '/kksystems/work' },
-        { title: 'Learning', href: '/kksystems/learning' },
-        { title: 'Contact', href: '/kksystems/contact' },
+        { title: 'Home', href: '/hexenity' },
+        { title: 'Services', href: '/hexenity#services' },
+        { title: 'Work', href: '/hexenity/work' },
+        { title: 'Learning', href: '/hexenity/learning' },
+        { title: 'hexenity', href: '/hexenity/hexenity' },
+        { title: 'Contact', href: '/hexenity/contact' },
     ];
 
     const handleNavClick = (e, href) => {
@@ -37,8 +38,8 @@ const KksystemsNavbar = () => {
 
         if (href.includes('#')) {
             // It's a hash link for the home page sections
-            if (location.pathname !== '/kksystems') {
-                navigate('/kksystems');
+            if (location.pathname !== '/hexenity') {
+                navigate('/hexenity');
                 setTimeout(() => {
                     const hash = href.split('#')[1];
                     const element = document.getElementById(hash);
@@ -60,9 +61,14 @@ const KksystemsNavbar = () => {
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="flex items-center justify-between h-20">
                     <div className="flex-shrink-0 flex items-center">
-                        <Link to="/" className="flex items-center group">
+                        <Link
+                            to="/hexenity"
+                            onClick={() => window.scrollTo(0, 0)}
+                            className="flex items-center group cursor-pointer"
+                            aria-label="Go to Hexenity home"
+                        >
                             <h1 className="font-extrabold text-2xl tracking-tighter text-gray-900 dark:text-white group-hover:text-indigo-600 dark:group-hover:text-purple-400 transition-colors duration-300">
-                                kksystems
+                                hexenity
                             </h1>
                         </Link>
                     </div>
@@ -74,7 +80,7 @@ const KksystemsNavbar = () => {
                                     key={link.title}
                                     href={link.href}
                                     onClick={(e) => handleNavClick(e, link.href)}
-                                    className={`px-3 py-2 rounded-md text-sm font-medium transition-colors cursor-pointer ${location.pathname === link.href || (location.pathname.startsWith(link.href) && link.href !== '/kksystems')
+                                    className={`px-3 py-2 rounded-md text-sm font-medium transition-colors cursor-pointer ${location.pathname === link.href || (location.pathname.startsWith(link.href) && link.href !== '/hexenity')
                                         ? 'text-indigo-600 bg-indigo-50 dark:text-white dark:bg-white/10'
                                         : 'text-gray-600 hover:text-indigo-600 dark:text-gray-300 dark:hover:text-white'
                                         }`}
@@ -111,7 +117,7 @@ const KksystemsNavbar = () => {
                                 key={link.title}
                                 href={link.href}
                                 onClick={(e) => handleNavClick(e, link.href)}
-                                className={`block px-3 py-2 rounded-md text-base font-medium ${location.pathname === link.href || (location.pathname.startsWith(link.href) && link.href !== '/kksystems')
+                                    className={`block px-3 py-2 rounded-md text-base font-medium ${location.pathname === link.href || (location.pathname.startsWith(link.href) && link.href !== '/hexenity')
                                     ? 'text-indigo-600 bg-indigo-50 dark:text-white dark:bg-white/10'
                                     : 'text-gray-600 hover:text-indigo-600 hover:bg-gray-50 dark:text-gray-300 dark:hover:text-white dark:hover:bg-white/5'
                                     }`}

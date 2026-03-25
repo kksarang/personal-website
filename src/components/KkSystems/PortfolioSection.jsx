@@ -77,7 +77,7 @@ const PortfolioSection = () => {
     const handleProjectClick = (slug) => {
         // Multi-page routing directly via string path, avoiding hash collisions.
         if (slug === '#') return;
-        navigate(`/kksystems/work/${slug}`);
+        navigate(`/hexenity/work/${slug}`);
     };
 
     return (
@@ -109,7 +109,7 @@ const PortfolioSection = () => {
 
                 <div className="mt-16 text-center">
                     <button
-                        onClick={() => navigate('/kksystems/work')}
+                        onClick={() => navigate('/hexenity/work')}
                         className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full bg-white/5 backdrop-blur-md border border-white/10 text-white font-semibold text-lg transition-all hover:bg-white/10 hover:border-white/20"
                     >
                         View All Work

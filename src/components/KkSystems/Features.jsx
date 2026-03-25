@@ -52,7 +52,7 @@ const Features = () => {
                                 Advantages
                             </div>
                             <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
-                                Why Choose kksystems
+                                Why Choose hexenity
                             </h2>
                             <p className="text-lg text-gray-400 mb-8">
                                 We don't just write code; we engineer comprehensive digital solutions tailored to elevate your business.

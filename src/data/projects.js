@@ -94,7 +94,7 @@ export const projects = [
         storePerformance: null,
         userFeedback: [
             "The website perfectly captures our corporate identity. The service breakdown is incredibly clean and professional.",
-            "KKSYSTEMS delivered exactly what we needed: a high-speed, modern platform that represents our brand at its best.",
+            "hexenity delivered exactly what we needed: a high-speed, modern platform that represents our brand at its best.",
             "Working with their tech team was seamless. They communicated clearly and brought innovative design solutions to the table."
         ],
         technicalArchitecture: [

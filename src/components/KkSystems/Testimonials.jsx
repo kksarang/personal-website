@@ -58,7 +58,7 @@ const Testimonials = () => {
                         company="KeralaKart"
                     />
                     <TestimonialCard
-                        quote="Working with KKSYSTEMS felt like having an in-house tech team. They communicated clearly and brought innovative solutions to the table from day one."
+                        quote="Working with hexenity felt like having an in-house tech team. They communicated clearly and brought innovative solutions to the table from day one."
                         author="Razzal"
                         role="Marketing Head"
                         company="HOLY BRO Qatar"

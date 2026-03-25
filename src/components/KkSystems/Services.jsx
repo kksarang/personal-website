@@ -58,7 +58,7 @@ const Services = () => {
                     <ServiceCard
                         icon={Smartphone}
                         title="Mobile App Development"
-                        link="/kksystems/services/mobile-app-development"
+                        link="/hexenity/services/mobile-app-development"
                         technologies={[
                             'Flutter Applications',
                             'Native Android (Kotlin)',
@@ -80,7 +80,7 @@ const Services = () => {
                     <ServiceCard
                         icon={Monitor}
                         title="Website Development"
-                        link="/kksystems/services/website-development"
+                        link="/hexenity/services/website-development"
                         technologies={[
                             'Business Websites',
                             'E-Commerce Solutions',
@@ -102,7 +102,7 @@ const Services = () => {
                     <ServiceCard
                         icon={PaintBucket}
                         title="UI/UX & Design"
-                        link="/kksystems/services/ui-ux-design"
+                        link="/hexenity/services/ui-ux-design"
                         technologies={[
                             'UI/UX Strategy',
                             'Wireframing & Prototyping',
@@ -127,7 +127,7 @@ const Services = () => {
                     <ServiceCard
                         icon={Share2}
                         title="Social Media Marketing"
-                        link="/kksystems/services/social-media-marketing"
+                        link="/hexenity/services/social-media-marketing"
                         technologies={[
                             'Instagram & Facebook Marketing',
                             'Content Planning & Strategy',
@@ -148,7 +148,7 @@ const Services = () => {
                     <ServiceCard
                         icon={Target}
                         title="Digital Marketing"
-                        link="/kksystems/services/digital-marketing"
+                        link="/hexenity/services/digital-marketing"
                         technologies={[
                             'SEO (Search Engine Optimization)',
                             'Google Ads Campaigns',

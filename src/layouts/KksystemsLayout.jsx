@@ -34,7 +34,7 @@ const KksystemsLayout = () => {
             {/* Simple matching footer for the agency */}
             <footer className="bg-gray-50 dark:bg-[#0A0B14] py-8 border-t border-gray-200 dark:border-white/10 text-center transition-colors duration-300">
                 <p className="text-gray-500 dark:text-gray-400 text-sm">
-                    &copy; {new Date().getFullYear()} KKSYSTEMS. All rights reserved.
+                    &copy; {new Date().getFullYear()} hexenity - Digital & Software Solutions Company. All rights reserved.
                 </p>
             </footer>
         </div>

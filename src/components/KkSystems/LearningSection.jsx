@@ -16,7 +16,7 @@ const LearningSection = () => {
     const navigate = useNavigate();
 
     const handleBadgeClick = (slug) => {
-        navigate(`/kksystems/learning/${slug}`);
+        navigate(`/hexenity/learning/${slug}`);
     };
 
     return (
@@ -35,7 +35,7 @@ const LearningSection = () => {
                             Constantly Evolving with Next-Gen Tech
                         </h2>
                         <p className="text-lg text-gray-400 mb-8 leading-relaxed">
-                            At KKSYSTEMS, we don't just use technology; we master it. Our team is continuously exploring emerging paradigms to deliver future-proof solutions. We stay ahead of the curve so your business can do the same.
+                            At hexenity, we don't just use technology; we master it. Our team is continuously exploring emerging paradigms to deliver future-proof solutions. We stay ahead of the curve so your business can do the same.
                         </p>
 
                         <div className="flex flex-wrap gap-4 mb-8 relative z-20">
@@ -48,7 +48,7 @@ const LearningSection = () => {
                         </div>
 
                         <button
-                            onClick={() => navigate('/kksystems/learning')}
+                            onClick={() => navigate('/hexenity/learning')}
                             className="inline-flex items-center text-indigo-400 font-semibold hover:text-indigo-300 transition-colors z-20 relative"
                         >
                             Explore our Learning Hub <span className="ml-2">→</span>

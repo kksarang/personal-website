@@ -29,7 +29,7 @@ const Navbar = () => {
         { title: 'About', href: '/#about', type: 'hash' },
         { title: 'Skills', href: '/#skills', type: 'hash' },
         { title: 'Experience', href: '/#experience', type: 'hash' },
-        { title: 'kksystems', href: '/kksystems', type: 'page' },
+        { title: 'hexenity', href: '/hexenity', type: 'page' },
         { title: 'Contact', href: '/#contact', type: 'hash' },
     ];
 
@@ -75,7 +75,18 @@ const Navbar = () => {
                                         : 'text-gray-600 dark:text-gray-300 hover:text-indigo-600 dark:hover:text-indigo-400'
                                         }`}
                                 >
-                                    {link.title}
+                                    {link.logoSrc ? (
+                                        <>
+                                            <img
+                                                src={link.logoSrc}
+                                                alt={link.title}
+                                                className="h-6 w-auto"
+                                            />
+                                            <span className="sr-only">{link.title}</span>
+                                        </>
+                                    ) : (
+                                        link.title
+                                    )}
                                 </a>
                             ))}
                             <button
@@ -116,7 +127,18 @@ const Navbar = () => {
                                 onClick={(e) => handleNavClick(e, link)}
                                 className="block px-3 py-2 rounded-md text-base font-medium text-gray-600 dark:text-gray-300 hover:text-indigo-600 dark:hover:text-indigo-400 hover:bg-gray-50 dark:hover:bg-slate-800"
                             >
-                                {link.title}
+                                {link.logoSrc ? (
+                                    <>
+                                        <img
+                                            src={link.logoSrc}
+                                            alt={link.title}
+                                            className="h-6 w-auto"
+                                        />
+                                        <span className="sr-only">{link.title}</span>
+                                    </>
+                                ) : (
+                                    link.title
+                                )}
                             </a>
                         ))}
                     </div>

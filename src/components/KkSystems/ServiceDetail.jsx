@@ -22,7 +22,7 @@ const ServiceDetail = () => {
             <div className="min-h-screen bg-[#0A0B14] flex flex-col items-center justify-center text-white">
                 <h1 className="text-4xl font-bold mb-4">Service Not Found</h1>
                 <button
-                    onClick={() => navigate('/kksystems')}
+                    onClick={() => navigate('/hexenity')}
                     className="px-6 py-2 bg-indigo-600 rounded-lg hover:bg-indigo-700 transition"
                 >
                     Back to IT Services
@@ -42,7 +42,7 @@ const ServiceDetail = () => {
                     <div className="absolute bottom-0 left-0 w-[600px] h-[600px] bg-blue-600/10 rounded-full blur-[120px] pointer-events-none" />
 
                     <button
-                        onClick={() => navigate('/kksystems')}
+                        onClick={() => navigate('/hexenity')}
                         className="flex items-center text-gray-400 hover:text-white transition-colors mb-8 group"
                     >
                         <ArrowLeft className="w-5 h-5 mr-2 group-hover:-translate-x-1 transition-transform" />
@@ -210,10 +210,10 @@ const ServiceDetail = () => {
                             </p>
                             <div className="flex flex-col sm:flex-row justify-center gap-4">
                                 <button
-                                    onClick={() => navigate('/kksystems/contact')}
+                                    onClick={() => navigate('/hexenity/contact')}
                                     className="px-8 py-4 rounded-xl bg-white text-indigo-900 font-bold hover:bg-gray-100 transition-colors shadow-xl"
                                 >
-                                    Contact kk systems
+                                    Contact hexenity
                                 </button>
                             </div>
                         </div>

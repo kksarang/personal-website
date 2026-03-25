@@ -21,7 +21,7 @@ export default function Learning() {
     const navigate = useNavigate();
 
     const handleBadgeClick = (slug) => {
-        navigate(`/kksystems/learning/${slug}`);
+        navigate(`/hexenity/learning/${slug}`);
     };
 
     return (

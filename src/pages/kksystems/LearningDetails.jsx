@@ -17,7 +17,7 @@ export default function LearningDetails() {
         return (
             <div className="pt-32 pb-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto min-h-screen text-center flex flex-col items-center justify-center">
                 <h1 className="text-4xl font-bold text-white mb-6">Topic Not Found</h1>
-                <button onClick={() => navigate('/kksystems/learning')} className="text-indigo-400 hover:text-indigo-300 flex items-center gap-2 transition-colors">
+                <button onClick={() => navigate('/hexenity/learning')} className="text-indigo-400 hover:text-indigo-300 flex items-center gap-2 transition-colors">
                     <ArrowLeft className="w-5 h-5" /> Return to Innovation Hub
                 </button>
             </div>
@@ -30,7 +30,7 @@ export default function LearningDetails() {
             {/* 1. HERO SECTION - Tech Documentation Style */}
             <div className="pt-32 pb-16 px-4 sm:px-6 lg:px-8 max-w-5xl mx-auto border-b border-white/5">
                 <button
-                    onClick={() => navigate('/kksystems/learning')}
+                    onClick={() => navigate('/hexenity/learning')}
                     className="flex items-center text-gray-400 hover:text-white mb-10 transition-colors group text-sm font-semibold tracking-wide uppercase"
                 >
                     <ArrowLeft className="w-4 h-4 mr-2 transform group-hover:-translate-x-1 transition-transform" />

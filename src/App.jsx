@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, Navigate, useLocation } from 'react-router-dom';
 import PortfolioLayout from './layouts/PortfolioLayout';
 import KksystemsLayout from './layouts/KksystemsLayout';
 import HomePage from './components/HomePage';
@@ -21,6 +21,22 @@ import KksystemsContact from './pages/kksystems/Contact';
 import ServiceDetail from './components/KkSystems/ServiceDetail';
 import ExpenserLanding from './pages/ExpenserLanding';
 
+function KksystemsLegacyRedirect() {
+  const location = useLocation();
+  const newPathname = location.pathname.replace(/^\/kksystems/, '/hexenity');
+
+  return (
+    <Navigate
+      to={{
+        pathname: newPathname,
+        search: location.search,
+        hash: location.hash,
+      }}
+      replace
+    />
+  );
+}
+
 function App() {
   return (
     <Router>
@@ -38,7 +54,7 @@ function App() {
           </Route>
 
           {/* New Company Website Layout Wrap */}
-          <Route path="/kksystems" element={<KksystemsLayout />}>
+          <Route path="/hexenity" element={<KksystemsLayout />}>
             <Route index element={<KksystemsHome />} />
             <Route path="services/:slug" element={<ServiceDetail />} />
             <Route path="work" element={<KksystemsWork />} />
@@ -47,6 +63,9 @@ function App() {
             <Route path="learning/:id" element={<KksystemsLearningDetails />} />
             <Route path="contact" element={<KksystemsContact />} />
           </Route>
+
+          {/* Legacy: redirect old /kksystems URLs */}
+          <Route path="/kksystems/*" element={<KksystemsLegacyRedirect />} />
 
           {/* Expenser Landing Page */}
           <Route path="/expenser" element={<ExpenserLanding />} />

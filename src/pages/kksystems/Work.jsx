@@ -23,7 +23,7 @@ export default function Work() {
 
     const handleProjectClick = (slug) => {
         if (slug === '#') return;
-        navigate(`/kksystems/work/${slug}`);
+        navigate(`/hexenity/work/${slug}`);
     };
 
     return (

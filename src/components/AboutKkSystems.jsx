@@ -6,13 +6,13 @@ const AboutKkSystems = () => {
     const navigate = useNavigate();
 
     return (
-        <section id="about-kksystems" className="py-20 bg-white dark:bg-slate-900 border-b border-gray-100 dark:border-slate-800">
+        <section id="about-hexenity" className="py-20 bg-white dark:bg-slate-900 border-b border-gray-100 dark:border-slate-800">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
                 {/* 1. SECTION HEADER (Matching About.jsx format) */}
                 <div className="text-center mb-16">
                     <h2 className="text-base text-indigo-600 dark:text-indigo-400 font-semibold tracking-wide uppercase">
-                        kk systems – Digital & Software Solutions
+                    hexenity – Digital & Software Solutions Company
                     </h2>
                     <p className="mt-2 text-3xl leading-8 font-extrabold tracking-tight text-gray-900 dark:text-white sm:text-4xl">
                         Building Powerful Digital Experiences
@@ -29,7 +29,7 @@ const AboutKkSystems = () => {
 
                         <div className="prose prose-lg dark:prose-invert text-gray-600 dark:text-gray-300">
                             <p>
-                                <strong>kk systems</strong> is a modern software development & digital agency founded by Sarang, focused on delivering high-quality digital solutions for startups, businesses, and entrepreneurs.
+                                <strong>hexenity</strong> is a modern software development & digital agency, focused on delivering high-quality digital solutions for startups, businesses, and entrepreneurs.
                             </p>
                             <p>
                                 We specialize in Mobile App Development, Website Construction, UI/UX Design, Logo & Brand Identity, and comprehensive Digital & Social Media Marketing strategies.
@@ -65,10 +65,10 @@ const AboutKkSystems = () => {
                                     Let’s build something exceptional together.
                                 </p>
                                 <button
-                                    onClick={() => navigate('/kksystems')}
+                                    onClick={() => navigate('/hexenity')}
                                     className="inline-flex items-center px-8 py-3 rounded-2xl bg-gradient-to-r from-blue-600 to-indigo-600 text-white font-medium hover:scale-105 transition duration-300 shadow-lg"
                                 >
-                                    Explore kksystems &rarr;
+                                    Explore Hexenity  &rarr;
                                 </button>
                             </div>
                         </div>

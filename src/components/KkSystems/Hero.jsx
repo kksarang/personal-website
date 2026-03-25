@@ -39,14 +39,14 @@ const Hero = () => {
 
                         <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start animate-fade-in-up animation-delay-300">
                             <button
-                                onClick={() => navigate('/kksystems/contact')}
+                                onClick={() => navigate('/hexenity/contact')}
                                 className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full bg-indigo-600 text-white font-semibold text-lg transition-all hover:bg-indigo-500 hover:scale-[1.02] shadow-[0_0_20px_rgba(79,70,229,0.3)]"
                             >
                                 Get Free Consultation
                                 <ArrowRight className="w-5 h-5" />
                             </button>
                             <button
-                                onClick={() => navigate('/kksystems/work')}
+                                onClick={() => navigate('/hexenity/work')}
                                 className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full bg-transparent border border-gray-300 dark:border-white/20 text-gray-700 dark:text-white font-semibold text-lg transition-all hover:bg-gray-50 dark:hover:bg-white/5"
                             >
                                 View Projects

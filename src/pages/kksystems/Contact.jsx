@@ -121,7 +121,7 @@ export default function Contact() {
 
                         {/* Minimal About Block */}
                         <div className="bg-[#131521] border border-white/5 rounded-3xl p-6 sm:p-8 shadow-lg relative overflow-hidden">
-                            <h3 className="text-xl font-bold text-white mb-4">About kksystems</h3>
+                            <h3 className="text-xl font-bold text-white mb-4">About hexenity</h3>
                             <p className="text-gray-400 leading-relaxed text-sm">
                                 We are a specialized architecture firm dedicated to engineering high-performance mobile applications and scalable backend systems. We believe in writing clean, maintainable code rather than relying on bloated templates, delivering authentic digital products that drive true enterprise value.
                             </p>
@@ -131,12 +131,12 @@ export default function Contact() {
                         <div className="rounded-3xl overflow-hidden border border-white/5 shadow-2xl relative group flex-1 min-h-[250px]">
                             <img
                                 src="/assets/images/gallery/10.jpg"
-                                alt="kksystems Official"
+                                alt="hexenity Official"
                                 className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                             />
                             <div className="absolute inset-0 bg-gradient-to-t from-[#0A0B14] via-[#0A0B14]/40 to-transparent"></div>
                             <div className="absolute bottom-8 left-8 right-8 z-10">
-                                <h3 className="text-3xl font-extrabold text-white tracking-tight mb-2">kksystems</h3>
+                                <h3 className="text-3xl font-extrabold text-white tracking-tight mb-2">hexenity</h3>
                             </div>
                         </div>
 
@@ -248,12 +248,21 @@ export default function Contact() {
                                     </div>
                                 </div>
                                 <div className="w-full h-[1px] bg-white/5" />
+                                <div className="flex items-start gap-4">
+                                    <Mail className="w-6 h-6 text-indigo-400 mt-1 flex-shrink-0" />
+                                    <div className="min-w-0">
+                                        <h4 className="text-white font-bold text-lg">Email</h4>
+                                        <a href="mailto:info.hexenity@gmil.com" className="text-gray-400 mt-1 hover:text-indigo-400 transition-colors block truncate">info.hexenity@gmil.com</a>
+                                    </div>
+                                </div>
+                                <div className="w-full h-[1px] bg-white/5" />
                                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                                     <div className="flex items-start gap-4">
                                         <Instagram className="w-6 h-6 text-pink-500 mt-1 flex-shrink-0" />
                                         <div className="min-w-0">
                                             <h4 className="text-white font-bold text-lg">Instagram</h4>
-                                            <a href="https://www.instagram.com/kksystems_offical/" target="_blank" rel="noreferrer" className="text-gray-400 mt-1 hover:text-pink-400 transition-colors block truncate">@kksystems_offical</a>
+                                            <a href="https://www.instagram.com/hexenity/" target="_blank" rel="noreferrer" className="text-gray-400 mt-1 hover:text-pink-400 transition-colors block truncate">@hexenity
+                                            </a>
                                         </div>
                                     </div>
                                     <div className="flex items-start gap-4">
