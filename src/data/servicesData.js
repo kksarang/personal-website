@@ -202,5 +202,48 @@ export const servicesData = {
             { q: "What is your core approach to paid advertising?", a: "We utilize highly targeted, hyper-specific data-driven campaigns focused exclusively on maximizing your Return on Ad Spend (ROAS) rather than just generating vanity clicks." },
             { q: "Do you handle all campaign adjustments and daily optimizations?", a: "Yes, we continuously monitor multi-channel performance, running mathematical A/B tests on ad creatives and adjusting targeting parameters daily to ensure absolute peak efficiency." }
         ]
+    },
+    "erp-development": {
+        title: "ERP Development",
+        overview: "We build custom Enterprise Resource Planning (ERP) systems designed to automate your business operations and maximize efficiency.",
+        techStack: ["React.js", "Node.js", "PostgreSQL", "AWS", "Docker", "Python"],
+        typesTitle: "ERP Modules We Specialize In",
+        types: [
+            "Inventory & Supply Chain Management",
+            "Human Resource Management (HRM)",
+            "Customer Relationship Management (CRM)",
+            "Financial & Accounting Systems",
+            "Project & Task Management",
+            "Production & Manufacturing Control",
+            "Custom Business Intelligence Dashboards"
+        ],
+        processTitle: "Our ERP Development Process",
+        process: [
+            { step: "Discovery & Business Audit", desc: "We perform a deep-dive audit of your current analog or legacy digital workflows to identify automation bottlenecks." },
+            { step: "Architecture Design", desc: "Drafting a secure, multi-tenant database schema and scalable system architecture tailored to your specific logic." },
+            { step: "Module Development", desc: "Building core modules iteratively with a focus on data integrity, high-load performance, and user permission layers." },
+            { step: "Integration & API Setup", desc: "Seamlessly connecting the ERP with your existing tools, payment gateways, and third-party logistics providers." },
+            { step: "Security hardening & QA", desc: "Rigorous penetration testing and data validation to ensure enterprise-grade security for your corporate data." },
+            { step: "Training & Deployment", desc: "We manage the rollout across your organization and provide hands-on training for your staff and admins." }
+        ],
+        timeline: [
+            "MVP ERP Core – 6 to 8 Weeks",
+            "Standard Enterprise Suite – 10 to 14 Weeks",
+            "Advanced Multi-Vertical System – 16+ Weeks"
+        ],
+        timelineNote: "(ERP timelines depend heavily on the number of custom modules required.)",
+        whatYouGet: [
+            "Custom Modular Architecture",
+            "Role-Based Access Control (RBAC)",
+            "Real-Time Data Analytics",
+            "Automated reporting Engines",
+            "Full System Documentation",
+            "Admin & Staff Training"
+        ],
+        faqs: [
+            { q: "Can the ERP be integrated with our existing software?", a: "Yes, we build our ERPs with a robust API-first approach, allowing seamless integration with your existing CRMs, accounting software, and external services." },
+            { q: "Is the data secure within the custom ERP?", a: "Security is our highest priority for enterprise systems. We implement multi-layered encryption, secure authentication, and regular security audits to protect your business data." },
+            { q: "Do you offer post-deployment maintenance?", a: "Absolutely. We provide dedicated support packages for system scaling, security updates, and new module additions as your business grows." }
+        ]
     }
 };

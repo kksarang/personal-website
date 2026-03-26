@@ -18,7 +18,10 @@ import KksystemsWorkDetails from './pages/kksystems/WorkDetails';
 import KksystemsLearning from './pages/kksystems/Learning';
 import KksystemsLearningDetails from './pages/kksystems/LearningDetails';
 import KksystemsContact from './pages/kksystems/Contact';
-import LifeAtHexenity from './pages/kksystems/LifeAtHexenity';
+import KksystemsAbout from './pages/kksystems/About';
+import CoreHexenity from './pages/kksystems/CoreHexenity';
+import HexenityAI from './pages/kksystems/HexenityAI';
+import HexenitySaaS from './pages/kksystems/HexenitySaaS';
 import ServiceDetail from './components/KkSystems/ServiceDetail';
 import ExpenserLanding from './pages/ExpenserLanding';
 
@@ -26,6 +29,7 @@ import ExpenserLanding from './pages/ExpenserLanding';
 import MobileSolutions from './pages/kksystems/solutions/MobileSolutions';
 import WebSolutions from './pages/kksystems/solutions/WebSolutions';
 import ERPSolutions from './pages/kksystems/solutions/ERPSolutions';
+import MobileAppDevDetail from './pages/kksystems/MobileAppDevDetail';
 
 // ERP Imports
 import ERPDashboard from './pages/kksystems/erp/Dashboard';
@@ -77,8 +81,11 @@ function App() {
             <Route path="work/:id" element={<KksystemsWorkDetails />} />
             <Route path="learning" element={<KksystemsLearning />} />
             <Route path="learning/:id" element={<KksystemsLearningDetails />} />
-            <Route path="life-at-hexenity" element={<LifeAtHexenity />} />
+            <Route path="core-hexenity" element={<CoreHexenity />} />
+            <Route path="ai" element={<HexenityAI />} />
+            <Route path="saas" element={<HexenitySaaS />} />
             <Route path="contact" element={<KksystemsContact />} />
+            <Route path="about" element={<KksystemsAbout />} />
 
             {/* ERP Routes */}
             <Route path="erp/dashboard" element={<ERPDashboard />} />
@@ -92,6 +99,7 @@ function App() {
 
             {/* Solution Detail Pages */}
             <Route path="solutions/mobile" element={<MobileSolutions />} />
+            <Route path="solutions/mobile-detail" element={<MobileAppDevDetail />} />
             <Route path="solutions/web" element={<WebSolutions />} />
             <Route path="solutions/erp" element={<ERPSolutions />} />
           </Route>

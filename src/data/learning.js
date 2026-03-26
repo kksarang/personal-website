@@ -220,7 +220,13 @@ struct WeatherView: View {
       }
     ],
     visualImage: "https://images.unsplash.com/photo-1618761714954-0b8cd0026356?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80",
-    useCase: "Built a cross-platform fintech application serving 50,000+ active users. By implementing a highly optimized local caching layer and isolated Isolate parsing for large JSON payloads, we reduced app launch times from 4.2 seconds down to 1.1 seconds while enabling full offline transaction processing."
+    useCase: "Built a cross-platform fintech application serving 50,000+ active users. By implementing a highly optimized local caching layer and isolated Isolate parsing for large JSON payloads, we reduced app launch times from 4.2 seconds down to 1.1 seconds while enabling full offline transaction processing.",
+    learningPath: [
+      { step: 1, title: "Dart & Flutter Basics", description: "Master the language and widget-based UI architecture." },
+      { step: 2, title: "Advanced State", description: "Deep dive into Riverpod, BLoC, and reactive patterns." },
+      { step: 3, title: "Backend Bridge", description: "Integrating Firebase, REST APIs, and local NoSQL sync." },
+      { step: 4, title: "Native & Production", description: "Optimizing for 120fps and App Store deployment." }
+    ]
   },
   {
     slug: "frontend-architecture",
@@ -316,7 +322,13 @@ export default function Page({ params }: { params: { id: string } }) {
       }
     ],
     visualImage: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80",
-    useCase: "Redesigned a legacy B2B logistics dashboard displaying over 10,000 concurrent data points. By migrating from a massive monolithic React state tree into atomic Zustand stores and implementing precise React.memo optimizations, we eliminated UI freezing and increased render speeds by 400%."
+    useCase: "Redesigned a legacy B2B logistics dashboard displaying over 10,000 concurrent data points. By migrating from a massive monolithic React state tree into atomic Zustand stores and implementing precise React.memo optimizations, we eliminated UI freezing and increased render speeds by 400%.",
+    learningPath: [
+      { step: 1, title: "JavaScript Mastery", description: "Advanced ES6+, Functional Programming, and DOM performance." },
+      { step: 2, title: "React Deep Dive", description: "Hooks, Fiber reconciler, and high-performance component patterns." },
+      { step: 3, title: "Next.js & SSR", description: "Server components, streaming hydration, and edge deployment." },
+      { step: 4, title: "Enterprise Scaling", description: "Micro-frontends, shared design systems, and Web Workers." }
+    ]
   },
   {
     slug: "backend-engineering",
@@ -417,7 +429,13 @@ func main() {
       }
     ],
     visualImage: "https://images.unsplash.com/photo-1555099962-4199c345e5dd?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80",
-    useCase: "Example: The Expenser Native App utilizes a highly secure Firebase backend architecture to guarantee real-time data synchronization across iOS and Android, completely abstracted behind robust rule-based security configurations and performant NoSQL data querying mapped locally using Isar."
+    useCase: "Example: The Expenser Native App utilizes a highly secure Firebase backend architecture to guarantee real-time data synchronization across iOS and Android, completely abstracted behind robust rule-based security configurations and performant NoSQL data querying mapped locally using Isar.",
+    learningPath: [
+      { step: 1, title: "Node.js & Go Basics", description: "Master asynchronous runtimes and strictly typed backend logic." },
+      { step: 2, title: "System Architecture", description: "Learn Microservices, Event-driven flows, and API Gateways." },
+      { step: 3, title: "Data Persistence", description: "Advanced SQL optimization and NoSQL denormalization." },
+      { step: 4, title: "Security & Scale", description: "Stateless Auth, JWT, OAuth2, and horizontally scaling servers." }
+    ]
   },
   {
     slug: "cloud-databases",
@@ -594,7 +612,13 @@ CMD ["node", "server.js"]`
       }
     ],
     visualImage: "https://images.unsplash.com/photo-1618401471353-b98afee0b2eb?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80",
-    useCase: "Implemented a fully automated GitHub Actions to AWS EKS deployment pipeline infrastructure map for a heavy-duty financial services startup architecture. This directly replaced their manually dangerous 3-hour weekend deployment process with a 12-minute, fully automated zero-downtime rolling deployment. This algorithmic upgrade allowed them to aggressively release business patches 5 times a day rather than freezing deployment cycles to once a perilous week."
+    useCase: "Implemented a fully automated GitHub Actions to AWS EKS deployment pipeline infrastructure map for a heavy-duty financial services startup architecture. This directly replaced their manually dangerous 3-hour weekend deployment process with a 12-minute, fully automated zero-downtime rolling deployment. This algorithmic upgrade allowed them to aggressively release business patches 5 times a day rather than freezing deployment cycles to once a perilous week.",
+    learningPath: [
+      { step: 1, title: "Linux & Networking", description: "Master the command line and modern cloud networking fundamentals." },
+      { step: 2, title: "Containerization", description: "Master Docker, multi-stage builds, and immutable containers." },
+      { step: 3, title: "Cloud Orchestration", description: "Learn Kubernetes (EKS), Helm, and auto-scaling logic." },
+      { step: 4, title: "Infrastructure as Code", description: "Master Terraform and automated CI/CD with GitHub Actions." }
+    ]
   },
   {
     slug: "ai-ml-integration",
@@ -656,6 +680,87 @@ print("SOURCES: ", response["source_documents"]) # Enables heavy UI citation aud
       }
     ],
     visualImage: "https://images.unsplash.com/photo-1620825937374-87fc7d62828e?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80",
-    useCase: "Built a powerfully customized RAG-powered automated customer support bot framework tailored precisely for an expanding global e-commerce platform. By systematically organizing and indexing thousands of dense product technical manuals and troubleshooting PDF matrices directly into a Pinecone cluster vector database, the algorithmic bot successfully identified and accurately resolved an unprecedented 68% of all immediate Tier 1 technical support diagnostic inquiries instantly—doing so without ever requiring heavy and expensive human escalation intervention loops."
+    useCase: "Built a powerfully customized RAG-powered automated customer support bot framework tailored precisely for an expanding global e-commerce platform. By systematically organizing and indexing thousands of dense product technical manuals and troubleshooting PDF matrices directly into a Pinecone cluster vector database, the algorithmic bot successfully identified and accurately resolved an unprecedented 68% of all immediate Tier 1 technical support diagnostic inquiries instantly—doing so without ever requiring heavy and expensive human escalation intervention loops.",
+    learningPath: [
+      { step: 1, title: "Python Mastery", description: "Learn advanced Python for data science and AI." },
+      { step: 2, title: "LLM Fundamentals", description: "Understand transformer architectures and attention mechanisms." },
+      { step: 3, title: "RAG & Vector DBs", description: "Master semantic search and document embeddings." },
+      { step: 4, title: "Agentic Workflows", description: "Build autonomous agents using LangChain and CrewAI." }
+    ]
+  },
+  {
+    slug: "ui-ux-basics",
+    title: "UI/UX Design Systems",
+    description: "Architecting accessible, aesthetically superior, and conversion-optimized user interfaces for enterprise products.",
+    technologies: ["Figma", "Adobe XD", "Design Systems", "Prototyping"],
+    overview: "Design is not just how it looks; it is how it works. We teach the fundamental laws of UX (Fitts's Law, Hick's Law, Gestalt principles) alongside the technical execution of Design Systems. A premium product requires a consistent visual language that scales across platforms while maintaining absolute accessibility (WCAG 2.1 compliance).\n\nWe focus on the transition from static mockups to interactive high-fidelity prototypes. Learning UI/UX with us means understanding variables, auto-layout, components, and design tokens that bridge the gap between design and engineering.",
+    architecture: [
+      { title: "Design Tokens", description: "Codifying colors, typography, and spacing into reusable variables." },
+      { title: "Component Libraries", description: "Building atomic, reusable UI elements in Figma." },
+      { title: "User Flow Mapping", description: "Visualizing the entire customer journey to eliminate friction." }
+    ],
+    strategy: "Our strategy involves the 'Double Diamond' approach: Discover, Define, Develop, and Deliver. We move from low-fidelity wireframes to high-fidelity prototypes, testing every iteration with real users before writing a single line of code.",
+    techStack: [
+      { category: "Primary Tools", tools: "Figma (Auto Layout, Variables), FIGJAM" },
+      { category: "Principles", tools: "Atomic Design, 8-pt Grid System, Color Theory" },
+      { category: "Handover", tools: "Zeplin, Storybook, Dev Mode" }
+    ],
+    codeExamples: [],
+    visualImage: "https://images.unsplash.com/photo-1586717791821-3f44a563eb4c?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80",
+    useCase: "Redesigned a complex health-tech dashboard resulting in a 35% reduction in user task completion time by simplifying navigational hierarchy and implementing a strict design system.",
+    learningPath: [
+      { step: 1, title: "UX Foundations", description: "Master user psychology and information architecture." },
+      { step: 2, title: "UI Design Mastery", description: "Learn 8pt grids, color theory, and typography." },
+      { step: 3, title: "Design Systems", description: "Build scalable component libraries in Figma." },
+      { step: 4, title: "Prototyping", description: "Create high-fidelity interactive user flows." }
+    ]
+  },
+  {
+    slug: "cybersecurity-basics",
+    title: "Cybersecurity & App Sec",
+    description: "Hardening applications against extreme modern threats through defensive programming and infrastructure security.",
+    technologies: ["JWT", "OAuth", "OWASP", "Encryption", "SSL/TLS"],
+    overview: "In a world of constant data breaches, security must be 'Shift Left'—integrated from the very first line of code. We cover the foundational pillars of application security: Authentication, Authorization, Encryption, and Auditing.\n\nFrom understanding the OWASP Top 10 vulnerabilities (SQLi, XSS, SSRF) to implementing secure JWT flows and zero-trust backend architectures, we prepare you to build software that is resilient by design.",
+    architecture: [
+      { title: "Secured Auth Flows", description: "Implementing stateless JWT with refresh token rotation." },
+      { title: "Data Encryption", description: "Securing data at rest (AES-256) and in transit (TLS 1.3)." },
+      { title: "Input Sanitization", description: "Strict validation layers to prevent injection attacks." }
+    ],
+    strategy: "Defense in Depth. We assume every layer will be attacked. By implementing security at the network level (firewalls), application level (middleware), and data level (encryption), we create a multi-layered shield around our assets.",
+    techStack: [
+      { category: "Standards", tools: "OWASP Top 10, NIST Framework" },
+      { category: "Tools", tools: "Burp Suite, Snyk, SonarQube" },
+      { category: "Encryption", tools: "AES, RSA, Bcrypt, Argon2" }
+    ],
+    codeExamples: [
+      {
+        title: "Secure JWT Middleware (Node.js)",
+        description: "A robust middleware to verify JWT tokens and inject user identity securely into the request pipeline.",
+        language: "javascript",
+        code: `const jwt = require('jsonwebtoken');
+
+const authMiddleware = (req, res, next) => {
+  const token = req.header('Authorization')?.replace('Bearer ', '');
+  
+  if (!token) return res.status(401).send({ error: 'Access denied. No token provided.' });
+
+  try {
+    const verified = jwt.verify(token, process.env.JWT_SECRET);
+    req.user = verified;
+    next();
+  } catch (err) {
+    res.status(400).send({ error: 'Invalid token' });
+  }
+};`
+      }
+    ],
+    visualImage: "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80",
+    useCase: "Implemented a bank-grade identity management system for a fintech startup, handling multi-factor authentication and encrypted transaction logging for 100k+ users.",
+    learningPath: [
+      { step: 1, title: "Network Security", description: "Understand HTTP/S, SSL/TLS, and DNS security." },
+      { step: 2, title: "Web Vulnerabilities", description: "Master the OWASP Top 10 and how to fix them." },
+      { step: 3, title: "Secure Coding", description: "Learn defensive programming in JS, Python, or Go." },
+      { step: 4, title: "Cloud Hardening", description: "Secure AWS/GCP workloads and Docker containers." }
+    ]
   }
 ];

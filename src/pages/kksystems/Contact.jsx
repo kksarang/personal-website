@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from 'react';
-import { ArrowLeft, Mail, MapPin, Phone, Calendar, Clock, Send, CheckCircle2, Instagram, Github, Globe } from 'lucide-react';
-import { useNavigate } from 'react-router-dom';
+import { Mail, MapPin, Phone, Send, CheckCircle2, Instagram, Github, Globe, Zap, Clock, Rocket, Shield } from 'lucide-react';
+import { motion } from 'framer-motion';
 
 export default function Contact() {
-    const [selectedDay, setSelectedDay] = useState(1); // Default to Tuesday
-    const [selectedTime, setSelectedTime] = useState(null);
+    const [selectedType, setSelectedType] = useState("");
+    const [formStatus, setFormStatus] = useState("idle"); // idle, sending, success
 
     useEffect(() => {
         window.scrollTo(0, 0);
@@ -12,274 +12,247 @@ export default function Contact() {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        // Placeholder for future form submission logic
-        alert("Thank you for your inquiry! We will contact you shortly.");
+        setFormStatus("sending");
+        setTimeout(() => {
+            setFormStatus("success");
+            setTimeout(() => setFormStatus("idle"), 5000);
+        }, 1500);
     };
 
+    const quickOptions = [
+        { label: "Build App", type: "mobile_app", icon: SmartphoneIcon },
+        { label: "Fix Project", type: "fix_project", icon: SettingsIcon },
+        { label: "ERP Solution", type: "erp_system", icon: BarChartIcon }
+    ];
+
     return (
-        <div className="bg-[#0A0B14] min-h-screen pb-32 pt-32">
-
-            {/* HERO BANNER */}
-            <div
-                className="relative pb-24 border-b border-white/5 overflow-hidden"
-                style={{ background: "linear-gradient(135deg, #0f172a, #0A0B14)" }}
-            >
-                {/* Ambient Glow */}
-                <div
-                    className="absolute inset-0 pointer-events-none"
-                    style={{ background: "radial-gradient(circle at top left, rgba(124,58,237,0.15), transparent 60%)" }}
-                />
-
-                <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 pt-16">
-
-                    <div className="animate-fade-in-up md:text-center flex flex-col md:items-center">
-
-                        <h1 className="text-4xl sm:text-5xl md:text-7xl font-extrabold text-white tracking-tight leading-[1.1] mb-6">
-                            Let's build your next <br className="hidden md:block" />
-                            <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-400 to-blue-500">
-                                great product.
-                            </span>
-                        </h1>
-
-                        <p className="text-xl text-gray-400 font-light leading-snug max-w-2xl mx-auto">
-                            Schedule a free technical consultation or send us a direct message detailing your project requirements. We respond within 24 hours.
-                        </p>
-                    </div>
-                </div>
+        <div className="bg-[#0B0F19] min-h-screen pt-32 pb-20 overflow-hidden font-sans">
+            {/* Background elements */}
+            <div className="absolute inset-0 pointer-events-none">
+                <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-indigo-600/10 blur-[150px] rounded-full" />
+                <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-purple-600/10 blur-[150px] rounded-full" />
+                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full grid-pattern opacity-10" />
             </div>
 
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-16 md:mt-24">
-                <div className="grid lg:grid-cols-2 gap-8 lg:gap-16">
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+                {/* HERO SECTION */}
+                <div className="text-center mb-20">
+                    <motion.div
+                        initial={{ opacity: 0, scale: 0.9 }}
+                        animate={{ opacity: 1, scale: 1 }}
+                        className="inline-flex items-center gap-2 px-4 py-1 rounded-full bg-indigo-500/10 border border-indigo-500/20 text-indigo-400 text-xs font-black uppercase tracking-widest mb-6"
+                    >
+                        <Zap className="w-3 h-3" /> Get a response within 24 hours
+                    </motion.div>
+                    <motion.h1
+                        initial={{ opacity: 0, y: 20 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        className="text-5xl md:text-7xl font-black text-white mb-6 leading-tight"
+                    >
+                        Let's Build Something <br />
+                        <span className="premium-gradient-text">Powerful Together.</span>
+                    </motion.h1>
+                    <motion.p
+                         initial={{ opacity: 0, y: 20 }}
+                         animate={{ opacity: 1, y: 0 }}
+                         transition={{ delay: 0.1 }}
+                         className="text-xl text-gray-400 font-light max-w-2xl mx-auto"
+                    >
+                        Have a vision? We have the engineering expertise. <br className="hidden md:block" />
+                        Tell us about your project and let's make it a reality.
+                    </motion.p>
+                </div>
 
-                    {/* LEFT COLUMN: CONTACT FORM & INFO */}
-                    <div className="space-y-8 animate-fade-in-up animation-delay-100 flex flex-col h-full">
+                <div className="grid lg:grid-cols-12 gap-12 lg:gap-20">
+                    {/* LEFT SIDE: INFO */}
+                    <div className="lg:col-span-5 space-y-10">
+                        <motion.div
+                             initial={{ opacity: 0, x: -20 }}
+                             animate={{ opacity: 1, x: 0 }}
+                             transition={{ delay: 0.2 }}
+                        >
+                            <h3 className="text-2xl font-black text-white mb-8">Direct Contact</h3>
+                            <div className="space-y-6">
+                                <ContactItem icon={Mail} label="Email Us" value="info.hexenity@gmail.com" link="mailto:info.hexenity@gmail.com" color="text-indigo-400" />
+                                <ContactItem icon={Phone} label="Call Direct" value="+91 9995254290" link="tel:+919995254290" color="text-blue-400" />
+                                <ContactItem icon={MapPin} label="Global HQ" value="Kakkanad, Kochi, India" color="text-purple-400" />
+                            </div>
+                        </motion.div>
 
-                        {/* 1. Direct Messaging Form */}
-                        <div className="bg-[#131521] border border-white/5 rounded-3xl p-6 sm:p-8 lg:p-10 shadow-2xl relative overflow-hidden group">
-                            <div className="absolute top-0 right-0 w-64 h-64 bg-indigo-500/10 rounded-full blur-[100px] transition-opacity duration-500 group-hover:opacity-100 opacity-50" />
+                        <motion.div
+                             initial={{ opacity: 0, x: -20 }}
+                             animate={{ opacity: 1, x: 0 }}
+                             transition={{ delay: 0.3 }}
+                             className="hexenity-glass p-8 border-indigo-500/10"
+                        >
+                            <h4 className="text-lg font-bold text-white mb-4 flex items-center gap-2">
+                                <Clock className="w-5 h-5 text-indigo-400" /> Quick Response Guarantee
+                            </h4>
+                            <p className="text-gray-400 font-light text-sm leading-relaxed">
+                                Our team of architects reviews every inquiry personally. You can expect a detailed technical response or a meeting invite within <span className="text-white font-medium">one business day</span>.
+                            </p>
+                        </motion.div>
 
-                            <h3 className="text-2xl font-bold text-white mb-8 relative z-10 flex items-center gap-3">
-                                <Mail className="w-6 h-6 text-indigo-400" />
-                                Project Inquiry
-                            </h3>
+                        <motion.div
+                             initial={{ opacity: 0, x: -20 }}
+                             animate={{ opacity: 1, x: 0 }}
+                             transition={{ delay: 0.4 }}
+                             className="flex gap-4"
+                        >
+                             <SocialIcon icon={Instagram} link="https://instagram.com/hexenity" />
+                             <SocialIcon icon={Github} link="https://github.com/kksarang" />
+                             <SocialIcon icon={Globe} link="https://sarangrajan.in" />
+                        </motion.div>
+                    </div>
 
-                            <form onSubmit={handleSubmit} className="space-y-6 relative z-10">
-                                <div>
-                                    <label htmlFor="name" className="block text-sm font-medium text-gray-400 mb-2">Full Name</label>
-                                    <input
-                                        type="text"
-                                        id="name"
-                                        className="w-full bg-[#0A0B14] border border-white/10 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500 transition-all placeholder-gray-600"
-                                        placeholder="John Doe"
-                                        required
-                                    />
-                                </div>
+                    {/* RIGHT SIDE: FORM */}
+                    <motion.div
+                         initial={{ opacity: 0, y: 30 }}
+                         animate={{ opacity: 1, y: 0 }}
+                         transition={{ delay: 0.2 }}
+                         className="lg:col-span-7"
+                    >
+                        <div className="hexenity-glass p-8 md:p-12 shadow-2xl relative border-white/5 bg-[#131521]/50">
+                            <h3 className="text-2xl font-black text-white mb-10">Project Inquiry</h3>
+
+                            {/* Quick Option Buttons */}
+                            <div className="grid grid-cols-3 gap-4 mb-10">
+                                <QuickOptionBtn label="Build App" onClick={() => setSelectedType("mobile_app")} active={selectedType === "mobile_app"} icon={Rocket} />
+                                <QuickOptionBtn label="Fix Project" onClick={() => setSelectedType("fix_project")} active={selectedType === "fix_project"} icon={Shield} />
+                                <QuickOptionBtn label="ERP Solution" onClick={() => setSelectedType("erp_system")} active={selectedType === "erp_system"} icon={BarChartIcon} />
+                            </div>
+
+                            <form onSubmit={handleSubmit} className="space-y-6">
                                 <div className="grid md:grid-cols-2 gap-6">
-                                    <div>
-                                        <label htmlFor="email" className="block text-sm font-medium text-gray-400 mb-2">Email Address</label>
-                                        <input
-                                            type="email"
-                                            id="email"
-                                            className="w-full bg-[#0A0B14] border border-white/10 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500 transition-all placeholder-gray-600"
-                                            placeholder="john@example.com"
-                                            required
-                                        />
-                                    </div>
-                                    <div>
-                                        <label htmlFor="service" className="block text-sm font-medium text-gray-400 mb-2">What do you need?</label>
+                                    <FormInput label="Full Name" placeholder="John Doe" required />
+                                    <FormInput label="Email Address" type="email" placeholder="john@example.com" required />
+                                </div>
+
+                                <div className="grid md:grid-cols-2 gap-6">
+                                    <div className="space-y-2">
+                                        <label className="text-xs uppercase tracking-widest text-gray-500 font-bold">Project Type</label>
                                         <select
-                                            id="service"
-                                            className="w-full bg-[#0A0B14] border border-white/10 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500 transition-all appearance-none cursor-pointer"
+                                            value={selectedType}
+                                            onChange={(e) => setSelectedType(e.target.value)}
+                                            className="w-full bg-[#0A0B14] border border-white/10 rounded-xl px-4 py-4 text-white focus:border-indigo-500 transition-all outline-none appearance-none cursor-pointer"
                                             required
                                         >
-                                            <option value="">Select a service...</option>
-                                            <option value="mobile_app">Mobile App Development</option>
-                                            <option value="website">Website Development</option>
-                                            <option value="posters">Posters & Branding</option>
+                                            <option value="">Select Type</option>
+                                            <option value="mobile_app">Mobile Application</option>
+                                            <option value="web_platform">Web Platform / SaaS</option>
+                                            <option value="erp_system">ERP / Enterprise System</option>
+                                            <option value="ai_solution">AI Integration</option>
                                             <option value="other">Other</option>
                                         </select>
                                     </div>
+                                    <div className="space-y-2">
+                                        <label className="text-xs uppercase tracking-widest text-gray-500 font-bold">Budget Range</label>
+                                        <select
+                                            className="w-full bg-[#0A0B14] border border-white/10 rounded-xl px-4 py-4 text-white focus:border-indigo-500 transition-all outline-none appearance-none cursor-pointer"
+                                            required
+                                        >
+                                            <option value="">Select Budget</option>
+                                            <option value="small">&lt; $5,000</option>
+                                            <option value="medium">$5,000 - $20,000</option>
+                                            <option value="large">$20,000 - $50,000</option>
+                                            <option value="enterprise">$50,000+</option>
+                                        </select>
+                                    </div>
                                 </div>
-                                <div>
-                                    <label htmlFor="message" className="block text-sm font-medium text-gray-400 mb-2">Project Details</label>
+
+                                <div className="space-y-2">
+                                    <label className="text-xs uppercase tracking-widest text-gray-500 font-bold">Project Details</label>
                                     <textarea
-                                        id="message"
                                         rows="5"
-                                        className="w-full bg-[#0A0B14] border border-white/10 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500 transition-all placeholder-gray-600 resize-none"
-                                        placeholder="Tell us about the problem you are trying to solve..."
+                                        className="w-full bg-[#0A0B14] border border-white/10 rounded-xl px-4 py-4 text-white focus:border-indigo-500 transition-all outline-none resize-none"
+                                        placeholder="Briefly describe your goals and requirements..."
                                         required
                                     ></textarea>
                                 </div>
+
                                 <button
                                     type="submit"
-                                    className="w-full inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl bg-indigo-600 text-white font-bold hover:bg-indigo-500 transition-all shadow-[0_0_20px_rgba(79,70,229,0.3)] hover:scale-[1.02]"
+                                    disabled={formStatus !== "idle"}
+                                    className={`w-full py-5 rounded-2xl font-black text-lg transition-all flex items-center justify-center gap-3 ${
+                                        formStatus === "success"
+                                        ? "bg-green-500 text-white"
+                                        : "bg-indigo-600 text-white hover:bg-indigo-500 hover:scale-[1.02] active:scale-[0.98] shadow-xl shadow-indigo-600/20"
+                                    }`}
                                 >
-                                    Send Inquiry <Send className="w-5 h-5" />
+                                    {formStatus === "idle" && <>Send Inquiry <Send className="w-5 h-5" /></>}
+                                    {formStatus === "sending" && <div className="w-6 h-6 border-2 border-white/30 border-t-white rounded-full animate-spin" />}
+                                    {formStatus === "success" && <>Message Sent! <CheckCircle2 className="w-5 h-5" /></>}
                                 </button>
                             </form>
                         </div>
-
-                        {/* Minimal About Block */}
-                        <div className="bg-[#131521] border border-white/5 rounded-3xl p-6 sm:p-8 shadow-lg relative overflow-hidden">
-                            <h3 className="text-xl font-bold text-white mb-4">About hexenity</h3>
-                            <p className="text-gray-400 leading-relaxed text-sm">
-                                We are a specialized architecture firm dedicated to engineering high-performance mobile applications and scalable backend systems. We believe in writing clean, maintainable code rather than relying on bloated templates, delivering authentic digital products that drive true enterprise value.
-                            </p>
-                        </div>
-
-                        {/* Official Branding Logo */}
-                        <div className="rounded-3xl overflow-hidden border border-white/5 shadow-2xl relative group flex-1 min-h-[250px]">
-                            <img
-                                src="/assets/images/gallery/10.jpg"
-                                alt="hexenity Official"
-                                className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-                            />
-                            <div className="absolute inset-0 bg-gradient-to-t from-[#0A0B14] via-[#0A0B14]/40 to-transparent"></div>
-                            <div className="absolute bottom-8 left-8 right-8 z-10">
-                                <h3 className="text-3xl font-extrabold text-white tracking-tight mb-2">hexenity</h3>
-                            </div>
-                        </div>
-
-                    </div>
-
-                    {/* RIGHT COLUMN: SCHEDULING & LOCATION */}
-                    <div className="space-y-8 animate-fade-in-up animation-delay-200 flex flex-col h-full">
-
-                        {/* 2. Call Scheduling UI */}
-                        <div className="bg-[#131521] border border-white/5 rounded-3xl p-6 sm:p-8 lg:p-10 shadow-2xl">
-                            <h3 className="text-2xl font-bold text-white mb-6 flex items-center gap-3">
-                                <Calendar className="w-6 h-6 text-blue-400" />
-                                Schedule a Concept Call
-                            </h3>
-                            <p className="text-gray-400 mb-8 leading-relaxed">
-                                Pick a time that works for your team. We'll hop on a 30-minute Google Meet to discuss architecture, timeline, and feasibility.
-                            </p>
-
-                            {/* Mock Calendar Selection Grid */}
-                            <div className="space-y-6">
-                                <div>
-                                    <h4 className="text-sm font-bold tracking-widest text-gray-500 uppercase mb-4">Availability (Next 7 Days)</h4>
-                                    <div className="flex gap-3 overflow-x-auto pb-2 scrollbar-hide">
-                                        {['Mon', 'Tue', 'Wed', 'Thu', 'Fri'].map((day, idx) => (
-                                            <button
-                                                key={idx}
-                                                onClick={() => setSelectedDay(idx)}
-                                                className={`flex-shrink-0 w-20 py-3 rounded-xl border flex flex-col items-center justify-center gap-1 transition-all ${selectedDay === idx ? 'bg-indigo-600 border-indigo-500 text-white shadow-lg scale-105' : 'bg-[#0A0B14] border-white/10 text-gray-400 hover:border-gray-500'}`}
-                                            >
-                                                <span className="text-xs uppercase font-bold">{day}</span>
-                                                <span className="text-lg font-bold">{14 + idx}</span>
-                                            </button>
-                                        ))}
-                                    </div>
-                                </div>
-
-                                <div>
-                                    <h4 className="text-sm font-bold tracking-widest text-gray-500 uppercase mb-4">Select Time (EST)</h4>
-                                    <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
-                                        {['09:00 AM', '10:30 AM', '01:00 PM', '02:30 PM', '04:00 PM'].map((time, idx) => (
-                                            <button
-                                                key={idx}
-                                                onClick={() => setSelectedTime(time)}
-                                                className={`py-3 rounded-xl border font-medium transition-all flex items-center justify-center gap-2 ${selectedTime === time ? 'bg-indigo-500/20 border-indigo-500 text-indigo-400' : 'bg-[#0A0B14] border-white/10 text-gray-300 hover:border-indigo-500/50 hover:text-indigo-400'}`}
-                                            >
-                                                <Clock className="w-4 h-4" /> {time}
-                                            </button>
-                                        ))}
-                                    </div>
-                                </div>
-
-                                <button
-                                    onClick={() => {
-                                        if (selectedTime) {
-                                            alert(`Call scheduled for ${['Mon', 'Tue', 'Wed', 'Thu', 'Fri'][selectedDay]}, ${14 + selectedDay}th at ${selectedTime} EST.`);
-                                        } else {
-                                            alert("Please select a time slot first.");
-                                        }
-                                    }}
-                                    className={`w-full py-4 mt-6 rounded-xl border font-bold transition-all flex items-center justify-center gap-2 ${selectedTime ? 'bg-indigo-600 border-indigo-500 text-white shadow-lg hover:bg-indigo-500 hover:scale-[1.02]' : 'bg-white/5 border-white/10 text-gray-400 cursor-not-allowed hidden'}`}
-                                >
-                                    Confirm Call <CheckCircle2 className={`w-5 h-5 ${selectedTime ? 'text-white' : 'text-gray-500'}`} />
-                                </button>
-
-                                {!selectedTime && (
-                                    <button className="w-full py-4 mt-6 rounded-xl bg-white/5 border border-white/10 text-gray-500 font-bold cursor-not-allowed flex items-center justify-center gap-2">
-                                        Select a time to confirm
-                                    </button>
-                                )}
-                            </div>
-                        </div>
-
-                        {/* 3. Location & Meta */}
-                        <div className="bg-gradient-to-br from-indigo-900/20 to-purple-900/20 border border-indigo-500/20 rounded-3xl p-6 sm:p-8 lg:p-10 shadow-2xl relative overflow-hidden flex-1 flex flex-col">
-                            <div className="absolute top-0 right-0 w-32 h-32 bg-indigo-500/10 rounded-full blur-[50px] pointer-events-none" />
-                            <div className="flex flex-col gap-6 relative z-10 w-full h-full">
-                                <div className="flex flex-col gap-3 flex-1">
-                                    <div className="flex items-center gap-3 mb-2">
-                                        <MapPin className="w-6 h-6 text-indigo-400" />
-                                        <h4 className="text-white font-bold text-lg">Office Location</h4>
-                                    </div>
-                                    <div className="w-full h-full min-h-[192px] rounded-2xl overflow-hidden border border-white/10 relative">
-                                        <iframe
-                                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3929.155700877546!2d76.33596541527339!3d10.004128092847957!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3b080c8e94a07a07%3A0x49f24b8d78ab498!2sKakkanad%2C%20Kerala!5e0!3m2!1sen!2sin!4v1689408453303!5m2!1sen!2sin"
-                                            width="100%"
-                                            height="100%"
-                                            style={{ border: 0, filter: 'invert(90%) hue-rotate(180deg) contrast(100%)' }}
-                                            allowFullScreen=""
-                                            loading="lazy"
-                                            referrerPolicy="no-referrer-when-downgrade"
-                                        ></iframe>
-                                    </div>
-                                    <p className="text-gray-400 text-sm mt-1 ml-9">Kakkanad, Ernakulam, Kochi - 682030</p>
-                                </div>
-                                <div className="w-full h-[1px] bg-white/5" />
-                                <div className="flex items-start gap-4">
-                                    <Phone className="w-6 h-6 text-indigo-400 mt-1 flex-shrink-0" />
-                                    <div className="min-w-0">
-                                        <h4 className="text-white font-bold text-lg">Direct Line</h4>
-                                        <a href="tel:+919995254290" className="text-gray-400 mt-1 hover:text-indigo-400 transition-colors block truncate">+91 9995254290</a>
-                                    </div>
-                                </div>
-                                <div className="w-full h-[1px] bg-white/5" />
-                                <div className="flex items-start gap-4">
-                                    <Globe className="w-6 h-6 text-blue-400 mt-1 flex-shrink-0" />
-                                    <div className="min-w-0">
-                                        <h4 className="text-white font-bold text-lg">Official Website</h4>
-                                        <a href="https://www.sarangrajan.in/" target="_blank" rel="noreferrer" className="text-gray-400 mt-1 hover:text-blue-400 transition-colors block truncate">sarangrajan.in</a>
-                                    </div>
-                                </div>
-                                <div className="w-full h-[1px] bg-white/5" />
-                                <div className="flex items-start gap-4">
-                                    <Mail className="w-6 h-6 text-indigo-400 mt-1 flex-shrink-0" />
-                                    <div className="min-w-0">
-                                        <h4 className="text-white font-bold text-lg">Email</h4>
-                                        <a href="mailto:info.hexenity@gmil.com" className="text-gray-400 mt-1 hover:text-indigo-400 transition-colors block truncate">info.hexenity@gmil.com</a>
-                                    </div>
-                                </div>
-                                <div className="w-full h-[1px] bg-white/5" />
-                                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                                    <div className="flex items-start gap-4">
-                                        <Instagram className="w-6 h-6 text-pink-500 mt-1 flex-shrink-0" />
-                                        <div className="min-w-0">
-                                            <h4 className="text-white font-bold text-lg">Instagram</h4>
-                                            <a href="https://www.instagram.com/hexenity/" target="_blank" rel="noreferrer" className="text-gray-400 mt-1 hover:text-pink-400 transition-colors block truncate">@hexenity
-                                            </a>
-                                        </div>
-                                    </div>
-                                    <div className="flex items-start gap-4">
-                                        <Github className="w-6 h-6 text-gray-300 mt-1 flex-shrink-0" />
-                                        <div className="min-w-0">
-                                            <h4 className="text-white font-bold text-lg">GitHub</h4>
-                                            <a href="https://github.com/kksarang" target="_blank" rel="noreferrer" className="text-gray-400 mt-1 hover:text-white transition-colors block truncate">/kksarang</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                    </div>
+                    </motion.div>
                 </div>
             </div>
-
         </div>
     );
 }
+
+// Sub-components for cleaner code
+const ContactItem = ({ icon: Icon, label, value, link, color }) => (
+    <div className="flex items-start gap-4 group">
+        <div className={`w-12 h-12 rounded-2xl bg-white/5 border border-white/5 flex items-center justify-center flex-shrink-0 group-hover:border-indigo-500/30 transition-all`}>
+            <Icon className={`w-6 h-6 ${color}`} />
+        </div>
+        <div>
+            <div className="text-xs uppercase tracking-widest text-gray-500 font-bold mb-1">{label}</div>
+            {link ? (
+                <a href={link} className="text-lg font-bold text-white hover:text-indigo-400 transition-colors">{value}</a>
+            ) : (
+                <span className="text-lg font-bold text-white">{value}</span>
+            )}
+        </div>
+    </div>
+);
+
+const SocialIcon = ({ icon: Icon, link }) => (
+    <a
+        href={link}
+        target="_blank"
+        rel="noreferrer"
+        className="w-12 h-12 rounded-2xl bg-white/5 border border-white/5 flex items-center justify-center hover:bg-indigo-600 hover:text-white transition-all text-gray-400"
+    >
+        <Icon className="w-5 h-5" />
+    </a>
+);
+
+const FormInput = ({ label, ...props }) => (
+    <div className="space-y-2">
+        <label className="text-xs uppercase tracking-widest text-gray-500 font-bold">{label}</label>
+        <input
+            {...props}
+            className="w-full bg-[#0A0B14] border border-white/10 rounded-xl px-4 py-4 text-white focus:border-indigo-500 transition-all outline-none"
+        />
+    </div>
+);
+
+const QuickOptionBtn = ({ label, active, onClick, icon: Icon }) => (
+    <button
+        type="button"
+        onClick={onClick}
+        className={`flex flex-col items-center justify-center gap-2 p-4 rounded-xl border transition-all ${
+            active
+            ? "bg-indigo-600 border-indigo-500 text-white shadow-lg"
+            : "bg-[#0A0B14] border-white/10 text-gray-500 hover:border-white/30 hover:text-gray-300"
+        }`}
+    >
+        <Icon className="w-5 h-5" />
+        <span className="text-[10px] font-black uppercase tracking-widest">{label}</span>
+    </button>
+);
+
+const SmartphoneIcon = (props) => (
+    <svg {...props} xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-smartphone"><rect width="14" height="20" x="5" y="2" rx="2" ry="2"/><path d="M12 18h.01"/></svg>
+);
+
+const SettingsIcon = (props) => (
+    <svg {...props} xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-settings"><path d="M12.22 2h-.44a2 2 0 0 0-2 2v.18a2 2 0 0 1-1 1.73l-.43.25a2 2 0 0 1-2 0l-.15-.08a2 2 0 0 0-2.73.73l-.22.38a2 2 0 0 0 .73 2.73l.15.1a2 2 0 0 1 1 1.72v.51a2 2 0 0 1-1 1.74l-.15.09a2 2 0 0 0-.73 2.73l.22.38a2 2 0 0 0 2.73.73l.15-.08a2 2 0 0 1 2 0l.43.25a2 2 0 0 1 1 1.73V20a2 2 0 0 0 2 2h.44a2 2 0 0 0 2-2v-.18a2 2 0 0 1 1-1.73l.43-.25a2 2 0 0 1 2 0l.15.08a2 2 0 0 0 2.73-.73l.22-.39a2 2 0 0 0-.73-2.73l-.15-.08a2 2 0 0 1-1-1.74v-.5a2 2 0 0 1 1-1.74l.15-.1a2 2 0 0 0 .73-2.73l-.22-.38a2 2 0 0 0-2.73-.73l-.15.08a2 2 0 0 1-2 0l-.43-.25a2 2 0 0 1-1-1.73V4a2 2 0 0 0-2-2z"/><circle cx="12" cy="12" r="3"/></svg>
+);
+
+const BarChartIcon = (props) => (
+    <svg {...props} xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-bar-chart-3"><path d="M3 3v18h18"/><path d="M18 17V9"/><path d="M13 17V5"/><path d="M8 17v-3"/></svg>
+);

@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
-import { ArrowLeft, CheckCircle2, Layers, Cpu, Command, Box, MonitorPlay, Code2, Terminal } from 'lucide-react';
+import { ArrowLeft, CheckCircle2, Layers, Cpu, Command, Box, MonitorPlay, Code2, Terminal, Target } from 'lucide-react';
 import { learningTopics } from '../../data/learning';
 
 export default function LearningDetails() {
@@ -158,7 +158,32 @@ export default function LearningDetails() {
                     </div>
                 </section>
 
-                {/* 8. ENVIRONMENT SETUP GUIDES (Dynamic Segment) */}
+                {/* 8. STEP-BY-STEP LEARNING PATH */}
+                {topic.learningPath && topic.learningPath.length > 0 && (
+                    <section className="animate-fade-in-up">
+                        <div className="flex items-center gap-3 mb-10">
+                            <Target className="w-6 h-6 text-rose-500" />
+                            <h2 className="text-3xl font-bold text-white tracking-tight">Step-by-Step Learning Path</h2>
+                        </div>
+                        <div className="relative space-y-8 before:absolute before:inset-0 before:ml-5 before:-translate-x-px md:before:mx-auto md:before:translate-x-0 before:h-full before:w-0.5 before:bg-gradient-to-b before:from-transparent before:via-white/10 before:to-transparent">
+                            {topic.learningPath.map((step, idx) => (
+                                <div key={idx} className="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group is-active">
+                                    <div className="flex items-center justify-center w-10 h-10 rounded-full border border-white/10 bg-[#0A0B14] text-white font-black text-xs z-10 shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2 group-hover:bg-indigo-600 transition-colors">
+                                        {step.step}
+                                    </div>
+                                    <div className="w-[calc(100%-4rem)] md:w-[calc(50%-2.5rem)] p-8 rounded-3xl bg-white/[0.02] border border-white/5 hover:border-white/10 transition-all shadow-xl">
+                                        <div className="flex items-center justify-between mb-2">
+                                            <h4 className="text-lg font-black italic uppercase tracking-tighter text-white">{step.title}</h4>
+                                        </div>
+                                        <p className="text-white/40 text-sm font-medium">{step.description}</p>
+                                    </div>
+                                </div>
+                            ))}
+                        </div>
+                    </section>
+                )}
+
+                {/* 9. ENVIRONMENT SETUP GUIDES (Dynamic Segment) */}
                 {topic.setupGuides && topic.setupGuides.length > 0 && (
                     <section className="animate-fade-in-up">
                         <div className="flex items-center gap-3 mb-8">

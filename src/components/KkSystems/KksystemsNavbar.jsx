@@ -25,10 +25,11 @@ const KksystemsNavbar = () => {
 
     const navLinks = [
         { title: 'Home', href: '/hexenity' },
+        { title: 'About', href: '/hexenity/about' },
         { title: 'Services', href: '/hexenity#services' },
         { title: 'Work', href: '/hexenity/work' },
         { title: 'Learning', href: '/hexenity/learning' },
-        { title: 'Life at Hexenity', href: '/hexenity/life-at-hexenity' },
+        { title: 'Core Hexenity', href: '/hexenity/core-hexenity' },
         { title: 'Contact', href: '/hexenity/contact' },
     ];
 

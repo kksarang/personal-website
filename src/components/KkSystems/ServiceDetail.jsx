@@ -19,7 +19,7 @@ const ServiceDetail = () => {
 
     if (!service) {
         return (
-            <div className="min-h-screen bg-[#0A0B14] flex flex-col items-center justify-center text-white">
+            <div className="min-h-screen bg-[#0B0F19] flex flex-col items-center justify-center text-white">
                 <h1 className="text-4xl font-bold mb-4">Service Not Found</h1>
                 <button
                     onClick={() => navigate('/hexenity')}
@@ -32,7 +32,7 @@ const ServiceDetail = () => {
     }
 
     return (
-        <div className="min-h-screen bg-[#0A0B14] text-white selection:bg-indigo-500/30">
+        <div className="min-h-screen bg-[#0B0F19] text-white selection:bg-indigo-500/30">
             <KksystemsNavbar />
 
             <main className="pt-24 pb-20">
@@ -50,12 +50,12 @@ const ServiceDetail = () => {
                     </button>
 
                     <h1 className="text-5xl md:text-7xl font-extrabold tracking-tight mb-8">
-                        <span className="block text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-indigo-500">
+                        <span className="block premium-gradient-text uppercase">
                             {service.title}
                         </span>
                     </h1>
 
-                    <p className="text-xl md:text-2xl text-gray-400 max-w-3xl leading-relaxed">
+                    <p className="text-xl md:text-2xl text-gray-400 max-w-3xl leading-relaxed font-light">
                         {service.overview}
                     </p>
                 </section>
@@ -74,8 +74,8 @@ const ServiceDetail = () => {
                                 </h2>
                                 <div className="grid sm:grid-cols-2 gap-4">
                                     {service.types.map((type, idx) => (
-                                        <div key={idx} className="p-4 rounded-2xl bg-white/[0.02] border border-white/5 backdrop-blur-sm flex items-center text-gray-300">
-                                            <div className="w-2 h-2 rounded-full bg-blue-400 mr-3 shadow-[0_0_10px_rgba(96,165,250,0.5)]"></div>
+                                        <div key={idx} className="hexenity-glass p-4 rounded-2xl flex items-center text-gray-300">
+                                            <div className="w-2 h-2 rounded-full bg-indigo-400 mr-3 shadow-[0_0_10px_rgba(129,140,248,0.5)]"></div>
                                             {type}
                                         </div>
                                     ))}
@@ -92,18 +92,18 @@ const ServiceDetail = () => {
                                     {service.process.map((stepItem, idx) => (
                                         <div key={idx} className="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group is-active py-6">
                                             {/* Number indicator */}
-                                            <div className="flex items-center justify-center w-12 h-12 rounded-full border-4 border-[#0A0B14] bg-white/[0.05] group-hover:bg-purple-500/20 text-indigo-300 font-bold shadow shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2 transition-colors duration-300 z-10 backdrop-blur-sm">
+                                            <div className="flex items-center justify-center w-12 h-12 rounded-full border-4 border-[#0B0F19] bg-white/[0.05] group-hover:bg-purple-500/20 text-indigo-300 font-bold shadow shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2 transition-colors duration-300 z-10 backdrop-blur-sm">
                                                 {idx + 1}
                                             </div>
 
                                             {/* Card content */}
-                                            <div className="w-[calc(100%-4rem)] md:w-[calc(50%-3rem)] p-6 rounded-2xl bg-white/[0.02] border border-white/5 group-hover:border-purple-500/30 group-hover:bg-white/[0.04] transition-all duration-300 shadow-xl">
+                                            <div className="w-[calc(100%-4rem)] md:w-[calc(50%-3rem)] p-6 hexenity-glass group-hover:border-purple-500/30 group-hover:bg-white/[0.04] transition-all duration-300 shadow-xl">
                                                 <div className="flex flex-col gap-2">
                                                     <h3 className="text-xl font-bold text-white group-hover:text-purple-300 transition-colors">
                                                         {stepItem.step}
                                                     </h3>
                                                     {stepItem.desc && (
-                                                        <p className="text-gray-400 text-sm leading-relaxed">
+                                                        <p className="text-gray-400 text-sm leading-relaxed font-light">
                                                             {stepItem.desc}
                                                         </p>
                                                     )}
@@ -125,7 +125,7 @@ const ServiceDetail = () => {
                                         {service.techStack.map((tech, idx) => (
                                             <span
                                                 key={idx}
-                                                className="px-5 py-2.5 rounded-full bg-white/[0.03] border border-white/10 hover:border-cyan-500/50 hover:bg-cyan-500/10 text-gray-300 hover:text-white transition-all cursor-default shadow-sm"
+                                                className="px-5 py-2.5 rounded-full bg-white/[0.03] border border-white/10 hover:border-cyan-500/50 hover:bg-cyan-500/10 text-gray-300 hover:text-white transition-all cursor-default shadow-sm text-sm"
                                             >
                                                 {tech}
                                             </span>
@@ -143,12 +143,12 @@ const ServiceDetail = () => {
                                     </h2>
                                     <div className="space-y-4">
                                         {service.faqs.map((faq, idx) => (
-                                            <div key={idx} className="p-6 rounded-2xl bg-white/[0.02] border border-white/5 hover:bg-white/[0.04] hover:border-white/10 transition-colors">
+                                            <div key={idx} className="p-6 hexenity-glass hover:bg-white/[0.04] transition-colors">
                                                 <h3 className="text-lg font-bold text-white mb-3 flex items-start">
                                                     <span className="text-pink-500 mr-3 hidden sm:inline">Q.</span>
                                                     {faq.q}
                                                 </h3>
-                                                <p className="text-gray-400 leading-relaxed sm:pl-7">
+                                                <p className="text-gray-400 leading-relaxed sm:pl-7 font-light">
                                                     {faq.a}
                                                 </p>
                                             </div>
@@ -163,7 +163,7 @@ const ServiceDetail = () => {
                         <div className="space-y-12">
 
                             {/* TIMELINE */}
-                            <div className="p-8 rounded-3xl bg-gradient-to-br from-indigo-900/20 to-transparent border border-indigo-500/20">
+                            <div className="p-8 rounded-3xl bg-gradient-to-br from-indigo-900/20 to-transparent border border-indigo-500/20 backdrop-blur-xl">
                                 <h3 className="text-xl font-bold text-white mb-6">Development Timeline</h3>
                                 <ul className="space-y-4 mb-4">
                                     {service.timeline.map((item, idx) => (
@@ -181,13 +181,13 @@ const ServiceDetail = () => {
                             </div>
 
                             {/* WHAT YOU GET */}
-                            <div className="p-8 rounded-3xl bg-white/[0.02] border border-white/5">
-                                <h3 className="text-xl font-bold text-white mb-6 pb-4 border-b border-white/10">What You Get</h3>
+                            <div className="p-8 hexenity-glass group">
+                                <h3 className="text-xl font-bold text-white mb-6 pb-4 border-b border-white/10 uppercase tracking-widest text-sm">What You Get</h3>
                                 <ul className="space-y-4">
                                     {service.whatYouGet.map((item, idx) => (
                                         <li key={idx} className="flex items-start">
                                             <CheckCircle2 className="w-5 h-5 text-emerald-400 mr-3 flex-shrink-0 mt-0.5" />
-                                            <span className="text-gray-300">{item}</span>
+                                            <span className="text-gray-300 font-light">{item}</span>
                                         </li>
                                     ))}
                                 </ul>
@@ -205,7 +205,7 @@ const ServiceDetail = () => {
                             <h2 className="text-3xl md:text-5xl font-bold text-white mb-6">
                                 Ready to transform your idea into a powerful digital solution?
                             </h2>
-                            <p className="text-xl text-indigo-200 mb-10 max-w-2xl mx-auto">
+                            <p className="text-xl text-indigo-200 mb-10 max-w-2xl mx-auto font-light">
                                 Let's collaborate to build something exceptional that drives real growth for your business.
                             </p>
                             <div className="flex flex-col sm:flex-row justify-center gap-4">
@@ -213,7 +213,7 @@ const ServiceDetail = () => {
                                     onClick={() => navigate('/hexenity/contact')}
                                     className="px-8 py-4 rounded-xl bg-white text-indigo-900 font-bold hover:bg-gray-100 transition-colors shadow-xl"
                                 >
-                                    Contact hexenity
+                                    Contact Hexenity
                                 </button>
                             </div>
                         </div>
