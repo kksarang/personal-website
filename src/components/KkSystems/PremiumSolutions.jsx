@@ -1,58 +1,101 @@
 import React from 'react';
-import { ArrowRight, Smartphone, Monitor, PaintBucket, Share2, Target, Database, Cpu, Activity, Star } from 'lucide-react';
+import { ArrowRight, Smartphone, Monitor, PaintBucket, Share2, Target, Database, Cpu, Activity, Star, BrainCircuit, Search, LayoutDashboard, Shield } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 
 export const PremiumSolutions = () => {
     const navigate = useNavigate();
 
-    const solutions = [
+    const featuredSolutions = [
         {
             title: "Mobile App Development",
-            benefit: "Scalable and secure mobile applications tailored to your product goals.",
-            items: ["Flutter Applications", "Native Android (Kotlin)", "iOS Applications", "Cross-Platform Apps"],
+            benefit: "Scalable app ecosystems for consumer, enterprise, and startup use cases.",
+            items: ["iOS + Android", "Cross-platform", "Store deployment", "Post-launch optimization"],
             icon: Smartphone,
             link: "/hexenity/services/mobile-app-development",
-            tag: "Most Requested"
+            tag: "Application Engineering"
         },
         {
-            title: "Website Development",
-            benefit: "Fast and conversion-oriented web platforms built for growth.",
-            items: ["Business Websites", "E-Commerce Solutions", "Custom Web Applications", "SEO Optimization"],
+            title: "Web Platform Development",
+            benefit: "Conversion-oriented websites and SaaS-ready web platforms.",
+            items: ["Corporate websites", "Web applications", "E-commerce systems", "Performance optimization"],
             icon: Monitor,
             link: "/hexenity/services/website-development",
-            tag: "Business Growth"
+            tag: "Digital Presence"
         },
         {
             title: "UI/UX & Design",
-            benefit: "Practical user experiences that improve engagement and usability.",
-            items: ["UI/UX Strategy", "Wireframes", "Design Systems", "Brand Identity"],
+            benefit: "Premium interface systems focused on usability, trust, and conversion.",
+            items: ["UX strategy", "Interface design", "Design systems", "Conversion journeys"],
             icon: PaintBucket,
             link: "/hexenity/services/ui-ux-design",
-            tag: "User Experience"
+            tag: "Experience Layer"
+        },
+    ];
+
+    const extendedSolutions = [
+        {
+            title: "Digital Marketing",
+            benefit: "Data-led growth campaigns engineered for leads, sales, and retention.",
+            items: ["Paid ads", "Lead funnels", "Performance analytics", "Campaign scaling"],
+            icon: Target,
+            link: "/hexenity/services/digital-marketing",
+            tag: "Revenue Growth"
+        },
+        {
+            title: "SEO Systems",
+            benefit: "Technical and content SEO strategy to build compounding visibility.",
+            items: ["Technical SEO", "Keyword strategy", "On-page structure", "Organic growth roadmap"],
+            icon: Search,
+            link: "/hexenity/services",
+            tag: "Search Growth"
+        },
+        {
+            title: "Branding Systems",
+            benefit: "Modern brand language and visual identity aligned to digital scale.",
+            items: ["Brand identity", "Creative direction", "Messaging framework", "Digital assets"],
+            icon: PaintBucket,
+            link: "/hexenity/services",
+            tag: "Brand Authority"
+        },
+        {
+            title: "AI Integrations",
+            benefit: "AI-driven workflows and copilots that improve decision speed and execution.",
+            items: ["LLM integrations", "Process automation", "AI assistants", "Operational intelligence"],
+            icon: BrainCircuit,
+            link: "/hexenity/services",
+            tag: "AI Innovation"
+        },
+        {
+            title: "Automation Systems",
+            benefit: "Automation pipelines to reduce manual work and improve business velocity.",
+            items: ["Workflow automation", "Data sync systems", "Ops triggers", "Approval chains"],
+            icon: Activity,
+            link: "/hexenity/services",
+            tag: "Operational Scale"
+        },
+        {
+            title: "Business Dashboards",
+            benefit: "Executive dashboards for real-time visibility into operations and growth.",
+            items: ["KPI panels", "Sales analytics", "Ops tracking", "Reporting controls"],
+            icon: LayoutDashboard,
+            link: "/hexenity/services",
+            tag: "Decision Intelligence"
+        },
+        {
+            title: "Enterprise Platforms",
+            benefit: "Secure management platforms for cross-team workflow and governance.",
+            items: ["ERP foundations", "Role access control", "Department modules", "Governance layer"],
+            icon: Shield,
+            link: "/hexenity/services/erp-development",
+            tag: "Enterprise Systems"
         },
         {
             title: "Social Media Marketing",
             benefit: "Consistent social growth with strategy-led content execution.",
-            items: ["Campaign Planning", "Creative Design", "Audience Growth", "Management"],
+            items: ["Campaign planning", "Creative assets", "Audience growth", "Community operations"],
             icon: Share2,
             link: "/hexenity/services/social-media-marketing",
             tag: "Brand Visibility"
-        },
-        {
-            title: "Digital Marketing",
-            benefit: "Performance marketing focused on measurable business outcomes.",
-            items: ["SEO", "Google Ads", "Meta Ads", "Analytics Reporting"],
-            icon: Target,
-            link: "/hexenity/services/digital-marketing",
-            tag: "Lead Generation"
-        },
-        {
-            title: "ERP Development",
-            benefit: "Custom ERP systems that centralize operations and workflows.",
-            items: ["ERP Core", "Inventory + CRM", "HRM", "Workflow Automation"],
-            icon: Cpu,
-            link: "/hexenity/services/erp-development",
-            tag: "Enterprise Scale"
         }
     ];
 
@@ -63,14 +106,14 @@ export const PremiumSolutions = () => {
                     <div className="mb-5 inline-block rounded-full border border-indigo-500/20 bg-indigo-500/10 px-4 py-2 text-xs font-bold uppercase tracking-widest text-indigo-400">
                         Services
                     </div>
-                    <h2 className="mb-5 text-4xl font-black leading-tight text-white md:text-5xl">End-to-end technology services</h2>
+                    <h2 className="mb-5 text-4xl font-black leading-tight text-white md:text-5xl">Interactive digital solution stack</h2>
                     <p className="text-lg leading-relaxed text-gray-400">
-                        From product planning to release and support, we help you ship better software with consistent execution.
+                        App development, digital presence, AI systems, and growth operations delivered under one premium execution model.
                     </p>
                 </div>
 
-                <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
-                    {solutions.map((solution) => (
+                <div className="grid gap-8 md:grid-cols-3">
+                    {featuredSolutions.map((solution) => (
                         <div
                             key={solution.title}
                             className="group relative flex h-full flex-col overflow-hidden rounded-3xl border border-white/10 bg-slate-950/70 p-8 transition hover:border-indigo-300/40"
@@ -102,11 +145,24 @@ export const PremiumSolutions = () => {
                                     onClick={() => navigate(solution.link)}
                                     className="inline-flex items-center gap-2 rounded-lg border border-indigo-300/25 bg-indigo-400/10 px-3 py-2 text-xs font-bold uppercase tracking-widest text-indigo-100 transition hover:bg-indigo-400/20"
                                 >
-                                    View details <ArrowRight className="h-4 w-4" />
+                                    Explore service <ArrowRight className="h-4 w-4" />
                                 </button>
                             </div>
                         </div>
                     ))}
+                </div>
+
+                <div className="mt-10 flex flex-col items-center gap-4">
+                    <button
+                        onClick={() => navigate('/hexenity/services')}
+                        className="inline-flex items-center gap-2 rounded-xl border border-indigo-300/35 bg-indigo-500/20 px-6 py-3 text-xs font-bold uppercase tracking-[0.14em] text-indigo-100 transition hover:bg-indigo-500/30"
+                    >
+                        Show all services
+                        <ArrowRight className="h-4 w-4" />
+                    </button>
+                    <p className="text-xs uppercase tracking-[0.16em] text-slate-400">
+                        {extendedSolutions.length + featuredSolutions.length} total services available
+                    </p>
                 </div>
             </div>
         </section>
@@ -115,9 +171,9 @@ export const PremiumSolutions = () => {
 
 export const ProductLayer = () => {
     const products = [
-        { title: "Hexenity ERP", desc: "A complete business management platform.", icon: Database, color: "text-blue-400" },
-        { title: "AI Development Engine", desc: "Faster development workflows using proprietary AI tools.", icon: Cpu, color: "text-indigo-400" },
-        { title: "Automation Systems", desc: "Workflow automation designed for operational scale.", icon: Activity, color: "text-purple-400" }
+        { title: "AI Command Layer", desc: "AI copilots and automations integrated directly into your business workflows.", icon: BrainCircuit, color: "text-blue-400" },
+        { title: "Hexenity Ops Core", desc: "Execution intelligence model combining apps, dashboards, and process automation.", icon: Cpu, color: "text-indigo-400" },
+        { title: "Signal Analytics Grid", desc: "Real-time behavior and performance insights to power faster growth decisions.", icon: Database, color: "text-purple-400" }
     ];
 
     return (
@@ -125,9 +181,12 @@ export const ProductLayer = () => {
             <div className="absolute left-0 top-0 h-px w-full bg-gradient-to-r from-transparent via-white/5 to-transparent" />
             <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
                 <div className="mb-16 text-center">
-                    <h2 className="mb-5 text-4xl font-black text-white md:text-5xl">Our products and platforms</h2>
+                    <span className="inline-flex items-center gap-2 rounded-full border border-indigo-300/30 bg-indigo-500/10 px-4 py-1.5 text-xs font-bold uppercase tracking-[0.16em] text-indigo-200">
+                        AI Innovation Layer
+                    </span>
+                    <h2 className="mb-5 mt-5 text-4xl font-black text-white md:text-5xl">Futuristic systems that drive execution</h2>
                     <p className="mx-auto max-w-2xl text-lg leading-relaxed text-gray-400">
-                        We build our own internal technology layers to improve delivery speed and reliability for every project.
+                        Built with automation, observability, and intelligence-first architecture to support long-term client growth.
                     </p>
                 </div>
 

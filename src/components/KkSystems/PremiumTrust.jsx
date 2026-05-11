@@ -1,5 +1,5 @@
 import React from 'react';
-import { Zap, Clock, TrendingUp, ShieldCheck, CheckCircle2, Search, Map, Code, Settings, Trophy, MessageCircle, Globe2, Landmark, Building2, Shield } from 'lucide-react';
+import { Zap, Clock, TrendingUp, ShieldCheck, CheckCircle2, Lightbulb, Map, PencilRuler, Code, Rocket, LineChart, Globe2, Landmark, Building2, Shield, Car, Stethoscope, ShoppingBag, UtensilsCrossed, Megaphone, GraduationCap, Building, ShoppingCart, Store } from 'lucide-react';
 
 export const ImpactMetrics = () => {
     const metrics = [
@@ -34,12 +34,12 @@ export const ImpactMetrics = () => {
 
 export const HowWeWork = () => {
     const steps = [
-        { title: "Discover", desc: "Understand business needs", icon: Search },
-        { title: "Plan", desc: "Architecture & roadmap", icon: Map },
-        { title: "Build", desc: "Rapid development", icon: Code },
-        { title: "Optimize", desc: "Testing + improvements", icon: Settings },
-        { title: "Deliver", desc: "Production-ready", icon: Trophy },
-        { title: "Support", desc: "Continuous updates", icon: MessageCircle }
+        { title: "Idea", desc: "Clarify objective", icon: Lightbulb },
+        { title: "Strategy", desc: "Roadmap + scope", icon: Map },
+        { title: "Design", desc: "UX + interface", icon: PencilRuler },
+        { title: "Development", desc: "Build systems", icon: Code },
+        { title: "Launch", desc: "Go live safely", icon: Rocket },
+        { title: "Growth", desc: "Scale revenue", icon: LineChart }
     ];
 
     return (
@@ -75,7 +75,18 @@ export const HowWeWork = () => {
 };
 
 export const Industries = () => {
-    const industries = ["Startups", "Enterprises", "E-commerce", "Healthcare", "SaaS"];
+    const industries = [
+        { name: "Automobile", icon: Car },
+        { name: "Healthcare", icon: Stethoscope },
+        { name: "Retail", icon: ShoppingBag },
+        { name: "Restaurants", icon: UtensilsCrossed },
+        { name: "Agencies", icon: Megaphone },
+        { name: "Startups", icon: Rocket },
+        { name: "Education", icon: GraduationCap },
+        { name: "Real Estate", icon: Building },
+        { name: "E-commerce", icon: ShoppingCart },
+        { name: "Local Businesses", icon: Store },
+    ];
 
     return (
         <section className="py-24 bg-[#0B0F19] border-y border-white/5 overflow-hidden">
@@ -84,11 +95,12 @@ export const Industries = () => {
                     <h2 className="text-3xl font-black text-white uppercase tracking-[0.2em] mb-4">Industries We Serve</h2>
                     <div className="w-24 h-1 bg-indigo-500 mx-auto rounded-full" />
                 </div>
-                <div className="flex flex-wrap justify-center gap-4">
-                    {industries.map((industry, idx) => (
-                        <div key={idx} className="rounded-full border border-white/10 bg-white/5 px-6 py-3 text-sm md:text-base font-semibold text-white/80 hover:border-indigo-300/40 hover:text-white transition-all cursor-default">
-                             {industry}
-                        </div>
+                <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-5">
+                    {industries.map((industry) => (
+                        <article key={industry.name} className="rounded-2xl border border-white/10 bg-white/5 p-4 transition hover:border-indigo-300/35">
+                            <industry.icon className="mb-2 h-5 w-5 text-indigo-300" />
+                            <p className="text-sm font-semibold text-white">{industry.name}</p>
+                        </article>
                     ))}
                 </div>
             </div>

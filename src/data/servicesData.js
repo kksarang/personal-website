@@ -292,6 +292,59 @@ export const servicesData = {
             { q: "Will I receive the original source files?", a: "Absolutely. Upon completion, we hand over all organized source files (typically Figma) along with exported transparent assets and rigid style guides." }
         ]
     },
+    "logo-design-branding": {
+        title: "Logo Design & Brand Identity",
+        overview: "We craft distinctive logo systems and brand identity foundations that help businesses look premium, memorable, and trusted across every channel.",
+        techStack: ["Adobe Illustrator", "Figma", "Photoshop", "Brand Strategy Framework", "Typography Systems"],
+        typesTitle: "Brand Identity Services",
+        types: [
+            "Primary Logo Design",
+            "Secondary / Alternate Logo Variants",
+            "Icon and Monogram Systems",
+            "Typography and Color Direction",
+            "Brand Usage Guidelines",
+            "Social and Digital Brand Asset Kit"
+        ],
+        processTitle: "Logo and Branding Workflow",
+        process: [
+            { step: "Brand Discovery", desc: "Understand your market, audience psychology, positioning, and business personality before concept creation." },
+            { step: "Creative Direction", desc: "Define design territory including visual tone, style references, typography direction, and symbolic language." },
+            { step: "Concept Exploration", desc: "Create multiple professional logo directions with rationale connected to brand strategy and market differentiation." },
+            { step: "Refinement and Validation", desc: "Iterate on selected concepts with alignment reviews to finalize proportion, spacing, and visual clarity." },
+            { step: "Identity System Build", desc: "Develop logo variants, color system, typography hierarchy, and usage framework for consistent deployment." },
+            { step: "Asset Delivery", desc: "Deliver production-ready files with clear usage guidelines for digital, print, and marketing teams." }
+        ],
+        timeline: [
+            "Express Identity Pack – 5 to 7 Days",
+            "Professional Brand Kit – 1 to 2 Weeks",
+            "Full Identity + Guidelines – 2 to 3 Weeks"
+        ],
+        timelineNote: "(Timeline depends on revision cycles and scope depth.)",
+        whatYouGet: [
+            "Primary + secondary logo variations",
+            "Color palette and typography recommendations",
+            "Scalable vector and web-ready exports",
+            "Brand usage and spacing guidelines",
+            "Social profile and presentation-ready logo pack"
+        ],
+        clientBenefits: [
+            "Stronger first impression and trust with a premium visual identity.",
+            "Consistent branding across digital products, campaigns, and sales materials.",
+            "Clear differentiation from competitors in crowded markets.",
+            "Faster creative execution with reusable brand assets and standards."
+        ],
+        salesImpact: [
+            "Improved lead confidence during first brand interaction.",
+            "Higher campaign performance through consistent visual identity.",
+            "Better conversion support from stronger professional perception.",
+            "Greater recall value that improves repeat engagement and referrals."
+        ],
+        faqs: [
+            { q: "Can you design a logo that fits both digital and print usage?", a: "Yes. We deliver scalable vector formats and usage standards so your logo performs correctly across websites, social media, packaging, and print assets." },
+            { q: "Do you provide multiple concept options?", a: "Yes. We provide curated concept directions and refine the selected route into a final production-ready identity." },
+            { q: "Will I receive all source files and brand guidelines?", a: "Absolutely. Final delivery includes editable source files, export packs, and clear usage guidelines for your internal or external teams." }
+        ]
+    },
     "social-media-marketing": {
         title: "Social Media Marketing",
         overview: "We help businesses grow their brand presence and engagement across social platforms.",

@@ -3,9 +3,9 @@ import { TrendingUp, Smartphone, Cog, Rocket, Sparkles, ShieldCheck, Gauge } fro
 
 export const Positioning = () => {
     const highlights = [
-        { title: 'Execution Partner', desc: 'From strategy and UX to delivery and support.', icon: Rocket },
-        { title: 'Security-Aware Builds', desc: 'Production-ready architecture with resilient standards.', icon: ShieldCheck },
-        { title: 'Outcome Focused', desc: 'Milestones tied to business growth and user impact.', icon: Gauge },
+        { title: 'External Innovation Team', desc: 'We operate as your on-demand product, tech, and growth partner.', icon: Rocket },
+        { title: 'Built for Non-technical Businesses', desc: 'No in-house development team required to execute modern digital systems.', icon: ShieldCheck },
+        { title: 'Outcome and Sales Focused', desc: 'Every roadmap aligns engineering output with business and revenue impact.', icon: Gauge },
     ];
 
     return (
@@ -15,13 +15,14 @@ export const Positioning = () => {
                     <div className="md:w-1/2">
                         <span className="inline-flex items-center gap-2 rounded-full border border-indigo-300/35 bg-indigo-400/10 px-4 py-1.5 text-xs font-semibold uppercase tracking-[0.17em] text-indigo-100">
                             <Sparkles className="h-3.5 w-3.5" />
-                            Positioning
+                            About Hexenity
                         </span>
                         <h2 className="mt-6 mb-6 text-4xl font-black leading-tight text-white md:text-5xl">
-                            A structured partner model for product delivery
+                            Not just a software company.
+                            <span className="block text-indigo-300">A complete digital execution partner.</span>
                         </h2>
                         <p className="mb-8 text-lg leading-relaxed text-gray-400">
-                            Hexenity works as your extended product and engineering team, helping you plan, build, and scale high-performing digital systems with confidence.
+                            Hexenity helps corporations, agencies, startups, and local businesses build digital presence, applications, automation systems, AI integrations, branding, and growth infrastructure with one unified partner model.
                         </p>
                         <div className="space-y-4">
                             {highlights.map((item, idx) => (
@@ -42,20 +43,20 @@ export const Positioning = () => {
                         <div className="premium-surface gradient-stroke relative z-10 rounded-[1.8rem] p-8 md:p-12">
                             <div className="grid grid-cols-2 gap-8">
                                 <div className="space-y-2">
-                                    <div className="text-3xl font-black text-white">2-6</div>
-                                    <div className="text-xs uppercase tracking-widest text-gray-500">Weeks Delivery Cycle</div>
+                                    <div className="text-3xl font-black text-white">No-code</div>
+                                    <div className="text-xs uppercase tracking-widest text-gray-500">to Full Engineering</div>
                                 </div>
                                 <div className="space-y-2">
-                                    <div className="text-3xl font-black text-indigo-400">60%</div>
-                                    <div className="text-xs uppercase tracking-widest text-gray-500">Reduced Dev Time</div>
+                                    <div className="text-3xl font-black text-indigo-400">One Partner</div>
+                                    <div className="text-xs uppercase tracking-widest text-gray-500">for Build + Growth</div>
                                 </div>
                                 <div className="space-y-2">
-                                    <div className="text-3xl font-black text-white">AI-Powered</div>
-                                    <div className="text-xs uppercase tracking-widest text-gray-500">Development Engine</div>
+                                    <div className="text-3xl font-black text-white">Apps + AI</div>
+                                    <div className="text-xs uppercase tracking-widest text-gray-500">Automation Layer</div>
                                 </div>
                                 <div className="space-y-2">
-                                    <div className="text-3xl font-black text-indigo-400">Enterprise</div>
-                                    <div className="text-xs uppercase tracking-widest text-gray-500">Ready Scalability</div>
+                                    <div className="text-3xl font-black text-indigo-400">Launch</div>
+                                    <div className="text-xs uppercase tracking-widest text-gray-500">to Growth Support</div>
                                 </div>
                             </div>
                         </div>
@@ -70,25 +71,25 @@ export const Positioning = () => {
 export const CoreOfferings = () => {
     const offerings = [
         {
-            title: "Build",
-            description: "High-performance digital products from scratch.",
-            items: ["Mobile Apps", "Web Platforms", "Custom Software"],
+            title: "Build Digital Systems",
+            description: "Product engineering for apps, platforms, and operational systems.",
+            items: ["Mobile + Web Apps", "SaaS Platforms", "Business Dashboards"],
             icon: Smartphone,
             color: "from-blue-500/20 to-indigo-600/20",
             iconColor: "text-blue-400"
         },
         {
-            title: "Optimize",
-            description: "Enhance existing systems for peak performance.",
-            items: ["Fix broken projects", "Improve performance", "Refactor legacy code"],
+            title: "Brand and Growth",
+            description: "Digital marketing, SEO, branding, and conversion-focused UX systems.",
+            items: ["Digital Marketing", "SEO + Branding", "UI/UX Transformation"],
             icon: Cog,
             color: "from-indigo-500/20 to-purple-600/20",
             iconColor: "text-indigo-400"
         },
         {
-            title: "Scale",
-            description: "Enterprise-grade systems for growing businesses.",
-            items: ["ERP systems", "Automation tools", "Cloud Infrastructure"],
+            title: "Automate and Scale",
+            description: "AI, automation, and enterprise architecture for long-term scale.",
+            items: ["AI Integrations", "Automation Systems", "Cloud + Security Layer"],
             icon: TrendingUp,
             color: "from-purple-500/20 to-pink-600/20",
             iconColor: "text-purple-400"
@@ -103,9 +104,9 @@ export const CoreOfferings = () => {
                         <Sparkles className="h-3.5 w-3.5" />
                         Core Services
                     </span>
-                    <h2 className="text-4xl md:text-5xl font-black text-white mb-6">Execution Excellence.</h2>
+                    <h2 className="text-4xl md:text-5xl font-black text-white mb-6">From Apps to AI to Growth.</h2>
                     <p className="mx-auto max-w-2xl text-lg text-gray-400">
-                        Flexible service layers for early-stage products and established teams.
+                        One partner model for companies needing technology execution, digital presence, and business growth systems.
                     </p>
                 </div>
 

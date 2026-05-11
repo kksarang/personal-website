@@ -98,6 +98,17 @@ const ServiceDetail = () => {
             'Better retention and repeat business through stable product experience and post-launch iteration.',
             'Greater revenue visibility with measurable milestones, reporting checkpoints, and performance tracking.',
         ];
+    const industries = (service.industries && service.industries.length)
+        ? service.industries
+        : ['Startups', 'SMBs', 'Enterprise Teams', 'Agencies', 'Local Businesses', 'Growth-stage Products'];
+    const relatedServices = Object.entries(servicesData)
+        .filter(([key]) => key !== slug)
+        .slice(0, 3)
+        .map(([relatedSlug, relatedService]) => ({
+            slug: relatedSlug,
+            title: relatedService.title,
+            overview: relatedService.overview,
+        }));
 
     return (
         <HexenityPageShell
@@ -124,6 +135,26 @@ const ServiceDetail = () => {
                             <p className="mt-2 text-2xl font-bold text-white">{item.value}</p>
                         </article>
                     ))}
+                </section>
+
+                <section className="rounded-2xl border border-white/10 bg-white/5 p-4">
+                    <p className="mb-3 text-xs uppercase tracking-[0.15em] text-slate-400">Page Structure</p>
+                    <div className="flex flex-wrap gap-2">
+                        {[
+                            'Overview',
+                            'Service Scope',
+                            'Process',
+                            'Technology',
+                            'Industries',
+                            'Benefits',
+                            'FAQs',
+                            'Related Services',
+                        ].map((item) => (
+                            <span key={item} className="rounded-full border border-white/10 bg-black/20 px-3 py-1 text-[11px] uppercase tracking-[0.12em] text-slate-300">
+                                {item}
+                            </span>
+                        ))}
+                    </div>
                 </section>
 
                 <section className="premium-surface rounded-3xl p-7">
@@ -165,9 +196,12 @@ const ServiceDetail = () => {
                         <section className="premium-surface gradient-stroke rounded-3xl p-7">
                             <p className="mb-4 inline-flex items-center gap-2 rounded-full border border-indigo-300/35 bg-indigo-500/15 px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.16em] text-indigo-200">
                                 <Sparkles className="h-3.5 w-3.5" />
-                                Scope of Delivery
+                                Service Overview
                             </p>
-                            <h2 className="mb-5 text-2xl font-bold text-white">{service.typesTitle}</h2>
+                            <h2 className="mb-2 text-2xl font-bold text-white">{service.typesTitle}</h2>
+                            <p className="mb-5 text-sm text-slate-300">
+                                This service is delivered through milestone governance, cross-functional execution, and transparent stakeholder communication.
+                            </p>
                             <div className="grid gap-3 sm:grid-cols-2">
                                 {service.types.map((type) => (
                                     <div key={type} className="rounded-xl border border-white/10 bg-white/5 px-4 py-3 text-sm text-slate-200 transition hover:border-indigo-300/40">
@@ -178,7 +212,7 @@ const ServiceDetail = () => {
                         </section>
 
                         <section className="premium-surface gradient-stroke rounded-3xl p-7">
-                            <h2 className="mb-5 text-2xl font-bold text-white">{service.processTitle}</h2>
+                            <h2 className="mb-5 text-2xl font-bold text-white">Our Process</h2>
                             <div className="space-y-4">
                                 {service.process.map((stepItem, index) => (
                                     <div key={stepItem.step} className="rounded-xl border border-white/10 bg-white/5 p-4">
@@ -232,6 +266,17 @@ const ServiceDetail = () => {
                                 </div>
                             </section>
                         ) : null}
+
+                        <section className="premium-surface rounded-3xl p-7">
+                            <h2 className="mb-5 text-2xl font-bold text-white">Industries We Support</h2>
+                            <div className="grid gap-3 sm:grid-cols-2">
+                                {industries.map((industry) => (
+                                    <article key={industry} className="rounded-xl border border-white/10 bg-white/5 px-4 py-3 text-sm font-medium text-slate-200">
+                                        {industry}
+                                    </article>
+                                ))}
+                            </div>
+                        </section>
 
                         <section className="premium-surface rounded-3xl p-7">
                             <h2 className="mb-2 inline-flex items-center gap-2 text-2xl font-bold text-white">
@@ -301,40 +346,6 @@ const ServiceDetail = () => {
                             </section>
                         ) : null}
 
-                        <section className="premium-surface rounded-3xl p-7">
-                            <h2 className="mb-2 inline-flex items-center gap-2 text-2xl font-bold text-white">
-                                <TrendingUp className="h-5 w-5 text-indigo-300" />
-                                Client Benefits & Sales Outcomes
-                            </h2>
-                            <p className="mb-5 text-sm text-slate-300">
-                                Every engagement is designed to improve business performance, not just deliver technical output.
-                            </p>
-                            <div className="grid gap-4 md:grid-cols-2">
-                                <article className="rounded-xl border border-white/10 bg-white/5 p-5">
-                                    <h3 className="mb-3 text-base font-semibold text-white">Client Benefits</h3>
-                                    <ul className="space-y-3">
-                                        {clientBenefits.map((item) => (
-                                            <li key={item} className="flex items-start gap-2 text-sm text-slate-200">
-                                                <CheckCircle2 className="mt-0.5 h-4 w-4 text-emerald-300" />
-                                                <span>{item}</span>
-                                            </li>
-                                        ))}
-                                    </ul>
-                                </article>
-                                <article className="rounded-xl border border-white/10 bg-white/5 p-5">
-                                    <h3 className="mb-3 text-base font-semibold text-white">Sales & Growth Impact</h3>
-                                    <ul className="space-y-3">
-                                        {salesImpact.map((item) => (
-                                            <li key={item} className="flex items-start gap-2 text-sm text-slate-200">
-                                                <CheckCircle2 className="mt-0.5 h-4 w-4 text-indigo-300" />
-                                                <span>{item}</span>
-                                            </li>
-                                        ))}
-                                    </ul>
-                                </article>
-                            </div>
-                        </section>
-
                         {service.faqs?.length ? (
                             <section className="premium-surface rounded-3xl p-7">
                                 <h2 className="mb-5 text-2xl font-bold text-white">FAQs</h2>
@@ -348,6 +359,25 @@ const ServiceDetail = () => {
                                 </div>
                             </section>
                         ) : null}
+
+                        <section className="premium-surface rounded-3xl p-7">
+                            <h2 className="mb-5 text-2xl font-bold text-white">Related Services</h2>
+                            <div className="grid gap-4 md:grid-cols-3">
+                                {relatedServices.map((item) => (
+                                    <article key={item.slug} className="rounded-xl border border-white/10 bg-white/5 p-4">
+                                        <h3 className="text-base font-semibold text-white">{item.title}</h3>
+                                        <p className="mt-2 text-sm text-slate-300">{item.overview}</p>
+                                        <button
+                                            onClick={() => navigate(`/hexenity/services/${item.slug}`)}
+                                            className="mt-4 inline-flex items-center gap-2 rounded-lg border border-indigo-300/25 bg-indigo-500/15 px-3 py-2 text-xs font-semibold uppercase tracking-[0.12em] text-indigo-100 transition hover:bg-indigo-500/25"
+                                        >
+                                            View Service
+                                            <ArrowRight className="h-3.5 w-3.5" />
+                                        </button>
+                                    </article>
+                                ))}
+                            </div>
+                        </section>
                     </div>
 
                     <div className="space-y-6">
