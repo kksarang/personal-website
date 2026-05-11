@@ -226,9 +226,9 @@ const SocialIcon = ({ icon: Icon, link }) => (
         href={link}
         target="_blank"
         rel="noreferrer"
-        className="w-12 h-12 rounded-2xl bg-white/5 border border-white/5 flex items-center justify-center hover:bg-indigo-600 hover:text-white transition-all text-gray-400"
+        className="group flex h-12 w-12 items-center justify-center rounded-2xl border border-slate-300 bg-white text-slate-700 shadow-[0_4px_10px_rgba(15,23,42,0.08)] transition-all hover:-translate-y-0.5 hover:border-indigo-500 hover:bg-indigo-600 hover:text-white dark:border-white/10 dark:bg-white/5 dark:text-slate-200 dark:shadow-none dark:hover:border-transparent dark:hover:bg-indigo-600 dark:hover:text-white"
     >
-        <Icon className="w-5 h-5" />
+        <Icon className="h-5 w-5 stroke-[2.2]" />
     </a>
 );
 
