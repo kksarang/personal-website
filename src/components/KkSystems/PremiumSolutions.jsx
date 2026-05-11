@@ -112,13 +112,16 @@ export const PremiumSolutions = () => {
                     </p>
                 </div>
 
-                <div className="grid gap-8 md:grid-cols-3">
-                    {featuredSolutions.map((solution) => (
+                <div className="grid gap-6 md:grid-cols-6">
+                    {featuredSolutions.map((solution, index) => (
                         <div
                             key={solution.title}
-                            className="group relative flex h-full flex-col overflow-hidden rounded-3xl border border-white/10 bg-slate-950/70 p-8 transition hover:border-indigo-300/40"
+                            className={`group relative flex h-full flex-col overflow-hidden rounded-3xl border border-white/10 bg-slate-950/70 p-8 transition hover:border-indigo-300/40 ${
+                                index === 0 ? 'md:col-span-6 lg:col-span-2' : 'md:col-span-3 lg:col-span-2'
+                            }`}
                         >
                             <div className="absolute inset-x-0 top-0 h-1 bg-gradient-to-r from-cyan-300/70 via-indigo-300/70 to-violet-300/70" />
+                            <div className="pointer-events-none absolute -right-20 -top-20 h-44 w-44 rounded-full bg-indigo-500/20 blur-[90px] opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
                             <div className="mb-5 flex items-center justify-between">
                                 <div className="flex h-12 w-12 items-center justify-center rounded-xl border border-indigo-500/20 bg-indigo-500/10">
                                     <solution.icon className="h-6 w-6 text-indigo-400" />

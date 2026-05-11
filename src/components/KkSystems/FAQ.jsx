@@ -3,28 +3,28 @@ import { Plus, Minus } from 'lucide-react';
 
 const faqData = [
     {
-        question: "What mobile app development services do you offer?",
-        answer: "We provide custom mobile app development services including Flutter app development, Android applications, cross-platform solutions, and backend-integrated mobile systems designed for scalability and performance."
+        question: "What kind of businesses does Hexenity work with?",
+        answer: "We partner with startups, agencies, non-technical businesses, and enterprise teams that need digital systems, applications, automation, branding, or growth infrastructure."
     },
     {
-        question: "Do you develop both Android and iOS applications?",
-        answer: "Yes. We build cross-platform applications using Flutter, ensuring native-like performance on both Android and iOS devices while maintaining a single codebase."
+        question: "Do we need an internal tech team before starting?",
+        answer: "No. Hexenity can act as your external innovation and execution team, handling discovery, design, engineering, launch, and optimization with clear governance."
     },
     {
-        question: "What technologies do you use for backend development?",
-        answer: "We use modern backend technologies including Firebase, REST APIs, Node.js, cloud-based databases, and secure authentication systems to ensure high-performance and scalable infrastructure."
+        question: "Can Hexenity handle both technology and growth services?",
+        answer: "Yes. We support product engineering plus digital growth capabilities including branding, SEO, campaign systems, and conversion-focused optimization."
     },
     {
-        question: "Can you build scalable web applications?",
-        answer: "Yes. We design and develop scalable web applications using modern frontend frameworks and secure backend architectures optimized for performance and cloud deployment."
+        question: "How do you keep projects professional and predictable?",
+        answer: "Every engagement follows milestone planning, sprint reviews, QA checkpoints, architecture governance, and transparent status reporting."
     },
     {
-        question: "How long does it take to develop a mobile app?",
-        answer: "Development timelines depend on complexity, features, and integrations. A standard mobile app may take 4–8 weeks, while complex enterprise applications may take longer."
+        question: "Can you modernize an existing product or broken project?",
+        answer: "Absolutely. We take over existing codebases, improve architecture and UX, fix performance issues, and move products toward scalable and maintainable standards."
     },
     {
-        question: "Do you provide post-launch support?",
-        answer: "Yes. We offer maintenance, performance monitoring, feature upgrades, and technical support after deployment."
+        question: "Do you provide post-launch support and growth planning?",
+        answer: "Yes. We provide ongoing support, analytics review, performance optimization, and strategic roadmap guidance after launch."
     }
 ];
 
@@ -50,7 +50,7 @@ const FAQ = () => {
     };
 
     return (
-        <section className="py-[100px] bg-[#0A0B14] relative">
+        <section className="relative bg-[#0A0B14] py-24">
             {/* Inject SEO Structured Data */}
             <script
                 type="application/ld+json"
@@ -60,17 +60,20 @@ const FAQ = () => {
             {/* Background elements */}
             <div className="absolute top-0 right-0 w-1/2 h-1/2 bg-indigo-600/5 rounded-bl-[100px] pointer-events-none" />
 
-            <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-                <div className="text-center mb-16">
-                    <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
-                        Frequently Asked Questions
+            <div className="relative z-10 mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
+                <div className="mb-16 text-center">
+                    <div className="mb-6 inline-flex rounded-full border border-indigo-300/25 bg-indigo-500/10 px-4 py-2 text-xs font-semibold uppercase tracking-[0.16em] text-indigo-200">
+                        FAQ
+                    </div>
+                    <h2 className="mb-6 text-4xl font-black text-white md:text-5xl">
+                        Frequently asked questions
                     </h2>
-                    <p className="text-lg text-gray-400 max-w-2xl mx-auto">
-                        Everything you need to know about our mobile app development, backend engineering, and engagement models.
+                    <p className="mx-auto max-w-2xl text-lg text-gray-400">
+                        Clear answers about our execution model, service coverage, and how Hexenity supports business growth.
                     </p>
                 </div>
 
-                <div className="flex flex-col">
+                <div className="rounded-3xl border border-white/10 bg-white/5 px-5 py-2 sm:px-8">
                     {faqData.map((faq, index) => {
                         const isOpen = activeIndex === index;
                         return (
@@ -83,10 +86,10 @@ const FAQ = () => {
                                     onClick={() => toggleFAQ(index)}
                                     aria-expanded={isOpen}
                                 >
-                                    <span className={`text-lg font-semibold transition-colors duration-300 ${isOpen ? 'text-indigo-400' : 'text-white group-hover:text-indigo-400'}`}>
+                                    <span className={`text-base font-semibold transition-colors duration-300 sm:text-lg ${isOpen ? 'text-indigo-300' : 'text-white group-hover:text-indigo-300'}`}>
                                         {faq.question}
                                     </span>
-                                    <div className={`ml-6 flex-shrink-0 transition-transform duration-300 ${isOpen ? 'rotate-180 text-indigo-400' : 'text-gray-500 group-hover:text-indigo-400'}`}>
+                                    <div className={`ml-6 flex-shrink-0 transition-transform duration-300 ${isOpen ? 'rotate-180 text-indigo-300' : 'text-gray-500 group-hover:text-indigo-300'}`}>
                                         {isOpen ? <Minus className="w-5 h-5" /> : <Plus className="w-5 h-5" />}
                                     </div>
                                 </button>

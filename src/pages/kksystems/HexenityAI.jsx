@@ -11,12 +11,11 @@ import {
     History, 
     Settings, 
     ChevronRight,
-    Search,
     BrainCircuit,
-    Terminal,
-    ArrowLeft
+    Terminal
 } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
+import { generateHexenityAiResponse, HEXENITY_AI_SUGGESTIONS } from '../../lib/hexenityAiEngine';
 
 const HexenityAI = () => {
     const navigate = useNavigate();
@@ -41,30 +40,25 @@ const HexenityAI = () => {
         }
     }, [messages, isTyping]);
 
-    const handleSendMessage = () => {
-        if (!input.trim()) return;
+    const handleSendMessage = (forcedInput) => {
+        const nextInput = (forcedInput ?? input).trim();
+        if (!nextInput) return;
 
         const userMsg = { 
             role: 'user', 
-            text: input, 
+            text: nextInput, 
             time: new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }) 
         };
         setMessages(prev => [...prev, userMsg]);
         setInput('');
         setIsTyping(true);
 
-        // Simulated AI response
         setTimeout(() => {
-            const responses = {
-                'Assistant': "I've analyzed your request. Based on current Hexenity engineering standards, I recommend a modular approach for maximum scalability. Would you like me to draft a technical roadmap?",
-                'Dev Helper': "Accessing code repository... I have identified potential optimization points in the primary logic hooks. I can generate a refactored TypeScript snippet for you now.",
-                'Logic Engine': "Cross-referencing ERP modules... The proposed workflow synchronization can be achieved by injecting an intermediate event-bus layer. This will reduce latency by approximately 40%.",
-                'Analytics': "Processing data telemetry... Project performance metrics indicate a high satisfaction index. I suggest scaling the server instances to handle the projected traffic growth."
-            };
+            const response = generateHexenityAiResponse({ input: nextInput, mode: activeMode });
 
             const aiMsg = { 
                 role: 'ai', 
-                text: responses[activeMode] || responses['Assistant'], 
+                text: `### ${response.title}\n\n${response.text}`,
                 time: new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }) 
             };
             setMessages(prev => [...prev, aiMsg]);
@@ -73,7 +67,8 @@ const HexenityAI = () => {
     };
 
     return (
-        <div className="h-screen flex bg-[#030303] text-white overflow-hidden font-inter selection:bg-indigo-500/30">
+        <div className="h-screen overflow-hidden bg-[#030303] text-white font-inter selection:bg-indigo-500/30">
+            <div className="flex h-[calc(100vh-6rem)] w-full pt-24 md:h-[calc(100vh-7rem)] md:pt-28">
             {/* 🌌 DYNAMIC BACKGROUND BLOBS */}
             <div className="fixed inset-0 pointer-events-none overflow-hidden">
                 <div className="absolute w-[800px] h-[800px] bg-indigo-600/10 blur-[160px] rounded-full -top-40 -left-40 animate-pulse" />
@@ -84,14 +79,6 @@ const HexenityAI = () => {
             {/* 🛠️ SIDEBAR */}
             <aside className="w-72 bg-[#0B0F19]/40 backdrop-blur-3xl border-r border-white/5 flex flex-col z-10 hidden lg:flex">
                 <div className="p-8">
-                    <button 
-                        onClick={() => navigate('/hexenity/core-hexenity')}
-                        className="flex items-center gap-2 text-gray-400 hover:text-white transition-colors mb-10 group"
-                    >
-                        <ArrowLeft className="w-4 h-4 group-hover:-translate-x-1 transition-transform" />
-                        <span className="text-sm font-medium tracking-tight">Core Hexenity</span>
-                    </button>
-
                     <div className="flex items-center gap-3 mb-10">
                         <div className="w-10 h-10 rounded-xl bg-indigo-600 flex items-center justify-center shadow-[0_0_20px_rgba(79,70,229,0.5)]">
                             <Sparkles className="w-6 h-6 text-white" />
@@ -174,6 +161,19 @@ const HexenityAI = () => {
                     ref={scrollRef}
                     className="flex-1 overflow-y-auto p-6 md:p-12 space-y-8 scroll-smooth"
                 >
+                    <div className="mx-auto mb-3 flex w-full max-w-4xl flex-wrap gap-2">
+                        {HEXENITY_AI_SUGGESTIONS.map((suggestion) => (
+                            <button
+                                key={suggestion}
+                                type="button"
+                                onClick={() => handleSendMessage(suggestion)}
+                                className="rounded-full border border-white/10 bg-white/5 px-3 py-1.5 text-[10px] font-semibold uppercase tracking-[0.12em] text-slate-300 transition hover:border-indigo-300/35 hover:bg-indigo-500/15 hover:text-indigo-100"
+                            >
+                                {suggestion}
+                            </button>
+                        ))}
+                    </div>
+
                     <AnimatePresence>
                         {messages.map((msg, i) => (
                             <motion.div
@@ -186,7 +186,7 @@ const HexenityAI = () => {
                                     {msg.role === 'ai' ? <Bot className="w-5 h-5 text-white" /> : <User className="w-5 h-5 text-white" />}
                                 </div>
                                 <div className={`max-w-2xl space-y-2 ${msg.role === 'user' ? 'text-right' : ''}`}>
-                                    <div className={`p-5 rounded-2xl leading-relaxed text-sm md:text-base ${msg.role === 'user' ? 'bg-indigo-600 text-white' : 'bg-white/[0.03] border border-white/10 text-white/80'}`}>
+                                    <div className={`whitespace-pre-line p-5 rounded-2xl leading-relaxed text-sm md:text-base ${msg.role === 'user' ? 'bg-indigo-600 text-white' : 'bg-white/[0.03] border border-white/10 text-white/80'}`}>
                                         {msg.text}
                                     </div>
                                     <p className="text-[10px] font-bold text-white/20 uppercase tracking-widest">{msg.time}</p>
@@ -222,7 +222,7 @@ const HexenityAI = () => {
                                 type="text"
                                 value={input}
                                 onChange={(e) => setInput(e.target.value)}
-                                onKeyPress={(e) => e.key === 'Enter' && handleSendMessage()}
+                                onKeyDown={(e) => e.key === 'Enter' && handleSendMessage()}
                                 placeholder={`Ask Hexenity AI about ${activeMode === 'Assistant' ? 'your project' : activeMode.toLowerCase()}...`}
                                 className="flex-1 bg-transparent border-none outline-none px-4 py-3 text-sm placeholder:text-white/20"
                             />
@@ -236,9 +236,15 @@ const HexenityAI = () => {
                         <div className="mt-4 flex justify-center items-center gap-6">
                             <p className="text-[10px] text-white/20 font-bold uppercase tracking-widest">Available Commands: <span className="text-indigo-400/50">/build  /fix  /analyze</span></p>
                         </div>
+                        <div className="mt-4 flex justify-center">
+                            <p className="rounded-full border border-amber-300/35 bg-amber-300/10 px-4 py-1.5 text-[10px] font-semibold uppercase tracking-[0.16em] text-amber-200">
+                                Hexenity AI - Work In Progress (Started Last Month)
+                            </p>
+                        </div>
                     </div>
                 </div>
             </main>
+            </div>
         </div>
     );
 };

@@ -1,9 +1,24 @@
-import React from 'react';
+import React, { useMemo, useState } from 'react';
+import { motion } from 'framer-motion';
 import { ArrowRight, CheckCircle2, Clock3, Cpu, ShieldCheck } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 
 const PremiumHero = () => {
     const navigate = useNavigate();
+    const [mouse, setMouse] = useState({ x: 50, y: 30 });
+
+    const particles = useMemo(
+        () =>
+            Array.from({ length: 16 }, (_, i) => ({
+                id: i,
+                left: `${(i * 13) % 100}%`,
+                top: `${(i * 17) % 95}%`,
+                delay: (i % 5) * 0.6,
+                duration: 4 + (i % 4),
+            })),
+        []
+    );
+
     const trustItems = [
         { label: 'Response Window', value: '< 24h', icon: Clock3 },
         { label: 'Delivery Model', value: 'Enterprise-grade', icon: ShieldCheck },
@@ -11,17 +26,50 @@ const PremiumHero = () => {
     ];
 
     return (
-        <section id="home" className="relative overflow-hidden bg-[#060916] pb-24 pt-36 md:pt-40">
+        <section
+            id="home"
+            className="relative overflow-hidden bg-[#060916] pb-24 pt-36 md:pt-40"
+            onMouseMove={(e) => {
+                const rect = e.currentTarget.getBoundingClientRect();
+                const x = ((e.clientX - rect.left) / rect.width) * 100;
+                const y = ((e.clientY - rect.top) / rect.height) * 100;
+                setMouse({ x, y });
+            }}
+        >
             <div className="pointer-events-none absolute inset-0 z-0">
                 <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(99,102,241,0.16),transparent_45%)]" />
                 <div className="absolute -left-20 bottom-0 h-72 w-72 rounded-full bg-indigo-500/15 blur-[120px]" />
                 <div className="absolute -right-20 top-8 h-72 w-72 rounded-full bg-cyan-500/10 blur-[120px]" />
                 <div className="absolute left-[40%] top-[30%] h-96 w-96 rounded-full bg-violet-500/10 blur-[150px]" />
+                <motion.div
+                    className="absolute h-56 w-56 rounded-full bg-indigo-500/20 blur-[90px]"
+                    animate={{ left: `calc(${mouse.x}% - 7rem)`, top: `calc(${mouse.y}% - 7rem)` }}
+                    transition={{ type: 'spring', stiffness: 70, damping: 20 }}
+                />
+                {particles.map((particle) => (
+                    <motion.span
+                        key={particle.id}
+                        className="absolute h-1.5 w-1.5 rounded-full bg-indigo-300/40"
+                        style={{ left: particle.left, top: particle.top }}
+                        animate={{ y: [0, -12, 0], opacity: [0.18, 0.55, 0.18] }}
+                        transition={{
+                            repeat: Infinity,
+                            duration: particle.duration,
+                            ease: 'easeInOut',
+                            delay: particle.delay,
+                        }}
+                    />
+                ))}
             </div>
 
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full">
                 <div className="grid items-start gap-10 xl:grid-cols-[1.05fr_0.95fr] xl:gap-14">
-                    <div className="max-w-2xl">
+                    <motion.div
+                        className="max-w-2xl"
+                        initial={{ opacity: 0, y: 24 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.6, ease: 'easeOut' }}
+                    >
                         <div className="mb-7 inline-flex items-center gap-2 rounded-full border border-indigo-300/30 bg-indigo-400/10 px-4 py-2">
                             <span className="h-2 w-2 rounded-full bg-indigo-300" />
                             <span className="text-xs font-semibold uppercase tracking-[0.16em] text-indigo-200">External Technology & Innovation Partner</span>
@@ -69,9 +117,14 @@ const PremiumHero = () => {
                                 </span>
                             ))}
                         </div>
-                    </div>
+                    </motion.div>
 
-                    <div className="relative mx-auto w-full max-w-xl xl:mx-0 xl:max-w-none xl:pt-2">
+                    <motion.div
+                        className="relative mx-auto w-full max-w-xl xl:mx-0 xl:max-w-none xl:pt-2"
+                        initial={{ opacity: 0, y: 24 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.6, ease: 'easeOut', delay: 0.1 }}
+                    >
                         <div className="rounded-[1.8rem] border border-white/15 bg-slate-950/70 p-5 md:p-6">
                             <div className="mb-4 flex items-center justify-between">
                                 <span className="text-xs uppercase tracking-[0.18em] text-indigo-300">Innovation Command Center</span>
@@ -118,7 +171,7 @@ const PremiumHero = () => {
                                 <p className="inline-flex items-center gap-2"><CheckCircle2 className="h-4 w-4" /> Hexenity acts as your external execution team for technology, automation, branding, and growth.</p>
                             </div>
                         </div>
-                    </div>
+                    </motion.div>
                 </div>
             </div>
         </section>

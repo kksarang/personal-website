@@ -27,6 +27,7 @@ const KksystemsNavbar = () => {
     const navLinks = [
         { title: 'Home', href: '/hexenity' },
         { title: 'Services', href: '/hexenity/services' },
+        { title: 'Core Hexenity', href: '/hexenity/core-hexenity' },
         { title: 'Work', href: '/hexenity/work' },
         { title: 'About', href: '/hexenity/about' },
         { title: 'Contact', href: '/hexenity/contact' },
@@ -101,7 +102,9 @@ const KksystemsNavbar = () => {
                             <a
                                 key={link.title}
                                 href={link.href}
-                                onClick={(e) => handleNavClick(e, link.href)}
+                                onClick={link.newTab ? undefined : (e) => handleNavClick(e, link.href)}
+                                target={link.newTab ? '_blank' : undefined}
+                                rel={link.newTab ? 'noopener noreferrer' : undefined}
                                 className={`hexenity-nav-link-item inline-flex items-center rounded-full border px-3 py-2 text-[11px] font-semibold uppercase tracking-[0.12em] transition-all duration-300 ${
                                     active
                                         ? 'border-indigo-300/45 bg-indigo-400/20 text-indigo-100'
@@ -143,7 +146,9 @@ const KksystemsNavbar = () => {
                         <a
                             key={link.title}
                             href={link.href}
-                            onClick={(e) => handleNavClick(e, link.href)}
+                            onClick={link.newTab ? undefined : (e) => handleNavClick(e, link.href)}
+                            target={link.newTab ? '_blank' : undefined}
+                            rel={link.newTab ? 'noopener noreferrer' : undefined}
                             className="block rounded-lg px-3 py-2 text-sm text-slate-200 transition hover:bg-indigo-300/10 hover:text-indigo-100"
                         >
                             {link.title}

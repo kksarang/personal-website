@@ -6,6 +6,9 @@ import { PremiumSolutions, ProductLayer } from '../../components/KkSystems/Premi
 import { ImpactMetrics, HowWeWork, Industries, GlobalPresence } from '../../components/KkSystems/PremiumTrust';
 import { TechStack, WhyHexenity, ERPDemoEntry, FinalCTA } from '../../components/KkSystems/PremiumFinal';
 import HexenityValueStack from '../../components/KkSystems/HexenityValueStack';
+import TrustedBy from '../../components/KkSystems/TrustedBy';
+import Testimonials from '../../components/KkSystems/Testimonials';
+import FAQ from '../../components/KkSystems/FAQ';
 
 const KksystemsHome = () => {
     const [showIntro, setShowIntro] = useState(() => {
@@ -56,6 +59,9 @@ const KksystemsHome = () => {
             {/* 1. Hero (Impact) & 2. Trust + Stats (Inside Hero) */}
             <PremiumHero />
 
+            {/* 2. Trusted By / Partners */}
+            <TrustedBy />
+
             {/* 3. What Hexenity Is (Positioning) */}
             <Positioning />
             <HexenityValueStack />
@@ -87,10 +93,16 @@ const KksystemsHome = () => {
             {/* 12. Why Hexenity (Differentiation) */}
             <WhyHexenity />
 
-            {/* 13. Demo ERP Entry (Product Feel) */}
+            {/* 13. Testimonials */}
+            <Testimonials />
+
+            {/* 14. FAQ */}
+            <FAQ />
+
+            {/* 15. Demo ERP Entry (Product Feel) */}
             <ERPDemoEntry />
 
-            {/* 14. Final CTA */}
+            {/* 16. Final CTA */}
             <FinalCTA />
         </div>
     );

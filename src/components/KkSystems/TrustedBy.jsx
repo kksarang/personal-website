@@ -1,27 +1,29 @@
 import React from 'react';
+import { Landmark, Stethoscope, Car, Building2, ShoppingBag, Rocket } from 'lucide-react';
 
 const TrustedBy = () => {
+    const partners = [
+        { name: 'Automobile Group', icon: Car },
+        { name: 'Healthcare Network', icon: Stethoscope },
+        { name: 'Retail Brands', icon: ShoppingBag },
+        { name: 'Enterprise Teams', icon: Building2 },
+        { name: 'Growth Startups', icon: Rocket },
+        { name: 'Service Businesses', icon: Landmark },
+    ];
+
     return (
-        <section className="py-10 border-b border-white/5 bg-[#0A0B14]">
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <p className="text-center text-sm font-medium text-gray-500 mb-8 uppercase tracking-widest">
-                    Trusted by innovative teams worldwide
+        <section className="border-y border-white/5 bg-[#0A0B14] py-16">
+            <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+                <p className="mb-8 text-center text-xs font-semibold uppercase tracking-[0.2em] text-slate-400">
+                    Trusted by teams across industries
                 </p>
-                <div className="flex flex-wrap justify-center items-center gap-x-12 gap-y-8 opacity-50 grayscale hover:grayscale-0 transition-all duration-500">
-                    <div className="flex items-center gap-2">
-                        <div className="w-8 h-8 rounded-full bg-gradient-to-br from-purple-500 to-blue-500" />
-                        <span className="text-xl font-bold text-white">StartupTech</span>
-                    </div>
-                    <div className="flex items-center gap-2">
-                        <div className="w-8 h-8 rotate-45 bg-blue-500" />
-                        <span className="text-xl font-bold text-white">GlobalBusiness</span>
-                    </div>
-                    <div className="flex items-center gap-2 text-white">
-                        <span className="text-2xl font-bold">50+ Projects</span>
-                    </div>
-                    <div className="flex items-center gap-2 text-white">
-                        <span className="text-2xl font-bold">20+ Clients</span>
-                    </div>
+                <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-6">
+                    {partners.map((partner) => (
+                        <article key={partner.name} className="flex items-center gap-3 rounded-2xl border border-white/10 bg-white/5 px-4 py-3 transition hover:border-indigo-300/35">
+                            <partner.icon className="h-4 w-4 text-indigo-300" />
+                            <span className="text-xs font-semibold uppercase tracking-[0.12em] text-slate-200">{partner.name}</span>
+                        </article>
+                    ))}
                 </div>
             </div>
         </section>
