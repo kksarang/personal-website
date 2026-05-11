@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from 'react';
-import { Mail, MapPin, Phone, Send, CheckCircle2, Instagram, Github, Globe, Zap, Clock, Rocket, Shield } from 'lucide-react';
+import { Mail, MapPin, Phone, Send, CheckCircle2, Instagram, Github, Globe, Zap, Clock, Rocket, Shield, Sparkles } from 'lucide-react';
 import { motion } from 'framer-motion';
 
 export default function Contact() {
     const [selectedType, setSelectedType] = useState("");
-    const [formStatus, setFormStatus] = useState("idle"); // idle, sending, success
+    const [formStatus, setFormStatus] = useState("idle");
 
     useEffect(() => {
         window.scrollTo(0, 0);
@@ -20,14 +20,13 @@ export default function Contact() {
     };
 
     const quickOptions = [
-        { label: "Build App", type: "mobile_app", icon: SmartphoneIcon },
-        { label: "Fix Project", type: "fix_project", icon: SettingsIcon },
-        { label: "ERP Solution", type: "erp_system", icon: BarChartIcon }
+        { label: "Build App", type: "mobile_app", icon: Rocket },
+        { label: "Fix Project", type: "fix_project", icon: Shield },
+        { label: "ERP Solution", type: "erp_system", icon: Sparkles }
     ];
 
     return (
-        <div className="bg-[#0B0F19] min-h-screen pt-32 pb-20 overflow-hidden font-sans">
-            {/* Background elements */}
+        <div className="min-h-screen overflow-hidden bg-[#0B0F19] pt-32 pb-20 font-sans">
             <div className="absolute inset-0 pointer-events-none">
                 <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-indigo-600/10 blur-[150px] rounded-full" />
                 <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-purple-600/10 blur-[150px] rounded-full" />
@@ -35,12 +34,11 @@ export default function Contact() {
             </div>
 
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-                {/* HERO SECTION */}
                 <div className="text-center mb-20">
                     <motion.div
                         initial={{ opacity: 0, scale: 0.9 }}
                         animate={{ opacity: 1, scale: 1 }}
-                        className="inline-flex items-center gap-2 px-4 py-1 rounded-full bg-indigo-500/10 border border-indigo-500/20 text-indigo-400 text-xs font-black uppercase tracking-widest mb-6"
+                        className="inline-flex items-center gap-2 rounded-full border border-indigo-500/20 bg-indigo-500/10 px-4 py-1 text-xs font-black uppercase tracking-widest text-indigo-400 mb-6"
                     >
                         <Zap className="w-3 h-3" /> Get a response within 24 hours
                     </motion.div>
@@ -53,23 +51,21 @@ export default function Contact() {
                         <span className="premium-gradient-text">Powerful Together.</span>
                     </motion.h1>
                     <motion.p
-                         initial={{ opacity: 0, y: 20 }}
-                         animate={{ opacity: 1, y: 0 }}
-                         transition={{ delay: 0.1 }}
-                         className="text-xl text-gray-400 font-light max-w-2xl mx-auto"
+                        initial={{ opacity: 0, y: 20 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ delay: 0.1 }}
+                        className="text-xl text-gray-400 font-light max-w-2xl mx-auto"
                     >
-                        Have a vision? We have the engineering expertise. <br className="hidden md:block" />
-                        Tell us about your project and let's make it a reality.
+                        Share your goals, timelines, and constraints. We will return with a practical execution plan you can act on immediately.
                     </motion.p>
                 </div>
 
                 <div className="grid lg:grid-cols-12 gap-12 lg:gap-20">
-                    {/* LEFT SIDE: INFO */}
                     <div className="lg:col-span-5 space-y-10">
                         <motion.div
-                             initial={{ opacity: 0, x: -20 }}
-                             animate={{ opacity: 1, x: 0 }}
-                             transition={{ delay: 0.2 }}
+                            initial={{ opacity: 0, x: -20 }}
+                            animate={{ opacity: 1, x: 0 }}
+                            transition={{ delay: 0.2 }}
                         >
                             <h3 className="text-2xl font-black text-white mb-8">Direct Contact</h3>
                             <div className="space-y-6">
@@ -80,46 +76,58 @@ export default function Contact() {
                         </motion.div>
 
                         <motion.div
-                             initial={{ opacity: 0, x: -20 }}
-                             animate={{ opacity: 1, x: 0 }}
-                             transition={{ delay: 0.3 }}
-                             className="hexenity-glass p-8 border-indigo-500/10"
+                            initial={{ opacity: 0, x: -20 }}
+                            animate={{ opacity: 1, x: 0 }}
+                            transition={{ delay: 0.3 }}
+                            className="hexenity-glass border-indigo-500/10 p-8"
                         >
                             <h4 className="text-lg font-bold text-white mb-4 flex items-center gap-2">
                                 <Clock className="w-5 h-5 text-indigo-400" /> Quick Response Guarantee
                             </h4>
                             <p className="text-gray-400 font-light text-sm leading-relaxed">
-                                Our team of architects reviews every inquiry personally. You can expect a detailed technical response or a meeting invite within <span className="text-white font-medium">one business day</span>.
+                                Every inquiry is reviewed by a product and engineering lead. You can expect a detailed response or meeting invite within <span className="text-white font-medium">one business day</span>.
                             </p>
+                            <div className="mt-6 rounded-xl border border-white/10 bg-white/5 p-4">
+                                <p className="text-xs uppercase tracking-[0.16em] text-gray-500">Typical first response includes</p>
+                                <ul className="mt-3 space-y-2 text-sm text-slate-300">
+                                    <li className="flex items-start gap-2"><CheckCircle2 className="mt-0.5 h-4 w-4 text-emerald-300" /> Scope assumptions</li>
+                                    <li className="flex items-start gap-2"><CheckCircle2 className="mt-0.5 h-4 w-4 text-emerald-300" /> Suggested engagement model</li>
+                                    <li className="flex items-start gap-2"><CheckCircle2 className="mt-0.5 h-4 w-4 text-emerald-300" /> Initial timeline estimate</li>
+                                </ul>
+                            </div>
                         </motion.div>
 
                         <motion.div
-                             initial={{ opacity: 0, x: -20 }}
-                             animate={{ opacity: 1, x: 0 }}
-                             transition={{ delay: 0.4 }}
-                             className="flex gap-4"
+                            initial={{ opacity: 0, x: -20 }}
+                            animate={{ opacity: 1, x: 0 }}
+                            transition={{ delay: 0.4 }}
+                            className="flex gap-4"
                         >
-                             <SocialIcon icon={Instagram} link="https://instagram.com/hexenity" />
-                             <SocialIcon icon={Github} link="https://github.com/kksarang" />
-                             <SocialIcon icon={Globe} link="https://sarangrajan.in" />
+                            <SocialIcon icon={Instagram} link="https://instagram.com/hexenity" />
+                            <SocialIcon icon={Github} link="https://github.com/kksarang" />
+                            <SocialIcon icon={Globe} link="https://sarangrajan.in" />
                         </motion.div>
                     </div>
 
-                    {/* RIGHT SIDE: FORM */}
                     <motion.div
-                         initial={{ opacity: 0, y: 30 }}
-                         animate={{ opacity: 1, y: 0 }}
-                         transition={{ delay: 0.2 }}
-                         className="lg:col-span-7"
+                        initial={{ opacity: 0, y: 30 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ delay: 0.2 }}
+                        className="lg:col-span-7"
                     >
-                        <div className="hexenity-glass p-8 md:p-12 shadow-2xl relative border-white/5 bg-[#131521]/50">
+                        <div className="relative border-white/5 bg-[#131521]/50 hexenity-glass p-8 md:p-12 shadow-2xl">
                             <h3 className="text-2xl font-black text-white mb-10">Project Inquiry</h3>
 
-                            {/* Quick Option Buttons */}
                             <div className="grid grid-cols-3 gap-4 mb-10">
-                                <QuickOptionBtn label="Build App" onClick={() => setSelectedType("mobile_app")} active={selectedType === "mobile_app"} icon={Rocket} />
-                                <QuickOptionBtn label="Fix Project" onClick={() => setSelectedType("fix_project")} active={selectedType === "fix_project"} icon={Shield} />
-                                <QuickOptionBtn label="ERP Solution" onClick={() => setSelectedType("erp_system")} active={selectedType === "erp_system"} icon={BarChartIcon} />
+                                {quickOptions.map((option) => (
+                                    <QuickOptionBtn
+                                        key={option.type}
+                                        label={option.label}
+                                        onClick={() => setSelectedType(option.type)}
+                                        active={selectedType === option.type}
+                                        icon={option.icon}
+                                    />
+                                ))}
                             </div>
 
                             <form onSubmit={handleSubmit} className="space-y-6">
@@ -183,6 +191,10 @@ export default function Contact() {
                                     {formStatus === "sending" && <div className="w-6 h-6 border-2 border-white/30 border-t-white rounded-full animate-spin" />}
                                     {formStatus === "success" && <>Message Sent! <CheckCircle2 className="w-5 h-5" /></>}
                                 </button>
+
+                                <p className="text-center text-xs text-gray-500">
+                                    Prefer direct communication? Email <a className="text-indigo-300 hover:text-indigo-200" href="mailto:info.hexenity@gmail.com">info.hexenity@gmail.com</a>.
+                                </p>
                             </form>
                         </div>
                     </motion.div>
@@ -243,16 +255,4 @@ const QuickOptionBtn = ({ label, active, onClick, icon: Icon }) => (
         <Icon className="w-5 h-5" />
         <span className="text-[10px] font-black uppercase tracking-widest">{label}</span>
     </button>
-);
-
-const SmartphoneIcon = (props) => (
-    <svg {...props} xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-smartphone"><rect width="14" height="20" x="5" y="2" rx="2" ry="2"/><path d="M12 18h.01"/></svg>
-);
-
-const SettingsIcon = (props) => (
-    <svg {...props} xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-settings"><path d="M12.22 2h-.44a2 2 0 0 0-2 2v.18a2 2 0 0 1-1 1.73l-.43.25a2 2 0 0 1-2 0l-.15-.08a2 2 0 0 0-2.73.73l-.22.38a2 2 0 0 0 .73 2.73l.15.1a2 2 0 0 1 1 1.72v.51a2 2 0 0 1-1 1.74l-.15.09a2 2 0 0 0-.73 2.73l.22.38a2 2 0 0 0 2.73.73l.15-.08a2 2 0 0 1 2 0l.43.25a2 2 0 0 1 1 1.73V20a2 2 0 0 0 2 2h.44a2 2 0 0 0 2-2v-.18a2 2 0 0 1 1-1.73l.43-.25a2 2 0 0 1 2 0l.15.08a2 2 0 0 0 2.73-.73l.22-.39a2 2 0 0 0-.73-2.73l-.15-.08a2 2 0 0 1-1-1.74v-.5a2 2 0 0 1 1-1.74l.15-.1a2 2 0 0 0 .73-2.73l-.22-.38a2 2 0 0 0-2.73-.73l-.15.08a2 2 0 0 1-2 0l-.43-.25a2 2 0 0 1-1-1.73V4a2 2 0 0 0-2-2z"/><circle cx="12" cy="12" r="3"/></svg>
-);
-
-const BarChartIcon = (props) => (
-    <svg {...props} xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-bar-chart-3"><path d="M3 3v18h18"/><path d="M18 17V9"/><path d="M13 17V5"/><path d="M8 17v-3"/></svg>
 );

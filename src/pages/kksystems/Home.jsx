@@ -2,13 +2,9 @@ import React from 'react';
 import PremiumHero from '../../components/KkSystems/PremiumHero';
 import { Positioning, CoreOfferings } from '../../components/KkSystems/PremiumPositioning';
 import { PremiumSolutions, ProductLayer } from '../../components/KkSystems/PremiumSolutions';
-import { ImpactMetrics, HowWeWork, Industries } from '../../components/KkSystems/PremiumTrust';
+import { ImpactMetrics, HowWeWork, Industries, GlobalPresence } from '../../components/KkSystems/PremiumTrust';
 import { TechStack, WhyHexenity, ERPDemoEntry, FinalCTA } from '../../components/KkSystems/PremiumFinal';
-
-// We'll keep these for additional depth if needed, but primary focus is the new structure
-import PortfolioSection from '../../components/KkSystems/PortfolioSection';
-import Testimonials from '../../components/KkSystems/Testimonials';
-import FAQ from '../../components/KkSystems/FAQ';
+import HexenityValueStack from '../../components/KkSystems/HexenityValueStack';
 
 const KksystemsHome = () => {
     return (
@@ -18,6 +14,7 @@ const KksystemsHome = () => {
 
             {/* 3. What Hexenity Is (Positioning) */}
             <Positioning />
+            <HexenityValueStack />
 
             {/* 4. Core Offerings (Build / Optimize / Scale) */}
             <CoreOfferings />
@@ -37,21 +34,19 @@ const KksystemsHome = () => {
             {/* 9. Industries */}
             <Industries />
 
-            {/* 10. Tech Stack */}
+            {/* 10. Global Presence */}
+            <GlobalPresence />
+
+            {/* 11. Tech Stack */}
             <TechStack />
 
-            {/* 11. Why Hexenity (Differentiation) */}
+            {/* 12. Why Hexenity (Differentiation) */}
             <WhyHexenity />
 
-            {/* Additional Trust Layers (Optional but good for premium) */}
-            <PortfolioSection />
-            <Testimonials />
-            <FAQ />
-
-            {/* 12. Demo ERP Entry (Product Feel) */}
+            {/* 13. Demo ERP Entry (Product Feel) */}
             <ERPDemoEntry />
 
-            {/* 13. Final CTA */}
+            {/* 14. Final CTA */}
             <FinalCTA />
         </div>
     );

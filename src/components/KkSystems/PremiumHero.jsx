@@ -1,99 +1,115 @@
 import React from 'react';
-import { ArrowRight, Zap, Shield, Rocket } from 'lucide-react';
+import { ArrowRight, CheckCircle2, Clock3, ShieldCheck, Users } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
-import { motion } from 'framer-motion';
 
 const PremiumHero = () => {
     const navigate = useNavigate();
+    const trustItems = [
+        { label: 'Executive Response', value: '< 24h', icon: Clock3 },
+        { label: 'Delivery Standard', value: 'Enterprise-grade', icon: ShieldCheck },
+        { label: 'Client Relationship', value: 'Founder-level access', icon: Users },
+    ];
 
     return (
-        <section id="home" className="relative min-h-screen pt-40 pb-20 flex items-center overflow-hidden bg-[#0B0F19]">
-            {/* Background elements */}
-            <div className="absolute inset-0 z-0">
-                <div className="absolute top-0 left-0 w-full h-full grid-pattern opacity-20" />
-                <div className="absolute top-[-10%] right-[-10%] w-[40%] h-[40%] rounded-full bg-blue-600/20 blur-[120px] animate-pulse" />
-                <div className="absolute bottom-[-10%] left-[-10%] w-[40%] h-[40%] rounded-full bg-purple-600/20 blur-[120px] animate-pulse" style={{ animationDelay: '2s' }} />
+        <section id="home" className="relative overflow-hidden bg-[#060916] pb-20 pt-40">
+            <div className="pointer-events-none absolute inset-0 z-0">
+                <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(99,102,241,0.16),transparent_45%)]" />
+                <div className="absolute -left-20 bottom-0 h-72 w-72 rounded-full bg-indigo-500/15 blur-[120px]" />
+                <div className="absolute -right-20 top-8 h-72 w-72 rounded-full bg-cyan-500/10 blur-[120px]" />
             </div>
 
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full">
-                <div className="text-center max-w-4xl mx-auto">
-                    <motion.div
-                        initial={{ opacity: 0, y: 20 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 0.6 }}
-                        className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-indigo-500/10 border border-indigo-500/20 backdrop-blur-md mb-8"
-                    >
-                        <span className="flex h-2 w-2 rounded-full bg-indigo-400 animate-ping"></span>
-                        <span className="text-xs font-bold tracking-widest text-indigo-400 uppercase">Next-Gen Development</span>
-                    </motion.div>
-
-                    <motion.h1
-                        initial={{ opacity: 0, y: 20 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 0.6, delay: 0.1 }}
-                        className="text-5xl md:text-7xl lg:text-8xl font-black tracking-tight text-white mb-8 leading-[1.05]"
-                    >
-                        Engineering Speed. <br />
-                        <span className="premium-gradient-text">Delivering Intelligent Solutions.</span>
-                    </motion.h1>
-
-                    <motion.p
-                        initial={{ opacity: 0, y: 20 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 0.6, delay: 0.2 }}
-                        className="text-xl md:text-2xl text-gray-400 mb-12 max-w-2xl mx-auto leading-relaxed font-light"
-                    >
-                        Hexenity builds high-performance mobile apps, web platforms, and ERP systems using <span className="text-white font-medium">AI-powered development</span> — delivered in weeks, not months.
-                    </motion.p>
-
-                    <motion.div
-                        initial={{ opacity: 0, y: 20 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 0.6, delay: 0.3 }}
-                        className="flex flex-col sm:flex-row gap-6 justify-center"
-                    >
-                        <button
-                            onClick={() => navigate('/hexenity/contact')}
-                            className="inline-flex items-center justify-center gap-3 px-10 py-5 rounded-2xl bg-indigo-600 text-white font-bold text-lg transition-all hover:bg-indigo-500 hover:scale-[1.05] shadow-[0_0_30px_rgba(79,70,229,0.4)] group"
-                        >
-                            Start Project
-                            <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-                        </button>
-                        <button
-                            onClick={() => {
-                                const el = document.getElementById('offerings');
-                                if (el) el.scrollIntoView({ behavior: 'smooth' });
-                            }}
-                            className="inline-flex items-center justify-center gap-3 px-10 py-5 rounded-2xl bg-white/5 border border-white/10 text-white font-bold text-lg transition-all hover:bg-white/10 hover:border-white/20 backdrop-blur-sm"
-                        >
-                            Explore Solutions
-                        </button>
-                    </motion.div>
-
-                    {/* Stats bar */}
-                    <motion.div
-                        initial={{ opacity: 0 }}
-                        animate={{ opacity: 1 }}
-                        transition={{ duration: 1, delay: 0.5 }}
-                        className="mt-24 grid grid-cols-2 md:grid-cols-4 gap-8 py-10 border-t border-white/5"
-                    >
-                        <div className="flex flex-col items-center">
-                            <span className="text-4xl md:text-5xl font-black text-white mb-2">50+</span>
-                            <span className="text-xs uppercase tracking-widest text-gray-500 font-bold">Projects Delivered</span>
+                <div className="grid items-center gap-10 lg:grid-cols-[1.1fr_0.9fr]">
+                    <div>
+                        <div className="mb-7 inline-flex items-center gap-2 rounded-full border border-indigo-300/30 bg-indigo-400/10 px-4 py-2">
+                            <span className="h-2 w-2 rounded-full bg-indigo-300" />
+                            <span className="text-xs font-semibold uppercase tracking-[0.16em] text-indigo-200">Global Technology & Product Partner</span>
                         </div>
-                        <div className="flex flex-col items-center">
-                            <span className="text-4xl md:text-5xl font-black text-white mb-2">8+</span>
-                            <span className="text-xs uppercase tracking-widest text-gray-500 font-bold">Years Experience</span>
+
+                        <h1 className="mb-6 text-5xl font-black leading-[1.05] tracking-tight text-white md:text-6xl">
+                            Built for ambitious founders,
+                            <span className="block text-indigo-300">family offices, and enterprise leaders.</span>
+                        </h1>
+
+                        <p className="mb-9 max-w-2xl text-lg leading-relaxed text-slate-300 md:text-xl">
+                            We design and deliver high-impact mobile platforms, enterprise web systems, and custom ERP ecosystems for clients across India, the Middle East, Canada, and the United States.
+                        </p>
+
+                        <div className="flex flex-col gap-4 sm:flex-row">
+                            <button
+                                onClick={() => navigate('/hexenity/contact')}
+                                className="group inline-flex items-center justify-center gap-2 rounded-xl bg-indigo-600 px-7 py-3.5 text-base font-semibold text-white transition hover:bg-indigo-500"
+                            >
+                                Book executive consultation
+                                <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
+                            </button>
+                            <button
+                                onClick={() => navigate('/hexenity/work')}
+                                className="inline-flex items-center justify-center gap-2 rounded-xl border border-white/20 bg-white/5 px-7 py-3.5 text-base font-semibold text-white transition hover:border-indigo-300/40 hover:bg-white/10"
+                            >
+                                View case studies
+                            </button>
                         </div>
-                        <div className="flex flex-col items-center">
-                            <span className="text-4xl md:text-5xl font-black text-white mb-2">100%</span>
-                            <span className="text-xs uppercase tracking-widest text-gray-500 font-bold">Client Satisfaction</span>
+
+                        <div className="mt-10 grid gap-3 sm:grid-cols-3">
+                            {trustItems.map((item) => (
+                                <div key={item.label} className="rounded-2xl border border-white/10 bg-white/5 p-4">
+                                    <item.icon className="mb-3 h-5 w-5 text-indigo-300" />
+                                    <p className="text-sm font-semibold text-white">{item.value}</p>
+                                    <p className="text-xs uppercase tracking-wide text-slate-400">{item.label}</p>
+                                </div>
+                            ))}
                         </div>
-                        <div className="flex flex-col items-center">
-                            <span className="text-4xl md:text-5xl font-black text-indigo-400 mb-2">3x</span>
-                            <span className="text-xs uppercase tracking-widest text-gray-500 font-bold">Faster Delivery</span>
+                    </div>
+
+                    <div className="relative">
+                        <div className="rounded-[1.8rem] border border-white/15 bg-slate-950/70 p-5">
+                            <div className="mb-4 flex items-center justify-between">
+                                <span className="text-xs uppercase tracking-[0.18em] text-indigo-300">Executive Delivery Snapshot</span>
+                                <span className="rounded-full border border-emerald-300/30 bg-emerald-300/15 px-2.5 py-1 text-[10px] uppercase tracking-widest text-emerald-300">
+                                    Confidential
+                                </span>
+                            </div>
+
+                            <div className="rounded-2xl border border-white/10 bg-black/35 p-4">
+                                <div className="mb-3 text-xs uppercase tracking-widest text-slate-400">
+                                    Strategic execution board
+                                </div>
+                                <div className="space-y-3">
+                                    {[
+                                        ['Business Discovery & Risk Review', 'Completed'],
+                                        ['Architecture & UX Validation', 'In Review'],
+                                        ['Core Engineering Sprint', 'In Progress'],
+                                        ['Security Audit + Rollout', 'Upcoming'],
+                                    ].map(([label, state]) => (
+                                        <div key={label} className="flex items-center justify-between rounded-xl border border-white/10 bg-white/5 px-3 py-2">
+                                            <span className="text-sm text-white">{label}</span>
+                                            <span className={`text-xs ${state === 'Completed' ? 'text-emerald-300' : state === 'In Review' ? 'text-cyan-300' : state === 'In Progress' ? 'text-indigo-300' : 'text-slate-400'}`}>
+                                                {state}
+                                            </span>
+                                        </div>
+                                    ))}
+                                </div>
+                            </div>
+
+                            <div className="mt-4 grid grid-cols-3 gap-3">
+                                {[
+                                        ['Global', 'Client Base'],
+                                        ['8+', 'Years'],
+                                        ['Long-Term', 'Partnerships'],
+                                ].map(([value, label]) => (
+                                    <div key={label} className="rounded-xl border border-white/10 bg-white/5 p-3 text-center">
+                                        <p className="text-xl font-black text-white">{value}</p>
+                                        <p className="text-[11px] uppercase tracking-wide text-slate-400">{label}</p>
+                                    </div>
+                                ))}
+                            </div>
+
+                            <div className="mt-4 rounded-xl border border-indigo-300/20 bg-indigo-400/10 p-3 text-sm text-indigo-100">
+                                <p className="inline-flex items-center gap-2"><CheckCircle2 className="h-4 w-4" /> Dedicated leadership visibility, structured communication, and post-launch optimization support.</p>
+                            </div>
                         </div>
-                    </motion.div>
+                    </div>
                 </div>
             </div>
         </section>

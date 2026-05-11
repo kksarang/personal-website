@@ -1,228 +1,156 @@
 import React, { useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
-import { ArrowLeft, CheckCircle2 } from 'lucide-react';
+import { ArrowRight, CheckCircle2, Clock3, MessageCircle, Sparkles } from 'lucide-react';
 import { servicesData } from '../../data/servicesData';
-import KksystemsNavbar from './KksystemsNavbar';
-import Footer from '../Footer';
+import HexenityPageShell from './HexenityPageShell';
 
 const ServiceDetail = () => {
     const { slug } = useParams();
     const navigate = useNavigate();
-
-    // Find the current service data
     const service = servicesData[slug];
 
-    // Scroll to top when loading
     useEffect(() => {
         window.scrollTo(0, 0);
     }, [slug]);
 
     if (!service) {
         return (
-            <div className="min-h-screen bg-[#0B0F19] flex flex-col items-center justify-center text-white">
-                <h1 className="text-4xl font-bold mb-4">Service Not Found</h1>
-                <button
-                    onClick={() => navigate('/hexenity')}
-                    className="px-6 py-2 bg-indigo-600 rounded-lg hover:bg-indigo-700 transition"
-                >
-                    Back to IT Services
-                </button>
-            </div>
+            <HexenityPageShell
+                badge="Service"
+                title="Service Not Found"
+                subtitle="This service page could not be loaded."
+                backLabel="Back to Services"
+                onBack={() => navigate('/hexenity')}
+            >
+                <div className="rounded-3xl border border-white/10 bg-white/5 p-8 text-slate-200">
+                    Please go back and choose a valid service.
+                </div>
+            </HexenityPageShell>
         );
     }
 
     return (
-        <div className="min-h-screen bg-[#0B0F19] text-white selection:bg-indigo-500/30">
-            <KksystemsNavbar />
-
-            <main className="pt-24 pb-20">
-                {/* HERO SECTION */}
-                <section className="relative px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto py-16 lg:py-24">
-                    <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-indigo-600/10 rounded-full blur-[120px] pointer-events-none" />
-                    <div className="absolute bottom-0 left-0 w-[600px] h-[600px] bg-blue-600/10 rounded-full blur-[120px] pointer-events-none" />
-
-                    <button
-                        onClick={() => navigate('/hexenity')}
-                        className="flex items-center text-gray-400 hover:text-white transition-colors mb-8 group"
-                    >
-                        <ArrowLeft className="w-5 h-5 mr-2 group-hover:-translate-x-1 transition-transform" />
-                        Back to Services
-                    </button>
-
-                    <h1 className="text-5xl md:text-7xl font-extrabold tracking-tight mb-8">
-                        <span className="block premium-gradient-text uppercase">
-                            {service.title}
-                        </span>
-                    </h1>
-
-                    <p className="text-xl md:text-2xl text-gray-400 max-w-3xl leading-relaxed font-light">
-                        {service.overview}
-                    </p>
-                </section>
-
-                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                    <div className="grid grid-cols-1 lg:grid-cols-3 gap-12 lg:gap-16">
-
-                        {/* LEFT COLUMN (Main Content) */}
-                        <div className="lg:col-span-2 space-y-16">
-
-                            {/* TYPES OF SERVICE */}
-                            <section>
-                                <h2 className="text-3xl font-bold mb-8 flex items-center">
-                                    <span className="w-8 h-1 bg-indigo-500 mr-4 rounded-full"></span>
-                                    {service.typesTitle}
-                                </h2>
-                                <div className="grid sm:grid-cols-2 gap-4">
-                                    {service.types.map((type, idx) => (
-                                        <div key={idx} className="hexenity-glass p-4 rounded-2xl flex items-center text-gray-300">
-                                            <div className="w-2 h-2 rounded-full bg-indigo-400 mr-3 shadow-[0_0_10px_rgba(129,140,248,0.5)]"></div>
-                                            {type}
-                                        </div>
-                                    ))}
+        <HexenityPageShell
+            badge="Service Detail"
+            title={service.title}
+            subtitle={service.overview}
+            backLabel="Back to Services"
+            onBack={() => navigate('/hexenity')}
+            actions={(
+                <button
+                    onClick={() => navigate('/hexenity/contact')}
+                    className="inline-flex items-center gap-2 rounded-xl border border-indigo-300/35 bg-indigo-500/20 px-4 py-2 text-xs font-semibold uppercase tracking-[0.13em] text-indigo-100 transition hover:bg-indigo-500/30"
+                >
+                    Start Project
+                    <ArrowRight className="h-4 w-4" />
+                </button>
+            )}
+        >
+            <div className="grid grid-cols-1 gap-8 lg:grid-cols-[1.45fr_0.55fr]">
+                <div className="space-y-8">
+                    <section className="premium-surface gradient-stroke rounded-3xl p-7">
+                        <p className="mb-4 inline-flex items-center gap-2 rounded-full border border-indigo-300/35 bg-indigo-500/15 px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.16em] text-indigo-200">
+                            <Sparkles className="h-3.5 w-3.5" />
+                            Scope Areas
+                        </p>
+                        <h2 className="mb-5 text-2xl font-bold text-white">{service.typesTitle}</h2>
+                        <div className="grid gap-3 sm:grid-cols-2">
+                            {service.types.map((type) => (
+                                <div key={type} className="rounded-xl border border-white/10 bg-white/5 px-4 py-3 text-sm text-slate-200 transition hover:border-indigo-300/40 hover:bg-indigo-500/10">
+                                    {type}
                                 </div>
-                            </section>
+                            ))}
+                        </div>
+                    </section>
 
-                            {/* DEVELOPMENT PROCESS */}
-                            <section>
-                                <h2 className="text-3xl font-bold mb-10 flex items-center">
-                                    <span className="w-8 h-1 bg-purple-500 mr-4 rounded-full"></span>
-                                    {service.processTitle}
-                                </h2>
-                                <div className="space-y-0 relative before:absolute before:inset-0 before:ml-6 before:-translate-x-px md:before:mx-auto md:before:translate-x-0 before:h-full before:w-0.5 before:bg-gradient-to-b before:from-transparent before:via-purple-500/30 before:to-transparent">
-                                    {service.process.map((stepItem, idx) => (
-                                        <div key={idx} className="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group is-active py-6">
-                                            {/* Number indicator */}
-                                            <div className="flex items-center justify-center w-12 h-12 rounded-full border-4 border-[#0B0F19] bg-white/[0.05] group-hover:bg-purple-500/20 text-indigo-300 font-bold shadow shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2 transition-colors duration-300 z-10 backdrop-blur-sm">
-                                                {idx + 1}
-                                            </div>
-
-                                            {/* Card content */}
-                                            <div className="w-[calc(100%-4rem)] md:w-[calc(50%-3rem)] p-6 hexenity-glass group-hover:border-purple-500/30 group-hover:bg-white/[0.04] transition-all duration-300 shadow-xl">
-                                                <div className="flex flex-col gap-2">
-                                                    <h3 className="text-xl font-bold text-white group-hover:text-purple-300 transition-colors">
-                                                        {stepItem.step}
-                                                    </h3>
-                                                    {stepItem.desc && (
-                                                        <p className="text-gray-400 text-sm leading-relaxed font-light">
-                                                            {stepItem.desc}
-                                                        </p>
-                                                    )}
-                                                </div>
-                                            </div>
-                                        </div>
-                                    ))}
+                    <section className="premium-surface gradient-stroke rounded-3xl p-7">
+                        <h2 className="mb-5 text-2xl font-bold text-white">{service.processTitle}</h2>
+                        <div className="space-y-4">
+                            {service.process.map((stepItem, index) => (
+                                <div key={stepItem.step} className="rounded-xl border border-white/10 bg-white/5 p-4">
+                                    <div className="mb-2 flex items-center gap-3">
+                                        <span className="inline-flex h-7 w-7 items-center justify-center rounded-full bg-indigo-400/20 text-xs font-bold text-indigo-100">
+                                            {index + 1}
+                                        </span>
+                                        <p className="text-xs uppercase tracking-[0.14em] text-indigo-300">Step {index + 1}</p>
+                                    </div>
+                                    <h3 className="mt-1 text-lg font-semibold text-white">{stepItem.step}</h3>
+                                    {stepItem.desc ? <p className="mt-1 text-slate-300">{stepItem.desc}</p> : null}
                                 </div>
-                            </section>
-
-                            {/* TECHNOLOGIES WE USE */}
-                            {service.techStack && service.techStack.length > 0 && (
-                                <section>
-                                    <h2 className="text-3xl font-bold mb-8 flex items-center">
-                                        <span className="w-8 h-1 bg-cyan-500 mr-4 rounded-full"></span>
-                                        Technologies We Use
-                                    </h2>
-                                    <div className="flex flex-wrap gap-3">
-                                        {service.techStack.map((tech, idx) => (
-                                            <span
-                                                key={idx}
-                                                className="px-5 py-2.5 rounded-full bg-white/[0.03] border border-white/10 hover:border-cyan-500/50 hover:bg-cyan-500/10 text-gray-300 hover:text-white transition-all cursor-default shadow-sm text-sm"
-                                            >
-                                                {tech}
-                                            </span>
-                                        ))}
-                                    </div>
-                                </section>
-                            )}
-
-                            {/* FAQs */}
-                            {service.faqs && service.faqs.length > 0 && (
-                                <section>
-                                    <h2 className="text-3xl font-bold mb-8 flex items-center">
-                                        <span className="w-8 h-1 bg-pink-500 mr-4 rounded-full"></span>
-                                        Frequently Asked Questions
-                                    </h2>
-                                    <div className="space-y-4">
-                                        {service.faqs.map((faq, idx) => (
-                                            <div key={idx} className="p-6 hexenity-glass hover:bg-white/[0.04] transition-colors">
-                                                <h3 className="text-lg font-bold text-white mb-3 flex items-start">
-                                                    <span className="text-pink-500 mr-3 hidden sm:inline">Q.</span>
-                                                    {faq.q}
-                                                </h3>
-                                                <p className="text-gray-400 leading-relaxed sm:pl-7 font-light">
-                                                    {faq.a}
-                                                </p>
-                                            </div>
-                                        ))}
-                                    </div>
-                                </section>
-                            )}
-
+                            ))}
                         </div>
+                    </section>
 
-                        {/* RIGHT COLUMN (Sidebar details) */}
-                        <div className="space-y-12">
-
-                            {/* TIMELINE */}
-                            <div className="p-8 rounded-3xl bg-gradient-to-br from-indigo-900/20 to-transparent border border-indigo-500/20 backdrop-blur-xl">
-                                <h3 className="text-xl font-bold text-white mb-6">Development Timeline</h3>
-                                <ul className="space-y-4 mb-4">
-                                    {service.timeline.map((item, idx) => (
-                                        <li key={idx} className="flex flex-col">
-                                            <span className="text-indigo-300 font-medium">{item.split(' – ')[0]}</span>
-                                            <span className="text-gray-400 text-sm mt-1">{item.split(' – ')[1] ? `– ${item.split(' – ')[1]}` : ''}</span>
-                                        </li>
-                                    ))}
-                                </ul>
-                                {service.timelineNote && (
-                                    <p className="text-xs text-gray-500 italic mt-6 pt-4 border-t border-indigo-500/10">
-                                        {service.timelineNote}
-                                    </p>
-                                )}
+                    {service.techStack?.length ? (
+                        <section className="premium-surface rounded-3xl p-7">
+                            <h2 className="mb-5 text-2xl font-bold text-white">Technology Stack</h2>
+                            <div className="flex flex-wrap gap-2">
+                                {service.techStack.map((tech) => (
+                                    <span key={tech} className="rounded-full border border-white/10 bg-white/5 px-4 py-2 text-sm text-slate-200 transition hover:border-indigo-300/35 hover:text-white">
+                                        {tech}
+                                    </span>
+                                ))}
                             </div>
+                        </section>
+                    ) : null}
 
-                            {/* WHAT YOU GET */}
-                            <div className="p-8 hexenity-glass group">
-                                <h3 className="text-xl font-bold text-white mb-6 pb-4 border-b border-white/10 uppercase tracking-widest text-sm">What You Get</h3>
-                                <ul className="space-y-4">
-                                    {service.whatYouGet.map((item, idx) => (
-                                        <li key={idx} className="flex items-start">
-                                            <CheckCircle2 className="w-5 h-5 text-emerald-400 mr-3 flex-shrink-0 mt-0.5" />
-                                            <span className="text-gray-300 font-light">{item}</span>
-                                        </li>
-                                    ))}
-                                </ul>
+                    {service.faqs?.length ? (
+                        <section className="premium-surface rounded-3xl p-7">
+                            <h2 className="mb-5 text-2xl font-bold text-white">FAQs</h2>
+                            <div className="space-y-3">
+                                {service.faqs.map((faq) => (
+                                    <div key={faq.q} className="rounded-xl border border-white/10 bg-white/5 p-4 transition hover:border-indigo-300/30">
+                                        <p className="font-semibold text-white">{faq.q}</p>
+                                        <p className="mt-1 text-slate-300">{faq.a}</p>
+                                    </div>
+                                ))}
                             </div>
-
-                        </div>
-                    </div>
+                        </section>
+                    ) : null}
                 </div>
 
-                {/* BOTTOM CTA SECTION */}
-                <section className="mt-24 max-w-5xl mx-auto px-4 sm:px-6">
-                    <div className="p-12 md:p-16 rounded-[2rem] bg-gradient-to-r from-blue-900/40 to-indigo-900/40 border border-indigo-500/20 text-center relative overflow-hidden">
-                        <div className="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-20 mix-blend-overlay"></div>
-                        <div className="relative z-10">
-                            <h2 className="text-3xl md:text-5xl font-bold text-white mb-6">
-                                Ready to transform your idea into a powerful digital solution?
-                            </h2>
-                            <p className="text-xl text-indigo-200 mb-10 max-w-2xl mx-auto font-light">
-                                Let's collaborate to build something exceptional that drives real growth for your business.
-                            </p>
-                            <div className="flex flex-col sm:flex-row justify-center gap-4">
-                                <button
-                                    onClick={() => navigate('/hexenity/contact')}
-                                    className="px-8 py-4 rounded-xl bg-white text-indigo-900 font-bold hover:bg-gray-100 transition-colors shadow-xl"
-                                >
-                                    Contact Hexenity
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-                </section>
+                <div className="space-y-6">
+                    <aside className="premium-surface rounded-3xl p-6">
+                        <h3 className="mb-4 inline-flex items-center gap-2 text-lg font-bold text-white">
+                            <Clock3 className="h-5 w-5 text-indigo-300" />
+                            Delivery Timeline
+                        </h3>
+                        <ul className="space-y-3">
+                            {service.timeline.map((item) => (
+                                <li key={item} className="rounded-xl border border-white/10 bg-white/5 p-3 text-sm text-slate-200">
+                                    {item}
+                                </li>
+                            ))}
+                        </ul>
+                        {service.timelineNote ? <p className="mt-4 text-xs text-slate-400">{service.timelineNote}</p> : null}
+                    </aside>
 
-            </main>
-            <Footer />
-        </div>
+                    <aside className="premium-surface rounded-3xl p-6">
+                        <h3 className="mb-4 text-lg font-bold text-white">Included in Service</h3>
+                        <ul className="space-y-3">
+                            {service.whatYouGet.map((item) => (
+                                <li key={item} className="flex items-start gap-2 text-sm text-slate-200">
+                                    <CheckCircle2 className="mt-0.5 h-4 w-4 text-emerald-300" />
+                                    <span>{item}</span>
+                                </li>
+                            ))}
+                        </ul>
+                    </aside>
+
+                    <aside className="rounded-3xl border border-indigo-300/25 bg-indigo-500/15 p-6">
+                        <h3 className="text-xl font-bold text-white">Need a custom package?</h3>
+                        <p className="mt-2 text-slate-200">Tell us your goals and we will propose a tailored scope, timeline, and delivery plan.</p>
+                        <button
+                            onClick={() => navigate('/hexenity/contact')}
+                            className="mt-4 inline-flex items-center gap-2 rounded-xl border border-white/20 bg-white/10 px-4 py-2 text-sm font-semibold text-white transition hover:bg-white/20"
+                        >
+                            <MessageCircle className="h-4 w-4" />
+                            Talk to Hexenity
+                        </button>
+                    </aside>
+                </div>
+            </div>
+        </HexenityPageShell>
     );
 };
 

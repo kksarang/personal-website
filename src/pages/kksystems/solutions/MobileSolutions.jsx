@@ -1,43 +1,67 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Smartphone, Zap, Shield, Sparkles, CheckCircle2, ArrowRight, MessageSquare } from 'lucide-react';
+import { Smartphone, Zap, Shield, CheckCircle2, ArrowRight, MessageSquare, Layers3 } from 'lucide-react';
+import { useNavigate } from 'react-router-dom';
+import HexenityPageShell from '../../../components/KkSystems/HexenityPageShell';
 
 export default function MobileSolutions() {
+  const navigate = useNavigate();
   const steps = [
-    { title: "Discovery", desc: "Deep dive into your user needs and business goals." },
-    { title: "Architecture", desc: "Designing scalable cloud-native mobile structures." },
-    { title: "Sprint-Build", desc: "Rapid 2-week iteration cycles with live demos." },
-    { title: "QA & Testing", desc: "Rigorous automation and manual device testing." },
-    { title: "Deployment", desc: "Seamless App Store & Play Store publication." },
+    { title: "Discovery", desc: "Deep dive into product goals, users, and success metrics." },
+    { title: "Architecture", desc: "Scalable app structure, API contracts, and release design." },
+    { title: "Sprint Build", desc: "Rapid iteration with weekly demos and shared priorities." },
+    { title: "QA & Hardening", desc: "Automated tests plus real-device reliability checks." },
+    { title: "Launch & Growth", desc: "Store rollout, observability, and post-launch support." },
   ];
 
   return (
-    <div className="bg-[#0B0F19] min-h-screen text-white px-6 py-24 relative overflow-hidden">
-      {/* Background Orbs */}
-      <div className="absolute top-[-10%] left-[-10%] w-[500px] h-[500px] bg-indigo-500/10 rounded-full blur-[120px] pointer-events-none" />
-      <div className="absolute bottom-[-10%] right-[-10%] w-[400px] h-[400px] bg-purple-500/10 rounded-full blur-[100px] pointer-events-none" />
-
-      <div className="max-w-6xl mx-auto relative z-10">
-        <div className="text-center mb-20">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-          >
-            <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold uppercase tracking-widest bg-indigo-500/20 text-indigo-300 border border-indigo-500/30 mb-6 font-mono">
-              <Smartphone className="w-3 h-3" /> Mobile Excellence
-            </span>
-            <h1 className="text-5xl md:text-7xl font-bold mb-6 bg-gradient-to-r from-indigo-400 via-purple-400 to-indigo-400 bg-clip-text text-transparent tracking-tight">
-              Mobile Application Development
-            </h1>
-            <p className="text-xl opacity-60 mb-12 max-w-2xl mx-auto leading-relaxed">
-              We build high-performance, scalable mobile applications with seamless UI and robust cloud-native architecture.
+    <HexenityPageShell
+      badge="Solution Page"
+      title="Mobile Application Development"
+      subtitle="High-performance mobile experiences built for scale, reliability, and long-term maintainability."
+      backLabel="Back to Hexenity"
+      onBack={() => navigate('/hexenity')}
+      actions={(
+        <button
+          onClick={() => navigate('/hexenity/contact')}
+          className="inline-flex items-center gap-2 rounded-xl border border-indigo-300/35 bg-indigo-500/20 px-4 py-2 text-xs font-semibold uppercase tracking-[0.13em] text-indigo-100 transition hover:bg-indigo-500/30"
+        >
+          Book Consultation
+          <ArrowRight className="h-4 w-4" />
+        </button>
+      )}
+    >
+      <div className="space-y-8">
+        <section className="grid gap-6 lg:grid-cols-[1.25fr_0.75fr]">
+          <div className="premium-surface gradient-stroke rounded-3xl p-7">
+            <p className="inline-flex items-center gap-2 rounded-full border border-cyan-300/35 bg-cyan-500/10 px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.16em] text-cyan-200">
+              <Layers3 className="h-3.5 w-3.5" />
+              Mobile delivery model
             </p>
-          </motion.div>
-        </div>
+            <h2 className="mt-4 text-3xl font-black text-white">Build once, ship confidently</h2>
+            <p className="mt-3 max-w-2xl text-slate-300">
+              Hexenity teams combine product thinking with platform-level engineering to deliver stable, high-performance mobile apps that scale with your business.
+            </p>
+            <div className="mt-6 grid gap-3 sm:grid-cols-3">
+              {["Weekly check-ins", "Store-ready releases", "Post-launch support"].map((item) => (
+                <div key={item} className="rounded-xl border border-white/10 bg-white/5 px-3 py-2.5 text-sm text-slate-200">
+                  {item}
+                </div>
+              ))}
+            </div>
+          </div>
 
-        {/* Technology Cards */}
-        <div className="grid md:grid-cols-3 gap-8 mb-32">
+          <aside className="premium-surface rounded-3xl p-6">
+            <h3 className="text-lg font-bold text-white">Best fit for</h3>
+            <ul className="mt-4 space-y-2 text-sm text-slate-300">
+              <li className="flex items-start gap-2"><CheckCircle2 className="mt-0.5 h-4 w-4 text-emerald-300" /> Founders launching mobile-first products</li>
+              <li className="flex items-start gap-2"><CheckCircle2 className="mt-0.5 h-4 w-4 text-emerald-300" /> Teams replacing unstable legacy apps</li>
+              <li className="flex items-start gap-2"><CheckCircle2 className="mt-0.5 h-4 w-4 text-emerald-300" /> Businesses needing app + backend coherence</li>
+            </ul>
+          </aside>
+        </section>
+
+        <div className="grid gap-6 md:grid-cols-3">
           {[
             { 
               title: "Flutter Cross Platform", 
@@ -70,8 +94,7 @@ export default function MobileSolutions() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: i * 0.1 }}
-              whileHover={{ y: -10 }}
-              className="p-8 bg-white/[0.03] border border-white/10 rounded-2xl hover:bg-white/[0.05] hover:border-white/20 transition-all duration-300 group text-left shadow-2xl backdrop-blur-sm flex flex-col h-full"
+              className="premium-surface gradient-stroke flex h-full flex-col rounded-2xl p-7 transition-all duration-300 hover:border-indigo-300/35"
             >
               <div className={`w-12 h-12 rounded-xl bg-gradient-to-br ${item.color} flex items-center justify-center mb-6 shadow-lg group-hover:scale-110 transition-transform`}>
                 <item.icon className="w-6 h-6 text-white" />
@@ -95,15 +118,10 @@ export default function MobileSolutions() {
           ))}
         </div>
 
-        {/* Development Lifecycle */}
-        <div className="bg-white/[0.02] border border-white/5 rounded-[40px] p-12 mb-20 relative overflow-hidden">
-          <div className="absolute top-0 right-0 p-10 opacity-5">
-            <Sparkles className="w-64 h-64 text-white" />
-          </div>
-          
-          <div className="text-center mb-16 relative z-10">
+        <div className="premium-surface rounded-[2rem] p-10 relative overflow-hidden">
+          <div className="text-center mb-12 relative z-10">
             <h2 className="text-4xl font-bold mb-4">How We Develop</h2>
-            <p className="text-white/40 max-w-xl mx-auto">A standardized, professional approach to building high-fidelity mobile solutions from concept to scale.</p>
+            <p className="text-white/40 max-w-xl mx-auto">A clear operating system that keeps delivery fast, transparent, and measurable.</p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-5 gap-8 relative z-10">
@@ -122,13 +140,13 @@ export default function MobileSolutions() {
           </div>
         </div>
 
-        <div className="text-center bg-gradient-to-br from-indigo-500/10 to-purple-600/10 border border-white/10 rounded-3xl p-12 backdrop-blur-md">
+        <div className="text-center rounded-3xl border border-indigo-300/25 bg-indigo-500/15 p-12">
           <h2 className="text-3xl font-bold mb-6 tracking-tight">Ready to build your mobile future?</h2>
-          <button className="px-10 py-5 bg-indigo-600 hover:bg-indigo-500 rounded-2xl text-lg font-bold text-white shadow-2xl hover:scale-105 active:scale-95 transition-all flex items-center gap-3 mx-auto">
+          <button onClick={() => navigate('/hexenity/contact')} className="px-10 py-5 bg-indigo-600 hover:bg-indigo-500 rounded-2xl text-lg font-bold text-white shadow-2xl hover:scale-105 active:scale-95 transition-all flex items-center gap-3 mx-auto">
             <MessageSquare className="w-6 h-6" /> Book Architecture Review
           </button>
         </div>
       </div>
-    </div>
+    </HexenityPageShell>
   );
 }

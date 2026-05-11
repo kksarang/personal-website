@@ -1,43 +1,67 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Globe, Layout, Cpu, ArrowRight, Zap, Code, CheckCircle2, Terminal } from 'lucide-react';
+import { Layout, Cpu, ArrowRight, Zap, Code, CheckCircle2, Terminal, Layers3 } from 'lucide-react';
+import { useNavigate } from 'react-router-dom';
+import HexenityPageShell from '../../../components/KkSystems/HexenityPageShell';
 
 export default function WebSolutions() {
+  const navigate = useNavigate();
   const steps = [
-    { title: "Strategy", desc: "Defining user personas, user flows, and business logic." },
-    { title: "Prototype", desc: "High-fidelity UX wireframing and interactive prototyping." },
-    { title: "Development", desc: "Building scalable frontends with solid backend APIs." },
-    { title: "Optimization", desc: "Rigorous performance tuning for speed and SEO." },
-    { title: "Cloud Launch", desc: "Global deployment with CI/CD and edge caching." },
+    { title: "Strategy", desc: "Defining product goals, conversion paths, and platform constraints." },
+    { title: "Prototype", desc: "User journeys and interface prototypes validated early." },
+    { title: "Development", desc: "Scalable frontends with robust APIs and integrations." },
+    { title: "Optimization", desc: "Performance, SEO, and reliability tuning before release." },
+    { title: "Cloud Launch", desc: "Controlled deployments with observability and support." },
   ];
 
   return (
-    <div className="bg-[#0B0F19] min-h-screen text-white px-6 py-24 relative overflow-hidden">
-      {/* Background Orbs */}
-      <div className="absolute top-[-10%] right-[-10%] w-[500px] h-[500px] bg-purple-500/10 rounded-full blur-[120px] pointer-events-none" />
-      <div className="absolute bottom-[-10%] left-[-10%] w-[400px] h-[400px] bg-indigo-500/10 rounded-full blur-[100px] pointer-events-none" />
-
-      <div className="max-w-6xl mx-auto relative z-10">
-        <div className="text-center mb-20">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-          >
-            <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold uppercase tracking-widest bg-purple-500/20 text-purple-300 border border-purple-500/30 mb-6 font-mono">
-              <Globe className="w-3 h-3" /> Digital Performance
-            </span>
-            <h1 className="text-5xl md:text-7xl font-bold mb-6 bg-gradient-to-r from-purple-400 via-pink-400 to-indigo-400 bg-clip-text text-transparent tracking-tight">
-              Web Platform Development
-            </h1>
-            <p className="text-xl opacity-60 mb-12 max-w-2xl mx-auto leading-relaxed">
-              Modern, enterprise-grade web platforms built for high performance, infinite scale, and pixel-perfect responsiveness.
+    <HexenityPageShell
+      badge="Solution Page"
+      title="Web Platform Development"
+      subtitle="Modern web engineering for conversion-focused products, internal platforms, and scalable SaaS."
+      backLabel="Back to Hexenity"
+      onBack={() => navigate('/hexenity')}
+      actions={(
+        <button
+          onClick={() => navigate('/hexenity/contact')}
+          className="inline-flex items-center gap-2 rounded-xl border border-indigo-300/35 bg-indigo-500/20 px-4 py-2 text-xs font-semibold uppercase tracking-[0.13em] text-indigo-100 transition hover:bg-indigo-500/30"
+        >
+          Start Web Project
+          <ArrowRight className="h-4 w-4" />
+        </button>
+      )}
+    >
+      <div className="space-y-8">
+        <section className="grid gap-6 lg:grid-cols-[1.25fr_0.75fr]">
+          <div className="premium-surface gradient-stroke rounded-3xl p-7">
+            <p className="inline-flex items-center gap-2 rounded-full border border-purple-300/35 bg-purple-500/10 px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.16em] text-purple-200">
+              <Layers3 className="h-3.5 w-3.5" />
+              Web execution model
             </p>
-          </motion.div>
-        </div>
+            <h2 className="mt-4 text-3xl font-black text-white">Web products engineered for growth</h2>
+            <p className="mt-3 max-w-2xl text-slate-300">
+              From marketing sites to internal dashboards and SaaS products, we design systems that stay fast, stable, and adaptable as usage grows.
+            </p>
+            <div className="mt-6 grid gap-3 sm:grid-cols-3">
+              {["Performance-first UI", "Stable API design", "SEO + analytics ready"].map((item) => (
+                <div key={item} className="rounded-xl border border-white/10 bg-white/5 px-3 py-2.5 text-sm text-slate-200">
+                  {item}
+                </div>
+              ))}
+            </div>
+          </div>
 
-        {/* Technology Cards */}
-        <div className="grid md:grid-cols-3 gap-8 mb-32">
+          <aside className="premium-surface rounded-3xl p-6">
+            <h3 className="text-lg font-bold text-white">Best fit for</h3>
+            <ul className="mt-4 space-y-2 text-sm text-slate-300">
+              <li className="flex items-start gap-2"><CheckCircle2 className="mt-0.5 h-4 w-4 text-emerald-300" /> SaaS teams launching new modules fast</li>
+              <li className="flex items-start gap-2"><CheckCircle2 className="mt-0.5 h-4 w-4 text-emerald-300" /> Businesses modernizing existing web stacks</li>
+              <li className="flex items-start gap-2"><CheckCircle2 className="mt-0.5 h-4 w-4 text-emerald-300" /> Operations-heavy products with custom dashboards</li>
+            </ul>
+          </aside>
+        </section>
+
+        <div className="grid gap-6 md:grid-cols-3">
           {[
             { 
               title: "React / Next.js Apps", 
@@ -70,8 +94,7 @@ export default function WebSolutions() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: i * 0.1 }}
-              whileHover={{ y: -10 }}
-              className="p-8 bg-white/[0.03] border border-white/10 rounded-2xl hover:bg-white/[0.05] hover:border-white/20 transition-all duration-300 group text-left shadow-2xl backdrop-blur-sm flex flex-col h-full"
+              className="premium-surface gradient-stroke flex h-full flex-col rounded-2xl p-7 transition-all duration-300 hover:border-purple-300/35"
             >
               <div className={`w-12 h-12 rounded-xl bg-gradient-to-br ${item.color} flex items-center justify-center mb-6 shadow-lg group-hover:scale-110 transition-transform`}>
                 <item.icon className="w-6 h-6 text-white" />
@@ -95,15 +118,14 @@ export default function WebSolutions() {
           ))}
         </div>
 
-        {/* Development Lifecycle */}
-        <div className="bg-white/[0.02] border border-white/5 rounded-[40px] p-12 mb-20 relative overflow-hidden">
+        <div className="premium-surface rounded-[2rem] p-10 relative overflow-hidden">
           <div className="absolute top-0 right-0 p-10 opacity-5">
             <Terminal className="w-64 h-64 text-white" />
           </div>
           
           <div className="text-center mb-16 relative z-10">
             <h2 className="text-4xl font-bold mb-4">How We Develop</h2>
-            <p className="text-white/40 max-w-xl mx-auto">A standardized, professional approach to building high-fidelity web platforms from strategy to global scale.</p>
+            <p className="text-white/40 max-w-xl mx-auto">A delivery cadence that combines product clarity, technical depth, and measurable output.</p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-5 gap-8 relative z-10">
@@ -122,13 +144,13 @@ export default function WebSolutions() {
           </div>
         </div>
 
-        <div className="text-center bg-gradient-to-br from-purple-500/10 to-indigo-600/10 border border-white/10 rounded-3xl p-12 backdrop-blur-md">
+        <div className="text-center rounded-3xl border border-indigo-300/25 bg-indigo-500/15 p-12">
           <h2 className="text-3xl font-bold mb-6 tracking-tight">Ready to build your web future?</h2>
-          <button className="px-10 py-5 bg-purple-600 hover:bg-purple-500 rounded-2xl text-lg font-bold text-white shadow-2xl hover:scale-105 active:scale-95 transition-all flex items-center gap-3 mx-auto">
+          <button onClick={() => navigate('/hexenity/contact')} className="px-10 py-5 bg-purple-600 hover:bg-purple-500 rounded-2xl text-lg font-bold text-white shadow-2xl hover:scale-105 active:scale-95 transition-all flex items-center gap-3 mx-auto">
             <Code className="w-6 h-6" /> Start Web Project
           </button>
         </div>
       </div>
-    </div>
+    </HexenityPageShell>
   );
 }
