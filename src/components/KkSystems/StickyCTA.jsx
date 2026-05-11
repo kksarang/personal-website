@@ -29,7 +29,7 @@ const StickyCTA = () => {
           exit={{ opacity: 0, y: 100, scale: 0.8 }}
           className="fixed bottom-8 right-8 z-[100]"
         >
-          <div className="rounded-2xl border border-white/15 bg-[rgba(10,15,31,0.9)] p-2.5 backdrop-blur-xl">
+          <div className="rounded-2xl border border-slate-200/90 bg-white/95 p-2.5 shadow-[0_10px_24px_rgba(15,23,42,0.14)] backdrop-blur-xl dark:border-white/15 dark:bg-[rgba(10,15,31,0.9)] dark:shadow-none">
             <button
               onClick={() => navigate('/hexenity/contact')}
               className="group flex items-center gap-2 rounded-xl bg-indigo-600 px-5 py-3 text-sm font-semibold text-white transition-all duration-300 hover:bg-indigo-500"

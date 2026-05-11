@@ -113,12 +113,26 @@ export const ERPDemoEntry = () => {
                                      <div className="w-3 h-3 rounded-full bg-green-500/50" />
                                 </div>
                                 <div className="space-y-3">
-                                    <div className="h-4 w-3/4 bg-white/5 rounded-full" />
-                                    <div className="h-4 w-1/2 bg-white/5 rounded-full" />
-                                    <div className="h-32 w-full bg-indigo-500/10 rounded-xl" />
-                                    <div className="grid grid-cols-2 gap-4">
-                                         <div className="h-20 bg-white/5 rounded-xl" />
-                                         <div className="h-20 bg-white/5 rounded-xl" />
+                                    <div className="rounded-xl border border-indigo-300/20 bg-indigo-500/10 px-3 py-2">
+                                        <p className="text-[10px] font-bold uppercase tracking-[0.16em] text-indigo-200">Hexenity ERP Interface Preview</p>
+                                    </div>
+                                    <div className="overflow-hidden rounded-xl border border-white/10 bg-black/20">
+                                        <img
+                                            src="/assets/showcase/erp_os_premium.png"
+                                            alt="Hexenity ERP dashboard interface preview"
+                                            className="h-[260px] w-full object-cover object-top"
+                                            loading="lazy"
+                                        />
+                                    </div>
+                                    <div className="grid grid-cols-3 gap-3">
+                                        {['Customers', 'Projects', 'Analytics'].map((item) => (
+                                            <div
+                                                key={item}
+                                                className="rounded-lg border border-white/10 bg-white/5 px-2.5 py-2 text-center text-[10px] font-semibold uppercase tracking-[0.12em] text-slate-300"
+                                            >
+                                                {item}
+                                            </div>
+                                        ))}
                                     </div>
                                 </div>
                             </div>

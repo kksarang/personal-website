@@ -27,7 +27,7 @@ const ScrollToSection = () => {
 const KksystemsLayout = () => {
     const location = useLocation();
     return (
-        <div className="relative flex min-h-screen flex-col overflow-x-hidden bg-white text-gray-900 transition-colors duration-300 dark:bg-[#040713] dark:text-white">
+        <div className="hexenity-root relative flex min-h-screen flex-col overflow-x-hidden bg-white text-gray-900 transition-colors duration-300 dark:bg-[#040713] dark:text-white">
             <div className="pointer-events-none fixed inset-0 z-0">
                 <div className="hexenity-ambient absolute inset-0" />
                 <div className="hexenity-noise absolute inset-0" />

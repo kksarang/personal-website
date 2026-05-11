@@ -1,46 +1,189 @@
 export const servicesData = {
     "mobile-app-development": {
         title: "Mobile App Development",
-        overview: "Build powerful, scalable, and high-performance mobile applications for Android and iOS platforms.",
-        techStack: ["React Native", "Flutter", "Swift", "Kotlin", "Node.js", "Firebase"],
-        typesTitle: "Types of Mobile Apps We Develop",
+        overview: "We design and engineer premium mobile products for founders, enterprises, and growth teams with structured execution from product strategy to launch and post-launch scale.",
+        techStack: ["Flutter", "React Native", "Swift", "Kotlin", "Node.js", "Firebase", "Supabase", "AWS"],
+        toolingStack: ["Android Studio", "Xcode", "VS Code", "Firebase Console", "Postman", "Figma", "Jira", "GitHub Actions"],
+        typesTitle: "Mobile Product Categories We Deliver",
         types: [
-            "Native Android Applications (Kotlin)",
-            "Native iOS Applications (Swift)",
-            "Cross-Platform Apps (Flutter / React Native)",
-            "E-Commerce Applications",
-            "Business Management Apps",
-            "Booking & Service Apps",
-            "Startup MVP Applications"
+            "Consumer-grade Mobile Products",
+            "Enterprise Operations Apps",
+            "Marketplace & Booking Platforms",
+            "E-Commerce & D2C Mobile Commerce",
+            "Field-force and Internal Team Apps",
+            "Startup MVP to Scale-ready Architecture",
+            "Subscription and Community Platforms"
         ],
-        processTitle: "Our Mobile App Development Process",
+        processTitle: "Mobile Product Delivery Workflow",
         process: [
-            { step: "Requirement Analysis", desc: "Understanding your idea, business model, and target audience to lay a robust roadmap for the application." },
-            { step: "UI/UX Planning", desc: "Crafting wireframes and user journey mapping to ensure the interface is intuitive and optimized for higher retention rates." },
-            { step: "App Design", desc: "Applying modern, visually striking aesthetics, brand colors, and accessible typography to the frontend." },
-            { step: "Development Phase", desc: "Constructing scalable frontend and backend architectures utilizing industry-leading mobile frameworks." },
-            { step: "Testing & QA", desc: "Rigorous performance testing, memory profiling, and cross-device bug fixing to ensure a butter-smooth user experience." },
-            { step: "Deployment", desc: "We manage the entire publishing process to ensure full compliance with App Store & Google Play guidelines." },
-            { step: "Maintenance & Support", desc: "Providing ongoing security updates, feature expansions, and technical support post-launch." }
+            { step: "Product Discovery", desc: "We align on business objective, target user segments, success metrics, and scope boundaries before execution begins." },
+            { step: "UX Architecture", desc: "Information architecture, user flows, and wireframes are validated for conversion, usability, and retention." },
+            { step: "UI Design System", desc: "A clean, brand-ready mobile interface system is prepared with reusable components and interaction states." },
+            { step: "Engineering Build", desc: "Frontend, backend integration, data architecture, and environment setup are executed in sprint-based delivery cycles." },
+            { step: "QA and Device Validation", desc: "Manual and automated QA, regression checks, performance profiling, and real-device testing are completed." },
+            { step: "Store Launch and Release Governance", desc: "We manage App Store and Play Store submissions, policy compliance, release notes, and phased rollout." },
+            { step: "Scale and Support", desc: "Post-launch analytics review, iteration planning, and long-term support governance are maintained with your team." }
+        ],
+        deliveryModes: [
+            {
+                mode: "Native Build",
+                useCase: "Best for performance-critical products, deep device feature usage, and enterprise security requirements.",
+                stack: "Swift (iOS), Kotlin (Android)"
+            },
+            {
+                mode: "Cross-platform Build",
+                useCase: "Best for faster time-to-market and single-codebase delivery while maintaining quality UX across platforms.",
+                stack: "Flutter or React Native"
+            },
+            {
+                mode: "Hybrid Product Strategy",
+                useCase: "Best when core journeys require native performance while secondary modules can move faster using shared layers.",
+                stack: "Native modules + cross-platform core"
+            },
+            {
+                mode: "MVP to Scale Path",
+                useCase: "Best for startups launching quickly with a roadmap to enterprise-grade architecture.",
+                stack: "Cross-platform MVP + modular backend"
+            }
+        ],
+        executionModel: [
+            {
+                stage: "UX and Product Stage",
+                focus: "User journey mapping, wireframes, prioritization, and milestone definition.",
+                deliverables: "PRD draft, feature map, screen flow"
+            },
+            {
+                stage: "UI and Design Stage",
+                focus: "Brand-consistent component system, app screens, and interactive prototypes.",
+                deliverables: "Design system, clickable prototype, handoff specs"
+            },
+            {
+                stage: "Development Stage",
+                focus: "Architecture setup, API integration, feature implementation, and sprint reviews.",
+                deliverables: "Sprint releases, source code, staging builds"
+            },
+            {
+                stage: "QA and Reliability Stage",
+                focus: "Functional testing, device matrix validation, crash analysis, and performance improvements.",
+                deliverables: "QA reports, bug log, acceptance checklist"
+            },
+            {
+                stage: "Launch and Handover Stage",
+                focus: "Store deployment, access transfer, documentation, and support readiness.",
+                deliverables: "Published app, handover docs, support plan"
+            }
+        ],
+        workingModes: [
+            {
+                title: "Dedicated Product Squad",
+                detail: "A focused cross-functional team from Hexenity drives discovery, design, development, QA, and release under one delivery lead.",
+                bestFit: "Founders and teams that need end-to-end ownership"
+            },
+            {
+                title: "Co-build with Internal Team",
+                detail: "We integrate with your existing product or engineering team and handle high-priority modules, quality gates, and release management.",
+                bestFit: "Organizations scaling internal delivery capacity"
+            },
+            {
+                title: "Build-Operate-Transfer (BOT)",
+                detail: "Hexenity builds and stabilizes the mobile product, then transitions processes, documentation, and operational ownership to your team.",
+                bestFit: "Companies planning long-term in-house operations"
+            },
+            {
+                title: "MVP Fast-track Mode",
+                detail: "An accelerated scope-to-launch model for market validation with roadmap clarity for version-two scale architecture.",
+                bestFit: "Startups validating product-market fit quickly"
+            }
+        ],
+        architectureModel: {
+            summary: "Our mobile architecture prioritizes long-term maintainability, release safety, and measurable product performance across iOS and Android ecosystems.",
+            layers: [
+                {
+                    name: "Experience Layer",
+                    detail: "UI components, design system standards, responsive states, accessibility rules, and mobile interaction behavior."
+                },
+                {
+                    name: "Application Layer",
+                    detail: "Feature modules, business logic orchestration, offline sync handling, and role-based interaction controls."
+                },
+                {
+                    name: "Integration Layer",
+                    detail: "Secure API contracts, third-party services, payments, push notifications, and analytics event pipelines."
+                },
+                {
+                    name: "Data and Security Layer",
+                    detail: "Data modeling, authentication controls, encrypted storage, and backend governance for compliance-ready operations."
+                },
+                {
+                    name: "Release and Observability Layer",
+                    detail: "CI/CD automation, crash monitoring, performance dashboards, QA gates, and release rollback safeguards."
+                }
+            ]
+        },
+        statusGovernance: [
+            {
+                title: "Weekly Executive Status Update",
+                detail: "Sprint outcomes, milestone completion, open risks, and next-priority decisions are shared with clear accountability.",
+                cadence: "Weekly"
+            },
+            {
+                title: "Build and QA Progress Dashboard",
+                detail: "Feature readiness, defect trends, build health, and release confidence are tracked through transparent progress indicators.",
+                cadence: "2-3 times per week"
+            },
+            {
+                title: "Milestone Acceptance Review",
+                detail: "Each milestone is reviewed against scope, quality standards, and business outcomes before sign-off and transition.",
+                cadence: "Per milestone"
+            },
+            {
+                title: "Post-launch Stability Monitoring",
+                detail: "Crash rates, performance metrics, user feedback, and iteration priorities are monitored immediately after release.",
+                cadence: "First 2-4 weeks post-launch"
+            }
         ],
         timeline: [
-            "Basic App – 3 to 5 Weeks",
-            "Medium Complexity – 6 to 8 Weeks",
-            "Advanced / Enterprise – 10+ Weeks"
+            "MVP Launch – 4 to 6 Weeks",
+            "Growth-ready Product – 8 to 12 Weeks",
+            "Enterprise Mobile Platform – 12+ Weeks"
         ],
-        timelineNote: "(Timeline depends on features and integrations.)",
+        timelineNote: "(Timeline is defined after scope, integrations, and compliance requirements are finalized.)",
         whatYouGet: [
-            "Clean Architecture",
-            "Optimized Performance",
-            "Secure Backend Integration",
-            "Admin Dashboard (if required)",
-            "Complete Source Code",
-            "Post-Launch Support"
+            "Architecture planning with scale-readiness",
+            "Mobile-first design system and UX flows",
+            "Secure API and backend integration",
+            "CI/CD-ready build and release process",
+            "Documented source code and deployment checklist",
+            "Post-launch support and optimization roadmap"
+        ],
+        clientBenefits: [
+            "Faster product launch cycles with predictable milestone execution.",
+            "Higher user retention through structured UX and performance optimization.",
+            "Lower delivery risk with QA governance and release control.",
+            "Clear ownership model with transparent reporting and collaboration."
+        ],
+        salesImpact: [
+            "Improved conversion from mobile-first purchase and onboarding flows.",
+            "Higher repeat revenue through stronger app stability and engagement loops.",
+            "Better upsell opportunities using analytics-driven feature iteration.",
+            "Stronger brand trust that supports enterprise and premium customer acquisition."
+        ],
+        clientCollaboration: [
+            "Weekly sprint reviews with clear progress and blockers",
+            "Dedicated communication channel for rapid decision-making",
+            "Milestone approvals for scope control and predictability",
+            "Access transparency for repository, builds, and QA status"
+        ],
+        growthSupport: [
+            "App Store Optimization basics (listing quality and positioning)",
+            "Analytics instrumentation for activation and retention tracking",
+            "Event funnel setup for product and marketing teams",
+            "Feature iteration roadmap based on user behavior insights"
         ],
         faqs: [
-            { q: "How long does it typically take to build an app?", a: "A basic MVP can be completed in 3-5 weeks, while complex applications with custom backends may take 10+ weeks depending on feature requirements." },
-            { q: "Will my app work on both iOS and Android?", a: "Yes, we specialize in cross-platform development using frameworks like Flutter and React Native to ensure seamless performance across all devices." },
-            { q: "Do you offer post-launch support and updates?", a: "Absolutely. We provide dedicated maintenance packages to ensure your app stays updated with the latest OS versions and security patches." }
+            { q: "How do you decide between native and cross-platform?", a: "We evaluate business timeline, budget, feature depth, performance expectations, and long-term scale requirements, then recommend the right mode with clear trade-offs." },
+            { q: "Can you manage UI, development, QA, and launch end-to-end?", a: "Yes. Our delivery model covers product strategy, UX/UI, engineering, QA, release governance, and post-launch support under one execution framework." },
+            { q: "How can clients contribute to a better mobile product outcome?", a: "Fast decision cycles, clear business priorities, domain inputs, and timely review feedback help us accelerate delivery quality and reduce rework risk." }
         ]
     },
     "website-development": {
@@ -77,6 +220,18 @@ export const servicesData = {
             "SEO-Friendly Structure",
             "CMS Integration (Optional)",
             "Hosting & Deployment Support"
+        ],
+        clientBenefits: [
+            "Professional digital presence aligned to brand and business goals.",
+            "Improved user trust with clean, fast, and secure web experience.",
+            "Operational simplicity through manageable CMS and scalable codebase.",
+            "Reduced maintenance overhead with structured deployment standards."
+        ],
+        salesImpact: [
+            "Higher inquiry-to-lead conversion through optimized landing journeys.",
+            "Increased organic visibility from SEO-friendly site architecture.",
+            "Better campaign performance due to faster load times and UX clarity.",
+            "Improved checkout or booking completion rates for growth-focused funnels."
         ],
         faqs: [
             { q: "Will my website be mobile-friendly and responsive?", a: "Yes, every website we build is 100% responsive and strictly optimized to look stunning on mobile, tablet, and desktop screens." },
@@ -119,6 +274,18 @@ export const servicesData = {
             "Exported Assets",
             "Source Files (Figma)"
         ],
+        clientBenefits: [
+            "Clear product direction with documented UX decisions and interaction logic.",
+            "Consistent brand expression across mobile, web, and marketing touchpoints.",
+            "Faster development handoff through structured design systems.",
+            "Reduced rework by validating user flows before engineering begins."
+        ],
+        salesImpact: [
+            "Higher conversion through frictionless journeys and stronger CTA placement.",
+            "Better onboarding completion with simplified interaction patterns.",
+            "Increased customer confidence from premium interface quality.",
+            "Improved campaign outcomes by aligning visuals with buyer intent."
+        ],
         faqs: [
             { q: "How many design revisions do you offer?", a: "We believe in collaborative design. We offer multiple revision cycles during the wireframing and initial UI phases to ensure the final product aligns perfectly with your vision." },
             { q: "Do you design for both web and mobile platforms?", a: "Yes, we construct comprehensive, responsive design systems that cover everything from vertical mobile app screens to intricate web dashboards." },
@@ -156,6 +323,18 @@ export const servicesData = {
             "Growth Strategy",
             "Engagement Reports",
             "Audience Insights"
+        ],
+        clientBenefits: [
+            "Consistent brand visibility with platform-specific content execution.",
+            "Stronger audience trust through regular communication and community handling.",
+            "Improved content planning through data-backed topic and format strategy.",
+            "Greater operational clarity with monthly reporting and decision insights."
+        ],
+        salesImpact: [
+            "Increased inbound leads through targeted social funnel campaigns.",
+            "Better conversion from social traffic with creative and offer alignment.",
+            "Higher remarketing efficiency using audience behavior signals.",
+            "Improved customer lifetime value through engagement-led retention programs."
         ],
         faqs: [
             { q: "Which social media platforms do you manage?", a: "We primarily focus on high-engagement networks like Instagram, Facebook, and LinkedIn, rigorously tailoring our content strategy to match the unique audience on each platform." },
@@ -196,6 +375,18 @@ export const servicesData = {
             "Performance Analytics",
             "Conversion Tracking Setup",
             "Scalable Growth Plan"
+        ],
+        clientBenefits: [
+            "Measurable growth model with clear channel accountability and budget discipline.",
+            "Faster optimization cycles through real-time campaign performance monitoring.",
+            "Reduced wasted spend with data-backed audience and keyword targeting.",
+            "Executive-level visibility via transparent reporting and growth planning."
+        ],
+        salesImpact: [
+            "Higher qualified lead volume through precision targeting and funnel optimization.",
+            "Lower cost-per-acquisition by scaling top-performing campaigns only.",
+            "Improved sales closure with high-intent traffic and better conversion journeys.",
+            "Compounding revenue growth from integrated SEO + paid media strategy."
         ],
         faqs: [
             { q: "How quickly can I securely see results from digital marketing?", a: "Paid advertising pipelines (Google/Meta Ads) can generate high-intent leads within days. Organic strategies like SEO generally take 3-6 months to show significant compounding growth." },
@@ -239,6 +430,18 @@ export const servicesData = {
             "Automated reporting Engines",
             "Full System Documentation",
             "Admin & Staff Training"
+        ],
+        clientBenefits: [
+            "Unified operations across departments with cleaner process governance.",
+            "Higher team productivity through workflow automation and reduced manual effort.",
+            "Improved decision quality from centralized real-time data visibility.",
+            "Long-term system reliability with secure architecture and governance controls."
+        ],
+        salesImpact: [
+            "Better pipeline management through integrated CRM and lead lifecycle tracking.",
+            "Faster quote-to-order turnaround with streamlined internal workflows.",
+            "Improved revenue forecasting from consolidated operational and sales data.",
+            "Higher retention through more reliable service delivery and customer response cycles."
         ],
         faqs: [
             { q: "Can the ERP be integrated with our existing software?", a: "Yes, we build our ERPs with a robust API-first approach, allowing seamless integration with your existing CRMs, accounting software, and external services." },

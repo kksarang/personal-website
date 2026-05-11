@@ -19,6 +19,7 @@ import KksystemsLearning from './pages/kksystems/Learning';
 import KksystemsLearningDetails from './pages/kksystems/LearningDetails';
 import KksystemsContact from './pages/kksystems/Contact';
 import KksystemsAbout from './pages/kksystems/About';
+import KksystemsServices from './pages/kksystems/Services';
 import CoreHexenity from './pages/kksystems/CoreHexenity';
 import HexenityAI from './pages/kksystems/HexenityAI';
 import HexenitySaaS from './pages/kksystems/HexenitySaaS';
@@ -76,6 +77,7 @@ function App() {
           {/* New Company Website Layout Wrap */}
           <Route path="/hexenity" element={<KksystemsLayout />}>
             <Route index element={<KksystemsHome />} />
+            <Route path="services" element={<KksystemsServices />} />
             <Route path="services/:slug" element={<ServiceDetail />} />
             <Route path="work" element={<KksystemsWork />} />
             <Route path="work/:id" element={<KksystemsWorkDetails />} />
