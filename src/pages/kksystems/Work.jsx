@@ -1,7 +1,9 @@
 import React, { useEffect, useMemo, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { motion } from 'framer-motion';
 import { ArrowRight, ExternalLink, Github, Layers3, ShieldCheck, TrendingUp, Users } from 'lucide-react';
 import { projects } from '../../data/projects';
+import HexenityPageShell from '../../components/KkSystems/HexenityPageShell';
 
 const filters = ['All', 'Mobile', 'Web', 'Enterprise'];
 
@@ -116,59 +118,53 @@ export default function Work() {
     };
 
     return (
-        <div className="bg-[#0B0F19] pb-24 pt-36 text-white">
-            <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-                <section className="mb-14">
-                    <span className="inline-flex items-center gap-2 rounded-full border border-indigo-300/30 bg-indigo-500/10 px-4 py-1.5 text-xs font-semibold uppercase tracking-[0.16em] text-indigo-200">
-                        <Layers3 className="h-3.5 w-3.5" />
-                        Case Studies
-                    </span>
-                    <h1 className="mt-6 max-w-4xl text-5xl font-black leading-tight text-white md:text-6xl">
-                        Delivery outcomes built for serious business growth
-                    </h1>
-                    <p className="mt-5 max-w-3xl text-lg text-slate-300">
-                        Explore selected work across mobile apps, enterprise web systems, and business automation products delivered for high-growth organizations.
-                    </p>
-
-                    <div className="mt-8 flex flex-wrap gap-3">
-                        <button
-                            type="button"
-                            onClick={() => navigate('/hexenity/contact')}
-                            className="inline-flex items-center gap-2 rounded-xl bg-indigo-600 px-6 py-3 text-sm font-semibold text-white transition hover:bg-indigo-500"
-                        >
-                            Discuss your project
-                            <ArrowRight className="h-4 w-4" />
-                        </button>
-                        <button
-                            type="button"
-                            onClick={() => navigate('/hexenity/solutions/erp')}
-                            className="inline-flex items-center gap-2 rounded-xl border border-white/15 bg-white/5 px-6 py-3 text-sm font-semibold text-white transition hover:border-indigo-300/35 hover:bg-white/10"
-                        >
-                            Explore enterprise solutions
-                        </button>
-                    </div>
-                </section>
-
-                <section className="mb-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+        <HexenityPageShell
+            badge="Case Studies"
+            title="Delivery outcomes built for serious business growth"
+            subtitle="Explore selected work across mobile apps, enterprise web systems, and business automation products delivered for growth-focused organizations."
+            backLabel="Back to Home"
+            onBack={() => navigate('/hexenity')}
+            actions={(
+                <button
+                    type="button"
+                    onClick={() => navigate('/hexenity/contact')}
+                    className="inline-flex items-center gap-2 rounded-xl border border-indigo-300/35 bg-indigo-500/20 px-4 py-2 text-xs font-semibold uppercase tracking-[0.13em] text-indigo-100 transition hover:bg-indigo-500/30"
+                >
+                    Discuss your project
+                    <ArrowRight className="h-4 w-4" />
+                </button>
+            )}
+        >
+            <div className="space-y-8">
+                <section className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
                     <MetricCard title="Projects Delivered" value="50+" icon={TrendingUp} />
                     <MetricCard title="Strategic Clients" value="Global" icon={Users} />
                     <MetricCard title="Delivery Process" value="Structured" icon={ShieldCheck} />
                     <MetricCard title="Execution Model" value="Outcome-led" icon={Layers3} />
                 </section>
 
-                <section className="mb-10 flex flex-wrap gap-3">
-                    {filters.map((item) => (
-                        <FilterChip key={item} label={item} active={filter === item} onClick={() => setFilter(item)} />
-                    ))}
+                <section className="premium-surface rounded-3xl p-6">
+                    <div className="mb-4 flex flex-wrap gap-3">
+                        {filters.map((item) => (
+                            <FilterChip key={item} label={item} active={filter === item} onClick={() => setFilter(item)} />
+                        ))}
+                    </div>
+                    <div className="grid gap-8 md:grid-cols-2">
+                        {filteredProjects.map((project, index) => (
+                            <motion.div
+                                key={project.id}
+                                initial={{ opacity: 0, y: 18 }}
+                                whileInView={{ opacity: 1, y: 0 }}
+                                viewport={{ once: true }}
+                                transition={{ delay: index * 0.05 }}
+                            >
+                                <ProjectCard project={project} onOpen={openProject} />
+                            </motion.div>
+                        ))}
+                    </div>
                 </section>
 
-                <section className="grid gap-8 md:grid-cols-2">
-                    {filteredProjects.map((project) => (
-                        <ProjectCard key={project.id} project={project} onOpen={openProject} />
-                    ))}
-                </section>
-
-                <section className="mt-20 rounded-3xl border border-white/10 bg-white/5 p-8 md:p-10">
+                <section className="premium-surface rounded-3xl p-8 md:p-10">
                     <h2 className="text-3xl font-black text-white md:text-4xl">How we structure each engagement</h2>
                     <div className="mt-8 grid gap-6 md:grid-cols-3">
                         {[
@@ -184,7 +180,7 @@ export default function Work() {
                     </div>
                 </section>
 
-                <section className="mt-20">
+                <section className="premium-surface rounded-3xl p-8">
                     <div className="mb-8 flex flex-col gap-3 md:flex-row md:items-end md:justify-between">
                         <div>
                             <span className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/5 px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.14em] text-slate-300">
@@ -224,6 +220,6 @@ export default function Work() {
                     )}
                 </section>
             </div>
-        </div>
+        </HexenityPageShell>
     );
 }

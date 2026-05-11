@@ -16,6 +16,7 @@ const HexenityPageShell = ({
             <div className="pointer-events-none absolute inset-0">
                 <div className="hexenity-ambient absolute inset-0" />
                 <div className="hexenity-noise absolute inset-0" />
+                <div className="hexenity-grid absolute inset-0" />
                 <div className="absolute -left-32 top-6 h-96 w-96 rounded-full bg-indigo-500/20 blur-[120px]" />
                 <div className="absolute -right-24 bottom-0 h-96 w-96 rounded-full bg-cyan-400/15 blur-[130px]" />
                 <div className="absolute left-1/2 top-40 h-[28rem] w-[28rem] -translate-x-1/2 rounded-full bg-purple-500/10 blur-[160px]" />
@@ -67,7 +68,14 @@ const HexenityPageShell = ({
                     </div>
                 </motion.div>
 
-                <div className="mt-8">{children}</div>
+                <motion.div
+                    className="mt-8"
+                    initial={{ opacity: 0, y: 26, filter: 'blur(8px)' }}
+                    animate={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
+                    transition={{ duration: 0.55, ease: [0.22, 1, 0.36, 1], delay: 0.12 }}
+                >
+                    {children}
+                </motion.div>
             </div>
         </div>
     );

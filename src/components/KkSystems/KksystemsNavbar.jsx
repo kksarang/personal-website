@@ -1,10 +1,11 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { Menu, X, Sun, Moon } from 'lucide-react';
 import { useLocation, useNavigate } from 'react-router-dom';
 
 const KksystemsNavbar = () => {
     const [isOpen, setIsOpen] = useState(false);
     const [isScrolled, setIsScrolled] = useState(false);
+    const scrollTickingRef = useRef(false);
     const [isDark, setIsDark] = useState(() => {
         if (localStorage.getItem('hexenity-theme')) {
             return localStorage.getItem('hexenity-theme') === 'dark';
@@ -34,9 +35,16 @@ const KksystemsNavbar = () => {
     ];
 
     useEffect(() => {
-        const onScroll = () => setIsScrolled(window.scrollY > 18);
+        const onScroll = () => {
+            if (scrollTickingRef.current) return;
+            scrollTickingRef.current = true;
+            requestAnimationFrame(() => {
+                setIsScrolled(window.scrollY > 18);
+                scrollTickingRef.current = false;
+            });
+        };
         onScroll();
-        window.addEventListener('scroll', onScroll);
+        window.addEventListener('scroll', onScroll, { passive: true });
         return () => window.removeEventListener('scroll', onScroll);
     }, []);
 
@@ -46,7 +54,7 @@ const KksystemsNavbar = () => {
 
         if (href === '/hexenity') {
             if (location.pathname === '/hexenity') {
-                window.scrollTo({ top: 0, behavior: 'smooth' });
+                window.scrollTo({ top: 0, behavior: 'auto' });
             } else {
                 navigate('/hexenity');
             }
@@ -60,11 +68,11 @@ const KksystemsNavbar = () => {
                 navigate('/hexenity');
                 setTimeout(() => {
                     const element = document.getElementById(hash);
-                    if (element) element.scrollIntoView({ behavior: 'smooth' });
+                    if (element) element.scrollIntoView({ behavior: 'auto' });
                 }, 100);
             } else {
                 const element = document.getElementById(hash);
-                if (element) element.scrollIntoView({ behavior: 'smooth' });
+                if (element) element.scrollIntoView({ behavior: 'auto' });
             }
         } else {
             navigate(href);

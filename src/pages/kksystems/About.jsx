@@ -1,5 +1,6 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
+import { motion } from 'framer-motion';
 import { ArrowRight, Building2, Globe2, Linkedin, Shield, Target, Users, Zap } from 'lucide-react';
 import HexenityPageShell from '../../components/KkSystems/HexenityPageShell';
 
@@ -17,13 +18,6 @@ const founders = [
         bio: 'Drives architecture direction, engineering quality, and scalable system delivery across projects.',
         image: '/assets/images/gallery/irs.png',
         links: [{ label: 'LinkedIn', url: 'https://www.linkedin.com/in/irshad1212/' }],
-    },
-    {
-        name: 'Russel VK',
-        role: 'Chief Operations Officer',
-        bio: 'Owns delivery governance, execution operations, and process alignment across engagements.',
-        image: '/assets/images/gallery/russ.jpeg',
-        links: [{ label: 'LinkedIn', url: 'https://www.linkedin.com/in/russel-vk-7327152a3/' }],
     },
 ];
 
@@ -88,26 +82,26 @@ export default function About() {
         >
             <div className="space-y-8">
                 <section className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-                    <article className="rounded-2xl border border-white/10 bg-white/5 p-5">
+                    <motion.article initial={{ opacity: 0, y: 14 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="rounded-2xl border border-white/10 bg-white/5 p-5">
                         <Building2 className="h-5 w-5 text-indigo-300" />
                         <p className="mt-3 text-xl font-bold text-white">2018+</p>
                         <p className="mt-1 text-xs uppercase tracking-[0.14em] text-slate-400">Operational Journey</p>
-                    </article>
-                    <article className="rounded-2xl border border-white/10 bg-white/5 p-5">
+                    </motion.article>
+                    <motion.article initial={{ opacity: 0, y: 14 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.05 }} className="rounded-2xl border border-white/10 bg-white/5 p-5">
                         <Users className="h-5 w-5 text-indigo-300" />
                         <p className="mt-3 text-xl font-bold text-white">Founder-Led</p>
                         <p className="mt-1 text-xs uppercase tracking-[0.14em] text-slate-400">Execution Model</p>
-                    </article>
-                    <article className="rounded-2xl border border-white/10 bg-white/5 p-5">
+                    </motion.article>
+                    <motion.article initial={{ opacity: 0, y: 14 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.1 }} className="rounded-2xl border border-white/10 bg-white/5 p-5">
                         <Globe2 className="h-5 w-5 text-indigo-300" />
                         <p className="mt-3 text-xl font-bold text-white">Global</p>
                         <p className="mt-1 text-xs uppercase tracking-[0.14em] text-slate-400">Client Footprint</p>
-                    </article>
-                    <article className="rounded-2xl border border-white/10 bg-white/5 p-5">
+                    </motion.article>
+                    <motion.article initial={{ opacity: 0, y: 14 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.15 }} className="rounded-2xl border border-white/10 bg-white/5 p-5">
                         <Shield className="h-5 w-5 text-indigo-300" />
                         <p className="mt-3 text-xl font-bold text-white">Structured</p>
                         <p className="mt-1 text-xs uppercase tracking-[0.14em] text-slate-400">Delivery Governance</p>
-                    </article>
+                    </motion.article>
                 </section>
 
                 <section className="grid gap-6 lg:grid-cols-[1.2fr_0.8fr]">
@@ -166,9 +160,17 @@ export default function About() {
 
                 <section className="space-y-5">
                     <h2 className="text-3xl font-black text-white">Leadership Team</h2>
-                    <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-3">
-                        {founders.map((founder) => (
-                            <FounderCard key={founder.name} founder={founder} />
+                    <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-2">
+                        {founders.map((founder, index) => (
+                            <motion.div
+                                key={founder.name}
+                                initial={{ opacity: 0, y: 16 }}
+                                whileInView={{ opacity: 1, y: 0 }}
+                                viewport={{ once: true }}
+                                transition={{ delay: index * 0.08 }}
+                            >
+                                <FounderCard founder={founder} />
+                            </motion.div>
                         ))}
                     </div>
                 </section>

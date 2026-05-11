@@ -33,7 +33,7 @@ export default function ERPSolutions() {
         >
           <div className="premium-surface gradient-stroke rounded-3xl p-7">
             <span className="inline-flex items-center gap-1.5 rounded-full border border-cyan-500/30 bg-cyan-500/20 px-3 py-1 text-xs font-semibold uppercase tracking-widest text-cyan-300">
-              <Layers className="h-3 w-3" /> Enterprise OS
+              <Layers className="h-3 w-3" /> Enterprise Platform
             </span>
             <h2 className="mt-4 text-3xl font-black text-white">A single control layer for operations</h2>
             <p className="mt-3 max-w-2xl text-slate-300">
@@ -88,7 +88,7 @@ export default function ERPSolutions() {
           transition={{ delay: 0.2, duration: 0.6 }}
           className="rounded-3xl border border-indigo-300/25 bg-indigo-500/15 p-10 text-center"
         >
-          <h2 className="text-3xl font-bold mb-4">Experience Hexenity OS</h2>
+          <h2 className="text-3xl font-bold mb-4">Experience Hexenity ERP Platform</h2>
           <p className="mx-auto mb-8 max-w-3xl text-white/60 leading-relaxed">
             Explore our interactive ERP demo to see how dashboards, workflows, and analytics work together in one enterprise-grade system.
           </p>
@@ -97,7 +97,7 @@ export default function ERPSolutions() {
             className="mx-auto flex items-center gap-3 rounded-2xl bg-gradient-to-r from-indigo-500 to-purple-600 px-10 py-5 text-lg font-bold text-white shadow-2xl transition-all duration-300 hover:scale-105 active:scale-95"
           >
             <Rocket className="h-6 w-6" />
-            Launch Demo OS
+            Launch ERP Demo
           </button>
         </motion.div>
       </div>

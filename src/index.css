@@ -5,13 +5,13 @@
 @tailwind utilities;
 
 html {
-  scroll-behavior: smooth;
+  scroll-behavior: auto;
   font-family: 'Inter', sans-serif;
 }
 
 @layer base {
   html {
-    scroll-behavior: smooth;
+    scroll-behavior: auto;
     font-family: 'Inter', sans-serif;
   }
   body {
@@ -70,13 +70,14 @@ html {
       radial-gradient(circle at 12% 18%, rgba(56, 189, 248, 0.08), transparent 34%),
       radial-gradient(circle at 85% 20%, rgba(129, 140, 248, 0.1), transparent 36%),
       radial-gradient(circle at 55% 78%, rgba(139, 92, 246, 0.08), transparent 32%);
+    animation: none;
   }
 
   .hexenity-noise {
     background-image:
       radial-gradient(rgba(255,255,255,0.06) 0.45px, transparent 0.45px);
     background-size: 3px 3px;
-    opacity: 0.08;
+    opacity: 0.05;
   }
 
   .premium-surface {
@@ -122,6 +123,15 @@ html {
     background-size: 50px 50px;
   }
 
+  .hexenity-grid {
+    background-image: linear-gradient(rgba(148, 163, 184, 0.06) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(148, 163, 184, 0.06) 1px, transparent 1px);
+    background-size: 54px 54px;
+    mask-image: radial-gradient(circle at center, black 24%, transparent 82%);
+    opacity: 0.2;
+    animation: none;
+  }
+
   /* Light mode overrides for the Hexenity site */
   html:not(.dark) .hexenity-root {
     background: #f6f8ff;
@@ -137,6 +147,10 @@ html {
 
   html:not(.dark) .hexenity-root .hexenity-noise {
     opacity: 0.03;
+  }
+
+  html:not(.dark) .hexenity-root .hexenity-grid {
+    opacity: 0.2;
   }
 
   html:not(.dark) .hexenity-root .hexenity-nav-shell {
@@ -323,7 +337,7 @@ html {
 }
 
 .animate-float-slow {
-  animation: float-slow 9s ease-in-out infinite;
+  animation: none;
 }
 
 @keyframes aurora-shift {
@@ -335,11 +349,48 @@ html {
   }
 }
 
+@keyframes aurora-drift {
+  0% {
+    transform: translate3d(-1.5%, 0, 0) scale(1);
+  }
+  50% {
+    transform: translate3d(1.5%, -2%, 0) scale(1.04);
+  }
+  100% {
+    transform: translate3d(-1%, 1.2%, 0) scale(1.02);
+  }
+}
+
+@keyframes grid-shift {
+  0% {
+    transform: translate3d(0, 0, 0);
+  }
+  100% {
+    transform: translate3d(54px, 54px, 0);
+  }
+}
+
 @keyframes float-slow {
   0%, 100% {
     transform: translateY(0px);
   }
   50% {
     transform: translateY(-12px);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hexenity-ambient,
+  .hexenity-grid,
+  .animate-fade-in-up,
+  .animate-float-slow {
+    animation: none !important;
+  }
+}
+
+@media (max-width: 1024px) {
+  .hexenity-noise,
+  .hexenity-grid {
+    display: none;
   }
 }

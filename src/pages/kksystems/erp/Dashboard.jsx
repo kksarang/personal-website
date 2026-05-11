@@ -21,10 +21,10 @@ const miniData = [
   { v: 400 }, { v: 300 }, { v: 600 }, { v: 800 }, { v: 500 }, { v: 900 }, { v: 700 }
 ];
 
-const StatCard = ({ title, value, change, isPositive, icon: Icon, color }) => (
+const StatCard = ({ title, value, change, isPositive, icon: Icon, iconClass }) => (
   <div className="bg-white/5 border border-white/10 p-6 rounded-2xl hover:border-white/20 transition-all group">
     <div className="flex items-start justify-between mb-4">
-      <div className={`p-3 rounded-xl bg-${color}/10 text-${color}`}>
+      <div className={`p-3 rounded-xl bg-white/5 ${iconClass}`}>
         <Icon className="w-6 h-6" />
       </div>
       <div className={`flex items-center gap-1 text-sm ${isPositive ? 'text-emerald-400' : 'text-rose-400'}`}>
@@ -61,20 +61,22 @@ const StatCard = ({ title, value, change, isPositive, icon: Icon, color }) => (
 
 const Dashboard = () => {
   const stats = [
-    { title: 'Total Revenue', value: '$128,430', change: '+12.5%', isPositive: true, icon: CreditCard, color: '[#4F46E5]' },
-    { title: 'Active Users', value: '43,201', change: '+18.2%', isPositive: true, icon: Users, color: '[#9333EA]' },
-    { title: 'Conversion Rate', value: '3.24%', change: '-2.1%', isPositive: false, icon: Activity, color: '[#22D3EE]' },
+    { title: 'Total Revenue', value: '$128,430', change: '+12.5%', isPositive: true, icon: CreditCard, iconClass: 'text-indigo-400' },
+    { title: 'Active Users', value: '43,201', change: '+18.2%', isPositive: true, icon: Users, iconClass: 'text-violet-400' },
+    { title: 'Conversion Rate', value: '3.24%', change: '-2.1%', isPositive: false, icon: Activity, iconClass: 'text-cyan-400' },
   ];
 
   return (
     <ERPLayout>
       <div className="mb-8">
         <h1 className="text-3xl font-bold text-white mb-2">Dashboard Overview</h1>
-        <p className="text-white/40">Welcome back, Admin. Here's what's happening today.</p>
+        <p className="text-white/40">Live operational and delivery metrics across your organization.</p>
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
-        {stats.map((stat, i) => (stat.color = stat.color.replace(/[\[\]]/g, ''), <StatCard key={i} {...stat} />))}
+        {stats.map((stat, i) => (
+          <StatCard key={i} {...stat} />
+        ))}
       </div>
 
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">

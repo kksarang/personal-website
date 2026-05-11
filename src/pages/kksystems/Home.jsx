@@ -10,6 +10,24 @@ import TrustedBy from '../../components/KkSystems/TrustedBy';
 import Testimonials from '../../components/KkSystems/Testimonials';
 import FAQ from '../../components/KkSystems/FAQ';
 
+const sectionReveal = {
+    initial: { opacity: 0, y: 42, filter: 'blur(10px)' },
+    whileInView: { opacity: 1, y: 0, filter: 'blur(0px)' },
+    viewport: { once: true, amount: 0.18 },
+    transition: { duration: 0.75, ease: [0.22, 1, 0.36, 1] },
+};
+
+const RevealSection = ({ children }) => (
+    <motion.div
+        initial={sectionReveal.initial}
+        whileInView={sectionReveal.whileInView}
+        viewport={sectionReveal.viewport}
+        transition={sectionReveal.transition}
+    >
+        {children}
+    </motion.div>
+);
+
 const KksystemsHome = () => {
     const [showIntro, setShowIntro] = useState(() => {
         if (typeof window === 'undefined') return false;
@@ -57,53 +75,87 @@ const KksystemsHome = () => {
             </AnimatePresence>
 
             {/* 1. Hero (Impact) & 2. Trust + Stats (Inside Hero) */}
-            <PremiumHero />
+            <RevealSection>
+                <PremiumHero />
+            </RevealSection>
 
             {/* 2. Trusted By / Partners */}
-            <TrustedBy />
+            <RevealSection>
+                <TrustedBy />
+            </RevealSection>
 
             {/* 3. What Hexenity Is (Positioning) */}
-            <Positioning />
-            <HexenityValueStack />
+            <RevealSection>
+                <Positioning />
+            </RevealSection>
+            <RevealSection>
+                <HexenityValueStack />
+            </RevealSection>
 
             {/* 4. Core Offerings (Build / Optimize / Scale) */}
-            <CoreOfferings />
+            <RevealSection>
+                <CoreOfferings />
+            </RevealSection>
 
             {/* 5. Solutions (Mobile / Web / ERP) */}
-            <PremiumSolutions />
+            <RevealSection>
+                <PremiumSolutions />
+            </RevealSection>
 
             {/* 6. Product Layer (ERP + AI) */}
-            <ProductLayer />
+            <RevealSection>
+                <ProductLayer />
+            </RevealSection>
 
             {/* 7. Impact Metrics */}
-            <ImpactMetrics />
+            <RevealSection>
+                <ImpactMetrics />
+            </RevealSection>
 
             {/* 8. How We Work (Process) */}
-            <HowWeWork />
+            <RevealSection>
+                <HowWeWork />
+            </RevealSection>
 
             {/* 9. Industries */}
-            <Industries />
+            <RevealSection>
+                <Industries />
+            </RevealSection>
 
             {/* 10. Global Presence */}
-            <GlobalPresence />
+            <RevealSection>
+                <GlobalPresence />
+            </RevealSection>
 
             {/* 11. Tech Stack */}
-            <TechStack />
+            <RevealSection>
+                <TechStack />
+            </RevealSection>
 
             {/* 12. Why Hexenity (Differentiation) */}
-            <WhyHexenity />
+            <RevealSection>
+                <WhyHexenity />
+            </RevealSection>
 
             {/* 13. Testimonials */}
-            <Testimonials />
+            <RevealSection>
+                <Testimonials />
+            </RevealSection>
 
             {/* 14. FAQ */}
-            <FAQ />
+            <RevealSection>
+                <FAQ />
+            </RevealSection>
 
             {/* 15. Demo ERP Entry (Product Feel) */}
-            <ERPDemoEntry />
+            <RevealSection>
+                <ERPDemoEntry />
+            </RevealSection>
 
             {/* 16. Final CTA */}
-            <FinalCTA />
+            <RevealSection>
+                <FinalCTA />
+            </RevealSection>
         </div>
     );
 };
