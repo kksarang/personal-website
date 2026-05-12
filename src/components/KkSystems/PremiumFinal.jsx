@@ -166,7 +166,7 @@ export const FinalCTA = () => {
                     </button>
                     <button
                         onClick={() => navigate('/hexenity/erp/dashboard')}
-                        className="px-10 py-5 rounded-2xl bg-white/5 border border-white/10 text-white font-black text-lg hover:bg-white/10 hover:border-white/20 backdrop-blur-sm transition-all"
+                        className="rounded-2xl border border-white/10 bg-white/10 px-10 py-5 text-lg font-black text-white transition hover:border-white/20 hover:bg-white/15"
                     >
                         Explore Enterprise Demo
                     </button>

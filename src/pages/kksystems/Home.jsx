@@ -10,11 +10,12 @@ import TrustedBy from '../../components/KkSystems/TrustedBy';
 import Testimonials from '../../components/KkSystems/Testimonials';
 import FAQ from '../../components/KkSystems/FAQ';
 
+/** No blur/filter: viewport blur while scrolling kills frame budget on phones & laptops */
 const sectionReveal = {
-    initial: { opacity: 0, y: 42, filter: 'blur(10px)' },
-    whileInView: { opacity: 1, y: 0, filter: 'blur(0px)' },
-    viewport: { once: true, amount: 0.18 },
-    transition: { duration: 0.75, ease: [0.22, 1, 0.36, 1] },
+    initial: { opacity: 0, y: 32 },
+    whileInView: { opacity: 1, y: 0 },
+    viewport: { once: true, amount: 0.22 },
+    transition: { duration: 0.55, ease: [0.22, 1, 0.36, 1] },
 };
 
 const RevealSection = ({ children }) => (

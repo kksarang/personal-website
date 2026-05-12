@@ -43,8 +43,10 @@ body {
   .hexenity-root {
     overflow-x: hidden;
     overscroll-behavior-x: none;
-    /* manipulation: reliable vertical pan without pan-y quirks on nested overflow regions */
-    touch-action: manipulation;
+    /* Default touch behavior restores smooth vertical scroll on phones/tablets:
+       `manipulation` can feel sticky vs native panning when many animations run. */
+    touch-action: auto;
+    -webkit-overflow-scrolling: touch;
   }
 
   /* Long nested lists (demo sidebar, ERP side nav): isolate momentum scroll on mobile */
@@ -541,14 +543,13 @@ body {
   }
 }
 
+/* Transform only: animating `filter` on the orb wrapper promoted a GPU layer that made nearby UI look soft on some browsers. */
 @keyframes hero-orb-breathe {
   0% {
     transform: scale(0.96);
-    filter: saturate(1);
   }
   100% {
     transform: scale(1.04);
-    filter: saturate(1.15);
   }
 }
 
@@ -599,22 +600,21 @@ body {
 
 @keyframes hero-orb-mark-soft {
   0% {
-    opacity: 0.77;
+    opacity: 0.82;
     transform: scale(0.97);
-    filter: drop-shadow(0 0 8px rgba(255, 255, 255, 0.07));
   }
   100% {
     opacity: 1;
     transform: scale(1.046);
-    filter: drop-shadow(0 0 26px rgba(255, 255, 255, 0.2))
-      drop-shadow(0 0 54px rgba(99, 102, 241, 0.08));
   }
 }
 
 /* Fixed nav (top-4 + bar) — anchor jumps and scroll-snapping leave room below the pill */
 /* Fixed nav — leave room for anchors; slightly tighter on phones (dynamic toolbars) */
+/* overflow-x avoids horizontal rubber-band fighting the layout without `clip`
+   quirks on some engines while scrolling vertically */
 html.hexenity-site-scroll {
-  overflow-x: clip;
+  overflow-x: hidden;
   scroll-padding-top: max(5.5rem, calc(env(safe-area-inset-top, 0px) + 4rem));
 }
 

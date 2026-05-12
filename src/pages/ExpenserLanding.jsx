@@ -79,7 +79,7 @@ const ExpenserLanding = () => {
   return (
     <div className="bg-[#FCFCFD] text-[#1D1D1F] font-sans selection:bg-indigo-500 selection:text-white overflow-x-hidden">
       {/* Premium Navbar */}
-      <nav className="fixed top-0 inset-x-0 h-20 bg-white/70 backdrop-blur-xl z-[100] border-b border-slate-100 px-6">
+      <nav className="fixed top-0 inset-x-0 z-[100] h-20 border-b border-slate-100 bg-white/95 px-6">
         <div className="max-w-7xl mx-auto h-full flex items-center justify-between">
           <Link to="/" className="flex items-center space-x-2 group">
             <div className="w-10 h-10 overflow-hidden rounded-xl bg-black flex items-center justify-center group-hover:rotate-12 transition-transform">

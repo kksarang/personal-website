@@ -64,7 +64,7 @@ const Hero = () => {
                             <div className="absolute -bottom-8 left-20 w-72 h-72 bg-pink-300 dark:bg-pink-900/30 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob animation-delay-4000"></div>
 
                             {/* Code block decoration */}
-                            <div className="relative bg-white/50 dark:bg-slate-800/50 backdrop-blur-xl rounded-2xl p-8 border border-white/20 shadow-2xl">
+                            <div className="relative rounded-2xl border border-white/25 bg-white/90 p-8 shadow-2xl dark:border-white/15 dark:bg-slate-800/90">
                                 <div className="flex space-x-2 mb-4">
                                     <div className="w-3 h-3 rounded-full bg-red-500"></div>
                                     <div className="w-3 h-3 rounded-full bg-yellow-500"></div>

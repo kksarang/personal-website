@@ -109,7 +109,7 @@ const WorkPage = () => {
             </section>
 
             {/* 2. STICKY FILTER BAR */}
-            <div className="sticky top-16 z-40 bg-white/80 dark:bg-slate-900/80 backdrop-blur-md border-b border-gray-100 dark:border-slate-800">
+            <div className="sticky top-16 z-40 border-b border-gray-100 bg-white/95 dark:border-slate-800 dark:bg-slate-900/95">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                     <div className="flex overflow-x-auto space-x-8 py-4 no-scrollbar">
                         {filters.map(filter => (
