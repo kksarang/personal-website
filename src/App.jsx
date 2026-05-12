@@ -18,12 +18,15 @@ const KksystemsWork = lazy(() => import('./pages/kksystems/Work'));
 const KksystemsWorkDetails = lazy(() => import('./pages/kksystems/WorkDetails'));
 const KksystemsLearning = lazy(() => import('./pages/kksystems/Learning'));
 const KksystemsLearningDetails = lazy(() => import('./pages/kksystems/LearningDetails'));
+const KksystemsLearningPractice = lazy(() => import('./pages/kksystems/LearningPractice'));
+const KksystemsLearningLiveCode = lazy(() => import('./pages/kksystems/LearningLiveCode'));
 const KksystemsContact = lazy(() => import('./pages/kksystems/Contact'));
 const KksystemsAbout = lazy(() => import('./pages/kksystems/About'));
 const KksystemsServices = lazy(() => import('./pages/kksystems/Services'));
 const CoreHexenity = lazy(() => import('./pages/kksystems/CoreHexenity'));
 const HexenityAI = lazy(() => import('./pages/kksystems/HexenityAI'));
 const HexenitySaaS = lazy(() => import('./pages/kksystems/HexenitySaaS'));
+const HexenitySaaSDemo = lazy(() => import('./pages/kksystems/HexenitySaaSDemo'));
 const ServiceDetail = lazy(() => import('./components/KkSystems/ServiceDetail'));
 const ExpenserLanding = lazy(() => import('./pages/ExpenserLanding'));
 
@@ -92,10 +95,13 @@ function App() {
               <Route path="work" element={<KksystemsWork />} />
               <Route path="work/:id" element={<KksystemsWorkDetails />} />
               <Route path="learning" element={<KksystemsLearning />} />
+              <Route path="learning/practice" element={<KksystemsLearningPractice />} />
+              <Route path="learning/practice/live" element={<KksystemsLearningLiveCode />} />
               <Route path="learning/:id" element={<KksystemsLearningDetails />} />
               <Route path="core-hexenity" element={<CoreHexenity />} />
               <Route path="ai" element={<HexenityAI />} />
               <Route path="saas" element={<HexenitySaaS />} />
+              <Route path="saas/demo" element={<HexenitySaaSDemo />} />
               <Route path="contact" element={<KksystemsContact />} />
               <Route path="about" element={<KksystemsAbout />} />
 

@@ -1,6 +1,27 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { Menu, X, Sun, Moon } from 'lucide-react';
 import { useLocation, useNavigate } from 'react-router-dom';
+import { useLockBodyScroll } from '../../hooks/useLockBodyScroll';
+
+const HEADER_SCROLL_RESERVE = {
+    mdUp: 104,
+    sm: 96,
+};
+
+const scrollToAnchorId = (id) => {
+    const raw = (id ?? '').replace(/^#/, '').trim();
+    if (!raw || typeof window === 'undefined') return;
+    const el = document.getElementById(raw);
+    if (!el) return;
+    const headerReserve = window.matchMedia('(min-width: 768px)').matches
+        ? HEADER_SCROLL_RESERVE.mdUp
+        : HEADER_SCROLL_RESERVE.sm;
+    const apply = () => {
+        const y = el.getBoundingClientRect().top + window.scrollY - headerReserve;
+        window.scrollTo({ top: Math.max(0, y), behavior: 'auto' });
+    };
+    requestAnimationFrame(() => requestAnimationFrame(apply));
+};
 
 const KksystemsNavbar = () => {
     const [isOpen, setIsOpen] = useState(false);
@@ -30,6 +51,7 @@ const KksystemsNavbar = () => {
         { title: 'Services', href: '/hexenity/services' },
         { title: 'Core Hexenity', href: '/hexenity/core-hexenity' },
         { title: 'Work', href: '/hexenity/work' },
+        { title: 'Learning', href: '/hexenity/learning' },
         { title: 'About', href: '/hexenity/about' },
         { title: 'Contact', href: '/hexenity/contact' },
     ];
@@ -47,6 +69,12 @@ const KksystemsNavbar = () => {
         window.addEventListener('scroll', onScroll, { passive: true });
         return () => window.removeEventListener('scroll', onScroll);
     }, []);
+
+    useEffect(() => {
+        setIsOpen(false);
+    }, [location.pathname]);
+
+    useLockBodyScroll(isOpen);
 
     const handleNavClick = (e, href) => {
         setIsOpen(false);
@@ -66,13 +94,9 @@ const KksystemsNavbar = () => {
 
             if (location.pathname !== '/hexenity') {
                 navigate('/hexenity');
-                setTimeout(() => {
-                    const element = document.getElementById(hash);
-                    if (element) element.scrollIntoView({ behavior: 'auto' });
-                }, 100);
+                setTimeout(() => scrollToAnchorId(hash), 140);
             } else {
-                const element = document.getElementById(hash);
-                if (element) element.scrollIntoView({ behavior: 'auto' });
+                scrollToAnchorId(hash);
             }
         } else {
             navigate(href);
@@ -87,9 +111,9 @@ const KksystemsNavbar = () => {
     };
 
     return (
-        <nav className="fixed top-4 z-50 w-full px-3 sm:px-6">
+        <nav className="fixed left-0 right-0 top-[max(1rem,env(safe-area-inset-top,0px))] z-50 px-3 sm:px-6">
             <div
-                className={`hexenity-nav-shell mx-auto flex max-w-7xl items-center justify-between rounded-2xl border px-4 backdrop-blur-xl transition-all duration-300 ${
+                className={`hexenity-nav-shell mx-auto flex max-w-7xl items-center justify-between rounded-2xl border px-4 transition-colors duration-200 ${
                     isScrolled
                         ? 'border-indigo-300/30 bg-[rgba(6,9,20,0.95)] py-2 shadow-[0_10px_30px_rgba(0,0,0,0.35)]'
                         : 'border-white/10 bg-[rgba(6,9,20,0.88)] py-2.5'
@@ -149,7 +173,7 @@ const KksystemsNavbar = () => {
             </div>
 
             {isOpen && (
-                <div className="mx-auto mt-2 max-w-7xl rounded-2xl border border-white/10 bg-[rgba(6,9,20,0.95)] p-3 backdrop-blur-xl md:hidden">
+                <div className="hexenity-contained-scroll mx-auto mt-2 max-h-[calc(100dvh-120px-env(safe-area-inset-top,0px)-env(safe-area-inset-bottom,0px))] max-w-7xl overflow-y-auto rounded-2xl border border-white/10 bg-[rgba(6,9,20,0.95)] p-3 md:hidden">
                     {navLinks.map((link) => (
                         <a
                             key={link.title}

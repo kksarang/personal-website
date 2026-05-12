@@ -1,6 +1,20 @@
 import React, { useState, useEffect } from 'react';
 import { Menu, X, Moon, Sun, Code2 } from 'lucide-react';
-import { Link, useLocation, useNavigate } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
+import { useLockBodyScroll } from '../hooks/useLockBodyScroll';
+
+const PORTFOLIO_HEADER_SCROLL = 76;
+
+const scrollToPortfolioHash = (href) => {
+    const selector = href.replace(/^\//, '');
+    const element = typeof document !== 'undefined' ? document.querySelector(selector) : null;
+    if (!element) return;
+    const apply = () => {
+        const y = element.getBoundingClientRect().top + window.scrollY - PORTFOLIO_HEADER_SCROLL;
+        window.scrollTo({ top: Math.max(0, y), behavior: 'auto' });
+    };
+    requestAnimationFrame(() => requestAnimationFrame(apply));
+};
 
 const Navbar = () => {
     const [isOpen, setIsOpen] = useState(false);
@@ -24,6 +38,12 @@ const Navbar = () => {
         }
     }, [isDark]);
 
+    useEffect(() => {
+        setIsOpen(false);
+    }, [location.pathname]);
+
+    useLockBodyScroll(isOpen);
+
     const navLinks = [
         { title: 'Home', href: '/#home', type: 'hash' },
         { title: 'About', href: '/#about', type: 'hash' },
@@ -39,13 +59,9 @@ const Navbar = () => {
             e.preventDefault();
             if (location.pathname !== '/') {
                 navigate('/');
-                setTimeout(() => {
-                    const element = document.querySelector(link.href.replace('/', ''));
-                    if (element) element.scrollIntoView({ behavior: 'smooth' });
-                }, 100);
+                setTimeout(() => scrollToPortfolioHash(link.href), 140);
             } else {
-                const element = document.querySelector(link.href.replace('/', ''));
-                if (element) element.scrollIntoView({ behavior: 'smooth' });
+                scrollToPortfolioHash(link.href);
             }
         } else {
             navigate(link.href);

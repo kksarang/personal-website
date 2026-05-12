@@ -10,7 +10,10 @@ const founders = [
         role: 'Chief Executive Officer',
         bio: 'Leads strategy, partnerships, and growth planning with a focus on long-term value creation.',
         image: '/assets/images/gallery/1.jpg',
-        links: [{ label: 'LinkedIn', url: 'https://www.linkedin.com/in/sarang-rajan/' }],
+        links: [
+            { label: 'LinkedIn', url: 'https://www.linkedin.com/in/sarang-rajan/' },
+            { label: 'Website', url: 'https://sarangrajan.in/' },
+        ],
     },
     {
         name: 'Irshad KP',
@@ -43,6 +46,9 @@ function FounderCard({ founder }) {
             <p className="text-sm leading-relaxed text-slate-300">{founder.bio}</p>
             <div className="mt-4 flex flex-wrap gap-2">
                 {founder.links.map((link) => (
+                    (() => {
+                        const LinkIcon = link.label.toLowerCase().includes('linkedin') ? Linkedin : Globe2;
+                        return (
                     <a
                         key={link.url}
                         href={link.url}
@@ -50,9 +56,11 @@ function FounderCard({ founder }) {
                         rel="noreferrer"
                         className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/5 px-3 py-1.5 text-[11px] font-semibold uppercase tracking-[0.12em] text-slate-200 transition hover:border-indigo-300/35 hover:text-white"
                     >
-                        <Linkedin className="h-3.5 w-3.5" />
+                        <LinkIcon className="h-3.5 w-3.5" />
                         {link.label}
                     </a>
+                        );
+                    })()
                 ))}
             </div>
         </article>

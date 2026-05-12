@@ -3,6 +3,65 @@ export const learningTopics = [
     slug: "mobile-development",
     title: "Mobile App Development",
     description: "Deep dive into Native and Cross-Platform mobile paradigms designed to execute flawlessly within strict system hardware constraints.",
+    audience: "Beginners, students, and freshers who want to become job-ready mobile developers.",
+    fresherOverview: "Mobile app development means building apps for Android and iOS that people use every day. As a fresher, this is a great path because you can see your work directly on a real device and quickly build a portfolio.\n\nYou can start with one cross-platform framework (Flutter or React Native), learn UI building, API integration, local storage, and app publishing. Once your basics are strong, you can move into native Android (Kotlin) or iOS (Swift).\n\nThis topic is designed so a beginner can understand what to learn first, why each concept matters, and how to build one complete real-world app from scratch.",
+    whyLearn: [
+      {
+        title: "High demand in startups and product companies",
+        detail: "Most businesses need mobile apps for customer engagement, so mobile developers are consistently in demand."
+      },
+      {
+        title: "Fast feedback learning",
+        detail: "You can test features instantly on an emulator/phone, which helps beginners improve quickly."
+      },
+      {
+        title: "Strong freelance and internship opportunities",
+        detail: "Simple app MVPs, maintenance, and feature updates are common entry points for freshers."
+      },
+      {
+        title: "Clear portfolio value",
+        detail: "A published app or demo APK is strong proof of skills during interviews."
+      }
+    ],
+    whenToLearn: [
+      {
+        stage: "Start now if you are in college",
+        explanation: "Begin with app UI + API basics so you can build 2-3 portfolio apps before graduation."
+      },
+      {
+        stage: "Switching from web development",
+        explanation: "If you already know JavaScript, React Native gives a faster transition path to mobile."
+      },
+      {
+        stage: "Preparing for internships/jobs",
+        explanation: "Focus on one complete app with authentication, API, local cache, and clean architecture."
+      }
+    ],
+    realWorldPractice: [
+      {
+        title: "Build a Daily Expense Tracker (Week 1-2)",
+        goal: "Learn forms, validation, list rendering, and local storage.",
+        deliverables: ["Add/Edit/Delete expense", "Category filters", "Offline persistence"]
+      },
+      {
+        title: "Add Cloud Sync + Auth (Week 3-4)",
+        goal: "Learn API integration, auth flow, and state management.",
+        deliverables: ["Email/Google login", "Sync transactions to backend", "Handle loading/error states"]
+      },
+      {
+        title: "Production Readiness (Week 5-6)",
+        goal: "Make your app interview-ready and close to publish quality.",
+        deliverables: ["Splash + onboarding", "Performance pass", "Release build + README + demo video"]
+      }
+    ],
+    starterChecklist: [
+      "Install Flutter/React Native and run sample app on emulator",
+      "Learn basic widgets/components and navigation",
+      "Connect one public API and render data",
+      "Implement local storage for offline mode",
+      "Add authentication and protected screens",
+      "Create one polished portfolio app and document architecture"
+    ],
     technologies: ["Flutter", "React Native", "Swift", "Kotlin", "Objective-C"],
     overview: "Mobile development is a rapidly evolving ecosystem that demands strict adherence to system resource constraints, aggressive caching strategies, and seamless offline-first architectures. Unlike web applications where resources can be dynamically streamed and scaled on the server-side, mobile apps execute in environments with highly limited RAM, heavily integrated operating system process lifecycles, and fluctuating network reliabilities.\n\nOur approach fundamentally revolves around native-level performance. Whether we are utilizing cross-platform solutions like Flutter and React Native or dropping down into bare-metal Swift and Kotlin, our primary goal is rendering stability—ensuring fluid, consistent 60 to 120 FPS animations without frame drops. This involves complex multi-threading models, Isolates (Dart), Coroutines (Kotlin), and Grand Central Dispatch (Swift) to forcefully push heavy data parsing and un-optimized JSON serialization off the main UI rendering thread.\n\nWe prioritize deep operating system integration. To us, a mobile app isn't just a wrapped web view; it communicates intrinsically with local hardware—camera subsystems, Secure Enclave for biometric authentication, CoreLocation for hyper-accurate tracking, and local encrypted databases like Isar or Realm for guaranteed persistence. Choosing the right Integrated Development Environment (IDE)—whether it's Android Studio for its superb profiler, Xcode for its deep iOS simulator integration, or Visual Studio Code for lightning-fast cross-platform development—dictates the speed, safety, and operational excellence of our engineering delivery.",
     architecture: [
@@ -230,9 +289,27 @@ struct WeatherView: View {
   },
   {
     slug: "frontend-architecture",
-    title: "Frontend Web Architecture",
-    description: "Crafting highly responsive, accessible, and blindingly fast enterprise user interfaces utilizing aggressive Route Caching and DOM isolation.",
-    technologies: ["React", "Next.js", "TypeScript", "Tailwind CSS", "Vue"],
+    title: "Web Development — Full Stack Learning",
+    description:
+      "Premium web engineering track: semantic foundations, React and Next.js, Node and Express APIs, databases, authentication, Git workflows, Docker basics, deployment, responsive UX, and production performance.",
+    technologies: [
+      "HTML5",
+      "CSS3",
+      "JavaScript",
+      "TypeScript",
+      "React.js",
+      "Next.js",
+      "Node.js",
+      "Express.js",
+      "MongoDB",
+      "MySQL",
+      "REST APIs",
+      "Authentication",
+      "Git & GitHub",
+      "Deployment",
+      "Responsive Design",
+      "Performance Optimization",
+    ],
     overview: "Modern frontend development requires significantly more than just making static HTML look aesthetically pleasing. We construct extremely robust architectures focused heavily on dynamic component reusability, optimal Core Web Vitals, and strict server-side rendering pipelines. The modern browser is essentially an operating system in itself, requiring precision-engineered Javascript runtimes to manage Virtual DOMs without triggering jank or memory leaks.\n\nWe enforce strict atomic design principles. Components are physically and logically isolated, thoroughly tested in isolation via Storybook environments, and then seamlessly composed together into complex dashboard views. We favor Next.js App Router for aggressive route caching, streaming Suspense boundaries, and nested layout topologies that eliminate cascading waterfalls during initial load phases.\n\nCSS Architecture is another pivotal concern. By leaning entirely into Utility-first CSS frameworks like Tailwind, we prevent massive centralized stylesheet bloat and permanently eliminate class naming specificity collisions. Whether developing inside VS Code or WebStorm, the modern frontend developer must leverage rigid ESLint configs, Prettier formatting hooks, and TypeScript's static type assertion to catch errors before the code even compiles.",
     architecture: [
       { title: "Server-Side Rendering (SSR)", description: "Pre-rendering critical HTML to drastically improve Time to First Byte (TTFB) and guarantee flawless SEO indexing capabilities." },
@@ -334,7 +411,7 @@ export default function Page({ params }: { params: { id: string } }) {
     slug: "backend-engineering",
     title: "Backend Engineering & System Architecture",
     description: "Designing hyper-secure, horizontally scalable, and high-performance backend system APIs powering millions of concurrent client connections.",
-    technologies: ["Node.js", "Python", "Go", "Docker", "Java", "C#"],
+    technologies: ["Node.js", "Express.js", "MongoDB", "PostgreSQL", "Redis", "Docker", "Firebase", "GraphQL", "REST APIs", "JWT Authentication"],
     overview: "Backend engineering is the invisible nervous system of any modern software application. It focuses on building resilient server-side logic, executing highly complex algorithmic processes, interacting deeply with clustered databases, handling complex authentication authorization handshakes, and enforcing absolutely unbreakable security protocols across cloud infrastructures.\n\nWe structure API gateways and microservices focusing intensely on the concept of 'Zero Trust'. Every single network request arriving at our backend layers is treated as inherently hostile until cryptographically verified via proper JWTs, OAuth tokens, or signed payload checksums. Our backend languages are chosen meticulously: We use Node.js and Express for heavily asynchronous networking traffic tasks due to its brilliant V8 event loop; Python FastAPI when we require heavy algorithmic computations or deep machine learning model integrations; and Go (Golang) when we need sheer, raw threaded performance and microsecond latency across distributed clustering systems.\n\nDeveloping backends requires professional-grade environments like IntelliJ IDEA or VS Code enhanced with structural Docker integrations, ensuring that a developer's local runtime precisely mirrors the production Linux environment. This eliminates the dreaded \"It works on my machine\" discrepancy.",
     architecture: [
       { title: "API Topologies", description: "Generating strictly typed RESTful APIs, high-throughput gRPC channels, or deeply nested GraphQL interfaces with complex resolver middleware." },
@@ -516,7 +593,7 @@ LIMIT 100;`
     slug: "devops-cicd",
     title: "DevOps & CI/CD",
     description: "Completely automating heavy deployment pipelines, resilient infrastructure, and ensuring stress-free zero-downtime rolling releases.",
-    technologies: ["Docker", "Kubernetes", "GitHub Actions", "AWS", "Terraform"],
+    technologies: ["Docker", "Kubernetes", "Jenkins", "GitHub Actions", "AWS", "Terraform", "Nginx", "Linux", "Prometheus", "Grafana"],
     overview: "Releasing enterprise software should never cause panic or require weekend rollouts. Our mature DevOps engineering culture emphasizes absolute total automation, defining physical infrastructure explicitly as software code (IaC), and engineering continuous delivery pipelines. We build and maintain complex systems where developers simply merge feature branches via pull requests—and the automated infrastructure instantaneously triggers deep test suites, synthesizes binaries, tests backwards compatibility, and deploys it safely across remote server clusters.\n\nContainerization forms the absolute core of our deployment matrix. Utilizing Docker, we completely eliminate localized environment discrepancies by tightly packaging application binaries along with their exact granular library dependencies into mathematically identical immutable Linux containers. We then orchestrate these containers geographically using Kubernetes (K8s), commanding K8s to independently auto-scale replicas depending linearly on active CPU network thresholds mapped dynamically in real-time.\n\nDeep observability completes the CI/CD topological map. We inject tools like Datadog, Prometheus, or Grafana directly into the cluster layer, allowing us to capture central structured logging arrays and push aggressive proactive Slack alerts indicating pod degradations long before a real user even notices a spike in HTTP 500 error codes.",
     architecture: [
       { title: "Immutable Containerization", description: "Packaging application stacks into rigidly isolated Docker environments guaranteeing algorithmic consistency across local, staging, and production tiers." },
@@ -622,9 +699,20 @@ CMD ["node", "server.js"]`
   },
   {
     slug: "ai-ml-integration",
-    title: "AI & Machine Learning Integration",
-    description: "Seamlessly engineering highly intelligent LLMs, automation flows, and deep predictive analytics interfaces directly into standard enterprise software layouts.",
-    technologies: ["OpenAI", "LangChain", "Vector DBs", "Python", "LlamaIndex"],
+    title: "AI Development Learning",
+    description:
+      "Futuristic AI engineering path: ML fundamentals, deep learning, generative AI and LLMs, chatbots, prompt engineering, TensorFlow and PyTorch, OpenAI APIs, automation, agents, deployment, and AI SaaS patterns.",
+    technologies: [
+      "Python",
+      "TensorFlow",
+      "PyTorch",
+      "OpenAI APIs",
+      "LangChain",
+      "Vector DBs",
+      "Computer Vision",
+      "NLP",
+      "AI Agents",
+    ],
     overview: "Artificial Intelligence has completely shifted from pure experimental theoretical research into an explicit, fundamentally mandatory system integration component required heavily within the modern enterprise software stack. We leverage massive cutting-edge Large Language Models (LLMs) alongside custom Machine Learning execution pipelines to powerfully transform legacy passive software into actively intelligent reasoning systems.\n\nWe do not merely string together black-box APIs; we deliberately construct aggressively robust Retrieval-Augmented Generation (RAG) architectures that intrinsically understand your proprietary raw documentation data. By mathematically digesting tens of thousands of PDF pages, hidden manuals, and raw SQL databases into multi-dimensional Vector embeddings, we effectively grant generic LLMs hyper-specific, highly localized institutional memory brains—drastically preventing \"hallucinations\" and maintaining exact factual grounding algorithms.\n\nDeveloping complex AI flows requires leveraging strictly typed frameworks like Python's LangChain or LlamaIndex mapped beautifully over Jupyter Notebook prototypes, ensuring immediate sandbox visibility prior to actual deployment into the core backend Express or FastAPI layers.",
     architecture: [
       { title: "Semantic Data Ingestion Pipelines", description: "Mathematically parsing vast arrays of raw PDFs, nested databases, and unstructured markdown text into clean, structured semantic execution chunks." },
@@ -690,9 +778,10 @@ print("SOURCES: ", response["source_documents"]) # Enables heavy UI citation aud
   },
   {
     slug: "ui-ux-basics",
-    title: "UI/UX Design Systems",
-    description: "Architecting accessible, aesthetically superior, and conversion-optimized user interfaces for enterprise products.",
-    technologies: ["Figma", "Adobe XD", "Design Systems", "Prototyping"],
+    title: "UI/UX Design Learning",
+    description:
+      "Modern UI/UX curriculum: research, wireframes, design systems, typography, color theory, psychology, mobile-first and responsive craft, Figma mastery, prototyping, micro-interactions, accessibility, portfolio, and remote freelancing readiness.",
+    technologies: ["Figma", "Adobe XD", "Photoshop", "Illustrator", "Framer", "Design Systems", "Accessibility"],
     overview: "Design is not just how it looks; it is how it works. We teach the fundamental laws of UX (Fitts's Law, Hick's Law, Gestalt principles) alongside the technical execution of Design Systems. A premium product requires a consistent visual language that scales across platforms while maintaining absolute accessibility (WCAG 2.1 compliance).\n\nWe focus on the transition from static mockups to interactive high-fidelity prototypes. Learning UI/UX with us means understanding variables, auto-layout, components, and design tokens that bridge the gap between design and engineering.",
     architecture: [
       { title: "Design Tokens", description: "Codifying colors, typography, and spacing into reusable variables." },
@@ -761,6 +850,36 @@ const authMiddleware = (req, res, next) => {
       { step: 2, title: "Web Vulnerabilities", description: "Master the OWASP Top 10 and how to fix them." },
       { step: 3, title: "Secure Coding", description: "Learn defensive programming in JS, Python, or Go." },
       { step: 4, title: "Cloud Hardening", description: "Secure AWS/GCP workloads and Docker containers." }
+    ]
+  },
+  {
+    slug: "digital-marketing-learning",
+    title: "Digital Marketing Learning",
+    description: "Master SEO, paid ads, social growth, automation, and analytics for modern product and ecommerce brands.",
+    technologies: ["SEO", "Google Ads", "Meta Ads", "Analytics", "Marketing Automation", "Content Strategy"],
+    overview: "Digital marketing is a revenue engine built on audience research, data analysis, and continuous campaign optimization. This track helps beginners and working professionals learn performance marketing from fundamentals to advanced growth systems.\n\nYou will learn how to run and optimize campaigns across SEO, social media, search ads, content funnels, and email automation. The curriculum includes channel strategy, conversion tracking, attribution thinking, and budget-aware optimization methods used in real startup and ecommerce growth teams.",
+    architecture: [
+      { title: "Acquisition Framework", description: "Channel-specific strategy for organic, paid, and partnership-driven traffic growth." },
+      { title: "Conversion Engine", description: "Landing page quality, offer positioning, funnel mapping, and CRO loops." },
+      { title: "Retention Layer", description: "Email automation, remarketing, and loyalty-focused lifecycle campaigns." },
+      { title: "Analytics and Optimization", description: "Tracking setup, KPI dashboards, attribution review, and performance iteration." }
+    ],
+    strategy: "Hexenity teaches marketing as a measurement-first execution model. Every campaign begins with clear KPIs, audience assumptions, budget limits, and a test matrix. We then run iterative experiments (creative, targeting, bids, funnel changes), measure impact using analytics, and scale only what performs consistently.\n\nThis process helps learners become practical growth operators rather than theory-only marketers. By combining SEO, paid media, content, and automation into one strategy, learners build reliable growth playbooks for startups, ecommerce brands, and service businesses.",
+    techStack: [
+      { category: "SEO and Search", tools: "Google Search Console, SEMrush, Ahrefs basics, on-page and technical SEO workflows" },
+      { category: "Paid Media", tools: "Meta Ads Manager, Google Ads, campaign budget optimization, retargeting" },
+      { category: "Analytics", tools: "Google Analytics 4, event tracking, conversion setup, attribution review" },
+      { category: "Content and Design", tools: "Canva, content calendar systems, copy frameworks, brand messaging" },
+      { category: "Automation and CRM", tools: "HubSpot, email sequences, lead scoring, campaign automation logic" }
+    ],
+    codeExamples: [],
+    visualImage: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80",
+    useCase: "Scaled a D2C ecommerce brand from stagnant paid acquisition to a full-funnel growth system by combining SEO content clusters, Meta remarketing, and email lifecycle automation. CAC improved by 31% while monthly revenue grew 2.4x in five months.",
+    learningPath: [
+      { step: 1, title: "Marketing Fundamentals", description: "Audience research, funnel basics, value proposition, and campaign planning." },
+      { step: 2, title: "Channel Execution", description: "SEO, social, paid media, and content system implementation." },
+      { step: 3, title: "Optimization and Analytics", description: "Tracking, attribution, A/B testing, and budget scaling workflows." },
+      { step: 4, title: "Growth and Career Readiness", description: "Case studies, portfolio campaigns, and role-targeted interview prep." }
     ]
   }
 ];

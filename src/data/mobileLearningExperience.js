@@ -1,0 +1,486 @@
+export const mobileLearningExperienceData = {
+  title: "Mobile App Development Learning",
+  subtitle:
+    "Professional academy path for building Android, iOS, and cross-platform apps with production quality engineering standards.",
+  seo: {
+    title: "Mobile App Development Course | Hexenity Learning",
+    description:
+      "Hexenity mobile app development learning track for beginners to advanced engineers. Build real apps, master Flutter and native concepts, and become production ready.",
+    keywords: [
+      "mobile app development course",
+      "flutter training",
+      "android development roadmap",
+      "ios development learning",
+      "production level mobile app training",
+    ],
+  },
+  conversionBadges: [
+    "Limited Seats",
+    "Industry Focused",
+    "Production Level Training",
+    "Build Real Apps",
+    "Career-Oriented Curriculum",
+  ],
+  stats: [
+    { label: "Students Trained", value: 500, suffix: "+", icon: "users" },
+    { label: "Real Projects", value: 50, suffix: "+", icon: "briefcase" },
+    { label: "Technologies", value: 20, suffix: "+", icon: "cpu" },
+    { label: "Practical Learning", value: 100, suffix: "%", icon: "target" },
+  ],
+  quickOptions: [
+    {
+      id: "option-beginner",
+      label: "Beginner Path",
+      description: "Start with UI, navigation, and coding fundamentals.",
+      actionType: "mode",
+      target: "beginner",
+    },
+    {
+      id: "option-intermediate",
+      label: "Intermediate Path",
+      description: "Move into APIs, auth, cloud, and state architecture.",
+      actionType: "mode",
+      target: "intermediate",
+    },
+    {
+      id: "option-advanced",
+      label: "Advanced Path",
+      description: "Performance, testing, architecture, and optimization.",
+      actionType: "mode",
+      target: "advanced",
+    },
+    {
+      id: "option-production",
+      label: "Production Path",
+      description: "Store release, monitoring, and interview readiness.",
+      actionType: "mode",
+      target: "production",
+    },
+    {
+      id: "option-tech",
+      label: "Tech Stack",
+      description: "See all frameworks, languages, and backend tools.",
+      actionType: "scroll",
+      target: "tech-stack",
+    },
+    {
+      id: "option-roadmap",
+      label: "Interactive Roadmap",
+      description: "Jump into level timeline and track your progression.",
+      actionType: "scroll",
+      target: "roadmap-timeline",
+    },
+    {
+      id: "option-projects",
+      label: "Real Projects",
+      description: "Open product-grade project blueprints and features.",
+      actionType: "scroll",
+      target: "real-projects",
+    },
+    {
+      id: "option-testimonials",
+      label: "Student Reviews",
+      description: "See outcome stories and learner testimonials.",
+      actionType: "scroll",
+      target: "testimonials",
+    },
+    {
+      id: "option-practice",
+      label: "Try Live Coding",
+      description: "Practice coding instantly in the live playground.",
+      actionType: "navigate",
+      target: "/hexenity/learning/practice",
+    },
+    {
+      id: "option-contact",
+      label: "Talk to Mentor",
+      description: "Connect with Hexenity for learning and career support.",
+      actionType: "navigate",
+      target: "/hexenity/contact",
+    },
+  ],
+  modes: [
+    {
+      id: "beginner",
+      label: "Beginner Level",
+      duration: "Weeks 1 to 4",
+      overview:
+        "Build strong mobile fundamentals: app structure, component reuse, screen navigation, and feature-level coding confidence.",
+      topics: [
+        "Mobile ecosystem overview (Android, iOS, cross-platform)",
+        "Dart and JavaScript essentials for app development",
+        "UI components, responsive layout, and theme systems",
+        "Navigation stack, forms, and input validation",
+      ],
+      miniProjects: [
+        "Notes App with local storage",
+        "Task Manager with categories and filters",
+        "Simple profile + settings app flow",
+      ],
+      skillsLearned: [
+        "Clean UI structure",
+        "Component reuse patterns",
+        "State basics",
+        "Coding confidence for internship-level tasks",
+      ],
+    },
+    {
+      id: "intermediate",
+      label: "Intermediate Level",
+      duration: "Weeks 5 to 8",
+      overview:
+        "Integrate real backend services, authentication, and cloud tools while following maintainable architecture patterns.",
+      topics: [
+        "REST API integration with loading/error handling",
+        "Firebase Authentication and Firestore basics",
+        "State management with modular feature boundaries",
+        "Node.js backend integration and API contract workflows",
+      ],
+      miniProjects: [
+        "Ecommerce catalog + cart app",
+        "Food delivery listing and order flow",
+        "Weather app with API and offline cache",
+      ],
+      skillsLearned: [
+        "API lifecycle handling",
+        "Secure authentication workflows",
+        "Feature-level architecture planning",
+        "Cloud-connected product development",
+      ],
+    },
+    {
+      id: "advanced",
+      label: "Advanced Level",
+      duration: "Weeks 9 to 12",
+      overview:
+        "Focus on product engineering quality: performance, testing, scalable architecture, and reliability in real-world scenarios.",
+      topics: [
+        "Performance profiling and rendering optimization",
+        "Testing strategy (unit, widget, integration)",
+        "Advanced state architecture and dependency management",
+        "Error resilience, retry strategy, and debugging workflows",
+      ],
+      miniProjects: [
+        "Realtime chat application",
+        "Taxi booking app with map tracking",
+        "Finance tracker with analytics dashboard",
+      ],
+      skillsLearned: [
+        "Performance-first engineering",
+        "Testable architecture",
+        "Debug and incident handling",
+        "Scalable code organization",
+      ],
+    },
+    {
+      id: "production",
+      label: "Production Level",
+      duration: "Weeks 13 to 16+",
+      overview:
+        "Prepare apps for launch and hiring outcomes with deployment workflows, monitoring strategy, portfolio packaging, and interview readiness.",
+      topics: [
+        "Android and iOS release process",
+        "CI/CD fundamentals and automated quality checks",
+        "Crash monitoring, analytics, and post-release optimization",
+        "Portfolio storytelling, resume proof, and interview preparation",
+      ],
+      miniProjects: [
+        "AI productivity app with API integration",
+        "Social media app with feed and notifications",
+        "Complete capstone project with deployment",
+      ],
+      skillsLearned: [
+        "Release-ready delivery",
+        "Production observability",
+        "Portfolio and case-study building",
+        "Role-targeted interview communication",
+      ],
+    },
+  ],
+  roadmapTimeline: [
+    {
+      id: "timeline-beginner",
+      level: "Beginner",
+      duration: "Weeks 1-4",
+      progress: 25,
+      skills: ["UI fundamentals", "navigation", "form handling", "state basics"],
+      projects: ["Notes App", "Task Manager"],
+      outcomes: "Can build and present complete beginner-level apps with clean UI flow.",
+    },
+    {
+      id: "timeline-intermediate",
+      level: "Intermediate",
+      duration: "Weeks 5-8",
+      progress: 50,
+      skills: ["API integration", "Firebase auth", "cloud data", "structured state"],
+      projects: ["Ecommerce App", "Food Delivery App"],
+      outcomes: "Can build connected apps with auth, data fetching, and backend flows.",
+    },
+    {
+      id: "timeline-advanced",
+      level: "Advanced",
+      duration: "Weeks 9-12",
+      progress: 75,
+      skills: ["testing", "performance tuning", "architecture design", "debugging"],
+      projects: ["Chat App", "Taxi Booking App"],
+      outcomes: "Can engineer stable, scalable apps with production-quality code standards.",
+    },
+    {
+      id: "timeline-production",
+      level: "Production Ready",
+      duration: "Weeks 13-16+",
+      progress: 100,
+      skills: ["deployment", "monitoring", "release workflows", "career packaging"],
+      projects: ["AI Assistant App", "Finance Tracker", "Capstone Launch App"],
+      outcomes: "Can ship, monitor, and present apps for jobs, internships, and freelance delivery.",
+    },
+  ],
+  whatYouWillBuild: [
+    {
+      name: "Ecommerce App",
+      difficulty: "Intermediate",
+      previewMockup: "Catalog, cart, and checkout product flow",
+      features: ["Product listing", "Search and filters", "Cart and checkout", "Order history"],
+      stack: ["Flutter", "REST API", "Firebase Auth", "Node.js"],
+    },
+    {
+      name: "Food Delivery App",
+      difficulty: "Intermediate",
+      previewMockup: "Restaurant listing and order tracking experience",
+      features: ["Restaurant list", "Live order status", "Address and payment", "Notifications"],
+      stack: ["Flutter", "Firebase", "Maps API", "Node.js"],
+    },
+    {
+      name: "Chat App",
+      difficulty: "Advanced",
+      previewMockup: "Realtime messaging UI with modern interaction",
+      features: ["Realtime chat", "Typing indicator", "Media upload", "Read receipts"],
+      stack: ["Flutter", "Firebase Firestore", "Cloud Functions"],
+    },
+    {
+      name: "AI Assistant App",
+      difficulty: "Advanced",
+      previewMockup: "Prompt-based assistant workflow with summaries",
+      features: ["Prompt templates", "Smart summaries", "Task suggestions", "History log"],
+      stack: ["Flutter", "Node.js", "OpenAI API", "Firebase"],
+    },
+    {
+      name: "Finance Tracker",
+      difficulty: "Intermediate",
+      previewMockup: "Expense analytics dashboard and budgeting flows",
+      features: ["Expense tracking", "Charts", "Budget goals", "Monthly reports"],
+      stack: ["Flutter", "Local DB", "Charts", "Firebase Auth"],
+    },
+    {
+      name: "Taxi Booking App",
+      difficulty: "Advanced",
+      previewMockup: "Ride lifecycle with live map updates",
+      features: ["Ride booking", "Driver tracking", "Fare estimate", "Trip timeline"],
+      stack: ["Flutter", "Maps API", "Node.js", "Push Notifications"],
+    },
+  ],
+  techStackGrid: [
+    {
+      name: "Flutter",
+      icon: "smartphone",
+      description: "Cross-platform UI toolkit for fast delivery and smooth interactions.",
+    },
+    {
+      name: "Dart",
+      icon: "code",
+      description: "Core language for scalable Flutter architecture and async logic.",
+    },
+    {
+      name: "Firebase",
+      icon: "database",
+      description: "Auth, cloud storage, notifications, analytics, and realtime database.",
+    },
+    {
+      name: "REST API",
+      icon: "network",
+      description: "Backend communication contracts for auth, data, and business workflows.",
+    },
+    {
+      name: "Node.js",
+      icon: "server",
+      description: "Backend integration for mobile features and secure business logic APIs.",
+    },
+    {
+      name: "GitHub",
+      icon: "git",
+      description: "Version control, collaboration, code review, and deployment traceability.",
+    },
+    {
+      name: "Figma",
+      icon: "figma",
+      description: "Design collaboration, handoff, and UI system planning for engineering teams.",
+    },
+  ],
+  projects: [
+    {
+      name: "Ecommerce App",
+      features: ["Product listing and search", "Cart and checkout", "Orders and profile"],
+      stack: ["Flutter", "REST API", "Firebase Auth", "Node.js"],
+    },
+    {
+      name: "Food Delivery App",
+      features: ["Restaurant listing", "Live order status", "Address and payment flow"],
+      stack: ["Flutter", "Firebase", "Maps API", "Node.js"],
+    },
+    {
+      name: "Chat Application",
+      features: ["Realtime messaging", "Typing status", "Media sharing"],
+      stack: ["Flutter", "Firebase Firestore", "Cloud Functions"],
+    },
+    {
+      name: "Taxi Booking App",
+      features: ["Ride booking", "Driver tracking", "Fare estimate"],
+      stack: ["Flutter", "Maps API", "Node.js", "Push Notifications"],
+    },
+    {
+      name: "AI App",
+      features: ["Prompt-based assistant", "Smart summaries", "Usage analytics"],
+      stack: ["Flutter", "Node.js", "OpenAI API", "Firebase"],
+    },
+    {
+      name: "Finance Tracker",
+      features: ["Income/expense tracking", "Category analytics", "Monthly reports"],
+      stack: ["Flutter", "Local DB", "Charts", "Firebase Auth"],
+    },
+    {
+      name: "Social Media App",
+      features: ["Posts and comments", "Likes and saves", "Realtime notifications"],
+      stack: ["Flutter", "Firebase", "REST API", "Node.js"],
+    },
+  ],
+  careers: [
+    { role: "Flutter Developer", salary: "INR 4.5L to 18L+", remote: "High remote demand" },
+    { role: "Android Developer", salary: "INR 5L to 22L+", remote: "Medium to high remote demand" },
+    { role: "iOS Developer", salary: "INR 6L to 24L+", remote: "High remote demand" },
+    { role: "Full Stack Mobile Developer", salary: "INR 7L to 28L+", remote: "Very high remote demand" },
+    { role: "UI-focused Mobile Engineer", salary: "INR 5L to 20L+", remote: "High remote demand" },
+  ],
+  mentorIndustry: [
+    {
+      name: "Product Mentor Team",
+      role: "Mobile and Product Engineering Leads",
+      experience: "8+ years",
+      background: "Delivered startup and enterprise apps across fintech, ecommerce, and SaaS.",
+    },
+    {
+      name: "Architecture Review Mentors",
+      role: "Backend and Cloud Specialists",
+      experience: "10+ years",
+      background: "Guided API integration, scalability, and production reliability workflows.",
+    },
+    {
+      name: "UI Experience Mentors",
+      role: "Design Systems and UX Engineers",
+      experience: "7+ years",
+      background: "Specialized in premium UI systems, interaction quality, and accessibility.",
+    },
+  ],
+  testimonials: [
+    {
+      name: "Arun K",
+      role: "Flutter Developer Intern",
+      rating: 5,
+      story:
+        "Before Hexenity, I only knew basics. After completing the track, I built a full ecommerce app and landed an internship in a product startup.",
+      avatar: "AK",
+    },
+    {
+      name: "Nivya P",
+      role: "Junior Mobile Engineer",
+      rating: 5,
+      story:
+        "The roadmap and code reviews were practical. I moved from tutorial-level coding to production-level implementation confidence.",
+      avatar: "NP",
+    },
+    {
+      name: "Rahul S",
+      role: "Freelance App Developer",
+      rating: 5,
+      story:
+        "The project-first approach helped me start freelancing. I now deliver client apps with clean architecture and release checklists.",
+      avatar: "RS",
+    },
+  ],
+  courseFeatures: [
+    "Live Projects",
+    "Internship Support",
+    "Portfolio Building",
+    "Freelancing Guidance",
+    "Startup Training",
+    "AI-Assisted Learning",
+    "Lifetime Community",
+  ],
+  learningExperience: {
+    title: "Learning Experience at Hexenity",
+    summary:
+      "The program is designed like a real engineering team environment with practical implementation, code reviews, and release-oriented delivery.",
+    points: [
+      "Practical learning with sprint-based feature tasks",
+      "Weekly code reviews with architecture feedback",
+      "Team collaboration patterns using Git workflow",
+      "Agile-style planning, task decomposition, and iteration",
+      "Production deployment and post-release analysis",
+    ],
+  },
+  faqs: [
+    {
+      question: "Is this path suitable for absolute beginners?",
+      answer: "Yes. The learning flow starts from fundamentals and gradually moves toward production-grade engineering.",
+    },
+    {
+      question: "Can I learn part-time while in college or while working?",
+      answer: "Yes. The roadmap is milestone-based, so part-time learners can progress consistently.",
+    },
+    { question: "Is coding required?", answer: "Yes, but the track starts beginner-friendly and builds coding confidence step by step." },
+    { question: "Is this beginner friendly?", answer: "Yes. It is structured for beginners, students, and transitioning developers." },
+    { question: "What is the total duration?", answer: "Typical duration is 16 to 24 weeks based on pace and project depth." },
+    { question: "Do you provide certificates?", answer: "Yes. Completion certificate is provided based on project and milestone criteria." },
+    { question: "Is placement or interview support available?", answer: "Yes. Includes role-focused prep, project storytelling, and portfolio guidance." },
+    { question: "Are there live projects?", answer: "Yes. Learners work on project scenarios that mirror real product workflows." },
+    { question: "Is freelancing support included?", answer: "Yes. Includes estimation, client communication, and delivery guidance." },
+    {
+      question: "Do you cover backend integration?",
+      answer: "Yes. The curriculum includes REST APIs, Firebase, and Node.js backend integration workflows.",
+    },
+    {
+      question: "How many projects are needed for job applications?",
+      answer: "Three to five polished projects with architecture notes and demos are recommended.",
+    },
+    {
+      question: "Will I learn deployment and app store release?",
+      answer: "Yes. Production stage includes release builds, metadata preparation, and monitoring strategy.",
+    },
+    {
+      question: "Is freelancing support available?",
+      answer: "Yes. Hexenity provides guidance on proposal writing, client communication, and delivery milestones.",
+    },
+    {
+      question: "Do you provide interview preparation?",
+      answer: "Yes. The path includes role-focused interview questions and project storytelling support.",
+    },
+    {
+      question: "What tools should I install first?",
+      answer: "Start with Android Studio, VS Code, GitHub, Firebase setup, and Postman for API testing.",
+    },
+    {
+      question: "How does this differ from random tutorials?",
+      answer: "This is a structured academy flow aligned with real-world product delivery, portfolio outcomes, and hiring readiness.",
+    },
+  ],
+  finalCta: {
+    headline: "Become a Production-Ready Mobile App Developer with Hexenity",
+    subtext: "Build real apps. Work on industry projects. Launch your career with a premium learning workflow.",
+    primaryLabel: "Start Learning",
+    secondaryLabel: "Book Free Consultation",
+    tertiaryLabel: "Join Hexenity",
+  },
+  stickyCta: {
+    primaryLabel: "Start Learning",
+    secondaryLabel: "Book Consultation",
+  },
+};
