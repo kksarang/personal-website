@@ -86,6 +86,12 @@ function HeroOrbVisual({ className, reduceMotion }) {
                     aria-hidden
                 >
                     <defs>
+                        <linearGradient id={`heroOrbWord-${gid}`} x1="120" y1="200" x2="280" y2="200" gradientUnits="userSpaceOnUse">
+                            <stop offset="0%" stopColor="rgba(255,252,246,0.55)" />
+                            <stop offset="35%" stopColor="rgba(255,255,255,0.95)" />
+                            <stop offset="55%" stopColor="rgba(248,249,251,0.88)" />
+                            <stop offset="100%" stopColor="rgba(199,207,229,0.42)" />
+                        </linearGradient>
                         <radialGradient id={gradId} cx="50%" cy="50%" r="50%">
                             <stop offset="0%" stopColor="rgba(6,10,22,1)" />
                             <stop offset="52%" stopColor="rgba(12,17,34,0.96)" />
@@ -113,6 +119,27 @@ function HeroOrbVisual({ className, reduceMotion }) {
                     </g>
 
                     <g className={`${motionCls('hero-orb-spin-slow hero-orb-line-shimmer hero-orb-dash-march')}`}>{lines}</g>
+
+                    {/* Centered wordmark — optical center aligned with radial field */}
+                    <g textAnchor="middle" className={motionCls('hero-orb-mark-pulse')} style={{ isolation: 'isolate' }}>
+                        <text
+                            x="200"
+                            y="202"
+                            dominantBaseline="central"
+                            fill={`url(#heroOrbWord-${gid})`}
+                            stroke="rgba(251,191,36,0.24)"
+                            strokeWidth="1.1"
+                            paintOrder="stroke fill"
+                            style={{
+                                fontFamily: "'Space Grotesk','Inter',system-ui,sans-serif",
+                                fontWeight: 700,
+                                letterSpacing: '-0.03em',
+                            }}
+                            fontSize="52"
+                        >
+                            Hexenity
+                        </text>
+                    </g>
 
                     <g className={motionCls('hero-orb-wisp-drift')}>
                         <g className={motionCls('hero-orb-wisp-flow')}>

@@ -115,6 +115,13 @@ body {
       stroke-dasharray: 90 940;
       animation: hero-orb-path-dash-reverse 18s linear infinite;
     }
+
+    /* Wordmark — center pulse + halo (pairs with radial field motion) */
+    .hero-orb-mark-pulse {
+      transform-box: fill-box;
+      transform-origin: 200px 202px;
+      animation: hero-orb-mark-soft 7.6s cubic-bezier(0.45, 0, 0.55, 1) infinite alternate;
+    }
   }
 
   /* Disable all hero orb motion modifiers when user prefers reduced motion */
@@ -124,8 +131,12 @@ body {
     .hero-orb-spin-reverse,
     .hero-orb-line-shimmer,
     .hero-orb-core-pulse circle:first-of-type,
-    .hero-orb-twinkle circle {
+    .hero-orb-twinkle circle,
+    .hero-orb-mark-pulse {
       animation: none !important;
+      transform: none !important;
+      filter: none !important;
+      opacity: 1 !important;
     }
     .hero-orb-dash-march line {
       animation: none !important;
@@ -583,6 +594,20 @@ body {
   }
   to {
     stroke-dashoffset: 940;
+  }
+}
+
+@keyframes hero-orb-mark-soft {
+  0% {
+    opacity: 0.77;
+    transform: scale(0.97);
+    filter: drop-shadow(0 0 8px rgba(251, 191, 36, 0.06));
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1.046);
+    filter: drop-shadow(0 0 32px rgba(251, 191, 36, 0.22))
+      drop-shadow(0 0 60px rgba(99, 102, 241, 0.08));
   }
 }
 
