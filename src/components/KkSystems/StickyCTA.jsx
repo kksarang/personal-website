@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import { Rocket } from 'lucide-react';
-import { Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 const StickyCTA = () => {
   const [isVisible, setIsVisible] = useState(false);
+  const navigate = useNavigate();
 
   useEffect(() => {
     let ticking = false;
@@ -11,38 +12,28 @@ const StickyCTA = () => {
       if (ticking) return;
       ticking = true;
       requestAnimationFrame(() => {
-        setIsVisible(window.scrollY > 320);
+        setIsVisible(window.scrollY > 400);
         ticking = false;
       });
     };
 
     toggleVisibility();
     window.addEventListener('scroll', toggleVisibility, { passive: true });
-    window.addEventListener('resize', toggleVisibility, { passive: true });
-    return () => {
-      window.removeEventListener('scroll', toggleVisibility);
-      window.removeEventListener('resize', toggleVisibility);
-    };
+    return () => window.removeEventListener('scroll', toggleVisibility);
   }, []);
 
   if (!isVisible) return null;
 
-  // Mobile: intrinsic-width pill (narrow), centered — avoids a full-bleed bar. Desktop: bottom-right chip.
   return (
-    <div
-      className="fixed bottom-[max(0.75rem,calc(env(safe-area-inset-bottom,0px)+0.375rem))] left-1/2 z-[260] w-max max-w-[calc(100vw-1.25rem)] -translate-x-1/2 sm:bottom-[calc(1.5rem+env(safe-area-inset-bottom,0px))] sm:left-auto sm:right-[calc(1rem+env(safe-area-inset-right,0px))] sm:max-w-none sm:translate-x-0"
-      role="complementary"
-      aria-label="Book a consultation"
-    >
-      <div className="rounded-xl border border-slate-200/90 bg-white/95 p-1 shadow-[0_8px_22px_rgba(15,23,42,0.12)] dark:border-white/15 dark:bg-[rgba(10,15,31,0.94)] dark:shadow-[0_8px_26px_rgba(0,0,0,0.45)] sm:rounded-2xl sm:p-1.5">
-        <Link
-          to="/hexenity/contact"
-          draggable={false}
-          className="group inline-flex min-h-[44px] shrink-0 touch-manipulation items-center justify-center gap-1.5 whitespace-nowrap rounded-lg bg-indigo-600 px-4 py-2.5 text-[13px] font-semibold leading-tight !text-white no-underline transition-colors duration-200 hover:bg-indigo-500 active:bg-indigo-700 sm:min-h-[48px] sm:gap-2 sm:rounded-xl sm:px-5 sm:text-sm md:px-6"
+    <div className="pointer-events-none fixed bottom-[calc(2rem+env(safe-area-inset-bottom,0px))] right-[calc(2rem+env(safe-area-inset-right,0px))] z-[100] max-sm:left-4 max-sm:right-4">
+      <div className="pointer-events-auto ml-auto rounded-2xl border border-slate-200/90 bg-white/95 p-2.5 shadow-[0_10px_24px_rgba(15,23,42,0.14)] dark:border-white/15 dark:bg-[rgba(10,15,31,0.9)] dark:shadow-none max-sm:max-w-[min(100%,18rem)]">
+        <button
+          onClick={() => navigate('/hexenity/contact')}
+          className="group flex items-center gap-2 rounded-xl bg-indigo-600 px-5 py-3 text-sm font-semibold text-white transition-colors duration-200 hover:bg-indigo-500"
         >
-          <Rocket className="h-[1.05rem] w-[1.05rem] shrink-0 sm:h-[1.125rem] sm:w-[1.125rem]" aria-hidden />
+          <Rocket className="w-4 h-4" />
           <span>Book consultation</span>
-        </Link>
+        </button>
       </div>
     </div>
   );

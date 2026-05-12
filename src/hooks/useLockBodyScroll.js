@@ -14,7 +14,6 @@ export function useLockBodyScroll(locked) {
         const gap = typeof window !== 'undefined' ? window.innerWidth - document.documentElement.clientWidth : 0;
 
         const prevOverflow = body.style.overflow;
-        const prevHtmlOverflow = html.style.overflow;
         const prevPosition = body.style.position;
         const prevTop = body.style.top;
         const prevLeft = body.style.left;
@@ -23,7 +22,6 @@ export function useLockBodyScroll(locked) {
         const prevPaddingRight = body.style.paddingRight;
 
         body.style.overflow = 'hidden';
-        html.style.overflow = 'hidden';
         body.style.position = 'fixed';
         body.style.top = `-${y}px`;
         body.style.left = '0';
@@ -33,7 +31,6 @@ export function useLockBodyScroll(locked) {
 
         return () => {
             body.style.overflow = prevOverflow;
-            html.style.overflow = prevHtmlOverflow;
             body.style.position = prevPosition;
             body.style.top = prevTop;
             body.style.left = prevLeft;

@@ -39,8 +39,8 @@ const KksystemsLayout = () => {
         <div className="hexenity-root relative flex min-h-screen flex-col overflow-x-hidden bg-white text-gray-900 dark:bg-[#040713] dark:text-white">
             <div className="pointer-events-none fixed inset-0 z-0">
                 <div className="hexenity-ambient absolute inset-0" />
-                <div className="absolute left-[-10%] top-[-10%] h-[260px] w-[260px] rounded-full bg-indigo-600/10 blur-[48px]" />
-                <div className="absolute bottom-[-16%] right-[-8%] h-[260px] w-[260px] rounded-full bg-cyan-500/10 blur-[48px]" />
+                <div className="absolute left-[-10%] top-[-10%] h-[260px] w-[260px] rounded-full bg-indigo-600/10 blur-[70px]" />
+                <div className="absolute bottom-[-16%] right-[-8%] h-[260px] w-[260px] rounded-full bg-cyan-500/10 blur-[75px]" />
                 <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(99,102,241,0.1),transparent_45%)]" />
             </div>
             <KksystemsNavbar />

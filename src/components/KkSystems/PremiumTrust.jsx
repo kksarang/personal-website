@@ -10,25 +10,20 @@ export const ImpactMetrics = () => {
     ];
 
     return (
-        <section className="bg-[#0B0F19] py-16 sm:py-24">
-            <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-                <div className="mb-8 text-center sm:mb-10">
-                    <h2 className="text-2xl font-black text-white sm:text-3xl md:text-4xl">Measured Outcomes</h2>
-                    <p className="mt-2 px-2 text-sm text-gray-400 sm:mt-3 sm:text-base">Clear performance metrics from real client delivery workflows.</p>
+        <section className="bg-[#0B0F19] py-24">
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div className="mb-10 text-center">
+                    <h2 className="text-3xl font-black text-white md:text-4xl">Measured Outcomes</h2>
+                    <p className="mt-3 text-gray-400">Clear performance metrics from real client delivery workflows.</p>
                 </div>
-                <div className="grid grid-cols-1 gap-3 sm:grid-cols-2 sm:gap-5 lg:grid-cols-4 lg:gap-8">
+                <div className="grid grid-cols-2 lg:grid-cols-4 gap-8">
                     {metrics.map((metric, idx) => (
-                        <div
-                            key={idx}
-                            className="rounded-2xl border border-white/10 bg-white/5 px-4 py-5 text-center transition hover:border-indigo-300/35 sm:rounded-3xl sm:px-6 sm:py-7 lg:p-8"
-                        >
-                            <div className="mx-auto mb-4 flex h-10 w-10 items-center justify-center rounded-xl bg-indigo-500/10 sm:mb-6 sm:h-12 sm:w-12 sm:rounded-2xl">
-                                <metric.icon className="h-5 w-5 text-indigo-400 sm:h-6 sm:w-6" />
+                        <div key={idx} className="rounded-3xl border border-white/10 bg-white/5 p-8 text-center transition hover:border-indigo-300/35">
+                            <div className="w-12 h-12 rounded-2xl bg-indigo-500/10 flex items-center justify-center mx-auto mb-6">
+                                <metric.icon className="w-6 h-6 text-indigo-400" />
                             </div>
-                            <div className="mb-1 text-3xl font-black tabular-nums text-white sm:mb-2 sm:text-4xl">{metric.value}</div>
-                            <div className="text-[10px] font-bold uppercase leading-snug tracking-wide text-gray-500 sm:text-xs sm:tracking-widest">
-                                {metric.label}
-                            </div>
+                            <div className="text-4xl font-black text-white mb-2">{metric.value}</div>
+                            <div className="text-xs uppercase tracking-widest text-gray-500 font-bold">{metric.label}</div>
                         </div>
                     ))}
                 </div>
