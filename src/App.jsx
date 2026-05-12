@@ -1,50 +1,51 @@
-import React, { Suspense, lazy } from 'react';
+import React, { Suspense } from 'react';
 import { BrowserRouter as Router, Routes, Route, Navigate, useLocation } from 'react-router-dom';
 import PortfolioLayout from './layouts/PortfolioLayout';
 import KksystemsLayout from './layouts/KksystemsLayout';
 import HomePage from './components/HomePage';
 import ErrorBoundary from './components/ErrorBoundary';
+import { lazyRoute } from './utils/lazyRoute';
 
-const ProjectDetail = lazy(() => import('./components/Projects/ProjectDetail'));
-const WorkPage = lazy(() => import('./components/Work/WorkPage'));
-const LearningPage = lazy(() => import('./components/Learning/LearningPage'));
-const LearningMaterials = lazy(() => import('./components/Learning/LearningMaterials'));
-const MaterialDetail = lazy(() => import('./components/Learning/MaterialDetail'));
-const LearningDetail = lazy(() => import('./components/Learning/LearningDetail'));
+const ProjectDetail = lazyRoute(() => import('./components/Projects/ProjectDetail'));
+const WorkPage = lazyRoute(() => import('./components/Work/WorkPage'));
+const LearningPage = lazyRoute(() => import('./components/Learning/LearningPage'));
+const LearningMaterials = lazyRoute(() => import('./components/Learning/LearningMaterials'));
+const MaterialDetail = lazyRoute(() => import('./components/Learning/MaterialDetail'));
+const LearningDetail = lazyRoute(() => import('./components/Learning/LearningDetail'));
 
 // KKSYSTEMS multi-page imports
-const KksystemsHome = lazy(() => import('./pages/kksystems/Home'));
-const KksystemsWork = lazy(() => import('./pages/kksystems/Work'));
-const KksystemsWorkDetails = lazy(() => import('./pages/kksystems/WorkDetails'));
-const KksystemsLearning = lazy(() => import('./pages/kksystems/Learning'));
-const KksystemsLearningDetails = lazy(() => import('./pages/kksystems/LearningDetails'));
-const KksystemsLearningPractice = lazy(() => import('./pages/kksystems/LearningPractice'));
-const KksystemsLearningLiveCode = lazy(() => import('./pages/kksystems/LearningLiveCode'));
-const KksystemsContact = lazy(() => import('./pages/kksystems/Contact'));
-const KksystemsAbout = lazy(() => import('./pages/kksystems/About'));
-const KksystemsServices = lazy(() => import('./pages/kksystems/Services'));
-const CoreHexenity = lazy(() => import('./pages/kksystems/CoreHexenity'));
-const HexenityAI = lazy(() => import('./pages/kksystems/HexenityAI'));
-const HexenitySaaS = lazy(() => import('./pages/kksystems/HexenitySaaS'));
-const HexenitySaaSDemo = lazy(() => import('./pages/kksystems/HexenitySaaSDemo'));
-const ServiceDetail = lazy(() => import('./components/KkSystems/ServiceDetail'));
-const ExpenserLanding = lazy(() => import('./pages/ExpenserLanding'));
+const KksystemsHome = lazyRoute(() => import('./pages/kksystems/Home'));
+const KksystemsWork = lazyRoute(() => import('./pages/kksystems/Work'));
+const KksystemsWorkDetails = lazyRoute(() => import('./pages/kksystems/WorkDetails'));
+const KksystemsLearning = lazyRoute(() => import('./pages/kksystems/Learning'));
+const KksystemsLearningDetails = lazyRoute(() => import('./pages/kksystems/LearningDetails'));
+const KksystemsLearningPractice = lazyRoute(() => import('./pages/kksystems/LearningPractice'));
+const KksystemsLearningLiveCode = lazyRoute(() => import('./pages/kksystems/LearningLiveCode'));
+const KksystemsContact = lazyRoute(() => import('./pages/kksystems/Contact'));
+const KksystemsAbout = lazyRoute(() => import('./pages/kksystems/About'));
+const KksystemsServices = lazyRoute(() => import('./pages/kksystems/Services'));
+const CoreHexenity = lazyRoute(() => import('./pages/kksystems/CoreHexenity'));
+const HexenityAI = lazyRoute(() => import('./pages/kksystems/HexenityAI'));
+const HexenitySaaS = lazyRoute(() => import('./pages/kksystems/HexenitySaaS'));
+const HexenitySaaSDemo = lazyRoute(() => import('./pages/kksystems/HexenitySaaSDemo'));
+const ServiceDetail = lazyRoute(() => import('./components/KkSystems/ServiceDetail'));
+const ExpenserLanding = lazyRoute(() => import('./pages/ExpenserLanding'));
 
 // Solution Pages
-const MobileSolutions = lazy(() => import('./pages/kksystems/solutions/MobileSolutions'));
-const WebSolutions = lazy(() => import('./pages/kksystems/solutions/WebSolutions'));
-const ERPSolutions = lazy(() => import('./pages/kksystems/solutions/ERPSolutions'));
-const MobileAppDevDetail = lazy(() => import('./pages/kksystems/MobileAppDevDetail'));
+const MobileSolutions = lazyRoute(() => import('./pages/kksystems/solutions/MobileSolutions'));
+const WebSolutions = lazyRoute(() => import('./pages/kksystems/solutions/WebSolutions'));
+const ERPSolutions = lazyRoute(() => import('./pages/kksystems/solutions/ERPSolutions'));
+const MobileAppDevDetail = lazyRoute(() => import('./pages/kksystems/MobileAppDevDetail'));
 
 // ERP Imports
-const ERPDashboard = lazy(() => import('./pages/kksystems/erp/Dashboard'));
-const ERPEmployees = lazy(() => import('./pages/kksystems/erp/Employees'));
-const ERPInventory = lazy(() => import('./pages/kksystems/erp/Inventory'));
-const ERPAnalytics = lazy(() => import('./pages/kksystems/erp/Analytics'));
-const ERPCustomers = lazy(() => import('./pages/kksystems/erp/Customers'));
-const ERPClients = lazy(() => import('./pages/kksystems/erp/Clients'));
-const ERPProjects = lazy(() => import('./pages/kksystems/erp/Projects'));
-const ERPSites = lazy(() => import('./pages/kksystems/erp/Sites'));
+const ERPDashboard = lazyRoute(() => import('./pages/kksystems/erp/Dashboard'));
+const ERPEmployees = lazyRoute(() => import('./pages/kksystems/erp/Employees'));
+const ERPInventory = lazyRoute(() => import('./pages/kksystems/erp/Inventory'));
+const ERPAnalytics = lazyRoute(() => import('./pages/kksystems/erp/Analytics'));
+const ERPCustomers = lazyRoute(() => import('./pages/kksystems/erp/Customers'));
+const ERPClients = lazyRoute(() => import('./pages/kksystems/erp/Clients'));
+const ERPProjects = lazyRoute(() => import('./pages/kksystems/erp/Projects'));
+const ERPSites = lazyRoute(() => import('./pages/kksystems/erp/Sites'));
 
 function KksystemsLegacyRedirect() {
   const location = useLocation();
