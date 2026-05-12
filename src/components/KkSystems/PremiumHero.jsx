@@ -1,4 +1,4 @@
-import React, { useId, useSyncExternalStore } from 'react';
+import React, { useCallback, useEffect, useId, useRef, useState, useSyncExternalStore } from 'react';
 import { ArrowRight } from 'lucide-react';
 import { Link, useNavigate } from 'react-router-dom';
 
@@ -16,12 +16,13 @@ function serverSnapshotReducedMotion() {
     return false;
 }
 
-/** Animated line-field model — visibly moving spokes, marching dashes, twinkle shell */
-function HeroOrbVisual({ className, reduceMotion }) {
+/** Animated line-field model + subtle pointer-follow parallax */
+function HeroOrbVisual({ className, reduceMotion, pointerPan }) {
     const uid = useId();
     const gid = uid.replace(/:/g, '');
     const gradId = `heroOrbCore-${gid}`;
     const filtId = `heroOrbGlow-${gid}`;
+    const { nx, ny } = pointerPan ?? { nx: 0, ny: 0 };
 
     const lines = [];
     const n = 48;
@@ -77,90 +78,112 @@ function HeroOrbVisual({ className, reduceMotion }) {
 
     const motionCls = (classes) => (reduceMotion ? '' : classes);
 
+    const lightX = 50 + nx * 26;
+    const lightY = 46 + ny * 20;
+
+    const parallaxTransform =
+        reduceMotion || (nx === 0 && ny === 0)
+            ? undefined
+            : `perspective(980px) rotateX(${(-ny * 7.8).toFixed(2)}deg) rotateY(${(nx * 9.2).toFixed(2)}deg) translate3d(${(nx * 13).toFixed(1)}px, ${(ny * 11).toFixed(1)}px, ${(nx * nx + ny * ny) * 8}px)`;
+
     return (
         <div className={`relative inline-flex shrink-0 justify-start pointer-events-none select-none ${className ?? ''}`}>
             <div className={`${motionCls('hero-orb-breathe')}`}>
-                <svg
-                    viewBox="0 0 400 400"
-                    className="h-[min(240px,68vw)] w-[min(240px,68vw)] overflow-visible sm:h-[min(280px,62vw)] sm:w-[min(280px,62vw)] lg:h-[min(360px,36vw)] lg:w-[min(360px,36vw)] lg:max-h-[400px] lg:max-w-[400px]"
-                    aria-hidden
+                <div
+                    className={`relative mx-auto rounded-full ${reduceMotion ? '' : 'motion-safe:transition-[transform] motion-safe:duration-100 motion-safe:ease-out'}`}
+                    style={{
+                        transform: parallaxTransform,
+                        transformOrigin: '50% 50%',
+                        transformStyle: 'preserve-3d',
+                    }}
                 >
-                    <defs>
-                        <linearGradient id={`heroOrbWord-${gid}`} x1="120" y1="200" x2="280" y2="200" gradientUnits="userSpaceOnUse">
-                            <stop offset="0%" stopColor="rgba(255,252,246,0.55)" />
-                            <stop offset="35%" stopColor="rgba(255,255,255,0.95)" />
-                            <stop offset="55%" stopColor="rgba(248,249,251,0.88)" />
-                            <stop offset="100%" stopColor="rgba(199,207,229,0.42)" />
-                        </linearGradient>
-                        <radialGradient id={gradId} cx="50%" cy="50%" r="50%">
-                            <stop offset="0%" stopColor="rgba(6,10,22,1)" />
-                            <stop offset="52%" stopColor="rgba(12,17,34,0.96)" />
-                            <stop offset="100%" stopColor="rgba(20,26,42,0.25)" />
-                        </radialGradient>
-                        <filter id={filtId} x="-40%" y="-40%" width="180%" height="180%">
-                            <feGaussianBlur stdDeviation="8" result="b" />
-                            <feMerge>
-                                <feMergeNode in="b" />
-                                <feMergeNode in="SourceGraphic" />
-                            </feMerge>
-                        </filter>
-                    </defs>
+                    <svg
+                        viewBox="0 0 400 400"
+                        className="h-[min(276px,74vw)] w-[min(276px,74vw)] overflow-visible sm:h-[min(318px,66vw)] sm:w-[min(318px,66vw)] lg:h-[min(412px,40vw)] lg:w-[min(412px,40vw)] lg:max-h-[458px] lg:max-w-[458px]"
+                        aria-hidden
+                    >
+                        <defs>
+                            <linearGradient id={`heroOrbWord-${gid}`} x1="120" y1="200" x2="280" y2="200" gradientUnits="userSpaceOnUse">
+                                <stop offset="0%" stopColor="rgba(255,252,246,0.55)" />
+                                <stop offset="35%" stopColor="rgba(255,255,255,0.95)" />
+                                <stop offset="55%" stopColor="rgba(248,249,251,0.88)" />
+                                <stop offset="100%" stopColor="rgba(199,207,229,0.42)" />
+                            </linearGradient>
+                            <radialGradient id={gradId} cx="50%" cy="50%" r="50%">
+                                <stop offset="0%" stopColor="rgba(6,10,22,1)" />
+                                <stop offset="52%" stopColor="rgba(12,17,34,0.96)" />
+                                <stop offset="100%" stopColor="rgba(20,26,42,0.25)" />
+                            </radialGradient>
+                            <filter id={filtId} x="-40%" y="-40%" width="180%" height="180%">
+                                <feGaussianBlur stdDeviation="8" result="b" />
+                                <feMerge>
+                                    <feMergeNode in="b" />
+                                    <feMergeNode in="SourceGraphic" />
+                                </feMerge>
+                            </filter>
+                        </defs>
 
-                    <g className={motionCls('hero-orb-core-pulse')}>
-                        <circle cx="200" cy="200" r="168" fill={`url(#${gradId})`} />
-                    </g>
-
-                    <g className={motionCls('hero-orb-spin-reverse')}>{arcs}</g>
-
-                    <g filter={`url(#${filtId})`} className={motionCls('hero-orb-line-shimmer')}>
-                        <g className={motionCls('hero-orb-spin-reverse')} style={reduceMotion ? undefined : { animationDuration: '68s' }}>
-                            <g className={motionCls('hero-orb-twinkle')}>{dots}</g>
+                        <g className={motionCls('hero-orb-core-pulse')}>
+                            <circle cx="200" cy="200" r="168" fill={`url(#${gradId})`} />
                         </g>
-                    </g>
 
-                    <g className={`${motionCls('hero-orb-spin-slow hero-orb-line-shimmer hero-orb-dash-march')}`}>{lines}</g>
+                        <g className={motionCls('hero-orb-spin-reverse')}>{arcs}</g>
 
-                    {/* Centered wordmark — optical center aligned with radial field */}
-                    <g textAnchor="middle" className={motionCls('hero-orb-mark-pulse')} style={{ isolation: 'isolate' }}>
-                        <text
-                            x="200"
-                            y="202"
-                            dominantBaseline="central"
-                            fill={`url(#heroOrbWord-${gid})`}
-                            stroke="rgba(251,191,36,0.24)"
-                            strokeWidth="1.1"
-                            paintOrder="stroke fill"
-                            style={{
-                                fontFamily: "'Space Grotesk','Inter',system-ui,sans-serif",
-                                fontWeight: 700,
-                                letterSpacing: '-0.03em',
-                            }}
-                            fontSize="52"
-                        >
-                            Hexenity
-                        </text>
-                    </g>
-
-                    <g className={motionCls('hero-orb-wisp-drift')}>
-                        <g className={motionCls('hero-orb-wisp-flow')}>
-                            <path
-                                d="M 200 92 Q 310 156 274 274 Q 240 348 154 294 Q 88 250 138 174 Q 168 120 200 92"
-                                fill="none"
-                                strokeLinecap="round"
-                                stroke="rgba(255,253,248,0.11)"
-                                strokeWidth="1.25"
-                            />
-                            <path
-                                d="M 200 110 Q 88 164 142 274 Q 186 356 274 294 Q 338 240 274 154 Q 232 98 200 110"
-                                fill="none"
-                                strokeLinecap="round"
-                                stroke="rgba(255,253,248,0.075)"
-                                strokeWidth="0.85"
-                            />
+                        <g filter={`url(#${filtId})`} className={motionCls('hero-orb-line-shimmer')}>
+                            <g className={motionCls('hero-orb-spin-reverse')} style={reduceMotion ? undefined : { animationDuration: '68s' }}>
+                                <g className={motionCls('hero-orb-twinkle')}>{dots}</g>
+                            </g>
                         </g>
-                    </g>
-                </svg>
-                <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_42%_40%,rgba(251,191,36,0.09),transparent_62%)]" />
+
+                        <g className={`${motionCls('hero-orb-spin-slow hero-orb-line-shimmer hero-orb-dash-march')}`}>{lines}</g>
+
+                        <g textAnchor="middle" className={motionCls('hero-orb-mark-pulse')} style={{ isolation: 'isolate' }}>
+                            <text
+                                x="200"
+                                y="202"
+                                dominantBaseline="central"
+                                fill={`url(#heroOrbWord-${gid})`}
+                                stroke="rgba(251,191,36,0.24)"
+                                strokeWidth="1.1"
+                                paintOrder="stroke fill"
+                                style={{
+                                    fontFamily: "'Space Grotesk','Inter',system-ui,sans-serif",
+                                    fontWeight: 700,
+                                    letterSpacing: '-0.03em',
+                                }}
+                                fontSize="56"
+                            >
+                                Hexenity
+                            </text>
+                        </g>
+
+                        <g className={motionCls('hero-orb-wisp-drift')}>
+                            <g className={motionCls('hero-orb-wisp-flow')}>
+                                <path
+                                    d="M 200 92 Q 310 156 274 274 Q 240 348 154 294 Q 88 250 138 174 Q 168 120 200 92"
+                                    fill="none"
+                                    strokeLinecap="round"
+                                    stroke="rgba(255,253,248,0.11)"
+                                    strokeWidth="1.25"
+                                />
+                                <path
+                                    d="M 200 110 Q 88 164 142 274 Q 186 356 274 294 Q 338 240 274 154 Q 232 98 200 110"
+                                    fill="none"
+                                    strokeLinecap="round"
+                                    stroke="rgba(255,253,248,0.075)"
+                                    strokeWidth="0.85"
+                                />
+                            </g>
+                        </g>
+                    </svg>
+                    <div
+                        className="pointer-events-none absolute inset-0 mix-blend-soft-light rounded-full"
+                        style={{
+                            background: `radial-gradient(circle at ${lightX}% ${lightY}%, rgba(251,191,36,0.2) 0%, transparent 54%)`,
+                        }}
+                    />
+                    <div className="pointer-events-none absolute inset-0 rounded-full bg-[radial-gradient(circle_at_42%_40%,rgba(251,191,36,0.07),transparent_62%)]" />
+                </div>
             </div>
         </div>
     );
@@ -168,11 +191,50 @@ function HeroOrbVisual({ className, reduceMotion }) {
 
 const PremiumHero = () => {
     const navigate = useNavigate();
+    const interactionRef = useRef(null);
+    const rafRef = useRef(0);
+    const pendingPointerRef = useRef({ nx: 0, ny: 0 });
+    const [pointerPan, setPointerPan] = useState({ nx: 0, ny: 0 });
 
     const reduceMotion = useSyncExternalStore(
         subscribeReducedMotion,
         snapshotReducedMotion,
         serverSnapshotReducedMotion
+    );
+
+    const flushPointer = useCallback(() => {
+        rafRef.current = 0;
+        setPointerPan({ ...pendingPointerRef.current });
+    }, []);
+
+    const onHeroPointerMove = useCallback(
+        (e) => {
+            if (reduceMotion) return;
+            const el = interactionRef.current;
+            if (!el) return;
+            const rect = el.getBoundingClientRect();
+            const nx = Math.max(-1, Math.min(1, ((e.clientX - rect.left) / rect.width) * 2 - 1));
+            const ny = Math.max(-1, Math.min(1, ((e.clientY - rect.top) / rect.height) * 2 - 1));
+            pendingPointerRef.current = { nx, ny };
+            if (!rafRef.current) {
+                rafRef.current = requestAnimationFrame(flushPointer);
+            }
+        },
+        [reduceMotion, flushPointer]
+    );
+
+    const onHeroPointerLeave = useCallback(() => {
+        pendingPointerRef.current = { nx: 0, ny: 0 };
+        if (rafRef.current) cancelAnimationFrame(rafRef.current);
+        rafRef.current = 0;
+        setPointerPan({ nx: 0, ny: 0 });
+    }, []);
+
+    useEffect(
+        () => () => {
+            if (rafRef.current) cancelAnimationFrame(rafRef.current);
+        },
+        []
     );
 
     return (
@@ -191,13 +253,18 @@ const PremiumHero = () => {
                 aria-hidden
             />
 
-            {/* Wider, tighter gutters — hero reads “full bleed” */}
             <div className="relative z-10 mx-auto w-full max-w-[1460px] px-4 sm:px-5 lg:px-7 xl:px-8">
                 <div className="relative rounded-2xl p-px shadow-[0_42px_100px_-48px_rgba(0,0,0,0.82)] [background:linear-gradient(132deg,rgba(251,146,60,0.48)_0%,rgba(253,224,171,0.07)_28%,transparent_50%,transparent_58%,rgba(217,70,239,0.34)_100%)] lg:rounded-[1.6rem]">
-                    <div className="rounded-[calc(1rem-1px)] bg-[#0e1016] px-6 py-10 sm:rounded-[calc(1.25rem-1px)] sm:py-11 md:py-12 lg:rounded-[calc(1.6rem-1px)] lg:px-10 lg:py-14 xl:px-12 xl:py-16">
-                        <div className="grid grid-cols-1 gap-8 sm:gap-9 lg:grid-cols-[minmax(260px,min(36vw,400px))_1fr] lg:items-start lg:gap-x-10 xl:gap-x-12">
+                    <div
+                        ref={interactionRef}
+                        role="presentation"
+                        onMouseMove={onHeroPointerMove}
+                        onMouseLeave={onHeroPointerLeave}
+                        className="rounded-[calc(1rem-1px)] bg-[#0e1016] px-6 py-10 sm:rounded-[calc(1.25rem-1px)] sm:py-11 md:py-12 lg:rounded-[calc(1.6rem-1px)] lg:px-10 lg:py-14 xl:px-12 xl:py-16"
+                    >
+                        <div className="grid grid-cols-1 gap-8 sm:gap-9 lg:grid-cols-[minmax(280px,min(42vw,470px))_1fr] lg:items-start lg:gap-x-10 xl:gap-x-12">
                             <div className="relative lg:self-start">
-                                <HeroOrbVisual reduceMotion={reduceMotion} />
+                                <HeroOrbVisual reduceMotion={reduceMotion} pointerPan={pointerPan} />
                             </div>
 
                             <div className="min-w-0 -mt-1 lg:-mt-0.5">
@@ -208,14 +275,14 @@ const PremiumHero = () => {
                                     The Future of Your Digital Platform Is Here.
                                 </h1>
 
-                                <div className="relative mt-7 max-w-xl border-l-[3px] border-amber-400 pl-6 sm:mt-8 sm:pl-7 md:max-w-2xl">
-                                    <p className="text-[15px] leading-[1.7] text-white/72 sm:text-lg sm:leading-relaxed md:text-xl">
-                                        Hexenity is your external innovation partner—we design and ship{' '}
-                                        <span className="font-medium text-white/88">
-                                            apps, automation, branding, AI integrations,
-                                        </span>{' '}
-                                        and growth-ready systems—without draining your core team&apos;s bandwidth.
-                                    </p>
+                                <div className="relative mt-7 max-w-2xl border-l-[3px] border-amber-400 pl-6 sm:mt-8 sm:pl-7 lg:max-w-[46rem]">
+                                    <div className="text-[15px] leading-[1.75] text-white/72 sm:text-lg sm:leading-relaxed md:text-[17px]">
+                                        <p>
+                                            Hexenity partners with businesses to deliver scalable digital solutions including app development, web
+                                            platforms, branding, UI/UX, AI integrations, automation, and growth systems — acting as an extended technology
+                                            and innovation team for companies that want to scale efficiently.
+                                        </p>
+                                    </div>
                                 </div>
 
                                 <div className="mt-8 flex flex-col gap-3 sm:mt-9 sm:flex-row sm:gap-3.5">
