@@ -44,14 +44,14 @@ const KksystemsHome = () => {
     }, [showIntro]);
 
     return (
-        <div className="w-full min-h-screen bg-[#0B0F19] text-white font-sans overflow-x-hidden transition-colors duration-300">
+        <div className="w-full min-h-screen bg-white font-sans text-gray-900 transition-colors duration-300 overflow-x-hidden dark:bg-[#0B0F19] dark:text-white">
             <AnimatePresence>
                 {showIntro && (
                     <motion.div
                         initial={{ opacity: 1 }}
                         exit={{ opacity: 0 }}
                         transition={{ duration: 0.45 }}
-                        className="fixed inset-0 z-[120] flex items-center justify-center bg-[#050816]"
+                        className="hexenity-intro-overlay fixed inset-0 z-[120] flex items-center justify-center bg-[#050816]"
                     >
                         <div className="relative w-full max-w-xl px-8">
                             <div className="pointer-events-none absolute -top-28 left-1/2 h-56 w-56 -translate-x-1/2 rounded-full bg-indigo-500/20 blur-[90px]" />

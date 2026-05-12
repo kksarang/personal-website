@@ -103,12 +103,6 @@ function HeroOrbVisual({ className, reduceMotion, pointerPan }) {
                         aria-hidden
                     >
                         <defs>
-                            <linearGradient id={`heroOrbWord-${gid}`} x1="120" y1="200" x2="280" y2="200" gradientUnits="userSpaceOnUse">
-                                <stop offset="0%" stopColor="rgba(255,252,246,0.55)" />
-                                <stop offset="35%" stopColor="rgba(255,255,255,0.95)" />
-                                <stop offset="55%" stopColor="rgba(248,249,251,0.88)" />
-                                <stop offset="100%" stopColor="rgba(199,207,229,0.42)" />
-                            </linearGradient>
                             <radialGradient id={gradId} cx="50%" cy="50%" r="50%">
                                 <stop offset="0%" stopColor="rgba(6,10,22,1)" />
                                 <stop offset="52%" stopColor="rgba(12,17,34,0.96)" />
@@ -137,26 +131,6 @@ function HeroOrbVisual({ className, reduceMotion, pointerPan }) {
 
                         <g className={`${motionCls('hero-orb-spin-slow hero-orb-line-shimmer hero-orb-dash-march')}`}>{lines}</g>
 
-                        <g textAnchor="middle" className={motionCls('hero-orb-mark-pulse')} style={{ isolation: 'isolate' }}>
-                            <text
-                                x="200"
-                                y="202"
-                                dominantBaseline="central"
-                                fill={`url(#heroOrbWord-${gid})`}
-                                stroke="rgba(251,191,36,0.24)"
-                                strokeWidth="1.1"
-                                paintOrder="stroke fill"
-                                style={{
-                                    fontFamily: "'Space Grotesk','Inter',system-ui,sans-serif",
-                                    fontWeight: 700,
-                                    letterSpacing: '-0.03em',
-                                }}
-                                fontSize="56"
-                            >
-                                Hexenity
-                            </text>
-                        </g>
-
                         <g className={motionCls('hero-orb-wisp-drift')}>
                             <g className={motionCls('hero-orb-wisp-flow')}>
                                 <path
@@ -176,6 +150,17 @@ function HeroOrbVisual({ className, reduceMotion, pointerPan }) {
                             </g>
                         </g>
                     </svg>
+                    <div className="pointer-events-none absolute inset-0 flex items-center justify-center rounded-full">
+                        <span
+                            className={`hexenity-display inline-block whitespace-nowrap text-center leading-none tracking-[-0.028em] text-white drop-shadow-[0_0_1px_rgba(255,255,255,0.35)] motion-safe:transition-transform ${motionCls('hero-orb-mark-pulse')}`}
+                            style={{
+                                fontWeight: 700,
+                                fontSize: 'clamp(1.6875rem, min(13.85vw, 5.95vmin), 3.5rem)',
+                            }}
+                        >
+                            Hexenity
+                        </span>
+                    </div>
                     <div
                         className="pointer-events-none absolute inset-0 mix-blend-soft-light rounded-full"
                         style={{
@@ -238,7 +223,10 @@ const PremiumHero = () => {
     );
 
     return (
-        <section id="home" className="relative overflow-hidden pb-11 pt-[6.85rem] sm:pb-12 sm:pt-32 lg:pb-14 lg:pt-[8.15rem]">
+        <section
+            id="home"
+            className="hexenity-premium-hero relative overflow-hidden pb-11 pt-[6.85rem] sm:pb-12 sm:pt-32 lg:pb-14 lg:pt-[8.15rem]"
+        >
             <div className="pointer-events-none absolute inset-0 bg-[#080a11]" />
             <div
                 className="pointer-events-none absolute -left-[12%] -top-[28%] h-[64%] w-[62%] rounded-full bg-orange-400/13 blur-[100px]"
@@ -296,7 +284,7 @@ const PremiumHero = () => {
                                     </button>
                                     <Link
                                         to="/hexenity/services"
-                                        className="inline-flex min-h-[52px] items-center justify-center border border-white/[0.44] px-8 py-3.5 text-[11px] font-bold uppercase tracking-[0.19em] text-white transition hover:border-white hover:bg-white/[0.045] active:translate-y-[0.5px]"
+                                        className="hexenity-premium-hero-secondary inline-flex min-h-[52px] items-center justify-center border border-white/[0.44] px-8 py-3.5 text-[11px] font-bold uppercase tracking-[0.19em] text-white transition hover:border-white hover:bg-white/[0.045] active:translate-y-[0.5px]"
                                     >
                                         Explore capabilities
                                     </Link>

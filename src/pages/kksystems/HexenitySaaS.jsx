@@ -1,12 +1,12 @@
 import React, { useCallback, useEffect, useRef, useState } from 'react';
-import {
+import { 
     animate,
     AnimatePresence,
     motion,
     useInView,
     useReducedMotion,
 } from 'framer-motion';
-import {
+import { 
     ArrowRight,
     BadgeCheck,
     Bell,
@@ -114,7 +114,7 @@ function MetricTicker({ label, suffix = '', decimals = 0, endValue, duration = 1
             ? display.toFixed(decimals)
             : Math.round(display).toLocaleString('en-US');
 
-    return (
+  return (
         <div ref={ref} className="text-center sm:text-left">
             <p className="hexenity-display text-2xl font-bold tracking-tight text-white sm:text-3xl lg:text-[2.15rem]">
                 {formatted}
@@ -176,14 +176,14 @@ function SpotlightHero({ navigate }) {
                         >
                             Start enterprise demo
                         </button>
-                        <button
+            <button 
                             type="button"
                             onClick={() => navigate('/hexenity/saas/demo')}
                             className="rounded-xl border-2 border-indigo-400/50 bg-indigo-500/15 px-7 py-3.5 text-sm font-semibold text-indigo-100 transition hover:border-indigo-300 hover:bg-indigo-500/25"
-                        >
+            >
                             Interactive UI demos
-                        </button>
-                        <button
+            </button>
+              <button
                             type="button"
                             onClick={() => {
                                 document.getElementById('saas-showcase')?.scrollIntoView({ behavior: 'smooth' });
@@ -191,8 +191,8 @@ function SpotlightHero({ navigate }) {
                             className="rounded-xl border border-white/[0.2] bg-white/[0.08] px-7 py-3.5 text-sm font-semibold text-white transition hover:bg-white/[0.12]"
                         >
                             Embedded charts on this page
-                        </button>
-                    </div>
+              </button>
+          </div>
                     <div className="mt-8 flex flex-wrap gap-2">
                         {trustBadges.map((b) => (
                             <span
@@ -205,9 +205,9 @@ function SpotlightHero({ navigate }) {
                     </div>
                 </div>
 
-                <motion.div
+          <motion.div
                     initial={{ opacity: 0, y: 24 }}
-                    animate={{ opacity: 1, y: 0 }}
+            animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.55, ease: [0.22, 1, 0.36, 1] }}
                     className="relative"
                 >
@@ -331,10 +331,10 @@ function SpotlightHero({ navigate }) {
                                     12 seats dormant in Figma Org — reclaim ~$468/mo without blocking active squads.
                                 </p>
                             </div>
-                        </div>
-                    </div>
+          </div>
+        </div>
                 </motion.div>
-            </div>
+    </div>
         </section>
     );
 }
@@ -543,21 +543,21 @@ export default function HexenitySaaS() {
                 </ResponsiveContainer>
             );
         }
-        return (
+  return (
             <ResponsiveContainer width="100%" height="100%">
                 <AreaChart data={spendTrend} margin={{ top: 8, right: 8, left: 0, bottom: 4 }}>
-                    <defs>
+                <defs>
                         <linearGradient id="showcaseSpend" x1="0" y1="0" x2="0" y2="1">
                             <stop offset="0%" stopColor="#818cf8" stopOpacity={0.5} />
                             <stop offset="100%" stopColor="#818cf8" stopOpacity={0} />
-                        </linearGradient>
-                    </defs>
+                  </linearGradient>
+                </defs>
                     <CartesianGrid strokeDasharray="4 8" stroke="rgba(148,163,184,0.08)" vertical={false} />
                     <XAxis dataKey="m" {...chartMutedAxis} tickLine={false} axisLine={false} />
                     <YAxis {...chartMutedAxis} tickLine={false} axisLine={false} width={32} />
                     <Tooltip contentStyle={tooltipStyles.contentStyle} />
                     <Area type="monotone" dataKey="v" stroke="#6366f1" strokeWidth={2} fill="url(#showcaseSpend)" />
-                </AreaChart>
+              </AreaChart>
             </ResponsiveContainer>
         );
     };
@@ -672,8 +672,8 @@ export default function HexenitySaaS() {
                                     <span>Security narratives backed by realtime evidence — containment SLAs executives can articulate.</span>
                                 </li>
                             </ul>
-                        </div>
-                    </div>
+          </div>
+        </div>
                 </section>
 
                 {/* Interactive dashboard showcase */}
@@ -684,15 +684,15 @@ export default function HexenitySaaS() {
                             <h2 className="hexenity-display mt-2 text-3xl font-semibold tracking-[-0.03em] text-white md:text-4xl">
                                 Live dashboard showcase
                             </h2>
-                        </div>
-                        <button
+            </div>
+            <button 
                             type="button"
                             onClick={() => navigate('/hexenity/saas/demo')}
                             className="shrink-0 self-start rounded-full border border-cyan-400/35 bg-cyan-400/10 px-4 py-2 text-[11px] font-semibold uppercase tracking-[0.14em] text-cyan-100 transition hover:bg-cyan-400/15"
-                        >
+            >
                             Open full demo variants →
-                        </button>
-                    </div>
+            </button>
+          </div>
                     <div className="relative mt-8 overflow-hidden rounded-3xl border border-white/[0.1] bg-[#090f1c] shadow-[0_32px_120px_-40px_rgba(0,0,0,0.85)]">
                         <div className="relative z-10 border-b border-white/[0.06] px-4 py-3 md:px-6">
                             <div className="flex flex-wrap gap-2">
@@ -763,9 +763,9 @@ export default function HexenitySaaS() {
                                 <p className="mt-4 text-[11px] text-slate-500">
                                     Figures illustrate product UI fidelity — modeled on aggregate enterprise benchmarking scenarios.
                                 </p>
-                            </div>
-                        </div>
-                    </div>
+        </div>
+      </div>
+    </div>
                 </section>
 
                 {/* Bento modules */}
@@ -840,12 +840,12 @@ export default function HexenitySaaS() {
                                                 Immutable deltas
                                                 <div className="mt-2 h-14 rounded bg-gradient-to-br from-indigo-500/10 to-transparent" />
                                             </div>
-                                        </div>
+             </div>
                                     ) : null}
-                                </div>
+           </div>
                             </motion.article>
-                        ))}
-                    </div>
+        ))}
+      </div>
                 </section>
 
                 {/* Workflow */}
@@ -900,7 +900,7 @@ export default function HexenitySaaS() {
                                             {f.tag}
                                         </span>
                                     ) : null}
-                                </div>
+                 </div>
                                 <p className="hexenity-display mt-4 text-lg font-semibold text-white">{f.title}</p>
                                 <p className="mt-2 text-sm leading-relaxed text-slate-400">{f.narrative}</p>
                                 <div className="relative mt-4 h-[52px] overflow-hidden rounded-lg border border-white/[0.06] bg-black/30">
@@ -914,9 +914,9 @@ export default function HexenitySaaS() {
                                                 viewport={{ once: true }}
                                                 transition={{ delay: j * 0.05 + i * 0.02 }}
                                             />
-                                        ))}
-                                    </div>
-                                </div>
+               ))}
+            </div>
+         </div>
                             </motion.div>
                         ))}
                     </div>
@@ -968,7 +968,7 @@ export default function HexenitySaaS() {
                                         {tech}
                                     </motion.span>
                                 ))}
-                            </div>
+            </div>
                             <div className="relative mt-8 overflow-hidden rounded-2xl border border-indigo-400/20 bg-gradient-to-br from-indigo-500/[0.12] via-transparent to-cyan-400/[0.08] p-6">
                                 <Cpu className="h-10 w-10 text-indigo-300" aria-hidden />
                                 <p className="mt-4 text-lg font-semibold text-white">We build SaaS platforms, not slideware templates.</p>
@@ -981,10 +981,10 @@ export default function HexenitySaaS() {
                                     className="mt-6 rounded-xl bg-white/[0.1] px-4 py-2.5 text-xs font-semibold uppercase tracking-[0.14em] text-white transition hover:bg-white/[0.16]"
                                 >
                                     Talk architecture
-                                </button>
-                            </div>
-                        </div>
-                    </div>
+            </button>
+         </div>
+      </div>
+    </div>
                 </section>
 
                 {/* Dev process */}
@@ -1007,14 +1007,14 @@ export default function HexenitySaaS() {
                                 <div className="hidden md:flex">
                                     <div className="flex h-[22px] w-[22px] shrink-0 items-center justify-center rounded-full bg-indigo-500/75 text-[11px] font-bold text-white ring-8 ring-[#0a1020]">
                                         {idx + 1}
-                                    </div>
-                                </div>
+          </div>
+        </div>
                                 <div className="flex-1 rounded-2xl border border-white/[0.08] bg-[#101827] px-5 py-4 md:px-6 md:py-5">
                                     <p className="text-[11px] font-semibold uppercase tracking-[0.16em] text-indigo-200/85">{d.phase}</p>
                                     <p className="mt-2 text-sm leading-relaxed text-slate-300">{d.detail}</p>
                                     </div>
-                            </motion.div>
-                        ))}
+            </motion.div>
+          ))}
                     </div>
                 </section>
 
@@ -1045,14 +1045,14 @@ export default function HexenitySaaS() {
                                             <span className="mt-0.5 text-[10px] font-semibold uppercase tracking-[0.12em] text-slate-500">{m.k}</span>
                                         </span>
                                     ))}
-                                </div>
+        </div>
                                 <footer className="mt-auto border-t border-white/[0.06] pt-5">
                                     <p className="text-sm font-semibold text-white">{tm.name}</p>
                                     <p className="text-xs text-indigo-200/85">{tm.role}</p>
                                 </footer>
                             </motion.blockquote>
                         ))}
-                    </div>
+      </div>
                 </section>
 
                 {/* Pricing */}
@@ -1063,7 +1063,7 @@ export default function HexenitySaaS() {
                             <h2 className="hexenity-display mt-2 text-3xl font-semibold tracking-[-0.03em] text-white md:text-4xl">
                                 Scale teams, not spreadsheets
                                             </h2>
-                        </div>
+            </div>
                         <div className="flex items-center gap-3 rounded-xl border border-white/[0.1] bg-black/40 p-1">
                             <button
                                 type="button"
@@ -1083,8 +1083,8 @@ export default function HexenitySaaS() {
                             >
                                 Yearly (-18%)
                             </button>
-                        </div>
-                    </div>
+            </div>
+         </div>
 
                     <div className="mt-10 grid gap-5 lg:grid-cols-3">
                             {[
@@ -1152,10 +1152,10 @@ export default function HexenitySaaS() {
                                                       }`}
                                                 >
                                                     {tier.priceM !== null ? 'Start pilot' : 'Contact enterprise desk'}
-                                                </button>
+                 </button>
                                             </motion.div>
-                            ))}
-                    </div>
+               ))}
+            </div>
                 </section>
 
                 {/* Final CTA */}
@@ -1199,9 +1199,9 @@ export default function HexenitySaaS() {
                     <div className="pb-6 pt-4 text-slate-400">
                         Hexenity aligns inventory, licensing, renewal playbooks, and executive KPI dashboards into one continuous delivery
                         motion—paired with rollout templates for 30-60-90 governance maturity jumps. Prefer a guided assessment? Reach out and we tailor the operating model blueprint to your stakeholder map.
-                                                    </div>
+      </div>
                 </details>
-            </div>
+      </div>
         </HexenityPageShell>
     );
 }
