@@ -55,6 +55,90 @@ body {
     overscroll-behavior-y: contain;
   }
 
+  /* Hexenity home hero: readable motion (respects prefers-reduced-motion) */
+  @media (prefers-reduced-motion: no-preference) {
+    /* Whole preview gently “breathes” so motion reads even beside slow fields */
+    .hero-orb-breathe {
+      transform-origin: center;
+      animation: hero-orb-breathe 5.5s ease-in-out infinite alternate;
+    }
+
+    /* Fast enough to perceive as animated (prior ~64–88s read as static) */
+    .hero-orb-spin-slow {
+      transform-box: fill-box;
+      transform-origin: center;
+      animation: hero-orb-spin 22s linear infinite;
+    }
+    .hero-orb-spin-reverse {
+      transform-box: fill-box;
+      transform-origin: center;
+      animation: hero-orb-spin 32s linear infinite reverse;
+    }
+
+    .hero-orb-line-shimmer {
+      animation: hero-orb-line-opacity 3s ease-in-out infinite;
+    }
+    .hero-orb-wisp-drift {
+      animation: hero-orb-wisp 8s ease-in-out infinite alternate;
+    }
+
+    /* “Data flow” along spokes */
+    .hero-orb-dash-march line {
+      stroke-dasharray: 8 200;
+      stroke-dashoffset: 0;
+      animation: hero-orb-dash-march 6s linear infinite;
+    }
+
+    /* Twinkle faint nodes */
+    .hero-orb-twinkle circle {
+      animation: hero-orb-twinkle-op 4.2s ease-in-out infinite;
+    }
+
+    /* Stagger helpers */
+    .hero-orb-twinkle circle:nth-child(5n){ animation-delay: 0s; }
+    .hero-orb-twinkle circle:nth-child(5n+1){ animation-delay: -0.7s; }
+    .hero-orb-twinkle circle:nth-child(5n+2){ animation-delay: -1.4s; }
+    .hero-orb-twinkle circle:nth-child(5n+3){ animation-delay: -2.1s; }
+    .hero-orb-twinkle circle:nth-child(5n+4){ animation-delay: -2.8s; }
+
+    /* Core ring pulse */
+    .hero-orb-core-pulse circle:first-of-type {
+      animation: hero-orb-core-pulse 4.5s ease-in-out infinite;
+    }
+
+    /* Flow on organic paths */
+    .hero-orb-wisp-flow path:nth-of-type(1) {
+      stroke-dasharray: 120 820;
+      animation: hero-orb-path-dash 14s linear infinite;
+    }
+    .hero-orb-wisp-flow path:nth-of-type(2) {
+      stroke-dasharray: 90 940;
+      animation: hero-orb-path-dash-reverse 18s linear infinite;
+    }
+  }
+
+  /* Disable all hero orb motion modifiers when user prefers reduced motion */
+  @media (prefers-reduced-motion: reduce) {
+    .hero-orb-breathe,
+    .hero-orb-spin-slow,
+    .hero-orb-spin-reverse,
+    .hero-orb-line-shimmer,
+    .hero-orb-core-pulse circle:first-of-type,
+    .hero-orb-twinkle circle {
+      animation: none !important;
+    }
+    .hero-orb-dash-march line {
+      animation: none !important;
+      stroke-dasharray: unset !important;
+    }
+    .hero-orb-wisp-flow path:nth-of-type(1),
+    .hero-orb-wisp-flow path:nth-of-type(2),
+    .hero-orb-wisp-drift path {
+      animation: none !important;
+      stroke-dasharray: none !important;
+    }
+  }
+
   .hexenity-root [class*="backdrop-blur"] {
     -webkit-backdrop-filter: none !important;
     backdrop-filter: none !important;
@@ -416,6 +500,89 @@ body {
   }
   50% {
     transform: translateY(-12px);
+  }
+}
+
+@keyframes hero-orb-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes hero-orb-line-opacity {
+  0%, 100% {
+    opacity: 0.38;
+  }
+  50% {
+    opacity: 0.95;
+  }
+}
+
+@keyframes hero-orb-wisp {
+  from {
+    transform: translate3d(-2px, 1px, 0);
+  }
+  to {
+    transform: translate3d(5px, -7px, 0);
+  }
+}
+
+@keyframes hero-orb-breathe {
+  0% {
+    transform: scale(0.96);
+    filter: saturate(1);
+  }
+  100% {
+    transform: scale(1.04);
+    filter: saturate(1.15);
+  }
+}
+
+@keyframes hero-orb-dash-march {
+  to {
+    stroke-dashoffset: -208;
+  }
+}
+
+@keyframes hero-orb-twinkle-op {
+  0%, 100% {
+    opacity: 0.22;
+    transform: scale(0.94);
+    transform-origin: center;
+    transform-box: fill-box;
+  }
+  50% {
+    opacity: 0.65;
+    transform: scale(1.18);
+    transform-origin: center;
+    transform-box: fill-box;
+  }
+}
+
+@keyframes hero-orb-core-pulse {
+  0%, 100% {
+    opacity: 0.88;
+  }
+  50% {
+    opacity: 0.98;
+  }
+}
+
+@keyframes hero-orb-path-dash {
+  to {
+    stroke-dashoffset: -940;
+  }
+}
+
+@keyframes hero-orb-path-dash-reverse {
+  from {
+    stroke-dashoffset: 0;
+  }
+  to {
+    stroke-dashoffset: 940;
   }
 }
 
