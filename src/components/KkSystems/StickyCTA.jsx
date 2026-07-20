@@ -26,12 +26,13 @@ const StickyCTA = () => {
 
   return (
     <div className="pointer-events-none fixed bottom-[calc(2rem+env(safe-area-inset-bottom,0px))] right-[calc(2rem+env(safe-area-inset-right,0px))] z-[100] max-sm:left-4 max-sm:right-4">
-      <div className="pointer-events-auto ml-auto rounded-2xl border border-slate-200/90 bg-white/95 p-2.5 shadow-[0_10px_24px_rgba(15,23,42,0.14)] dark:border-white/15 dark:bg-[rgba(10,15,31,0.9)] dark:shadow-none max-sm:max-w-[min(100%,18rem)]">
+      <div className="pointer-events-auto ml-auto w-fit max-sm:max-w-[min(100%,18rem)]">
         <button
           onClick={() => navigate('/hexenity/contact')}
-          className="group flex items-center gap-2 rounded-xl bg-indigo-600 px-5 py-3 text-sm font-semibold text-white transition-colors duration-200 hover:bg-indigo-500"
+          data-cursor="Book"
+          className="group flex items-center gap-2.5 rounded-full bg-gradient-to-r from-indigo-600 to-violet-600 py-3.5 pl-6 pr-5 text-sm font-semibold text-white shadow-[0_18px_45px_-14px_rgba(99,102,241,0.7)] transition-all duration-300 hover:scale-[1.04]"
         >
-          <Rocket className="w-4 h-4" />
+          <Rocket className="h-4 w-4 transition-transform duration-300 group-hover:-translate-y-0.5" />
           <span>Book consultation</span>
         </button>
       </div>

@@ -1,7 +1,9 @@
 import React from 'react';
 import { MessageSquare, PenTool, Rocket } from 'lucide-react';
 
-const Step = ({ number, title, description, icon: Icon, isLast }) => (
+const Step = ({ number, title, description, icon, isLast }) => {
+    const Icon = icon;
+    return (
     <div className="relative flex-1 flex flex-col items-center text-center group">
         {/* Connecting Line */}
         {!isLast && (
@@ -25,7 +27,8 @@ const Step = ({ number, title, description, icon: Icon, isLast }) => (
         <h3 className="text-2xl font-bold text-white mb-4">{title}</h3>
         <p className="text-gray-400 max-w-sm">{description}</p>
     </div>
-);
+    );
+};
 
 const HowItWorks = () => {
     return (

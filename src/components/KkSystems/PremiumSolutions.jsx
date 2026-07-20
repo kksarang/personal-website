@@ -1,6 +1,7 @@
 import React from 'react';
 import { ArrowRight, Smartphone, Monitor, PaintBucket, Share2, Target, Database, Cpu, Activity, Star, BrainCircuit, Search, LayoutDashboard, Shield } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
+import SpotlightCard from '../ui/SpotlightCard';
 
 export const PremiumSolutions = () => {
     const navigate = useNavigate();
@@ -103,10 +104,13 @@ export const PremiumSolutions = () => {
         <section id="services" className="bg-[#0B0F19] py-28">
             <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
                 <div className="mx-auto mb-16 max-w-3xl text-center">
-                    <div className="mb-5 inline-block rounded-full border border-indigo-500/20 bg-indigo-500/10 px-4 py-2 text-xs font-bold uppercase tracking-widest text-indigo-400">
-                        Services
+                    <div className="pf-mono mb-6 flex items-center justify-center gap-4 text-[11px] uppercase tracking-[0.35em] text-slate-400">
+                        <span className="text-indigo-300">(04)</span>
+                        <span>Services</span>
                     </div>
-                    <h2 className="mb-5 text-4xl font-black leading-tight text-white md:text-5xl">Interactive digital solution stack</h2>
+                    <h2 className="pf-display mb-5 text-[clamp(1.7rem,3.2vw,2.5rem)] font-bold leading-[1.05] text-white">
+                        Interactive digital <span className="pf-outline-text">solution stack.</span>
+                    </h2>
                     <p className="text-lg leading-relaxed text-gray-400">
                         App development, digital presence, AI systems, and growth operations delivered under one premium execution model.
                     </p>
@@ -114,24 +118,29 @@ export const PremiumSolutions = () => {
 
                 <div className="grid gap-6 md:grid-cols-6">
                     {featuredSolutions.map((solution, index) => (
-                        <div
+                        <SpotlightCard
                             key={solution.title}
-                            className={`group relative flex h-full flex-col overflow-hidden rounded-3xl border border-white/10 bg-slate-950/70 p-8 transition hover:border-indigo-300/40 ${
+                            data-cursor="Explore"
+                            onClick={() => navigate(solution.link)}
+                            className={`group relative flex h-full cursor-pointer flex-col rounded-3xl border border-white/10 bg-slate-950/70 p-9 transition-all duration-500 hover:-translate-y-1.5 hover:border-indigo-300/40 ${
                                 index === 0 ? 'md:col-span-6 lg:col-span-2' : 'md:col-span-3 lg:col-span-2'
                             }`}
                         >
-                            <div className="absolute inset-x-0 top-0 h-1 bg-gradient-to-r from-cyan-300/70 via-indigo-300/70 to-violet-300/70" />
-                            <div className="pointer-events-none absolute -right-20 -top-20 h-44 w-44 rounded-full bg-indigo-500/20 blur-[90px] opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
-                            <div className="mb-5 flex items-center justify-between">
-                                <div className="flex h-12 w-12 items-center justify-center rounded-xl border border-indigo-500/20 bg-indigo-500/10">
-                                    <solution.icon className="h-6 w-6 text-indigo-400" />
-                                </div>
-                                <span className="inline-flex items-center gap-1 rounded-full border border-white/15 bg-white/5 px-2.5 py-1 text-[10px] uppercase tracking-widest text-slate-300">
+                            <div className="mb-8 flex items-start justify-between">
+                                <span className="pf-display text-5xl font-extrabold text-white/[0.07] transition-colors duration-500 group-hover:text-indigo-400/40">
+                                    0{index + 1}
+                                </span>
+                                <span className="pf-mono inline-flex items-center gap-1.5 rounded-full border border-white/15 px-3 py-1.5 text-[9px] uppercase tracking-[0.18em] text-slate-300">
                                     <Star className="h-3 w-3 text-indigo-300" />
                                     {solution.tag}
                                 </span>
                             </div>
-                            <h3 className="mb-4 text-2xl font-bold text-white">{solution.title}</h3>
+                            <div className="mb-5 flex items-center gap-4">
+                                <div className="flex h-12 w-12 items-center justify-center rounded-2xl border border-indigo-500/20 bg-indigo-500/10">
+                                    <solution.icon className="h-6 w-6 text-indigo-400" />
+                                </div>
+                                <h3 className="pf-display text-2xl font-bold leading-tight text-white">{solution.title}</h3>
+                            </div>
 
                             <ul className="mb-8 flex-grow space-y-3">
                                 {solution.items.map((item) => (
@@ -144,26 +153,23 @@ export const PremiumSolutions = () => {
 
                             <div className="border-t border-white/5 pt-6">
                                 <p className="mb-6 text-sm leading-relaxed text-gray-300">{solution.benefit}</p>
-                                <button
-                                    onClick={() => navigate(solution.link)}
-                                    className="inline-flex items-center gap-2 rounded-lg border border-indigo-300/25 bg-indigo-400/10 px-3 py-2 text-xs font-bold uppercase tracking-widest text-indigo-100 transition hover:bg-indigo-400/20"
-                                >
+                                <span className="pf-mono inline-flex items-center gap-2 text-[10px] font-semibold uppercase tracking-[0.22em] text-indigo-200 transition-all duration-300 group-hover:gap-3.5 group-hover:text-white">
                                     Explore service <ArrowRight className="h-4 w-4" />
-                                </button>
+                                </span>
                             </div>
-                        </div>
+                        </SpotlightCard>
                     ))}
                 </div>
 
-                <div className="mt-10 flex flex-col items-center gap-4">
+                <div className="mt-12 flex flex-col items-center gap-4">
                     <button
                         onClick={() => navigate('/hexenity/services')}
-                        className="inline-flex items-center gap-2 rounded-xl border border-indigo-300/35 bg-indigo-500/20 px-6 py-3 text-xs font-bold uppercase tracking-[0.14em] text-indigo-100 transition hover:bg-indigo-500/30"
+                        className="group inline-flex items-center gap-2 rounded-full border border-white/20 px-8 py-3.5 text-sm font-semibold text-white transition-all duration-500 hover:border-white hover:bg-white hover:text-black"
                     >
                         Show all services
-                        <ArrowRight className="h-4 w-4" />
+                        <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
                     </button>
-                    <p className="text-xs uppercase tracking-[0.16em] text-slate-400">
+                    <p className="pf-mono text-[10px] uppercase tracking-[0.25em] text-slate-500">
                         {extendedSolutions.length + featuredSolutions.length} total services available
                     </p>
                 </div>
@@ -184,10 +190,13 @@ export const ProductLayer = () => {
             <div className="absolute left-0 top-0 h-px w-full bg-gradient-to-r from-transparent via-white/5 to-transparent" />
             <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
                 <div className="mb-16 text-center">
-                    <span className="inline-flex items-center gap-2 rounded-full border border-indigo-300/30 bg-indigo-500/10 px-4 py-1.5 text-xs font-bold uppercase tracking-[0.16em] text-indigo-200">
-                        AI Innovation Layer
-                    </span>
-                    <h2 className="mb-5 mt-5 text-4xl font-black text-white md:text-5xl">Futuristic systems that drive execution</h2>
+                    <div className="pf-mono mb-6 flex items-center justify-center gap-4 text-[11px] uppercase tracking-[0.35em] text-slate-400">
+                        <span className="text-indigo-300">(05)</span>
+                        <span>AI Innovation Layer</span>
+                    </div>
+                    <h2 className="pf-display mb-5 mt-5 text-[clamp(1.7rem,3.2vw,2.5rem)] font-bold text-white">
+                        Futuristic systems that <span className="pf-outline-text">drive execution.</span>
+                    </h2>
                     <p className="mx-auto max-w-2xl text-lg leading-relaxed text-gray-400">
                         Built with automation, observability, and intelligence-first architecture to support long-term client growth.
                     </p>

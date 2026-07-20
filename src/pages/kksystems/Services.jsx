@@ -1,6 +1,6 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
-import { ArrowRight, CheckCircle2, ClipboardCheck, FileText, Handshake, ShieldCheck, Workflow } from 'lucide-react';
+import { ArrowRight, ArrowUpRight, CheckCircle2, FileText, Handshake, ShieldCheck, Workflow } from 'lucide-react';
 import HexenityPageShell from '../../components/KkSystems/HexenityPageShell';
 import { servicesData } from '../../data/servicesData';
 
@@ -59,113 +59,161 @@ const ServicesPage = () => {
             actions={(
                 <button
                     onClick={() => navigate('/hexenity/contact')}
-                    className="inline-flex items-center gap-2 rounded-xl border border-indigo-300/35 bg-indigo-500/20 px-4 py-2 text-xs font-semibold uppercase tracking-[0.13em] text-indigo-100 transition hover:bg-indigo-500/30"
+                    className="inline-flex items-center gap-2 rounded-full border border-indigo-300/35 bg-indigo-500/20 px-4 py-2 text-xs font-semibold uppercase tracking-[0.13em] text-indigo-100 transition hover:bg-indigo-500/30"
                 >
                     Discuss a Service Scope
                     <ArrowRight className="h-4 w-4" />
                 </button>
             )}
         >
-            <div className="space-y-8">
-                <section className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-                    <article className="rounded-2xl border border-white/10 bg-white/5 p-4">
-                        <p className="text-xs uppercase tracking-[0.14em] text-slate-400">Active Service Lines</p>
-                        <p className="mt-2 text-2xl font-bold text-white">{services.length}</p>
-                    </article>
-                    <article className="rounded-2xl border border-white/10 bg-white/5 p-4">
-                        <p className="text-xs uppercase tracking-[0.14em] text-slate-400">Delivery Model</p>
-                        <p className="mt-2 text-2xl font-bold text-white">Milestone-led</p>
-                    </article>
-                    <article className="rounded-2xl border border-white/10 bg-white/5 p-4">
-                        <p className="text-xs uppercase tracking-[0.14em] text-slate-400">Coverage</p>
-                        <p className="mt-2 text-2xl font-bold text-white">End-to-end</p>
-                    </article>
-                    <article className="rounded-2xl border border-white/10 bg-white/5 p-4">
-                        <p className="text-xs uppercase tracking-[0.14em] text-slate-400">Post-Launch Support</p>
-                        <p className="mt-2 text-2xl font-bold text-white">Included</p>
-                    </article>
-                </section>
-
-                <section className="premium-surface gradient-stroke rounded-3xl p-7">
-                    <div className="mb-6 flex flex-wrap items-center justify-between gap-3">
-                        <h2 className="text-2xl font-bold text-white">All Services</h2>
-                        <span className="inline-flex items-center gap-2 rounded-full border border-indigo-300/30 bg-indigo-500/10 px-3 py-1 text-[11px] uppercase tracking-[0.15em] text-indigo-200">
-                            <ClipboardCheck className="h-3.5 w-3.5" />
-                            Professional service catalog
-                        </span>
-                    </div>
-                    <div className="grid gap-4 lg:grid-cols-2">
-                        {services.map((service) => (
-                            <article key={service.slug} className="rounded-2xl border border-white/10 bg-white/5 p-5">
-                                <h3 className="text-xl font-semibold text-white">{service.title}</h3>
-                                <p className="mt-2 text-sm leading-relaxed text-slate-300">{service.overview}</p>
-                                <div className="mt-4 flex flex-wrap gap-2">
-                                    {service.techStack.slice(0, 4).map((tech) => (
-                                        <span key={tech} className="rounded-full border border-white/10 bg-black/20 px-3 py-1 text-xs text-slate-200">
-                                            {tech}
-                                        </span>
-                                    ))}
-                                </div>
-                                <button
-                                    onClick={() => navigate(`/hexenity/services/${service.slug}`)}
-                                    className="mt-5 inline-flex items-center gap-2 rounded-lg border border-indigo-300/30 bg-indigo-500/15 px-3.5 py-2 text-xs font-semibold uppercase tracking-[0.12em] text-indigo-100 transition hover:bg-indigo-500/25"
-                                >
-                                    View Service Details
-                                    <ArrowRight className="h-3.5 w-3.5" />
-                                </button>
-                            </article>
-                        ))}
-                    </div>
-                </section>
-
-                <section className="premium-surface rounded-3xl p-7">
-                    <h2 className="mb-5 text-2xl font-bold text-white">Service Workflow: How Delivery Is Completed</h2>
-                    <div className="space-y-3">
-                        {deliveryWorkflow.map((step, index) => (
-                            <article key={step.title} className="rounded-xl border border-white/10 bg-white/5 p-4">
-                                <div className="mb-2 flex items-center gap-3">
-                                    <span className="inline-flex h-7 w-7 items-center justify-center rounded-full bg-indigo-500/20 text-xs font-bold text-indigo-100">
-                                        {index + 1}
-                                    </span>
-                                    <p className="text-xs uppercase tracking-[0.14em] text-indigo-300">Stage {index + 1}</p>
-                                </div>
-                                <h3 className="text-lg font-semibold text-white">{step.title}</h3>
-                                <p className="mt-1 text-slate-300">{step.detail}</p>
-                            </article>
-                        ))}
-                    </div>
-                </section>
-
-                <section className="grid gap-5 lg:grid-cols-3">
-                    {transferMethod.map((item) => (
-                        <article key={item.title} className="rounded-2xl border border-white/10 bg-white/5 p-5">
-                            <item.icon className="mb-3 h-5 w-5 text-indigo-300" />
-                            <h3 className="text-lg font-semibold text-white">{item.title}</h3>
-                            <p className="mt-2 text-sm leading-relaxed text-slate-300">{item.detail}</p>
+            <div className="space-y-20">
+                <section className="grid grid-cols-2 gap-px overflow-hidden rounded-3xl border border-white/[0.08] bg-white/[0.08] lg:grid-cols-4">
+                    {[
+                        ['Active Service Lines', `${services.length}`],
+                        ['Delivery Model', 'Milestone-led'],
+                        ['Coverage', 'End-to-end'],
+                        ['Post-Launch Support', 'Included'],
+                    ].map(([label, value]) => (
+                        <article key={label} className="group bg-[#0B0F19] p-6 transition-colors duration-500 hover:bg-[#10152a]">
+                            <p className="pf-mono text-[9px] uppercase tracking-[0.22em] text-slate-500">{label}</p>
+                            <p className="pf-display mt-3 text-2xl font-bold text-white">{value}</p>
                         </article>
                     ))}
                 </section>
 
-                <section className="rounded-3xl border border-indigo-300/25 bg-indigo-500/15 p-6">
-                    <h3 className="inline-flex items-center gap-2 text-xl font-bold text-white">
-                        <ShieldCheck className="h-5 w-5 text-indigo-200" />
-                        Working Method and Transition Assurance
-                    </h3>
-                    <p className="mt-2 text-slate-200">
-                        Every engagement includes milestone governance, quality checkpoints, documentation, and transition planning so your internal team can confidently operate the solution after launch.
-                    </p>
-                    <ul className="mt-4 space-y-2">
-                        {[
-                            'Clear ownership mapping for both teams',
-                            'Weekly stakeholder updates with decision logs',
-                            'Delivery artifacts prepared for long-term maintainability',
-                        ].map((point) => (
-                            <li key={point} className="flex items-start gap-2 text-sm text-slate-100">
-                                <CheckCircle2 className="mt-0.5 h-4 w-4 text-emerald-300" />
-                                <span>{point}</span>
-                            </li>
+                <section>
+                    <div className="pf-mono mb-2 flex items-center gap-4 text-[11px] uppercase tracking-[0.35em] text-white/35">
+                        <span className="text-indigo-300">(01)</span>
+                        <span>Service Catalog</span>
+                        <span className="h-px flex-1 bg-white/[0.08]" />
+                        <span className="hidden sm:block">{services.length} lines</span>
+                    </div>
+                    <h2 className="pf-display mb-4 text-[clamp(1.7rem,3.4vw,2.6rem)] font-bold text-white">
+                        All Services
+                    </h2>
+                    <div className="border-t border-white/[0.08]">
+                        {services.map((service, index) => (
+                            <button
+                                key={service.slug}
+                                onClick={() => navigate(`/hexenity/services/${service.slug}`)}
+                                data-cursor="View"
+                                className="pf-row-link group grid w-full grid-cols-[1fr_auto] items-center gap-4 border-b border-white/[0.08] px-2 py-8 text-left transition-colors duration-300 sm:grid-cols-[auto_1fr_auto] sm:gap-10 sm:px-6 sm:py-10"
+                            >
+                                <span className="pf-mono hidden text-xs text-slate-500 transition-colors duration-300 group-hover:text-white/70 sm:block">
+                                    {String(index + 1).padStart(2, '0')}
+                                </span>
+                                <span className="min-w-0">
+                                    <span className="pf-display block text-[clamp(1.3rem,2.6vw,2rem)] font-bold leading-tight text-white transition-transform duration-500 group-hover:translate-x-2">
+                                        {service.title}
+                                    </span>
+                                    <span className="mt-2 block max-w-2xl text-sm leading-relaxed text-slate-400 transition-colors duration-300 group-hover:text-white/75">
+                                        {service.overview}
+                                    </span>
+                                    <span className="mt-4 flex flex-wrap gap-2">
+                                        {service.techStack.slice(0, 4).map((tech) => (
+                                            <span
+                                                key={tech}
+                                                className="pf-mono rounded-full border border-white/10 px-3 py-1 text-[9px] uppercase tracking-[0.18em] text-slate-400 transition-colors duration-300 group-hover:border-white/30 group-hover:text-white"
+                                            >
+                                                {tech}
+                                            </span>
+                                        ))}
+                                    </span>
+                                </span>
+                                <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full border border-white/10 text-slate-400 transition-all duration-500 group-hover:rotate-45 group-hover:border-white group-hover:text-white sm:h-14 sm:w-14">
+                                    <ArrowUpRight className="h-5 w-5" />
+                                </span>
+                            </button>
                         ))}
-                    </ul>
+                    </div>
+                </section>
+
+                <section>
+                    <div className="pf-mono mb-2 flex items-center gap-4 text-[11px] uppercase tracking-[0.35em] text-white/35">
+                        <span className="text-indigo-300">(02)</span>
+                        <span>Delivery Workflow</span>
+                        <span className="h-px flex-1 bg-white/[0.08]" />
+                    </div>
+                    <h2 className="pf-display mb-4 text-[clamp(1.7rem,3.4vw,2.6rem)] font-bold text-white">
+                        How delivery is completed
+                    </h2>
+                    <div className="border-t border-white/[0.08]">
+                        {deliveryWorkflow.map((step, index) => (
+                            <article
+                                key={step.title}
+                                className="group grid grid-cols-[auto_1fr] items-start gap-6 border-b border-white/[0.08] py-8 sm:grid-cols-[110px_1fr] sm:gap-10"
+                            >
+                                <span className="pf-display text-4xl font-extrabold leading-none text-white/[0.08] transition-colors duration-500 group-hover:text-indigo-400/50 sm:text-6xl">
+                                    0{index + 1}
+                                </span>
+                                <div>
+                                    <h3 className="pf-display text-xl font-bold text-white sm:text-2xl">{step.title}</h3>
+                                    <p className="mt-2 max-w-3xl leading-relaxed text-slate-400">{step.detail}</p>
+                                </div>
+                            </article>
+                        ))}
+                    </div>
+                </section>
+
+                <section>
+                    <div className="pf-mono mb-2 flex items-center gap-4 text-[11px] uppercase tracking-[0.35em] text-white/35">
+                        <span className="text-indigo-300">(03)</span>
+                        <span>Handover</span>
+                        <span className="h-px flex-1 bg-white/[0.08]" />
+                    </div>
+                    <h2 className="pf-display mb-4 text-[clamp(1.7rem,3.4vw,2.6rem)] font-bold text-white">
+                        Transfer model
+                    </h2>
+                    <div className="grid gap-px overflow-hidden rounded-3xl border border-white/[0.08] bg-white/[0.08] lg:grid-cols-3">
+                        {transferMethod.map((item, index) => (
+                            <article key={item.title} className="group bg-[#0B0F19] p-8 transition-colors duration-500 hover:bg-[#10152a]">
+                                <div className="mb-8 flex items-start justify-between">
+                                    <span className="pf-display text-5xl font-extrabold text-white/[0.07] transition-colors duration-500 group-hover:text-indigo-400/40">
+                                        0{index + 1}
+                                    </span>
+                                    <item.icon className="h-5 w-5 text-indigo-300 transition-transform duration-500 group-hover:-translate-y-1" />
+                                </div>
+                                <h3 className="pf-display text-lg font-bold text-white">{item.title}</h3>
+                                <p className="mt-2 text-sm leading-relaxed text-slate-400">{item.detail}</p>
+                            </article>
+                        ))}
+                    </div>
+                </section>
+
+                <section className="relative overflow-hidden rounded-3xl border border-white/[0.08] bg-[#0B0F19] p-8 sm:p-12">
+                    <div className="pf-dotgrid absolute inset-0 opacity-30" aria-hidden="true" />
+                    <div className="relative">
+                        <p className="pf-mono mb-4 inline-flex items-center gap-2 text-[10px] uppercase tracking-[0.3em] text-indigo-300">
+                            <ShieldCheck className="h-4 w-4" />
+                            Transition Assurance
+                        </p>
+                        <h3 className="pf-display max-w-2xl text-2xl font-bold text-white sm:text-3xl">
+                            Working method and transition assurance
+                        </h3>
+                        <p className="mt-3 max-w-2xl text-slate-300">
+                            Every engagement includes milestone governance, quality checkpoints, documentation, and transition planning so your internal team can confidently operate the solution after launch.
+                        </p>
+                        <ul className="mt-6 space-y-3">
+                            {[
+                                'Clear ownership mapping for both teams',
+                                'Weekly stakeholder updates with decision logs',
+                                'Delivery artifacts prepared for long-term maintainability',
+                            ].map((point) => (
+                                <li key={point} className="flex items-start gap-3 text-sm text-slate-200">
+                                    <CheckCircle2 className="mt-0.5 h-4 w-4 shrink-0 text-emerald-300" />
+                                    <span>{point}</span>
+                                </li>
+                            ))}
+                        </ul>
+                        <button
+                            onClick={() => navigate('/hexenity/contact')}
+                            data-cursor="Talk"
+                            className="mt-8 inline-flex items-center gap-2 rounded-full border border-white bg-white px-7 py-3.5 text-sm font-semibold text-black transition-all duration-500 hover:bg-transparent hover:text-white"
+                        >
+                            Discuss a service scope
+                            <ArrowRight className="h-4 w-4" />
+                        </button>
+                    </div>
                 </section>
             </div>
         </HexenityPageShell>

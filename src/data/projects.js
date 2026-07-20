@@ -1,5 +1,140 @@
 export const projects = [
     {
+        id: 7,
+        title: "KK Traveler",
+        slug: "kk-traveler",
+        description: "A premium Canadian luxury travel platform for Cape Breton tours — booking wizard, live availability, visa assistance, and a full customer dashboard, engineered by Hexenity.",
+        tags: ["Web Development", "Travel Platform", "Next.js", "Booking System"],
+        technologies: ["Next.js", "GSAP", "Framer Motion", "Three.js"],
+        github: "https://kk-travel-company.vercel.app/",
+        playStore: null,
+        featured: true,
+        heroImage: "/assets/showcase/web_platform_premium.png",
+        appDetails: {
+            category: "Web Platform",
+            platform: "Web Application",
+            client: "KK Traveler — Cape Breton, Canada",
+            techStack: "Next.js + GSAP + Framer Motion",
+            releaseType: "Production",
+            availability: "Live — kk-travel-company.vercel.app",
+            targetAudience: "Premium travelers, cruise guests & corporate clients in Canada"
+        },
+        overview: "KK Traveler is a premium Canadian luxury travel company operating private Cape Breton tours — Cabot Trail signature drives, private Jeep backcountry routes, Celtic culture immersions, and cruise-ship exclusive excursions. Hexenity engineered the complete digital platform: a cinematic, conversion-focused website with live booking, package comparison, and concierge-grade customer tooling.\n\nThe build covers the full commercial journey — a luxury search box with live weather and voice search, horizontal premium package sliders with wishlist and compare, a flight + hotel booking wizard with Stripe checkout, a customer dashboard with booking history and invoice center, and an admin panel tracking bookings, revenue, customers, and visa pipelines.",
+        problem: "KK Traveler needed a digital presence that matched the premium positioning of its private tours: a platform that could sell high-value packages (CAD 300 to CAD 3,990+), handle multi-currency and multi-language audiences, support cruise-ship schedule-safe bookings, and run visa assistance and corporate travel workflows — all with a cinematic feel that ordinary template sites cannot deliver.",
+        solution: "Hexenity designed and built a Next.js App Router platform with GSAP + ScrollTrigger scroll choreography, Framer Motion micro-interactions, Three.js visual moments, and Lenis smooth scrolling. The commerce layer includes a package builder with coupons and referral credits, Stripe checkout, invoice downloads, and a customer dashboard — backed by an admin panel for package, payment, blog, review, and gallery management. React Hook Form + Zod keep every funnel validated, and the platform ships SEO- and PWA-ready.",
+        features: [
+            "Luxury tour catalog with wishlist, compare, and horizontal premium sliders",
+            "Booking wizard: flight + hotel package builder with Stripe checkout and coupons",
+            "Customer dashboard — upcoming trips, booking history, and invoice center",
+            "Admin panel: bookings, revenue, customers, visa pipeline, and content management",
+            "Visa assistance timeline and corporate travel workflows",
+            "Live availability, live weather, voice search, multi-currency and multi-language support",
+            "Cinematic drone film section, gallery, blogs, and VIP membership offers"
+        ],
+        techStack: ["Next.js App Router", "GSAP + ScrollTrigger", "Framer Motion", "Three.js / R3F", "Lenis", "Swiper", "React Hook Form + Zod", "Stripe"],
+        screenshots: [],
+        storePerformance: null,
+        userFeedback: [
+            "KK Traveler curated our Cape Breton trip with private vehicle comfort, hidden lookoffs, and a guide who felt like a local storyteller.",
+            "From cruise-port pickup to executive transfers and premium dining stops, every minute felt carefully designed for high-end guests.",
+            "Our multi-day Cabot itinerary had no rushed moments, only private access, scenic pacing, and true concierge-level service."
+        ],
+        technicalArchitecture: [
+            { layer: "Frontend Engine", stack: "Next.js App Router with server components and edge-ready rendering." },
+            { layer: "Motion & 3D", stack: "GSAP + ScrollTrigger scroll choreography, Framer Motion interactions, Three.js/R3F visual scenes, Lenis smooth scroll." },
+            { layer: "Commerce Layer", stack: "Booking wizard with package builder, coupons, referral credits, and Stripe checkout with invoice generation." },
+            { layer: "Operations", stack: "Customer dashboard and admin panel covering bookings, revenue, visa tracking, and content management." }
+        ],
+        deployment: "Deployed on Vercel's edge network with PWA support, keeping the media-heavy luxury experience fast across Canadian and international audiences.",
+        results: "The platform anchors KK Traveler's premium positioning — 4.9/5 Google and 4.8/5 Trustpilot ratings — selling signature packages from CAD 300 day tours to CAD 3,990 multi-day luxury weeks, with cruise-ship priority bookings and corporate travel handled end to end."
+    },
+    {
+        id: 6,
+        title: "Zaffabit",
+        slug: "zaffabit",
+        description: "A cross-platform mobile application engineered for a seamless, high-performance experience on both iOS and Android — live and in active use today.",
+        tags: ["Cross-Platform", "Mobile App", "Flutter", "Product Engineering"],
+        technologies: ["Flutter", "Dart", "Firebase", "REST API"],
+        github: "#",
+        playStore: null,
+        featured: true,
+        heroImage: "/assets/showcase/mobile_app_premium.png",
+        appDetails: {
+            category: "Mobile Application",
+            platform: "Mobile (iOS + Android)",
+            techStack: "Flutter + Firebase",
+            releaseType: "Production",
+            availability: "Live & operational",
+            targetAudience: "Consumer & business users"
+        },
+        overview: "Zaffabit is a cross-platform mobile application delivered by the Hexenity engineering team, built from a single codebase that ships natively to both iOS and Android. The product is live and fully operational, serving its users in production today.\n\nThe engagement covered the complete product cycle — UX flows, interface design, application architecture, backend integration, and store-ready release engineering — with an emphasis on fast startup, smooth interactions, and a maintainable codebase that can evolve with the product roadmap.",
+        problem: "The client needed a single mobile product that could reach both iOS and Android audiences without doubling engineering cost or fragmenting the experience across platforms. The application also had to remain responsive under real-world network conditions and be structured for quick iteration after launch.",
+        solution: "We built Zaffabit on Flutter with a strictly layered architecture: presentation, state, and data layers are fully separated, keeping business logic platform-agnostic and testable. Backend services are integrated through a clean API layer with offline-tolerant caching, and release pipelines produce signed builds for both stores from the same codebase.",
+        features: [
+            "Single codebase shipping natively to iOS and Android",
+            "Fast, fluid UI with 60fps interactions",
+            "Offline-tolerant data layer with background sync",
+            "Secure authentication and session handling",
+            "Modular architecture built for rapid feature iteration"
+        ],
+        techStack: ["Flutter SDK", "Dart", "Firebase", "REST APIs", "CI/CD release pipelines"],
+        screenshots: [],
+        storePerformance: null,
+        userFeedback: [],
+        technicalArchitecture: [
+            { layer: "Frontend Engine", stack: "Flutter SDK with a shared, strictly typed Dart codebase for iOS and Android." },
+            { layer: "State Management", stack: "Unidirectional data flow keeping UI, state, and data layers cleanly separated." },
+            { layer: "Backend Integration", stack: "REST API layer with resilient caching and background synchronization." },
+            { layer: "Delivery", stack: "Automated build and signing pipelines producing store-ready binaries for both platforms." }
+        ],
+        deployment: "Zaffabit ships to both mobile ecosystems from a single automated pipeline, keeping releases consistent, repeatable, and fast to roll out.",
+        results: "The application is live and working in production across both platforms. Formal usage records and store metrics are not published yet — the current focus is stable operation and iterative product improvement."
+    },
+    {
+        id: 5,
+        title: "INFOPARKDAILY.in",
+        slug: "infopark-daily",
+        description: "Kerala's largest tech & business community platform — a digital media + community hub for Infopark Kochi, designed and built by the Hexenity web development team.",
+        tags: ["Web Development", "Community Platform", "Digital Media", "React"],
+        technologies: ["React.js", "Tailwind CSS", "Vite", "SEO"],
+        github: "https://kksarang.github.io/infoparkdaily/",
+        playStore: null,
+        featured: true,
+        heroImage: "/assets/showcase/web_platform_premium.png",
+        appDetails: {
+            category: "Web Platform",
+            platform: "Web Application",
+            client: "INFOPARKDAILY.in",
+            techStack: "React + TailwindCSS",
+            releaseType: "Production",
+            availability: "Live — infoparkdaily.in",
+            targetAudience: "Kerala tech professionals, startups, recruiters & local businesses"
+        },
+        overview: "INFOPARKDAILY.in is Kerala's largest tech & business community platform, built around the Infopark Kochi ecosystem. The Hexenity web development team delivered the complete digital hub — a digital media + community platform that helps brands, startups, restaurants, and recruiters grow through high-performing reels, local campaigns, and targeted distribution.\n\nThe platform brings together brand campaigns, hiring promotions, startup spotlights, event coverage, a growing jobs community, and IT software support — all under one fast, mobile-first destination serving an audience of 35K+ followers with 100M+ social reach and over 1 crore monthly views.",
+        problem: "Infopark Daily had built a massive social audience across Kerala's tech community, but needed a professional web platform to anchor it: a single destination that could present its media services, showcase campaign results, publish daily hiring updates, and route collaboration and support enquiries — while staying light enough to load instantly for a mobile-first audience.",
+        solution: "Hexenity designed and engineered a responsive single-page platform with a clear service architecture: brand campaigns, hiring promotions, restaurant features, startup spotlights, event coverage, and digital marketing execution — plus a dedicated jobs section with WhatsApp alerts and an IT software support wing delivered through Hexenity as the platform's technology partner. Semantic markup and metadata keep the platform strongly visible in search.",
+        features: [
+            "Digital media + community platform for Kerala's tech audience",
+            "Jobs hub with featured openings and WhatsApp alert channels",
+            "Service showcase: campaigns, hiring promotions, startup spotlights, event coverage",
+            "Partner and social-proof sections (1K+ partner companies, 100K+ professionals reached)",
+            "Direct enquiry, collaboration, and support funnels",
+            "Mobile-first responsive design with SEO-optimized structure"
+        ],
+        techStack: ["React.js", "Vite", "Tailwind CSS", "SEO tooling", "CDN deployment"],
+        screenshots: [],
+        storePerformance: null,
+        userFeedback: [],
+        technicalArchitecture: [
+            { layer: "Frontend Engine", stack: "React.js with Vite for fast development cycles and optimized production bundles." },
+            { layer: "Styling & UI", stack: "Tailwind CSS utility system with a custom editorial design language and dark/light theming." },
+            { layer: "Content Structure", stack: "Component-driven sections for services, jobs, reels, results, and community funnels." },
+            { layer: "Deployment", stack: "Static, edge-cached delivery for near-instant load times." }
+        ],
+        deployment: "The platform is served through edge-cached static hosting, keeping load times minimal for a mobile-heavy community audience.",
+        results: "INFOPARKDAILY.in anchors a community of 35K+ Instagram followers with 100M+ total social reach and 1Cr+ monthly views, connecting 1,000+ partner companies with Kerala's strongest tech audience — and channels IT software projects to Hexenity as the ecosystem's technology partner."
+    },
+    {
         id: 1,
         title: "Expenser",
         slug: "expenser-app",

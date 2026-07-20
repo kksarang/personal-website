@@ -12,18 +12,26 @@ export const ImpactMetrics = () => {
     return (
         <section className="bg-[#0B0F19] py-24">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div className="mb-10 text-center">
-                    <h2 className="text-3xl font-black text-white md:text-4xl">Measured Outcomes</h2>
+                <div className="mb-14 text-center">
+                    <div className="pf-mono mb-5 flex items-center justify-center gap-4 text-[11px] uppercase tracking-[0.35em] text-slate-400">
+                        <span className="text-indigo-300">(08)</span>
+                        <span>Impact</span>
+                    </div>
+                    <h2 className="pf-display text-[clamp(1.6rem,3vw,2.3rem)] font-bold text-white">
+                        Measured <span className="pf-outline-text">outcomes.</span>
+                    </h2>
                     <p className="mt-3 text-gray-400">Clear performance metrics from real client delivery workflows.</p>
                 </div>
-                <div className="grid grid-cols-2 lg:grid-cols-4 gap-8">
+                <div className="grid grid-cols-1 gap-px overflow-hidden rounded-3xl border border-white/[0.08] bg-white/[0.08] sm:grid-cols-2 lg:grid-cols-4">
                     {metrics.map((metric, idx) => (
-                        <div key={idx} className="rounded-3xl border border-white/10 bg-white/5 p-8 text-center transition hover:border-indigo-300/35">
-                            <div className="w-12 h-12 rounded-2xl bg-indigo-500/10 flex items-center justify-center mx-auto mb-6">
-                                <metric.icon className="w-6 h-6 text-indigo-400" />
+                        <div key={idx} className="group bg-[#0B0F19] p-8 text-center transition-colors duration-500 hover:bg-[#10152a] sm:p-10">
+                            <metric.icon className="mx-auto mb-6 h-6 w-6 text-indigo-400 transition-transform duration-500 group-hover:-translate-y-1" />
+                            <div className="pf-display mb-3 text-[clamp(1.5rem,5vw,2.2rem)] font-extrabold leading-none text-white sm:text-[clamp(1.4rem,2.1vw,2.2rem)]">
+                                {metric.value}
                             </div>
-                            <div className="text-4xl font-black text-white mb-2">{metric.value}</div>
-                            <div className="text-xs uppercase tracking-widest text-gray-500 font-bold">{metric.label}</div>
+                            <div className="pf-mono text-[9px] font-medium uppercase tracking-[0.25em] text-gray-500">
+                                {metric.label}
+                            </div>
                         </div>
                     ))}
                 </div>
@@ -46,28 +54,36 @@ export const HowWeWork = () => {
         <section id="process" className="relative bg-[#0B0F19] py-28">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="text-center mb-20">
-                    <h2 className="text-4xl md:text-5xl font-black text-white mb-6">How We <span className="premium-gradient-text">Work With You.</span></h2>
+                    <div className="pf-mono mb-6 flex items-center justify-center gap-4 text-[11px] uppercase tracking-[0.35em] text-slate-400">
+                        <span className="text-indigo-300">(09)</span>
+                        <span>Process</span>
+                    </div>
+                    <h2 className="pf-display text-[clamp(1.7rem,3.2vw,2.5rem)] font-bold text-white mb-6">
+                        How we <span className="pf-outline-text">work with you.</span>
+                    </h2>
                     <p className="text-xl text-gray-400 max-w-2xl mx-auto font-light leading-relaxed">
                         A practical process that keeps scope, quality, and delivery aligned.
                     </p>
                 </div>
 
-                <div className="relative">
-                    {/* Progress Line */}
-                    <div className="hidden lg:block absolute top-[60px] left-[50px] right-[50px] h-[1px] bg-white/5 z-0" />
-
-                    <div className="grid md:grid-cols-3 lg:grid-cols-6 gap-8 relative z-10">
-                        {steps.map((step, idx) => (
-                            <div key={idx} className="group text-center">
-                                <div className="w-16 h-16 rounded-2xl bg-[#131521] border border-white/10 flex items-center justify-center mx-auto mb-8 group-hover:bg-indigo-600 transition-all duration-500 group-hover:scale-110 shadow-lg">
-                                    <step.icon className="w-8 h-8 text-indigo-400 group-hover:text-white transition-colors" />
-                                </div>
-                                <h3 className="text-xl font-bold text-white mb-2">{step.title}</h3>
-                                <p className="text-sm text-gray-500 group-hover:text-gray-400 transition-colors uppercase tracking-tight">{step.desc}</p>
-                                <div className="mt-4 text-indigo-500 font-bold opacity-20 group-hover:opacity-100 transition-opacity">0{idx + 1}</div>
+                <div className="grid gap-px overflow-hidden rounded-3xl border border-white/[0.08] bg-white/[0.08] sm:grid-cols-2 lg:grid-cols-3">
+                    {steps.map((step, idx) => (
+                        <div
+                            key={idx}
+                            className="group relative bg-[#0B0F19] p-9 transition-colors duration-500 hover:bg-[#10152a]"
+                        >
+                            <div className="mb-10 flex items-start justify-between">
+                                <span className="pf-display text-5xl font-extrabold text-white/[0.07] transition-colors duration-500 group-hover:text-indigo-400/40">
+                                    0{idx + 1}
+                                </span>
+                                <step.icon className="h-6 w-6 text-indigo-400 transition-transform duration-500 group-hover:scale-110" />
                             </div>
-                        ))}
-                    </div>
+                            <h3 className="pf-display text-2xl font-bold text-white">{step.title}</h3>
+                            <p className="pf-mono mt-2 text-[10px] uppercase tracking-[0.22em] text-gray-500 transition-colors duration-300 group-hover:text-gray-400">
+                                {step.desc}
+                            </p>
+                        </div>
+                    ))}
                 </div>
             </div>
         </section>
@@ -92,14 +108,24 @@ export const Industries = () => {
         <section className="py-24 bg-[#0B0F19] border-y border-white/5 overflow-hidden">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="text-center mb-16">
-                    <h2 className="text-3xl font-black text-white uppercase tracking-[0.2em] mb-4">Industries We Serve</h2>
-                    <div className="w-24 h-1 bg-indigo-500 mx-auto rounded-full" />
+                    <div className="pf-mono mb-5 flex items-center justify-center gap-4 text-[11px] uppercase tracking-[0.35em] text-slate-400">
+                        <span className="text-indigo-300">(10)</span>
+                        <span>Industries</span>
+                    </div>
+                    <h2 className="pf-display text-[clamp(1.6rem,3vw,2.3rem)] font-bold text-white">
+                        Industries <span className="pf-outline-text">we serve.</span>
+                    </h2>
                 </div>
-                <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-5">
+                <div className="flex flex-wrap justify-center gap-3">
                     {industries.map((industry) => (
-                        <article key={industry.name} className="rounded-2xl border border-white/10 bg-white/5 p-4 transition hover:border-indigo-300/35">
-                            <industry.icon className="mb-2 h-5 w-5 text-indigo-300" />
-                            <p className="text-sm font-semibold text-white">{industry.name}</p>
+                        <article
+                            key={industry.name}
+                            className="group flex items-center gap-3 rounded-full border border-white/10 bg-white/[0.03] py-3 pl-4 pr-6 transition-all duration-300 hover:-translate-y-0.5 hover:border-indigo-300/40 hover:bg-indigo-500/10"
+                        >
+                            <industry.icon className="h-4 w-4 text-indigo-300" />
+                            <p className="pf-mono text-[11px] font-medium uppercase tracking-[0.15em] text-slate-200 transition-colors group-hover:text-white">
+                                {industry.name}
+                            </p>
                         </article>
                     ))}
                 </div>
@@ -120,23 +146,26 @@ export const GlobalPresence = () => {
         <section className="border-y border-white/5 bg-[#0B0F19] py-24">
             <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
                 <div className="mx-auto mb-14 max-w-3xl text-center">
-                    <span className="inline-flex items-center gap-2 rounded-full border border-indigo-300/30 bg-indigo-500/10 px-4 py-1.5 text-xs font-bold uppercase tracking-[0.16em] text-indigo-200">
-                        <Globe2 className="h-3.5 w-3.5" />
-                        Global Client Coverage
-                    </span>
-                    <h2 className="mt-5 text-4xl font-black text-white md:text-5xl">Trusted across key international markets</h2>
+                    <div className="pf-mono mb-6 flex items-center justify-center gap-4 text-[11px] uppercase tracking-[0.35em] text-slate-400">
+                        <span className="text-indigo-300">(11)</span>
+                        <span className="flex items-center gap-2">
+                            <Globe2 className="h-3.5 w-3.5" />
+                            Global Client Coverage
+                        </span>
+                    </div>
+                    <h2 className="pf-display mt-5 text-[clamp(1.7rem,3.2vw,2.5rem)] font-bold text-white">
+                        Trusted across key <span className="pf-outline-text">international markets.</span>
+                    </h2>
                     <p className="mt-4 text-lg text-gray-400">
                         We work with decision-makers and leadership teams across multiple regions, while maintaining one consistent standard of delivery excellence.
                     </p>
                 </div>
 
-                <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
+                <div className="grid gap-px overflow-hidden rounded-3xl border border-white/[0.08] bg-white/[0.08] md:grid-cols-2 lg:grid-cols-4">
                     {regions.map((region) => (
-                        <article key={region.name} className="rounded-2xl border border-white/10 bg-white/5 p-6 transition hover:border-indigo-300/35">
-                            <div className="mb-4 inline-flex h-10 w-10 items-center justify-center rounded-xl bg-indigo-500/10">
-                                <region.icon className="h-5 w-5 text-indigo-300" />
-                            </div>
-                            <h3 className="text-xl font-bold text-white">{region.name}</h3>
+                        <article key={region.name} className="group bg-[#0B0F19] p-8 transition-colors duration-500 hover:bg-[#10152a]">
+                            <region.icon className="mb-6 h-5 w-5 text-indigo-300 transition-transform duration-500 group-hover:-translate-y-1" />
+                            <h3 className="pf-display text-xl font-bold text-white">{region.name}</h3>
                             <p className="mt-2 text-sm leading-relaxed text-gray-400">{region.detail}</p>
                         </article>
                     ))}

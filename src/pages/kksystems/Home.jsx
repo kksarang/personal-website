@@ -1,11 +1,12 @@
 import React, { useEffect, useState } from 'react';
-import { AnimatePresence, motion } from 'framer-motion';
+import { AnimatePresence, motion as Motion } from 'framer-motion';
 import PremiumHero from '../../components/KkSystems/PremiumHero';
 import { Positioning, CoreOfferings } from '../../components/KkSystems/PremiumPositioning';
 import { PremiumSolutions, ProductLayer } from '../../components/KkSystems/PremiumSolutions';
 import { ImpactMetrics, HowWeWork, Industries, GlobalPresence } from '../../components/KkSystems/PremiumTrust';
 import { TechStack, WhyHexenity, ERPDemoEntry, FinalCTA } from '../../components/KkSystems/PremiumFinal';
 import HexenityValueStack from '../../components/KkSystems/HexenityValueStack';
+import HexenityMark from '../../components/KkSystems/HexenityMark';
 import TrustedBy from '../../components/KkSystems/TrustedBy';
 import Testimonials from '../../components/KkSystems/Testimonials';
 import FAQ from '../../components/KkSystems/FAQ';
@@ -18,14 +19,37 @@ const sectionReveal = {
 };
 
 const RevealSection = ({ children }) => (
-    <motion.div
+    <Motion.div
         initial={sectionReveal.initial}
         whileInView={sectionReveal.whileInView}
         viewport={sectionReveal.viewport}
         transition={sectionReveal.transition}
     >
         {children}
-    </motion.div>
+    </Motion.div>
+);
+
+const MARQUEE_ITEMS = ['Mobile Apps', 'Web Platforms', 'AI Systems', 'ERP', 'Branding', 'Automation', 'Growth'];
+
+/* Giant kinetic type ribbon between hero and content */
+const KineticStrip = () => (
+    <div className="overflow-hidden border-y border-white/5 bg-[#07080f] py-7">
+        <div className="pf-marquee">
+            {[0, 1].map((dup) => (
+                <div key={dup} className="pf-marquee-track" aria-hidden={dup === 1}>
+                    {MARQUEE_ITEMS.map((item) => (
+                        <span
+                            key={item}
+                            className="pf-display flex shrink-0 items-center gap-8 whitespace-nowrap text-[clamp(1.6rem,3.4vw,2.7rem)] font-extrabold leading-none"
+                        >
+                            <span className="pf-outline-text">{item}</span>
+                            <span className="text-xl text-indigo-400">✦</span>
+                        </span>
+                    ))}
+                </div>
+            ))}
+        </div>
+    </div>
 );
 
 const KksystemsHome = () => {
@@ -47,30 +71,36 @@ const KksystemsHome = () => {
         <div className="w-full min-h-screen bg-white font-sans text-gray-900 transition-colors duration-300 overflow-x-hidden dark:bg-[#0B0F19] dark:text-white">
             <AnimatePresence>
                 {showIntro && (
-                    <motion.div
+                    <Motion.div
                         initial={{ opacity: 1 }}
-                        exit={{ opacity: 0 }}
-                        transition={{ duration: 0.45 }}
-                        className="hexenity-intro-overlay fixed inset-0 z-[120] flex items-center justify-center bg-[#050816]"
+                        exit={{ y: '-100%' }}
+                        transition={{ duration: 0.85, ease: [0.76, 0, 0.24, 1] }}
+                        className="hexenity-intro-overlay fixed inset-0 z-[120] flex items-center justify-center bg-[#050505]"
                     >
-                        <div className="relative w-full max-w-xl px-8">
-                            <div className="pointer-events-none absolute -top-28 left-1/2 h-56 w-56 -translate-x-1/2 rounded-full bg-indigo-500/20 blur-[90px]" />
-                            <p className="mb-3 text-center text-xs font-semibold uppercase tracking-[0.26em] text-indigo-300">
-                                Initializing Hexenity Systems
-                            </p>
-                            <h2 className="text-center text-3xl font-black text-white md:text-4xl">
-                                Innovation Engine Online
-                            </h2>
-                            <div className="mt-8 overflow-hidden rounded-full border border-white/10 bg-white/5">
-                                <motion.div
-                                    initial={{ width: '0%' }}
-                                    animate={{ width: '100%' }}
-                                    transition={{ duration: 1.6, ease: 'easeInOut' }}
-                                    className="h-2 bg-gradient-to-r from-indigo-400 via-cyan-400 to-violet-400"
-                                />
+                        <div className="relative flex w-full max-w-4xl items-end justify-between px-10 sm:px-14">
+                            <div>
+                                <p className="pf-mono mb-4 text-[10px] uppercase tracking-[0.4em] text-white/40">
+                                    Digital & Software Solutions
+                                </p>
+                                <h2 className="pf-display flex items-center gap-4 text-4xl font-bold text-white sm:text-6xl">
+                                    <HexenityMark size={52} withGlow />
+                                    <span>
+                                        Hexenity<span className="text-indigo-400">.</span>
+                                    </span>
+                                </h2>
+                            </div>
+                            <div className="w-40 sm:w-56">
+                                <div className="overflow-hidden rounded-full bg-white/10">
+                                    <Motion.div
+                                        initial={{ width: '0%' }}
+                                        animate={{ width: '100%' }}
+                                        transition={{ duration: 1.6, ease: 'easeInOut' }}
+                                        className="h-1 bg-gradient-to-r from-indigo-400 via-violet-400 to-fuchsia-400"
+                                    />
+                                </div>
                             </div>
                         </div>
-                    </motion.div>
+                    </Motion.div>
                 )}
             </AnimatePresence>
 
@@ -78,6 +108,9 @@ const KksystemsHome = () => {
             <RevealSection>
                 <PremiumHero />
             </RevealSection>
+
+            {/* Kinetic type ribbon */}
+            <KineticStrip />
 
             {/* 2. Trusted By / Partners */}
             <RevealSection>

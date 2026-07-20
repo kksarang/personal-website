@@ -2,7 +2,7 @@ import React, { useCallback, useEffect, useRef, useState } from 'react';
 import { 
     animate,
     AnimatePresence,
-    motion,
+    motion as Motion,
     useInView,
     useReducedMotion,
 } from 'framer-motion';
@@ -157,7 +157,7 @@ function SpotlightHero({ navigate }) {
 
             <div className="relative grid gap-8 p-6 md:grid-cols-[1fr_1.05fr] md:p-8 lg:gap-10">
                 <div className="flex flex-col justify-center">
-                    <p className="inline-flex items-center gap-2 text-[11px] font-semibold uppercase tracking-[0.2em] text-indigo-300/90">
+                    <p className="inline-flex items-center gap-2 pf-mono text-[10px] uppercase tracking-[0.32em] text-indigo-300/90">
                         <span className="h-px w-6 bg-gradient-to-r from-indigo-400 to-transparent" />
                         Hexenity Operations Cloud
                     </p>
@@ -172,7 +172,7 @@ function SpotlightHero({ navigate }) {
                         <button
                             type="button"
                             onClick={() => navigate('/hexenity/contact')}
-                            className="hexenity-display rounded-xl bg-indigo-600 px-7 py-3.5 text-sm font-semibold tracking-tight text-white shadow-[0_0_36px_-4px_rgba(99,102,241,0.55)] transition hover:bg-indigo-500 hover:shadow-[0_0_48px_-6px_rgba(99,102,241,0.65)]"
+                            className="hexenity-display rounded-full bg-indigo-600 px-7 py-3.5 text-sm font-semibold tracking-tight text-white shadow-[0_0_36px_-4px_rgba(99,102,241,0.55)] transition hover:bg-indigo-500 hover:shadow-[0_0_48px_-6px_rgba(99,102,241,0.65)]"
                         >
                             Start enterprise demo
                         </button>
@@ -205,7 +205,7 @@ function SpotlightHero({ navigate }) {
                     </div>
                 </div>
 
-          <motion.div
+          <Motion.div
                     initial={{ opacity: 0, y: 24 }}
             animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.55, ease: [0.22, 1, 0.36, 1] }}
@@ -265,7 +265,7 @@ function SpotlightHero({ navigate }) {
                                 <div className="flex-1 rounded-xl border border-white/[0.08] bg-black/35 p-3">
                                     <p className="text-[10px] font-semibold uppercase tracking-[0.14em] text-slate-500">Live activity</p>
                                     <div className="mt-2 space-y-2">
-                                        {['Finance exported vendors', 'IT revoked 3 seats', 'AI flagged duplicate CRM'].map((t, i) => (
+                                        {['Finance exported vendors', 'IT revoked 3 seats', 'AI flagged duplicate CRM'].map((t) => (
                                             <div key={t} className="flex items-start gap-2 text-[11px] text-slate-300">
                                                 <Bell className="mt-0.5 h-3 w-3 shrink-0 text-indigo-400" aria-hidden />
                                                 <span>{t}</span>
@@ -333,7 +333,7 @@ function SpotlightHero({ navigate }) {
                             </div>
           </div>
         </div>
-                </motion.div>
+                </Motion.div>
     </div>
         </section>
     );
@@ -576,7 +576,7 @@ export default function HexenitySaaS() {
                 <button
                     type="button"
                     onClick={() => navigate('/hexenity/contact')}
-                    className="inline-flex items-center gap-2 rounded-xl border border-indigo-300/35 bg-indigo-500/20 px-4 py-2 text-xs font-semibold uppercase tracking-[0.13em] text-indigo-100 transition hover:bg-indigo-500/30"
+                    className="inline-flex items-center gap-2 rounded-full border border-indigo-300/35 bg-indigo-500/20 px-4 py-2 text-xs font-semibold uppercase tracking-[0.13em] text-indigo-100 transition hover:bg-indigo-500/30"
                 >
                     Request demo
                     <ArrowRight className="h-4 w-4" />
@@ -617,8 +617,8 @@ export default function HexenitySaaS() {
                 <section className="relative scroll-mt-32 md:scroll-mt-36">
                     <div className="flex flex-col gap-5 lg:flex-row lg:gap-12 lg:items-start">
                         <div className="min-w-0 flex-1">
-                            <p className="text-[11px] font-semibold uppercase tracking-[0.2em] text-rose-300/85">Operational reality</p>
-                            <h2 className="hexenity-display mt-2 max-w-2xl text-3xl font-semibold tracking-[-0.03em] text-white md:text-4xl">
+                            <p className="pf-mono text-[10px] uppercase tracking-[0.32em] text-rose-300/85">Operational reality</p>
+                            <h2 className="pf-display mt-3 max-w-2xl text-[clamp(1.7rem,3.2vw,2.5rem)] font-bold text-white">
                                 Why SaaS operations break inside growing enterprises
                             </h2>
                         </div>
@@ -630,7 +630,7 @@ export default function HexenitySaaS() {
                     <div className="relative mt-10 grid gap-0 md:grid-cols-[minmax(0,1fr)_minmax(0,1fr)] lg:gap-16">
                         <ul className="relative list-none space-y-0 p-0" aria-label="SaaS operations failure stages">
                             {problemChain.map((step, i) => (
-                                <motion.li
+                                <Motion.li
                                     key={step}
                                     initial={{ opacity: 0, x: -12 }}
                                     whileInView={{ opacity: 1, x: 0 }}
@@ -650,7 +650,7 @@ export default function HexenitySaaS() {
                                         </p>
                                         <p className="mt-1 max-w-lg text-lg font-medium leading-snug text-slate-100">{step}</p>
                                     </div>
-                                </motion.li>
+                                </Motion.li>
                             ))}
                         </ul>
                         <div className="mt-10 rounded-3xl border border-white/[0.1] bg-[#090f1c] p-6 md:mt-0 md:p-8" style={{
@@ -680,8 +680,8 @@ export default function HexenitySaaS() {
                 <section id="saas-showcase" className="scroll-mt-32">
                     <div className="flex flex-col gap-4 lg:flex-row lg:flex-wrap lg:items-end lg:justify-between">
                         <div>
-                            <p className="text-[11px] font-semibold uppercase tracking-[0.2em] text-cyan-300/85">Product surface</p>
-                            <h2 className="hexenity-display mt-2 text-3xl font-semibold tracking-[-0.03em] text-white md:text-4xl">
+                            <p className="pf-mono text-[10px] uppercase tracking-[0.32em] text-cyan-300/85">Product surface</p>
+                            <h2 className="pf-display mt-3 text-[clamp(1.7rem,3.2vw,2.5rem)] font-bold text-white">
                                 Live dashboard showcase
                             </h2>
             </div>
@@ -715,7 +715,7 @@ export default function HexenitySaaS() {
                         <div className="grid min-h-[320px] gap-0 lg:min-h-[360px] lg:grid-cols-[minmax(0,0.92fr)_minmax(0,1.08fr)]">
                             <div className="border-b border-white/[0.06] p-5 md:border-b-0 md:border-r md:p-8">
                                 <AnimatePresence mode="wait">
-                                    <motion.div
+                                    <Motion.div
                                         key={tab}
                                         initial={{ opacity: 0, y: 6 }}
                                         animate={{ opacity: 1, y: 0 }}
@@ -753,7 +753,7 @@ export default function HexenitySaaS() {
                                                 </div>
                                             </div>
                                         </div>
-                                    </motion.div>
+                                    </Motion.div>
                                 </AnimatePresence>
                             </div>
                             <div className="relative min-h-[240px] w-full bg-[#080d18] p-4 lg:min-h-0 lg:p-8">
@@ -772,8 +772,8 @@ export default function HexenitySaaS() {
                 <section>
                     <div className="mb-8 flex flex-wrap items-end justify-between gap-4">
                         <div>
-                            <p className="text-[11px] font-semibold uppercase tracking-[0.2em] text-indigo-300/85">Platform modules</p>
-                            <h2 className="hexenity-display mt-2 text-3xl font-semibold tracking-[-0.03em] text-white md:text-4xl">
+                            <p className="pf-mono text-[10px] uppercase tracking-[0.32em] text-indigo-300/85">Platform modules</p>
+                            <h2 className="pf-display mt-3 text-[clamp(1.7rem,3.2vw,2.5rem)] font-bold text-white">
                                 Bento grid architecture
                             </h2>
                         </div>
@@ -781,7 +781,7 @@ export default function HexenitySaaS() {
                     </div>
                     <div className="grid auto-rows-[minmax(140px,auto)] grid-cols-1 gap-3 md:grid-cols-4 md:gap-4">
                         {bentoModules.map((m, idx) => (
-                            <motion.article
+                            <Motion.article
                                 key={m.title}
                                 initial={{ opacity: 0, y: 16 }}
                                 whileInView={{ opacity: 1, y: 0 }}
@@ -843,7 +843,7 @@ export default function HexenitySaaS() {
              </div>
                                     ) : null}
            </div>
-                            </motion.article>
+                            </Motion.article>
         ))}
       </div>
                 </section>
@@ -852,8 +852,8 @@ export default function HexenitySaaS() {
                 <section className="overflow-hidden rounded-3xl border border-white/[0.1] bg-gradient-to-b from-[#0f1628] to-[#0b101d] px-5 py-8 md:p-10">
                     <div className="flex flex-wrap items-center justify-between gap-4">
                         <div>
-                            <p className="text-[11px] font-semibold uppercase tracking-[0.2em] text-emerald-300/85">Lifecycle automation</p>
-                            <h2 className="hexenity-display mt-2 text-3xl font-semibold tracking-[-0.03em] text-white md:text-4xl">
+                            <p className="pf-mono text-[10px] uppercase tracking-[0.32em] text-emerald-300/85">Lifecycle automation</p>
+                            <h2 className="pf-display mt-3 text-[clamp(1.7rem,3.2vw,2.5rem)] font-bold text-white">
                                 Live employee → license workflow
                             </h2>
                         </div>
@@ -877,14 +877,14 @@ export default function HexenitySaaS() {
                 {/* Enterprise features */}
                 <section>
                     <div className="mb-10">
-                        <p className="text-[11px] font-semibold uppercase tracking-[0.2em] text-violet-300/85">Enterprise surface</p>
-                        <h2 className="hexenity-display mt-2 text-3xl font-semibold tracking-[-0.03em] text-white md:text-4xl">
+                        <p className="pf-mono text-[10px] uppercase tracking-[0.32em] text-violet-300/85">Enterprise surface</p>
+                        <h2 className="pf-display mt-3 text-[clamp(1.7rem,3.2vw,2.5rem)] font-bold text-white">
                             Controls procurement, security & engineering expect
                         </h2>
                     </div>
                     <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-3">
                         {enterpriseFeatures.map((f, i) => (
-                            <motion.div
+                            <Motion.div
                                 key={f.title}
                                 initial={{ opacity: 0, y: 12 }}
                                 whileInView={{ opacity: 1, y: 0 }}
@@ -906,7 +906,7 @@ export default function HexenitySaaS() {
                                 <div className="relative mt-4 h-[52px] overflow-hidden rounded-lg border border-white/[0.06] bg-black/30">
                                     <div className="absolute inset-x-4 bottom-0 flex h-[36px] items-end gap-1">
                                         {[40 + i * 5, 28, 55, 44, 32, 62].map((h, j) => (
-                                            <motion.div
+                                            <Motion.div
                                                 key={j}
                                                 className="flex-1 rounded-t-sm bg-gradient-to-t from-indigo-900/70 to-indigo-400/50"
                                                 initial={{ height: 0 }}
@@ -917,7 +917,7 @@ export default function HexenitySaaS() {
                ))}
             </div>
          </div>
-                            </motion.div>
+                            </Motion.div>
                         ))}
                     </div>
                 </section>
@@ -928,7 +928,7 @@ export default function HexenitySaaS() {
                     <div className="pointer-events-none absolute bottom-10 left-0 h-48 w-48 rounded-full bg-violet-500/10 blur-3xl" />
                     <div className="relative grid gap-10 lg:grid-cols-[minmax(0,1.1fr)_minmax(0,0.95fr)]">
                         <div>
-                            <p className="text-[11px] font-semibold uppercase tracking-[0.2em] text-sky-300/85">How Hexenity ships SaaS</p>
+                            <p className="pf-mono text-[10px] uppercase tracking-[0.32em] text-sky-300/85">How Hexenity ships SaaS</p>
                             <h2 className="hexenity-display mt-3 text-3xl font-semibold tracking-[-0.03em] text-white md:text-4xl">
                                 Engineering runway your exec team understands
                             </h2>
@@ -960,13 +960,13 @@ export default function HexenitySaaS() {
                             <p className="text-[11px] font-semibold uppercase tracking-[0.16em] text-slate-500">Trusted stack fingerprints</p>
                             <div className="mt-4 flex flex-wrap gap-2">
                                 {techStack.map((tech) => (
-                                    <motion.span
+                                    <Motion.span
                                         key={tech}
                                         whileHover={{ scale: 1.02 }}
                                         className="rounded-xl border border-white/[0.1] bg-gradient-to-br from-white/[0.07] to-transparent px-4 py-2 text-xs font-semibold tracking-tight text-slate-200"
                                     >
                                         {tech}
-                                    </motion.span>
+                                    </Motion.span>
                                 ))}
             </div>
                             <div className="relative mt-8 overflow-hidden rounded-2xl border border-indigo-400/20 bg-gradient-to-br from-indigo-500/[0.12] via-transparent to-cyan-400/[0.08] p-6">
@@ -989,14 +989,14 @@ export default function HexenitySaaS() {
 
                 {/* Dev process */}
                 <section className="rounded-3xl border border-white/[0.09] bg-[#0a1020] px-6 py-10 md:px-10">
-                    <p className="text-[11px] font-semibold uppercase tracking-[0.2em] text-amber-200/85">Confidence timeline</p>
-                    <h2 className="hexenity-display mt-2 text-3xl font-semibold tracking-[-0.03em] text-white md:text-4xl">
+                    <p className="pf-mono text-[10px] uppercase tracking-[0.32em] text-amber-200/85">Confidence timeline</p>
+                    <h2 className="pf-display mt-3 text-[clamp(1.7rem,3.2vw,2.5rem)] font-bold text-white">
                         Product development process
                             </h2>
                     <div className="relative mt-12 space-y-0">
                         <div className="absolute left-[11px] top-2 hidden h-[calc(100%-2rem)] w-px bg-gradient-to-b from-indigo-400/50 via-white/15 to-transparent md:block" aria-hidden />
                         {devProcess.map((d, idx) => (
-                            <motion.div
+                            <Motion.div
                                 key={d.phase}
                                 initial={{ opacity: 0, y: 8 }}
                                 whileInView={{ opacity: 1, y: 0 }}
@@ -1013,20 +1013,20 @@ export default function HexenitySaaS() {
                                     <p className="text-[11px] font-semibold uppercase tracking-[0.16em] text-indigo-200/85">{d.phase}</p>
                                     <p className="mt-2 text-sm leading-relaxed text-slate-300">{d.detail}</p>
                                     </div>
-            </motion.div>
+            </Motion.div>
           ))}
                     </div>
                 </section>
 
                 {/* Testimonials */}
                 <section>
-                    <p className="text-[11px] font-semibold uppercase tracking-[0.2em] text-emerald-300/85">Proof, not fluff</p>
-                    <h2 className="hexenity-display mt-2 text-3xl font-semibold tracking-[-0.03em] text-white md:text-4xl">
+                    <p className="pf-mono text-[10px] uppercase tracking-[0.32em] text-emerald-300/85">Proof, not fluff</p>
+                    <h2 className="pf-display mt-3 text-[clamp(1.7rem,3.2vw,2.5rem)] font-bold text-white">
                         Operational leaders on measurable deltas
                                     </h2>
                     <div className="mt-10 grid gap-5 lg:grid-cols-3">
                         {testimonials.map((tm) => (
-                            <motion.blockquote
+                            <Motion.blockquote
                                 key={tm.name}
                                 initial={{ opacity: 0, y: 14 }}
                                 whileInView={{ opacity: 1, y: 0 }}
@@ -1050,7 +1050,7 @@ export default function HexenitySaaS() {
                                     <p className="text-sm font-semibold text-white">{tm.name}</p>
                                     <p className="text-xs text-indigo-200/85">{tm.role}</p>
                                 </footer>
-                            </motion.blockquote>
+                            </Motion.blockquote>
                         ))}
       </div>
                 </section>
@@ -1059,8 +1059,8 @@ export default function HexenitySaaS() {
                 <section className="rounded-3xl border border-white/[0.1] bg-[#0c1325] px-6 py-10 md:px-10">
                     <div className="flex flex-wrap items-start justify-between gap-6">
                         <div>
-                            <p className="text-[11px] font-semibold uppercase tracking-[0.2em] text-indigo-300/85">Interactive pricing sketch</p>
-                            <h2 className="hexenity-display mt-2 text-3xl font-semibold tracking-[-0.03em] text-white md:text-4xl">
+                            <p className="pf-mono text-[10px] uppercase tracking-[0.32em] text-indigo-300/85">Interactive pricing sketch</p>
+                            <h2 className="pf-display mt-3 text-[clamp(1.7rem,3.2vw,2.5rem)] font-bold text-white">
                                 Scale teams, not spreadsheets
                                             </h2>
             </div>
@@ -1108,7 +1108,7 @@ export default function HexenitySaaS() {
                                     feats: ['Custom connectors', 'SAML + SCIM hardening reviews', '24/7 support lanes', 'Benchmark desk'],
                                 },
                             ].map((tier) => (
-                                <motion.div
+                                <Motion.div
                                     key={tier.name}
                                     whileHover={{ y: tier.highlight ? -8 : -4 }}
                                     className={`relative flex flex-col rounded-2xl border p-7 ${
@@ -1153,13 +1153,13 @@ export default function HexenitySaaS() {
                                                 >
                                                     {tier.priceM !== null ? 'Start pilot' : 'Contact enterprise desk'}
                  </button>
-                                            </motion.div>
+                                            </Motion.div>
                ))}
             </div>
                 </section>
 
                 {/* Final CTA */}
-                <motion.section
+                <Motion.section
                     initial={{ opacity: 0 }}
                     whileInView={{ opacity: 1 }}
                     viewport={{ once: true }}
@@ -1186,7 +1186,7 @@ export default function HexenitySaaS() {
                         Schedule executive session
                                             <ArrowRight className="h-4 w-4" aria-hidden />
                     </button>
-                </motion.section>
+                </Motion.section>
 
                 {/* Compressed legacy pillar links — retain SEO depth without card monotony */}
                 <details className="group rounded-2xl border border-white/[0.08] bg-[#101726] px-6 py-4 text-sm">

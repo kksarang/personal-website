@@ -26,7 +26,7 @@ import {
     Users,
     Code,
 } from 'lucide-react';
-import { AnimatePresence, motion } from 'framer-motion';
+import { AnimatePresence, motion as Motion } from 'framer-motion';
 import HexenityPageShell from '../../components/KkSystems/HexenityPageShell';
 import { learningTopics } from '../../data/learning';
 import { learningDetailsContent, learningMegaChapters } from '../../data/learningCatalog';
@@ -209,7 +209,7 @@ export default function LearningDetails() {
                                 <button
                                     type="button"
                                     onClick={() => navigate('/hexenity/contact')}
-                                    className="inline-flex w-full items-center justify-center gap-2 rounded-xl bg-indigo-600 px-3 py-2 text-xs font-semibold uppercase tracking-[0.13em] text-white transition hover:bg-indigo-500"
+                                    className="inline-flex w-full items-center justify-center gap-2 rounded-full bg-indigo-600 px-3 py-2 text-xs font-semibold uppercase tracking-[0.13em] text-white transition hover:bg-indigo-500"
                                 >
                                     Contact Hexenity
                                 </button>
@@ -291,7 +291,7 @@ export default function LearningDetails() {
                                     <button
                                         type="button"
                                         onClick={() => navigate(hero.primaryCtaPath || '/hexenity/contact')}
-                                        className="inline-flex items-center gap-2 rounded-xl bg-indigo-600 px-4 py-2 text-xs font-semibold uppercase tracking-[0.13em] text-white transition hover:bg-indigo-500"
+                                        className="inline-flex items-center gap-2 rounded-full bg-indigo-600 px-4 py-2 text-xs font-semibold uppercase tracking-[0.13em] text-white transition hover:bg-indigo-500"
                                     >
                                         {hero.primaryCtaLabel}
                                     </button>
@@ -323,7 +323,7 @@ export default function LearningDetails() {
                         {detail?.whyImportant?.length ? (
                             <div className="mt-5 grid gap-3 md:grid-cols-2">
                                 {detail.whyImportant.map((point) => (
-                                    <div key={point} className="rounded-xl border border-white/10 bg-white/5 p-4 text-sm text-slate-200">
+                                    <div key={point} className="rounded-xl border border-white/[0.07] bg-white/[0.03] p-4 transition-colors duration-300 hover:border-indigo-300/25 text-sm text-slate-200">
                                         {point}
                                     </div>
                                 ))}
@@ -341,7 +341,7 @@ export default function LearningDetails() {
                             {webDefinition.disciplines?.length ? (
                                 <div className="mt-5 grid gap-4 md:grid-cols-3">
                                     {webDefinition.disciplines.map((discipline) => (
-                                        <article key={discipline.title} className="rounded-xl border border-white/10 bg-white/5 p-4">
+                                        <article key={discipline.title} className="rounded-xl border border-white/[0.07] bg-white/[0.03] p-4 transition-colors duration-300 hover:border-indigo-300/25">
                                             <p className="font-semibold text-white">{discipline.title}</p>
                                             <p className="mt-2 text-sm text-slate-300">{discipline.detail}</p>
                                         </article>
@@ -378,7 +378,7 @@ export default function LearningDetails() {
                             {mobileDefinition.ecosystems?.length ? (
                                 <div className="mt-5 grid gap-4 md:grid-cols-3">
                                     {mobileDefinition.ecosystems.map((ecosystem) => (
-                                        <article key={ecosystem.title} className="rounded-xl border border-white/10 bg-white/5 p-4">
+                                        <article key={ecosystem.title} className="rounded-xl border border-white/[0.07] bg-white/[0.03] p-4 transition-colors duration-300 hover:border-indigo-300/25">
                                             <p className="font-semibold text-white">{ecosystem.title}</p>
                                             <p className="mt-2 text-sm text-slate-300">{ecosystem.detail}</p>
                                         </article>
@@ -413,7 +413,7 @@ export default function LearningDetails() {
                             </h2>
                             <div className="mt-5 grid gap-3 md:grid-cols-2">
                                 {detail.prerequisites.map((item) => (
-                                    <div key={item} className="flex items-start gap-2 rounded-xl border border-white/10 bg-white/5 p-4 text-sm text-slate-200">
+                                    <div key={item} className="flex items-start gap-2 rounded-xl border border-white/[0.07] bg-white/[0.03] p-4 transition-colors duration-300 hover:border-indigo-300/25 text-sm text-slate-200">
                                         <CheckCircle2 className="mt-0.5 h-4 w-4 text-emerald-300" />
                                         <span>{item}</span>
                                     </div>
@@ -430,7 +430,7 @@ export default function LearningDetails() {
                             </h2>
                             <div className="mt-5 grid gap-4 md:grid-cols-2">
                                 {technologiesCovered.map((technology) => (
-                                    <article key={technology.name} className="rounded-2xl border border-white/10 bg-white/5 p-5">
+                                    <article key={technology.name} className="rounded-2xl border border-white/[0.07] bg-white/[0.03] p-6 transition-colors duration-300 hover:border-indigo-300/30">
                                         <p className="text-lg font-semibold text-white">{technology.name}</p>
                                         <p className="mt-2 text-sm text-slate-300">{technology.description}</p>
                                         {technology.whyItMatters ? (
@@ -450,7 +450,7 @@ export default function LearningDetails() {
                             </h2>
                             <div className="mt-5 grid gap-4 md:grid-cols-2">
                                 {toolsPlatforms.map((tool) => (
-                                    <article key={tool.name} className="rounded-xl border border-white/10 bg-white/5 p-4">
+                                    <article key={tool.name} className="rounded-xl border border-white/[0.07] bg-white/[0.03] p-4 transition-colors duration-300 hover:border-indigo-300/25">
                                         <p className="font-semibold text-white">{tool.name}</p>
                                         <p className="mt-2 text-sm text-slate-300">{tool.description}</p>
                                     </article>
@@ -466,7 +466,7 @@ export default function LearningDetails() {
                         </h2>
                         <div className="mt-5 space-y-4">
                             {modules.map((module) => (
-                                <article key={module.title} className="rounded-2xl border border-white/10 bg-white/5 p-5">
+                                <article key={module.title} className="rounded-2xl border border-white/[0.07] bg-white/[0.03] p-6 transition-colors duration-300 hover:border-indigo-300/30">
                                     <h3 className="text-lg font-semibold text-white">{module.title}</h3>
                                     <p className="mt-2 text-sm text-slate-300">{module.summary}</p>
                                     <div className="mt-3 flex flex-wrap gap-2">
@@ -532,7 +532,7 @@ export default function LearningDetails() {
                             </p>
                             <div className="mt-5 grid gap-4 md:grid-cols-2">
                                 {megaChapters.map((chapter) => (
-                                    <article key={chapter.section} className="rounded-2xl border border-white/10 bg-white/5 p-5">
+                                    <article key={chapter.section} className="rounded-2xl border border-white/[0.07] bg-white/[0.03] p-6 transition-colors duration-300 hover:border-indigo-300/30">
                                         <h3 className="text-base font-semibold text-white">{chapter.section}</h3>
                                         <ul className="mt-3 space-y-1.5 text-sm text-slate-300">
                                             {chapter.items.map((item) => (
@@ -556,7 +556,7 @@ export default function LearningDetails() {
                             </p>
                             <div className="mt-5 grid gap-4 md:grid-cols-2">
                                 {androidSyllabus.map((block) => (
-                                    <article key={block.section} className="rounded-2xl border border-white/10 bg-white/5 p-5">
+                                    <article key={block.section} className="rounded-2xl border border-white/[0.07] bg-white/[0.03] p-6 transition-colors duration-300 hover:border-indigo-300/30">
                                         <h3 className="text-base font-semibold text-white">{block.section}</h3>
                                         <ul className="mt-3 space-y-1.5 text-sm text-slate-300">
                                             {block.topics.map((topicItem) => (
@@ -600,7 +600,7 @@ export default function LearningDetails() {
                             </h2>
                             <div className="mt-5 grid gap-3 sm:grid-cols-2">
                                 {topic.techStack.map((stack) => (
-                                    <div key={stack.category} className="rounded-xl border border-white/10 bg-white/5 p-4">
+                                    <div key={stack.category} className="rounded-xl border border-white/[0.07] bg-white/[0.03] p-4 transition-colors duration-300 hover:border-indigo-300/25">
                                         <p className="text-xs uppercase tracking-[0.12em] text-indigo-300">{stack.category}</p>
                                         <p className="mt-1 text-slate-200">{stack.tools}</p>
                                     </div>
@@ -617,7 +617,7 @@ export default function LearningDetails() {
                             </h2>
                             <div className="mt-5 space-y-4">
                                 {roadmapLevels.map((level) => (
-                                    <article key={level.level} className="rounded-2xl border border-white/10 bg-white/5 p-5">
+                                    <article key={level.level} className="rounded-2xl border border-white/[0.07] bg-white/[0.03] p-6 transition-colors duration-300 hover:border-indigo-300/30">
                                         <div className="flex flex-wrap items-center justify-between gap-2">
                                             <p className="text-lg font-semibold text-white">{level.level}</p>
                                             <span className="rounded-full border border-white/15 bg-black/20 px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.12em] text-slate-200">
@@ -655,7 +655,7 @@ export default function LearningDetails() {
                         </h2>
                         <div className="mt-5 space-y-3">
                             {roadmap.map((phase) => (
-                                <article key={phase.phase} className="rounded-xl border border-white/10 bg-white/5 p-4">
+                                <article key={phase.phase} className="rounded-xl border border-white/[0.07] bg-white/[0.03] p-4 transition-colors duration-300 hover:border-indigo-300/25">
                                     <p className="text-xs uppercase tracking-[0.12em] text-indigo-300">{phase.phase}</p>
                                     <p className="mt-1 font-semibold text-white">{phase.focus}</p>
                                     <ul className="mt-2 space-y-1 text-sm text-slate-300">
@@ -676,7 +676,7 @@ export default function LearningDetails() {
                             </h2>
                             <div className="mt-5 space-y-4">
                                 {caseStudies.map((study) => (
-                                    <article key={study.title} className="rounded-2xl border border-white/10 bg-white/5 p-5">
+                                    <article key={study.title} className="rounded-2xl border border-white/[0.07] bg-white/[0.03] p-6 transition-colors duration-300 hover:border-indigo-300/30">
                                         <p className="text-lg font-semibold text-white">{study.title}</p>
                                         {study.challenge ? <p className="mt-2 text-sm text-slate-300"><span className="font-semibold text-slate-200">Challenge:</span> {study.challenge}</p> : null}
                                         {study.strategy ? <p className="mt-2 text-sm text-slate-300"><span className="font-semibold text-slate-200">Strategy:</span> {study.strategy}</p> : null}
@@ -713,7 +713,7 @@ export default function LearningDetails() {
                             </h2>
                             <div className="mt-5 space-y-6">
                                 {spotlights.map((block) => (
-                                    <article key={block.title} className="rounded-2xl border border-white/10 bg-white/5 p-5">
+                                    <article key={block.title} className="rounded-2xl border border-white/[0.07] bg-white/[0.03] p-6 transition-colors duration-300 hover:border-indigo-300/30">
                                         <p className="text-lg font-semibold text-white">{block.title}</p>
                                         {block.description ? (
                                             <p className="mt-2 text-sm leading-relaxed text-slate-300">{block.description}</p>
@@ -740,7 +740,7 @@ export default function LearningDetails() {
                         </h2>
                         <div className="mt-5 space-y-4">
                             {projects.map((project) => (
-                                <article key={project.name || project.title} className="rounded-2xl border border-white/10 bg-white/5 p-5">
+                                <article key={project.name || project.title} className="rounded-2xl border border-white/[0.07] bg-white/[0.03] p-6 transition-colors duration-300 hover:border-indigo-300/30">
                                     <div className="flex flex-wrap items-center gap-2">
                                         <h3 className="text-lg font-semibold text-white">{project.name || project.title}</h3>
                                         {project.level ? (
@@ -780,7 +780,7 @@ export default function LearningDetails() {
                             </h2>
                             <div className="mt-5 grid gap-4 md:grid-cols-2">
                                 {careerOpportunities.map((career) => (
-                                    <article key={career.role} className="rounded-2xl border border-white/10 bg-white/5 p-5">
+                                    <article key={career.role} className="rounded-2xl border border-white/[0.07] bg-white/[0.03] p-6 transition-colors duration-300 hover:border-indigo-300/30">
                                         <p className="text-lg font-semibold text-white">{career.role}</p>
                                         <p className="mt-2 text-sm text-slate-300">{career.description}</p>
                                         <p className="mt-3 text-xs uppercase tracking-[0.12em] text-indigo-200">Salary range: {career.salaryRange}</p>
@@ -799,7 +799,7 @@ export default function LearningDetails() {
                             </h2>
                             <div className="mt-5 grid gap-4 md:grid-cols-2">
                                 {whyLearnHexenity.map((item) => (
-                                    <article key={item.title} className="rounded-xl border border-white/10 bg-white/5 p-4">
+                                    <article key={item.title} className="rounded-xl border border-white/[0.07] bg-white/[0.03] p-4 transition-colors duration-300 hover:border-indigo-300/25">
                                         <p className="font-semibold text-white">{item.title}</p>
                                         <p className="mt-2 text-sm text-slate-300">{item.detail}</p>
                                     </article>
@@ -879,7 +879,7 @@ export default function LearningDetails() {
                         </h2>
                         <div className="mt-5 space-y-3">
                             {interviewQuestions.map((question) => (
-                                <div key={question} className="rounded-xl border border-white/10 bg-white/5 p-4 text-sm text-slate-200">
+                                <div key={question} className="rounded-xl border border-white/[0.07] bg-white/[0.03] p-4 transition-colors duration-300 hover:border-indigo-300/25 text-sm text-slate-200">
                                     {question}
                                 </div>
                             ))}
@@ -893,7 +893,7 @@ export default function LearningDetails() {
                         </h2>
                         <div className="mt-5 space-y-3">
                             {faqs.map((item) => (
-                                <article key={item.question} className="rounded-xl border border-white/10 bg-white/5 p-4">
+                                <article key={item.question} className="rounded-xl border border-white/[0.07] bg-white/[0.03] p-4 transition-colors duration-300 hover:border-indigo-300/25">
                                     <p className="font-semibold text-white">{item.question}</p>
                                     <p className="mt-2 text-sm text-slate-300">{item.answer}</p>
                                 </article>
@@ -910,7 +910,7 @@ export default function LearningDetails() {
                                     <button
                                         type="button"
                                         onClick={() => navigate(cta.primaryPath || '/hexenity/contact')}
-                                        className="inline-flex items-center gap-2 rounded-xl bg-indigo-600 px-5 py-2.5 text-sm font-semibold text-white transition hover:bg-indigo-500"
+                                        className="inline-flex items-center gap-2 rounded-full bg-indigo-600 px-5 py-2.5 text-sm font-semibold text-white transition hover:bg-indigo-500"
                                     >
                                         {cta.primaryLabel}
                                     </button>
@@ -983,7 +983,7 @@ export default function LearningDetails() {
                         <p className="mt-2 text-sm text-slate-200">Discuss your learning roadmap or project build with Hexenity.</p>
                         <button
                             onClick={() => navigate('/hexenity/contact')}
-                            className="mt-4 inline-flex items-center gap-2 rounded-xl bg-indigo-600 px-4 py-2 text-xs font-semibold uppercase tracking-[0.13em] text-white transition hover:bg-indigo-500"
+                            className="mt-4 inline-flex items-center gap-2 rounded-full bg-indigo-600 px-4 py-2 text-xs font-semibold uppercase tracking-[0.13em] text-white transition hover:bg-indigo-500"
                         >
                             Contact Hexenity
                         </button>
@@ -1085,16 +1085,16 @@ function MobileLearningExperience({ navigate }) {
                 </div>
                 <div className="mt-6 grid gap-3 sm:grid-cols-2">
                     {mobileLearningExperienceData.quickOptions.map((option) => (
-                        <motion.button
+                        <Motion.button
                             key={option.id}
                             type="button"
                             whileHover={{ y: -2 }}
                             onClick={() => handleQuickOption(option)}
-                            className="rounded-xl border border-white/10 bg-white/5 p-4 text-left shadow-[0_0_0_1px_rgba(99,102,241,0.08)] transition hover:border-indigo-300/30 hover:bg-white/10"
+                            className="rounded-xl border border-white/[0.07] bg-white/[0.03] p-4 transition-colors duration-300 hover:border-indigo-300/25 text-left shadow-[0_0_0_1px_rgba(99,102,241,0.08)] transition hover:border-indigo-300/30 hover:bg-white/10"
                         >
                             <p className="text-sm font-semibold uppercase tracking-[0.12em] text-white">{option.label}</p>
                             <p className="mt-1 text-sm text-slate-300">{option.description}</p>
-                        </motion.button>
+                        </Motion.button>
                     ))}
                 </div>
             </section>
@@ -1113,13 +1113,13 @@ function MobileLearningExperience({ navigate }) {
                 <p className="mt-2 text-sm text-slate-300">Beginner to production-ready timeline with skills, projects, duration, and outcomes.</p>
                 <div className="mt-6 space-y-4">
                     {mobileLearningExperienceData.roadmapTimeline.map((step, index) => (
-                        <motion.article
+                        <Motion.article
                             key={step.id}
                             initial={{ opacity: 0, y: 14 }}
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true, amount: 0.25 }}
                             transition={{ delay: index * 0.05 }}
-                            className="relative rounded-2xl border border-white/10 bg-white/5 p-5 backdrop-blur-sm"
+                            className="relative rounded-2xl border border-white/[0.07] bg-white/[0.03] p-6 transition-colors duration-300 hover:border-indigo-300/30 backdrop-blur-sm"
                         >
                             <div className="absolute left-0 top-0 h-full w-1 rounded-l-2xl bg-gradient-to-b from-indigo-400/80 to-cyan-400/80" />
                             <div className="flex flex-wrap items-center justify-between gap-2 pl-3">
@@ -1130,7 +1130,7 @@ function MobileLearningExperience({ navigate }) {
                             </div>
                             <div className="mt-3 pl-3">
                                 <div className="h-2 w-full overflow-hidden rounded-full bg-slate-900/70">
-                                    <motion.div
+                                    <Motion.div
                                         initial={{ width: 0 }}
                                         whileInView={{ width: `${step.progress}%` }}
                                         viewport={{ once: true }}
@@ -1161,7 +1161,7 @@ function MobileLearningExperience({ navigate }) {
                                     <p className="mt-2 text-sm text-slate-300">{step.outcomes}</p>
                                 </div>
                             </div>
-                        </motion.article>
+                        </Motion.article>
                     ))}
                 </div>
             </section>
@@ -1186,13 +1186,13 @@ function MobileLearningExperience({ navigate }) {
                     ))}
                 </div>
                 <AnimatePresence mode="wait">
-                    <motion.article
+                    <Motion.article
                         key={activeMode.id}
                         initial={{ opacity: 0, y: 12 }}
                         animate={{ opacity: 1, y: 0 }}
                         exit={{ opacity: 0, y: -8 }}
                         transition={{ duration: 0.22 }}
-                        className="mt-5 rounded-2xl border border-white/10 bg-white/5 p-5"
+                        className="mt-5 rounded-2xl border border-white/[0.07] bg-white/[0.03] p-6 transition-colors duration-300 hover:border-indigo-300/30"
                     >
                         <div className="flex flex-wrap items-center justify-between gap-2">
                             <p className="text-xl font-semibold text-white">{activeMode.label}</p>
@@ -1227,7 +1227,7 @@ function MobileLearningExperience({ navigate }) {
                                 </ul>
                             </div>
                         </div>
-                    </motion.article>
+                    </Motion.article>
                 </AnimatePresence>
             </section>
 
@@ -1235,10 +1235,10 @@ function MobileLearningExperience({ navigate }) {
                 <h2 className="text-2xl font-bold text-white">What you will build</h2>
                 <div className="mt-5 grid gap-4 md:grid-cols-2">
                     {mobileLearningExperienceData.whatYouWillBuild.map((project) => (
-                        <motion.article
+                        <Motion.article
                             key={project.name}
                             whileHover={{ y: -3 }}
-                            className="rounded-2xl border border-white/10 bg-white/5 p-5 transition hover:border-indigo-300/30"
+                            className="rounded-2xl border border-white/[0.07] bg-white/[0.03] p-6 transition-colors duration-300 hover:border-indigo-300/30 transition hover:border-indigo-300/30"
                         >
                             <div className="rounded-xl border border-white/10 bg-gradient-to-br from-indigo-900/40 via-slate-900/60 to-cyan-900/30 p-4">
                                 <p className="text-sm font-semibold uppercase tracking-[0.12em] text-slate-200">Preview Mockup</p>
@@ -1263,7 +1263,7 @@ function MobileLearningExperience({ navigate }) {
                                     </span>
                                 ))}
                             </div>
-                        </motion.article>
+                        </Motion.article>
                     ))}
                 </div>
             </section>
@@ -1272,7 +1272,7 @@ function MobileLearningExperience({ navigate }) {
                 <h2 className="text-2xl font-bold text-white">Tech stack grid</h2>
                 <div className="mt-5 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
                     {mobileLearningExperienceData.techStackGrid.map((item) => (
-                        <motion.article
+                        <Motion.article
                             key={item.name}
                             whileHover={{ scale: 1.02 }}
                             className="rounded-2xl border border-white/10 bg-gradient-to-b from-white/10 to-white/5 p-4 shadow-[0_0_0_1px_rgba(99,102,241,0.08)] transition hover:border-indigo-300/35"
@@ -1282,7 +1282,7 @@ function MobileLearningExperience({ navigate }) {
                                 <p className="text-base font-semibold text-white">{item.name}</p>
                             </div>
                             <p className="mt-2 text-sm text-slate-300">{item.description}</p>
-                        </motion.article>
+                        </Motion.article>
                     ))}
                 </div>
             </section>
@@ -1292,7 +1292,7 @@ function MobileLearningExperience({ navigate }) {
                 <p className="mt-2 text-sm text-slate-300">Job roles, salary bands, freelance opportunities, startup scope, and remote hiring potential.</p>
                 <div className="mt-4 grid gap-4 md:grid-cols-2">
                     {mobileLearningExperienceData.careers.map((career) => (
-                        <article key={career.role} className="rounded-xl border border-white/10 bg-white/5 p-4">
+                        <article key={career.role} className="rounded-xl border border-white/[0.07] bg-white/[0.03] p-4 transition-colors duration-300 hover:border-indigo-300/25">
                             <p className="font-semibold text-white">{career.role}</p>
                             <p className="mt-2 text-xs uppercase tracking-[0.12em] text-indigo-200">Salary: {career.salary}</p>
                             <p className="mt-1 text-xs uppercase tracking-[0.12em] text-emerald-200">{career.remote}</p>
@@ -1305,7 +1305,7 @@ function MobileLearningExperience({ navigate }) {
                 <h2 className="text-2xl font-bold text-white">Mentor and industry section</h2>
                 <div className="mt-4 grid gap-4 md:grid-cols-3">
                     {mobileLearningExperienceData.mentorIndustry.map((mentor) => (
-                        <article key={mentor.name} className="rounded-xl border border-white/10 bg-white/5 p-4">
+                        <article key={mentor.name} className="rounded-xl border border-white/[0.07] bg-white/[0.03] p-4 transition-colors duration-300 hover:border-indigo-300/25">
                             <p className="font-semibold text-white">{mentor.name}</p>
                             <p className="mt-1 text-xs uppercase tracking-[0.12em] text-indigo-200">{mentor.role}</p>
                             <p className="mt-2 text-xs uppercase tracking-[0.12em] text-emerald-200">{mentor.experience}</p>
@@ -1318,9 +1318,9 @@ function MobileLearningExperience({ navigate }) {
             <section id="testimonials" className="premium-surface rounded-3xl p-7">
                 <h2 className="text-2xl font-bold text-white">Premium testimonials</h2>
                 {testimonials.length ? (
-                    <div className="mt-4 rounded-2xl border border-white/10 bg-white/5 p-5">
+                    <div className="mt-4 rounded-2xl border border-white/[0.07] bg-white/[0.03] p-6 transition-colors duration-300 hover:border-indigo-300/30">
                         <AnimatePresence mode="wait">
-                            <motion.article
+                            <Motion.article
                                 key={testimonials[activeTestimonial].name}
                                 initial={{ opacity: 0, y: 10 }}
                                 animate={{ opacity: 1, y: 0 }}
@@ -1342,7 +1342,7 @@ function MobileLearningExperience({ navigate }) {
                                     ))}
                                 </div>
                                 <p className="mt-3 text-sm leading-relaxed text-slate-300">{testimonials[activeTestimonial].story}</p>
-                            </motion.article>
+                            </Motion.article>
                         </AnimatePresence>
                         <div className="mt-4 flex items-center justify-between">
                             <button
@@ -1391,7 +1391,7 @@ function MobileLearningExperience({ navigate }) {
                 <h2 className="text-2xl font-bold text-white">Professional FAQ</h2>
                 <div className="mt-4 space-y-2">
                     {mobileLearningExperienceData.faqs.map((item, index) => (
-                        <article key={item.question} className="rounded-xl border border-white/10 bg-white/5 p-4">
+                        <article key={item.question} className="rounded-xl border border-white/[0.07] bg-white/[0.03] p-4 transition-colors duration-300 hover:border-indigo-300/25">
                             <button
                                 type="button"
                                 onClick={() => setActiveFaq((prev) => (prev === index ? -1 : index))}
@@ -1412,7 +1412,7 @@ function MobileLearningExperience({ navigate }) {
                     <button
                         type="button"
                         onClick={() => navigate('/hexenity/contact')}
-                        className="rounded-xl bg-indigo-600 px-5 py-2.5 text-sm font-semibold text-white transition hover:bg-indigo-500"
+                        className="rounded-full bg-indigo-600 px-5 py-2.5 text-sm font-semibold text-white transition hover:bg-indigo-500"
                     >
                         {mobileLearningExperienceData.finalCta.primaryLabel}
                     </button>
@@ -1439,7 +1439,7 @@ function MobileLearningExperience({ navigate }) {
                         <button
                             type="button"
                             onClick={() => navigate('/hexenity/contact')}
-                            className="rounded-xl bg-indigo-600 px-3 py-2.5 text-xs font-semibold uppercase tracking-[0.12em] text-white"
+                            className="rounded-full bg-indigo-600 px-3 py-2.5 text-xs font-semibold uppercase tracking-[0.12em] text-white"
                         >
                             {mobileLearningExperienceData.stickyCta.primaryLabel}
                         </button>
@@ -1478,7 +1478,7 @@ function AnimatedStatCard({ stat, index }) {
     }, [stat.value]);
 
     return (
-        <motion.article
+        <Motion.article
             initial={{ opacity: 0, y: 14 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.25 }}
@@ -1494,7 +1494,7 @@ function AnimatedStatCard({ stat, index }) {
                 {stat.suffix}
             </p>
             <p className="mt-1 text-xs font-semibold uppercase tracking-[0.12em] text-slate-300">{stat.label}</p>
-        </motion.article>
+        </Motion.article>
     );
 }
 

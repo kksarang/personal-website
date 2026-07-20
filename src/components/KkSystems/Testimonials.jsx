@@ -2,23 +2,27 @@ import React from 'react';
 import { Quote, Star } from 'lucide-react';
 
 const TestimonialCard = ({ quote, author, role, company }) => (
-    <article className="relative rounded-3xl border border-white/10 bg-white/5 p-7 transition hover:border-indigo-300/35">
-        <Quote className="absolute right-6 top-6 h-10 w-10 rotate-180 text-white/10" />
-        <div className="mb-5 flex gap-1">
-            {[1, 2, 3, 4, 5].map((star) => (
-                <Star key={star} className="h-4 w-4 fill-amber-400 text-amber-400" />
-            ))}
-        </div>
-        <p className="relative z-10 mb-6 text-lg font-medium leading-relaxed text-slate-200">
+    <article className="group relative flex h-full flex-col rounded-3xl border border-white/10 bg-white/[0.03] p-9 transition-all duration-500 hover:-translate-y-1.5 hover:border-indigo-300/35 hover:bg-white/[0.05]">
+        <Quote className="mb-7 h-9 w-9 rotate-180 text-indigo-400/50 transition-colors duration-500 group-hover:text-indigo-300" />
+        <p className="pf-display relative z-10 mb-8 flex-1 text-xl font-medium leading-snug text-slate-100">
             "{quote}"
         </p>
-        <div className="flex items-center gap-3">
-            <div className="flex h-11 w-11 items-center justify-center rounded-full bg-gradient-to-br from-indigo-500 to-cyan-500 text-sm font-bold text-white">
-                {author.charAt(0)}
+        <div className="flex items-center justify-between border-t border-white/[0.07] pt-6">
+            <div className="flex items-center gap-3">
+                <div className="flex h-10 w-10 items-center justify-center rounded-full bg-gradient-to-br from-indigo-500 to-violet-500 text-sm font-bold text-white">
+                    {author.charAt(0)}
+                </div>
+                <div>
+                    <h4 className="text-sm font-semibold text-white">{author}</h4>
+                    <p className="pf-mono text-[9px] uppercase tracking-[0.18em] text-slate-500">
+                        {role} — {company}
+                    </p>
+                </div>
             </div>
-            <div>
-                <h4 className="font-bold text-white">{author}</h4>
-                <p className="text-sm text-slate-400">{role}, {company}</p>
+            <div className="flex gap-0.5">
+                {[1, 2, 3, 4, 5].map((star) => (
+                    <Star key={star} className="h-3 w-3 fill-amber-400 text-amber-400" />
+                ))}
             </div>
         </div>
     </article>
@@ -32,11 +36,12 @@ const Testimonials = () => {
 
             <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
                 <div className="mx-auto mb-16 max-w-3xl text-center">
-                    <div className="mb-6 inline-flex rounded-full border border-indigo-300/25 bg-indigo-500/10 px-4 py-2 text-xs font-semibold uppercase tracking-[0.16em] text-indigo-200">
-                        Client trust
+                    <div className="pf-mono mb-6 flex items-center justify-center gap-4 text-[11px] uppercase tracking-[0.35em] text-slate-400">
+                        <span className="text-indigo-300">(06)</span>
+                        <span>Client trust</span>
                     </div>
-                    <h2 className="mb-6 text-4xl font-black text-white md:text-5xl">
-                        Trusted by ambitious business teams
+                    <h2 className="pf-display mb-6 text-[clamp(1.7rem,3.2vw,2.5rem)] font-bold text-white">
+                        Trusted by ambitious <span className="pf-outline-text">business teams.</span>
                     </h2>
                     <p className="text-lg text-slate-400">
                         Strategic collaboration, transparent execution, and measurable outcomes for modern businesses.

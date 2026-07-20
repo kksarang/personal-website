@@ -34,7 +34,7 @@ export default function MobileAppDevDetail() {
             actions={(
                 <button
                     onClick={() => navigate('/hexenity/contact')}
-                    className="inline-flex items-center gap-2 rounded-xl border border-indigo-300/35 bg-indigo-500/20 px-4 py-2 text-xs font-semibold uppercase tracking-[0.13em] text-indigo-100 transition hover:bg-indigo-500/30"
+                    className="inline-flex items-center gap-2 rounded-full border border-indigo-300/35 bg-indigo-500/20 px-4 py-2 text-xs font-semibold uppercase tracking-[0.13em] text-indigo-100 transition hover:bg-indigo-500/30"
                 >
                     Start Mobile Project
                     <ArrowRight className="h-4 w-4" />
@@ -122,7 +122,7 @@ export default function MobileAppDevDetail() {
                     <p className="mx-auto mt-3 max-w-2xl text-slate-200">Share your current stage and we’ll suggest the right delivery model, team setup, and timeline.</p>
                     <button
                         onClick={() => navigate('/hexenity/contact')}
-                        className="mt-6 inline-flex items-center gap-2 rounded-xl bg-indigo-600 px-6 py-3 text-sm font-semibold text-white transition hover:bg-indigo-500"
+                        className="mt-6 inline-flex items-center gap-2 rounded-full bg-indigo-600 px-6 py-3 text-sm font-semibold text-white transition hover:bg-indigo-500"
                     >
                         <Rocket className="h-4 w-4" />
                         Book Mobile Strategy Call

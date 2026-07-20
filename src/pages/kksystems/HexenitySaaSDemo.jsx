@@ -1387,7 +1387,7 @@ export default function HexenitySaaSDemo() {
                 <button
                     type="button"
                     onClick={() => navigate('/hexenity/contact')}
-                    className="inline-flex items-center gap-2 rounded-xl bg-indigo-600 px-4 py-2 text-xs font-semibold uppercase tracking-[0.13em] text-white transition hover:bg-indigo-500"
+                    className="inline-flex items-center gap-2 rounded-full bg-indigo-600 px-4 py-2 text-xs font-semibold uppercase tracking-[0.13em] text-white transition hover:bg-indigo-500"
                 >
                     Enterprise demo
                     <ArrowRight className="h-4 w-4" aria-hidden />
@@ -1396,7 +1396,7 @@ export default function HexenitySaaSDemo() {
         >
             <div className="hexenity-saas-page space-y-6 pb-28 sm:space-y-8 lg:pb-32">
                 <header className="max-w-3xl">
-                    <p className="text-[11px] font-semibold uppercase tracking-[0.2em] text-indigo-300/85">Interactive product gallery</p>
+                    <p className="pf-mono text-[10px] uppercase tracking-[0.32em] text-indigo-300/85">Interactive product gallery</p>
                     <h1 className="hexenity-display mt-3 text-3xl font-semibold tracking-[-0.03em] text-white sm:text-4xl lg:text-5xl lg:leading-[1.05]">
                         Real SaaS console variants — rendered in-browser
                     </h1>

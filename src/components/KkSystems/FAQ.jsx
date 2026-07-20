@@ -62,42 +62,43 @@ const FAQ = () => {
 
             <div className="relative z-10 mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
                 <div className="mb-16 text-center">
-                    <div className="mb-6 inline-flex rounded-full border border-indigo-300/25 bg-indigo-500/10 px-4 py-2 text-xs font-semibold uppercase tracking-[0.16em] text-indigo-200">
-                        FAQ
+                    <div className="pf-mono mb-6 flex items-center justify-center gap-4 text-[11px] uppercase tracking-[0.35em] text-slate-400">
+                        <span className="text-indigo-300">(07)</span>
+                        <span>FAQ</span>
                     </div>
-                    <h2 className="mb-6 text-4xl font-black text-white md:text-5xl">
-                        Frequently asked questions
+                    <h2 className="pf-display mb-6 text-[clamp(1.7rem,3.2vw,2.5rem)] font-bold text-white">
+                        Frequently asked <span className="pf-outline-text">questions.</span>
                     </h2>
                     <p className="mx-auto max-w-2xl text-lg text-gray-400">
                         Clear answers about our execution model, service coverage, and how Hexenity supports business growth.
                     </p>
                 </div>
 
-                <div className="rounded-3xl border border-white/10 bg-white/5 px-5 py-2 sm:px-8">
+                <div className="border-t border-white/[0.08]">
                     {faqData.map((faq, index) => {
                         const isOpen = activeIndex === index;
                         return (
-                            <div
-                                key={index}
-                                className="border-b border-white/10 py-5"
-                            >
+                            <div key={index} className="border-b border-white/[0.08]">
                                 <button
-                                    className="w-full flex items-center justify-between text-left group focus:outline-none"
+                                    className="group flex w-full items-baseline gap-5 py-6 text-left focus:outline-none sm:gap-8"
                                     onClick={() => toggleFAQ(index)}
                                     aria-expanded={isOpen}
                                 >
-                                    <span className={`text-base font-semibold transition-colors duration-300 sm:text-lg ${isOpen ? 'text-indigo-300' : 'text-white group-hover:text-indigo-300'}`}>
+                                    <span className={`pf-mono text-xs transition-colors duration-300 ${isOpen ? 'text-indigo-300' : 'text-slate-500'}`}>
+                                        0{index + 1}
+                                    </span>
+                                    <span className={`pf-display flex-1 text-lg font-bold transition-colors duration-300 sm:text-xl ${isOpen ? 'text-indigo-300' : 'text-white group-hover:text-indigo-300'}`}>
                                         {faq.question}
                                     </span>
-                                    <div className={`ml-6 flex-shrink-0 transition-transform duration-300 ${isOpen ? 'rotate-180 text-indigo-300' : 'text-gray-500 group-hover:text-indigo-300'}`}>
+                                    <div className={`flex-shrink-0 self-center transition-transform duration-300 ${isOpen ? 'rotate-180 text-indigo-300' : 'text-gray-500 group-hover:text-indigo-300'}`}>
                                         {isOpen ? <Minus className="w-5 h-5" /> : <Plus className="w-5 h-5" />}
                                     </div>
                                 </button>
 
                                 <div
-                                    className={`overflow-hidden transition-all duration-300 ease-in-out ${isOpen ? 'max-h-96 opacity-100 mt-3' : 'max-h-0 opacity-0'}`}
+                                    className={`overflow-hidden transition-all duration-300 ease-in-out ${isOpen ? 'max-h-96 opacity-100 pb-6' : 'max-h-0 opacity-0'}`}
                                 >
-                                    <p className="text-slate-300 leading-relaxed pr-8">
+                                    <p className="pl-10 pr-8 leading-relaxed text-slate-300 sm:pl-14">
                                         {faq.answer}
                                     </p>
                                 </div>

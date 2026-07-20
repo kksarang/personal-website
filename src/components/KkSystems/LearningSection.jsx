@@ -2,7 +2,9 @@ import React from 'react';
 import { Cpu, Server, Cloud, Database, BarChart, Settings } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 
-const TechPill = ({ icon: Icon, label, slug, colorClass, onClick }) => (
+const TechPill = ({ icon, label, slug, colorClass, onClick }) => {
+    const Icon = icon;
+    return (
     <div
         onClick={() => onClick(slug)}
         className={`flex items-center gap-2 px-4 py-2 rounded-full border bg-white/5 backdrop-blur-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-lg cursor-pointer ${colorClass}`}
@@ -10,7 +12,8 @@ const TechPill = ({ icon: Icon, label, slug, colorClass, onClick }) => (
         <Icon className="w-4 h-4" />
         <span className="font-medium">{label}</span>
     </div>
-);
+    );
+};
 
 const LearningSection = () => {
     const navigate = useNavigate();

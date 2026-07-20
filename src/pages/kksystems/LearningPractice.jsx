@@ -165,7 +165,7 @@ export default function LearningPractice() {
                                 href={item.href}
                                 target="_blank"
                                 rel="noreferrer"
-                                className="inline-flex items-center justify-between rounded-xl border border-white/10 bg-white/5 px-4 py-3 text-sm text-slate-200 transition hover:border-indigo-300/35 hover:bg-white/10 hover:text-indigo-100"
+                                className="inline-flex items-center justify-between rounded-xl border border-white/[0.07] bg-white/[0.03] px-4 py-3 transition-colors duration-300 hover:border-indigo-300/25 text-sm text-slate-200 transition hover:border-indigo-300/35 hover:bg-white/10 hover:text-indigo-100"
                             >
                                 <span>{item.label}</span>
                                 <ExternalLink className="h-4 w-4" />

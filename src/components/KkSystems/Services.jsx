@@ -2,7 +2,9 @@ import React from 'react';
 import { Smartphone, Monitor, PaintBucket, Share2, Target } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
-const ServiceCard = ({ icon: Icon, title, technologies, description, colors, link }) => (
+const ServiceCard = ({ icon, title, technologies, description, colors, link }) => {
+    const Icon = icon;
+    return (
     <Link to={link} className={`p-8 rounded-3xl bg-white/[0.02] border border-white/5 backdrop-blur-sm group hover:bg-white/[0.04] transition-all duration-300 relative overflow-hidden flex flex-col h-full block`}>
         {/* Glow effect on hover */}
         <div className={`absolute -inset-px opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-3xl bg-gradient-to-br ${colors.borderGradient}`} />
@@ -33,7 +35,8 @@ const ServiceCard = ({ icon: Icon, title, technologies, description, colors, lin
             )}
         </div>
     </Link>
-);
+    );
+};
 
 const Services = () => {
     return (

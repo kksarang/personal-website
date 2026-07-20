@@ -16,18 +16,28 @@ export const TechStack = () => {
         <section className="bg-[#0B0F19] py-24">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="text-center mb-16">
-                    <div className="inline-flex items-center gap-2 rounded-full border border-indigo-300/35 bg-indigo-400/10 px-4 py-1.5 text-xs font-semibold uppercase tracking-[0.16em] text-indigo-100">
-                        <Sparkles className="h-3.5 w-3.5" />
-                        Technology Foundation
+                    <div className="pf-mono mb-5 flex items-center justify-center gap-4 text-[11px] uppercase tracking-[0.35em] text-slate-400">
+                        <span className="text-indigo-300">(12)</span>
+                        <span className="flex items-center gap-2">
+                            <Sparkles className="h-3.5 w-3.5" />
+                            Technology Foundation
+                        </span>
                     </div>
-                    <h2 className="mt-5 text-3xl font-black text-white md:text-4xl">Modern, reliable, production-ready stack.</h2>
+                    <h2 className="pf-display mt-5 text-[clamp(1.6rem,3vw,2.3rem)] font-bold text-white">
+                        Modern, reliable, <span className="pf-outline-text">production-ready.</span>
+                    </h2>
                     <p className="mt-3 text-gray-400 font-medium">Selected for speed, maintainability, and long-term scale.</p>
                 </div>
-                <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6">
+                <div className="grid grid-cols-2 gap-px overflow-hidden rounded-3xl border border-white/[0.08] bg-white/[0.08] md:grid-cols-3 lg:grid-cols-6">
                     {techs.map((tech, idx) => (
-                        <div key={idx} className="premium-surface gradient-stroke group rounded-2xl p-6 text-center transition hover:border-indigo-300/35">
-                            <tech.icon className="w-8 h-8 text-indigo-400 mx-auto mb-4 group-hover:scale-110 transition-transform" />
-                            <span className="text-white font-bold">{tech.name}</span>
+                        <div
+                            key={idx}
+                            className="group bg-[#0B0F19] p-8 text-center transition-colors duration-500 hover:bg-[#10152a]"
+                        >
+                            <tech.icon className="mx-auto mb-4 h-7 w-7 text-indigo-400 transition-transform duration-500 group-hover:-translate-y-1 group-hover:scale-110" />
+                            <span className="pf-mono text-[11px] font-semibold uppercase tracking-[0.18em] text-white">
+                                {tech.name}
+                            </span>
                         </div>
                     ))}
                 </div>
@@ -48,24 +58,29 @@ export const WhyHexenity = () => {
         <section className="relative overflow-hidden bg-[#0B0F19] py-28">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
                 <div className="text-center mb-20">
-                     <div className="mb-6 inline-flex cursor-default items-center gap-2 rounded-full border border-indigo-400/25 bg-indigo-500/10 px-4 py-1.5">
-                        <div className="w-2 h-2 rounded-full bg-pink-500 animate-pulse" />
-                        <span className="text-indigo-300 text-xs font-black uppercase tracking-widest">Why Choose Us</span>
+                    <div className="pf-mono mb-6 flex items-center justify-center gap-4 text-[11px] uppercase tracking-[0.35em] text-slate-400">
+                        <span className="text-indigo-300">(13)</span>
+                        <span>Why Choose Us</span>
                     </div>
-                    <h2 className="mb-6 text-5xl font-black tracking-tighter text-white md:text-6xl">Why teams choose Hexenity</h2>
+                    <h2 className="pf-display mb-6 text-[clamp(1.7rem,3.2vw,2.5rem)] font-bold text-white">
+                        Why teams choose <span className="pf-outline-text">Hexenity.</span>
+                    </h2>
                     <p className="max-w-xl mx-auto text-gray-400 text-lg font-light">
                         We combine product thinking, consistent communication, and disciplined engineering execution.
                     </p>
                 </div>
 
-                <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-4">
+                <div className="grid grid-cols-1 gap-px overflow-hidden rounded-3xl border border-white/[0.08] bg-white/[0.08] md:grid-cols-2 lg:grid-cols-4">
                     {cards.map((card, idx) => (
-                        <div key={idx} className="rounded-3xl border border-white/10 bg-white/5 p-6 transition hover:border-indigo-300/35">
-                            <div className="mb-4 inline-flex h-10 w-10 items-center justify-center rounded-xl bg-indigo-500/10">
+                        <div key={idx} className="group bg-[#0B0F19] p-8 transition-colors duration-500 hover:bg-[#10152a]">
+                            <div className="mb-8 flex items-start justify-between">
+                                <span className="pf-display text-5xl font-extrabold text-white/[0.07] transition-colors duration-500 group-hover:text-indigo-400/40">
+                                    0{idx + 1}
+                                </span>
                                 <Crown className="h-5 w-5 text-indigo-300" />
                             </div>
-                            <h3 className="text-lg font-bold text-white">{card.title}</h3>
-                            <p className="mt-2 text-sm leading-relaxed text-gray-400">{card.subtitle}</p>
+                            <h3 className="pf-display text-lg font-bold leading-snug text-white">{card.title}</h3>
+                            <p className="mt-3 text-sm leading-relaxed text-gray-400">{card.subtitle}</p>
                         </div>
                     ))}
                 </div>
@@ -85,21 +100,28 @@ export const ERPDemoEntry = () => {
 
                     <div className="grid lg:grid-cols-2 gap-12 items-center relative z-10">
                         <div>
-                             <div className="inline-block px-4 py-2 rounded-full bg-indigo-500/10 border border-indigo-500/20 text-indigo-400 font-bold text-xs uppercase tracking-widest mb-6">Flagship Product</div>
-                            <h2 className="text-4xl md:text-5xl font-black text-white mb-6">Experience <br />Hexenity ERP.</h2>
+                            <div className="pf-mono mb-6 flex items-center gap-4 text-[11px] uppercase tracking-[0.35em] text-slate-400">
+                                <span className="text-indigo-300">(14)</span>
+                                <span>Flagship Product</span>
+                            </div>
+                            <h2 className="pf-display text-[clamp(1.7rem,3.2vw,2.5rem)] font-bold text-white mb-6">
+                                Experience <br />
+                                <span className="pf-outline-text">Hexenity ERP.</span>
+                            </h2>
                             <p className="text-xl text-gray-400 font-light leading-relaxed mb-10">
                                 Manage customers, projects, analytics, and operations in one unified system. Built for speed, reliability, and enterprise-scale control.
                             </p>
                             <div className="flex flex-wrap gap-4">
                                 <button
                                     onClick={() => navigate('/hexenity/erp/dashboard')}
-                                    className="px-8 py-4 rounded-xl bg-white text-[#0B0F19] font-black hover:bg-gray-200 transition-all shadow-xl"
+                                    data-cursor="Demo"
+                                    className="inline-flex items-center justify-center rounded-full border border-white bg-white px-8 py-4 text-sm font-semibold text-black transition-all duration-500 hover:bg-transparent hover:text-white"
                                 >
                                     Launch Demo ERP
                                 </button>
                                 <button
-                                     onClick={() => navigate('/hexenity/solutions/erp')}
-                                    className="px-8 py-4 rounded-xl border border-white/10 text-white font-bold hover:bg-white/5 transition-all"
+                                    onClick={() => navigate('/hexenity/solutions/erp')}
+                                    className="inline-flex items-center justify-center rounded-full border border-white/20 px-8 py-4 text-sm font-semibold text-white transition-all duration-500 hover:border-white hover:bg-white/[0.05]"
                                 >
                                     View Features
                                 </button>
@@ -151,22 +173,24 @@ export const FinalCTA = () => {
         <section className="relative overflow-hidden bg-[#0B0F19] py-24 text-center">
              <div className="absolute inset-0 bg-indigo-600/5 blur-[150px] -z-10" />
             <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-                <h2 className="text-4xl md:text-6xl font-black text-white mb-8 leading-tight">
-                    Ready for a world-class digital platform <br />with <span className="premium-gradient-text">executive-grade delivery?</span>
+                <h2 className="pf-display text-[clamp(1.8rem,3.8vw,2.9rem)] font-bold text-white mb-8 leading-[1.05]">
+                    Ready for a world-class platform with{' '}
+                    <span className="pf-gradient-text">executive-grade delivery?</span>
                 </h2>
                 <p className="mx-auto mb-10 max-w-2xl text-gray-300">
                     Share your vision with us. We will return with a strategic roadmap, realistic execution timeline, and the right delivery model for your organization.
                 </p>
-                <div className="flex flex-col sm:flex-row gap-6 justify-center">
+                <div className="flex flex-col sm:flex-row gap-4 justify-center">
                     <button
                         onClick={() => navigate('/hexenity/contact')}
-                        className="rounded-2xl bg-indigo-600 px-10 py-5 text-lg font-black text-white transition hover:bg-indigo-500"
+                        data-cursor="Book"
+                        className="group inline-flex items-center justify-center gap-2 rounded-full border border-white bg-white px-10 py-4 text-base font-semibold text-black transition-all duration-500 hover:bg-transparent hover:text-white"
                     >
                         Book Executive Strategy Call
                     </button>
                     <button
                         onClick={() => navigate('/hexenity/erp/dashboard')}
-                        className="px-10 py-5 rounded-2xl bg-white/5 border border-white/10 text-white font-black text-lg hover:bg-white/10 hover:border-white/20 backdrop-blur-sm transition-all"
+                        className="inline-flex items-center justify-center rounded-full border border-white/20 px-10 py-4 text-base font-semibold text-white transition-all duration-500 hover:border-white hover:bg-white/[0.05]"
                     >
                         Explore Enterprise Demo
                     </button>

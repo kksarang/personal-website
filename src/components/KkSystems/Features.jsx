@@ -1,7 +1,9 @@
 import React from 'react';
 import { Zap, ShieldCheck, Search, Code2, Headphones, Layers } from 'lucide-react';
 
-const FeatureItem = ({ icon: Icon, title, description, delay }) => (
+const FeatureItem = ({ icon, title, description, delay }) => {
+    const Icon = icon;
+    return (
     <div className={`p-6 rounded-2xl bg-white/5 border border-white/10 hover:bg-white/10 transition-colors duration-300 flex gap-4 animate-fade-in-up`} style={{ animationDelay: `${delay}ms` }}>
         <div className="flex-shrink-0 w-12 h-12 rounded-lg bg-gradient-to-br from-purple-500/20 to-blue-500/20 flex items-center justify-center border border-white/5">
             <Icon className="w-6 h-6 text-indigo-400" />
@@ -11,7 +13,8 @@ const FeatureItem = ({ icon: Icon, title, description, delay }) => (
             <p className="text-gray-400 leading-relaxed">{description}</p>
         </div>
     </div>
-);
+    );
+};
 
 const Features = () => {
     const features = [

@@ -58,7 +58,7 @@ export default function WorkDetails() {
                         <button
                             type="button"
                             onClick={() => navigate('/expenser')}
-                            className="inline-flex items-center gap-2 rounded-xl border border-indigo-300/35 bg-indigo-500/20 px-4 py-2 text-xs font-semibold uppercase tracking-[0.13em] text-indigo-100 transition hover:bg-indigo-500/30"
+                            className="inline-flex items-center gap-2 rounded-full border border-indigo-300/35 bg-indigo-500/20 px-4 py-2 text-xs font-semibold uppercase tracking-[0.13em] text-indigo-100 transition hover:bg-indigo-500/30"
                         >
                             Product Page
                             <ArrowRight className="h-4 w-4" />
@@ -67,33 +67,38 @@ export default function WorkDetails() {
                 </>
             )}
         >
-            <div className="grid gap-8 lg:grid-cols-[1.35fr_0.65fr]">
-                <div className="space-y-8">
+            <div className="grid gap-10 lg:grid-cols-[1.35fr_0.65fr]">
+                <div className="space-y-14">
                     {project.heroImage ? (
-                        <section className="overflow-hidden rounded-3xl border border-white/10 bg-slate-950/70">
+                        <section className="overflow-hidden rounded-3xl border border-white/[0.08]">
                             <img src={project.heroImage} alt={project.title} className="h-72 w-full object-cover md:h-96" />
                         </section>
                     ) : null}
 
-                    <section className="premium-surface gradient-stroke rounded-3xl p-7">
-                        <h2 className="text-2xl font-bold text-white">Executive Summary</h2>
-                        <p className="mt-3 whitespace-pre-line text-slate-300">{project.overview || project.content || project.description}</p>
+                    <section>
+                        <SectionHeader index="01" label="Summary" />
+                        <h2 className="pf-display mb-4 text-[clamp(1.5rem,2.8vw,2.1rem)] font-bold text-white">Executive summary</h2>
+                        <p className="whitespace-pre-line max-w-3xl leading-relaxed text-slate-300">{project.overview || project.content || project.description}</p>
                     </section>
 
                     {isFullStudy ? (
-                        <section className="grid gap-6 md:grid-cols-2">
-                            <ContentPanel title="Business Challenge" content={project.problem} />
-                            <ContentPanel title="Strategic Solution" content={project.solution} />
+                        <section>
+                            <SectionHeader index="02" label="Challenge / Solution" />
+                            <div className="grid gap-px overflow-hidden rounded-3xl border border-white/[0.08] bg-white/[0.08] md:grid-cols-2">
+                                <ContentPanel title="Business Challenge" content={project.problem} />
+                                <ContentPanel title="Strategic Solution" content={project.solution} />
+                            </div>
                         </section>
                     ) : null}
 
                     {project.features?.length ? (
-                        <section className="premium-surface rounded-3xl p-7">
-                            <h2 className="mb-5 text-2xl font-bold text-white">Capabilities Delivered</h2>
-                            <div className="grid gap-3 sm:grid-cols-2">
+                        <section>
+                            <SectionHeader index="03" label="Capabilities" />
+                            <h2 className="pf-display mb-4 text-[clamp(1.5rem,2.8vw,2.1rem)] font-bold text-white">Capabilities delivered</h2>
+                            <div className="grid gap-px overflow-hidden rounded-2xl border border-white/[0.08] bg-white/[0.08] sm:grid-cols-2">
                                 {project.features.map((feature) => (
-                                    <div key={feature} className="flex items-start gap-2 rounded-xl border border-white/10 bg-white/5 px-4 py-3 text-slate-200">
-                                        <CheckCircle2 className="mt-0.5 h-4 w-4 text-emerald-300" />
+                                    <div key={feature} className="group flex items-start gap-3 bg-[#0B0F19] px-5 py-4 text-sm text-slate-300 transition-colors duration-300 hover:bg-[#10152a] hover:text-white">
+                                        <CheckCircle2 className="mt-0.5 h-4 w-4 shrink-0 text-emerald-300" />
                                         <span>{feature}</span>
                                     </div>
                                 ))}
@@ -102,11 +107,15 @@ export default function WorkDetails() {
                     ) : null}
 
                     {project.techStack?.length ? (
-                        <section className="premium-surface rounded-3xl p-7">
-                            <h2 className="mb-5 text-2xl font-bold text-white">Engineering Stack</h2>
-                            <div className="flex flex-wrap gap-2">
+                        <section>
+                            <SectionHeader index="04" label="Stack" />
+                            <h2 className="pf-display mb-4 text-[clamp(1.5rem,2.8vw,2.1rem)] font-bold text-white">Engineering stack</h2>
+                            <div className="flex flex-wrap gap-2.5">
                                 {project.techStack.map((tech) => (
-                                    <span key={tech} className="rounded-full border border-white/10 bg-white/5 px-4 py-2 text-sm text-slate-200">
+                                    <span
+                                        key={tech}
+                                        className="pf-mono rounded-full border border-white/10 px-4 py-2 text-[10px] uppercase tracking-[0.18em] text-slate-300 transition-colors duration-300 hover:border-indigo-300/50 hover:text-white"
+                                    >
                                         {tech}
                                     </span>
                                 ))}
@@ -115,13 +124,14 @@ export default function WorkDetails() {
                     ) : null}
 
                     {project.technicalArchitecture?.length ? (
-                        <section className="premium-surface rounded-3xl p-7">
-                            <h2 className="mb-5 text-2xl font-bold text-white">Architecture Notes</h2>
-                            <div className="space-y-3">
+                        <section>
+                            <SectionHeader index="05" label="Architecture" />
+                            <h2 className="pf-display mb-4 text-[clamp(1.5rem,2.8vw,2.1rem)] font-bold text-white">Architecture notes</h2>
+                            <div className="border-t border-white/[0.08]">
                                 {project.technicalArchitecture.map((item) => (
-                                    <article key={item.layer} className="rounded-xl border border-white/10 bg-white/5 p-4">
-                                        <p className="text-xs uppercase tracking-[0.14em] text-indigo-300">{item.layer}</p>
-                                        <p className="mt-1 text-slate-200">{item.stack}</p>
+                                    <article key={item.layer} className="grid gap-2 border-b border-white/[0.08] py-5 sm:grid-cols-[220px_1fr] sm:gap-8">
+                                        <p className="pf-mono text-[10px] uppercase tracking-[0.22em] text-indigo-300">{item.layer}</p>
+                                        <p className="text-sm leading-relaxed text-slate-300">{item.stack}</p>
                                     </article>
                                 ))}
                             </div>
@@ -129,12 +139,13 @@ export default function WorkDetails() {
                     ) : null}
 
                     {project.userFeedback?.length ? (
-                        <section className="premium-surface rounded-3xl p-7">
-                            <h2 className="mb-5 text-2xl font-bold text-white">Client & User Feedback</h2>
-                            <div className="space-y-3">
+                        <section>
+                            <SectionHeader index="06" label="Feedback" />
+                            <h2 className="pf-display mb-4 text-[clamp(1.5rem,2.8vw,2.1rem)] font-bold text-white">Client & user feedback</h2>
+                            <div className="space-y-6">
                                 {project.userFeedback.slice(0, 3).map((feedback) => (
-                                    <blockquote key={feedback} className="rounded-xl border border-white/10 bg-white/5 p-4 text-slate-200">
-                                        "{feedback}"
+                                    <blockquote key={feedback} className="border-l-2 border-indigo-400/60 pl-6">
+                                        <p className="pf-display text-lg font-semibold leading-relaxed text-white/90">“{feedback}”</p>
                                     </blockquote>
                                 ))}
                             </div>
@@ -142,26 +153,26 @@ export default function WorkDetails() {
                     ) : null}
                 </div>
 
-                <aside className="space-y-6">
-                    <section className="premium-surface rounded-3xl p-6">
-                        <h3 className="mb-4 inline-flex items-center gap-2 text-lg font-bold text-white">
-                            <Briefcase className="h-5 w-5 text-indigo-300" />
-                            Project At a Glance
-                        </h3>
-                        <div className="space-y-3">
+                <aside className="space-y-5">
+                    <section className="rounded-3xl border border-white/[0.08] bg-[#0B0F19] p-7">
+                        <p className="pf-mono mb-2 inline-flex items-center gap-2 text-[10px] uppercase tracking-[0.28em] text-slate-400">
+                            <Briefcase className="h-4 w-4 text-indigo-300" />
+                            At a Glance
+                        </p>
+                        <div className="divide-y divide-white/[0.07]">
                             {quickSpecs.map((spec) => (
-                                <div key={spec.label} className="rounded-xl border border-white/10 bg-white/5 p-3">
-                                    <p className="text-[11px] uppercase tracking-[0.14em] text-slate-400">{spec.label}</p>
-                                    <p className="mt-1 text-sm text-white">{spec.value}</p>
+                                <div key={spec.label} className="py-4">
+                                    <p className="pf-mono text-[9px] uppercase tracking-[0.24em] text-slate-500">{spec.label}</p>
+                                    <p className="mt-1.5 text-sm font-medium text-white">{spec.value}</p>
                                 </div>
                             ))}
                         </div>
                     </section>
 
                     {project.storePerformance ? (
-                        <section className="premium-surface rounded-3xl p-6">
-                            <h3 className="mb-4 text-lg font-bold text-white">Store Performance</h3>
-                            <div className="space-y-3">
+                        <section className="rounded-3xl border border-white/[0.08] bg-[#0B0F19] p-7">
+                            <p className="pf-mono mb-2 text-[10px] uppercase tracking-[0.28em] text-slate-400">Store Performance</p>
+                            <div className="divide-y divide-white/[0.07]">
                                 <Spec label="Downloads" value={project.storePerformance.downloads} />
                                 <Spec
                                     label="Rating"
@@ -178,22 +189,26 @@ export default function WorkDetails() {
                     ) : null}
 
                     {project.results ? (
-                        <section className="rounded-3xl border border-indigo-300/25 bg-indigo-500/15 p-6">
-                            <h3 className="inline-flex items-center gap-2 text-lg font-bold text-white">
-                                <ShieldCheck className="h-5 w-5 text-indigo-200" />
-                                Business Impact
-                            </h3>
-                            <p className="mt-3 text-sm leading-relaxed text-indigo-100">{project.results}</p>
+                        <section className="relative overflow-hidden rounded-3xl border border-white/[0.08] bg-[#0B0F19] p-7">
+                            <div className="pf-dotgrid absolute inset-0 opacity-30" aria-hidden="true" />
+                            <div className="relative">
+                                <p className="pf-mono mb-3 inline-flex items-center gap-2 text-[10px] uppercase tracking-[0.28em] text-indigo-300">
+                                    <ShieldCheck className="h-4 w-4" />
+                                    Business Impact
+                                </p>
+                                <p className="text-sm leading-relaxed text-slate-200">{project.results}</p>
+                            </div>
                         </section>
                     ) : null}
 
-                    <section className="rounded-3xl border border-white/10 bg-white/5 p-6">
-                        <h3 className="text-lg font-bold text-white">Need a similar solution?</h3>
-                        <p className="mt-2 text-sm text-slate-300">Share your requirements and we will propose the right architecture, timeline, and engagement model.</p>
+                    <section className="rounded-3xl border border-white/[0.08] bg-[#0B0F19] p-7">
+                        <h3 className="pf-display text-lg font-bold text-white">Need a similar solution?</h3>
+                        <p className="mt-2 text-sm leading-relaxed text-slate-400">Share your requirements and we will propose the right architecture, timeline, and engagement model.</p>
                         <button
                             type="button"
                             onClick={() => navigate('/hexenity/contact')}
-                            className="mt-4 inline-flex items-center gap-2 rounded-xl border border-indigo-300/35 bg-indigo-500/20 px-4 py-2 text-xs font-semibold uppercase tracking-[0.13em] text-indigo-100 transition hover:bg-indigo-500/30"
+                            data-cursor="Talk"
+                            className="mt-5 inline-flex items-center gap-2 rounded-full border border-white bg-white px-6 py-3 text-sm font-semibold text-black transition-all duration-500 hover:bg-transparent hover:text-white"
                         >
                             Start Consultation
                             <ArrowRight className="h-4 w-4" />
@@ -205,11 +220,21 @@ export default function WorkDetails() {
     );
 }
 
+function SectionHeader({ index, label }) {
+    return (
+        <div className="pf-mono mb-2 flex items-center gap-4 text-[11px] uppercase tracking-[0.35em] text-white/35">
+            <span className="text-indigo-300">({index})</span>
+            <span>{label}</span>
+            <span className="h-px flex-1 bg-white/[0.08]" />
+        </div>
+    );
+}
+
 function Spec({ label, value }) {
     return (
-        <div className="rounded-xl border border-white/10 bg-white/5 p-4">
-            <p className="text-xs uppercase tracking-[0.12em] text-slate-400">{label}</p>
-            <p className="mt-1 text-white">{value}</p>
+        <div className="py-4">
+            <p className="pf-mono text-[9px] uppercase tracking-[0.24em] text-slate-500">{label}</p>
+            <p className="mt-1.5 text-sm font-medium text-white">{value}</p>
         </div>
     );
 }
@@ -217,9 +242,9 @@ function Spec({ label, value }) {
 function ContentPanel({ title, content }) {
     if (!content) return null;
     return (
-        <section className="premium-surface rounded-3xl p-7">
-            <h2 className="mb-3 text-2xl font-bold text-white">{title}</h2>
-            <div className="space-y-3 text-slate-300">
+        <section className="bg-[#0B0F19] p-8">
+            <h2 className="pf-display mb-4 text-xl font-bold text-white">{title}</h2>
+            <div className="space-y-3 text-sm leading-relaxed text-slate-300">
                 {content.split('\n\n').map((paragraph) => (
                     <p key={paragraph}>{paragraph}</p>
                 ))}

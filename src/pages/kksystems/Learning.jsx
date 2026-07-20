@@ -58,7 +58,7 @@ export default function Learning() {
                                 <GraduationCap className="h-3.5 w-3.5" />
                                 Learning Library
                             </p>
-                            <h2 className="mt-3 text-3xl font-black text-white">Find a complete path, not just random notes</h2>
+                            <h2 className="mt-3 pf-display text-3xl font-bold text-white">Find a complete path, not just random notes</h2>
                             <p className="mt-3 max-w-3xl text-slate-300">
                                 Every topic page includes beginner explanation, why/when to learn, modules, roadmap, real-world projects, interview questions, and FAQ blocks.
                             </p>
@@ -125,7 +125,7 @@ export default function Learning() {
                 </section>
 
                 <section className="premium-surface rounded-3xl p-7">
-                    <h2 className="inline-flex items-center gap-2 text-2xl font-bold text-white">
+                    <h2 className="inline-flex items-center gap-2 pf-display text-2xl font-bold text-white">
                         <PlayCircle className="h-6 w-6 text-emerald-300" />
                         Live coding practice
                     </h2>
@@ -154,13 +154,13 @@ export default function Learning() {
                 </section>
 
                 <section className="premium-surface rounded-3xl p-7">
-                    <h2 className="inline-flex items-center gap-2 text-2xl font-bold text-white">
+                    <h2 className="inline-flex items-center gap-2 pf-display text-2xl font-bold text-white">
                         <BookOpen className="h-6 w-6 text-indigo-300" />
                         Explore learning tracks
                     </h2>
                     <div className="mt-5 grid gap-4 md:grid-cols-2 xl:grid-cols-3">
                         {categories.map((category) => (
-                            <article key={category.id} className="rounded-2xl border border-white/10 bg-white/5 p-5">
+                            <article key={category.id} className="rounded-2xl border border-white/[0.07] bg-white/[0.03] p-6 transition-colors duration-300 hover:border-indigo-300/30">
                                 <p className="text-sm font-semibold uppercase tracking-[0.14em] text-indigo-300">{category.title}</p>
                                 <p className="mt-2 text-base leading-7 text-slate-200">{category.description}</p>
                                 <p className="mt-4 text-sm text-slate-300">
@@ -175,7 +175,7 @@ export default function Learning() {
                 <section className="space-y-5">
                     {categories.map((category) => (
                         <article key={category.id} id={`study-${category.id}`} className="premium-surface rounded-3xl p-7">
-                            <h3 className="text-2xl font-bold text-white">{category.title}</h3>
+                            <h3 className="pf-display text-2xl font-bold text-white">{category.title}</h3>
                             <p className="mt-2 text-sm text-slate-300">{category.description}</p>
                             <div className="mt-4 grid gap-4 md:grid-cols-2">
                                 {category.topics.map((topic) => {
@@ -187,9 +187,9 @@ export default function Learning() {
                                         <button
                                             key={topic.slug}
                                             onClick={() => navigate(`/hexenity/learning/${topic.slug}`)}
-                                            className="group rounded-2xl border border-white/10 bg-white/5 p-5 text-left transition hover:border-indigo-300/40 hover:bg-white/10"
+                                            className="group rounded-2xl border border-white/[0.07] bg-white/[0.03] p-6 transition-colors duration-300 hover:border-indigo-300/30 text-left transition hover:border-indigo-300/40 hover:bg-white/10"
                                         >
-                                            <p className="text-2xl font-bold text-white">{topic.title}</p>
+                                            <p className="pf-display text-2xl font-bold text-white">{topic.title}</p>
                                             <p className="mt-2 text-base leading-7 text-slate-200">{previewText}</p>
                                             {previewModules.length ? (
                                                 <ul className="mt-4 space-y-1.5 text-sm text-slate-300">
@@ -214,7 +214,7 @@ export default function Learning() {
                 </section>
 
                 <section className="premium-surface rounded-3xl p-7">
-                    <h2 className="inline-flex items-center gap-2 text-2xl font-bold text-white">
+                    <h2 className="inline-flex items-center gap-2 pf-display text-2xl font-bold text-white">
                         <Sparkles className="h-6 w-6 text-indigo-300" />
                         Big detailed learning view
                     </h2>
@@ -227,7 +227,7 @@ export default function Learning() {
                             const previewModules = deepContent?.modules?.slice(0, 3) || [];
                             return (
                                 <article key={topic.slug} className="rounded-2xl border border-white/10 bg-white/5 p-6">
-                                    <p className="text-2xl font-bold text-white">{topic.title}</p>
+                                    <p className="pf-display text-2xl font-bold text-white">{topic.title}</p>
                                     <p className="mt-2 text-base leading-7 text-slate-200">{buildTopicPreview(topic, deepContent)}</p>
                                     {previewModules.length ? (
                                         <div className="mt-4 grid gap-2 md:grid-cols-2">
@@ -241,7 +241,7 @@ export default function Learning() {
                                     <button
                                         type="button"
                                         onClick={() => navigate(`/hexenity/learning/${topic.slug}`)}
-                                        className="mt-5 inline-flex items-center gap-2 rounded-xl border border-indigo-300/30 bg-indigo-500/15 px-4 py-2 text-sm font-semibold text-indigo-100 transition hover:bg-indigo-500/25"
+                                        className="mt-5 inline-flex items-center gap-2 rounded-full border border-indigo-300/30 bg-indigo-500/15 px-4 py-2 text-sm font-semibold text-indigo-100 transition hover:bg-indigo-500/25"
                                     >
                                         Open Detailed Guide
                                         <ArrowRight className="h-4 w-4" />
@@ -253,7 +253,7 @@ export default function Learning() {
                 </section>
 
                 <section className="premium-surface rounded-3xl p-7">
-                    <h2 className="inline-flex items-center gap-2 text-2xl font-bold text-white">
+                    <h2 className="inline-flex items-center gap-2 pf-display text-2xl font-bold text-white">
                         <Sparkles className="h-6 w-6 text-indigo-300" />
                         Detailed learning materials
                     </h2>
@@ -293,7 +293,7 @@ export default function Learning() {
                                                 {deepContent?.readTime || '10 min'}
                                             </span>
                                         </div>
-                                        <p className="mt-3 text-2xl font-bold text-white">{topic.title}</p>
+                                        <p className="mt-3 pf-display text-2xl font-bold text-white">{topic.title}</p>
                                         <p className="mt-2 text-base leading-7 text-slate-200">{buildTopicPreview(topic, deepContent)}</p>
                                         <p className="mt-3 text-xs uppercase tracking-[0.12em] text-slate-400">
                                             {(deepContent?.modules?.length || 0)} modules | {(deepContent?.practiceProjects?.length || 0)} practice project(s)
@@ -307,7 +307,7 @@ export default function Learning() {
                             );
                         })}
                         {!filteredTopics.length ? (
-                            <div className="rounded-2xl border border-white/10 bg-white/5 p-5 text-sm text-slate-300 md:col-span-2">
+                            <div className="rounded-2xl border border-white/[0.07] bg-white/[0.03] p-6 transition-colors duration-300 hover:border-indigo-300/30 text-sm text-slate-300 md:col-span-2">
                                 No topics matched this search/filter. Try another keyword or select "All".
                             </div>
                         ) : null}
