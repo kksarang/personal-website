@@ -1,58 +1,52 @@
 import React from 'react';
-import { Smartphone, Code, Database, Globe, Layers, Settings } from 'lucide-react';
 
 const Skills = () => {
     const skillCategories = [
         {
-            title: "Mobile Development",
-            icon: <Smartphone className="w-8 h-8 text-indigo-500" />,
-            skills: ["Flutter", "Android (Java/Kotlin)", "React Native", "iOS (Swift/Obj-C)"]
+            title: 'Mobile Development',
+            skills: ['Flutter', 'Android (Java/Kotlin)', 'React Native', 'iOS (Swift/Obj-C)'],
         },
         {
-            title: "Frontend & Web",
-            icon: <Globe className="w-8 h-8 text-blue-500" />,
-            skills: ["React.js", "HTML5 & CSS3", "JavaScript (ES6+)"]
+            title: 'Frontend & Web',
+            skills: ['React.js', 'HTML5 & CSS3', 'JavaScript (ES6+)'],
         },
         {
-            title: "Backend & Services",
-            icon: <Database className="w-8 h-8 text-green-500" />,
-            skills: ["Firebase", "REST APIs", "Node.js (Basic)"]
+            title: 'Backend & Services',
+            skills: ['Firebase', 'REST APIs', 'Node.js'],
         },
         {
-            title: "Tools & IDEs",
-            icon: <Settings className="w-8 h-8 text-orange-500" />,
-            skills: ["Android Studio", "VS Code", "Xcode", "IntelliJ IDEA", "Git & GitHub"]
-        }
+            title: 'Tools & IDEs',
+            skills: ['Android Studio', 'VS Code', 'Xcode', 'IntelliJ IDEA', 'Git & GitHub'],
+        },
     ];
 
     return (
-        <section id="skills" className="py-20 bg-gray-50 dark:bg-slate-800/50">
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div className="text-center mb-16">
-                    <h2 className="text-base text-indigo-600 dark:text-indigo-400 font-semibold tracking-wide uppercase">My Expertise</h2>
-                    <p className="mt-2 text-3xl leading-8 font-extrabold tracking-tight text-gray-900 dark:text-white sm:text-4xl">
-                        Skills & Technologies
-                    </p>
-                </div>
+        <section id="skills" className="relative border-t border-[#111110]/10 bg-[#111110]/[0.03] py-24 dark:border-white/10 dark:bg-white/[0.02] sm:py-28">
+            <div className="mx-auto max-w-7xl px-5 sm:px-8">
+                <p className="port-mono mb-4 text-[11px] uppercase tracking-[0.35em] text-[#6b6b63] dark:text-white/40">
+                    <span className="text-[#B8F03A]">(03)</span> Expertise
+                </p>
+                <h2 className="port-display mb-12 text-[clamp(2rem,4vw,3.2rem)] font-extrabold text-[#111110] dark:text-[#F4F4F0]">
+                    Skills & technologies
+                </h2>
 
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-                    {skillCategories.map((category, index) => (
-                        <div
-                            key={index}
-                            className="bg-white dark:bg-slate-900 rounded-xl p-8 shadow-sm hover:shadow-lg transition-shadow border border-gray-100 dark:border-slate-700"
-                        >
-                            <div className="flex items-center justify-center w-12 h-12 bg-gray-50 dark:bg-slate-800 rounded-lg mb-6">
-                                {category.icon}
+                <div className="space-y-10">
+                    {skillCategories.map((category, catIdx) => (
+                        <div key={category.title}>
+                            <div className="mb-4 flex items-baseline gap-4">
+                                <span className="port-mono text-[10px] text-[#B8F03A]">0{catIdx + 1}</span>
+                                <h3 className="port-display text-xl font-bold text-[#111110] dark:text-white">{category.title}</h3>
                             </div>
-                            <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-4">{category.title}</h3>
-                            <ul className="space-y-3">
-                                {category.skills.map((skill, idx) => (
-                                    <li key={idx} className="flex items-center text-gray-600 dark:text-gray-300">
-                                        <div className="w-2 h-2 bg-indigo-500 rounded-full mr-3"></div>
+                            <div className="flex flex-wrap gap-2.5">
+                                {category.skills.map((skill) => (
+                                    <span
+                                        key={skill}
+                                        className="port-skill-row port-mono cursor-default rounded-full border border-[#111110]/12 px-4 py-2.5 text-[11px] uppercase tracking-[0.14em] text-[#111110] dark:border-white/15 dark:text-white/80"
+                                    >
                                         {skill}
-                                    </li>
+                                    </span>
                                 ))}
-                            </ul>
+                            </div>
                         </div>
                     ))}
                 </div>

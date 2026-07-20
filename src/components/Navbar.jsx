@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Menu, X, Moon, Sun, Code2 } from 'lucide-react';
+import { Menu, X, Moon, Sun, ArrowUpRight } from 'lucide-react';
 import { useLocation, useNavigate } from 'react-router-dom';
 import { useLockBodyScroll } from '../hooks/useLockBodyScroll';
 
@@ -38,10 +38,6 @@ const Navbar = () => {
         }
     }, [isDark]);
 
-    useEffect(() => {
-        setIsOpen(false);
-    }, [location.pathname]);
-
     useLockBodyScroll(isOpen);
 
     const navLinks = [
@@ -49,7 +45,7 @@ const Navbar = () => {
         { title: 'About', href: '/#about', type: 'hash' },
         { title: 'Skills', href: '/#skills', type: 'hash' },
         { title: 'Experience', href: '/#experience', type: 'hash' },
-        { title: 'hexenity', href: '/hexenity', type: 'page' },
+        { title: 'Hexenity', href: '/hexenity', type: 'page' },
         { title: 'Contact', href: '/#contact', type: 'hash' },
     ];
 
@@ -69,95 +65,80 @@ const Navbar = () => {
     };
 
     return (
-        <nav className="sticky top-0 z-50 w-full bg-white/80 dark:bg-slate-900/80 backdrop-blur-md border-b border-gray-100 dark:border-slate-800">
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div className="flex items-center justify-between h-16">
-                    <div className="flex-shrink-0 flex items-center">
-                        <a href="https://kksarang.github.io/kksarang/" rel="noreferrer" className="flex items-center gap-2 font-bold text-xl text-indigo-600 dark:text-indigo-400">
-                            <Code2 className="w-8 h-8" />
-                            <span>Sarang.R</span>
+        <nav className="sticky top-0 z-50 w-full border-b border-[#111110]/10 bg-[#F4F4F0]/85 backdrop-blur-md dark:border-white/10 dark:bg-[#09090b]/85">
+            <div className="mx-auto flex h-[72px] max-w-7xl items-center justify-between px-5 sm:px-8">
+                <a
+                    href="/#home"
+                    onClick={(e) => handleNavClick(e, { href: '/#home', type: 'hash' })}
+                    className="port-display text-xl font-bold tracking-tight text-[#111110] dark:text-[#F4F4F0]"
+                >
+                    Sarang<span className="text-[#B8F03A]">.</span>
+                </a>
+
+                <div className="hidden items-center gap-1 lg:flex">
+                    {navLinks.map((link, i) => (
+                        <a
+                            key={link.title}
+                            href={link.href}
+                            onClick={(e) => handleNavClick(e, link)}
+                            className="port-mono group relative px-3 py-2 text-[10px] uppercase tracking-[0.22em] text-[#6b6b63] transition-colors hover:text-[#111110] dark:text-white/45 dark:hover:text-white"
+                        >
+                            <span className="mr-1.5 text-[#B8F03A]/70">0{i + 1}</span>
+                            {link.title}
+                            <span className="absolute inset-x-3 -bottom-0.5 h-px origin-left scale-x-0 bg-[#B8F03A] transition-transform duration-300 group-hover:scale-x-100" />
                         </a>
-                    </div>
+                    ))}
+                    <button
+                        type="button"
+                        onClick={() => setIsDark(!isDark)}
+                        className="ml-3 rounded-full border border-[#111110]/12 p-2 text-[#111110] transition hover:border-[#B8F03A] hover:bg-[#B8F03A] dark:border-white/15 dark:text-white dark:hover:text-[#09090b]"
+                        aria-label="Toggle theme"
+                    >
+                        {isDark ? <Sun className="h-4 w-4" /> : <Moon className="h-4 w-4" />}
+                    </button>
+                    <a
+                        href="/#contact"
+                        onClick={(e) => handleNavClick(e, { href: '/#contact', type: 'hash' })}
+                        className="ml-2 inline-flex items-center gap-1.5 rounded-full bg-[#111110] px-4 py-2 text-xs font-semibold text-[#B8F03A] transition hover:bg-[#B8F03A] hover:text-[#09090b] dark:bg-[#B8F03A] dark:text-[#09090b] dark:hover:bg-white"
+                    >
+                        Let&apos;s talk
+                        <ArrowUpRight className="h-3.5 w-3.5" />
+                    </a>
+                </div>
 
-                    <div className="hidden md:block">
-                        <div className="ml-10 flex items-center space-x-4">
-                            {navLinks.map((link) => (
-                                <a
-                                    key={link.title}
-                                    href={link.href}
-                                    onClick={(e) => handleNavClick(e, link)}
-                                    className={`px-3 py-2 rounded-md text-sm font-medium transition-colors cursor-pointer ${location.pathname === link.href
-                                        ? 'text-indigo-600 dark:text-indigo-400 bg-indigo-50 dark:bg-indigo-900/20'
-                                        : 'text-gray-600 dark:text-gray-300 hover:text-indigo-600 dark:hover:text-indigo-400'
-                                        }`}
-                                >
-                                    {link.logoSrc ? (
-                                        <>
-                                            <img
-                                                src={link.logoSrc}
-                                                alt={link.title}
-                                                className="h-6 w-auto"
-                                            />
-                                            <span className="sr-only">{link.title}</span>
-                                        </>
-                                    ) : (
-                                        link.title
-                                    )}
-                                </a>
-                            ))}
-                            <button
-                                onClick={() => setIsDark(!isDark)}
-                                className="p-2 rounded-full hover:bg-gray-100 dark:hover:bg-slate-800 text-gray-600 dark:text-gray-300 transition-colors"
-                                aria-label="Toggle theme"
-                            >
-                                {isDark ? <Sun className="w-5 h-5" /> : <Moon className="w-5 h-5" />}
-                            </button>
-                        </div>
-                    </div>
-
-                    <div className="-mr-2 flex md:hidden">
-                        <button
-                            onClick={() => setIsDark(!isDark)}
-                            className="p-2 mr-2 rounded-full hover:bg-gray-100 dark:hover:bg-slate-800 text-gray-600 dark:text-gray-300 transition-colors"
-                        >
-                            {isDark ? <Sun className="w-5 h-5" /> : <Moon className="w-5 h-5" />}
-                        </button>
-                        <button
-                            onClick={() => setIsOpen(!isOpen)}
-                            className="inline-flex items-center justify-center p-2 rounded-md text-gray-600 dark:text-gray-300 hover:text-indigo-600 dark:hover:text-indigo-400 hover:bg-gray-100 dark:hover:bg-slate-800 focus:outline-none"
-                        >
-                            {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
-                        </button>
-                    </div>
+                <div className="flex items-center gap-2 lg:hidden">
+                    <button
+                        type="button"
+                        onClick={() => setIsDark(!isDark)}
+                        className="rounded-full border border-[#111110]/12 p-2 dark:border-white/15"
+                        aria-label="Toggle theme"
+                    >
+                        {isDark ? <Sun className="h-4 w-4" /> : <Moon className="h-4 w-4" />}
+                    </button>
+                    <button
+                        type="button"
+                        onClick={() => setIsOpen(!isOpen)}
+                        className="rounded-full border border-[#111110]/12 p-2 dark:border-white/15"
+                        aria-label="Menu"
+                    >
+                        {isOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
+                    </button>
                 </div>
             </div>
 
-            {/* Mobile menu */}
             {isOpen && (
-                <div className="md:hidden bg-white dark:bg-slate-900 border-b border-gray-100 dark:border-slate-800">
-                    <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
-                        {navLinks.map((link) => (
-                            <a
-                                key={link.title}
-                                href={link.href}
-                                onClick={(e) => handleNavClick(e, link)}
-                                className="block px-3 py-2 rounded-md text-base font-medium text-gray-600 dark:text-gray-300 hover:text-indigo-600 dark:hover:text-indigo-400 hover:bg-gray-50 dark:hover:bg-slate-800"
-                            >
-                                {link.logoSrc ? (
-                                    <>
-                                        <img
-                                            src={link.logoSrc}
-                                            alt={link.title}
-                                            className="h-6 w-auto"
-                                        />
-                                        <span className="sr-only">{link.title}</span>
-                                    </>
-                                ) : (
-                                    link.title
-                                )}
-                            </a>
-                        ))}
-                    </div>
+                <div className="border-t border-[#111110]/10 bg-[#F4F4F0] px-5 py-4 dark:border-white/10 dark:bg-[#09090b] lg:hidden">
+                    {navLinks.map((link, i) => (
+                        <a
+                            key={link.title}
+                            href={link.href}
+                            onClick={(e) => handleNavClick(e, link)}
+                            className="port-mono flex items-center gap-3 border-b border-[#111110]/08 py-3.5 text-[11px] uppercase tracking-[0.2em] text-[#111110] last:border-0 dark:border-white/10 dark:text-[#F4F4F0]"
+                        >
+                            <span className="text-[#B8F03A]">0{i + 1}</span>
+                            {link.title}
+                        </a>
+                    ))}
                 </div>
             )}
         </nav>

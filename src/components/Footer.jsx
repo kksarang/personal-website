@@ -1,63 +1,51 @@
 import React from 'react';
-import { Heart, Github, Linkedin, Mail, Instagram } from 'lucide-react';
-import profileImage from '../assets/profile.jpg';
+import { ArrowUpRight, Github, Linkedin, Mail, Instagram } from 'lucide-react';
 
 const Footer = () => {
     return (
-        <footer className="bg-white dark:bg-slate-900 border-t border-gray-100 dark:border-slate-800 pt-16 pb-8">
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col items-center text-center">
-
-                {/* Profile Image */}
-                <div className="mb-6 relative group">
-                    <div className="absolute inset-0 bg-indigo-500/20 rounded-full blur-xl group-hover:blur-2xl transition-all duration-500 opacity-50"></div>
-                    <img
-                        src={profileImage}
-                        alt="Sarang Rajan"
-                        className="relative w-24 h-24 rounded-full border-4 border-white dark:border-slate-800 shadow-xl object-cover transform group-hover:scale-105 transition-transform duration-500"
-                    />
-                </div>
-
-                {/* Name & Role */}
-                <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-2">
-                    Sarang Rajan
-                </h3>
-                <p className="text-gray-500 dark:text-gray-400 max-w-lg mb-8 leading-relaxed text-center">
-                    Passionate Developer.
-                    <br />
-                    <span className="block text-center">
-                        I build apps that are not just functional, but delightful to use.
-                    </span>
-                </p>
-
-                {/* Social Icons */}
-                <div className="flex items-center space-x-6 mb-12">
-                    <a href="https://github.com/kksarang" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-gray-900 dark:hover:text-white transition-colors duration-300 transform hover:-translate-y-1">
-                        <Github className="w-5 h-5" />
-                    </a>
-                    <a href="https://www.linkedin.com/in/sarang-rajan/" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors duration-300 transform hover:-translate-y-1">
-                        <Linkedin className="w-5 h-5" />
-                    </a>
-                    <a href="mailto:kksarangrajan@gmail.com" className="text-gray-400 hover:text-rose-500 transition-colors duration-300 transform hover:-translate-y-1">
-                        <Mail className="w-5 h-5" />
-                    </a>
-                    <a href="https://www.instagram.com/sarang_rajan/" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-pink-500 transition-colors duration-300 transform hover:-translate-y-1">
-                        <Instagram className="w-5 h-5" />
-                    </a>
-                </div>
-
-                {/* Divider */}
-                <div className="w-full h-px bg-gray-100 dark:bg-slate-800 mb-8"></div>
-
-                {/* Bottom Bar */}
-                <div className="w-full flex flex-col md:flex-row justify-between items-center text-sm text-gray-500 dark:text-gray-400">
-                    <p className="mb-4 md:mb-0">
-                        &copy; {new Date().getFullYear()} Sarang Rajan. All rights reserved.
-                    </p>
-                    <div className="flex items-center space-x-1">
-                        <span>Made with</span>
-                        <Heart className="w-4 h-4 text-red-500 fill-current animate-pulse bg-red-500/20 rounded-full" />
-                        <span>hexenity - Digital & Software Solutions Company</span>
+        <footer className="relative border-t border-[#111110]/10 bg-[#111110] text-[#F4F4F0] dark:border-white/10">
+            <div className="port-lime-wash opacity-60" aria-hidden="true" />
+            <div className="relative mx-auto max-w-7xl px-5 py-16 sm:px-8 sm:py-20">
+                <div className="flex flex-col items-start justify-between gap-10 md:flex-row md:items-end">
+                    <div>
+                        <p className="port-mono mb-4 text-[10px] uppercase tracking-[0.3em] text-white/40">
+                            Available for new work
+                        </p>
+                        <a
+                            href="/#contact"
+                            className="port-display group inline-flex items-end gap-3 text-[clamp(2.4rem,6vw,4.5rem)] font-extrabold leading-[0.95] tracking-tight"
+                        >
+                            Let&apos;s build
+                            <span className="text-[#B8F03A]">.</span>
+                            <ArrowUpRight className="mb-2 h-8 w-8 text-[#B8F03A] transition-transform duration-300 group-hover:-translate-y-1 group-hover:translate-x-1 sm:h-10 sm:w-10" />
+                        </a>
                     </div>
+                    <div className="flex items-center gap-5">
+                        <a href="https://github.com/kksarang" target="_blank" rel="noopener noreferrer" className="text-white/40 transition hover:text-[#B8F03A]" aria-label="GitHub">
+                            <Github className="h-5 w-5" />
+                        </a>
+                        <a href="https://www.linkedin.com/in/sarang-rajan/" target="_blank" rel="noopener noreferrer" className="text-white/40 transition hover:text-[#B8F03A]" aria-label="LinkedIn">
+                            <Linkedin className="h-5 w-5" />
+                        </a>
+                        <a href="mailto:kksarangrajan@gmail.com" className="text-white/40 transition hover:text-[#B8F03A]" aria-label="Email">
+                            <Mail className="h-5 w-5" />
+                        </a>
+                        <a href="https://www.instagram.com/sarang_rajan/" target="_blank" rel="noopener noreferrer" className="text-white/40 transition hover:text-[#B8F03A]" aria-label="Instagram">
+                            <Instagram className="h-5 w-5" />
+                        </a>
+                    </div>
+                </div>
+
+                <div className="mt-14 flex flex-col items-start justify-between gap-4 border-t border-white/10 pt-8 text-sm text-white/40 sm:flex-row sm:items-center">
+                    <p className="port-mono text-[10px] uppercase tracking-[0.2em]">
+                        © {new Date().getFullYear()} Sarang Rajan
+                    </p>
+                    <p className="max-w-md text-sm leading-relaxed">
+                        Mobile Team Lead &amp; Full Stack Developer — building apps that feel as good as they work.
+                    </p>
+                    <a href="/hexenity" className="port-mono text-[10px] uppercase tracking-[0.2em] text-[#B8F03A] transition hover:text-white">
+                        Hexenity →
+                    </a>
                 </div>
             </div>
         </footer>

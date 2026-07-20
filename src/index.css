@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&family=Syne:wght@500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&family=Syne:wght@500;600;700;800&family=JetBrains+Mono:wght@400;500;600&family=Outfit:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500;600&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -835,14 +835,40 @@ html:not(.dark) .hexenity-root nav .hexenity-contained-scroll {
   font-family: 'JetBrains Mono', 'SFMono-Regular', Menlo, monospace;
 }
 
-/* Branded text selection across the Hexenity sub-site */
+/* Branded text selection across the Hexenity sub-site — subtle, not a solid block */
 .hexenity-root ::selection {
-  background: rgba(99, 102, 241, 0.55);
-  color: #ffffff;
+  background: rgba(129, 140, 248, 0.28);
+  color: #eef2ff;
 }
 html:not(.dark) .hexenity-root ::selection {
-  background: rgba(79, 70, 229, 0.85);
-  color: #ffffff;
+  background: rgba(99, 102, 241, 0.22);
+  color: #1e1b4b;
+}
+
+/* Hexenity body copy: Space Grotesk for a premium reading face (headings stay Syne) */
+.hexenity-root {
+  font-family: 'Space Grotesk', 'Inter', sans-serif;
+}
+.hexenity-root p:not(.pf-mono):not(.pf-display),
+.hexenity-root li:not(.pf-mono),
+.hexenity-root td,
+.hexenity-root label:not(.pf-mono),
+.hexenity-root input,
+.hexenity-root textarea,
+.hexenity-root select {
+  font-family: 'Space Grotesk', 'Inter', sans-serif;
+  letter-spacing: -0.01em;
+}
+.hexenity-root .pf-mono {
+  font-family: 'JetBrains Mono', 'SFMono-Regular', Menlo, monospace !important;
+}
+.hexenity-root .pf-display,
+.hexenity-root h1,
+.hexenity-root h2,
+.hexenity-root h3,
+.hexenity-root h4,
+.hexenity-root h5 {
+  font-family: 'Syne', 'Space Grotesk', sans-serif !important;
 }
 
 .pf-display {
@@ -1064,4 +1090,104 @@ html:not(.dark) .hexenity-root ::selection {
 @media (prefers-reduced-motion: reduce) {
   .pf-marquee-track { animation: none; }
   .pf-gradient-text { animation: none; }
+}
+
+/* ===========================================================
+   PORTFOLIO STUDIO SYSTEM (port-*) — Charcoal & Lime
+   Scoped to .portfolio-root — deliberately opposite Hexenity
+   ============================================================ */
+
+.portfolio-root {
+  --port-accent: #b8f03a;
+  --port-accent-ink: #0a0a0a;
+  --port-bg: #f4f4f0;
+  --port-bg-dark: #09090b;
+  --port-ink: #111110;
+  --port-muted: #6b6b63;
+  --port-line: rgba(17, 17, 16, 0.1);
+  --port-line-dark: rgba(255, 255, 255, 0.1);
+  font-family: 'Outfit', sans-serif;
+  background: var(--port-bg);
+  color: var(--port-ink);
+  overflow-x: hidden;
+}
+
+.dark .portfolio-root {
+  background: var(--port-bg-dark);
+  color: #f4f4f0;
+}
+
+.portfolio-root h1,
+.portfolio-root h2,
+.portfolio-root h3,
+.portfolio-root h4,
+.portfolio-root h5 {
+  font-family: 'Outfit', sans-serif;
+  letter-spacing: -0.03em;
+}
+
+.port-display {
+  font-family: 'Outfit', sans-serif;
+  letter-spacing: -0.03em;
+}
+
+.port-mono {
+  font-family: 'IBM Plex Mono', 'SFMono-Regular', Menlo, monospace;
+}
+
+.port-grain {
+  pointer-events: none;
+  position: absolute;
+  inset: 0;
+  opacity: 0.035;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+.port-lime-wash {
+  pointer-events: none;
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse 60% 50% at 85% 10%, rgba(184, 240, 58, 0.12), transparent 55%),
+    radial-gradient(ellipse 40% 40% at 10% 80%, rgba(184, 240, 58, 0.06), transparent 50%);
+}
+
+.dark .port-lime-wash {
+  background:
+    radial-gradient(ellipse 60% 50% at 85% 10%, rgba(184, 240, 58, 0.08), transparent 55%),
+    radial-gradient(ellipse 40% 40% at 10% 80%, rgba(184, 240, 58, 0.04), transparent 50%);
+}
+
+.portfolio-root ::selection {
+  background: rgba(184, 240, 58, 0.85);
+  color: #0a0a0a;
+}
+
+.port-reveal {
+  animation: port-reveal 0.85s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+@keyframes port-reveal {
+  from {
+    opacity: 0;
+    transform: translateY(22px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.port-skill-row {
+  transition: background-color 0.35s ease, color 0.35s ease, border-color 0.35s ease;
+}
+.port-skill-row:hover {
+  background-color: var(--port-accent);
+  color: var(--port-accent-ink);
+  border-color: var(--port-accent);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .port-reveal {
+    animation: none;
+  }
 }

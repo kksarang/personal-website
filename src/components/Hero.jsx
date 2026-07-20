@@ -1,110 +1,84 @@
 import React from 'react';
-import { Github, Linkedin, Mail, ArrowRight, Download } from 'lucide-react';
+import { ArrowRight, Github, Linkedin, Mail } from 'lucide-react';
+import profileImage from '../assets/profile.jpg';
 
 const Hero = () => {
     return (
-        <section id="home" className="min-h-screen flex items-center pt-16 bg-gradient-to-br from-white to-gray-50 dark:from-slate-900 dark:to-slate-800">
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
-                <div className="flex flex-col md:flex-row items-center justify-between gap-12">
-                    <div className="flex-1 text-center md:text-left">
-                        <h2 className="text-sm uppercase tracking-wider text-indigo-600 dark:text-indigo-400 font-semibold mb-4">
-                            Hello, I'm
-                        </h2>
-                        <h1 className="text-5xl md:text-7xl font-bold text-gray-900 dark:text-white mb-6 tracking-tight">
-                            Sarang <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-600 to-purple-600">Rajan</span>
-                        </h1>
-                        <p className="text-xl md:text-2xl text-gray-600 dark:text-gray-300 mb-8 font-medium">
-                            Senior Full Stack Developer
-                            <span className="block text-lg mt-2 font-normal text-gray-500 dark:text-gray-400">
-                                Flutter | Android IOS(Native) | React Native
-                            </span>
-                        </p>
-                        <p className="text-gray-600 dark:text-gray-400 max-w-2xl mb-10 text-lg leading-relaxed">
-                            I am a passionate Mobile Team Lead and Developer with extensive experience in building high-quality mobile applications.
-                            I specialize in creating seamless user experiences across Android and iOS platforms.
-                        </p>
+        <section
+            id="home"
+            className="relative flex min-h-[100svh] items-center overflow-hidden pb-16 pt-10 sm:pt-14"
+        >
+            <div className="port-lime-wash" aria-hidden="true" />
 
-                        <div className="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
-                            <a
-                                href="#contact"
-                                className="inline-flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-lg text-white bg-indigo-600 hover:bg-indigo-700 md:text-lg transition-all shadow-lg hover:shadow-indigo-500/25"
-                            >
-                                Contact Me
-                                <ArrowRight className="ml-2 w-5 h-5" />
-                            </a>
-                            <a
-                                href="#projects"
-                                className="inline-flex items-center justify-center px-8 py-3 border border-gray-300 dark:border-slate-600 text-base font-medium rounded-lg text-gray-700 dark:text-gray-200 bg-white dark:bg-slate-800 hover:bg-gray-50 dark:hover:bg-slate-700 md:text-lg transition-all"
-                            >
-                                View Projects
-                            </a>
-                        </div>
+            <div className="relative mx-auto grid w-full max-w-7xl items-center gap-12 px-5 sm:px-8 lg:grid-cols-[1.15fr_0.85fr] lg:gap-16">
+                <div className="port-reveal">
+                    <p className="port-mono mb-6 text-[11px] uppercase tracking-[0.35em] text-[#6b6b63] dark:text-white/40">
+                        <span className="text-[#B8F03A]">(01)</span> Mobile Team Lead
+                    </p>
 
-                        <div className="mt-12 flex items-center justify-center md:justify-start space-x-6">
-                            <span className="text-gray-500 dark:text-gray-400 text-sm font-medium uppercase tracking-wider">Connect with me:</span>
-                            <div className="flex space-x-4">
-                                <a href="https://github.com/kksarang" target="_blank" rel="noopener noreferrer" className="p-2 text-gray-400 hover:text-gray-900 dark:hover:text-white transition-colors">
-                                    <Github className="w-6 h-6" />
-                                </a>
-                                <a href="https://www.linkedin.com/in/sarang-rajan/" target="_blank" rel="noopener noreferrer" className="p-2 text-gray-400 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors">
-                                    <Linkedin className="w-6 h-6" />
-                                </a>
-                                <a href="mailto:kksarangrajan@gmail.com" className="p-2 text-gray-400 hover:text-rose-500 transition-colors">
-                                    <Mail className="w-6 h-6" />
-                                </a>
-                            </div>
-                        </div>
+                    <h1 className="port-display text-[clamp(2.8rem,8vw,6.5rem)] font-extrabold leading-[0.92] tracking-tight text-[#111110] dark:text-[#F4F4F0]">
+                        Sarang
+                        <br />
+                        Rajan<span className="text-[#B8F03A]">.</span>
+                    </h1>
+
+                    <p className="mt-6 max-w-lg text-lg leading-relaxed text-[#6b6b63] dark:text-white/55 sm:text-xl">
+                        I design and ship mobile products people actually use —
+                        Flutter, native Android &amp; iOS, React Native.
+                    </p>
+
+                    <div className="mt-10 flex flex-wrap items-center gap-4">
+                        <a
+                            href="#contact"
+                            className="inline-flex items-center gap-2 rounded-full bg-[#111110] px-7 py-3.5 text-sm font-semibold text-[#B8F03A] transition hover:bg-[#B8F03A] hover:text-[#09090b] dark:bg-[#B8F03A] dark:text-[#09090b] dark:hover:bg-white"
+                        >
+                            Start a conversation
+                            <ArrowRight className="h-4 w-4" />
+                        </a>
+                        <a
+                            href="#adventures"
+                            className="inline-flex items-center gap-2 rounded-full border border-[#111110]/15 px-7 py-3.5 text-sm font-semibold text-[#111110] transition hover:border-[#B8F03A] hover:bg-[#B8F03A]/15 dark:border-white/20 dark:text-white dark:hover:border-[#B8F03A]"
+                        >
+                            See adventures
+                        </a>
                     </div>
 
-                    <div className="flex-1 relative hidden md:block">
-                        <div className="relative w-[500px] h-[500px]">
-                            {/* Abstract shapes/blobs */}
-                            <div className="absolute top-0 right-0 w-72 h-72 bg-purple-300 dark:bg-purple-900/30 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob"></div>
-                            <div className="absolute top-0 -left-4 w-72 h-72 bg-indigo-300 dark:bg-indigo-900/30 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob animation-delay-2000"></div>
-                            <div className="absolute -bottom-8 left-20 w-72 h-72 bg-pink-300 dark:bg-pink-900/30 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob animation-delay-4000"></div>
+                    <div className="mt-12 flex items-center gap-5">
+                        <span className="port-mono text-[10px] uppercase tracking-[0.25em] text-[#6b6b63] dark:text-white/35">
+                            Connect
+                        </span>
+                        <div className="h-px w-8 bg-[#111110]/15 dark:bg-white/15" />
+                        <a href="https://github.com/kksarang" target="_blank" rel="noopener noreferrer" className="text-[#6b6b63] transition hover:text-[#111110] dark:text-white/40 dark:hover:text-[#B8F03A]" aria-label="GitHub">
+                            <Github className="h-5 w-5" />
+                        </a>
+                        <a href="https://www.linkedin.com/in/sarang-rajan/" target="_blank" rel="noopener noreferrer" className="text-[#6b6b63] transition hover:text-[#111110] dark:text-white/40 dark:hover:text-[#B8F03A]" aria-label="LinkedIn">
+                            <Linkedin className="h-5 w-5" />
+                        </a>
+                        <a href="mailto:kksarangrajan@gmail.com" className="text-[#6b6b63] transition hover:text-[#111110] dark:text-white/40 dark:hover:text-[#B8F03A]" aria-label="Email">
+                            <Mail className="h-5 w-5" />
+                        </a>
+                    </div>
+                </div>
 
-                            {/* Code block decoration */}
-                            <div className="relative rounded-2xl border border-white/25 bg-white/90 p-8 shadow-2xl dark:border-white/15 dark:bg-slate-800/90">
-                                <div className="flex space-x-2 mb-4">
-                                    <div className="w-3 h-3 rounded-full bg-red-500"></div>
-                                    <div className="w-3 h-3 rounded-full bg-yellow-500"></div>
-                                    <div className="w-3 h-3 rounded-full bg-green-500"></div>
-                                </div>
-                                <div className="text-sm leading-relaxed font-mono text-gray-800 dark:text-gray-200">
-                                    <div>
-                                        <span className="text-indigo-600 dark:text-indigo-400">class</span>{' '}
-                                        <span className="text-yellow-600 dark:text-yellow-400">Developer</span> {'{'}
-                                    </div>
-                                    <div className="pl-4">
-                                        <span className="text-purple-600 dark:text-purple-400">constructor</span>() {'{'}
-                                    </div>
-                                    <div className="pl-8">
-                                        <span className="text-blue-600 dark:text-blue-400">this</span>.name ={' '}
-                                        <span className="text-green-600 dark:text-green-400">'Sarang Rajan'</span>;
-                                    </div>
-                                    <div className="pl-8">
-                                        <span className="text-blue-600 dark:text-blue-400">this</span>.role ={' '}
-                                        <span className="text-green-600 dark:text-green-400">'Senior Full Stack Developer'</span>;
-                                    </div>
-                                    <div className="pl-8">
-                                        <span className="text-blue-600 dark:text-blue-400">this</span>.skills = [
-                                    </div>
-                                    <div className="pl-12">
-                                        <span className="text-green-600 dark:text-green-400">'Flutter & React Native'</span>,
-                                    </div>
-                                    <div className="pl-12">
-                                        <span className="text-green-600 dark:text-green-400">'Android & iOS'</span>,
-                                    </div>
-                                    <div className="pl-12">
-                                        <span className="text-green-600 dark:text-green-400">'React.js & HTML5|CSS3'</span>
-                                    </div>
-                                    <div className="pl-8">];</div>
-                                    <div className="pl-4">{'}'}</div>
-                                    <div>{'}'}</div>
-                                </div>
-
-                            </div>
+                <div className="port-reveal relative mx-auto w-full max-w-md lg:max-w-none" style={{ animationDelay: '120ms' }}>
+                    <div className="relative aspect-[4/5] overflow-hidden rounded-[2rem] border border-[#111110]/10 dark:border-white/10">
+                        <img
+                            src={profileImage}
+                            alt="Sarang Rajan"
+                            className="h-full w-full object-cover grayscale transition duration-700 hover:grayscale-0"
+                        />
+                        <div className="absolute inset-0 bg-gradient-to-t from-[#09090b]/70 via-transparent to-transparent" />
+                        <div className="absolute bottom-6 left-6 right-6">
+                            <p className="port-mono text-[10px] uppercase tracking-[0.25em] text-[#B8F03A]">
+                                Based in India
+                            </p>
+                            <p className="port-display mt-1 text-xl font-bold text-white">
+                                Flutter · Android · iOS · RN
+                            </p>
                         </div>
+                    </div>
+                    <div className="absolute -right-3 -top-3 rounded-full bg-[#B8F03A] px-4 py-2 port-mono text-[10px] font-semibold uppercase tracking-[0.18em] text-[#09090b] sm:-right-4 sm:-top-4">
+                        Open to work
                     </div>
                 </div>
             </div>
