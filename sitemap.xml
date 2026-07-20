@@ -6,37 +6,37 @@
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://sarangrajan.in/hexenity</loc>
+    <loc>https://sarangrajan.in/hexenity/</loc>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://sarangrajan.in/hexenity/about</loc>
+    <loc>https://sarangrajan.in/hexenity/about/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://sarangrajan.in/hexenity/services</loc>
+    <loc>https://sarangrajan.in/hexenity/services/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://sarangrajan.in/hexenity/work</loc>
+    <loc>https://sarangrajan.in/hexenity/work/</loc>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://sarangrajan.in/hexenity/contact</loc>
+    <loc>https://sarangrajan.in/hexenity/contact/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://sarangrajan.in/hexenity/core-hexenity</loc>
+    <loc>https://sarangrajan.in/hexenity/core-hexenity/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://sarangrajan.in/hexenity/learning</loc>
+    <loc>https://sarangrajan.in/hexenity/learning/</loc>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
