@@ -4,6 +4,7 @@ import PortfolioLayout from './layouts/PortfolioLayout';
 import KksystemsLayout from './layouts/KksystemsLayout';
 import HomePage from './components/HomePage';
 import ErrorBoundary from './components/ErrorBoundary';
+import SeoManager from './components/SeoManager';
 import { lazyRoute } from './utils/lazyRoute';
 
 const ProjectDetail = lazyRoute(() => import('./components/Projects/ProjectDetail'));
@@ -74,6 +75,7 @@ function RouteLoader() {
 function App() {
   return (
     <Router>
+      <SeoManager />
       <ErrorBoundary>
         <Suspense fallback={<RouteLoader />}>
           <Routes>
