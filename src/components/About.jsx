@@ -13,18 +13,18 @@ const About = () => {
             <div className="mx-auto max-w-7xl px-5 sm:px-8">
                 <div className="grid gap-14 lg:grid-cols-[1.1fr_0.9fr] lg:gap-20">
                     <div>
-                        <p className="port-mono mb-4 text-[11px] uppercase tracking-[0.35em] text-[#6b6b63] dark:text-white/40">
-                            <span className="text-[#B8F03A]">(02)</span> About
+                        <p className="port-mono mb-4 text-[11px] uppercase tracking-[0.35em] text-[#3a3a36] dark:text-white/40">
+                            <span className="port-accent">(02)</span> About
                         </p>
                         <h2 className="port-display text-[clamp(2rem,4vw,3.2rem)] font-extrabold leading-[1.05] text-[#111110] dark:text-[#F4F4F0]">
                             Who I am when the IDE is open.
                         </h2>
-                        <p className="mt-6 max-w-xl text-lg leading-relaxed text-[#6b6b63] dark:text-white/55">
+                        <p className="mt-6 max-w-xl text-lg leading-relaxed text-[#3a3a36] dark:text-white/55">
                             I am a dedicated <strong className="font-semibold text-[#111110] dark:text-white">Mobile Application Developer</strong> and{' '}
                             <strong className="font-semibold text-[#111110] dark:text-white">Team Lead</strong> with a passion for building robust,
                             user-friendly applications. From native Android to Flutter and React Native, I deliver products that hold up in production.
                         </p>
-                        <p className="mt-4 max-w-xl leading-relaxed text-[#6b6b63] dark:text-white/45">
+                        <p className="mt-4 max-w-xl leading-relaxed text-[#3a3a36] dark:text-white/45">
                             Clean architecture, clear ownership, and experiences that feel effortless on every device.
                         </p>
                     </div>
@@ -36,7 +36,7 @@ const About = () => {
                                     <fact.icon className="h-5 w-5" />
                                 </span>
                                 <div>
-                                    <p className="port-mono text-[10px] uppercase tracking-[0.22em] text-[#6b6b63] dark:text-white/40">{fact.label}</p>
+                                    <p className="port-mono text-[10px] uppercase tracking-[0.22em] text-[#3a3a36] dark:text-white/40">{fact.label}</p>
                                     <p className="port-display mt-1 text-lg font-bold text-[#111110] dark:text-white">{fact.value}</p>
                                 </div>
                             </div>

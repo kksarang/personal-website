@@ -1100,11 +1100,12 @@ html:not(.dark) .hexenity-root ::selection {
 .portfolio-root {
   --port-accent: #b8f03a;
   --port-accent-ink: #0a0a0a;
+  --port-accent-readable: #3f6212; /* olive — readable on stone */
   --port-bg: #f4f4f0;
   --port-bg-dark: #09090b;
   --port-ink: #111110;
-  --port-muted: #6b6b63;
-  --port-line: rgba(17, 17, 16, 0.1);
+  --port-muted: #3a3a36;
+  --port-line: rgba(17, 17, 16, 0.14);
   --port-line-dark: rgba(255, 255, 255, 0.1);
   font-family: 'Outfit', sans-serif;
   background: var(--port-bg);
@@ -1113,8 +1114,27 @@ html:not(.dark) .hexenity-root ::selection {
 }
 
 .dark .portfolio-root {
+  --port-accent-readable: #b8f03a;
+  --port-muted: rgba(244, 244, 240, 0.55);
   background: var(--port-bg-dark);
   color: #f4f4f0;
+}
+
+.port-accent {
+  color: var(--port-accent-readable);
+}
+
+.port-chip {
+  border: 1px solid rgba(17, 17, 16, 0.18);
+  background: #ffffff;
+  color: #111110;
+  box-shadow: 0 1px 2px rgba(17, 17, 16, 0.04);
+}
+.dark .port-chip {
+  border-color: rgba(255, 255, 255, 0.16);
+  background: rgba(255, 255, 255, 0.04);
+  color: rgba(244, 244, 240, 0.88);
+  box-shadow: none;
 }
 
 .portfolio-root h1,

@@ -72,7 +72,7 @@ const Navbar = () => {
                     onClick={(e) => handleNavClick(e, { href: '/#home', type: 'hash' })}
                     className="port-display text-xl font-bold tracking-tight text-[#111110] dark:text-[#F4F4F0]"
                 >
-                    Sarang<span className="text-[#B8F03A]">.</span>
+                    Sarang<span className="port-accent">.</span>
                 </a>
 
                 <div className="hidden items-center gap-1 lg:flex">
@@ -81,9 +81,9 @@ const Navbar = () => {
                             key={link.title}
                             href={link.href}
                             onClick={(e) => handleNavClick(e, link)}
-                            className="port-mono group relative px-3 py-2 text-[10px] uppercase tracking-[0.22em] text-[#6b6b63] transition-colors hover:text-[#111110] dark:text-white/45 dark:hover:text-white"
+                            className="port-mono group relative px-3 py-2 text-[10px] uppercase tracking-[0.22em] text-[#3a3a36] transition-colors hover:text-[#111110] dark:text-white/45 dark:hover:text-white"
                         >
-                            <span className="mr-1.5 text-[#B8F03A]/70">0{i + 1}</span>
+                            <span className="mr-1.5 port-accent">0{i + 1}</span>
                             {link.title}
                             <span className="absolute inset-x-3 -bottom-0.5 h-px origin-left scale-x-0 bg-[#B8F03A] transition-transform duration-300 group-hover:scale-x-100" />
                         </a>
@@ -135,7 +135,7 @@ const Navbar = () => {
                             onClick={(e) => handleNavClick(e, link)}
                             className="port-mono flex items-center gap-3 border-b border-[#111110]/08 py-3.5 text-[11px] uppercase tracking-[0.2em] text-[#111110] last:border-0 dark:border-white/10 dark:text-[#F4F4F0]"
                         >
-                            <span className="text-[#B8F03A]">0{i + 1}</span>
+                            <span className="port-accent">0{i + 1}</span>
                             {link.title}
                         </a>
                     ))}

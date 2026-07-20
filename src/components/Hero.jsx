@@ -12,17 +12,17 @@ const Hero = () => {
 
             <div className="relative mx-auto grid w-full max-w-7xl items-center gap-12 px-5 sm:px-8 lg:grid-cols-[1.15fr_0.85fr] lg:gap-16">
                 <div className="port-reveal">
-                    <p className="port-mono mb-6 text-[11px] uppercase tracking-[0.35em] text-[#6b6b63] dark:text-white/40">
-                        <span className="text-[#B8F03A]">(01)</span> Mobile Team Lead
+                    <p className="port-mono mb-6 text-[11px] uppercase tracking-[0.35em] text-[#3a3a36] dark:text-white/40">
+                        <span className="port-accent">(01)</span> Mobile Team Lead
                     </p>
 
                     <h1 className="port-display text-[clamp(2.8rem,8vw,6.5rem)] font-extrabold leading-[0.92] tracking-tight text-[#111110] dark:text-[#F4F4F0]">
                         Sarang
                         <br />
-                        Rajan<span className="text-[#B8F03A]">.</span>
+                        Rajan<span className="port-accent">.</span>
                     </h1>
 
-                    <p className="mt-6 max-w-lg text-lg leading-relaxed text-[#6b6b63] dark:text-white/55 sm:text-xl">
+                    <p className="mt-6 max-w-lg text-lg leading-relaxed text-[#3a3a36] dark:text-white/55 sm:text-xl">
                         I design and ship mobile products people actually use —
                         Flutter, native Android &amp; iOS, React Native.
                     </p>
@@ -44,17 +44,17 @@ const Hero = () => {
                     </div>
 
                     <div className="mt-12 flex items-center gap-5">
-                        <span className="port-mono text-[10px] uppercase tracking-[0.25em] text-[#6b6b63] dark:text-white/35">
+                        <span className="port-mono text-[10px] uppercase tracking-[0.25em] text-[#3a3a36] dark:text-white/35">
                             Connect
                         </span>
                         <div className="h-px w-8 bg-[#111110]/15 dark:bg-white/15" />
-                        <a href="https://github.com/kksarang" target="_blank" rel="noopener noreferrer" className="text-[#6b6b63] transition hover:text-[#111110] dark:text-white/40 dark:hover:text-[#B8F03A]" aria-label="GitHub">
+                        <a href="https://github.com/kksarang" target="_blank" rel="noopener noreferrer" className="text-[#3a3a36] transition hover:text-[#111110] dark:text-white/40 dark:hover:text-[#B8F03A]" aria-label="GitHub">
                             <Github className="h-5 w-5" />
                         </a>
-                        <a href="https://www.linkedin.com/in/sarang-rajan/" target="_blank" rel="noopener noreferrer" className="text-[#6b6b63] transition hover:text-[#111110] dark:text-white/40 dark:hover:text-[#B8F03A]" aria-label="LinkedIn">
+                        <a href="https://www.linkedin.com/in/sarang-rajan/" target="_blank" rel="noopener noreferrer" className="text-[#3a3a36] transition hover:text-[#111110] dark:text-white/40 dark:hover:text-[#B8F03A]" aria-label="LinkedIn">
                             <Linkedin className="h-5 w-5" />
                         </a>
-                        <a href="mailto:kksarangrajan@gmail.com" className="text-[#6b6b63] transition hover:text-[#111110] dark:text-white/40 dark:hover:text-[#B8F03A]" aria-label="Email">
+                        <a href="mailto:kksarangrajan@gmail.com" className="text-[#3a3a36] transition hover:text-[#111110] dark:text-white/40 dark:hover:text-[#B8F03A]" aria-label="Email">
                             <Mail className="h-5 w-5" />
                         </a>
                     </div>

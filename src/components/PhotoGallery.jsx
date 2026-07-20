@@ -15,13 +15,13 @@ const PhotoGallery = () => {
     return (
         <section id="adventures" className="relative border-t border-[#111110]/10 py-24 dark:border-white/10 sm:py-28">
             <div className="mx-auto max-w-7xl px-5 sm:px-8">
-                <p className="port-mono mb-4 text-[11px] uppercase tracking-[0.35em] text-[#6b6b63] dark:text-white/40">
-                    <span className="text-[#B8F03A]">(06)</span> Life outside code
+                <p className="port-mono mb-4 text-[11px] uppercase tracking-[0.35em] text-[#3a3a36] dark:text-white/40">
+                    <span className="port-accent">(06)</span> Life outside code
                 </p>
                 <h2 className="port-display max-w-2xl text-[clamp(2rem,4vw,3.2rem)] font-extrabold text-[#111110] dark:text-[#F4F4F0]">
                     Adventures & explorations
                 </h2>
-                <p className="mt-4 max-w-xl text-[#6b6b63] dark:text-white/50">
+                <p className="mt-4 max-w-xl text-[#3a3a36] dark:text-white/50">
                     When I&apos;m not shipping product, you&apos;ll find me on trails, coastal roads, and café corners across South India.
                 </p>
 
@@ -43,7 +43,7 @@ const PhotoGallery = () => {
                             <div className="absolute bottom-0 left-0 right-0 translate-y-4 p-6 opacity-0 transition-all duration-500 group-hover:translate-y-0 group-hover:opacity-100">
                                 <h3 className="port-display text-lg font-bold text-white">{photo.caption}</h3>
                                 <p className="mt-1 flex items-center gap-1.5 text-sm text-white/70">
-                                    <MapPin className="h-3.5 w-3.5 text-[#B8F03A]" />
+                                    <MapPin className="h-3.5 w-3.5 port-accent" />
                                     {photo.location}
                                 </p>
                             </div>
