@@ -29,6 +29,7 @@ const CoreHexenity = lazyRoute(() => import('./pages/kksystems/CoreHexenity'));
 const HexenityAI = lazyRoute(() => import('./pages/kksystems/HexenityAI'));
 const HexenitySaaS = lazyRoute(() => import('./pages/kksystems/HexenitySaaS'));
 const HexenitySaaSDemo = lazyRoute(() => import('./pages/kksystems/HexenitySaaSDemo'));
+const CleansoLaundry = lazyRoute(() => import('./pages/kksystems/solutions/CleansoLaundry'));
 const ServiceDetail = lazyRoute(() => import('./components/KkSystems/ServiceDetail'));
 const ExpenserLanding = lazyRoute(() => import('./pages/ExpenserLanding'));
 
@@ -123,6 +124,8 @@ function App() {
               <Route path="solutions/mobile-detail" element={<MobileAppDevDetail />} />
               <Route path="solutions/web" element={<WebSolutions />} />
               <Route path="solutions/erp" element={<ERPSolutions />} />
+              <Route path="solutions/laundry" element={<CleansoLaundry />} />
+              <Route path="cleanso" element={<CleansoLaundry />} />
             </Route>
 
             {/* Legacy: redirect old /kksystems URLs */}

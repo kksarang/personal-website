@@ -54,6 +54,16 @@ export default function WorkDetails() {
                             <ExternalLink className="h-4 w-4" />
                         </a>
                     ) : null}
+                    {project.slug === 'cleanso' ? (
+                        <button
+                            type="button"
+                            onClick={() => navigate('/hexenity/solutions/laundry')}
+                            className="inline-flex items-center gap-2 rounded-full border border-indigo-300/35 bg-indigo-500/20 px-4 py-2 text-xs font-semibold uppercase tracking-[0.13em] text-indigo-100 transition hover:bg-indigo-500/30"
+                        >
+                            Product plan
+                            <ArrowRight className="h-4 w-4" />
+                        </button>
+                    ) : null}
                     {project.slug === 'expenser-app' ? (
                         <button
                             type="button"

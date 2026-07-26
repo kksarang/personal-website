@@ -162,6 +162,48 @@ export default function Work() {
                     <MetricCard title="Execution Model" value="Outcome-led" icon={Layers3} />
                 </section>
 
+                <section className="overflow-hidden rounded-3xl border border-indigo-300/25 bg-gradient-to-br from-indigo-500/15 via-[#0B0F19] to-cyan-500/10 p-7 sm:p-9">
+                    <div className="flex flex-col gap-6 lg:flex-row lg:items-end lg:justify-between">
+                        <div className="max-w-2xl">
+                            <p className="pf-mono mb-3 text-[10px] font-semibold uppercase tracking-[0.3em] text-indigo-300">
+                                New software solution
+                            </p>
+                            <h2 className="pf-display text-[clamp(1.5rem,3vw,2.2rem)] font-bold text-white">
+                                Cleanso — custom laundry software product plan
+                            </h2>
+                            <p className="mt-3 text-sm leading-relaxed text-slate-300 sm:text-base">
+                                White-label booking app, delivery app, and CMS + POS — planned and built by Hexenity for laundry operators in India, UAE &amp; GCC.
+                                Live site:{' '}
+                                <a
+                                    href="https://kksarang.github.io/laundry/"
+                                    target="_blank"
+                                    rel="noreferrer"
+                                    className="text-indigo-200 underline decoration-indigo-400/40 underline-offset-2 hover:text-white"
+                                >
+                                    kksarang.github.io/laundry
+                                </a>
+                            </p>
+                        </div>
+                        <div className="flex flex-wrap gap-3">
+                            <button
+                                type="button"
+                                onClick={() => navigate('/hexenity/solutions/laundry')}
+                                className="inline-flex items-center gap-2 rounded-full bg-white px-5 py-2.5 text-xs font-semibold uppercase tracking-[0.12em] text-[#070B17] transition hover:bg-indigo-100"
+                            >
+                                View product plan
+                                <ArrowRight className="h-4 w-4" />
+                            </button>
+                            <button
+                                type="button"
+                                onClick={() => openProject('cleanso')}
+                                className="inline-flex items-center gap-2 rounded-full border border-white/20 px-5 py-2.5 text-xs font-semibold uppercase tracking-[0.12em] text-white transition hover:border-indigo-300/40"
+                            >
+                                Case study
+                            </button>
+                        </div>
+                    </div>
+                </section>
+
                 <section>
                     <SectionHeader
                         index="01"

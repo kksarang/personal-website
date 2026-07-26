@@ -71,8 +71,8 @@ const ProjectCard = ({ project, onClick }) => (
 const PortfolioSection = () => {
     const navigate = useNavigate();
 
-    // Select a few premium projects to display on the landing page
-    const featuredProjects = projects.filter(p => p.featured || p.id <= 2).slice(0, 2);
+    // Premium projects for the Hexenity home "Work" strip
+    const featuredProjects = projects.filter((p) => p.featured).slice(0, 4);
 
     const handleProjectClick = (slug) => {
         // Multi-page routing directly via string path, avoiding hash collisions.

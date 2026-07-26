@@ -29,6 +29,16 @@ const HEXENITY_BY_PATH = {
     description:
       'Selected Hexenity projects and case studies — mobile apps, websites, and digital products shipped for real businesses.',
   },
+  '/hexenity/solutions/laundry': {
+    title: 'Cleanso | Custom Laundry Software by Hexenity',
+    description:
+      'Cleanso — white-label laundry management software. Customer app, delivery app, CMS + POS. Product planning and custom builds for India, UAE & GCC.',
+  },
+  '/hexenity/cleanso': {
+    title: 'Cleanso | Custom Laundry Software by Hexenity',
+    description:
+      'Cleanso — white-label laundry management software. Customer app, delivery app, CMS + POS. Product planning and custom builds for India, UAE & GCC.',
+  },
   '/hexenity/contact': {
     title: 'Contact Hexenity | Start a Project',
     description:

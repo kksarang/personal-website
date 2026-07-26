@@ -1,5 +1,93 @@
 export const projects = [
     {
+        id: 8,
+        title: "Cleanso",
+        slug: "cleanso",
+        description: "White-label laundry management software — customer booking app, delivery app, CMS + POS for laundry and dry-cleaning businesses across India, UAE, and the GCC.",
+        tags: ["Web Development", "SaaS", "Laundry Software", "White-Label"],
+        technologies: ["React.js", "Vite", "Tailwind CSS", "Product Marketing"],
+        github: "https://kksarang.github.io/laundry/",
+        playStore: null,
+        featured: true,
+        heroImage: "/assets/showcase/web_platform_premium.png",
+        appDetails: {
+            category: "SaaS Platform",
+            platform: "Web Application",
+            client: "Cleanso — Laundry Management Software",
+            techStack: "React + Vite + Tailwind",
+            releaseType: "Production",
+            availability: "Live — kksarang.github.io/laundry",
+            targetAudience: "Laundry & dry-cleaning operators in India, UAE & GCC"
+        },
+        overview: "Cleanso is Hexenity's laundry software solution — a white-label product in active planning and build for operators who need more than a generic POS. The suite covers customer laundry booking apps, delivery partner apps, and CMS + POS, with flat yearly licensing aimed at multi-store and franchise operators across India, UAE, and the GCC.\n\nWe shipped the live product site at https://kksarang.github.io/laundry/ and are advancing full custom software product planning: discovery, architecture, white-label branding, and implementation playbooks so each laundry business gets a stack that matches its counter, riders, and customers.",
+        problem: "Laundry and dry-cleaning businesses often run on fragmented tools — paper tickets, generic billing software, and separate delivery apps — with no cohesive white-label stack that matches their brand. Operators needed both a clear product destination and a serious custom software plan for booking, delivery, POS, and multi-store control.",
+        solution: "Hexenity designed the Cleanso product presence and product plan together: a conversion-focused marketing site plus a phased build roadmap (discovery → UX/architecture → apps + POS → white-label launch). The experience is SEO-structured around laundry management, dry-cleaning POS, and white-label laundry app keywords so operators can discover Cleanso and engage Hexenity for customization.",
+        features: [
+            "Custom laundry software product planning (discovery to launch)",
+            "White-label customer booking app",
+            "Laundry delivery partner app workflows",
+            "CMS + dry-cleaning POS / multi-store franchise controls",
+            "Regional licensing story for India, UAE, and GCC",
+            "Live product site with SEO for laundry software discovery"
+        ],
+        techStack: ["React.js", "Vite", "Tailwind CSS", "GitHub Pages", "SEO metadata"],
+        screenshots: [],
+        storePerformance: null,
+        userFeedback: [],
+        technicalArchitecture: [
+            { layer: "Frontend", stack: "React + Vite SPA with performance-focused static hosting." },
+            { layer: "Design System", stack: "Tailwind CSS with product-marketing typography and conversion sections." },
+            { layer: "SEO Layer", stack: "Canonical URLs, Open Graph, and keyword-led meta for laundry software discovery." },
+            { layer: "Delivery", stack: "GitHub Pages deploy with cache-busting headers for frequent content updates." }
+        ],
+        deployment: "Live on GitHub Pages at https://kksarang.github.io/laundry/ with static CDN delivery.",
+        results: "Cleanso now has a live product presence and an active Hexenity product plan for custom laundry software — white-label apps, POS, and delivery for operators across India and the GCC."
+    },
+    {
+        id: 5,
+        title: "InfoparkDaily",
+        slug: "infopark-daily",
+        description: "Kerala's largest tech & business community platform — Infopark Kochi jobs, walk-ins, tech news, and brand campaigns. Live at infoparkdaily.online.",
+        tags: ["Web Development", "Community Platform", "Digital Media", "React"],
+        technologies: ["React.js", "Tailwind CSS", "Vite", "SEO"],
+        github: "https://infoparkdaily.online/",
+        playStore: null,
+        featured: true,
+        heroImage: "/assets/showcase/web_platform_premium.png",
+        appDetails: {
+            category: "Web Platform",
+            platform: "Web Application",
+            client: "InfoparkDaily — Infopark Kochi",
+            techStack: "React + TailwindCSS",
+            releaseType: "Production",
+            availability: "Live — infoparkdaily.online",
+            targetAudience: "Kerala tech professionals, startups, recruiters & local businesses"
+        },
+        overview: "InfoparkDaily is Kerala's tech hub platform for Infopark Kochi — daily jobs, walk-ins, tech park news, and brand campaigns connecting professionals, startups, recruiters, and local businesses in Kakkanad & Kochi. Hexenity engineered the live site at https://infoparkdaily.online/ as the digital home for the community and media brand.\n\nThe platform unifies growth services (brand campaigns, hiring promotions, restaurant features, startup spotlights, event coverage), a jobs community with WhatsApp alerts, and IT software support delivered through Hexenity as the technology partner — reaching 40K+ followers, 100M+ social reach, and 1Cr+ monthly views.",
+        problem: "Infopark Daily had built a massive social audience across Kerala's tech community, but needed a professional web platform to anchor it: a single destination for media services, campaign proof, hiring updates, Build Together partnerships, and collaboration enquiries — while staying fast for a mobile-first Kochi audience.",
+        solution: "Hexenity designed and shipped a responsive platform with clear service architecture, jobs hub, social proof (partner companies, reach metrics), Build Together for startup co-builds, and Hexenity as the dedicated IT solutions partner. Semantic structure and SEO keep Infopark Kochi jobs and community content discoverable.",
+        features: [
+            "Infopark Kochi jobs, walk-ins, and hiring campaign hub",
+            "Brand campaigns, restaurant features, startup spotlights, event coverage",
+            "Build Together — partner and co-develop ERP, SaaS, and websites",
+            "IT software solutions wing with Hexenity as technology partner",
+            "Social proof: 40K+ followers, 100M+ reach, 1K+ partner companies",
+            "Mobile-first responsive design with SEO-optimized structure"
+        ],
+        techStack: ["React.js", "Vite", "Tailwind CSS", "SEO tooling", "CDN deployment"],
+        screenshots: [],
+        storePerformance: null,
+        userFeedback: [],
+        technicalArchitecture: [
+            { layer: "Frontend Engine", stack: "React.js with Vite for fast development cycles and optimized production bundles." },
+            { layer: "Styling & UI", stack: "Tailwind CSS utility system with a custom editorial design language and dark/light theming." },
+            { layer: "Content Structure", stack: "Component-driven sections for services, jobs, reels, results, and community funnels." },
+            { layer: "Deployment", stack: "Production hosting at infoparkdaily.online with edge-cached delivery." }
+        ],
+        deployment: "Live at https://infoparkdaily.online/ with edge-cached delivery for a mobile-heavy community audience.",
+        results: "InfoparkDaily anchors Kerala's Infopark tech community online — 40K+ Instagram followers, 100M+ social reach, and 1Cr+ monthly views — while routing software and product work to Hexenity as the ecosystem's technology partner."
+    },
+    {
         id: 7,
         title: "KK Traveler",
         slug: "kk-traveler",
@@ -89,50 +177,6 @@ export const projects = [
         ],
         deployment: "Zaffabit ships to both mobile ecosystems from a single automated pipeline, keeping releases consistent, repeatable, and fast to roll out.",
         results: "The application is live and working in production across both platforms. Formal usage records and store metrics are not published yet — the current focus is stable operation and iterative product improvement."
-    },
-    {
-        id: 5,
-        title: "INFOPARKDAILY.in",
-        slug: "infopark-daily",
-        description: "Kerala's largest tech & business community platform — a digital media + community hub for Infopark Kochi, designed and built by the Hexenity web development team.",
-        tags: ["Web Development", "Community Platform", "Digital Media", "React"],
-        technologies: ["React.js", "Tailwind CSS", "Vite", "SEO"],
-        github: "https://kksarang.github.io/infoparkdaily/",
-        playStore: null,
-        featured: true,
-        heroImage: "/assets/showcase/web_platform_premium.png",
-        appDetails: {
-            category: "Web Platform",
-            platform: "Web Application",
-            client: "INFOPARKDAILY.in",
-            techStack: "React + TailwindCSS",
-            releaseType: "Production",
-            availability: "Live — infoparkdaily.in",
-            targetAudience: "Kerala tech professionals, startups, recruiters & local businesses"
-        },
-        overview: "INFOPARKDAILY.in is Kerala's largest tech & business community platform, built around the Infopark Kochi ecosystem. The Hexenity web development team delivered the complete digital hub — a digital media + community platform that helps brands, startups, restaurants, and recruiters grow through high-performing reels, local campaigns, and targeted distribution.\n\nThe platform brings together brand campaigns, hiring promotions, startup spotlights, event coverage, a growing jobs community, and IT software support — all under one fast, mobile-first destination serving an audience of 35K+ followers with 100M+ social reach and over 1 crore monthly views.",
-        problem: "Infopark Daily had built a massive social audience across Kerala's tech community, but needed a professional web platform to anchor it: a single destination that could present its media services, showcase campaign results, publish daily hiring updates, and route collaboration and support enquiries — while staying light enough to load instantly for a mobile-first audience.",
-        solution: "Hexenity designed and engineered a responsive single-page platform with a clear service architecture: brand campaigns, hiring promotions, restaurant features, startup spotlights, event coverage, and digital marketing execution — plus a dedicated jobs section with WhatsApp alerts and an IT software support wing delivered through Hexenity as the platform's technology partner. Semantic markup and metadata keep the platform strongly visible in search.",
-        features: [
-            "Digital media + community platform for Kerala's tech audience",
-            "Jobs hub with featured openings and WhatsApp alert channels",
-            "Service showcase: campaigns, hiring promotions, startup spotlights, event coverage",
-            "Partner and social-proof sections (1K+ partner companies, 100K+ professionals reached)",
-            "Direct enquiry, collaboration, and support funnels",
-            "Mobile-first responsive design with SEO-optimized structure"
-        ],
-        techStack: ["React.js", "Vite", "Tailwind CSS", "SEO tooling", "CDN deployment"],
-        screenshots: [],
-        storePerformance: null,
-        userFeedback: [],
-        technicalArchitecture: [
-            { layer: "Frontend Engine", stack: "React.js with Vite for fast development cycles and optimized production bundles." },
-            { layer: "Styling & UI", stack: "Tailwind CSS utility system with a custom editorial design language and dark/light theming." },
-            { layer: "Content Structure", stack: "Component-driven sections for services, jobs, reels, results, and community funnels." },
-            { layer: "Deployment", stack: "Static, edge-cached delivery for near-instant load times." }
-        ],
-        deployment: "The platform is served through edge-cached static hosting, keeping load times minimal for a mobile-heavy community audience.",
-        results: "INFOPARKDAILY.in anchors a community of 35K+ Instagram followers with 100M+ total social reach and 1Cr+ monthly views, connecting 1,000+ partner companies with Kerala's strongest tech audience — and channels IT software projects to Hexenity as the ecosystem's technology partner."
     },
     {
         id: 1,
