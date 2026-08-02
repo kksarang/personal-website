@@ -22,7 +22,7 @@ const valueCards = [
 
 const model = ['Discovery Call', 'Technical Proposal', 'Build & Iterate', 'Launch & Support'];
 
-const HexenityValueStack = () => {
+const EnitexaValueStack = () => {
     const navigate = useNavigate();
 
     return (
@@ -34,7 +34,7 @@ const HexenityValueStack = () => {
                             <span className="text-indigo-300">(02)</span>
                             <span className="flex items-center gap-2">
                                 <Handshake className="h-3.5 w-3.5" />
-                                Why teams choose Hexenity
+                                Why teams choose Enitexa.Ai
                             </span>
                         </div>
                         <h2 className="pf-display mt-5 text-[clamp(1.7rem,3.2vw,2.5rem)] font-bold leading-[1.05] text-white">
@@ -42,7 +42,7 @@ const HexenityValueStack = () => {
                         </h2>
                     </div>
                     <button
-                        onClick={() => navigate('/hexenity/contact')}
+                        onClick={() => navigate('/enitexa.ai/contact')}
                         className="group inline-flex items-center gap-2 self-start rounded-full border border-white/20 px-6 py-3 text-sm font-semibold text-white transition-all duration-500 hover:border-white hover:bg-white hover:text-black"
                     >
                         Talk to the team
@@ -93,4 +93,4 @@ const HexenityValueStack = () => {
     );
 };
 
-export default HexenityValueStack;
+export default EnitexaValueStack;

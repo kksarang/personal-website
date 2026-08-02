@@ -76,7 +76,7 @@ export const servicesData = {
         workingModes: [
             {
                 title: "Dedicated Product Squad",
-                detail: "A focused cross-functional team from Hexenity drives discovery, design, development, QA, and release under one delivery lead.",
+                detail: "A focused cross-functional team from Enitexa.Ai drives discovery, design, development, QA, and release under one delivery lead.",
                 bestFit: "Founders and teams that need end-to-end ownership"
             },
             {
@@ -86,7 +86,7 @@ export const servicesData = {
             },
             {
                 title: "Build-Operate-Transfer (BOT)",
-                detail: "Hexenity builds and stabilizes the mobile product, then transitions processes, documentation, and operational ownership to your team.",
+                detail: "Enitexa.Ai builds and stabilizes the mobile product, then transitions processes, documentation, and operational ownership to your team.",
                 bestFit: "Companies planning long-term in-house operations"
             },
             {

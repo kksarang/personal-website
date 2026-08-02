@@ -69,7 +69,7 @@ const stripCommand = (input) => {
 
 const bullets = (items) => items.map((item) => `- ${item}`).join('\n');
 
-export const generateHexenityAiResponse = ({ input, mode }) => {
+export const generateEnitexaAiResponse = ({ input, mode }) => {
   const intent = inferIntent(input);
   const commandContext = stripCommand(input);
   const playbook = SUPPORT_PLAYBOOKS[intent];
@@ -96,7 +96,7 @@ export const generateHexenityAiResponse = ({ input, mode }) => {
   };
 };
 
-export const HEXENITY_AI_SUGGESTIONS = [
+export const ENITEXA_AI_SUGGESTIONS = [
   '/build Create MVP roadmap for a B2B dashboard platform',
   '/fix Login flow crashes on Android 14 after update',
   '/analyze Why conversion is low on landing page traffic',

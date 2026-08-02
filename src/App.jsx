@@ -25,10 +25,10 @@ const KksystemsLearningLiveCode = lazyRoute(() => import('./pages/kksystems/Lear
 const KksystemsContact = lazyRoute(() => import('./pages/kksystems/Contact'));
 const KksystemsAbout = lazyRoute(() => import('./pages/kksystems/About'));
 const KksystemsServices = lazyRoute(() => import('./pages/kksystems/Services'));
-const CoreHexenity = lazyRoute(() => import('./pages/kksystems/CoreHexenity'));
-const HexenityAI = lazyRoute(() => import('./pages/kksystems/HexenityAI'));
-const HexenitySaaS = lazyRoute(() => import('./pages/kksystems/HexenitySaaS'));
-const HexenitySaaSDemo = lazyRoute(() => import('./pages/kksystems/HexenitySaaSDemo'));
+const CoreEnitexa = lazyRoute(() => import('./pages/kksystems/CoreEnitexa'));
+const EnitexaAI = lazyRoute(() => import('./pages/kksystems/EnitexaAI'));
+const EnitexaSaaS = lazyRoute(() => import('./pages/kksystems/EnitexaSaaS'));
+const EnitexaSaaSDemo = lazyRoute(() => import('./pages/kksystems/EnitexaSaaSDemo'));
 const CleansoLaundry = lazyRoute(() => import('./pages/kksystems/solutions/CleansoLaundry'));
 const ServiceDetail = lazyRoute(() => import('./components/KkSystems/ServiceDetail'));
 const ExpenserLanding = lazyRoute(() => import('./pages/ExpenserLanding'));
@@ -49,9 +49,13 @@ const ERPClients = lazyRoute(() => import('./pages/kksystems/erp/Clients'));
 const ERPProjects = lazyRoute(() => import('./pages/kksystems/erp/Projects'));
 const ERPSites = lazyRoute(() => import('./pages/kksystems/erp/Sites'));
 
-function KksystemsLegacyRedirect() {
+function LegacyBrandRedirect({ fromPrefix }) {
   const location = useLocation();
-  const newPathname = location.pathname.replace(/^\/kksystems/, '/hexenity');
+  // Match the prefix as a full path segment so /enitexa does not eat /enitexa.ai
+  const newPathname = location.pathname.replace(
+    new RegExp(`^${fromPrefix.replace(/\./g, '\\.')}(?=/|$)`),
+    '/enitexa.ai'
+  );
 
   return (
     <Navigate
@@ -92,7 +96,7 @@ function App() {
             </Route>
 
             {/* New Company Website Layout Wrap */}
-            <Route path="/hexenity" element={<KksystemsLayout />}>
+            <Route path="/enitexa.ai" element={<KksystemsLayout />}>
               <Route index element={<KksystemsHome />} />
               <Route path="services" element={<KksystemsServices />} />
               <Route path="services/:slug" element={<ServiceDetail />} />
@@ -102,10 +106,10 @@ function App() {
               <Route path="learning/practice" element={<KksystemsLearningPractice />} />
               <Route path="learning/practice/live" element={<KksystemsLearningLiveCode />} />
               <Route path="learning/:id" element={<KksystemsLearningDetails />} />
-              <Route path="core-hexenity" element={<CoreHexenity />} />
-              <Route path="ai" element={<HexenityAI />} />
-              <Route path="saas" element={<HexenitySaaS />} />
-              <Route path="saas/demo" element={<HexenitySaaSDemo />} />
+              <Route path="core-enitexa" element={<CoreEnitexa />} />
+              <Route path="ai" element={<EnitexaAI />} />
+              <Route path="saas" element={<EnitexaSaaS />} />
+              <Route path="saas/demo" element={<EnitexaSaaSDemo />} />
               <Route path="contact" element={<KksystemsContact />} />
               <Route path="about" element={<KksystemsAbout />} />
 
@@ -128,8 +132,13 @@ function App() {
               <Route path="cleanso" element={<CleansoLaundry />} />
             </Route>
 
-            {/* Legacy: redirect old /kksystems URLs */}
-            <Route path="/kksystems/*" element={<KksystemsLegacyRedirect />} />
+            {/* Legacy: redirect old brand URLs */}
+            <Route path="/kksystems" element={<Navigate to="/enitexa.ai" replace />} />
+            <Route path="/kksystems/*" element={<LegacyBrandRedirect fromPrefix="/kksystems" />} />
+            <Route path="/hexenity" element={<Navigate to="/enitexa.ai" replace />} />
+            <Route path="/hexenity/*" element={<LegacyBrandRedirect fromPrefix="/hexenity" />} />
+            <Route path="/enitexa" element={<Navigate to="/enitexa.ai" replace />} />
+            <Route path="/enitexa/*" element={<LegacyBrandRedirect fromPrefix="/enitexa" />} />
 
             {/* Expenser Landing Page */}
             <Route path="/expenser" element={<ExpenserLanding />} />

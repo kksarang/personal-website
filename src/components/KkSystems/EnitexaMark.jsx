@@ -1,10 +1,10 @@
 import React, { useId } from 'react';
 
 /**
- * Hexenity brand mark — gradient hexagon with an inner "H" monogram.
+ * Enitexa.Ai brand mark — gradient hexagon with an inner "E" monogram.
  * Scales via the `size` prop (px) or className.
  */
-const HexenityMark = ({ size = 28, className = '', withGlow = false }) => {
+const EnitexaMark = ({ size = 28, className = '', withGlow = false }) => {
     const uid = useId().replace(/:/g, '');
     const gradId = `hexg-${uid}`;
 
@@ -43,16 +43,17 @@ const HexenityMark = ({ size = 28, className = '', withGlow = false }) => {
                     strokeWidth="3.5"
                     strokeLinejoin="round"
                 />
-                {/* Inner H monogram */}
+                {/* Inner E monogram */}
                 <path
-                    d="M23 20 V44 M41 20 V44 M23 32 H41"
+                    d="M40 20 H24 V44 H40 M24 32 H36"
                     stroke={`url(#${gradId})`}
                     strokeWidth="4"
                     strokeLinecap="round"
+                    strokeLinejoin="round"
                 />
             </g>
         </svg>
     );
 };
 
-export default HexenityMark;
+export default EnitexaMark;

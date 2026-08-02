@@ -28,7 +28,7 @@ const StickyCTA = () => {
     <div className="pointer-events-none fixed bottom-[calc(2rem+env(safe-area-inset-bottom,0px))] right-[calc(2rem+env(safe-area-inset-right,0px))] z-[100] max-sm:left-4 max-sm:right-4">
       <div className="pointer-events-auto ml-auto w-fit max-sm:max-w-[min(100%,18rem)]">
         <button
-          onClick={() => navigate('/hexenity/contact')}
+          onClick={() => navigate('/enitexa.ai/contact')}
           data-cursor="Book"
           className="group flex items-center gap-2.5 rounded-full bg-gradient-to-r from-indigo-600 to-violet-600 py-3.5 pl-6 pr-5 text-sm font-semibold text-white shadow-[0_18px_45px_-14px_rgba(99,102,241,0.7)] transition-all duration-300 hover:scale-[1.04]"
         >

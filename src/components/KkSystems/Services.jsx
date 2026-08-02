@@ -61,7 +61,7 @@ const Services = () => {
                     <ServiceCard
                         icon={Smartphone}
                         title="Mobile App Development"
-                        link="/hexenity/services/mobile-app-development"
+                        link="/enitexa.ai/services/mobile-app-development"
                         technologies={[
                             'Flutter Applications',
                             'Native Android (Kotlin)',
@@ -83,7 +83,7 @@ const Services = () => {
                     <ServiceCard
                         icon={Monitor}
                         title="Website Development"
-                        link="/hexenity/services/website-development"
+                        link="/enitexa.ai/services/website-development"
                         technologies={[
                             'Business Websites',
                             'E-Commerce Solutions',
@@ -105,7 +105,7 @@ const Services = () => {
                     <ServiceCard
                         icon={PaintBucket}
                         title="UI/UX & Design"
-                        link="/hexenity/services/ui-ux-design"
+                        link="/enitexa.ai/services/ui-ux-design"
                         technologies={[
                             'UI/UX Strategy',
                             'Wireframing & Prototyping',
@@ -130,7 +130,7 @@ const Services = () => {
                     <ServiceCard
                         icon={Share2}
                         title="Social Media Marketing"
-                        link="/hexenity/services/social-media-marketing"
+                        link="/enitexa.ai/services/social-media-marketing"
                         technologies={[
                             'Instagram & Facebook Marketing',
                             'Content Planning & Strategy',
@@ -151,7 +151,7 @@ const Services = () => {
                     <ServiceCard
                         icon={Target}
                         title="Digital Marketing"
-                        link="/hexenity/services/digital-marketing"
+                        link="/enitexa.ai/services/digital-marketing"
                         technologies={[
                             'SEO (Search Engine Optimization)',
                             'Google Ads Campaigns',

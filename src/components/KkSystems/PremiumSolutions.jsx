@@ -12,7 +12,7 @@ export const PremiumSolutions = () => {
             benefit: "White-label laundry apps, delivery, and POS — custom product planning for India, UAE & GCC.",
             items: ["Customer booking app", "Delivery app", "CMS + POS", "Multi-store / franchise"],
             icon: Shirt,
-            link: "/hexenity/solutions/laundry",
+            link: "/enitexa.ai/solutions/laundry",
             tag: "New Product"
         },
         {
@@ -20,7 +20,7 @@ export const PremiumSolutions = () => {
             benefit: "Scalable app ecosystems for consumer, enterprise, and startup use cases.",
             items: ["iOS + Android", "Cross-platform", "Store deployment", "Post-launch optimization"],
             icon: Smartphone,
-            link: "/hexenity/services/mobile-app-development",
+            link: "/enitexa.ai/services/mobile-app-development",
             tag: "Application Engineering"
         },
         {
@@ -28,7 +28,7 @@ export const PremiumSolutions = () => {
             benefit: "Conversion-oriented websites and SaaS-ready web platforms.",
             items: ["Corporate websites", "Web applications", "E-commerce systems", "Performance optimization"],
             icon: Monitor,
-            link: "/hexenity/services/website-development",
+            link: "/enitexa.ai/services/website-development",
             tag: "Digital Presence"
         },
     ];
@@ -39,7 +39,7 @@ export const PremiumSolutions = () => {
             benefit: "Premium interface systems focused on usability, trust, and conversion.",
             items: ["UX strategy", "Interface design", "Design systems", "Conversion journeys"],
             icon: PaintBucket,
-            link: "/hexenity/services/ui-ux-design",
+            link: "/enitexa.ai/services/ui-ux-design",
             tag: "Experience Layer"
         },
         {
@@ -47,7 +47,7 @@ export const PremiumSolutions = () => {
             benefit: "Data-led growth campaigns engineered for leads, sales, and retention.",
             items: ["Paid ads", "Lead funnels", "Performance analytics", "Campaign scaling"],
             icon: Target,
-            link: "/hexenity/services/digital-marketing",
+            link: "/enitexa.ai/services/digital-marketing",
             tag: "Revenue Growth"
         },
         {
@@ -55,7 +55,7 @@ export const PremiumSolutions = () => {
             benefit: "Technical and content SEO strategy to build compounding visibility.",
             items: ["Technical SEO", "Keyword strategy", "On-page structure", "Organic growth roadmap"],
             icon: Search,
-            link: "/hexenity/services",
+            link: "/enitexa.ai/services",
             tag: "Search Growth"
         },
         {
@@ -63,7 +63,7 @@ export const PremiumSolutions = () => {
             benefit: "Modern brand language and visual identity aligned to digital scale.",
             items: ["Brand identity", "Creative direction", "Messaging framework", "Digital assets"],
             icon: PaintBucket,
-            link: "/hexenity/services",
+            link: "/enitexa.ai/services",
             tag: "Brand Authority"
         },
         {
@@ -71,7 +71,7 @@ export const PremiumSolutions = () => {
             benefit: "AI-driven workflows and copilots that improve decision speed and execution.",
             items: ["LLM integrations", "Process automation", "AI assistants", "Operational intelligence"],
             icon: BrainCircuit,
-            link: "/hexenity/services",
+            link: "/enitexa.ai/services",
             tag: "AI Innovation"
         },
         {
@@ -79,7 +79,7 @@ export const PremiumSolutions = () => {
             benefit: "Automation pipelines to reduce manual work and improve business velocity.",
             items: ["Workflow automation", "Data sync systems", "Ops triggers", "Approval chains"],
             icon: Activity,
-            link: "/hexenity/services",
+            link: "/enitexa.ai/services",
             tag: "Operational Scale"
         },
         {
@@ -87,7 +87,7 @@ export const PremiumSolutions = () => {
             benefit: "Executive dashboards for real-time visibility into operations and growth.",
             items: ["KPI panels", "Sales analytics", "Ops tracking", "Reporting controls"],
             icon: LayoutDashboard,
-            link: "/hexenity/services",
+            link: "/enitexa.ai/services",
             tag: "Decision Intelligence"
         },
         {
@@ -95,7 +95,7 @@ export const PremiumSolutions = () => {
             benefit: "Secure management platforms for cross-team workflow and governance.",
             items: ["ERP foundations", "Role access control", "Department modules", "Governance layer"],
             icon: Shield,
-            link: "/hexenity/services/erp-development",
+            link: "/enitexa.ai/services/erp-development",
             tag: "Enterprise Systems"
         },
         {
@@ -103,7 +103,7 @@ export const PremiumSolutions = () => {
             benefit: "Consistent social growth with strategy-led content execution.",
             items: ["Campaign planning", "Creative assets", "Audience growth", "Community operations"],
             icon: Share2,
-            link: "/hexenity/services/social-media-marketing",
+            link: "/enitexa.ai/services/social-media-marketing",
             tag: "Brand Visibility"
         }
     ];
@@ -171,7 +171,7 @@ export const PremiumSolutions = () => {
 
                 <div className="mt-12 flex flex-col items-center gap-4">
                     <button
-                        onClick={() => navigate('/hexenity/services')}
+                        onClick={() => navigate('/enitexa.ai/services')}
                         className="group inline-flex items-center gap-2 rounded-full border border-white/20 px-8 py-3.5 text-sm font-semibold text-white transition-all duration-500 hover:border-white hover:bg-white hover:text-black"
                     >
                         Show all services
@@ -189,7 +189,7 @@ export const PremiumSolutions = () => {
 export const ProductLayer = () => {
     const products = [
         { title: "AI Command Layer", desc: "AI copilots and automations integrated directly into your business workflows.", icon: BrainCircuit, color: "text-blue-400" },
-        { title: "Hexenity Ops Core", desc: "Execution intelligence model combining apps, dashboards, and process automation.", icon: Cpu, color: "text-indigo-400" },
+        { title: "Enitexa.Ai Ops Core", desc: "Execution intelligence model combining apps, dashboards, and process automation.", icon: Cpu, color: "text-indigo-400" },
         { title: "Signal Analytics Grid", desc: "Real-time behavior and performance insights to power faster growth decisions.", icon: Database, color: "text-purple-400" }
     ];
 

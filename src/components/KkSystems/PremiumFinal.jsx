@@ -46,7 +46,7 @@ export const TechStack = () => {
     );
 };
 
-export const WhyHexenity = () => {
+export const WhyEnitexa = () => {
     const cards = [
         { title: "Product + Engineering alignment", subtitle: "Strategy, design, and development move together from day one." },
         { title: "Clear communication rhythm", subtitle: "Weekly checkpoints, transparent updates, and predictable handoffs." },
@@ -63,7 +63,7 @@ export const WhyHexenity = () => {
                         <span>Why Choose Us</span>
                     </div>
                     <h2 className="pf-display mb-6 text-[clamp(1.7rem,3.2vw,2.5rem)] font-bold text-white">
-                        Why teams choose <span className="pf-outline-text">Hexenity.</span>
+                        Why teams choose <span className="pf-outline-text">Enitexa.Ai.</span>
                     </h2>
                     <p className="max-w-xl mx-auto text-gray-400 text-lg font-light">
                         We combine product thinking, consistent communication, and disciplined engineering execution.
@@ -95,7 +95,7 @@ export const ERPDemoEntry = () => {
     return (
         <section className="bg-[#0B0F19] py-28">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div className="hexenity-glass p-12 md:p-20 relative overflow-hidden group">
+                <div className="enitexa-glass p-12 md:p-20 relative overflow-hidden group">
                     <div className="absolute top-0 right-0 w-[50%] h-full bg-indigo-600/5 blur-[100px] -z-10 group-hover:bg-indigo-600/10 transition-all duration-700" />
 
                     <div className="grid lg:grid-cols-2 gap-12 items-center relative z-10">
@@ -106,21 +106,21 @@ export const ERPDemoEntry = () => {
                             </div>
                             <h2 className="pf-display text-[clamp(1.7rem,3.2vw,2.5rem)] font-bold text-white mb-6">
                                 Experience <br />
-                                <span className="pf-outline-text">Hexenity ERP.</span>
+                                <span className="pf-outline-text">Enitexa.Ai ERP.</span>
                             </h2>
                             <p className="text-xl text-gray-400 font-light leading-relaxed mb-10">
                                 Manage customers, projects, analytics, and operations in one unified system. Built for speed, reliability, and enterprise-scale control.
                             </p>
                             <div className="flex flex-wrap gap-4">
                                 <button
-                                    onClick={() => navigate('/hexenity/erp/dashboard')}
+                                    onClick={() => navigate('/enitexa.ai/erp/dashboard')}
                                     data-cursor="Demo"
                                     className="inline-flex items-center justify-center rounded-full border border-white bg-white px-8 py-4 text-sm font-semibold text-black transition-all duration-500 hover:bg-transparent hover:text-white"
                                 >
                                     Launch Demo ERP
                                 </button>
                                 <button
-                                    onClick={() => navigate('/hexenity/solutions/erp')}
+                                    onClick={() => navigate('/enitexa.ai/solutions/erp')}
                                     className="inline-flex items-center justify-center rounded-full border border-white/20 px-8 py-4 text-sm font-semibold text-white transition-all duration-500 hover:border-white hover:bg-white/[0.05]"
                                 >
                                     View Features
@@ -136,12 +136,12 @@ export const ERPDemoEntry = () => {
                                 </div>
                                 <div className="space-y-3">
                                     <div className="rounded-xl border border-indigo-300/20 bg-indigo-500/10 px-3 py-2">
-                                        <p className="text-[10px] font-bold uppercase tracking-[0.16em] text-indigo-200">Hexenity ERP Interface Preview</p>
+                                        <p className="text-[10px] font-bold uppercase tracking-[0.16em] text-indigo-200">Enitexa.Ai ERP Interface Preview</p>
                                     </div>
                                     <div className="overflow-hidden rounded-xl border border-white/10 bg-black/20">
                                         <img
                                             src="/assets/showcase/erp_os_premium.png"
-                                            alt="Hexenity ERP dashboard interface preview"
+                                            alt="Enitexa.Ai ERP dashboard interface preview"
                                             className="h-[260px] w-full object-cover object-top"
                                             loading="lazy"
                                         />
@@ -182,14 +182,14 @@ export const FinalCTA = () => {
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4 justify-center">
                     <button
-                        onClick={() => navigate('/hexenity/contact')}
+                        onClick={() => navigate('/enitexa.ai/contact')}
                         data-cursor="Book"
                         className="group inline-flex items-center justify-center gap-2 rounded-full border border-white bg-white px-10 py-4 text-base font-semibold text-black transition-all duration-500 hover:bg-transparent hover:text-white"
                     >
                         Book Executive Strategy Call
                     </button>
                     <button
-                        onClick={() => navigate('/hexenity/erp/dashboard')}
+                        onClick={() => navigate('/enitexa.ai/erp/dashboard')}
                         className="inline-flex items-center justify-center rounded-full border border-white/20 px-10 py-4 text-base font-semibold text-white transition-all duration-500 hover:border-white hover:bg-white/[0.05]"
                     >
                         Explore Enterprise Demo

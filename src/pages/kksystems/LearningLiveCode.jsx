@@ -105,7 +105,7 @@ ${jsCode}
                             </button>
                             <button
                                 type="button"
-                                onClick={() => navigate('/hexenity/learning/practice')}
+                                onClick={() => navigate('/enitexa.ai/learning/practice')}
                                 className="inline-flex items-center rounded-xl border border-white/15 bg-white/5 px-4 py-2 text-sm font-semibold text-slate-100 transition hover:border-indigo-300/35 hover:text-indigo-100"
                             >
                                 Back to Practice
@@ -121,7 +121,7 @@ ${jsCode}
                             <button
                                 key={entry.key}
                                 type="button"
-                                onClick={() => navigate(`/hexenity/learning/practice/live?template=${entry.key}`)}
+                                onClick={() => navigate(`/enitexa.ai/learning/practice/live?template=${entry.key}`)}
                                 className={`rounded-full border px-3 py-1.5 text-xs font-semibold uppercase tracking-[0.12em] transition ${
                                     entry.key === template.key
                                         ? 'border-emerald-300/40 bg-emerald-500/20 text-emerald-100'

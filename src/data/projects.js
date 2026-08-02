@@ -19,9 +19,9 @@ export const projects = [
             availability: "Live — kksarang.github.io/laundry",
             targetAudience: "Laundry & dry-cleaning operators in India, UAE & GCC"
         },
-        overview: "Cleanso is Hexenity's laundry software solution — a white-label product in active planning and build for operators who need more than a generic POS. The suite covers customer laundry booking apps, delivery partner apps, and CMS + POS, with flat yearly licensing aimed at multi-store and franchise operators across India, UAE, and the GCC.\n\nWe shipped the live product site at https://kksarang.github.io/laundry/ and are advancing full custom software product planning: discovery, architecture, white-label branding, and implementation playbooks so each laundry business gets a stack that matches its counter, riders, and customers.",
+        overview: "Cleanso is Enitexa.Ai's laundry software solution — a white-label product in active planning and build for operators who need more than a generic POS. The suite covers customer laundry booking apps, delivery partner apps, and CMS + POS, with flat yearly licensing aimed at multi-store and franchise operators across India, UAE, and the GCC.\n\nWe shipped the live product site at https://kksarang.github.io/laundry/ and are advancing full custom software product planning: discovery, architecture, white-label branding, and implementation playbooks so each laundry business gets a stack that matches its counter, riders, and customers.",
         problem: "Laundry and dry-cleaning businesses often run on fragmented tools — paper tickets, generic billing software, and separate delivery apps — with no cohesive white-label stack that matches their brand. Operators needed both a clear product destination and a serious custom software plan for booking, delivery, POS, and multi-store control.",
-        solution: "Hexenity designed the Cleanso product presence and product plan together: a conversion-focused marketing site plus a phased build roadmap (discovery → UX/architecture → apps + POS → white-label launch). The experience is SEO-structured around laundry management, dry-cleaning POS, and white-label laundry app keywords so operators can discover Cleanso and engage Hexenity for customization.",
+        solution: "Enitexa.Ai designed the Cleanso product presence and product plan together: a conversion-focused marketing site plus a phased build roadmap (discovery → UX/architecture → apps + POS → white-label launch). The experience is SEO-structured around laundry management, dry-cleaning POS, and white-label laundry app keywords so operators can discover Cleanso and engage Enitexa.Ai for customization.",
         features: [
             "Custom laundry software product planning (discovery to launch)",
             "White-label customer booking app",
@@ -41,7 +41,7 @@ export const projects = [
             { layer: "Delivery", stack: "GitHub Pages deploy with cache-busting headers for frequent content updates." }
         ],
         deployment: "Live on GitHub Pages at https://kksarang.github.io/laundry/ with static CDN delivery.",
-        results: "Cleanso now has a live product presence and an active Hexenity product plan for custom laundry software — white-label apps, POS, and delivery for operators across India and the GCC."
+        results: "Cleanso now has a live product presence and an active Enitexa.Ai product plan for custom laundry software — white-label apps, POS, and delivery for operators across India and the GCC."
     },
     {
         id: 5,
@@ -63,14 +63,14 @@ export const projects = [
             availability: "Live — infoparkdaily.online",
             targetAudience: "Kerala tech professionals, startups, recruiters & local businesses"
         },
-        overview: "InfoparkDaily is Kerala's tech hub platform for Infopark Kochi — daily jobs, walk-ins, tech park news, and brand campaigns connecting professionals, startups, recruiters, and local businesses in Kakkanad & Kochi. Hexenity engineered the live site at https://infoparkdaily.online/ as the digital home for the community and media brand.\n\nThe platform unifies growth services (brand campaigns, hiring promotions, restaurant features, startup spotlights, event coverage), a jobs community with WhatsApp alerts, and IT software support delivered through Hexenity as the technology partner — reaching 40K+ followers, 100M+ social reach, and 1Cr+ monthly views.",
+        overview: "InfoparkDaily is Kerala's tech hub platform for Infopark Kochi — daily jobs, walk-ins, tech park news, and brand campaigns connecting professionals, startups, recruiters, and local businesses in Kakkanad & Kochi. Enitexa.Ai engineered the live site at https://infoparkdaily.online/ as the digital home for the community and media brand.\n\nThe platform unifies growth services (brand campaigns, hiring promotions, restaurant features, startup spotlights, event coverage), a jobs community with WhatsApp alerts, and IT software support delivered through Enitexa.Ai as the technology partner — reaching 40K+ followers, 100M+ social reach, and 1Cr+ monthly views.",
         problem: "Infopark Daily had built a massive social audience across Kerala's tech community, but needed a professional web platform to anchor it: a single destination for media services, campaign proof, hiring updates, Build Together partnerships, and collaboration enquiries — while staying fast for a mobile-first Kochi audience.",
-        solution: "Hexenity designed and shipped a responsive platform with clear service architecture, jobs hub, social proof (partner companies, reach metrics), Build Together for startup co-builds, and Hexenity as the dedicated IT solutions partner. Semantic structure and SEO keep Infopark Kochi jobs and community content discoverable.",
+        solution: "Enitexa.Ai designed and shipped a responsive platform with clear service architecture, jobs hub, social proof (partner companies, reach metrics), Build Together for startup co-builds, and Enitexa.Ai as the dedicated IT solutions partner. Semantic structure and SEO keep Infopark Kochi jobs and community content discoverable.",
         features: [
             "Infopark Kochi jobs, walk-ins, and hiring campaign hub",
             "Brand campaigns, restaurant features, startup spotlights, event coverage",
             "Build Together — partner and co-develop ERP, SaaS, and websites",
-            "IT software solutions wing with Hexenity as technology partner",
+            "IT software solutions wing with Enitexa.Ai as technology partner",
             "Social proof: 40K+ followers, 100M+ reach, 1K+ partner companies",
             "Mobile-first responsive design with SEO-optimized structure"
         ],
@@ -85,13 +85,13 @@ export const projects = [
             { layer: "Deployment", stack: "Production hosting at infoparkdaily.online with edge-cached delivery." }
         ],
         deployment: "Live at https://infoparkdaily.online/ with edge-cached delivery for a mobile-heavy community audience.",
-        results: "InfoparkDaily anchors Kerala's Infopark tech community online — 40K+ Instagram followers, 100M+ social reach, and 1Cr+ monthly views — while routing software and product work to Hexenity as the ecosystem's technology partner."
+        results: "InfoparkDaily anchors Kerala's Infopark tech community online — 40K+ Instagram followers, 100M+ social reach, and 1Cr+ monthly views — while routing software and product work to Enitexa.Ai as the ecosystem's technology partner."
     },
     {
         id: 7,
         title: "KK Traveler",
         slug: "kk-traveler",
-        description: "A premium Canadian luxury travel platform for Cape Breton tours — booking wizard, live availability, visa assistance, and a full customer dashboard, engineered by Hexenity.",
+        description: "A premium Canadian luxury travel platform for Cape Breton tours — booking wizard, live availability, visa assistance, and a full customer dashboard, engineered by Enitexa.Ai.",
         tags: ["Web Development", "Travel Platform", "Next.js", "Booking System"],
         technologies: ["Next.js", "GSAP", "Framer Motion", "Three.js"],
         github: "https://kk-travel-company.vercel.app/",
@@ -107,9 +107,9 @@ export const projects = [
             availability: "Live — kk-travel-company.vercel.app",
             targetAudience: "Premium travelers, cruise guests & corporate clients in Canada"
         },
-        overview: "KK Traveler is a premium Canadian luxury travel company operating private Cape Breton tours — Cabot Trail signature drives, private Jeep backcountry routes, Celtic culture immersions, and cruise-ship exclusive excursions. Hexenity engineered the complete digital platform: a cinematic, conversion-focused website with live booking, package comparison, and concierge-grade customer tooling.\n\nThe build covers the full commercial journey — a luxury search box with live weather and voice search, horizontal premium package sliders with wishlist and compare, a flight + hotel booking wizard with Stripe checkout, a customer dashboard with booking history and invoice center, and an admin panel tracking bookings, revenue, customers, and visa pipelines.",
+        overview: "KK Traveler is a premium Canadian luxury travel company operating private Cape Breton tours — Cabot Trail signature drives, private Jeep backcountry routes, Celtic culture immersions, and cruise-ship exclusive excursions. Enitexa.Ai engineered the complete digital platform: a cinematic, conversion-focused website with live booking, package comparison, and concierge-grade customer tooling.\n\nThe build covers the full commercial journey — a luxury search box with live weather and voice search, horizontal premium package sliders with wishlist and compare, a flight + hotel booking wizard with Stripe checkout, a customer dashboard with booking history and invoice center, and an admin panel tracking bookings, revenue, customers, and visa pipelines.",
         problem: "KK Traveler needed a digital presence that matched the premium positioning of its private tours: a platform that could sell high-value packages (CAD 300 to CAD 3,990+), handle multi-currency and multi-language audiences, support cruise-ship schedule-safe bookings, and run visa assistance and corporate travel workflows — all with a cinematic feel that ordinary template sites cannot deliver.",
-        solution: "Hexenity designed and built a Next.js App Router platform with GSAP + ScrollTrigger scroll choreography, Framer Motion micro-interactions, Three.js visual moments, and Lenis smooth scrolling. The commerce layer includes a package builder with coupons and referral credits, Stripe checkout, invoice downloads, and a customer dashboard — backed by an admin panel for package, payment, blog, review, and gallery management. React Hook Form + Zod keep every funnel validated, and the platform ships SEO- and PWA-ready.",
+        solution: "Enitexa.Ai designed and built a Next.js App Router platform with GSAP + ScrollTrigger scroll choreography, Framer Motion micro-interactions, Three.js visual moments, and Lenis smooth scrolling. The commerce layer includes a package builder with coupons and referral credits, Stripe checkout, invoice downloads, and a customer dashboard — backed by an admin panel for package, payment, blog, review, and gallery management. React Hook Form + Zod keep every funnel validated, and the platform ships SEO- and PWA-ready.",
         features: [
             "Luxury tour catalog with wishlist, compare, and horizontal premium sliders",
             "Booking wizard: flight + hotel package builder with Stripe checkout and coupons",
@@ -155,7 +155,7 @@ export const projects = [
             availability: "Live & operational",
             targetAudience: "Consumer & business users"
         },
-        overview: "Zaffabit is a cross-platform mobile application delivered by the Hexenity engineering team, built from a single codebase that ships natively to both iOS and Android. The product is live and fully operational, serving its users in production today.\n\nThe engagement covered the complete product cycle — UX flows, interface design, application architecture, backend integration, and store-ready release engineering — with an emphasis on fast startup, smooth interactions, and a maintainable codebase that can evolve with the product roadmap.",
+        overview: "Zaffabit is a cross-platform mobile application delivered by the Enitexa.Ai engineering team, built from a single codebase that ships natively to both iOS and Android. The product is live and fully operational, serving its users in production today.\n\nThe engagement covered the complete product cycle — UX flows, interface design, application architecture, backend integration, and store-ready release engineering — with an emphasis on fast startup, smooth interactions, and a maintainable codebase that can evolve with the product roadmap.",
         problem: "The client needed a single mobile product that could reach both iOS and Android audiences without doubling engineering cost or fragmenting the experience across platforms. The application also had to remain responsive under real-world network conditions and be structured for quick iteration after launch.",
         solution: "We built Zaffabit on Flutter with a strictly layered architecture: presentation, state, and data layers are fully separated, keeping business logic platform-agnostic and testable. Backend services are integrated through a clean API layer with offline-tolerant caching, and release pipelines produce signed builds for both stores from the same codebase.",
         features: [
@@ -273,7 +273,7 @@ export const projects = [
         storePerformance: null,
         userFeedback: [
             "The website perfectly captures our corporate identity. The service breakdown is incredibly clean and professional.",
-            "hexenity delivered exactly what we needed: a high-speed, modern platform that represents our brand at its best.",
+            "enitexa delivered exactly what we needed: a high-speed, modern platform that represents our brand at its best.",
             "Working with their tech team was seamless. They communicated clearly and brought innovative design solutions to the table."
         ],
         technicalArchitecture: [

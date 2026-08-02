@@ -15,12 +15,12 @@ import {
     Terminal
 } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
-import { generateHexenityAiResponse, HEXENITY_AI_SUGGESTIONS } from '../../lib/hexenityAiEngine';
+import { generateEnitexaAiResponse, ENITEXA_AI_SUGGESTIONS } from '../../lib/enitexaAiEngine';
 
-const HexenityAI = () => {
+const EnitexaAI = () => {
     const navigate = useNavigate();
     const [messages, setMessages] = useState([
-        { role: 'ai', text: 'Welcome to the Hexenity Intelligence Layer. I am calibrated to assist with development, system optimization, and business logic. How can I facilitate your project today?', time: new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }) }
+        { role: 'ai', text: 'Welcome to the Enitexa.Ai Intelligence Layer. I am calibrated to assist with development, system optimization, and business logic. How can I facilitate your project today?', time: new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }) }
     ]);
     const [input, setInput] = useState('');
     const [isTyping, setIsTyping] = useState(false);
@@ -54,7 +54,7 @@ const HexenityAI = () => {
         setIsTyping(true);
 
         setTimeout(() => {
-            const response = generateHexenityAiResponse({ input: nextInput, mode: activeMode });
+            const response = generateEnitexaAiResponse({ input: nextInput, mode: activeMode });
 
             const aiMsg = { 
                 role: 'ai', 
@@ -83,7 +83,7 @@ const HexenityAI = () => {
                         <div className="w-10 h-10 rounded-xl bg-indigo-600 flex items-center justify-center shadow-[0_0_20px_rgba(79,70,229,0.5)]">
                             <Sparkles className="w-6 h-6 text-white" />
                         </div>
-                        <h1 className="text-xl font-black tracking-tighter uppercase italic">hexenity.ai</h1>
+                        <h1 className="text-xl font-black tracking-tighter uppercase italic">enitexa.ai</h1>
                     </div>
 
                     <div className="space-y-6">
@@ -162,7 +162,7 @@ const HexenityAI = () => {
                     className="flex-1 overflow-y-auto p-6 md:p-12 space-y-8 scroll-smooth"
                 >
                     <div className="mx-auto mb-3 flex w-full max-w-4xl flex-wrap gap-2">
-                        {HEXENITY_AI_SUGGESTIONS.map((suggestion) => (
+                        {ENITEXA_AI_SUGGESTIONS.map((suggestion) => (
                             <button
                                 key={suggestion}
                                 type="button"
@@ -223,7 +223,7 @@ const HexenityAI = () => {
                                 value={input}
                                 onChange={(e) => setInput(e.target.value)}
                                 onKeyDown={(e) => e.key === 'Enter' && handleSendMessage()}
-                                placeholder={`Ask Hexenity AI about ${activeMode === 'Assistant' ? 'your project' : activeMode.toLowerCase()}...`}
+                                placeholder={`Ask Enitexa.Ai AI about ${activeMode === 'Assistant' ? 'your project' : activeMode.toLowerCase()}...`}
                                 className="flex-1 bg-transparent border-none outline-none px-4 py-3 text-sm placeholder:text-white/20"
                             />
                             <button 
@@ -238,7 +238,7 @@ const HexenityAI = () => {
                         </div>
                         <div className="mt-4 flex justify-center">
                             <p className="rounded-full border border-amber-300/35 bg-amber-300/10 px-4 py-1.5 text-[10px] font-semibold uppercase tracking-[0.16em] text-amber-200">
-                                Hexenity AI - Work In Progress (Started Last Month)
+                                Enitexa.Ai AI - Work In Progress (Started Last Month)
                             </p>
                         </div>
                     </div>
@@ -249,4 +249,4 @@ const HexenityAI = () => {
     );
 };
 
-export default HexenityAI;
+export default EnitexaAI;

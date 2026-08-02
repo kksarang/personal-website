@@ -3,7 +3,7 @@ import { Menu, X, Sun, Moon, ArrowUpRight } from 'lucide-react';
 import { useLocation, useNavigate } from 'react-router-dom';
 import { useLockBodyScroll } from '../../hooks/useLockBodyScroll';
 import Magnetic from '../ui/Magnetic';
-import HexenityMark from './HexenityMark';
+import EnitexaMark from './EnitexaMark';
 
 const HEADER_SCROLL_RESERVE = {
     mdUp: 104,
@@ -30,12 +30,12 @@ const scrollToAnchorId = (id) => {
 };
 
 const NAV_LINKS = [
-    { title: 'Home', href: '/hexenity', index: '01' },
-    { title: 'Services', href: '/hexenity/services', index: '02' },
-    { title: 'Core', href: '/hexenity/core-hexenity', index: '03' },
-    { title: 'Work', href: '/hexenity/work', index: '04' },
-    { title: 'Learning', href: '/hexenity/learning', index: '05' },
-    { title: 'About', href: '/hexenity/about', index: '06' },
+    { title: 'Home', href: '/enitexa.ai', index: '01' },
+    { title: 'Services', href: '/enitexa.ai/services', index: '02' },
+    { title: 'Core', href: '/enitexa.ai/core-enitexa', index: '03' },
+    { title: 'Work', href: '/enitexa.ai/work', index: '04' },
+    { title: 'Learning', href: '/enitexa.ai/learning', index: '05' },
+    { title: 'About', href: '/enitexa.ai/about', index: '06' },
 ];
 
 const KksystemsNavbar = () => {
@@ -43,8 +43,8 @@ const KksystemsNavbar = () => {
     const [isScrolled, setIsScrolled] = useState(false);
     const scrollTickingRef = useRef(false);
     const [isDark, setIsDark] = useState(() => {
-        if (localStorage.getItem('hexenity-theme')) {
-            return localStorage.getItem('hexenity-theme') === 'dark';
+        if (localStorage.getItem('enitexa-theme')) {
+            return localStorage.getItem('enitexa-theme') === 'dark';
         }
         return window.matchMedia('(prefers-color-scheme: dark)').matches;
     });
@@ -54,10 +54,10 @@ const KksystemsNavbar = () => {
     useEffect(() => {
         if (isDark) {
             document.documentElement.classList.add('dark');
-            localStorage.setItem('hexenity-theme', 'dark');
+            localStorage.setItem('enitexa-theme', 'dark');
         } else {
             document.documentElement.classList.remove('dark');
-            localStorage.setItem('hexenity-theme', 'light');
+            localStorage.setItem('enitexa-theme', 'light');
         }
     }, [isDark]);
 
@@ -81,15 +81,15 @@ const KksystemsNavbar = () => {
         setIsOpen(false);
         e.preventDefault();
 
-        if (href === '/hexenity') {
-            if (location.pathname === '/hexenity') {
+        if (href === '/enitexa.ai') {
+            if (location.pathname === '/enitexa.ai') {
                 if (window.__lenis) {
                     window.__lenis.scrollTo(0);
                 } else {
                     window.scrollTo({ top: 0, behavior: 'auto' });
                 }
             } else {
-                navigate('/hexenity');
+                navigate('/enitexa.ai');
             }
             return;
         }
@@ -97,8 +97,8 @@ const KksystemsNavbar = () => {
         if (href.includes('#')) {
             const hash = href.split('#')[1];
 
-            if (location.pathname !== '/hexenity') {
-                navigate('/hexenity');
+            if (location.pathname !== '/enitexa.ai') {
+                navigate('/enitexa.ai');
                 setTimeout(() => scrollToAnchorId(hash), 140);
             } else {
                 scrollToAnchorId(hash);
@@ -109,8 +109,8 @@ const KksystemsNavbar = () => {
     };
 
     const linkIsActive = (link) => {
-        if (link.href === '/hexenity') {
-            return location.pathname === '/hexenity';
+        if (link.href === '/enitexa.ai') {
+            return location.pathname === '/enitexa.ai';
         }
         return location.pathname === link.href || location.pathname.startsWith(`${link.href}/`);
     };
@@ -118,21 +118,19 @@ const KksystemsNavbar = () => {
     return (
         <nav className="fixed left-0 right-0 top-[max(1rem,env(safe-area-inset-top,0px))] z-50 px-3 sm:px-6">
             <div
-                className={`hexenity-nav-shell mx-auto flex max-w-6xl items-center justify-between rounded-2xl border px-4 transition-all duration-300 sm:px-5 ${
+                className={`enitexa-nav-shell mx-auto flex max-w-6xl items-center justify-between rounded-2xl border px-4 transition-all duration-300 sm:px-5 ${
                     isScrolled
                         ? 'border-white/[0.12] bg-[rgba(4,6,14,0.92)] py-2 shadow-[0_18px_50px_-18px_rgba(0,0,0,0.6)]'
                         : 'border-white/[0.08] bg-[rgba(4,6,14,0.82)] py-2.5'
                 }`}
             >
                 <a
-                    href="/hexenity"
-                    onClick={(e) => handleNavClick(e, '/hexenity')}
-                    className="hexenity-nav-brand pf-display flex items-center gap-2.5 text-base font-bold tracking-tight text-white"
+                    href="/enitexa.ai"
+                    onClick={(e) => handleNavClick(e, '/enitexa.ai')}
+                    className="enitexa-nav-brand pf-display flex items-center gap-2.5 text-base font-bold tracking-tight text-white outline-none focus:outline-none focus-visible:outline-none"
                 >
-                    <HexenityMark size={24} />
-                    <span>
-                        Hexenity<span className="text-indigo-400">.</span>
-                    </span>
+                    <EnitexaMark size={24} />
+                    <span>Enitexa.Ai</span>
                 </a>
 
                 <div className="hidden items-center gap-7 md:flex">
@@ -143,7 +141,7 @@ const KksystemsNavbar = () => {
                                 key={link.title}
                                 href={link.href}
                                 onClick={(e) => handleNavClick(e, link.href)}
-                                className={`hexenity-nav-link-item group pf-mono relative text-[10.5px] uppercase tracking-[0.22em] transition-colors duration-300 ${
+                                className={`enitexa-nav-link-item group pf-mono relative text-[10.5px] uppercase tracking-[0.22em] transition-colors duration-300 ${
                                     active ? 'text-indigo-300' : 'text-slate-400 hover:text-white'
                                 }`}
                             >
@@ -162,7 +160,7 @@ const KksystemsNavbar = () => {
                 <div className="flex items-center gap-2">
                     <Magnetic strength={0.25}>
                         <button
-                            onClick={() => navigate('/hexenity/contact')}
+                            onClick={() => navigate('/enitexa.ai/contact')}
                             className="group hidden items-center gap-1.5 rounded-full border border-white bg-white py-2 pl-4 pr-3 text-xs font-semibold text-black transition-all duration-500 hover:bg-transparent hover:text-white lg:inline-flex"
                         >
                             Start a project
@@ -171,7 +169,7 @@ const KksystemsNavbar = () => {
                     </Magnetic>
                     <button
                         onClick={() => setIsDark(!isDark)}
-                        className="hexenity-theme-btn flex h-9 w-9 items-center justify-center rounded-full border border-white/10 text-slate-300 transition hover:border-indigo-300/45 hover:text-indigo-200"
+                        className="enitexa-theme-btn flex h-9 w-9 items-center justify-center rounded-full border border-white/10 text-slate-300 transition hover:border-indigo-300/45 hover:text-indigo-200"
                         aria-label="Toggle dark mode"
                     >
                         {isDark ? <Sun className="h-4 w-4" /> : <Moon className="h-4 w-4" />}
@@ -187,7 +185,7 @@ const KksystemsNavbar = () => {
             </div>
 
             {isOpen && (
-                <div className="hexenity-contained-scroll mx-auto mt-2 max-h-[calc(100dvh-120px-env(safe-area-inset-top,0px)-env(safe-area-inset-bottom,0px))] max-w-6xl overflow-y-auto rounded-2xl border border-white/10 bg-[rgba(4,6,14,0.96)] p-4 md:hidden">
+                <div className="enitexa-contained-scroll mx-auto mt-2 max-h-[calc(100dvh-120px-env(safe-area-inset-top,0px)-env(safe-area-inset-bottom,0px))] max-w-6xl overflow-y-auto rounded-2xl border border-white/10 bg-[rgba(4,6,14,0.96)] p-4 md:hidden">
                     {NAV_LINKS.map((link, i) => (
                         <a
                             key={link.title}
@@ -203,7 +201,7 @@ const KksystemsNavbar = () => {
                     <button
                         onClick={(e) => {
                             setIsOpen(false);
-                            handleNavClick(e, '/hexenity/contact');
+                            handleNavClick(e, '/enitexa.ai/contact');
                         }}
                         className="pf-mono mt-3 flex w-full items-center justify-center gap-2 rounded-xl bg-white py-3.5 text-xs font-semibold uppercase tracking-[0.2em] text-black"
                     >

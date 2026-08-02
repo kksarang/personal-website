@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import { motion as Motion } from 'framer-motion';
 import { ArrowRight, ExternalLink, Github, Layers3, ShieldCheck, TrendingUp, Users } from 'lucide-react';
 import { projects } from '../../data/projects';
-import HexenityPageShell from '../../components/KkSystems/HexenityPageShell';
+import EnitexaPageShell from '../../components/KkSystems/EnitexaPageShell';
 
 const filters = ['All', 'Mobile', 'Web', 'Enterprise'];
 
@@ -133,20 +133,20 @@ export default function Work() {
 
     const openProject = (slug) => {
         if (!slug || slug === '#') return;
-        navigate(`/hexenity/work/${slug}`);
+        navigate(`/enitexa.ai/work/${slug}`);
     };
 
     return (
-        <HexenityPageShell
+        <EnitexaPageShell
             badge="Case Studies"
             title="Delivery outcomes built for serious business growth"
             subtitle="Explore selected work across mobile apps, enterprise web systems, and business automation products delivered for growth-focused organizations."
             backLabel="Back to Home"
-            onBack={() => navigate('/hexenity')}
+            onBack={() => navigate('/enitexa.ai')}
             actions={(
                 <button
                     type="button"
-                    onClick={() => navigate('/hexenity/contact')}
+                    onClick={() => navigate('/enitexa.ai/contact')}
                     className="inline-flex items-center gap-2 rounded-full border border-indigo-300/35 bg-indigo-500/20 px-4 py-2 text-xs font-semibold uppercase tracking-[0.13em] text-indigo-100 transition hover:bg-indigo-500/30"
                 >
                     Discuss your project
@@ -172,7 +172,7 @@ export default function Work() {
                                 Cleanso — custom laundry software product plan
                             </h2>
                             <p className="mt-3 text-sm leading-relaxed text-slate-300 sm:text-base">
-                                White-label booking app, delivery app, and CMS + POS — planned and built by Hexenity for laundry operators in India, UAE &amp; GCC.
+                                White-label booking app, delivery app, and CMS + POS — planned and built by Enitexa.Ai for laundry operators in India, UAE &amp; GCC.
                                 Live site:{' '}
                                 <a
                                     href="https://kksarang.github.io/laundry/"
@@ -187,7 +187,7 @@ export default function Work() {
                         <div className="flex flex-wrap gap-3">
                             <button
                                 type="button"
-                                onClick={() => navigate('/hexenity/solutions/laundry')}
+                                onClick={() => navigate('/enitexa.ai/solutions/laundry')}
                                 className="inline-flex items-center gap-2 rounded-full bg-white px-5 py-2.5 text-xs font-semibold uppercase tracking-[0.12em] text-[#070B17] transition hover:bg-indigo-100"
                             >
                                 View product plan
@@ -295,6 +295,6 @@ export default function Work() {
                     )}
                 </section>
             </div>
-        </HexenityPageShell>
+        </EnitexaPageShell>
     );
 }

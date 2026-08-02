@@ -1,11 +1,11 @@
-/** Premium Hexenity learning track payloads (React + Tailwind data layer). */
+/** Premium Enitexa.Ai learning track payloads (React + Tailwind data layer). */
 
-export const HEXENITY_PREMIUM_AI_DETAIL = {
+export const ENITEXA_PREMIUM_AI_DETAIL = {
   updatedOn: "May 2026",
   readTime: "36 min",
   level: "Beginner to Advanced",
   seo: {
-    title: "AI Development Learning Program | Hexenity",
+    title: "AI Development Learning Program | Enitexa.Ai",
     description:
       "Futuristic AI engineering track: ML fundamentals, deep learning, LLMs, agents, chatbots, prompt engineering, TensorFlow, PyTorch, OpenAI APIs, automation, and AI SaaS deployment.",
     keywords: [
@@ -31,12 +31,12 @@ export const HEXENITY_PREMIUM_AI_DETAIL = {
       { label: "Avg. portfolio depth", value: "6 projects" },
     ],
     primaryCtaLabel: "Start AI Track",
-    primaryCtaPath: "/hexenity/contact",
+    primaryCtaPath: "/enitexa.ai/contact",
     secondaryCtaLabel: "Try Live Python Practice",
-    secondaryCtaPath: "/hexenity/learning/practice?lang=python",
+    secondaryCtaPath: "/enitexa.ai/learning/practice?lang=python",
   },
   intro:
-    "Artificial Intelligence is no longer an isolated research lane — it is product infrastructure. Modern AI builders blend statistical intuition, neural architectures, tooling mastery, LLM orchestration, agent workflows, and disciplined deployment.\n\nHexenity teaches AI development as an integrated engineering discipline: grounded fundamentals, reproducible notebooks, validated prompts, observable inference pipelines, and shipping constraints such as latency, token economics, guardrails, and compliance-aware logging.",
+    "Artificial Intelligence is no longer an isolated research lane — it is product infrastructure. Modern AI builders blend statistical intuition, neural architectures, tooling mastery, LLM orchestration, agent workflows, and disciplined deployment.\n\nEnitexa.Ai teaches AI development as an integrated engineering discipline: grounded fundamentals, reproducible notebooks, validated prompts, observable inference pipelines, and shipping constraints such as latency, token economics, guardrails, and compliance-aware logging.",
   whyImportant: [
     "Every category-leading SaaS roadmap now reserves capacity for reasoning, retrieval, summarization, or autonomous workflows.",
     "Employers hire builders who reason about evaluation, observability, and failure modes — not demo-only integrations.",
@@ -456,7 +456,7 @@ export const HEXENITY_PREMIUM_AI_DETAIL = {
       remoteOpportunities: "Very High",
     },
   ],
-  whyLearnHexenity: [
+  whyLearnEnitexa: [
     { title: "Futurist product standards", detail: "Curriculum mirrors shipping AI teams, not isolated Kaggle trophies." },
     { title: "Evaluation-first culture", detail: "Every milestone ties to measurable quality, latency, and cost envelopes." },
     { title: "Portfolio gravity", detail: "Capstones read like Series A-ready product case studies." },
@@ -511,12 +511,12 @@ export const HEXENITY_PREMIUM_AI_DETAIL = {
     },
   ],
   cta: {
-    headline: "Initialize your AI engineering trajectory with Hexenity",
+    headline: "Initialize your AI engineering trajectory with Enitexa.Ai",
     text: "Book a roadmap session and align your capstone to a career vector: AI engineer, ML engineer, or product-facing AI builder.",
     primaryLabel: "Book AI Intake Call",
-    primaryPath: "/hexenity/contact",
+    primaryPath: "/enitexa.ai/contact",
     secondaryLabel: "Email learning goals",
-    secondaryPath: "/hexenity/contact",
+    secondaryPath: "/enitexa.ai/contact",
   },
   resources: [
     { label: "PyTorch tutorials", url: "https://pytorch.org/tutorials/" },
@@ -527,12 +527,12 @@ export const HEXENITY_PREMIUM_AI_DETAIL = {
   ],
 };
 
-export const HEXENITY_PREMIUM_UI_DETAIL = {
+export const ENITEXA_PREMIUM_UI_DETAIL = {
   updatedOn: "May 2026",
   readTime: "34 min",
   level: "Beginner to Advanced",
   seo: {
-    title: "UI/UX Design Learning Program | Hexenity",
+    title: "UI/UX Design Learning Program | Enitexa.Ai",
     description:
       "Premium UI/UX design education: research, wireframes, systems, typography, color, psychology, accessibility, Figma mastery, prototyping, micro-interactions, portfolio, and remote career prep.",
     keywords: [
@@ -557,12 +557,12 @@ export const HEXENITY_PREMIUM_UI_DETAIL = {
       { label: "Tooling stack", value: "5 apps" },
     ],
     primaryCtaLabel: "Start UI/UX Track",
-    primaryCtaPath: "/hexenity/contact",
+    primaryCtaPath: "/enitexa.ai/contact",
     secondaryCtaLabel: "Download project brief samples",
-    secondaryCtaPath: "/hexenity/contact",
+    secondaryCtaPath: "/enitexa.ai/contact",
   },
   intro:
-    "UI/UX design is where business strategy becomes felt experience. Hexenity trains designers who can think in systems: research rigor, IA clarity, expressive typography, measurable usability, inclusive patterns, and prototypes that persuade stakeholders.\n\nThis track fuses classic human factors with modern product velocity—Figma-native workflows, design tokens ready for Tailwind/React teams, motion literacy for delight without distraction, and portfolio narratives that prove judgment under constraints.",
+    "UI/UX design is where business strategy becomes felt experience. Enitexa.Ai trains designers who can think in systems: research rigor, IA clarity, expressive typography, measurable usability, inclusive patterns, and prototypes that persuade stakeholders.\n\nThis track fuses classic human factors with modern product velocity—Figma-native workflows, design tokens ready for Tailwind/React teams, motion literacy for delight without distraction, and portfolio narratives that prove judgment under constraints.",
   whyImportant: [
     "Differentiated UX directly lifts activation, retention, and pricing power.",
     "Design systems accelerate engineering throughput and reduce rework.",
@@ -924,7 +924,7 @@ export const HEXENITY_PREMIUM_UI_DETAIL = {
       items: ["Constraint storytelling", "Systems maturity signals", "Stakeholder narrative clips", "Timezone etiquette patterns"],
     },
   ],
-  whyLearnHexenity: [
+  whyLearnEnitexa: [
     { title: "Premium critique bench", detail: "Weekly structured critiques sharpen rationale under friendly pressure." },
     { title: "Engineering handshake fluency", detail: "Specs align with Tailwind/React mental models devs actually ship." },
     { title: "Ethics-forward persuasion", detail: "Psychology lessons exclude manipulative dark patterns." },
@@ -977,12 +977,12 @@ export const HEXENITY_PREMIUM_UI_DETAIL = {
     },
   ],
   cta: {
-    headline: "Craft interfaces that feel inevitable — train with Hexenity",
+    headline: "Craft interfaces that feel inevitable — train with Enitexa.Ai",
     text: "Bring your ambition (startup, freelance, or enterprise transfer). We'll align modules to your portfolio goals.",
     primaryLabel: "Book Design Track Review",
-    primaryPath: "/hexenity/contact",
+    primaryPath: "/enitexa.ai/contact",
     secondaryLabel: "Share portfolio link",
-    secondaryPath: "/hexenity/contact",
+    secondaryPath: "/enitexa.ai/contact",
   },
   resources: [
     { label: "Figma Learn", url: "https://help.figma.com/hc/en-us/categories/360002051613-Get-started" },
@@ -992,12 +992,12 @@ export const HEXENITY_PREMIUM_UI_DETAIL = {
   ],
 };
 
-export const HEXENITY_PREMIUM_WEB_DETAIL = {
+export const ENITEXA_PREMIUM_WEB_DETAIL = {
   updatedOn: "May 2026",
   readTime: "38 min",
   level: "Beginner to Production",
   seo: {
-    title: "Web Development Learning Program | Hexenity",
+    title: "Web Development Learning Program | Enitexa.Ai",
     description:
       "Premium web development curriculum: HTML to deployment, React, Next.js, Node, databases, auth, Git, Docker basics, performance — beginner through production.",
     keywords: [
@@ -1012,7 +1012,7 @@ export const HEXENITY_PREMIUM_WEB_DETAIL = {
     subtitle:
       "Master the modern browser-to-database arc with startup-grade discipline: readable foundations, scalable architecture, measurable performance, and shipping rituals.",
     careerDescription:
-      "Hexenity trains web engineers who own outcomes—not tutorials. You'll traverse semantic HTML roots through typed React surfaces, pragmatic backends, resilient databases, deployment pipelines, and observability-minded launches.",
+      "Enitexa.Ai trains web engineers who own outcomes—not tutorials. You'll traverse semantic HTML roots through typed React surfaces, pragmatic backends, resilient databases, deployment pipelines, and observability-minded launches.",
     duration: "20 to 30 weeks",
     badges: ["Beginner → Production", "Portfolio Dense", "Ship Weekly Mindset"],
     stats: [
@@ -1021,9 +1021,9 @@ export const HEXENITY_PREMIUM_WEB_DETAIL = {
       { label: "Stack breadth", value: "16 cores" },
     ],
     primaryCtaLabel: "Start Web Track",
-    primaryCtaPath: "/hexenity/contact",
+    primaryCtaPath: "/enitexa.ai/contact",
     secondaryCtaLabel: "Open Live Code Lab",
-    secondaryCtaPath: "/hexenity/learning/practice",
+    secondaryCtaPath: "/enitexa.ai/learning/practice",
   },
   whatIsWebDevelopment: {
     overview:
@@ -1057,7 +1057,7 @@ export const HEXENITY_PREMIUM_WEB_DETAIL = {
       "Demand for engineers fluent across HTML/CSS fundamentals through typed React + Node deployments continues to accelerate—especially for ICs who optimize cumulative UX latency and collaborate cleanly via Git-backed workflows.",
   },
   intro:
-    "Web platforms reward engineers who harmonize UX polish with systemic reliability. Hexenity teaches intentional layering: semantics before shortcuts, typed boundaries before scaling pains, instrumentation before guessing, and incremental releases before risky big bangs.\n\nYou'll assemble a ladder of commits—from static empathy layouts through authenticated dashboards—to showcase velocity and judgment recruiters recognize instantly.",
+    "Web platforms reward engineers who harmonize UX polish with systemic reliability. Enitexa.Ai teaches intentional layering: semantics before shortcuts, typed boundaries before scaling pains, instrumentation before guessing, and incremental releases before risky big bangs.\n\nYou'll assemble a ladder of commits—from static empathy layouts through authenticated dashboards—to showcase velocity and judgment recruiters recognize instantly.",
   whyImportant: [
     "Browser surfaces remain the widest distribution channel for B2B and B2C innovation.",
     "Companies prize engineers who compress full-stack iteration loops responsibly.",
@@ -1442,7 +1442,7 @@ export const HEXENITY_PREMIUM_WEB_DETAIL = {
       remoteOpportunities: "Very High",
     },
   ],
-  whyLearnHexenity: [
+  whyLearnEnitexa: [
     { title: "Real projects weekly cadence", detail: "Momentum beats sporadic tutorials—shipping becomes reflex." },
     { title: "Industry mentorship lenses", detail: "Reviews emphasize readability, observability, and narrative commits." },
     { title: "Startup-oriented training", detail: "Scopes mimic constrained runway decisions—not textbook fluff." },
@@ -1496,12 +1496,12 @@ export const HEXENITY_PREMIUM_WEB_DETAIL = {
     },
   ],
   cta: {
-    headline: "Ignite your web engineering trajectory — ship with Hexenity",
+    headline: "Ignite your web engineering trajectory — ship with Enitexa.Ai",
     text: "Schedule an intake so we align modules with your hiring target or freelance niche.",
     primaryLabel: "Book Web Track Session",
-    primaryPath: "/hexenity/contact",
+    primaryPath: "/enitexa.ai/contact",
     secondaryLabel: "Compare curriculum stacks",
-    secondaryPath: "/hexenity/contact",
+    secondaryPath: "/enitexa.ai/contact",
   },
   resources: [
     { label: "MDN Web Docs", url: "https://developer.mozilla.org/" },
@@ -1513,7 +1513,7 @@ export const HEXENITY_PREMIUM_WEB_DETAIL = {
   ],
 };
 
-export const HEXENITY_PREMIUM_AI_MEGA = [
+export const ENITEXA_PREMIUM_AI_MEGA = [
   {
     section: "Neural Foundations",
     items: [
@@ -1566,7 +1566,7 @@ export const HEXENITY_PREMIUM_AI_MEGA = [
   },
 ];
 
-export const HEXENITY_PREMIUM_UI_MEGA = [
+export const ENITEXA_PREMIUM_UI_MEGA = [
   {
     section: "Discovery & Structure",
     items: ["Research rituals", "Wireframe acceleration", "Flow diagrams & funnel alignment", "Information architecture labs"],
@@ -1589,7 +1589,7 @@ export const HEXENITY_PREMIUM_UI_MEGA = [
   },
 ];
 
-export const HEXENITY_PREMIUM_WEB_MEGA = [
+export const ENITEXA_PREMIUM_WEB_MEGA = [
   {
     section: "Browser Foundations",
     items: ["HTML5 semantics", "CSS architecture", "Responsive layouts", "Accessibility fundamentals"],

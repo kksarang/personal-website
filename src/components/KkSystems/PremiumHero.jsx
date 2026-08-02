@@ -1,7 +1,7 @@
 import React, { useId } from 'react';
 import { ArrowRight, BrainCircuit, Layers, Smartphone } from 'lucide-react';
 import { Link, useNavigate } from 'react-router-dom';
-import HexenityMark from './HexenityMark';
+import EnitexaMark from './EnitexaMark';
 
 /** Brand emblem: hexagon mark ringed by rotating circular text + floating chips */
 const HeroEmblem = () => {
@@ -26,16 +26,16 @@ const HeroEmblem = () => {
                 </defs>
                 <text className="pf-mono fill-white/35" style={{ fontSize: '13.5px', letterSpacing: '0.42em' }}>
                     <textPath href={`#${pathId}`}>
-                        HEXENITY · DIGITAL &amp; SOFTWARE SOLUTIONS · APPS · AI · ERP · GROWTH ·
+                        ENITEXA · DIGITAL &amp; SOFTWARE SOLUTIONS · APPS · AI · ERP · GROWTH ·
                     </textPath>
                 </text>
             </svg>
 
             {/* Center mark */}
             <div className="absolute flex flex-col items-center gap-4">
-                <HexenityMark size={110} withGlow />
+                <EnitexaMark size={110} withGlow />
                 <p className="pf-display text-2xl font-bold tracking-tight text-white">
-                    Hexenity<span className="text-indigo-400">.</span>
+                    Enitexa.Ai
                 </p>
             </div>
 
@@ -62,7 +62,7 @@ const PremiumHero = () => {
     return (
         <section
             id="home"
-            className="hexenity-premium-hero relative flex min-h-[100svh] items-center overflow-hidden pb-14 pt-32 sm:pt-32"
+            className="enitexa-premium-hero relative flex min-h-[100svh] items-center overflow-hidden pb-14 pt-32 sm:pt-32"
         >
             <div className="pointer-events-none absolute inset-0 bg-[#05060c]" />
             <div className="pf-dotgrid pointer-events-none absolute inset-0" aria-hidden />
@@ -91,7 +91,7 @@ const PremiumHero = () => {
                 <div className="grid grid-cols-1 items-center gap-12 lg:grid-cols-[1fr_minmax(300px,460px)] lg:gap-16">
                     <div className="min-w-0">
                         <p className="pf-mono text-[11px] uppercase tracking-[0.4em] text-indigo-300">
-                            Hexenity — Your extended tech team
+                            Enitexa.Ai — Your extended tech team
                         </p>
                         <h1 className="pf-display mt-6 text-[clamp(1.9rem,4vw,3.6rem)] font-extrabold leading-[1.02] text-white">
                             We build the
@@ -110,7 +110,7 @@ const PremiumHero = () => {
                         <div className="mt-10 flex flex-col gap-4 sm:flex-row">
                             <button
                                 type="button"
-                                onClick={() => navigate('/hexenity/contact')}
+                                onClick={() => navigate('/enitexa.ai/contact')}
                                 data-cursor="Book"
                                 className="group inline-flex items-center justify-center gap-2 rounded-full border border-white bg-white px-8 py-4 text-sm font-semibold text-black transition-all duration-500 hover:bg-transparent hover:text-white"
                             >
@@ -118,8 +118,8 @@ const PremiumHero = () => {
                                 <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
                             </button>
                             <Link
-                                to="/hexenity/services"
-                                className="hexenity-premium-hero-secondary inline-flex items-center justify-center gap-2 rounded-full border border-white/[0.3] px-8 py-4 text-sm font-semibold text-white transition-all duration-500 hover:border-white hover:bg-white/[0.045]"
+                                to="/enitexa.ai/services"
+                                className="enitexa-premium-hero-secondary inline-flex items-center justify-center gap-2 rounded-full border border-white/[0.3] px-8 py-4 text-sm font-semibold text-white transition-all duration-500 hover:border-white hover:bg-white/[0.045]"
                             >
                                 Explore capabilities
                             </Link>

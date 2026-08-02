@@ -2,7 +2,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { Smartphone, Zap, Shield, CheckCircle2, ArrowRight, MessageSquare, Layers3 } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
-import HexenityPageShell from '../../../components/KkSystems/HexenityPageShell';
+import EnitexaPageShell from '../../../components/KkSystems/EnitexaPageShell';
 
 export default function MobileSolutions() {
   const navigate = useNavigate();
@@ -15,15 +15,15 @@ export default function MobileSolutions() {
   ];
 
   return (
-    <HexenityPageShell
+    <EnitexaPageShell
       badge="Solution Page"
       title="Mobile Application Development"
       subtitle="High-performance mobile experiences built for scale, reliability, and long-term maintainability."
-      backLabel="Back to Hexenity"
-      onBack={() => navigate('/hexenity')}
+      backLabel="Back to Enitexa.Ai"
+      onBack={() => navigate('/enitexa.ai')}
       actions={(
         <button
-          onClick={() => navigate('/hexenity/contact')}
+          onClick={() => navigate('/enitexa.ai/contact')}
           className="inline-flex items-center gap-2 rounded-full border border-indigo-300/35 bg-indigo-500/20 px-4 py-2 text-xs font-semibold uppercase tracking-[0.13em] text-indigo-100 transition hover:bg-indigo-500/30"
         >
           Book Consultation
@@ -40,7 +40,7 @@ export default function MobileSolutions() {
             </p>
             <h2 className="mt-4 text-3xl font-black text-white">Build once, ship confidently</h2>
             <p className="mt-3 max-w-2xl text-slate-300">
-              Hexenity teams combine product thinking with platform-level engineering to deliver stable, high-performance mobile apps that scale with your business.
+              Enitexa.Ai teams combine product thinking with platform-level engineering to deliver stable, high-performance mobile apps that scale with your business.
             </p>
             <div className="mt-6 grid gap-3 sm:grid-cols-3">
               {["Weekly check-ins", "Store-ready releases", "Post-launch support"].map((item) => (
@@ -142,11 +142,11 @@ export default function MobileSolutions() {
 
         <div className="text-center rounded-3xl border border-indigo-300/25 bg-indigo-500/15 p-12">
           <h2 className="text-3xl font-bold mb-6 tracking-tight">Ready to build your mobile future?</h2>
-          <button onClick={() => navigate('/hexenity/contact')} className="px-10 py-5 bg-indigo-600 hover:bg-indigo-500 rounded-2xl text-lg font-bold text-white shadow-2xl hover:scale-105 active:scale-95 transition-all flex items-center gap-3 mx-auto">
+          <button onClick={() => navigate('/enitexa.ai/contact')} className="px-10 py-5 bg-indigo-600 hover:bg-indigo-500 rounded-2xl text-lg font-bold text-white shadow-2xl hover:scale-105 active:scale-95 transition-all flex items-center gap-3 mx-auto">
             <MessageSquare className="w-6 h-6" /> Book Architecture Review
           </button>
         </div>
       </div>
-    </HexenityPageShell>
+    </EnitexaPageShell>
   );
 }

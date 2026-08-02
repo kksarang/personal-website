@@ -45,7 +45,7 @@ const Navbar = () => {
         { title: 'About', href: '/#about', type: 'hash' },
         { title: 'Skills', href: '/#skills', type: 'hash' },
         { title: 'Experience', href: '/#experience', type: 'hash' },
-        { title: 'Hexenity', href: '/hexenity', type: 'page' },
+        { title: 'Enitexa.Ai', href: '/enitexa.ai', type: 'page' },
         { title: 'Contact', href: '/#contact', type: 'hash' },
     ];
 

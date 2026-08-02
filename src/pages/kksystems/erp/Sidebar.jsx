@@ -20,19 +20,19 @@ const Sidebar = () => {
     {
       label: 'CORE',
       items: [
-        { title: 'Dashboard', icon: LayoutDashboard, path: '/hexenity/erp/dashboard' },
-        { title: 'Analytics', icon: BarChart3, path: '/hexenity/erp/analytics' },
+        { title: 'Dashboard', icon: LayoutDashboard, path: '/enitexa.ai/erp/dashboard' },
+        { title: 'Analytics', icon: BarChart3, path: '/enitexa.ai/erp/analytics' },
       ]
     },
     {
       label: 'MANAGEMENT',
       items: [
-        { title: 'Customers', icon: Users, path: '/hexenity/erp/customers' },
-        { title: 'Clients', icon: Building2, path: '/hexenity/erp/clients' },
-        { title: 'Projects', icon: BriefcaseBusiness, path: '/hexenity/erp/projects' },
-        { title: 'Sites', icon: Globe2, path: '/hexenity/erp/sites' },
-        { title: 'Inventory', icon: Package, path: '/hexenity/erp/inventory' },
-        { title: 'Employees', icon: UserCircle2, path: '/hexenity/erp/employees' },
+        { title: 'Customers', icon: Users, path: '/enitexa.ai/erp/customers' },
+        { title: 'Clients', icon: Building2, path: '/enitexa.ai/erp/clients' },
+        { title: 'Projects', icon: BriefcaseBusiness, path: '/enitexa.ai/erp/projects' },
+        { title: 'Sites', icon: Globe2, path: '/enitexa.ai/erp/sites' },
+        { title: 'Inventory', icon: Package, path: '/enitexa.ai/erp/inventory' },
+        { title: 'Employees', icon: UserCircle2, path: '/enitexa.ai/erp/employees' },
       ]
     }
   ];
@@ -41,7 +41,7 @@ const Sidebar = () => {
     <div className="w-64 bg-[#0B0F19] h-full flex flex-col border-r border-white/5 transition-all duration-300">
       <div className="p-6 flex items-center gap-3 border-b border-white/5">
         <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-indigo-500 to-purple-600 flex items-center justify-center font-bold text-white shadow-lg">H</div>
-        <span className="text-lg font-bold tracking-tight text-white/90">Hexenity <span className="text-indigo-400">ERP</span></span>
+        <span className="text-lg font-bold tracking-tight text-white/90">Enitexa.Ai <span className="text-indigo-400">ERP</span></span>
       </div>
 
       <nav className="flex-1 overflow-y-auto p-4 space-y-8 mt-4 scrollbar-hide">

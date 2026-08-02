@@ -46,7 +46,7 @@ import {
     XAxis,
     YAxis,
 } from 'recharts';
-import HexenityPageShell from '../../components/KkSystems/HexenityPageShell';
+import EnitexaPageShell from '../../components/KkSystems/EnitexaPageShell';
 
 /* —— Chart data (deterministic placeholders) —— */
 const spendTrend = [
@@ -116,7 +116,7 @@ function MetricTicker({ label, suffix = '', decimals = 0, endValue, duration = 1
 
   return (
         <div ref={ref} className="text-center sm:text-left">
-            <p className="hexenity-display text-2xl font-bold tracking-tight text-white sm:text-3xl lg:text-[2.15rem]">
+            <p className="enitexa-display text-2xl font-bold tracking-tight text-white sm:text-3xl lg:text-[2.15rem]">
                 {formatted}
                 {suffix}
             </p>
@@ -159,9 +159,9 @@ function SpotlightHero({ navigate }) {
                 <div className="flex flex-col justify-center">
                     <p className="inline-flex items-center gap-2 pf-mono text-[10px] uppercase tracking-[0.32em] text-indigo-300/90">
                         <span className="h-px w-6 bg-gradient-to-r from-indigo-400 to-transparent" />
-                        Hexenity Operations Cloud
+                        Enitexa.Ai Operations Cloud
                     </p>
-                    <h1 className="hexenity-display mt-4 max-w-[14ch] text-4xl font-semibold leading-[0.95] tracking-[-0.04em] text-white sm:text-5xl xl:text-[3.55rem]">
+                    <h1 className="enitexa-display mt-4 max-w-[14ch] text-4xl font-semibold leading-[0.95] tracking-[-0.04em] text-white sm:text-5xl xl:text-[3.55rem]">
                         Operational infrastructure for modern SaaS companies
                     </h1>
                     <p className="mt-5 max-w-xl text-base leading-relaxed text-slate-400 sm:text-lg">
@@ -171,14 +171,14 @@ function SpotlightHero({ navigate }) {
                     <div className="mt-7 flex flex-wrap gap-3">
                         <button
                             type="button"
-                            onClick={() => navigate('/hexenity/contact')}
-                            className="hexenity-display rounded-full bg-indigo-600 px-7 py-3.5 text-sm font-semibold tracking-tight text-white shadow-[0_0_36px_-4px_rgba(99,102,241,0.55)] transition hover:bg-indigo-500 hover:shadow-[0_0_48px_-6px_rgba(99,102,241,0.65)]"
+                            onClick={() => navigate('/enitexa.ai/contact')}
+                            className="enitexa-display rounded-full bg-indigo-600 px-7 py-3.5 text-sm font-semibold tracking-tight text-white shadow-[0_0_36px_-4px_rgba(99,102,241,0.55)] transition hover:bg-indigo-500 hover:shadow-[0_0_48px_-6px_rgba(99,102,241,0.65)]"
                         >
                             Start enterprise demo
                         </button>
             <button 
                             type="button"
-                            onClick={() => navigate('/hexenity/saas/demo')}
+                            onClick={() => navigate('/enitexa.ai/saas/demo')}
                             className="rounded-xl border-2 border-indigo-400/50 bg-indigo-500/15 px-7 py-3.5 text-sm font-semibold text-indigo-100 transition hover:border-indigo-300 hover:bg-indigo-500/25"
             >
                             Interactive UI demos
@@ -218,7 +218,7 @@ function SpotlightHero({ navigate }) {
                             <span className="h-2.5 w-2.5 rounded-full bg-amber-400/80" />
                             <span className="h-2.5 w-2.5 rounded-full bg-emerald-400/70" />
                             <div className="ml-2 flex-1 rounded-lg border border-white/[0.06] bg-black/40 px-3 py-1 text-[10px] text-slate-500">
-                                app.hexenity.io / operations / overview
+                                app.enitexa.io / operations / overview
                             </div>
                         </div>
                         <div className="grid gap-3 p-3 sm:grid-cols-12 sm:p-4">
@@ -226,7 +226,7 @@ function SpotlightHero({ navigate }) {
                                 <div className="flex items-start justify-between gap-2">
                                     <div>
                                         <p className="text-[10px] font-semibold uppercase tracking-[0.14em] text-slate-500">Spend analytics</p>
-                                        <p className="hexenity-display mt-1 text-lg font-semibold tracking-tight text-white">$2.41M monitored</p>
+                                        <p className="enitexa-display mt-1 text-lg font-semibold tracking-tight text-white">$2.41M monitored</p>
                                     </div>
                                     <BadgeCheck className="h-4 w-4 shrink-0 text-emerald-400/90" aria-hidden />
                                 </div>
@@ -477,7 +477,7 @@ const devProcess = [
 const testimonials = [
     {
         quote:
-            'We stopped flying blind through renewals. Hexenity shipped an operations console that reconciled procurement’s contracts with engineering’s reality — CFO finally trusts the SaaS runway.',
+            'We stopped flying blind through renewals. Enitexa.Ai shipped an operations console that reconciled procurement’s contracts with engineering’s reality — CFO finally trusts the SaaS runway.',
         name: 'Elena Matsuda',
         role: 'COO · Series C Fintech',
         metrics: [{ k: 'Renewal leakage', v: '-28%' }, { k: 'Cycle time', v: '-41%' }],
@@ -498,7 +498,7 @@ const testimonials = [
     },
 ];
 
-export default function HexenitySaaS() {
+export default function EnitexaSaaS() {
     const navigate = useNavigate();
     const [billingAnnual, setBillingAnnual] = useState(true);
     const [tab, setTab] = useState('spend');
@@ -563,19 +563,19 @@ export default function HexenitySaaS() {
     };
 
     return (
-        <HexenityPageShell
+        <EnitexaPageShell
             shellHeader="toolbar"
             variant="saas-dark"
             toolbarSpacing="compact"
             badge={null}
             title=""
             subtitle={null}
-            backLabel="Back to Core Hexenity"
-            onBack={() => navigate('/hexenity/core-hexenity')}
+            backLabel="Back to Core Enitexa.Ai"
+            onBack={() => navigate('/enitexa.ai/core-enitexa')}
             actions={(
                 <button
                     type="button"
-                    onClick={() => navigate('/hexenity/contact')}
+                    onClick={() => navigate('/enitexa.ai/contact')}
                     className="inline-flex items-center gap-2 rounded-full border border-indigo-300/35 bg-indigo-500/20 px-4 py-2 text-xs font-semibold uppercase tracking-[0.13em] text-indigo-100 transition hover:bg-indigo-500/30"
                 >
                     Request demo
@@ -583,7 +583,7 @@ export default function HexenitySaaS() {
                 </button>
             )}
         >
-            <div className="hexenity-saas-page space-y-10 pb-28 md:space-y-14 lg:space-y-16">
+            <div className="enitexa-saas-page space-y-10 pb-28 md:space-y-14 lg:space-y-16">
                 <SpotlightHero navigate={navigate} />
 
                 <section className="rounded-2xl border border-white/[0.06] bg-white/[0.02] px-5 py-3 md:px-8 md:py-4">
@@ -592,7 +592,7 @@ export default function HexenitySaaS() {
                     </p>
                     <div className="mt-5 flex flex-wrap items-center justify-center gap-x-10 gap-y-4">
                         {['Vertex Systems', 'Aurora Bank', 'Kite Logistics', 'Nimbus Health', 'Helio Retail', 'Cadenza SaaS'].map((name) => (
-                            <span key={name} className="hexenity-display text-sm font-semibold tracking-tight text-slate-600 [text-shadow:0_0_40px_rgba(148,163,184,0.15)] md:text-[0.9375rem]">
+                            <span key={name} className="enitexa-display text-sm font-semibold tracking-tight text-slate-600 [text-shadow:0_0_40px_rgba(148,163,184,0.15)] md:text-[0.9375rem]">
                                 {name}
                             </span>
                         ))}
@@ -657,7 +657,7 @@ export default function HexenitySaaS() {
                             boxShadow: 'inset 0 1px 0 rgba(255,255,255,0.05), 0 0 60px -20px rgba(99,102,241,0.15)',
                         }}
                         >
-                            <p className="text-[11px] font-semibold uppercase tracking-[0.16em] text-indigo-300/90">Hexenity counter-move</p>
+                            <p className="text-[11px] font-semibold uppercase tracking-[0.16em] text-indigo-300/90">Enitexa.Ai counter-move</p>
                             <ul className="mt-6 space-y-4 text-sm text-slate-300">
                                 <li className="flex gap-3">
                                     <Layers3 className="mt-0.5 h-4 w-4 shrink-0 text-indigo-400" aria-hidden />
@@ -687,7 +687,7 @@ export default function HexenitySaaS() {
             </div>
             <button 
                             type="button"
-                            onClick={() => navigate('/hexenity/saas/demo')}
+                            onClick={() => navigate('/enitexa.ai/saas/demo')}
                             className="shrink-0 self-start rounded-full border border-cyan-400/35 bg-cyan-400/10 px-4 py-2 text-[11px] font-semibold uppercase tracking-[0.14em] text-cyan-100 transition hover:bg-cyan-400/15"
             >
                             Open full demo variants →
@@ -722,7 +722,7 @@ export default function HexenitySaaS() {
                                         exit={{ opacity: 0, y: -4 }}
                                         transition={{ duration: 0.2 }}
                                     >
-                                        <h3 className="hexenity-display text-xl font-semibold text-white">{showcaseTabs.find((x) => x.id === tab)?.label}</h3>
+                                        <h3 className="enitexa-display text-xl font-semibold text-white">{showcaseTabs.find((x) => x.id === tab)?.label}</h3>
                                         <p className="mt-3 text-sm leading-relaxed text-slate-400">
                                             {showcaseTabs.find((x) => x.id === tab)?.caption}
                                         </p>
@@ -797,7 +797,7 @@ export default function HexenitySaaS() {
                                 <div className={`pointer-events-none absolute inset-0 bg-gradient-to-br opacity-70 transition-opacity group-hover:opacity-100 ${m.tone}`} />
                                 <div className="relative flex h-full flex-col p-5 md:p-6">
                                     <m.icon className="h-5 w-5 text-indigo-300" aria-hidden />
-                                    <h3 className="hexenity-display mt-4 text-lg font-semibold tracking-tight text-white md:text-xl">{m.title}</h3>
+                                    <h3 className="enitexa-display mt-4 text-lg font-semibold tracking-tight text-white md:text-xl">{m.title}</h3>
                                     <p className="mt-2 flex-1 text-sm leading-relaxed text-slate-400">{m.desc}</p>
 
                                     {(m.chartType === 'line' || m.chart) && (
@@ -901,7 +901,7 @@ export default function HexenitySaaS() {
                                         </span>
                                     ) : null}
                  </div>
-                                <p className="hexenity-display mt-4 text-lg font-semibold text-white">{f.title}</p>
+                                <p className="enitexa-display mt-4 text-lg font-semibold text-white">{f.title}</p>
                                 <p className="mt-2 text-sm leading-relaxed text-slate-400">{f.narrative}</p>
                                 <div className="relative mt-4 h-[52px] overflow-hidden rounded-lg border border-white/[0.06] bg-black/30">
                                     <div className="absolute inset-x-4 bottom-0 flex h-[36px] items-end gap-1">
@@ -928,27 +928,27 @@ export default function HexenitySaaS() {
                     <div className="pointer-events-none absolute bottom-10 left-0 h-48 w-48 rounded-full bg-violet-500/10 blur-3xl" />
                     <div className="relative grid gap-10 lg:grid-cols-[minmax(0,1.1fr)_minmax(0,0.95fr)]">
                         <div>
-                            <p className="pf-mono text-[10px] uppercase tracking-[0.32em] text-sky-300/85">How Hexenity ships SaaS</p>
-                            <h2 className="hexenity-display mt-3 text-3xl font-semibold tracking-[-0.03em] text-white md:text-4xl">
+                            <p className="pf-mono text-[10px] uppercase tracking-[0.32em] text-sky-300/85">How Enitexa.Ai ships SaaS</p>
+                            <h2 className="enitexa-display mt-3 text-3xl font-semibold tracking-[-0.03em] text-white md:text-4xl">
                                 Engineering runway your exec team understands
                             </h2>
                             <div className="mt-8 space-y-6">
                                 <div className="rounded-2xl border border-white/[0.08] bg-black/35 p-5">
-                                    <h3 className="hexenity-display text-base font-semibold text-white">Architecture</h3>
+                                    <h3 className="enitexa-display text-base font-semibold text-white">Architecture</h3>
                                     <p className="mt-2 text-sm leading-relaxed text-slate-400">
                                         Event-driven backbone with Next.js and NestJS services — PostgreSQL for durable truth,
                                         Redis for fan-out bursts, horizontally scaled workers for ingestion & reconciliation telemetry.
                                     </p>
                                 </div>
                                 <div className="rounded-2xl border border-white/[0.08] bg-black/35 p-5">
-                                    <h3 className="hexenity-display text-base font-semibold text-white">Security</h3>
+                                    <h3 className="enitexa-display text-base font-semibold text-white">Security</h3>
                                     <p className="mt-2 text-sm leading-relaxed text-slate-400">
                                         JWT/session hardening paths, granular RBAC, API throttling, encrypted secrets, granular audit
                                         streams engineered for auditors—not checkbox PDFs alone.
                                     </p>
                                 </div>
                                 <div className="rounded-2xl border border-white/[0.08] bg-black/35 p-5">
-                                    <h3 className="hexenity-display text-base font-semibold text-white">Infrastructure</h3>
+                                    <h3 className="enitexa-display text-base font-semibold text-white">Infrastructure</h3>
                                     <p className="mt-2 text-sm leading-relaxed text-slate-400">
                                         AWS + Vercel edge delivery, Dockerized workloads, observability dashboards, rollout automation
                                         with guarded progressive delivery.
@@ -977,7 +977,7 @@ export default function HexenitySaaS() {
                                 </p>
                                 <button
                                     type="button"
-                                    onClick={() => navigate('/hexenity/contact')}
+                                    onClick={() => navigate('/enitexa.ai/contact')}
                                     className="mt-6 rounded-xl bg-white/[0.1] px-4 py-2.5 text-xs font-semibold uppercase tracking-[0.14em] text-white transition hover:bg-white/[0.16]"
                                 >
                                     Talk architecture
@@ -1041,7 +1041,7 @@ export default function HexenitySaaS() {
                                             key={m.k}
                                             className="inline-flex flex-col rounded-xl border border-white/[0.08] bg-black/30 px-3 py-2"
                                         >
-                                            <span className="hexenity-display text-lg font-semibold tracking-tight text-white">{m.v}</span>
+                                            <span className="enitexa-display text-lg font-semibold tracking-tight text-white">{m.v}</span>
                                             <span className="mt-0.5 text-[10px] font-semibold uppercase tracking-[0.12em] text-slate-500">{m.k}</span>
                                         </span>
                                     ))}
@@ -1122,17 +1122,17 @@ export default function HexenitySaaS() {
                                                 Most booked
                                             </span>
                                         ) : null}
-                                    <h3 className="hexenity-display text-xl font-semibold text-white">{tier.name}</h3>
+                                    <h3 className="enitexa-display text-xl font-semibold text-white">{tier.name}</h3>
                                         <div className="mt-4">
                                         {tier.priceM !== null ? (
                                             <>
-                                                <span className="hexenity-display text-4xl font-semibold tracking-tight text-white">
+                                                <span className="enitexa-display text-4xl font-semibold tracking-tight text-white">
                                                     ${tier.priceM.toLocaleString()}
                                             </span>
                                                 <span className="text-sm text-slate-400"> / mo · billed {billingAnnual ? 'yearly anchor' : 'monthly snapshot'}</span>
                                             </>
                                         ) : (
-                                            <p className="hexenity-display text-3xl font-semibold tracking-tight text-white">Custom</p>
+                                            <p className="enitexa-display text-3xl font-semibold tracking-tight text-white">Custom</p>
                                         )}
                                                 </div>
                                     <p className="mt-3 text-sm text-slate-400">{tier.blurb}</p>
@@ -1146,7 +1146,7 @@ export default function HexenitySaaS() {
                                                 </ul>
                                                 <button
                                                     type="button"
-                                        onClick={() => navigate('/hexenity/contact')}
+                                        onClick={() => navigate('/enitexa.ai/contact')}
                                         className={`mt-8 rounded-xl px-4 py-3 text-xs font-semibold uppercase tracking-[0.14em] transition ${
                                             tier.highlight ? 'bg-indigo-500 text-white hover:bg-indigo-400' : 'border border-white/15 bg-white/[0.04] hover:border-indigo-300/35'
                                                       }`}
@@ -1172,7 +1172,7 @@ export default function HexenitySaaS() {
                 >
                     <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(to_right,rgba(148,163,184,0.05)_1px,transparent_1px)] bg-[size:56px_56px] opacity-40" aria-hidden />
                     <Sparkles className="relative z-10 mx-auto h-8 w-8 text-indigo-200" aria-hidden />
-                    <h2 className="hexenity-display relative z-10 mx-auto mt-5 max-w-3xl text-3xl font-semibold tracking-[-0.03em] text-white md:text-5xl md:leading-[1.08]">
+                    <h2 className="enitexa-display relative z-10 mx-auto mt-5 max-w-3xl text-3xl font-semibold tracking-[-0.03em] text-white md:text-5xl md:leading-[1.08]">
                         Build operational clarity across your SaaS ecosystem
                     </h2>
                     <p className="relative z-10 mx-auto mt-5 max-w-2xl text-base text-indigo-100/90 md:text-lg">
@@ -1180,7 +1180,7 @@ export default function HexenitySaaS() {
                                             </p>
                     <button
                         type="button"
-                        onClick={() => navigate('/hexenity/contact')}
+                        onClick={() => navigate('/enitexa.ai/contact')}
                         className="relative z-10 mt-10 inline-flex items-center gap-2 rounded-xl bg-white px-8 py-4 text-sm font-semibold uppercase tracking-[0.12em] text-slate-900 transition hover:bg-slate-100"
                     >
                         Schedule executive session
@@ -1197,11 +1197,11 @@ export default function HexenitySaaS() {
                         </span>
                     </summary>
                     <div className="pb-6 pt-4 text-slate-400">
-                        Hexenity aligns inventory, licensing, renewal playbooks, and executive KPI dashboards into one continuous delivery
+                        Enitexa.Ai aligns inventory, licensing, renewal playbooks, and executive KPI dashboards into one continuous delivery
                         motion—paired with rollout templates for 30-60-90 governance maturity jumps. Prefer a guided assessment? Reach out and we tailor the operating model blueprint to your stakeholder map.
       </div>
                 </details>
       </div>
-        </HexenityPageShell>
+        </EnitexaPageShell>
     );
 }

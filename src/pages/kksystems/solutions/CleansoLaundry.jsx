@@ -17,7 +17,7 @@ import {
     Rocket,
     MessageSquare,
 } from 'lucide-react';
-import HexenityPageShell from '../../../components/KkSystems/HexenityPageShell';
+import EnitexaPageShell from '../../../components/KkSystems/EnitexaPageShell';
 
 const MODULES = [
     {
@@ -86,12 +86,12 @@ export default function CleansoLaundry() {
     const navigate = useNavigate();
 
     return (
-        <HexenityPageShell
+        <EnitexaPageShell
             badge="Software Solution"
-            title="Cleanso — custom laundry software, planned and built by Hexenity"
+            title="Cleanso — custom laundry software, planned and built by Enitexa.Ai"
             subtitle="A white-label laundry management product in active planning and build: customer app, delivery app, CMS + POS — tailored for operators across India, UAE, and the GCC."
             backLabel="Back to Work"
-            onBack={() => navigate('/hexenity/work')}
+            onBack={() => navigate('/enitexa.ai/work')}
             actions={(
                 <>
                     <a
@@ -105,7 +105,7 @@ export default function CleansoLaundry() {
                     </a>
                     <button
                         type="button"
-                        onClick={() => navigate('/hexenity/contact')}
+                        onClick={() => navigate('/enitexa.ai/contact')}
                         className="inline-flex items-center gap-2 rounded-full border border-indigo-300/35 bg-indigo-500/20 px-4 py-2 text-xs font-semibold uppercase tracking-[0.13em] text-indigo-100 transition hover:bg-indigo-500/30"
                     >
                         Plan your laundry stack
@@ -131,7 +131,7 @@ export default function CleansoLaundry() {
                         Laundry businesses need more than a generic POS — they need a branded operating system.
                     </h2>
                     <p className="mt-4 max-w-2xl text-base leading-relaxed text-slate-300">
-                        Hexenity is designing and building <strong className="font-semibold text-white">Cleanso</strong> as a customizable laundry software suite:
+                        Enitexa.Ai is designing and building <strong className="font-semibold text-white">Cleanso</strong> as a customizable laundry software suite:
                         booking, delivery, billing, and multi-store control under one white-label product plan — with flat yearly licensing for serious operators.
                     </p>
                     <div className="mt-8 flex flex-wrap gap-3">
@@ -217,7 +217,7 @@ export default function CleansoLaundry() {
                     </div>
                 </section>
 
-                {/* Who it's for + why Hexenity */}
+                {/* Who it's for + why Enitexa.Ai */}
                 <section className="grid gap-6 lg:grid-cols-2">
                     <div className="rounded-3xl border border-white/[0.08] bg-[#0B0F19] p-7 sm:p-8">
                         <SectionLabel index="03" label="Built for" />
@@ -232,10 +232,10 @@ export default function CleansoLaundry() {
                         </ul>
                     </div>
                     <div className="rounded-3xl border border-indigo-300/20 bg-indigo-500/10 p-7 sm:p-8">
-                        <SectionLabel index="04" label="Hexenity role" />
+                        <SectionLabel index="04" label="Enitexa.Ai role" />
                         <h3 className="pf-display mb-4 text-2xl font-bold text-white">Software studio behind Cleanso</h3>
                         <p className="text-sm leading-relaxed text-slate-300">
-                            Hexenity owns product planning, UX, engineering, and white-label delivery for Cleanso —
+                            Enitexa.Ai owns product planning, UX, engineering, and white-label delivery for Cleanso —
                             from the live marketing site to the custom laundry stack roadmap. If you run laundry or dry cleaning
                             and need branded apps + POS, we plan and build it with you.
                         </p>
@@ -262,7 +262,7 @@ export default function CleansoLaundry() {
                                 See the live site — or start a laundry product plan
                             </h2>
                             <p className="mt-3 text-slate-400">
-                                Review the public Cleanso presence, then talk to Hexenity about customization for your stores.
+                                Review the public Cleanso presence, then talk to Enitexa.Ai about customization for your stores.
                             </p>
                         </div>
                         <div className="flex flex-wrap gap-3">
@@ -277,15 +277,15 @@ export default function CleansoLaundry() {
                             </a>
                             <button
                                 type="button"
-                                onClick={() => navigate('/hexenity/contact')}
+                                onClick={() => navigate('/enitexa.ai/contact')}
                                 className="inline-flex items-center gap-2 rounded-full border border-white/20 px-6 py-3 text-sm font-semibold text-white transition hover:border-indigo-300/50 hover:bg-indigo-500/15"
                             >
                                 <MessageSquare className="h-4 w-4" />
-                                Contact Hexenity
+                                Contact Enitexa.Ai
                             </button>
                             <button
                                 type="button"
-                                onClick={() => navigate('/hexenity/work/cleanso')}
+                                onClick={() => navigate('/enitexa.ai/work/cleanso')}
                                 className="inline-flex items-center gap-2 rounded-full border border-white/10 px-6 py-3 text-sm font-semibold text-slate-300 transition hover:text-white"
                             >
                                 Case study
@@ -295,6 +295,6 @@ export default function CleansoLaundry() {
                     </div>
                 </section>
             </div>
-        </HexenityPageShell>
+        </EnitexaPageShell>
     );
 }

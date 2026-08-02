@@ -2,21 +2,21 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { useNavigate } from 'react-router-dom';
 import { Layers, Rocket, Users, Briefcase, Database, PieChart, ArrowRight, CheckCircle2 } from 'lucide-react';
-import HexenityPageShell from '../../../components/KkSystems/HexenityPageShell';
+import EnitexaPageShell from '../../../components/KkSystems/EnitexaPageShell';
 
 export default function ERPSolutions() {
   const navigate = useNavigate();
 
   return (
-    <HexenityPageShell
+    <EnitexaPageShell
       badge="Solution Page"
       title="ERP Development Solutions"
       subtitle="Custom enterprise systems to centralize operations, automate workflows, and improve decision speed."
-      backLabel="Back to Hexenity"
-      onBack={() => navigate('/hexenity')}
+      backLabel="Back to Enitexa.Ai"
+      onBack={() => navigate('/enitexa.ai')}
       actions={(
         <button
-          onClick={() => navigate('/hexenity/contact')}
+          onClick={() => navigate('/enitexa.ai/contact')}
           className="inline-flex items-center gap-2 rounded-full border border-indigo-300/35 bg-indigo-500/20 px-4 py-2 text-xs font-semibold uppercase tracking-[0.13em] text-indigo-100 transition hover:bg-indigo-500/30"
         >
           Talk to ERP Team
@@ -88,12 +88,12 @@ export default function ERPSolutions() {
           transition={{ delay: 0.2, duration: 0.6 }}
           className="rounded-3xl border border-indigo-300/25 bg-indigo-500/15 p-10 text-center"
         >
-          <h2 className="text-3xl font-bold mb-4">Experience Hexenity ERP Platform</h2>
+          <h2 className="text-3xl font-bold mb-4">Experience Enitexa.Ai ERP Platform</h2>
           <p className="mx-auto mb-8 max-w-3xl text-white/60 leading-relaxed">
             Explore our interactive ERP demo to see how dashboards, workflows, and analytics work together in one enterprise-grade system.
           </p>
           <button
-            onClick={() => navigate("/hexenity/erp/dashboard")}
+            onClick={() => navigate("/enitexa.ai/erp/dashboard")}
             className="mx-auto flex items-center gap-3 rounded-2xl bg-gradient-to-r from-indigo-500 to-purple-600 px-10 py-5 text-lg font-bold text-white shadow-2xl transition-all duration-300 hover:scale-105 active:scale-95"
           >
             <Rocket className="h-6 w-6" />
@@ -101,6 +101,6 @@ export default function ERPSolutions() {
           </button>
         </motion.div>
       </div>
-    </HexenityPageShell>
+    </EnitexaPageShell>
   );
 }

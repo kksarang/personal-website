@@ -1,7 +1,7 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import { ArrowRight, ArrowUpRight, CheckCircle2, FileText, Handshake, ShieldCheck, Workflow } from 'lucide-react';
-import HexenityPageShell from '../../components/KkSystems/HexenityPageShell';
+import EnitexaPageShell from '../../components/KkSystems/EnitexaPageShell';
 import { servicesData } from '../../data/servicesData';
 
 const deliveryWorkflow = [
@@ -50,15 +50,15 @@ const ServicesPage = () => {
     const services = Object.entries(servicesData).map(([slug, service]) => ({ slug, ...service }));
 
     return (
-        <HexenityPageShell
+        <EnitexaPageShell
             badge="Service Portfolio"
             title="Professional services with structured delivery governance"
-            subtitle="Explore all Hexenity service lines, the execution workflow we follow, and the transfer model we use to move delivery into stable operations."
+            subtitle="Explore all Enitexa.Ai service lines, the execution workflow we follow, and the transfer model we use to move delivery into stable operations."
             backLabel="Back to Home"
-            onBack={() => navigate('/hexenity')}
+            onBack={() => navigate('/enitexa.ai')}
             actions={(
                 <button
-                    onClick={() => navigate('/hexenity/contact')}
+                    onClick={() => navigate('/enitexa.ai/contact')}
                     className="inline-flex items-center gap-2 rounded-full border border-indigo-300/35 bg-indigo-500/20 px-4 py-2 text-xs font-semibold uppercase tracking-[0.13em] text-indigo-100 transition hover:bg-indigo-500/30"
                 >
                     Discuss a Service Scope
@@ -95,7 +95,7 @@ const ServicesPage = () => {
                         {services.map((service, index) => (
                             <button
                                 key={service.slug}
-                                onClick={() => navigate(`/hexenity/services/${service.slug}`)}
+                                onClick={() => navigate(`/enitexa.ai/services/${service.slug}`)}
                                 data-cursor="View"
                                 className="pf-row-link group grid w-full grid-cols-[1fr_auto] items-center gap-4 border-b border-white/[0.08] px-2 py-8 text-left transition-colors duration-300 sm:grid-cols-[auto_1fr_auto] sm:gap-10 sm:px-6 sm:py-10"
                             >
@@ -206,7 +206,7 @@ const ServicesPage = () => {
                             ))}
                         </ul>
                         <button
-                            onClick={() => navigate('/hexenity/contact')}
+                            onClick={() => navigate('/enitexa.ai/contact')}
                             data-cursor="Talk"
                             className="mt-8 inline-flex items-center gap-2 rounded-full border border-white bg-white px-7 py-3.5 text-sm font-semibold text-black transition-all duration-500 hover:bg-transparent hover:text-white"
                         >
@@ -216,7 +216,7 @@ const ServicesPage = () => {
                     </div>
                 </section>
             </div>
-        </HexenityPageShell>
+        </EnitexaPageShell>
     );
 };
 

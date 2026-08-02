@@ -44,7 +44,7 @@ const ERPLayout = ({ children }) => {
 
             <footer className="mt-20 pb-8 border-t border-white/5 pt-8 text-center">
               <p className="text-[10px] font-bold text-white/20 tracking-[0.2em] uppercase">
-                Hexenity ERP Console • Built with ⚡ by <span className="text-white/40 font-black">Hexenity</span>
+                Enitexa.Ai ERP Console • Built with ⚡ by <span className="text-white/40 font-black">Enitexa.Ai</span>
               </p>
             </footer>
           </div>

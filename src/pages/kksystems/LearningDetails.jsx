@@ -27,7 +27,7 @@ import {
     Code,
 } from 'lucide-react';
 import { AnimatePresence, motion as Motion } from 'framer-motion';
-import HexenityPageShell from '../../components/KkSystems/HexenityPageShell';
+import EnitexaPageShell from '../../components/KkSystems/EnitexaPageShell';
 import { learningTopics } from '../../data/learning';
 import { learningDetailsContent, learningMegaChapters } from '../../data/learningCatalog';
 import { mobileLearningExperienceData } from '../../data/mobileLearningExperience';
@@ -122,7 +122,7 @@ export default function LearningDetails() {
         if (topicDetail.spotlights?.length) baseSections.push({ id: 'spotlights', label: 'Spotlights' });
         baseSections.push({ id: 'projects', label: 'Real Projects' });
         if (topicDetail.careerOpportunities?.length) baseSections.push({ id: 'career-opportunities', label: 'Career Opportunities' });
-        if (topicDetail.whyLearnHexenity?.length) baseSections.push({ id: 'why-hexenity', label: 'Why Hexenity' });
+        if (topicDetail.whyLearnEnitexa?.length) baseSections.push({ id: 'why-enitexa', label: 'Why Enitexa.Ai' });
         if (topicDetail.uiSuggestions) baseSections.push({ id: 'ui-suggestions', label: 'UI Suggestions' });
         baseSections.push({ id: 'interview', label: 'Interview Prep' });
         baseSections.push({ id: 'faq', label: 'FAQ' });
@@ -142,12 +142,12 @@ export default function LearningDetails() {
 
     if (!topic) {
         return (
-            <HexenityPageShell
+            <EnitexaPageShell
                 badge="Learning Detail"
                 title="Topic Not Found"
                 subtitle="This learning topic does not exist."
                 backLabel="Back to Learning"
-                onBack={() => navigate('/hexenity/learning')}
+                onBack={() => navigate('/enitexa.ai/learning')}
             />
         );
     }
@@ -171,18 +171,18 @@ export default function LearningDetails() {
     const toolsPlatforms = detail?.toolsPlatforms || [];
     const caseStudies = detail?.caseStudies || [];
     const spotlights = detail?.spotlights || [];
-    const whyLearnHexenity = detail?.whyLearnHexenity || [];
+    const whyLearnEnitexa = detail?.whyLearnEnitexa || [];
     const uiSuggestions = detail?.uiSuggestions || null;
     const cta = detail?.cta || null;
 
     if (isMobileExperience) {
         return (
-            <HexenityPageShell
+            <EnitexaPageShell
                 badge="Learning Detail"
                 title={topic.title}
                 subtitle={topic.description}
                 backLabel="Back to Learning"
-                onBack={() => navigate('/hexenity/learning')}
+                onBack={() => navigate('/enitexa.ai/learning')}
             >
                 <div className="grid gap-8 xl:grid-cols-[1.6fr_0.9fr]">
                     <div className="space-y-8">
@@ -200,7 +200,7 @@ export default function LearningDetails() {
                             <div className="mt-3 space-y-2">
                                 <button
                                     type="button"
-                                    onClick={() => navigate('/hexenity/learning/practice')}
+                                    onClick={() => navigate('/enitexa.ai/learning/practice')}
                                     className="inline-flex w-full items-center justify-center gap-2 rounded-xl border border-emerald-300/35 bg-emerald-500/15 px-3 py-2 text-xs font-semibold uppercase tracking-[0.13em] text-emerald-100 transition hover:bg-emerald-500/25"
                                 >
                                     <PlayCircle className="h-3.5 w-3.5" />
@@ -208,10 +208,10 @@ export default function LearningDetails() {
                                 </button>
                                 <button
                                     type="button"
-                                    onClick={() => navigate('/hexenity/contact')}
+                                    onClick={() => navigate('/enitexa.ai/contact')}
                                     className="inline-flex w-full items-center justify-center gap-2 rounded-full bg-indigo-600 px-3 py-2 text-xs font-semibold uppercase tracking-[0.13em] text-white transition hover:bg-indigo-500"
                                 >
-                                    Contact Hexenity
+                                    Contact Enitexa.Ai
                                 </button>
                             </div>
                         </section>
@@ -235,17 +235,17 @@ export default function LearningDetails() {
                         </section>
                     </aside>
                 </div>
-            </HexenityPageShell>
+            </EnitexaPageShell>
         );
     }
 
     return (
-        <HexenityPageShell
+        <EnitexaPageShell
             badge="Learning Detail"
             title={topic.title}
             subtitle={topic.description}
             backLabel="Back to Learning"
-            onBack={() => navigate('/hexenity/learning')}
+            onBack={() => navigate('/enitexa.ai/learning')}
         >
             <div className="grid gap-8 xl:grid-cols-[1.6fr_0.9fr]">
                 <div className="space-y-8">
@@ -290,7 +290,7 @@ export default function LearningDetails() {
                                 {hero.primaryCtaLabel ? (
                                     <button
                                         type="button"
-                                        onClick={() => navigate(hero.primaryCtaPath || '/hexenity/contact')}
+                                        onClick={() => navigate(hero.primaryCtaPath || '/enitexa.ai/contact')}
                                         className="inline-flex items-center gap-2 rounded-full bg-indigo-600 px-4 py-2 text-xs font-semibold uppercase tracking-[0.13em] text-white transition hover:bg-indigo-500"
                                     >
                                         {hero.primaryCtaLabel}
@@ -299,7 +299,7 @@ export default function LearningDetails() {
                                 {hero.secondaryCtaLabel ? (
                                     <button
                                         type="button"
-                                        onClick={() => navigate(hero.secondaryCtaPath || '/hexenity/learning/practice')}
+                                        onClick={() => navigate(hero.secondaryCtaPath || '/enitexa.ai/learning/practice')}
                                         className="inline-flex items-center gap-2 rounded-xl border border-emerald-300/35 bg-emerald-500/15 px-4 py-2 text-xs font-semibold uppercase tracking-[0.13em] text-emerald-100 transition hover:bg-emerald-500/25"
                                     >
                                         <PlayCircle className="h-3.5 w-3.5" />
@@ -791,14 +791,14 @@ export default function LearningDetails() {
                         </section>
                     ) : null}
 
-                    {whyLearnHexenity.length ? (
-                        <section id="why-hexenity" className="premium-surface rounded-3xl p-7">
+                    {whyLearnEnitexa.length ? (
+                        <section id="why-enitexa" className="premium-surface rounded-3xl p-7">
                             <h2 className="inline-flex items-center gap-2 text-2xl font-bold text-white">
                                 <BookOpenCheck className="h-6 w-6 text-indigo-300" />
-                                Why learn with Hexenity
+                                Why learn with Enitexa.Ai
                             </h2>
                             <div className="mt-5 grid gap-4 md:grid-cols-2">
-                                {whyLearnHexenity.map((item) => (
+                                {whyLearnEnitexa.map((item) => (
                                     <article key={item.title} className="rounded-xl border border-white/[0.07] bg-white/[0.03] p-4 transition-colors duration-300 hover:border-indigo-300/25">
                                         <p className="font-semibold text-white">{item.title}</p>
                                         <p className="mt-2 text-sm text-slate-300">{item.detail}</p>
@@ -909,7 +909,7 @@ export default function LearningDetails() {
                                 {cta.primaryLabel ? (
                                     <button
                                         type="button"
-                                        onClick={() => navigate(cta.primaryPath || '/hexenity/contact')}
+                                        onClick={() => navigate(cta.primaryPath || '/enitexa.ai/contact')}
                                         className="inline-flex items-center gap-2 rounded-full bg-indigo-600 px-5 py-2.5 text-sm font-semibold text-white transition hover:bg-indigo-500"
                                     >
                                         {cta.primaryLabel}
@@ -918,7 +918,7 @@ export default function LearningDetails() {
                                 {cta.secondaryLabel ? (
                                     <button
                                         type="button"
-                                        onClick={() => navigate(cta.secondaryPath || '/hexenity/learning/practice')}
+                                        onClick={() => navigate(cta.secondaryPath || '/enitexa.ai/learning/practice')}
                                         className="inline-flex items-center gap-2 rounded-xl border border-emerald-300/35 bg-emerald-500/15 px-5 py-2.5 text-sm font-semibold text-emerald-100 transition hover:bg-emerald-500/25"
                                     >
                                         {cta.secondaryLabel}
@@ -939,7 +939,7 @@ export default function LearningDetails() {
                         </div>
                         <button
                             type="button"
-                            onClick={() => navigate('/hexenity/learning/practice')}
+                            onClick={() => navigate('/enitexa.ai/learning/practice')}
                             className="mt-4 inline-flex items-center gap-2 rounded-xl border border-emerald-300/35 bg-emerald-500/15 px-3 py-2 text-xs font-semibold uppercase tracking-[0.13em] text-emerald-100 transition hover:bg-emerald-500/25"
                         >
                             <PlayCircle className="h-3.5 w-3.5" />
@@ -980,17 +980,17 @@ export default function LearningDetails() {
 
                     <section className="rounded-2xl border border-indigo-300/25 bg-indigo-500/15 p-5">
                         <p className="text-sm font-semibold text-white">Need guided implementation?</p>
-                        <p className="mt-2 text-sm text-slate-200">Discuss your learning roadmap or project build with Hexenity.</p>
+                        <p className="mt-2 text-sm text-slate-200">Discuss your learning roadmap or project build with Enitexa.Ai.</p>
                         <button
-                            onClick={() => navigate('/hexenity/contact')}
+                            onClick={() => navigate('/enitexa.ai/contact')}
                             className="mt-4 inline-flex items-center gap-2 rounded-full bg-indigo-600 px-4 py-2 text-xs font-semibold uppercase tracking-[0.13em] text-white transition hover:bg-indigo-500"
                         >
-                            Contact Hexenity
+                            Contact Enitexa.Ai
                         </button>
                     </section>
                 </aside>
             </div>
-        </HexenityPageShell>
+        </EnitexaPageShell>
     );
 }
 
@@ -1411,21 +1411,21 @@ function MobileLearningExperience({ navigate }) {
                 <div className="mt-5 flex flex-wrap items-center justify-center gap-3">
                     <button
                         type="button"
-                        onClick={() => navigate('/hexenity/contact')}
+                        onClick={() => navigate('/enitexa.ai/contact')}
                         className="rounded-full bg-indigo-600 px-5 py-2.5 text-sm font-semibold text-white transition hover:bg-indigo-500"
                     >
                         {mobileLearningExperienceData.finalCta.primaryLabel}
                     </button>
                     <button
                         type="button"
-                        onClick={() => navigate('/hexenity/contact')}
+                        onClick={() => navigate('/enitexa.ai/contact')}
                         className="rounded-xl border border-white/20 bg-white/10 px-5 py-2.5 text-sm font-semibold text-slate-100 transition hover:bg-white/15"
                     >
                         {mobileLearningExperienceData.finalCta.secondaryLabel}
                     </button>
                     <button
                         type="button"
-                        onClick={() => navigate('/hexenity')}
+                        onClick={() => navigate('/enitexa.ai')}
                         className="rounded-xl border border-emerald-300/35 bg-emerald-500/15 px-5 py-2.5 text-sm font-semibold text-emerald-100 transition hover:bg-emerald-500/25"
                     >
                         {mobileLearningExperienceData.finalCta.tertiaryLabel}
@@ -1438,14 +1438,14 @@ function MobileLearningExperience({ navigate }) {
                     <div className="grid grid-cols-2 gap-2">
                         <button
                             type="button"
-                            onClick={() => navigate('/hexenity/contact')}
+                            onClick={() => navigate('/enitexa.ai/contact')}
                             className="rounded-full bg-indigo-600 px-3 py-2.5 text-xs font-semibold uppercase tracking-[0.12em] text-white"
                         >
                             {mobileLearningExperienceData.stickyCta.primaryLabel}
                         </button>
                         <button
                             type="button"
-                            onClick={() => navigate('/hexenity/contact')}
+                            onClick={() => navigate('/enitexa.ai/contact')}
                             className="rounded-xl border border-emerald-300/35 bg-emerald-500/15 px-3 py-2.5 text-xs font-semibold uppercase tracking-[0.12em] text-emerald-100"
                         >
                             {mobileLearningExperienceData.stickyCta.secondaryLabel}

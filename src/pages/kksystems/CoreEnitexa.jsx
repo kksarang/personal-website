@@ -2,7 +2,7 @@ import React from 'react';
 import { motion as Motion } from 'framer-motion';
 import { ArrowRight, BrainCircuit, Building2, CheckCircle2, Layers3, Rocket, ShieldCheck, Sparkles, Workflow, Bot, BarChart3 } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
-import HexenityPageShell from '../../components/KkSystems/HexenityPageShell';
+import EnitexaPageShell from '../../components/KkSystems/EnitexaPageShell';
 
 const servicePillars = [
     {
@@ -34,36 +34,36 @@ const differentiators = [
 
 const platformExtensions = [
     {
-        title: 'Hexenity AI',
+        title: 'Enitexa.Ai AI',
         description: 'An interactive assistant experience for architecture guidance, workflow ideation, and technical direction.',
         points: ['AI chat interface', 'Mode-based support', 'Project planning assistance'],
         icon: Bot,
-        href: '/hexenity/ai',
-        cta: 'Open Hexenity AI',
+        href: '/enitexa.ai/ai',
+        cta: 'Open Enitexa.Ai AI',
     },
     {
-        title: 'Hexenity SaaS',
+        title: 'Enitexa.Ai SaaS',
         description: 'A practical SaaS foundation for business operations, reporting, and process standardization.',
         points: ['Operational dashboards', 'Reporting modules', 'Scalable platform model'],
         icon: BarChart3,
-        href: '/hexenity/saas',
+        href: '/enitexa.ai/saas',
         cta: 'View SaaS Details',
     },
 ];
 
-export default function CoreHexenity() {
+export default function CoreEnitexa() {
     const navigate = useNavigate();
 
     return (
-        <HexenityPageShell
-            badge="Core Hexenity"
-            title="How Hexenity works as your execution partner"
+        <EnitexaPageShell
+            badge="Core Enitexa.Ai"
+            title="How Enitexa.Ai works as your execution partner"
             subtitle="A practical model that combines strategy, engineering, and operations so your digital products launch faster without sacrificing quality."
             backLabel="Back to Home"
-            onBack={() => navigate('/hexenity')}
+            onBack={() => navigate('/enitexa.ai')}
             actions={(
                 <button
-                    onClick={() => navigate('/hexenity/contact')}
+                    onClick={() => navigate('/enitexa.ai/contact')}
                     className="inline-flex items-center gap-2 rounded-full border border-indigo-300/35 bg-indigo-500/20 px-4 py-2 text-xs font-semibold uppercase tracking-[0.13em] text-indigo-100 transition hover:bg-indigo-500/30"
                 >
                     Start Conversation
@@ -84,7 +84,7 @@ export default function CoreHexenity() {
                                 Our operating model
                             </h2>
                             <p className="mt-5 max-w-2xl leading-relaxed text-slate-300">
-                                We partner with teams that need speed, clarity, and reliable execution. Hexenity brings product thinking, modern architecture, and disciplined implementation in one integrated workflow.
+                                We partner with teams that need speed, clarity, and reliable execution. Enitexa.Ai brings product thinking, modern architecture, and disciplined implementation in one integrated workflow.
                             </p>
                             <p className="mt-3 max-w-2xl leading-relaxed text-slate-300">
                                 Instead of handing over fragmented resources, we provide ownership and delivery accountability from kickoff to post-launch support.
@@ -148,11 +148,11 @@ export default function CoreHexenity() {
                 <section>
                     <div className="pf-mono mb-2 flex items-center gap-4 text-[11px] uppercase tracking-[0.35em] text-white/35">
                         <span className="text-indigo-300">(03)</span>
-                        <span>Why Hexenity</span>
+                        <span>Why Enitexa.Ai</span>
                         <span className="h-px flex-1 bg-white/[0.08]" />
                         <ShieldCheck className="h-4 w-4 text-indigo-300" />
                     </div>
-                    <h2 className="pf-display mb-4 text-[clamp(1.7rem,3.2vw,2.5rem)] font-bold text-white">Why companies choose Hexenity</h2>
+                    <h2 className="pf-display mb-4 text-[clamp(1.7rem,3.2vw,2.5rem)] font-bold text-white">Why companies choose Enitexa.Ai</h2>
                     <div className="border-t border-white/[0.08]">
                         {differentiators.map((item, index) => (
                             <div key={item} className="group flex items-baseline gap-5 border-b border-white/[0.08] py-6 sm:gap-8">
@@ -172,9 +172,9 @@ export default function CoreHexenity() {
                         <span className="h-px flex-1 bg-white/[0.08]" />
                         <Layers3 className="h-4 w-4 text-indigo-300" />
                     </div>
-                    <h2 className="pf-display mb-2 text-[clamp(1.7rem,3.2vw,2.5rem)] font-bold text-white">Hexenity AI & SaaS</h2>
+                    <h2 className="pf-display mb-2 text-[clamp(1.7rem,3.2vw,2.5rem)] font-bold text-white">Enitexa.Ai AI & SaaS</h2>
                     <p className="mb-6 max-w-3xl text-sm text-slate-400">
-                        These are dedicated Hexenity offerings and not hidden modules. You can open both pages directly from here.
+                        These are dedicated Enitexa.Ai offerings and not hidden modules. You can open both pages directly from here.
                     </p>
                     <div className="grid gap-px overflow-hidden rounded-3xl border border-white/[0.08] bg-white/[0.08] md:grid-cols-2">
                         {platformExtensions.map((item) => (
@@ -215,7 +215,7 @@ export default function CoreHexenity() {
                         </h2>
                         <p className="mx-auto mt-4 max-w-2xl leading-relaxed text-slate-400">Let’s align your business goals, technical scope, and delivery timeline in one strategic call.</p>
                         <button
-                            onClick={() => navigate('/hexenity/contact')}
+                            onClick={() => navigate('/enitexa.ai/contact')}
                             data-cursor="Book"
                             className="mt-8 inline-flex items-center gap-2 rounded-full border border-white bg-white px-8 py-4 text-sm font-semibold text-black transition-all duration-500 hover:bg-transparent hover:text-white"
                         >
@@ -238,6 +238,6 @@ export default function CoreHexenity() {
                     ))}
                 </section>
             </div>
-        </HexenityPageShell>
+        </EnitexaPageShell>
     );
 }

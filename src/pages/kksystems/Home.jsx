@@ -4,9 +4,9 @@ import PremiumHero from '../../components/KkSystems/PremiumHero';
 import { Positioning, CoreOfferings } from '../../components/KkSystems/PremiumPositioning';
 import { PremiumSolutions, ProductLayer } from '../../components/KkSystems/PremiumSolutions';
 import { ImpactMetrics, HowWeWork, Industries, GlobalPresence } from '../../components/KkSystems/PremiumTrust';
-import { TechStack, WhyHexenity, ERPDemoEntry, FinalCTA } from '../../components/KkSystems/PremiumFinal';
-import HexenityValueStack from '../../components/KkSystems/HexenityValueStack';
-import HexenityMark from '../../components/KkSystems/HexenityMark';
+import { TechStack, WhyEnitexa, ERPDemoEntry, FinalCTA } from '../../components/KkSystems/PremiumFinal';
+import EnitexaValueStack from '../../components/KkSystems/EnitexaValueStack';
+import EnitexaMark from '../../components/KkSystems/EnitexaMark';
 import TrustedBy from '../../components/KkSystems/TrustedBy';
 import Testimonials from '../../components/KkSystems/Testimonials';
 import FAQ from '../../components/KkSystems/FAQ';
@@ -55,13 +55,13 @@ const KineticStrip = () => (
 const KksystemsHome = () => {
     const [showIntro, setShowIntro] = useState(() => {
         if (typeof window === 'undefined') return false;
-        return !sessionStorage.getItem('hexenity-intro-seen');
+        return !sessionStorage.getItem('enitexa-intro-seen');
     });
 
     useEffect(() => {
         if (!showIntro) return;
         const timer = setTimeout(() => {
-            sessionStorage.setItem('hexenity-intro-seen', 'true');
+            sessionStorage.setItem('enitexa-intro-seen', 'true');
             setShowIntro(false);
         }, 2000);
         return () => clearTimeout(timer);
@@ -75,7 +75,7 @@ const KksystemsHome = () => {
                         initial={{ opacity: 1 }}
                         exit={{ y: '-100%' }}
                         transition={{ duration: 0.85, ease: [0.76, 0, 0.24, 1] }}
-                        className="hexenity-intro-overlay fixed inset-0 z-[120] flex items-center justify-center bg-[#050505]"
+                        className="enitexa-intro-overlay fixed inset-0 z-[120] flex items-center justify-center bg-[#050505]"
                     >
                         <div className="relative flex w-full max-w-4xl items-end justify-between px-10 sm:px-14">
                             <div>
@@ -83,9 +83,9 @@ const KksystemsHome = () => {
                                     Digital & Software Solutions
                                 </p>
                                 <h2 className="pf-display flex items-center gap-4 text-4xl font-bold text-white sm:text-6xl">
-                                    <HexenityMark size={52} withGlow />
+                                    <EnitexaMark size={52} withGlow />
                                     <span>
-                                        Hexenity<span className="text-indigo-400">.</span>
+                                        Enitexa.Ai
                                     </span>
                                 </h2>
                             </div>
@@ -117,12 +117,12 @@ const KksystemsHome = () => {
                 <TrustedBy />
             </RevealSection>
 
-            {/* 3. What Hexenity Is (Positioning) */}
+            {/* 3. What Enitexa.Ai Is (Positioning) */}
             <RevealSection>
                 <Positioning />
             </RevealSection>
             <RevealSection>
-                <HexenityValueStack />
+                <EnitexaValueStack />
             </RevealSection>
 
             {/* 4. Core Offerings (Build / Optimize / Scale) */}
@@ -165,9 +165,9 @@ const KksystemsHome = () => {
                 <TechStack />
             </RevealSection>
 
-            {/* 12. Why Hexenity (Differentiation) */}
+            {/* 12. Why Enitexa.Ai (Differentiation) */}
             <RevealSection>
-                <WhyHexenity />
+                <WhyEnitexa />
             </RevealSection>
 
             {/* 13. Testimonials */}

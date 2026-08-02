@@ -31,7 +31,7 @@ const Topbar = ({ toggleSidebar }) => {
         
         <div className="flex items-center gap-3 pl-4 border-l border-white/10 cursor-pointer group">
           <div className="text-right hidden sm:block">
-            <p className="text-sm font-medium text-white transition-colors group-hover:text-[#a5b4fc]">Hexenity Admin</p>
+            <p className="text-sm font-medium text-white transition-colors group-hover:text-[#a5b4fc]">Enitexa.Ai Admin</p>
             <p className="text-xs leading-none text-white/40">Operations Control</p>
           </div>
           <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-[#4F46E5]/20 to-[#9333EA]/20 flex items-center justify-center border border-[#4F46E5]/30">

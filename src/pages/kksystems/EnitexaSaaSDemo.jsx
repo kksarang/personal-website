@@ -39,7 +39,7 @@ import {
     XAxis,
     YAxis,
 } from 'recharts';
-import HexenityPageShell from '../../components/KkSystems/HexenityPageShell';
+import EnitexaPageShell from '../../components/KkSystems/EnitexaPageShell';
 
 const VARIANTS = [
     {
@@ -474,7 +474,7 @@ function BrowserFrame({ slug, children, previewMode = 'compact', surfaceModules 
                 <span className="h-2 w-2 shrink-0 rounded-full bg-amber-400/80" />
                 <span className="h-2 w-2 shrink-0 rounded-full bg-emerald-500/70" />
                 <div className="ml-2 min-w-0 flex-1 truncate rounded-lg border border-white/[0.06] bg-black/50 px-3 py-1 font-mono text-[10px] text-slate-500 sm:text-[11px]">
-                    app.hexenity.io / {slug}
+                    app.enitexa.io / {slug}
                 </div>
                 <span className="hidden rounded border border-emerald-400/25 bg-emerald-500/15 px-2 py-0.5 text-[9px] font-bold uppercase tracking-wider text-emerald-200 sm:inline">
                     {dense ? 'Detailed preview' : 'Preview'}
@@ -604,7 +604,7 @@ function OperationsVariant() {
                 <div className="flex items-start justify-between gap-2">
                     <div>
                         <p className="text-[10px] font-semibold uppercase tracking-[0.14em] text-slate-500">Fleet spend velocity</p>
-                        <p className="hexenity-display mt-1 text-xl font-semibold text-white">Live roll-up across 186 vendors</p>
+                        <p className="enitexa-display mt-1 text-xl font-semibold text-white">Live roll-up across 186 vendors</p>
                     </div>
                     <Activity className="h-5 w-5 text-cyan-400" aria-hidden />
                 </div>
@@ -705,7 +705,7 @@ function FinanceVariant() {
                 <div className="flex items-start justify-between">
                     <div>
                         <p className="text-[10px] font-semibold uppercase tracking-[0.14em] text-emerald-200/85">Forecasted renewal cash</p>
-                        <p className="hexenity-display mt-1 text-xl font-semibold text-white">Stacked SaaS outbound (USD k)</p>
+                        <p className="enitexa-display mt-1 text-xl font-semibold text-white">Stacked SaaS outbound (USD k)</p>
                     </div>
                     <Receipt className="h-5 w-5 text-emerald-400" aria-hidden />
                 </div>
@@ -760,7 +760,7 @@ function ExecutiveVariant() {
                 {tiles.map((t) => (
                     <div key={t.label} className="rounded-xl border border-white/[0.08] bg-black/40 p-3 sm:p-4">
                         <p className="text-[9px] font-semibold uppercase tracking-[0.12em] text-slate-500">{t.label}</p>
-                        <p className={`hexenity-display mt-1 text-lg font-semibold text-white sm:text-xl ${t.hc}`}>{t.value}</p>
+                        <p className={`enitexa-display mt-1 text-lg font-semibold text-white sm:text-xl ${t.hc}`}>{t.value}</p>
                         <p className="mt-0.5 text-[10px] text-slate-500">{t.hint}</p>
                     </div>
                 ))}
@@ -769,7 +769,7 @@ function ExecutiveVariant() {
                 <div className="flex items-start justify-between gap-2">
                     <div>
                         <p className="text-[10px] font-semibold uppercase tracking-[0.14em] text-indigo-300/90">Consolidated runway</p>
-                        <p className="hexenity-display mt-1 text-lg font-semibold text-white">Months of coverage (post-growth plan)</p>
+                        <p className="enitexa-display mt-1 text-lg font-semibold text-white">Months of coverage (post-growth plan)</p>
                     </div>
                     <TrendingUp className="h-5 w-5 text-indigo-400" aria-hidden />
                 </div>
@@ -825,7 +825,7 @@ function DiscoveryVariant() {
                 <div className="flex items-start justify-between">
                     <div>
                         <p className="text-[10px] font-semibold uppercase tracking-[0.14em] text-amber-200/90">Overlap density</p>
-                        <p className="hexenity-display mt-1 text-lg font-semibold text-white">By category (% surface)</p>
+                        <p className="enitexa-display mt-1 text-lg font-semibold text-white">By category (% surface)</p>
                     </div>
                     <BarChart3 className="h-5 w-5 text-amber-400" aria-hidden />
                 </div>
@@ -964,7 +964,7 @@ function IntegrationVariant() {
                 <div className="flex items-start justify-between">
                     <div>
                         <p className="text-[10px] font-semibold uppercase tracking-[0.14em] text-teal-200/90">Webhook throughput</p>
-                        <p className="hexenity-display mt-1 text-lg font-semibold text-white">Events accepted / min (peak window)</p>
+                        <p className="enitexa-display mt-1 text-lg font-semibold text-white">Events accepted / min (peak window)</p>
                     </div>
                     <Cable className="h-5 w-5 text-teal-400" aria-hidden />
                 </div>
@@ -1024,7 +1024,7 @@ function ProcurementVariant() {
                 <div className="flex items-start justify-between gap-2">
                     <div>
                         <p className="text-[10px] font-semibold uppercase tracking-[0.14em] text-fuchsia-200/90">Intake SLA stress</p>
-                        <p className="hexenity-display mt-1 text-lg font-semibold text-white">Approver lane backlog index</p>
+                        <p className="enitexa-display mt-1 text-lg font-semibold text-white">Approver lane backlog index</p>
                     </div>
                     <ClipboardList className="h-5 w-5 text-fuchsia-400" aria-hidden />
                 </div>
@@ -1067,7 +1067,7 @@ function AuditDeskVariant() {
                 <div className="flex items-start justify-between">
                     <div>
                         <p className="text-[10px] font-semibold uppercase tracking-[0.14em] text-slate-300/90">Export manifest · Q3 freeze</p>
-                        <p className="hexenity-display mt-1 text-lg font-semibold text-white">SHA-256 attested payloads</p>
+                        <p className="enitexa-display mt-1 text-lg font-semibold text-white">SHA-256 attested payloads</p>
                     </div>
                     <FolderLock className="h-5 w-5 text-blue-400" aria-hidden />
                 </div>
@@ -1118,7 +1118,7 @@ function IncidentVariant() {
                 <div className="flex items-start justify-between">
                     <div>
                         <p className="text-[10px] font-semibold uppercase tracking-[0.14em] text-red-200/90">Rolling 7d distribution</p>
-                        <p className="hexenity-display mt-1 text-lg font-semibold text-white">Incident volume by tier</p>
+                        <p className="enitexa-display mt-1 text-lg font-semibold text-white">Incident volume by tier</p>
                     </div>
                     <AlertTriangle className="h-5 w-5 text-red-400" aria-hidden />
                 </div>
@@ -1181,7 +1181,7 @@ function AllocateVariant() {
                 <div className="flex items-start justify-between">
                     <div>
                         <p className="text-[10px] font-semibold uppercase tracking-[0.14em] text-teal-200/90">Blended attribution</p>
-                        <p className="hexenity-display mt-1 text-lg font-semibold text-white">Direct tag vs pooled platform %</p>
+                        <p className="enitexa-display mt-1 text-lg font-semibold text-white">Direct tag vs pooled platform %</p>
                     </div>
                     <Landmark className="h-5 w-5 text-teal-400" aria-hidden />
                 </div>
@@ -1221,7 +1221,7 @@ function BudgetVariant() {
                 <div className="flex items-start justify-between gap-2">
                     <div>
                         <p className="text-[10px] font-semibold uppercase tracking-[0.14em] text-violet-200/90">Forecast envelope</p>
-                        <p className="hexenity-display mt-1 text-lg font-semibold text-white">Week-over-week burn vs cap</p>
+                        <p className="enitexa-display mt-1 text-lg font-semibold text-white">Week-over-week burn vs cap</p>
                     </div>
                     <PieChart className="h-5 w-5 text-violet-400" aria-hidden />
                 </div>
@@ -1268,7 +1268,7 @@ function BenchmarkVariant() {
                 <div className="flex flex-wrap items-start justify-between gap-2">
                     <div>
                         <p className="text-[10px] font-semibold uppercase tracking-[0.14em] text-cyan-200/90">Peer cohort · ARR tier 50–150M · NA</p>
-                        <p className="hexenity-display mt-1 text-lg font-semibold text-white">Portfolio posture vs cohort median (%)</p>
+                        <p className="enitexa-display mt-1 text-lg font-semibold text-white">Portfolio posture vs cohort median (%)</p>
                     </div>
                     <Telescope className="h-5 w-5 text-cyan-400" aria-hidden />
                 </div>
@@ -1300,7 +1300,7 @@ function SecurityVariant() {
                 <div className="flex items-start justify-between">
                     <div>
                         <p className="text-[10px] font-semibold uppercase tracking-[0.14em] text-rose-200/90">Continuous controls</p>
-                        <p className="hexenity-display mt-1 text-lg font-semibold text-white">Control events (7d rolling)</p>
+                        <p className="enitexa-display mt-1 text-lg font-semibold text-white">Control events (7d rolling)</p>
                     </div>
                     <Radar className="h-5 w-5 text-rose-400" aria-hidden />
                 </div>
@@ -1365,7 +1365,7 @@ const DEMO_SHELLS = {
     benchmark: BenchmarkVariant,
 };
 
-export default function HexenitySaaSDemo() {
+export default function EnitexaSaaSDemo() {
     const navigate = useNavigate();
     const [active, setActive] = useState(0);
     const [previewMode, setPreviewMode] = useState('compact');
@@ -1374,7 +1374,7 @@ export default function HexenitySaaSDemo() {
     const deep = VARIANT_DEEP_PREVIEW[v.id];
 
     return (
-        <HexenityPageShell
+        <EnitexaPageShell
             variant="saas-dark"
             shellHeader="toolbar"
             toolbarSpacing="spacious"
@@ -1382,11 +1382,11 @@ export default function HexenitySaaSDemo() {
             title=""
             subtitle={null}
             backLabel="Back to SaaS overview"
-            onBack={() => navigate('/hexenity/saas')}
+            onBack={() => navigate('/enitexa.ai/saas')}
             actions={(
                 <button
                     type="button"
-                    onClick={() => navigate('/hexenity/contact')}
+                    onClick={() => navigate('/enitexa.ai/contact')}
                     className="inline-flex items-center gap-2 rounded-full bg-indigo-600 px-4 py-2 text-xs font-semibold uppercase tracking-[0.13em] text-white transition hover:bg-indigo-500"
                 >
                     Enterprise demo
@@ -1394,10 +1394,10 @@ export default function HexenitySaaSDemo() {
                 </button>
             )}
         >
-            <div className="hexenity-saas-page space-y-6 pb-28 sm:space-y-8 lg:pb-32">
+            <div className="enitexa-saas-page space-y-6 pb-28 sm:space-y-8 lg:pb-32">
                 <header className="max-w-3xl">
                     <p className="pf-mono text-[10px] uppercase tracking-[0.32em] text-indigo-300/85">Interactive product gallery</p>
-                    <h1 className="hexenity-display mt-3 text-3xl font-semibold tracking-[-0.03em] text-white sm:text-4xl lg:text-5xl lg:leading-[1.05]">
+                    <h1 className="enitexa-display mt-3 text-3xl font-semibold tracking-[-0.03em] text-white sm:text-4xl lg:text-5xl lg:leading-[1.05]">
                         Real SaaS console variants — rendered in-browser
                     </h1>
                     <p className="mt-4 text-sm leading-relaxed text-slate-400 sm:text-base">
@@ -1410,7 +1410,7 @@ export default function HexenitySaaSDemo() {
 
                 <div className="flex flex-col gap-6 lg:flex-row lg:items-start">
                     <nav
-                        className="hexenity-contained-scroll flex max-h-[min(52vh,560px)] shrink-0 flex-col gap-2 overflow-y-auto overscroll-contain pt-2 pr-1 scroll-pt-2 lg:max-h-[min(78vh,720px)] lg:w-[19rem] lg:pr-2"
+                        className="enitexa-contained-scroll flex max-h-[min(52vh,560px)] shrink-0 flex-col gap-2 overflow-y-auto overscroll-contain pt-2 pr-1 scroll-pt-2 lg:max-h-[min(78vh,720px)] lg:w-[19rem] lg:pr-2"
                         aria-label="Demo variants"
                     >
                         {VARIANTS.map((item, i) => {
@@ -1452,7 +1452,7 @@ export default function HexenitySaaSDemo() {
                                 <div className="flex flex-wrap items-center justify-between gap-3">
                                     <div className="min-w-0 flex-1">
                                         <p className="text-[10px] font-semibold uppercase tracking-[0.16em] text-slate-500">Active shell</p>
-                                        <p className="hexenity-display text-lg font-semibold text-white">{v.name}</p>
+                                        <p className="enitexa-display text-lg font-semibold text-white">{v.name}</p>
                                         <p className="mt-1 max-w-xl text-[12px] leading-snug text-slate-500">{DEMO_SCENARIO(v)}</p>
                                     </div>
                                     <div className="flex shrink-0 flex-col items-end gap-2 sm:flex-row sm:items-center">
@@ -1502,6 +1502,6 @@ export default function HexenitySaaSDemo() {
                     </motion.div>
                 </div>
             </div>
-        </HexenityPageShell>
+        </EnitexaPageShell>
     );
 }

@@ -2,7 +2,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { Layout, Cpu, ArrowRight, Zap, Code, CheckCircle2, Terminal, Layers3 } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
-import HexenityPageShell from '../../../components/KkSystems/HexenityPageShell';
+import EnitexaPageShell from '../../../components/KkSystems/EnitexaPageShell';
 
 export default function WebSolutions() {
   const navigate = useNavigate();
@@ -15,15 +15,15 @@ export default function WebSolutions() {
   ];
 
   return (
-    <HexenityPageShell
+    <EnitexaPageShell
       badge="Solution Page"
       title="Web Platform Development"
       subtitle="Modern web engineering for conversion-focused products, internal platforms, and scalable SaaS."
-      backLabel="Back to Hexenity"
-      onBack={() => navigate('/hexenity')}
+      backLabel="Back to Enitexa.Ai"
+      onBack={() => navigate('/enitexa.ai')}
       actions={(
         <button
-          onClick={() => navigate('/hexenity/contact')}
+          onClick={() => navigate('/enitexa.ai/contact')}
           className="inline-flex items-center gap-2 rounded-full border border-indigo-300/35 bg-indigo-500/20 px-4 py-2 text-xs font-semibold uppercase tracking-[0.13em] text-indigo-100 transition hover:bg-indigo-500/30"
         >
           Start Web Project
@@ -146,11 +146,11 @@ export default function WebSolutions() {
 
         <div className="text-center rounded-3xl border border-indigo-300/25 bg-indigo-500/15 p-12">
           <h2 className="text-3xl font-bold mb-6 tracking-tight">Ready to build your web future?</h2>
-          <button onClick={() => navigate('/hexenity/contact')} className="px-10 py-5 bg-purple-600 hover:bg-purple-500 rounded-2xl text-lg font-bold text-white shadow-2xl hover:scale-105 active:scale-95 transition-all flex items-center gap-3 mx-auto">
+          <button onClick={() => navigate('/enitexa.ai/contact')} className="px-10 py-5 bg-purple-600 hover:bg-purple-500 rounded-2xl text-lg font-bold text-white shadow-2xl hover:scale-105 active:scale-95 transition-all flex items-center gap-3 mx-auto">
             <Code className="w-6 h-6" /> Start Web Project
           </button>
         </div>
       </div>
-    </HexenityPageShell>
+    </EnitexaPageShell>
   );
 }

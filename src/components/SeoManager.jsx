@@ -8,51 +8,51 @@ const DEFAULTS = {
   image: 'https://sarangrajan.in/logo.png',
 };
 
-const HEXENITY_BY_PATH = {
-  '/hexenity': {
-    title: 'Hexenity | Mobile Apps, Websites & Digital Product Studio',
+const ENITEXA_BY_PATH = {
+  '/enitexa.ai': {
+    title: 'Enitexa.Ai | Mobile Apps, Websites & Digital Product Studio',
     description:
-      'Hexenity builds mobile apps, websites, UI/UX, and digital products. Software studio by Sarang Rajan — modern, performance-focused development.',
+      'Enitexa.Ai builds mobile apps, websites, UI/UX, and digital products. Software studio by Sarang Rajan — modern, performance-focused development.',
   },
-  '/hexenity/about': {
-    title: 'About Hexenity | Digital & Software Solutions Studio',
+  '/enitexa.ai/about': {
+    title: 'About Enitexa.Ai | Digital & Software Solutions Studio',
     description:
-      'Learn about Hexenity — a digital and software solutions company delivering apps, websites, branding, and growth systems.',
+      'Learn about Enitexa.Ai — a digital and software solutions company delivering apps, websites, branding, and growth systems.',
   },
-  '/hexenity/services': {
-    title: 'Services | Hexenity — App, Web & Product Development',
+  '/enitexa.ai/services': {
+    title: 'Services | Enitexa.Ai — App, Web & Product Development',
     description:
-      'Hexenity services: mobile app development, website development, UI/UX design, branding, and scalable software solutions.',
+      'Enitexa.Ai services: mobile app development, website development, UI/UX design, branding, and scalable software solutions.',
   },
-  '/hexenity/work': {
-    title: 'Work & Case Studies | Hexenity',
+  '/enitexa.ai/work': {
+    title: 'Work & Case Studies | Enitexa.Ai',
     description:
-      'Selected Hexenity projects and case studies — mobile apps, websites, and digital products shipped for real businesses.',
+      'Selected Enitexa.Ai projects and case studies — mobile apps, websites, and digital products shipped for real businesses.',
   },
-  '/hexenity/solutions/laundry': {
-    title: 'Cleanso | Custom Laundry Software by Hexenity',
+  '/enitexa.ai/solutions/laundry': {
+    title: 'Cleanso | Custom Laundry Software by Enitexa.Ai',
     description:
       'Cleanso — white-label laundry management software. Customer app, delivery app, CMS + POS. Product planning and custom builds for India, UAE & GCC.',
   },
-  '/hexenity/cleanso': {
-    title: 'Cleanso | Custom Laundry Software by Hexenity',
+  '/enitexa.ai/cleanso': {
+    title: 'Cleanso | Custom Laundry Software by Enitexa.Ai',
     description:
       'Cleanso — white-label laundry management software. Customer app, delivery app, CMS + POS. Product planning and custom builds for India, UAE & GCC.',
   },
-  '/hexenity/contact': {
-    title: 'Contact Hexenity | Start a Project',
+  '/enitexa.ai/contact': {
+    title: 'Contact Enitexa.Ai | Start a Project',
     description:
-      'Contact Hexenity to discuss mobile apps, websites, or product development. Based in India — open for new work.',
+      'Contact Enitexa.Ai to discuss mobile apps, websites, or product development. Based in India — open for new work.',
   },
-  '/hexenity/core-hexenity': {
-    title: 'Core Hexenity | How We Build',
+  '/enitexa.ai/core-enitexa': {
+    title: 'Core Enitexa.Ai | How We Build',
     description:
-      'Core Hexenity — our principles, process, and approach to building modern software products.',
+      'Core Enitexa.Ai — our principles, process, and approach to building modern software products.',
   },
-  '/hexenity/learning': {
-    title: 'Learning | Hexenity',
+  '/enitexa.ai/learning': {
+    title: 'Learning | Enitexa.Ai',
     description:
-      'Hexenity learning resources for mobile and software development.',
+      'Enitexa.Ai learning resources for mobile and software development.',
   },
 };
 
@@ -78,7 +78,7 @@ function upsertLink(rel, href) {
 }
 
 /**
- * Sets document title + meta for portfolio and Hexenity routes.
+ * Sets document title + meta for portfolio and Enitexa.Ai routes.
  * Helps Google / social previews once the page is crawled.
  */
 export default function SeoManager() {
@@ -87,9 +87,9 @@ export default function SeoManager() {
   useEffect(() => {
     const normalized = pathname.replace(/\/$/, '') || '/';
     const page =
-      HEXENITY_BY_PATH[normalized] ||
-      (normalized.startsWith('/hexenity')
-        ? HEXENITY_BY_PATH['/hexenity']
+      ENITEXA_BY_PATH[normalized] ||
+      (normalized.startsWith('/enitexa.ai')
+        ? ENITEXA_BY_PATH['/enitexa.ai']
         : DEFAULTS);
 
     const title = page.title;
@@ -100,7 +100,7 @@ export default function SeoManager() {
     document.title = title;
     upsertMeta('name', 'description', description);
     upsertMeta('property', 'og:type', 'website');
-    upsertMeta('property', 'og:site_name', normalized.startsWith('/hexenity') ? 'Hexenity' : 'Sarang Rajan');
+    upsertMeta('property', 'og:site_name', normalized.startsWith('/enitexa.ai') ? 'Enitexa.Ai' : 'Sarang Rajan');
     upsertMeta('property', 'og:title', title);
     upsertMeta('property', 'og:description', description);
     upsertMeta('property', 'og:url', url);

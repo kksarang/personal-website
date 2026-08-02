@@ -3,9 +3,9 @@ export const mobileLearningExperienceData = {
   subtitle:
     "Professional academy path for building Android, iOS, and cross-platform apps with production quality engineering standards.",
   seo: {
-    title: "Mobile App Development Course | Hexenity Learning",
+    title: "Mobile App Development Course | Enitexa.Ai Learning",
     description:
-      "Hexenity mobile app development learning track for beginners to advanced engineers. Build real apps, master Flutter and native concepts, and become production ready.",
+      "Enitexa.Ai mobile app development learning track for beginners to advanced engineers. Build real apps, master Flutter and native concepts, and become production ready.",
     keywords: [
       "mobile app development course",
       "flutter training",
@@ -89,14 +89,14 @@ export const mobileLearningExperienceData = {
       label: "Try Live Coding",
       description: "Practice coding instantly in the live playground.",
       actionType: "navigate",
-      target: "/hexenity/learning/practice",
+      target: "/enitexa.ai/learning/practice",
     },
     {
       id: "option-contact",
       label: "Talk to Mentor",
-      description: "Connect with Hexenity for learning and career support.",
+      description: "Connect with Enitexa.Ai for learning and career support.",
       actionType: "navigate",
-      target: "/hexenity/contact",
+      target: "/enitexa.ai/contact",
     },
   ],
   modes: [
@@ -386,7 +386,7 @@ export const mobileLearningExperienceData = {
       role: "Flutter Developer Intern",
       rating: 5,
       story:
-        "Before Hexenity, I only knew basics. After completing the track, I built a full ecommerce app and landed an internship in a product startup.",
+        "Before Enitexa.Ai, I only knew basics. After completing the track, I built a full ecommerce app and landed an internship in a product startup.",
       avatar: "AK",
     },
     {
@@ -416,7 +416,7 @@ export const mobileLearningExperienceData = {
     "Lifetime Community",
   ],
   learningExperience: {
-    title: "Learning Experience at Hexenity",
+    title: "Learning Experience at Enitexa.Ai",
     summary:
       "The program is designed like a real engineering team environment with practical implementation, code reviews, and release-oriented delivery.",
     points: [
@@ -457,7 +457,7 @@ export const mobileLearningExperienceData = {
     },
     {
       question: "Is freelancing support available?",
-      answer: "Yes. Hexenity provides guidance on proposal writing, client communication, and delivery milestones.",
+      answer: "Yes. Enitexa.Ai provides guidance on proposal writing, client communication, and delivery milestones.",
     },
     {
       question: "Do you provide interview preparation?",
@@ -473,11 +473,11 @@ export const mobileLearningExperienceData = {
     },
   ],
   finalCta: {
-    headline: "Become a Production-Ready Mobile App Developer with Hexenity",
+    headline: "Become a Production-Ready Mobile App Developer with Enitexa.Ai",
     subtext: "Build real apps. Work on industry projects. Launch your career with a premium learning workflow.",
     primaryLabel: "Start Learning",
     secondaryLabel: "Book Free Consultation",
-    tertiaryLabel: "Join Hexenity",
+    tertiaryLabel: "Join Enitexa.Ai",
   },
   stickyCta: {
     primaryLabel: "Start Learning",

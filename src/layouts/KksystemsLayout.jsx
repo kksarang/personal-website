@@ -6,7 +6,7 @@ import KksystemsNavbar from '../components/KkSystems/KksystemsNavbar';
 import StickyCTA from '../components/KkSystems/StickyCTA';
 import PremiumCursor from '../components/ui/PremiumCursor';
 import Magnetic from '../components/ui/Magnetic';
-import HexenityMark from '../components/KkSystems/HexenityMark';
+import EnitexaMark from '../components/KkSystems/EnitexaMark';
 
 const ScrollToSection = () => {
     const { pathname, hash } = useLocation();
@@ -73,41 +73,41 @@ const FOOTER_LINKS = [
     {
         title: 'Company',
         links: [
-            { label: 'About', to: '/hexenity/about' },
-            { label: 'Services', to: '/hexenity/services' },
-            { label: 'Work', to: '/hexenity/work' },
-            { label: 'Core Hexenity', to: '/hexenity/core-hexenity' },
+            { label: 'About', to: '/enitexa.ai/about' },
+            { label: 'Services', to: '/enitexa.ai/services' },
+            { label: 'Work', to: '/enitexa.ai/work' },
+            { label: 'Core Enitexa.Ai', to: '/enitexa.ai/core-enitexa' },
         ],
     },
     {
         title: 'Products',
         links: [
-            { label: 'Hexenity AI', to: '/hexenity/ai' },
-            { label: 'SaaS Platform', to: '/hexenity/saas' },
-            { label: 'ERP Demo', to: '/hexenity/erp/dashboard' },
-            { label: 'Learning', to: '/hexenity/learning' },
+            { label: 'Enitexa.Ai AI', to: '/enitexa.ai/ai' },
+            { label: 'SaaS Platform', to: '/enitexa.ai/saas' },
+            { label: 'ERP Demo', to: '/enitexa.ai/erp/dashboard' },
+            { label: 'Learning', to: '/enitexa.ai/learning' },
         ],
     },
     {
         title: 'Solutions',
         links: [
-            { label: 'Mobile Apps', to: '/hexenity/solutions/mobile' },
-            { label: 'Web Platforms', to: '/hexenity/solutions/web' },
-            { label: 'ERP Systems', to: '/hexenity/solutions/erp' },
-            { label: 'Contact', to: '/hexenity/contact' },
+            { label: 'Mobile Apps', to: '/enitexa.ai/solutions/mobile' },
+            { label: 'Web Platforms', to: '/enitexa.ai/solutions/web' },
+            { label: 'ERP Systems', to: '/enitexa.ai/solutions/erp' },
+            { label: 'Contact', to: '/enitexa.ai/contact' },
         ],
     },
 ];
 
-const HexenityFooter = () => (
-    <footer className="hexenity-saas-shell-dark relative z-10 overflow-hidden border-t border-white/[0.08] bg-[#030408]">
+const EnitexaFooter = () => (
+    <footer className="enitexa-saas-shell-dark relative z-10 overflow-hidden border-t border-white/[0.08] bg-[#030408]">
         <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-indigo-500/50 to-transparent" aria-hidden="true" />
         <div className="absolute left-1/2 top-0 h-72 w-[720px] -translate-x-1/2 rounded-full bg-indigo-500/[0.07] blur-[110px]" aria-hidden="true" />
 
         <div className="relative mx-auto max-w-[90rem] px-6 pt-20 sm:px-10 lg:px-16">
             {/* Giant CTA */}
             <div className="flex flex-col items-start justify-between gap-10 pb-16 md:flex-row md:items-end">
-                <Link to="/hexenity/contact" data-cursor="Say hi" className="group block">
+                <Link to="/enitexa.ai/contact" data-cursor="Say hi" className="group block">
                     <p className="pf-mono mb-5 text-[11px] uppercase tracking-[0.35em] text-white/35">
                         Ready to scale your business?
                     </p>
@@ -118,8 +118,8 @@ const HexenityFooter = () => (
                 </Link>
                 <Magnetic strength={0.35}>
                     <Link
-                        to="/hexenity/contact"
-                        aria-label="Contact Hexenity"
+                        to="/enitexa.ai/contact"
+                        aria-label="Contact Enitexa.Ai"
                         className="group flex h-24 w-24 items-center justify-center rounded-full border border-white/20 text-white transition-all duration-500 hover:border-indigo-400 hover:bg-indigo-500 sm:h-32 sm:w-32"
                     >
                         <ArrowUpRight className="h-8 w-8 transition-transform duration-500 group-hover:translate-x-1 group-hover:-translate-y-1" />
@@ -131,10 +131,8 @@ const HexenityFooter = () => (
             <div className="grid grid-cols-2 gap-10 border-t border-white/[0.07] py-14 md:grid-cols-5">
                 <div className="col-span-2">
                     <p className="pf-display flex items-center gap-3 text-xl font-bold text-white">
-                        <HexenityMark size={30} />
-                        <span>
-                            Hexenity<span className="text-indigo-400">.</span>
-                        </span>
+                        <EnitexaMark size={30} />
+                        <span>Enitexa.Ai</span>
                     </p>
                     <p className="pf-mono mt-5 text-[10px] uppercase tracking-[0.3em] text-indigo-300/80">
                         Digital & Software Solutions
@@ -168,7 +166,7 @@ const HexenityFooter = () => (
             {/* Bottom bar */}
             <div className="flex flex-col items-center justify-between gap-3 border-t border-white/[0.06] py-7 text-[11px] text-white/30 md:flex-row">
                 <p className="pf-mono uppercase tracking-[0.2em]">
-                    © {new Date().getFullYear()} Hexenity — All rights reserved
+                    © {new Date().getFullYear()} Enitexa.Ai — All rights reserved
                 </p>
                 <button
                     onClick={() => (window.__lenis ? window.__lenis.scrollTo(0) : window.scrollTo({ top: 0, behavior: 'smooth' }))}
@@ -187,16 +185,16 @@ const KksystemsLayout = () => {
     useSmoothScroll(!appRoute);
 
     useEffect(() => {
-        document.documentElement.classList.add('hexenity-site-scroll');
-        return () => document.documentElement.classList.remove('hexenity-site-scroll');
+        document.documentElement.classList.add('enitexa-site-scroll');
+        return () => document.documentElement.classList.remove('enitexa-site-scroll');
     }, []);
 
     return (
-        <div className="hexenity-root relative flex min-h-screen flex-col overflow-x-hidden bg-white text-gray-900 dark:bg-[#040713] dark:text-white">
+        <div className="enitexa-root relative flex min-h-screen flex-col overflow-x-hidden bg-white text-gray-900 dark:bg-[#040713] dark:text-white">
             <PremiumCursor />
             <div className="pf-grain" aria-hidden="true" />
             <div className="pointer-events-none fixed inset-0 z-0">
-                <div className="hexenity-ambient absolute inset-0" />
+                <div className="enitexa-ambient absolute inset-0" />
                 <div className="absolute left-[-10%] top-[-10%] h-[260px] w-[260px] rounded-full bg-indigo-600/10 blur-[70px]" />
                 <div className="absolute bottom-[-16%] right-[-8%] h-[260px] w-[260px] rounded-full bg-cyan-500/10 blur-[75px]" />
                 <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(99,102,241,0.1),transparent_45%)]" />
@@ -208,7 +206,7 @@ const KksystemsLayout = () => {
             </main>
             <StickyCTA />
 
-            {location.pathname !== '/hexenity/ai' && <HexenityFooter />}
+            {location.pathname !== '/enitexa.ai/ai' && <EnitexaFooter />}
         </div>
     );
 };

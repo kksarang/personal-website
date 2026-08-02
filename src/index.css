@@ -35,12 +35,12 @@ body {
 }
 
 @layer components {
-  .hexenity-display {
+  .enitexa-display {
     font-family: 'Syne', 'Space Grotesk', 'Inter', sans-serif;
     letter-spacing: -0.02em;
   }
 
-  .hexenity-root {
+  .enitexa-root {
     overflow-x: hidden;
     overscroll-behavior-x: none;
     /* manipulation: reliable vertical pan without pan-y quirks on nested overflow regions */
@@ -48,14 +48,14 @@ body {
   }
 
   /* Long nested lists (demo sidebar, ERP side nav): isolate momentum scroll on mobile */
-  .hexenity-contained-scroll {
+  .enitexa-contained-scroll {
     touch-action: pan-y;
     -webkit-overflow-scrolling: touch;
     overscroll-behavior-x: none;
     overscroll-behavior-y: contain;
   }
 
-  /* Hexenity home hero: readable motion (respects prefers-reduced-motion) */
+  /* Enitexa.Ai home hero: readable motion (respects prefers-reduced-motion) */
   @media (prefers-reduced-motion: no-preference) {
     /* Whole preview gently “breathes” so motion reads even beside slow fields */
     .hero-orb-breathe {
@@ -150,34 +150,34 @@ body {
     }
   }
 
-  .hexenity-root [class*="backdrop-blur"] {
+  .enitexa-root [class*="backdrop-blur"] {
     -webkit-backdrop-filter: none !important;
     backdrop-filter: none !important;
   }
 
-  .hexenity-nav-link {
+  .enitexa-nav-link {
     @apply relative inline-block pb-0.5 text-sm font-medium transition-colors duration-300;
   }
-  .hexenity-nav-link::after {
+  .enitexa-nav-link::after {
     content: '';
     @apply absolute bottom-0 left-0 h-0.5 w-0 rounded-full transition-all duration-300 ease-out;
     background: linear-gradient(90deg, #4f46e5, #9333ea);
   }
-  .hexenity-nav-link:hover::after,
-  .hexenity-nav-link-active::after {
+  .enitexa-nav-link:hover::after,
+  .enitexa-nav-link-active::after {
     @apply w-full;
   }
 
-  .hexenity-glass {
+  .enitexa-glass {
     background: rgba(11, 15, 25, 0.9);
     border: 1px solid rgba(255, 255, 255, 0.1);
     border-radius: 16px;
   }
 
-  .hexenity-glass-hover {
+  .enitexa-glass-hover {
     @apply transition-colors duration-300 ease-out;
   }
-  .hexenity-glass-hover:hover {
+  .enitexa-glass-hover:hover {
     border-color: rgba(99, 102, 241, 0.3);
     box-shadow: none;
   }
@@ -190,7 +190,7 @@ body {
     background: linear-gradient(135deg, #0B0F19 0%, #111827 100%);
   }
 
-  .hexenity-ambient {
+  .enitexa-ambient {
     background:
       radial-gradient(circle at 12% 18%, rgba(56, 189, 248, 0.08), transparent 34%),
       radial-gradient(circle at 85% 20%, rgba(129, 140, 248, 0.1), transparent 36%),
@@ -198,7 +198,7 @@ body {
     animation: none;
   }
 
-  .hexenity-noise {
+  .enitexa-noise {
     background-image:
       radial-gradient(rgba(255,255,255,0.06) 0.45px, transparent 0.45px);
     background-size: 3px 3px;
@@ -248,7 +248,7 @@ body {
     background-size: 50px 50px;
   }
 
-  .hexenity-grid {
+  .enitexa-grid {
     background-image: linear-gradient(rgba(148, 163, 184, 0.06) 1px, transparent 1px),
       linear-gradient(90deg, rgba(148, 163, 184, 0.06) 1px, transparent 1px);
     background-size: 54px 54px;
@@ -256,204 +256,204 @@ body {
     display: none;
   }
 
-  /* Light mode overrides for the Hexenity site */
-  html:not(.dark) .hexenity-root {
+  /* Light mode overrides for the Enitexa.Ai site */
+  html:not(.dark) .enitexa-root {
     background: #f6f8ff;
     color: #0f172a;
   }
 
-  html:not(.dark) .hexenity-root .hexenity-ambient {
+  html:not(.dark) .enitexa-root .enitexa-ambient {
     background:
       radial-gradient(circle at 12% 18%, rgba(56, 189, 248, 0.08), transparent 40%),
       radial-gradient(circle at 85% 20%, rgba(129, 140, 248, 0.12), transparent 42%),
       radial-gradient(circle at 55% 78%, rgba(139, 92, 246, 0.08), transparent 38%);
   }
 
-  html:not(.dark) .hexenity-root .hexenity-noise {
+  html:not(.dark) .enitexa-root .enitexa-noise {
     opacity: 0.03;
   }
 
-  html:not(.dark) .hexenity-root .hexenity-grid {
+  html:not(.dark) .enitexa-root .enitexa-grid {
     opacity: 0.2;
   }
 
-  html:not(.dark) .hexenity-root .hexenity-nav-shell {
+  html:not(.dark) .enitexa-root .enitexa-nav-shell {
     background: rgba(248, 250, 252, 0.9) !important;
     border-color: rgba(15, 23, 42, 0.14) !important;
     box-shadow: 0 10px 24px rgba(15, 23, 42, 0.08);
   }
 
-  html:not(.dark) .hexenity-root .hexenity-nav-brand {
-    color: #3730a3;
-    background: rgba(99, 102, 241, 0.12);
-    border-color: rgba(99, 102, 241, 0.32);
+  html:not(.dark) .enitexa-root .enitexa-nav-brand {
+    color: #0f172a;
+    background: transparent;
+    border-color: transparent;
   }
 
-  html:not(.dark) .hexenity-root .hexenity-nav-link-item {
+  html:not(.dark) .enitexa-root .enitexa-nav-link-item {
     color: #334155 !important;
   }
 
-  html:not(.dark) .hexenity-root .hexenity-theme-btn {
+  html:not(.dark) .enitexa-root .enitexa-theme-btn {
     color: #334155 !important;
     border-color: rgba(15, 23, 42, 0.16) !important;
   }
 
-  html:not(.dark) .hexenity-root .hexenity-glass,
-  html:not(.dark) .hexenity-root .premium-surface {
+  html:not(.dark) .enitexa-root .enitexa-glass,
+  html:not(.dark) .enitexa-root .premium-surface {
     background: rgba(255, 255, 255, 0.92) !important;
     border-color: rgba(15, 23, 42, 0.12) !important;
     box-shadow: 0 8px 20px rgba(15, 23, 42, 0.06);
   }
 
-  html:not(.dark) .hexenity-root .gradient-stroke::before {
+  html:not(.dark) .enitexa-root .gradient-stroke::before {
     background: linear-gradient(120deg, rgba(99, 102, 241, 0.2), rgba(99, 102, 241, 0.12), rgba(99, 102, 241, 0.2));
   }
 
-  html:not(.dark) .hexenity-root [class*="bg-[#030303]"],
-  html:not(.dark) .hexenity-root [class*="bg-[#040713]"],
-  html:not(.dark) .hexenity-root [class*="bg-[#05060c]"],
-  html:not(.dark) .hexenity-root [class*="bg-[#060916]"],
-  html:not(.dark) .hexenity-root [class*="bg-[#070B17]"],
-  html:not(.dark) .hexenity-root [class*="bg-[#07080f]"],
-  html:not(.dark) .hexenity-root [class*="bg-[#0A0B14]"],
-  html:not(.dark) .hexenity-root [class*="bg-[#0B0F19]"],
-  html:not(.dark) .hexenity-root [class*="bg-[#0F111A]"],
-  html:not(.dark) .hexenity-root [class*="bg-[#10152a]"],
-  html:not(.dark) .hexenity-root [class*="bg-[#131520]"],
-  html:not(.dark) .hexenity-root [class*="bg-[#131521]"],
-  html:not(.dark) .hexenity-root [class*="bg-slate-950/"],
-  html:not(.dark) .hexenity-root [class*="bg-black/"] {
+  html:not(.dark) .enitexa-root [class*="bg-[#030303]"],
+  html:not(.dark) .enitexa-root [class*="bg-[#040713]"],
+  html:not(.dark) .enitexa-root [class*="bg-[#05060c]"],
+  html:not(.dark) .enitexa-root [class*="bg-[#060916]"],
+  html:not(.dark) .enitexa-root [class*="bg-[#070B17]"],
+  html:not(.dark) .enitexa-root [class*="bg-[#07080f]"],
+  html:not(.dark) .enitexa-root [class*="bg-[#0A0B14]"],
+  html:not(.dark) .enitexa-root [class*="bg-[#0B0F19]"],
+  html:not(.dark) .enitexa-root [class*="bg-[#0F111A]"],
+  html:not(.dark) .enitexa-root [class*="bg-[#10152a]"],
+  html:not(.dark) .enitexa-root [class*="bg-[#131520]"],
+  html:not(.dark) .enitexa-root [class*="bg-[#131521]"],
+  html:not(.dark) .enitexa-root [class*="bg-slate-950/"],
+  html:not(.dark) .enitexa-root [class*="bg-black/"] {
     background-color: rgba(255, 255, 255, 0.96) !important;
   }
 
   /* Text opacity tiers used by the premium hero + sections */
-  html:not(.dark) .hexenity-root .text-white\/70,
-  html:not(.dark) .hexenity-root .text-white\/55 {
+  html:not(.dark) .enitexa-root .text-white\/70,
+  html:not(.dark) .enitexa-root .text-white\/55 {
     color: #475569 !important;
   }
-  html:not(.dark) .hexenity-root .text-white\/35,
-  html:not(.dark) .hexenity-root .text-white\/30 {
+  html:not(.dark) .enitexa-root .text-white\/35,
+  html:not(.dark) .enitexa-root .text-white\/30 {
     color: #94a3b8 !important;
   }
-  html:not(.dark) .hexenity-root .fill-white\/35 {
+  html:not(.dark) .enitexa-root .fill-white\/35 {
     fill: rgba(51, 65, 85, 0.45);
   }
-  html:not(.dark) .hexenity-root .text-white\/\[0\.07\] {
+  html:not(.dark) .enitexa-root .text-white\/\[0\.07\] {
     color: rgba(15, 23, 42, 0.08) !important;
   }
 
-  html:not(.dark) .hexenity-root [class*="border-white/"] {
+  html:not(.dark) .enitexa-root [class*="border-white/"] {
     border-color: rgba(15, 23, 42, 0.12) !important;
   }
 
-  html:not(.dark) .hexenity-root [class*="bg-white/"] {
+  html:not(.dark) .enitexa-root [class*="bg-white/"] {
     background-color: rgba(15, 23, 42, 0.04) !important;
   }
 
-  html:not(.dark) .hexenity-root [class*="bg-indigo-500/"],
-  html:not(.dark) .hexenity-root [class*="bg-indigo-400/"] {
+  html:not(.dark) .enitexa-root [class*="bg-indigo-500/"],
+  html:not(.dark) .enitexa-root [class*="bg-indigo-400/"] {
     background-color: rgba(99, 102, 241, 0.13) !important;
   }
 
   /* Keep primary CTA buttons strong in light mode */
-  html:not(.dark) .hexenity-root button[class*="bg-indigo-600"],
-  html:not(.dark) .hexenity-root a[class*="bg-indigo-600"],
-  html:not(.dark) .hexenity-root button[class*="bg-indigo-500 "],
-  html:not(.dark) .hexenity-root a[class*="bg-indigo-500 "],
-  html:not(.dark) .hexenity-root button[class*="bg-green-500"],
-  html:not(.dark) .hexenity-root a[class*="bg-green-500"] {
+  html:not(.dark) .enitexa-root button[class*="bg-indigo-600"],
+  html:not(.dark) .enitexa-root a[class*="bg-indigo-600"],
+  html:not(.dark) .enitexa-root button[class*="bg-indigo-500 "],
+  html:not(.dark) .enitexa-root a[class*="bg-indigo-500 "],
+  html:not(.dark) .enitexa-root button[class*="bg-green-500"],
+  html:not(.dark) .enitexa-root a[class*="bg-green-500"] {
     color: #ffffff !important;
   }
 
-  html:not(.dark) .hexenity-root button[class*="bg-indigo-500/"],
-  html:not(.dark) .hexenity-root a[class*="bg-indigo-500/"],
-  html:not(.dark) .hexenity-root button[class*="bg-indigo-400/"],
-  html:not(.dark) .hexenity-root a[class*="bg-indigo-400/"] {
+  html:not(.dark) .enitexa-root button[class*="bg-indigo-500/"],
+  html:not(.dark) .enitexa-root a[class*="bg-indigo-500/"],
+  html:not(.dark) .enitexa-root button[class*="bg-indigo-400/"],
+  html:not(.dark) .enitexa-root a[class*="bg-indigo-400/"] {
     background-color: rgba(79, 70, 229, 0.18) !important;
     border-color: rgba(79, 70, 229, 0.3) !important;
   }
 
-  html:not(.dark) .hexenity-root .text-white {
+  html:not(.dark) .enitexa-root .text-white {
     color: #0f172a !important;
   }
 
-  html:not(.dark) .hexenity-root .text-white\/80,
-  html:not(.dark) .hexenity-root .text-slate-200 {
+  html:not(.dark) .enitexa-root .text-white\/80,
+  html:not(.dark) .enitexa-root .text-slate-200 {
     color: #1e293b !important;
   }
 
-  html:not(.dark) .hexenity-root .text-slate-100,
-  html:not(.dark) .hexenity-root .text-slate-50,
-  html:not(.dark) .hexenity-root .text-gray-100 {
+  html:not(.dark) .enitexa-root .text-slate-100,
+  html:not(.dark) .enitexa-root .text-slate-50,
+  html:not(.dark) .enitexa-root .text-gray-100 {
     color: #0f172a !important;
   }
 
-  html:not(.dark) .hexenity-root .text-slate-300,
-  html:not(.dark) .hexenity-root .text-gray-300 {
+  html:not(.dark) .enitexa-root .text-slate-300,
+  html:not(.dark) .enitexa-root .text-gray-300 {
     color: #334155 !important;
   }
 
-  html:not(.dark) .hexenity-root .text-slate-400,
-  html:not(.dark) .hexenity-root .text-gray-400,
-  html:not(.dark) .hexenity-root .text-white\/40 {
+  html:not(.dark) .enitexa-root .text-slate-400,
+  html:not(.dark) .enitexa-root .text-gray-400,
+  html:not(.dark) .enitexa-root .text-white\/40 {
     color: #64748b !important;
   }
 
-  html:not(.dark) .hexenity-root .text-white\/90 {
+  html:not(.dark) .enitexa-root .text-white\/90 {
     color: #0f172a !important;
   }
 
-  html:not(.dark) .hexenity-root .text-white\/70 {
+  html:not(.dark) .enitexa-root .text-white\/70 {
     color: #334155 !important;
   }
 
-  html:not(.dark) .hexenity-root .text-white\/60 {
+  html:not(.dark) .enitexa-root .text-white\/60 {
     color: #475569 !important;
   }
 
-  html:not(.dark) .hexenity-root .text-white\/50 {
+  html:not(.dark) .enitexa-root .text-white\/50 {
     color: #64748b !important;
   }
 
-  html:not(.dark) .hexenity-root .text-white\/30,
-  html:not(.dark) .hexenity-root .text-white\/20 {
+  html:not(.dark) .enitexa-root .text-white\/30,
+  html:not(.dark) .enitexa-root .text-white\/20 {
     color: #94a3b8 !important;
   }
 
-  html:not(.dark) .hexenity-root .text-white\/10,
-  html:not(.dark) .hexenity-root .text-white\/5 {
+  html:not(.dark) .enitexa-root .text-white\/10,
+  html:not(.dark) .enitexa-root .text-white\/5 {
     color: #cbd5e1 !important;
   }
 
-  html:not(.dark) .hexenity-root .text-indigo-100 {
+  html:not(.dark) .enitexa-root .text-indigo-100 {
     color: #312e81 !important;
   }
 
-  html:not(.dark) .hexenity-root .text-indigo-200 {
+  html:not(.dark) .enitexa-root .text-indigo-200 {
     color: #3730a3 !important;
   }
 
-  html:not(.dark) .hexenity-root .text-indigo-300 {
+  html:not(.dark) .enitexa-root .text-indigo-300 {
     color: #4338ca !important;
   }
 
-  html:not(.dark) .hexenity-root .text-indigo-400 {
+  html:not(.dark) .enitexa-root .text-indigo-400 {
     color: #4f46e5 !important;
   }
 
-  html:not(.dark) .hexenity-root .text-emerald-300 {
+  html:not(.dark) .enitexa-root .text-emerald-300 {
     color: #047857 !important;
   }
 
-  html:not(.dark) .hexenity-root .text-emerald-100 {
+  html:not(.dark) .enitexa-root .text-emerald-100 {
     color: #065f46 !important;
   }
 
-  html:not(.dark) .hexenity-root .text-cyan-300 {
+  html:not(.dark) .enitexa-root .text-cyan-300 {
     color: #0e7490 !important;
   }
 
-  html:not(.dark) .hexenity-root .premium-gradient-text {
+  html:not(.dark) .enitexa-root .premium-gradient-text {
     color: #3730a3 !important;
   }
 
@@ -461,7 +461,7 @@ body {
    * SaaS marketing & demo canvases intentionally stay dark inside light theme.
    * Global light-mode hacks invert `.text-white` / some backgrounds — revert inside this subtree.
    */
-  html:not(.dark) .hexenity-root .hexenity-saas-shell-dark {
+  html:not(.dark) .enitexa-root .enitexa-saas-shell-dark {
     background-color: #070b17 !important;
     color: #f8fafc;
   }
@@ -634,20 +634,20 @@ body {
 
 /* Fixed nav (top-4 + bar) — anchor jumps and scroll-snapping leave room below the pill */
 /* Fixed nav — leave room for anchors; slightly tighter on phones (dynamic toolbars) */
-html.hexenity-site-scroll {
+html.enitexa-site-scroll {
   overflow-x: clip;
   scroll-padding-top: max(5.5rem, calc(env(safe-area-inset-top, 0px) + 4rem));
 }
 
 @media (min-width: 1024px) {
-  html.hexenity-site-scroll {
+  html.enitexa-site-scroll {
     scroll-padding-top: max(7rem, calc(env(safe-area-inset-top, 0px) + 4rem));
   }
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .hexenity-ambient,
-  .hexenity-grid,
+  .enitexa-ambient,
+  .enitexa-grid,
   .animate-fade-in-up,
   .animate-float-slow {
     animation: none !important;
@@ -655,174 +655,174 @@ html.hexenity-site-scroll {
 }
 
 @media (max-width: 1024px) {
-  .hexenity-noise,
-  .hexenity-grid {
+  .enitexa-noise,
+  .enitexa-grid {
     display: none;
   }
 }
 
 /*
  * SaaS dark shell (variant=saas-dark): typography fixes MUST live outside @layer.
- * Tailwind utilities load after @layer components; the light-theme .hexenity-root
+ * Tailwind utilities load after @layer components; the light-theme .enitexa-root
  * inversion was winning so .text-white on dark cards mapped to ~#0f172a — invisible on navy.
  */
-html:not(.dark) .hexenity-root .hexenity-saas-shell-dark .text-white {
+html:not(.dark) .enitexa-root .enitexa-saas-shell-dark .text-white {
   color: #f8fafc !important;
 }
-html:not(.dark) .hexenity-root .hexenity-saas-shell-dark .text-slate-50,
-html:not(.dark) .hexenity-root .hexenity-saas-shell-dark .text-slate-100 {
+html:not(.dark) .enitexa-root .enitexa-saas-shell-dark .text-slate-50,
+html:not(.dark) .enitexa-root .enitexa-saas-shell-dark .text-slate-100 {
   color: #f1f5f9 !important;
 }
-html:not(.dark) .hexenity-root .hexenity-saas-shell-dark .text-slate-200 {
+html:not(.dark) .enitexa-root .enitexa-saas-shell-dark .text-slate-200 {
   color: #e2e8f0 !important;
 }
-html:not(.dark) .hexenity-root .hexenity-saas-shell-dark .text-slate-300 {
+html:not(.dark) .enitexa-root .enitexa-saas-shell-dark .text-slate-300 {
   color: #cbd5e1 !important;
 }
-html:not(.dark) .hexenity-root .hexenity-saas-shell-dark .text-slate-400 {
+html:not(.dark) .enitexa-root .enitexa-saas-shell-dark .text-slate-400 {
   color: #94a3b8 !important;
 }
-html:not(.dark) .hexenity-root .hexenity-saas-shell-dark .text-slate-500 {
+html:not(.dark) .enitexa-root .enitexa-saas-shell-dark .text-slate-500 {
   color: #718096 !important;
 }
-html:not(.dark) .hexenity-root .hexenity-saas-shell-dark .text-slate-600 {
+html:not(.dark) .enitexa-root .enitexa-saas-shell-dark .text-slate-600 {
   color: #64748b !important;
 }
-html:not(.dark) .hexenity-root .hexenity-saas-shell-dark .text-indigo-100,
-html:not(.dark) .hexenity-root .hexenity-saas-shell-dark .text-indigo-200 {
+html:not(.dark) .enitexa-root .enitexa-saas-shell-dark .text-indigo-100,
+html:not(.dark) .enitexa-root .enitexa-saas-shell-dark .text-indigo-200 {
   color: #e0e7ff !important;
 }
-html:not(.dark) .hexenity-root .hexenity-saas-shell-dark .text-indigo-300 {
+html:not(.dark) .enitexa-root .enitexa-saas-shell-dark .text-indigo-300 {
   color: #c7d2fe !important;
 }
 
-html:not(.dark) .hexenity-root .hexenity-saas-shell-dark .text-white\/90 {
+html:not(.dark) .enitexa-root .enitexa-saas-shell-dark .text-white\/90 {
   color: rgba(248, 250, 252, 0.92) !important;
 }
-html:not(.dark) .hexenity-root .hexenity-saas-shell-dark .text-white\/80 {
+html:not(.dark) .enitexa-root .enitexa-saas-shell-dark .text-white\/80 {
   color: rgba(248, 250, 252, 0.82) !important;
 }
-html:not(.dark) .hexenity-root .hexenity-saas-shell-dark .text-white\/70 {
+html:not(.dark) .enitexa-root .enitexa-saas-shell-dark .text-white\/70 {
   color: rgba(248, 250, 252, 0.72) !important;
 }
-html:not(.dark) .hexenity-root .hexenity-saas-shell-dark .text-white\/60 {
+html:not(.dark) .enitexa-root .enitexa-saas-shell-dark .text-white\/60 {
   color: rgba(248, 250, 252, 0.62) !important;
 }
-html:not(.dark) .hexenity-root .hexenity-saas-shell-dark .text-white\/50 {
+html:not(.dark) .enitexa-root .enitexa-saas-shell-dark .text-white\/50 {
   color: rgba(248, 250, 252, 0.52) !important;
 }
-html:not(.dark) .hexenity-root .hexenity-saas-shell-dark .text-white\/40 {
+html:not(.dark) .enitexa-root .enitexa-saas-shell-dark .text-white\/40 {
   color: rgba(248, 250, 252, 0.42) !important;
 }
 
-html:not(.dark) .hexenity-root .hexenity-saas-shell-dark .saas-dash-tab-active {
+html:not(.dark) .enitexa-root .enitexa-saas-shell-dark .saas-dash-tab-active {
   background-color: rgb(79, 70, 229) !important;
   color: #ffffff !important;
   border-color: transparent !important;
   box-shadow: 0 0 24px -4px rgba(99, 102, 241, 0.55);
 }
 
-html:not(.dark) .hexenity-root .hexenity-intro-overlay .text-white {
+html:not(.dark) .enitexa-root .enitexa-intro-overlay .text-white {
   color: #ffffff !important;
 }
-html:not(.dark) .hexenity-root .hexenity-intro-overlay .text-indigo-300 {
+html:not(.dark) .enitexa-root .enitexa-intro-overlay .text-indigo-300 {
   color: #a5b4fc !important;
 }
 
-/* Dark-fixed Hexenity surfaces (footer) keep light stroke for outline display text */
-html:not(.dark) .hexenity-root .hexenity-saas-shell-dark .pf-outline-text {
+/* Dark-fixed Enitexa.Ai surfaces (footer) keep light stroke for outline display text */
+html:not(.dark) .enitexa-root .enitexa-saas-shell-dark .pf-outline-text {
   -webkit-text-stroke: 1.5px rgba(255, 255, 255, 0.28);
 }
-html:not(.dark) .hexenity-root .hexenity-saas-shell-dark [class*='border-white/'] {
+html:not(.dark) .enitexa-root .enitexa-saas-shell-dark [class*='border-white/'] {
   border-color: rgba(255, 255, 255, 0.12) !important;
 }
 
 /* The dark SaaS shell must NOT inherit the light-mode background inversions,
    otherwise cards turn white while their text stays light (unreadable). */
-html:not(.dark) .hexenity-root .hexenity-saas-shell-dark [class*='bg-black/'] {
+html:not(.dark) .enitexa-root .enitexa-saas-shell-dark [class*='bg-black/'] {
   background-color: rgba(0, 0, 0, 0.3) !important;
 }
-html:not(.dark) .hexenity-root .hexenity-saas-shell-dark [class*='bg-slate-950/'] {
+html:not(.dark) .enitexa-root .enitexa-saas-shell-dark [class*='bg-slate-950/'] {
   background-color: rgba(2, 6, 23, 0.6) !important;
 }
-html:not(.dark) .hexenity-root .hexenity-saas-shell-dark [class*='bg-white/'] {
+html:not(.dark) .enitexa-root .enitexa-saas-shell-dark [class*='bg-white/'] {
   background-color: rgba(255, 255, 255, 0.05) !important;
 }
-html:not(.dark) .hexenity-root .hexenity-saas-shell-dark [class*='bg-[#0'],
-html:not(.dark) .hexenity-root .hexenity-saas-shell-dark [class*='bg-[#1'] {
+html:not(.dark) .enitexa-root .enitexa-saas-shell-dark [class*='bg-[#0'],
+html:not(.dark) .enitexa-root .enitexa-saas-shell-dark [class*='bg-[#1'] {
   background-color: #0c1224 !important;
 }
-html:not(.dark) .hexenity-root .hexenity-saas-shell-dark .premium-surface,
-html:not(.dark) .hexenity-root .hexenity-saas-shell-dark .hexenity-glass {
+html:not(.dark) .enitexa-root .enitexa-saas-shell-dark .premium-surface,
+html:not(.dark) .enitexa-root .enitexa-saas-shell-dark .enitexa-glass {
   background: rgba(15, 20, 40, 0.85) !important;
   border-color: rgba(255, 255, 255, 0.1) !important;
   box-shadow: none;
 }
-html:not(.dark) .hexenity-root .hexenity-saas-shell-dark .text-slate-700,
-html:not(.dark) .hexenity-root .hexenity-saas-shell-dark .text-gray-300,
-html:not(.dark) .hexenity-root .hexenity-saas-shell-dark .text-gray-400 {
+html:not(.dark) .enitexa-root .enitexa-saas-shell-dark .text-slate-700,
+html:not(.dark) .enitexa-root .enitexa-saas-shell-dark .text-gray-300,
+html:not(.dark) .enitexa-root .enitexa-saas-shell-dark .text-gray-400 {
   color: #94a3b8 !important;
 }
-html:not(.dark) .hexenity-root .hexenity-saas-shell-dark .fill-white\/35 {
+html:not(.dark) .enitexa-root .enitexa-saas-shell-dark .fill-white\/35 {
   fill: rgba(255, 255, 255, 0.35);
 }
-html:not(.dark) .hexenity-root .hexenity-saas-shell-dark .text-white\/55 {
+html:not(.dark) .enitexa-root .enitexa-saas-shell-dark .text-white\/55 {
   color: rgba(255, 255, 255, 0.55) !important;
 }
-html:not(.dark) .hexenity-root .hexenity-saas-shell-dark .text-white\/35 {
+html:not(.dark) .enitexa-root .enitexa-saas-shell-dark .text-white\/35 {
   color: rgba(255, 255, 255, 0.35) !important;
 }
-html:not(.dark) .hexenity-root .hexenity-saas-shell-dark .text-white\/30 {
+html:not(.dark) .enitexa-root .enitexa-saas-shell-dark .text-white\/30 {
   color: rgba(255, 255, 255, 0.3) !important;
 }
 
 /* Seamless-grid hover tint must stay light in light theme */
-html:not(.dark) .hexenity-root [class*='hover:bg-[#10152a]']:hover {
+html:not(.dark) .enitexa-root [class*='hover:bg-[#10152a]']:hover {
   background-color: #eef2ff !important;
 }
 /* ...but never inside the intentionally-dark SaaS shell */
-html:not(.dark) .hexenity-root .hexenity-saas-shell-dark [class*='hover:bg-[#10152a]']:hover {
+html:not(.dark) .enitexa-root .enitexa-saas-shell-dark [class*='hover:bg-[#10152a]']:hover {
   background-color: #131a33 !important;
 }
 /* Accent text + tinted backgrounds keep their dark-theme values inside the SaaS shell */
-html:not(.dark) .hexenity-root .hexenity-saas-shell-dark .text-emerald-300 {
+html:not(.dark) .enitexa-root .enitexa-saas-shell-dark .text-emerald-300 {
   color: #6ee7b7 !important;
 }
-html:not(.dark) .hexenity-root .hexenity-saas-shell-dark .text-emerald-100 {
+html:not(.dark) .enitexa-root .enitexa-saas-shell-dark .text-emerald-100 {
   color: #d1fae5 !important;
 }
-html:not(.dark) .hexenity-root .hexenity-saas-shell-dark .text-cyan-300 {
+html:not(.dark) .enitexa-root .enitexa-saas-shell-dark .text-cyan-300 {
   color: #67e8f9 !important;
 }
-html:not(.dark) .hexenity-root .hexenity-saas-shell-dark .text-indigo-400 {
+html:not(.dark) .enitexa-root .enitexa-saas-shell-dark .text-indigo-400 {
   color: #818cf8 !important;
 }
-html:not(.dark) .hexenity-root .hexenity-saas-shell-dark [class*='bg-indigo-500/'],
-html:not(.dark) .hexenity-root .hexenity-saas-shell-dark [class*='bg-indigo-400/'] {
+html:not(.dark) .enitexa-root .enitexa-saas-shell-dark [class*='bg-indigo-500/'],
+html:not(.dark) .enitexa-root .enitexa-saas-shell-dark [class*='bg-indigo-400/'] {
   background-color: rgba(99, 102, 241, 0.2) !important;
 }
 
 /* Hovered award rows get an indigo fill — force light content in light theme */
-html:not(.dark) .hexenity-root .pf-row-link:hover,
-html:not(.dark) .hexenity-root .pf-row-link:hover * {
+html:not(.dark) .enitexa-root .pf-row-link:hover,
+html:not(.dark) .enitexa-root .pf-row-link:hover * {
   color: #ffffff !important;
 }
-html:not(.dark) .hexenity-root .pf-row-link:hover [class*='border-'] {
+html:not(.dark) .enitexa-root .pf-row-link:hover [class*='border-'] {
   border-color: rgba(255, 255, 255, 0.4) !important;
 }
 /* Light theme: strong dark CTA pills where the dark theme uses white ones */
-html:not(.dark) .hexenity-root .hexenity-premium-hero button[class*='bg-white'],
-html:not(.dark) .hexenity-root .hexenity-nav-shell button[class*='bg-white'] {
+html:not(.dark) .enitexa-root .enitexa-premium-hero button[class*='bg-white'],
+html:not(.dark) .enitexa-root .enitexa-nav-shell button[class*='bg-white'] {
   background-color: #0f172a !important;
   border-color: #0f172a !important;
   color: #ffffff !important;
 }
-html:not(.dark) .hexenity-root .hexenity-premium-hero button[class*='bg-white']:hover,
-html:not(.dark) .hexenity-root .hexenity-nav-shell button[class*='bg-white']:hover {
+html:not(.dark) .enitexa-root .enitexa-premium-hero button[class*='bg-white']:hover,
+html:not(.dark) .enitexa-root .enitexa-nav-shell button[class*='bg-white']:hover {
   background-color: #312e81 !important;
   border-color: #312e81 !important;
 }
-html:not(.dark) .hexenity-root nav .hexenity-contained-scroll {
+html:not(.dark) .enitexa-root nav .enitexa-contained-scroll {
   background: rgba(248, 250, 252, 0.98) !important;
   border-color: rgba(15, 23, 42, 0.12) !important;
 }
@@ -835,39 +835,39 @@ html:not(.dark) .hexenity-root nav .hexenity-contained-scroll {
   font-family: 'JetBrains Mono', 'SFMono-Regular', Menlo, monospace;
 }
 
-/* Branded text selection across the Hexenity sub-site — subtle, not a solid block */
-.hexenity-root ::selection {
+/* Branded text selection across the Enitexa.Ai sub-site — subtle, not a solid block */
+.enitexa-root ::selection {
   background: rgba(129, 140, 248, 0.28);
   color: #eef2ff;
 }
-html:not(.dark) .hexenity-root ::selection {
+html:not(.dark) .enitexa-root ::selection {
   background: rgba(99, 102, 241, 0.22);
   color: #1e1b4b;
 }
 
-/* Hexenity body copy: Space Grotesk for a premium reading face (headings stay Syne) */
-.hexenity-root {
+/* Enitexa.Ai body copy: Space Grotesk for a premium reading face (headings stay Syne) */
+.enitexa-root {
   font-family: 'Space Grotesk', 'Inter', sans-serif;
 }
-.hexenity-root p:not(.pf-mono):not(.pf-display),
-.hexenity-root li:not(.pf-mono),
-.hexenity-root td,
-.hexenity-root label:not(.pf-mono),
-.hexenity-root input,
-.hexenity-root textarea,
-.hexenity-root select {
+.enitexa-root p:not(.pf-mono):not(.pf-display),
+.enitexa-root li:not(.pf-mono),
+.enitexa-root td,
+.enitexa-root label:not(.pf-mono),
+.enitexa-root input,
+.enitexa-root textarea,
+.enitexa-root select {
   font-family: 'Space Grotesk', 'Inter', sans-serif;
   letter-spacing: -0.01em;
 }
-.hexenity-root .pf-mono {
+.enitexa-root .pf-mono {
   font-family: 'JetBrains Mono', 'SFMono-Regular', Menlo, monospace !important;
 }
-.hexenity-root .pf-display,
-.hexenity-root h1,
-.hexenity-root h2,
-.hexenity-root h3,
-.hexenity-root h4,
-.hexenity-root h5 {
+.enitexa-root .pf-display,
+.enitexa-root h1,
+.enitexa-root h2,
+.enitexa-root h3,
+.enitexa-root h4,
+.enitexa-root h5 {
   font-family: 'Syne', 'Space Grotesk', sans-serif !important;
 }
 
@@ -876,21 +876,21 @@ html:not(.dark) .hexenity-root ::selection {
   letter-spacing: -0.03em;
 }
 
-/* Every heading inside the Hexenity sub-site uses the Syne display face,
+/* Every heading inside the Enitexa.Ai sub-site uses the Syne display face,
    so inner pages match the revamped home typography without per-page edits. */
-.hexenity-root h1,
-.hexenity-root h2,
-.hexenity-root h3,
-.hexenity-root h4,
-.hexenity-root h5 {
+.enitexa-root h1,
+.enitexa-root h2,
+.enitexa-root h3,
+.enitexa-root h4,
+.enitexa-root h5 {
   font-family: 'Syne', 'Space Grotesk', sans-serif;
   letter-spacing: -0.02em;
 }
 
 /* Old-style bold display text (stat numbers, card titles in divs/spans)
    also picks up the display face. */
-.hexenity-root .font-black,
-.hexenity-root .font-extrabold {
+.enitexa-root .font-black,
+.enitexa-root .font-extrabold {
   font-family: 'Syne', 'Space Grotesk', sans-serif;
   letter-spacing: -0.02em;
   font-weight: 800; /* Syne ships up to 800; avoid faux-bold synthesis */
@@ -898,7 +898,7 @@ html:not(.dark) .hexenity-root ::selection {
 
 /* Every uppercase tracked micro-label (eyebrows, badges, chips) across the
    sub-site uses the monospace face from the new design system. */
-.hexenity-root .uppercase[class*="tracking-["] {
+.enitexa-root .uppercase[class*="tracking-["] {
   font-family: 'JetBrains Mono', 'SFMono-Regular', Menlo, monospace;
 }
 
@@ -1094,7 +1094,7 @@ html:not(.dark) .hexenity-root ::selection {
 
 /* ===========================================================
    PORTFOLIO STUDIO SYSTEM (port-*) — Charcoal & Lime
-   Scoped to .portfolio-root — deliberately opposite Hexenity
+   Scoped to .portfolio-root — deliberately opposite Enitexa.Ai
    ============================================================ */
 
 .portfolio-root {

@@ -26,13 +26,13 @@ export default function LearningPractice() {
                     <div className="pointer-events-none absolute -bottom-20 -left-12 h-64 w-64 rounded-full bg-cyan-500/15 blur-3xl" />
                     <p className="relative z-10 inline-flex items-center gap-2 text-xs uppercase tracking-[0.16em] text-indigo-200">
                         <Sparkles className="h-3.5 w-3.5" />
-                        Hexenity live practice
+                        Enitexa.Ai live practice
                     </p>
                     <h1 className="relative z-10 mt-3 text-4xl font-black leading-tight text-white sm:text-5xl">
                         Practice Mobile and Web Coding in One Playground
                     </h1>
                     <p className="relative z-10 mt-3 max-w-3xl text-slate-300">
-                        This page is now a custom Hexenity learning lab, not a clone layout. Choose a language track, launch live coding instantly,
+                        This page is now a custom Enitexa.Ai learning lab, not a clone layout. Choose a language track, launch live coding instantly,
                         and move from concept to implementation with a cleaner academy-style workflow.
                     </p>
                     <div className="relative z-10 mt-6 flex flex-wrap gap-2">
@@ -71,7 +71,7 @@ export default function LearningPractice() {
                                 <div className="mt-4 flex flex-wrap gap-2">
                                     <button
                                         type="button"
-                                        onClick={() => navigate(`/hexenity/learning/practice/live?template=${template.key}`)}
+                                        onClick={() => navigate(`/enitexa.ai/learning/practice/live?template=${template.key}`)}
                                         className="inline-flex items-center gap-1.5 rounded-full bg-indigo-600 px-3 py-1.5 text-xs font-semibold uppercase tracking-[0.12em] text-white transition hover:bg-indigo-500"
                                     >
                                         <PlayCircle className="h-3.5 w-3.5" />
@@ -79,7 +79,7 @@ export default function LearningPractice() {
                                     </button>
                                     <button
                                         type="button"
-                                        onClick={() => navigate(`/hexenity/learning/${template.topicSlug || 'frontend-architecture'}`)}
+                                        onClick={() => navigate(`/enitexa.ai/learning/${template.topicSlug || 'frontend-architecture'}`)}
                                         className="inline-flex items-center gap-1.5 rounded-full border border-white/15 bg-white/5 px-3 py-1.5 text-xs font-semibold uppercase tracking-[0.12em] text-slate-100 transition hover:border-indigo-300/35 hover:text-indigo-100"
                                     >
                                         Learn Track
@@ -128,7 +128,7 @@ export default function LearningPractice() {
                                 <div className="mt-4 flex flex-wrap gap-2">
                                     <button
                                         type="button"
-                                        onClick={() => navigate(`/hexenity/learning/practice/live?template=${template.key}`)}
+                                        onClick={() => navigate(`/enitexa.ai/learning/practice/live?template=${template.key}`)}
                                         className="inline-flex items-center gap-1.5 rounded-full bg-indigo-600 px-3 py-1.5 text-xs font-semibold uppercase tracking-[0.12em] text-white transition hover:bg-indigo-500"
                                     >
                                         <PlayCircle className="h-3.5 w-3.5" />
@@ -136,7 +136,7 @@ export default function LearningPractice() {
                                     </button>
                                     <button
                                         type="button"
-                                        onClick={() => navigate(`/hexenity/learning/${template.topicSlug || 'frontend-architecture'}`)}
+                                        onClick={() => navigate(`/enitexa.ai/learning/${template.topicSlug || 'frontend-architecture'}`)}
                                         className="inline-flex items-center gap-1.5 rounded-full border border-white/15 bg-white/5 px-3 py-1.5 text-xs font-semibold uppercase tracking-[0.12em] text-slate-100 transition hover:border-indigo-300/35 hover:text-indigo-100"
                                     >
                                         Learn

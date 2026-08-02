@@ -1,11 +1,11 @@
 import {
-  HEXENITY_PREMIUM_AI_DETAIL,
-  HEXENITY_PREMIUM_AI_MEGA,
-  HEXENITY_PREMIUM_UI_DETAIL,
-  HEXENITY_PREMIUM_UI_MEGA,
-  HEXENITY_PREMIUM_WEB_DETAIL,
-  HEXENITY_PREMIUM_WEB_MEGA,
-} from "./hexenityPremiumTracks";
+  ENITEXA_PREMIUM_AI_DETAIL,
+  ENITEXA_PREMIUM_AI_MEGA,
+  ENITEXA_PREMIUM_UI_DETAIL,
+  ENITEXA_PREMIUM_UI_MEGA,
+  ENITEXA_PREMIUM_WEB_DETAIL,
+  ENITEXA_PREMIUM_WEB_MEGA,
+} from "./enitexaPremiumTracks";
 
 export const learningCategorySections = [
   {
@@ -59,13 +59,13 @@ export const learningDetailsContent = {
         "This program mirrors a real product team workflow: planning, UI implementation, state architecture, API integration, testing, release management, and post-launch optimization. By the end, learners can build portfolio-ready apps and confidently apply for internships, junior developer roles, or freelance projects.",
       duration: "16 to 24 weeks",
       badges: ["Beginner to Advanced", "Portfolio Driven", "Industry Aligned", "Job and Freelance Ready"],
-      primaryCtaLabel: "Enroll with Hexenity",
-      primaryCtaPath: "/hexenity/contact",
+      primaryCtaLabel: "Enroll with Enitexa.Ai",
+      primaryCtaPath: "/enitexa.ai/contact",
       secondaryCtaLabel: "Try Live Practice",
-      secondaryCtaPath: "/hexenity/learning/practice",
+      secondaryCtaPath: "/enitexa.ai/learning/practice",
     },
     intro:
-      "Mobile App Development at Hexenity is taught as a full-stack product discipline, not just a UI coding exercise. Learners understand how a production app is built from concept to deployment, including architecture strategy, API contracts, cloud integration, analytics instrumentation, and reliability engineering. The curriculum is SEO-focused for educational discovery, career-ready for interview preparation, and implementation-focused for shipping real applications.",
+      "Mobile App Development at Enitexa.Ai is taught as a full-stack product discipline, not just a UI coding exercise. Learners understand how a production app is built from concept to deployment, including architecture strategy, API contracts, cloud integration, analytics instrumentation, and reliability engineering. The curriculum is SEO-focused for educational discovery, career-ready for interview preparation, and implementation-focused for shipping real applications.",
     whatIsMobileDevelopment: {
       overview:
         "Mobile App Development is the process of creating software experiences for smartphones and tablets that are performant, secure, and scalable under real-world user behavior. It combines user experience design, client architecture, backend communication, offline capability, and release operations.",
@@ -471,7 +471,7 @@ export const learningDetailsContent = {
         description: "API testing and contract validation platform used for endpoint verification and debugging.",
       },
     ],
-    whyLearnHexenity: [
+    whyLearnEnitexa: [
       {
         title: "Industry-Driven Project Standards",
         detail: "Course flow follows production engineering standards used in real startup and enterprise mobile projects.",
@@ -555,7 +555,7 @@ export const learningDetailsContent = {
           "Yes. The roadmap supports part-time learners with milestone-based progression and project checkpoints.",
       },
       {
-        question: "Does Hexenity provide mentorship and review feedback?",
+        question: "Does Enitexa.Ai provide mentorship and review feedback?",
         answer:
           "Yes. Learners are guided through architecture reviews, practical implementation feedback, and portfolio improvement cycles.",
       },
@@ -566,13 +566,13 @@ export const learningDetailsContent = {
       },
     ],
     cta: {
-      headline: "Build your mobile engineering career with Hexenity",
+      headline: "Build your mobile engineering career with Enitexa.Ai",
       text:
-        "If you want structured mentorship, real project implementation, and a portfolio that stands out in interviews, join Hexenity's mobile app development learning track today.",
-      primaryLabel: "Contact Hexenity to Enroll",
-      primaryPath: "/hexenity/contact",
+        "If you want structured mentorship, real project implementation, and a portfolio that stands out in interviews, join Enitexa.Ai's mobile app development learning track today.",
+      primaryLabel: "Contact Enitexa.Ai to Enroll",
+      primaryPath: "/enitexa.ai/contact",
       secondaryLabel: "Open Live Practice",
-      secondaryPath: "/hexenity/learning/practice",
+      secondaryPath: "/enitexa.ai/learning/practice",
     },
     uiSuggestions: {
       designDirection:
@@ -638,15 +638,15 @@ export const learningDetailsContent = {
       },
     ],
   },
-  "frontend-architecture": HEXENITY_PREMIUM_WEB_DETAIL,
+  "frontend-architecture": ENITEXA_PREMIUM_WEB_DETAIL,
   "backend-engineering": {
     updatedOn: "May 2026",
     readTime: "29 min",
     level: "Beginner to Advanced",
     seo: {
-      title: "Backend Development Learning Program | Hexenity",
+      title: "Backend Development Learning Program | Enitexa.Ai",
       description:
-        "Learn server-side development, APIs, authentication, databases, cloud deployment, microservices, scalability, security, and performance optimization with Hexenity.",
+        "Learn server-side development, APIs, authentication, databases, cloud deployment, microservices, scalability, security, and performance optimization with Enitexa.Ai.",
       keywords: [
         "backend development course",
         "api engineering learning",
@@ -664,9 +664,9 @@ export const learningDetailsContent = {
       duration: "14 to 24 weeks",
       badges: ["Beginner to Advanced", "Architecture Focused", "Production Ready", "Startup Aligned"],
       primaryCtaLabel: "Start Backend Learning",
-      primaryCtaPath: "/hexenity/contact",
+      primaryCtaPath: "/enitexa.ai/contact",
       secondaryCtaLabel: "Book Free Backend Consultation",
-      secondaryCtaPath: "/hexenity/contact",
+      secondaryCtaPath: "/enitexa.ai/contact",
     },
     intro:
       "Backend development is the foundation of modern software platforms. It handles business logic, authentication, authorization, data reliability, payment processing, and system integrations. A strong backend makes products faster, safer, and easier to scale.\n\nThis page provides a premium structured path covering server-side development, API engineering, microservices, cloud deployment, security patterns, and performance optimization using practical production workflows.",
@@ -961,7 +961,7 @@ export const learningDetailsContent = {
         remoteOpportunities: "Very High",
       },
     ],
-    whyLearnHexenity: [
+    whyLearnEnitexa: [
       {
         title: "Architecture-first backend learning",
         detail: "Focuses on real service design patterns used in startup and SaaS environments, not just isolated tutorials.",
@@ -1009,13 +1009,13 @@ export const learningDetailsContent = {
       },
     ],
     cta: {
-      headline: "Become a Production-Ready Backend Engineer with Hexenity",
+      headline: "Become a Production-Ready Backend Engineer with Enitexa.Ai",
       text:
         "Build secure, scalable backend systems with API depth, cloud deployment confidence, and startup-focused architecture execution.",
-      primaryLabel: "Contact Hexenity to Enroll",
-      primaryPath: "/hexenity/contact",
+      primaryLabel: "Contact Enitexa.Ai to Enroll",
+      primaryPath: "/enitexa.ai/contact",
       secondaryLabel: "Book Free Backend Strategy Call",
-      secondaryPath: "/hexenity/contact",
+      secondaryPath: "/enitexa.ai/contact",
     },
     resources: [
       { label: "Node.js docs", url: "https://nodejs.org/en/docs" },
@@ -1092,7 +1092,7 @@ export const learningDetailsContent = {
     readTime: "26 min",
     level: "Beginner to Advanced",
     seo: {
-      title: "DevOps Engineering Learning Program | Hexenity",
+      title: "DevOps Engineering Learning Program | Enitexa.Ai",
       description:
         "Learn DevOps fundamentals, CI/CD, Docker, Kubernetes, AWS, Terraform, monitoring, and deployment automation through startup-focused practical projects.",
       keywords: [
@@ -1112,12 +1112,12 @@ export const learningDetailsContent = {
       duration: "14 to 22 weeks",
       badges: ["Beginner to Advanced", "Cloud Native", "Production Focused", "Career Ready"],
       primaryCtaLabel: "Start DevOps Learning",
-      primaryCtaPath: "/hexenity/contact",
+      primaryCtaPath: "/enitexa.ai/contact",
       secondaryCtaLabel: "Book Free Consultation",
-      secondaryCtaPath: "/hexenity/contact",
+      secondaryCtaPath: "/enitexa.ai/contact",
     },
     intro:
-      "DevOps engineering is the discipline of making software delivery reliable, scalable, and fast. Instead of manual deployments and ad-hoc fixes, DevOps teams design repeatable systems: automated testing pipelines, immutable container builds, infrastructure templates, observability dashboards, and controlled release strategies.\n\nThis Hexenity learning page is built for technical, startup-focused growth. It covers Linux administration, Git workflows, deployment automation, cloud fundamentals, and SRE-style reliability thinking in one practical sequence.",
+      "DevOps engineering is the discipline of making software delivery reliable, scalable, and fast. Instead of manual deployments and ad-hoc fixes, DevOps teams design repeatable systems: automated testing pipelines, immutable container builds, infrastructure templates, observability dashboards, and controlled release strategies.\n\nThis Enitexa.Ai learning page is built for technical, startup-focused growth. It covers Linux administration, Git workflows, deployment automation, cloud fundamentals, and SRE-style reliability thinking in one practical sequence.",
     whyImportant: [
       "Startups need fast and safe release cycles to ship features without breaking production.",
       "Infrastructure automation reduces operational risk and improves engineering velocity.",
@@ -1421,7 +1421,7 @@ export const learningDetailsContent = {
         remoteOpportunities: "Very High",
       },
     ],
-    whyLearnHexenity: [
+    whyLearnEnitexa: [
       {
         title: "Startup-first DevOps mindset",
         detail: "Learn how fast product teams ship safely with lean automation, not heavy enterprise complexity.",
@@ -1469,13 +1469,13 @@ export const learningDetailsContent = {
       },
     ],
     cta: {
-      headline: "Become a Production-Ready DevOps Engineer with Hexenity",
+      headline: "Become a Production-Ready DevOps Engineer with Enitexa.Ai",
       text:
         "Build cloud-native infrastructure, automate deployments, and operate reliable systems with technical depth and startup execution speed.",
-      primaryLabel: "Contact Hexenity to Enroll",
-      primaryPath: "/hexenity/contact",
+      primaryLabel: "Contact Enitexa.Ai to Enroll",
+      primaryPath: "/enitexa.ai/contact",
       secondaryLabel: "Book Free DevOps Consultation",
-      secondaryPath: "/hexenity/contact",
+      secondaryPath: "/enitexa.ai/contact",
     },
     resources: [
       { label: "Docker docs", url: "https://docs.docker.com/" },
@@ -1488,8 +1488,8 @@ export const learningDetailsContent = {
       { label: "AWS Getting Started", url: "https://docs.aws.amazon.com/" },
     ],
   },
-  "ai-ml-integration": HEXENITY_PREMIUM_AI_DETAIL,
-  "ui-ux-basics": HEXENITY_PREMIUM_UI_DETAIL,
+  "ai-ml-integration": ENITEXA_PREMIUM_AI_DETAIL,
+  "ui-ux-basics": ENITEXA_PREMIUM_UI_DETAIL,
   "cybersecurity-basics": {
     updatedOn: "May 2026",
     readTime: "14 min",
@@ -1554,9 +1554,9 @@ export const learningDetailsContent = {
     readTime: "28 min",
     level: "Beginner to Advanced",
     seo: {
-      title: "Digital Marketing Learning Program | Hexenity",
+      title: "Digital Marketing Learning Program | Enitexa.Ai",
       description:
-        "Learn SEO, Meta Ads, Google Ads, content strategy, analytics, automation, and growth marketing through practical campaigns at Hexenity.",
+        "Learn SEO, Meta Ads, Google Ads, content strategy, analytics, automation, and growth marketing through practical campaigns at Enitexa.Ai.",
       keywords: [
         "digital marketing course",
         "seo learning roadmap",
@@ -1573,10 +1573,10 @@ export const learningDetailsContent = {
         "This learning path is designed for students, founders, freelancers, and working professionals who want measurable marketing skills. You will build campaign plans, run experiments, optimize budgets, and learn how to present marketing outcomes with data confidence.",
       duration: "12 to 20 weeks",
       badges: ["Beginner to Advanced", "Campaign Driven", "Career Focused", "Practical Portfolio"],
-      primaryCtaLabel: "Start Learning with Hexenity",
-      primaryCtaPath: "/hexenity/contact",
+      primaryCtaLabel: "Start Learning with Enitexa.Ai",
+      primaryCtaPath: "/enitexa.ai/contact",
       secondaryCtaLabel: "Book Free Consultation",
-      secondaryCtaPath: "/hexenity/contact",
+      secondaryCtaPath: "/enitexa.ai/contact",
     },
     intro:
       "Digital marketing today is a system of audience discovery, messaging clarity, experimentation, and performance optimization. This track teaches a full growth stack including SEO, social media marketing, paid ads, brand communication, content funnels, analytics interpretation, and AI-assisted execution.\n\nThe program is built for React + Tailwind-style content rendering with modular sections, structured lists, and conversion-focused CTAs so learners can scan quickly, dive deep by module, and apply skills to real projects.",
@@ -1961,7 +1961,7 @@ export const learningDetailsContent = {
         remoteOpportunities: "Very High",
       },
     ],
-    whyLearnHexenity: [
+    whyLearnEnitexa: [
       {
         title: "Campaign-first learning model",
         detail: "Every concept is tied to execution tasks, metrics, and optimization loops used by real growth teams.",
@@ -2034,13 +2034,13 @@ export const learningDetailsContent = {
       },
     ],
     cta: {
-      headline: "Become a Growth-Focused Digital Marketing Professional with Hexenity",
+      headline: "Become a Growth-Focused Digital Marketing Professional with Enitexa.Ai",
       text:
         "Build campaign proof, master performance channels, and develop startup-ready marketing execution skills through a practical learning path.",
-      primaryLabel: "Contact Hexenity to Enroll",
-      primaryPath: "/hexenity/contact",
+      primaryLabel: "Contact Enitexa.Ai to Enroll",
+      primaryPath: "/enitexa.ai/contact",
       secondaryLabel: "Book Free Strategy Call",
-      secondaryPath: "/hexenity/contact",
+      secondaryPath: "/enitexa.ai/contact",
     },
     resources: [
       { label: "Google Analytics Documentation", url: "https://support.google.com/analytics/answer/1008015" },
@@ -2117,7 +2117,7 @@ export const learningMegaChapters = {
       ],
     },
   ],
-  "frontend-architecture": HEXENITY_PREMIUM_WEB_MEGA,
+  "frontend-architecture": ENITEXA_PREMIUM_WEB_MEGA,
   "backend-engineering": [
     {
       section: "Backend Fundamentals",
@@ -2274,8 +2274,8 @@ export const learningMegaChapters = {
       ],
     },
   ],
-  "ai-ml-integration": HEXENITY_PREMIUM_AI_MEGA,
-  "ui-ux-basics": HEXENITY_PREMIUM_UI_MEGA,
+  "ai-ml-integration": ENITEXA_PREMIUM_AI_MEGA,
+  "ui-ux-basics": ENITEXA_PREMIUM_UI_MEGA,
   "cybersecurity-basics": [
     {
       section: "Security Fundamentals",

@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import { ArrowRight, BarChart3, CheckCircle2, Clock3, GitBranch, Layers3, MessageCircle, Sparkles, ShieldCheck, TrendingUp } from 'lucide-react';
 import { servicesData } from '../../data/servicesData';
-import HexenityPageShell from './HexenityPageShell';
+import EnitexaPageShell from './EnitexaPageShell';
 
 const ServiceDetail = () => {
     const { slug } = useParams();
@@ -15,17 +15,17 @@ const ServiceDetail = () => {
 
     if (!service) {
         return (
-            <HexenityPageShell
+            <EnitexaPageShell
                 badge="Service"
                 title="Service Not Found"
                 subtitle="This service page could not be loaded."
                 backLabel="Back to Services"
-                onBack={() => navigate('/hexenity/services')}
+                onBack={() => navigate('/enitexa.ai/services')}
             >
                 <div className="rounded-3xl border border-white/10 bg-white/5 p-8 text-slate-200">
                     Please go back and choose a valid service.
                 </div>
-            </HexenityPageShell>
+            </EnitexaPageShell>
         );
     }
 
@@ -111,15 +111,15 @@ const ServiceDetail = () => {
         }));
 
     return (
-        <HexenityPageShell
+        <EnitexaPageShell
             badge="Service Detail"
             title={service.title}
             subtitle={service.overview}
             backLabel="Back to Services"
-            onBack={() => navigate('/hexenity/services')}
+            onBack={() => navigate('/enitexa.ai/services')}
             actions={(
                 <button
-                    onClick={() => navigate('/hexenity/contact')}
+                    onClick={() => navigate('/enitexa.ai/contact')}
                     className="inline-flex items-center gap-2 rounded-full border border-indigo-300/35 bg-indigo-500/20 px-4 py-2 text-xs font-semibold uppercase tracking-[0.13em] text-indigo-100 transition hover:bg-indigo-500/30"
                 >
                     Start Project
@@ -412,7 +412,7 @@ const ServiceDetail = () => {
                                 {relatedServices.map((item) => (
                                     <button
                                         key={item.slug}
-                                        onClick={() => navigate(`/hexenity/services/${item.slug}`)}
+                                        onClick={() => navigate(`/enitexa.ai/services/${item.slug}`)}
                                         data-cursor="View"
                                         className="group bg-[#0B0F19] p-7 text-left transition-colors duration-500 hover:bg-[#10152a]"
                                     >
@@ -506,19 +506,19 @@ const ServiceDetail = () => {
                                 <h3 className="pf-display text-xl font-bold text-white">Need a custom package?</h3>
                                 <p className="mt-2 text-sm leading-relaxed text-slate-400">Share your objectives and we will propose a tailored scope, timeline, and delivery model.</p>
                                 <button
-                                    onClick={() => navigate('/hexenity/contact')}
+                                    onClick={() => navigate('/enitexa.ai/contact')}
                                     data-cursor="Talk"
                                     className="mt-5 inline-flex items-center gap-2 rounded-full border border-white bg-white px-6 py-3 text-sm font-semibold text-black transition-all duration-500 hover:bg-transparent hover:text-white"
                                 >
                                     <MessageCircle className="h-4 w-4" />
-                                    Talk to Hexenity
+                                    Talk to Enitexa.Ai
                                 </button>
                             </div>
                         </aside>
                     </div>
                 </div>
             </div>
-        </HexenityPageShell>
+        </EnitexaPageShell>
     );
 };
 

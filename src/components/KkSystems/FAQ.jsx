@@ -3,15 +3,15 @@ import { Plus, Minus } from 'lucide-react';
 
 const faqData = [
     {
-        question: "What kind of businesses does Hexenity work with?",
+        question: "What kind of businesses does Enitexa.Ai work with?",
         answer: "We partner with startups, agencies, non-technical businesses, and enterprise teams that need digital systems, applications, automation, branding, or growth infrastructure."
     },
     {
         question: "Do we need an internal tech team before starting?",
-        answer: "No. Hexenity can act as your external innovation and execution team, handling discovery, design, engineering, launch, and optimization with clear governance."
+        answer: "No. Enitexa.Ai can act as your external innovation and execution team, handling discovery, design, engineering, launch, and optimization with clear governance."
     },
     {
-        question: "Can Hexenity handle both technology and growth services?",
+        question: "Can Enitexa.Ai handle both technology and growth services?",
         answer: "Yes. We support product engineering plus digital growth capabilities including branding, SEO, campaign systems, and conversion-focused optimization."
     },
     {
@@ -70,7 +70,7 @@ const FAQ = () => {
                         Frequently asked <span className="pf-outline-text">questions.</span>
                     </h2>
                     <p className="mx-auto max-w-2xl text-lg text-gray-400">
-                        Clear answers about our execution model, service coverage, and how Hexenity supports business growth.
+                        Clear answers about our execution model, service coverage, and how Enitexa.Ai supports business growth.
                     </p>
                 </div>
 

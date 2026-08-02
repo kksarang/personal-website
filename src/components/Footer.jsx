@@ -43,8 +43,8 @@ const Footer = () => {
                     <p className="max-w-md text-sm leading-relaxed">
                         Mobile Team Lead &amp; Full Stack Developer — building apps that feel as good as they work.
                     </p>
-                    <a href="/hexenity" className="port-mono text-[10px] font-semibold uppercase tracking-[0.2em] text-[#3f6212] transition hover:text-[#111110] dark:text-[#B8F03A] dark:hover:text-white">
-                        Hexenity →
+                    <a href="/enitexa.ai" className="port-mono text-[10px] font-semibold uppercase tracking-[0.2em] text-[#3f6212] transition hover:text-[#111110] dark:text-[#B8F03A] dark:hover:text-white">
+                        Enitexa.Ai →
                     </a>
                 </div>
             </div>

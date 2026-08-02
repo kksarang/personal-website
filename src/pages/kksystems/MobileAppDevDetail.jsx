@@ -2,7 +2,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { ArrowRight, CheckCircle2, Rocket, ShieldCheck, Smartphone, Sparkles } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
-import HexenityPageShell from '../../components/KkSystems/HexenityPageShell';
+import EnitexaPageShell from '../../components/KkSystems/EnitexaPageShell';
 
 const serviceBlocks = [
     {
@@ -25,15 +25,15 @@ export default function MobileAppDevDetail() {
     const navigate = useNavigate();
 
     return (
-        <HexenityPageShell
+        <EnitexaPageShell
             badge="Mobile Solution Detail"
             title="Mobile Engineering That Balances Speed and Quality"
-            subtitle="Hexenity helps teams build and release mobile products with a disciplined process, scalable architecture, and strong user experience standards."
+            subtitle="Enitexa.Ai helps teams build and release mobile products with a disciplined process, scalable architecture, and strong user experience standards."
             backLabel="Back to Mobile Solutions"
-            onBack={() => navigate('/hexenity/solutions/mobile')}
+            onBack={() => navigate('/enitexa.ai/solutions/mobile')}
             actions={(
                 <button
-                    onClick={() => navigate('/hexenity/contact')}
+                    onClick={() => navigate('/enitexa.ai/contact')}
                     className="inline-flex items-center gap-2 rounded-full border border-indigo-300/35 bg-indigo-500/20 px-4 py-2 text-xs font-semibold uppercase tracking-[0.13em] text-indigo-100 transition hover:bg-indigo-500/30"
                 >
                     Start Mobile Project
@@ -121,7 +121,7 @@ export default function MobileAppDevDetail() {
                     <h2 className="mt-3 text-3xl font-black text-white">Need a roadmap for your mobile product?</h2>
                     <p className="mx-auto mt-3 max-w-2xl text-slate-200">Share your current stage and we’ll suggest the right delivery model, team setup, and timeline.</p>
                     <button
-                        onClick={() => navigate('/hexenity/contact')}
+                        onClick={() => navigate('/enitexa.ai/contact')}
                         className="mt-6 inline-flex items-center gap-2 rounded-full bg-indigo-600 px-6 py-3 text-sm font-semibold text-white transition hover:bg-indigo-500"
                     >
                         <Rocket className="h-4 w-4" />
@@ -129,6 +129,6 @@ export default function MobileAppDevDetail() {
                     </button>
                 </section>
             </div>
-        </HexenityPageShell>
+        </EnitexaPageShell>
     );
 }

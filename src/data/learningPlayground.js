@@ -7,7 +7,7 @@ export const codePlaygroundTemplates = {
     accent: "bg-emerald-500",
     backgroundClass: "bg-[#D9EEE1]",
     topicSlug: "frontend-architecture",
-    html: `<h1 id="title">Hello from Hexenity Learning</h1>
+    html: `<h1 id="title">Hello from Enitexa.Ai Learning</h1>
 <p>Create structure using headings, paragraphs, buttons, forms, and lists.</p>
 <button onclick="document.getElementById('title').innerText = 'Great! You just edited HTML'">Click me</button>`,
     css: `body { font-family: Arial, sans-serif; padding: 16px; }
@@ -133,10 +133,10 @@ int main() {
     accent: "bg-yellow-600",
     backgroundClass: "bg-[#FFF9E6]",
     topicSlug: "ai-ml-integration",
-    code: `name = "Hexenity Learner"
+    code: `name = "Enitexa.Ai Learner"
 print("Hello", name)
 print("Python practice ready")`,
-    defaultOutput: "Hello Hexenity Learner\nPython practice ready",
+    defaultOutput: "Hello Enitexa.Ai Learner\nPython practice ready",
   },
   sql: {
     key: "sql",

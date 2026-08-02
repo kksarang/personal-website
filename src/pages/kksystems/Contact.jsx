@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { ArrowRight, CheckCircle2, Mail, MapPin, MessageCircle, Phone, Send, Sparkles } from 'lucide-react';
 import { motion as Motion } from 'framer-motion';
 import { useNavigate } from 'react-router-dom';
-import HexenityPageShell from '../../components/KkSystems/HexenityPageShell';
+import EnitexaPageShell from '../../components/KkSystems/EnitexaPageShell';
 
 const inquiryTypes = [
     { id: 'mobile', label: 'Mobile App' },
@@ -23,12 +23,12 @@ export default function Contact() {
     };
 
     return (
-        <HexenityPageShell
-            badge="Contact Hexenity"
+        <EnitexaPageShell
+            badge="Contact Enitexa.Ai"
             title="Let’s scope your next digital build"
             subtitle="Share your goals and we will respond with a practical plan, timeline estimate, and recommended execution model."
             backLabel="Back to Home"
-            onBack={() => navigate('/hexenity')}
+            onBack={() => navigate('/enitexa.ai')}
             actions={(
                 <span className="inline-flex items-center gap-2 rounded-full border border-emerald-300/35 bg-emerald-300/15 px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.12em] text-emerald-200">
                     <Sparkles className="h-3.5 w-3.5" />
@@ -41,7 +41,7 @@ export default function Contact() {
                     <article className="rounded-3xl border border-white/[0.08] bg-[#0B0F19] p-7">
                         <p className="pf-mono mb-2 text-[10px] uppercase tracking-[0.28em] text-slate-400">Direct Contact</p>
                         <div className="divide-y divide-white/[0.07]">
-                            <ContactRow icon={Mail} label="Email" value="info.hexenity@gmail.com" href="mailto:info.hexenity@gmail.com" />
+                            <ContactRow icon={Mail} label="Email" value="info.enitexa@gmail.com" href="mailto:info.enitexa@gmail.com" />
                             <ContactRow icon={Phone} label="Phone" value="+91 99952 54290" href="tel:+919995254290" />
                             <ContactRow icon={MapPin} label="Location" value="Kakkanad, Kochi, India" />
                         </div>
@@ -62,7 +62,7 @@ export default function Contact() {
                             <h3 className="pf-display text-xl font-bold text-white">Prefer a quick call?</h3>
                             <p className="mt-2 text-sm leading-relaxed text-slate-400">Send a short note and we’ll schedule an introductory call with the right team lead.</p>
                             <button
-                                onClick={() => navigate('/hexenity/work')}
+                                onClick={() => navigate('/enitexa.ai/work')}
                                 data-cursor="Work"
                                 className="mt-5 inline-flex items-center gap-2 rounded-full border border-white/20 px-6 py-3 text-sm font-semibold text-white transition-all duration-500 hover:border-white hover:bg-white/[0.05]"
                             >
@@ -149,7 +149,7 @@ export default function Contact() {
                     </form>
                 </Motion.section>
             </div>
-        </HexenityPageShell>
+        </EnitexaPageShell>
     );
 }
 

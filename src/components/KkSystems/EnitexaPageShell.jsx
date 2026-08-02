@@ -4,7 +4,7 @@ import { ArrowLeft } from 'lucide-react';
 /** @param {'standard' | 'toolbar'} props.shellHeader — toolbar = back/actions only for full-page marketing heroes */
 /** @param {'default' | 'saas-dark'} props.variant — saas-dark keeps correct dark backdrop in site light theme */
 /** @param {'compact'|'balanced'|'spacious'} props.toolbarSpacing — padding below fixed site navbar when shellHeader is toolbar */
-const HexenityPageShell = ({
+const EnitexaPageShell = ({
     badge,
     title,
     subtitle,
@@ -13,7 +13,7 @@ const HexenityPageShell = ({
     actions,
     children,
     shellHeader = 'standard',
-    /** Use dark SaaS chrome that survives Hexenity light-mode background overrides */
+    /** Use dark SaaS chrome that survives Enitexa.Ai light-mode background overrides */
     variant = 'default',
     toolbarSpacing = 'balanced',
 }) => {
@@ -39,13 +39,13 @@ const HexenityPageShell = ({
               : 'pt-32 sm:pt-36 lg:pt-40';
 
     const topPad = shellHeader === 'toolbar' ? toolbarTop : 'pt-28';
-    const chromeSurface = variant === 'saas-dark' ? 'hexenity-saas-shell-dark' : 'bg-[#070B17]';
+    const chromeSurface = variant === 'saas-dark' ? 'enitexa-saas-shell-dark' : 'bg-[#070B17]';
     const bottomPad = shellHeader === 'toolbar' ? 'pb-20 lg:pb-24' : 'pb-24 lg:pb-28';
 
     return (
         <div className={`relative min-h-screen overflow-x-hidden ${chromeSurface} ${bottomPad} ${topPad} text-white`}>
             <div className="pointer-events-none absolute inset-0">
-                <div className="hexenity-ambient absolute inset-0" />
+                <div className="enitexa-ambient absolute inset-0" />
                 <div className="pf-dotgrid absolute inset-0 opacity-40" />
                 <div className="absolute -left-20 top-6 h-72 w-72 rounded-full bg-indigo-500/15 blur-[70px]" />
                 <div className="absolute -right-16 bottom-0 h-72 w-72 rounded-full bg-fuchsia-500/10 blur-[75px]" />
@@ -95,4 +95,4 @@ const HexenityPageShell = ({
     );
 };
 
-export default HexenityPageShell;
+export default EnitexaPageShell;

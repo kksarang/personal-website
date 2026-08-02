@@ -11,11 +11,11 @@ import {
 } from 'lucide-react';
 
 const employees = [
-  { id: 1, name: 'Sarang K', role: 'Solutions Architect', email: 'sarang@hexenity.com', status: 'Active', joined: '2023-01-15' },
-  { id: 2, name: 'Sarah Miller', role: 'Fullstack Dev', email: 'sarah.m@hexenity.com', status: 'On Leave', joined: '2023-03-20' },
-  { id: 3, name: 'Michael Chen', role: 'AI Engineer', email: 'm.chen@hexenity.com', status: 'Active', joined: '2023-06-10' },
-  { id: 4, name: 'Emma Watson', role: 'Product Designer', email: 'emma.w@hexenity.com', status: 'Active', joined: '2023-07-02' },
-  { id: 5, name: 'John Doe', role: 'DevOps', email: 'j.doe@hexenity.com', status: 'Inactive', joined: '2022-11-28' },
+  { id: 1, name: 'Sarang K', role: 'Solutions Architect', email: 'sarang@enitexa.com', status: 'Active', joined: '2023-01-15' },
+  { id: 2, name: 'Sarah Miller', role: 'Fullstack Dev', email: 'sarah.m@enitexa.com', status: 'On Leave', joined: '2023-03-20' },
+  { id: 3, name: 'Michael Chen', role: 'AI Engineer', email: 'm.chen@enitexa.com', status: 'Active', joined: '2023-06-10' },
+  { id: 4, name: 'Emma Watson', role: 'Product Designer', email: 'emma.w@enitexa.com', status: 'Active', joined: '2023-07-02' },
+  { id: 5, name: 'John Doe', role: 'DevOps', email: 'j.doe@enitexa.com', status: 'Inactive', joined: '2022-11-28' },
 ];
 
 const Employees = () => {

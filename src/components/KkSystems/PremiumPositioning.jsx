@@ -16,7 +16,7 @@ export const Positioning = () => {
                     <div className="md:w-1/2">
                         <div className="pf-mono mb-6 flex items-center gap-4 text-[11px] uppercase tracking-[0.35em] text-slate-400">
                             <span className="text-indigo-300">(01)</span>
-                            <span>About Hexenity</span>
+                            <span>About Enitexa.Ai</span>
                             <span className="h-px flex-1 bg-white/[0.08]" />
                         </div>
                         <h2 className="pf-display mt-6 mb-6 text-[clamp(1.7rem,3.2vw,2.5rem)] font-bold leading-[1.05] text-white">
@@ -24,7 +24,7 @@ export const Positioning = () => {
                             <span className="block text-indigo-300">A complete digital execution partner.</span>
                         </h2>
                         <p className="mb-8 text-lg leading-relaxed text-gray-400">
-                            Hexenity helps corporations, agencies, startups, and local businesses build digital presence, applications, automation systems, AI integrations, branding, and growth infrastructure with one unified partner model.
+                            Enitexa.Ai helps corporations, agencies, startups, and local businesses build digital presence, applications, automation systems, AI integrations, branding, and growth infrastructure with one unified partner model.
                         </p>
                         <div className="border-t border-white/[0.08]">
                             {highlights.map((item, idx) => (
@@ -73,7 +73,7 @@ export const CoreOfferings = () => {
             description: 'Product engineering for apps, platforms, and operational systems.',
             items: ['Mobile + Web Apps', 'SaaS Platforms', 'Business Dashboards'],
             icon: Smartphone,
-            link: '/hexenity/services',
+            link: '/enitexa.ai/services',
         },
         {
             index: '02',
@@ -81,7 +81,7 @@ export const CoreOfferings = () => {
             description: 'Digital marketing, SEO, branding, and conversion-focused UX systems.',
             items: ['Digital Marketing', 'SEO + Branding', 'UI/UX Transformation'],
             icon: Cog,
-            link: '/hexenity/services',
+            link: '/enitexa.ai/services',
         },
         {
             index: '03',
@@ -89,7 +89,7 @@ export const CoreOfferings = () => {
             description: 'AI, automation, and enterprise architecture for long-term scale.',
             items: ['AI Integrations', 'Automation Systems', 'Cloud + Security Layer'],
             icon: TrendingUp,
-            link: '/hexenity/services',
+            link: '/enitexa.ai/services',
         },
     ];
 

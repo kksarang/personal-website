@@ -50,7 +50,7 @@ const Testimonials = () => {
 
                 <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
                     <TestimonialCard
-                        quote="Hexenity became our external product and technology team. Their structured process made delivery predictable and premium."
+                        quote="Enitexa.Ai became our external product and technology team. Their structured process made delivery predictable and premium."
                         author="Rahul"
                         role="Director"
                         company="Automotive Brand"

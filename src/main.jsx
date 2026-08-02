@@ -3,7 +3,7 @@ import { createRoot } from 'react-dom/client'
 import './index.css'
 import App from './App.jsx'
 
-const storedTheme = localStorage.getItem('hexenity-theme')
+const storedTheme = localStorage.getItem('enitexa-theme')
 const shouldUseDark = storedTheme
   ? storedTheme === 'dark'
   : window.matchMedia('(prefers-color-scheme: dark)').matches

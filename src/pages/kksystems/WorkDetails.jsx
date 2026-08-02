@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import { ArrowRight, ExternalLink, CheckCircle2, Star, Briefcase, ShieldCheck } from 'lucide-react';
 import { projects } from '../../data/projects';
-import HexenityPageShell from '../../components/KkSystems/HexenityPageShell';
+import EnitexaPageShell from '../../components/KkSystems/EnitexaPageShell';
 
 export default function WorkDetails() {
     const { id } = useParams();
@@ -15,12 +15,12 @@ export default function WorkDetails() {
 
     if (!project) {
         return (
-            <HexenityPageShell
+            <EnitexaPageShell
                 badge="Case Study"
                 title="Case Study Not Found"
                 subtitle="The selected project detail is unavailable."
                 backLabel="Back to Work"
-                onBack={() => navigate('/hexenity/work')}
+                onBack={() => navigate('/enitexa.ai/work')}
             />
         );
     }
@@ -35,12 +35,12 @@ export default function WorkDetails() {
     ];
 
     return (
-        <HexenityPageShell
+        <EnitexaPageShell
             badge="Case Study"
             title={project.title}
             subtitle={project.description}
             backLabel="Back to Work"
-            onBack={() => navigate('/hexenity/work')}
+            onBack={() => navigate('/enitexa.ai/work')}
             actions={(
                 <>
                     {primaryLink ? (
@@ -57,7 +57,7 @@ export default function WorkDetails() {
                     {project.slug === 'cleanso' ? (
                         <button
                             type="button"
-                            onClick={() => navigate('/hexenity/solutions/laundry')}
+                            onClick={() => navigate('/enitexa.ai/solutions/laundry')}
                             className="inline-flex items-center gap-2 rounded-full border border-indigo-300/35 bg-indigo-500/20 px-4 py-2 text-xs font-semibold uppercase tracking-[0.13em] text-indigo-100 transition hover:bg-indigo-500/30"
                         >
                             Product plan
@@ -216,7 +216,7 @@ export default function WorkDetails() {
                         <p className="mt-2 text-sm leading-relaxed text-slate-400">Share your requirements and we will propose the right architecture, timeline, and engagement model.</p>
                         <button
                             type="button"
-                            onClick={() => navigate('/hexenity/contact')}
+                            onClick={() => navigate('/enitexa.ai/contact')}
                             data-cursor="Talk"
                             className="mt-5 inline-flex items-center gap-2 rounded-full border border-white bg-white px-6 py-3 text-sm font-semibold text-black transition-all duration-500 hover:bg-transparent hover:text-white"
                         >
@@ -226,7 +226,7 @@ export default function WorkDetails() {
                     </section>
                 </aside>
             </div>
-        </HexenityPageShell>
+        </EnitexaPageShell>
     );
 }
 

@@ -1,7 +1,7 @@
 import React, { useMemo, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { ArrowRight, BookOpen, Clock3, Filter, GraduationCap, PlayCircle, Search, Sparkles } from 'lucide-react';
-import HexenityPageShell from '../../components/KkSystems/HexenityPageShell';
+import EnitexaPageShell from '../../components/KkSystems/EnitexaPageShell';
 import { learningTopics } from '../../data/learning';
 import { learningCategorySections, learningDetailsContent, learningMegaChapters } from '../../data/learningCatalog';
 import { allPracticeTemplates } from '../../data/learningPlayground';
@@ -43,12 +43,12 @@ export default function Learning() {
     }, [allTopics, activeCategory, query]);
 
     return (
-        <HexenityPageShell
+        <EnitexaPageShell
             badge="Learning Hub"
             title="A detailed learning portal for freshers and working developers"
             subtitle="Browse structured materials, roadmap-driven guides, real project practice, and interview-focused preparation across mobile, web, backend, cloud, AI, and security."
             backLabel="Back to Home"
-            onBack={() => navigate('/hexenity')}
+            onBack={() => navigate('/enitexa.ai')}
         >
             <div className="space-y-8">
                 <section className="premium-surface gradient-stroke rounded-3xl p-7">
@@ -69,7 +69,7 @@ export default function Learning() {
                             </div>
                             <button
                                 type="button"
-                                onClick={() => navigate('/hexenity/learning/practice')}
+                                onClick={() => navigate('/enitexa.ai/learning/practice')}
                                 className="mt-5 inline-flex items-center gap-2 rounded-full border border-emerald-300/35 bg-emerald-500/15 px-4 py-2 text-xs font-semibold uppercase tracking-[0.12em] text-emerald-100 transition hover:bg-emerald-500/25"
                             >
                                 <PlayCircle className="h-3.5 w-3.5" />
@@ -137,7 +137,7 @@ export default function Learning() {
                             <button
                                 key={template.key}
                                 type="button"
-                                onClick={() => navigate(`/hexenity/learning/practice/live?template=${template.key}`)}
+                                onClick={() => navigate(`/enitexa.ai/learning/practice/live?template=${template.key}`)}
                                 className="rounded-full border border-white/10 bg-white/5 px-3 py-1.5 text-xs font-semibold uppercase tracking-[0.12em] text-slate-100 transition hover:border-emerald-300/35 hover:text-emerald-100"
                             >
                                 {template.title}
@@ -145,7 +145,7 @@ export default function Learning() {
                         ))}
                         <button
                             type="button"
-                            onClick={() => navigate('/hexenity/learning/practice')}
+                            onClick={() => navigate('/enitexa.ai/learning/practice')}
                             className="rounded-full border border-emerald-300/35 bg-emerald-500/15 px-3 py-1.5 text-xs font-semibold uppercase tracking-[0.12em] text-emerald-100 transition hover:bg-emerald-500/25"
                         >
                             Open Full Practice Hub
@@ -186,7 +186,7 @@ export default function Learning() {
                                     return (
                                         <button
                                             key={topic.slug}
-                                            onClick={() => navigate(`/hexenity/learning/${topic.slug}`)}
+                                            onClick={() => navigate(`/enitexa.ai/learning/${topic.slug}`)}
                                             className="group rounded-2xl border border-white/[0.07] bg-white/[0.03] p-6 transition-colors duration-300 hover:border-indigo-300/30 text-left transition hover:border-indigo-300/40 hover:bg-white/10"
                                         >
                                             <p className="pf-display text-2xl font-bold text-white">{topic.title}</p>
@@ -240,7 +240,7 @@ export default function Learning() {
                                     ) : null}
                                     <button
                                         type="button"
-                                        onClick={() => navigate(`/hexenity/learning/${topic.slug}`)}
+                                        onClick={() => navigate(`/enitexa.ai/learning/${topic.slug}`)}
                                         className="mt-5 inline-flex items-center gap-2 rounded-full border border-indigo-300/30 bg-indigo-500/15 px-4 py-2 text-sm font-semibold text-indigo-100 transition hover:bg-indigo-500/25"
                                     >
                                         Open Detailed Guide
@@ -265,7 +265,7 @@ export default function Learning() {
                             return (
                                 <button
                                     key={topic.slug}
-                                    onClick={() => navigate(`/hexenity/learning/${topic.slug}`)}
+                                    onClick={() => navigate(`/enitexa.ai/learning/${topic.slug}`)}
                                     className="group overflow-hidden rounded-2xl border border-white/10 bg-white/5 text-left transition hover:border-indigo-300/40 hover:bg-white/10"
                                 >
                                     {hasImage ? (
@@ -314,7 +314,7 @@ export default function Learning() {
                     </div>
                 </section>
             </div>
-        </HexenityPageShell>
+        </EnitexaPageShell>
     );
 }
 

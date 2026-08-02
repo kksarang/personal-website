@@ -2,7 +2,7 @@ import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import { motion as Motion } from 'framer-motion';
 import { ArrowRight, Building2, Globe2, Linkedin, Shield, Target, Users, Zap } from 'lucide-react';
-import HexenityPageShell from '../../components/KkSystems/HexenityPageShell';
+import EnitexaPageShell from '../../components/KkSystems/EnitexaPageShell';
 
 const founders = [
     {
@@ -97,16 +97,16 @@ export default function About() {
     const navigate = useNavigate();
 
     return (
-        <HexenityPageShell
-            badge="About Hexenity"
+        <EnitexaPageShell
+            badge="About Enitexa.Ai"
             title="A strategic technology partner for ambitious organizations"
-            subtitle="Hexenity combines product strategy, engineering discipline, and executive-level communication to deliver reliable digital systems that scale."
+            subtitle="Enitexa.Ai combines product strategy, engineering discipline, and executive-level communication to deliver reliable digital systems that scale."
             backLabel="Back to Home"
-            onBack={() => navigate('/hexenity')}
+            onBack={() => navigate('/enitexa.ai')}
             actions={(
                 <button
                     type="button"
-                    onClick={() => navigate('/hexenity/contact')}
+                    onClick={() => navigate('/enitexa.ai/contact')}
                     className="inline-flex items-center gap-2 rounded-full border border-indigo-300/35 bg-indigo-500/20 px-4 py-2 text-xs font-semibold uppercase tracking-[0.13em] text-indigo-100 transition hover:bg-indigo-500/30"
                 >
                     Contact Leadership
@@ -140,7 +140,7 @@ export default function About() {
                                 Built to bridge business decisions and technical execution.
                             </h2>
                             <p className="mt-5 max-w-2xl leading-relaxed text-slate-300">
-                                Hexenity was built to bridge the gap between fast-moving business decisions and high-quality technical execution. We support
+                                Enitexa.Ai was built to bridge the gap between fast-moving business decisions and high-quality technical execution. We support
                                 founders, operational leaders, and enterprise teams with practical architecture, accountable delivery, and long-term product stability.
                             </p>
                             <p className="mt-3 max-w-2xl leading-relaxed text-slate-300">
@@ -224,14 +224,14 @@ export default function About() {
                     <div className="relative">
                         <p className="pf-mono mb-4 text-[10px] uppercase tracking-[0.3em] text-indigo-300">Let’s Talk</p>
                         <h2 className="pf-display mx-auto max-w-2xl text-[clamp(1.8rem,3.6vw,2.8rem)] font-bold leading-tight text-white">
-                            Partner with Hexenity
+                            Partner with Enitexa.Ai
                         </h2>
                         <p className="mx-auto mt-4 max-w-2xl leading-relaxed text-slate-400">
                             If you are looking for a reliable technology partner with strategic clarity and execution accountability, our leadership team would be glad to connect.
                         </p>
                         <button
                             type="button"
-                            onClick={() => navigate('/hexenity/contact')}
+                            onClick={() => navigate('/enitexa.ai/contact')}
                             data-cursor="Talk"
                             className="mt-8 inline-flex items-center gap-2 rounded-full border border-white bg-white px-8 py-4 text-sm font-semibold text-black transition-all duration-500 hover:bg-transparent hover:text-white"
                         >
@@ -241,6 +241,6 @@ export default function About() {
                     </div>
                 </section>
             </div>
-        </HexenityPageShell>
+        </EnitexaPageShell>
     );
 }
