@@ -380,21 +380,26 @@ body {
     color: #6366f1 !important;
   }
 
-  /* Positioning section — editorial manifesto light surface */
-  html:not(.dark) .enitexa-root .enitexa-positioning {
+  /* Editorial home + positioning light surfaces */
+  html:not(.dark) .enitexa-root .enitexa-positioning,
+  html:not(.dark) .enitexa-root .enitexa-editorial {
     background:
-      radial-gradient(ellipse 80% 55% at 10% 0%, rgba(99, 102, 241, 0.1), transparent 55%),
-      radial-gradient(ellipse 60% 45% at 90% 100%, rgba(167, 139, 250, 0.06), transparent 50%),
+      radial-gradient(ellipse 80% 55% at 10% 0%, rgba(99, 102, 241, 0.08), transparent 55%),
       #f4f5f8 !important;
   }
-  html:not(.dark) .enitexa-root .enitexa-positioning .pf-outline-text {
+  html:not(.dark) .enitexa-root .enitexa-positioning .pf-outline-text,
+  html:not(.dark) .enitexa-root .enitexa-editorial .pf-outline-text {
     -webkit-text-stroke-color: rgba(15, 23, 42, 0.28);
     color: transparent;
   }
-  html:not(.dark) .enitexa-root .enitexa-positioning-continuum .bg-white\/\[0\.08\],
   html:not(.dark) .enitexa-root .enitexa-positioning [class*='border-white/[0.08]'],
-  html:not(.dark) .enitexa-root .enitexa-positioning [class*='border-white/[0.1]'] {
+  html:not(.dark) .enitexa-root .enitexa-positioning [class*='border-white/[0.1]'],
+  html:not(.dark) .enitexa-root .enitexa-editorial [class*='border-white/[0.08]'],
+  html:not(.dark) .enitexa-root .enitexa-editorial [class*='border-white/[0.06]'] {
     border-color: rgba(15, 23, 42, 0.1) !important;
+  }
+  html:not(.dark) .enitexa-root .enitexa-editorial .bg-\[\#0B0F19\] {
+    background-color: #f4f5f8 !important;
   }
 
   /* Text opacity tiers used by the premium hero + sections */

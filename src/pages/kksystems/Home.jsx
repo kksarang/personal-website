@@ -1,21 +1,22 @@
 import React, { useEffect, useState } from 'react';
 import { AnimatePresence, motion as Motion } from 'framer-motion';
 import PremiumHero from '../../components/KkSystems/PremiumHero';
-import { Positioning, CoreOfferings } from '../../components/KkSystems/PremiumPositioning';
-import { PremiumSolutions, ProductLayer } from '../../components/KkSystems/PremiumSolutions';
-import { ImpactMetrics, HowWeWork, Industries, GlobalPresence } from '../../components/KkSystems/PremiumTrust';
-import { TechStack, WhyEnitexa, ERPDemoEntry } from '../../components/KkSystems/PremiumFinal';
-import EnitexaValueStack from '../../components/KkSystems/EnitexaValueStack';
+import { Positioning } from '../../components/KkSystems/PremiumPositioning';
+import {
+    ServiceIndex,
+    ProcessStrip,
+    ProofBand,
+    ProductSpotlight,
+    Voices,
+} from '../../components/KkSystems/EditorialHomeSections';
 import EnitexaMark from '../../components/KkSystems/EnitexaMark';
-import TrustedBy from '../../components/KkSystems/TrustedBy';
-import Testimonials from '../../components/KkSystems/Testimonials';
 import FAQ from '../../components/KkSystems/FAQ';
 
 const sectionReveal = {
-    initial: { opacity: 0, y: 28 },
+    initial: { opacity: 0, y: 24 },
     whileInView: { opacity: 1, y: 0 },
-    viewport: { once: true, amount: 0.16 },
-    transition: { duration: 0.65, ease: [0.22, 1, 0.36, 1] },
+    viewport: { once: true, amount: 0.14 },
+    transition: { duration: 0.6, ease: [0.22, 1, 0.36, 1] },
 };
 
 const RevealSection = ({ children }) => (
@@ -31,19 +32,18 @@ const RevealSection = ({ children }) => (
 
 const MARQUEE_ITEMS = ['Mobile Apps', 'Web Platforms', 'AI Systems', 'ERP', 'Branding', 'Automation', 'Growth'];
 
-/* Giant kinetic type ribbon between hero and content */
 const KineticStrip = () => (
-    <div className="enitexa-kinetic-strip overflow-hidden border-y border-white/5 bg-[#07080f] py-7">
+    <div className="enitexa-kinetic-strip overflow-hidden border-y border-white/5 bg-[#07080f] py-6 sm:py-7">
         <div className="pf-marquee">
             {[0, 1].map((dup) => (
                 <div key={dup} className="pf-marquee-track" aria-hidden={dup === 1}>
                     {MARQUEE_ITEMS.map((item) => (
                         <span
                             key={item}
-                            className="pf-display flex shrink-0 items-center gap-8 whitespace-nowrap text-[clamp(1.6rem,3.4vw,2.7rem)] font-extrabold leading-none"
+                            className="pf-display flex shrink-0 items-center gap-8 whitespace-nowrap text-[clamp(1.45rem,3.2vw,2.5rem)] font-extrabold leading-none"
                         >
                             <span className="pf-outline-text">{item}</span>
-                            <span className="text-xl text-indigo-400">✦</span>
+                            <span className="text-lg text-indigo-400/80">/</span>
                         </span>
                     ))}
                 </div>
@@ -63,12 +63,12 @@ const KksystemsHome = () => {
         const timer = setTimeout(() => {
             sessionStorage.setItem('enitexa-intro-seen', 'true');
             setShowIntro(false);
-        }, 2000);
+        }, 1800);
         return () => clearTimeout(timer);
     }, [showIntro]);
 
     return (
-        <div className="w-full min-h-screen bg-white font-sans text-gray-900 transition-colors duration-300 overflow-x-hidden dark:bg-[#0B0F19] dark:text-white">
+        <div className="w-full min-h-screen overflow-x-hidden bg-white font-sans text-gray-900 transition-colors duration-300 dark:bg-[#0B0F19] dark:text-white">
             <AnimatePresence>
                 {showIntro && (
                     <Motion.div
@@ -91,7 +91,7 @@ const KksystemsHome = () => {
                                     <Motion.div
                                         initial={{ width: '0%' }}
                                         animate={{ width: '100%' }}
-                                        transition={{ duration: 1.6, ease: 'easeInOut' }}
+                                        transition={{ duration: 1.5, ease: 'easeInOut' }}
                                         className="h-1 bg-gradient-to-r from-indigo-400 via-violet-400 to-fuchsia-400"
                                     />
                                 </div>
@@ -101,85 +101,38 @@ const KksystemsHome = () => {
                 )}
             </AnimatePresence>
 
-            {/* 1. Hero (Impact) & 2. Trust + Stats (Inside Hero) */}
             <RevealSection>
                 <PremiumHero />
             </RevealSection>
 
-            {/* Kinetic type ribbon */}
             <KineticStrip />
 
-            {/* 2. Trusted By / Partners */}
-            <RevealSection>
-                <TrustedBy />
-            </RevealSection>
-
-            {/* 3. What Enitexa.Ai Is (Positioning) */}
             <RevealSection>
                 <Positioning />
             </RevealSection>
+
             <RevealSection>
-                <EnitexaValueStack />
+                <ServiceIndex />
             </RevealSection>
 
-            {/* 4. Core Offerings (Build / Optimize / Scale) */}
             <RevealSection>
-                <CoreOfferings />
+                <ProcessStrip />
             </RevealSection>
 
-            {/* 5. Solutions (Mobile / Web / ERP) */}
             <RevealSection>
-                <PremiumSolutions />
+                <ProofBand />
             </RevealSection>
 
-            {/* 6. Product Layer (ERP + AI) */}
             <RevealSection>
-                <ProductLayer />
+                <ProductSpotlight />
             </RevealSection>
 
-            {/* 7. Impact Metrics */}
             <RevealSection>
-                <ImpactMetrics />
+                <Voices />
             </RevealSection>
 
-            {/* 8. How We Work (Process) */}
-            <RevealSection>
-                <HowWeWork />
-            </RevealSection>
-
-            {/* 9. Industries */}
-            <RevealSection>
-                <Industries />
-            </RevealSection>
-
-            {/* 10. Global Presence */}
-            <RevealSection>
-                <GlobalPresence />
-            </RevealSection>
-
-            {/* 11. Tech Stack */}
-            <RevealSection>
-                <TechStack />
-            </RevealSection>
-
-            {/* 12. Why Enitexa.Ai (Differentiation) */}
-            <RevealSection>
-                <WhyEnitexa />
-            </RevealSection>
-
-            {/* 13. Testimonials */}
-            <RevealSection>
-                <Testimonials />
-            </RevealSection>
-
-            {/* 14. FAQ */}
             <RevealSection>
                 <FAQ />
-            </RevealSection>
-
-            {/* 15. Demo ERP Entry */}
-            <RevealSection>
-                <ERPDemoEntry />
             </RevealSection>
         </div>
     );

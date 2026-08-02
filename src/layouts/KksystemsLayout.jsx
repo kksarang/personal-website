@@ -113,10 +113,12 @@ const EnitexaFooter = () => (
             <div className="flex flex-col items-start justify-between gap-10 pb-16 md:flex-row md:items-end">
                 <Link to="/enitexa.ai/contact" data-cursor="Say hi" className="group block">
                     <p className="pf-mono mb-5 text-[11px] uppercase tracking-[0.35em] text-white/35">
-                        Ready to scale your business?
+                        Next step
                     </p>
-                    <h2 className="pf-cta-giant pf-display text-[clamp(2rem,5vw,4rem)] font-extrabold leading-[0.95] text-white">
-                        Start a project
+                    <h2 className="pf-cta-giant pf-display text-[clamp(2.1rem,5.5vw,4.25rem)] font-extrabold leading-[0.92] tracking-[-0.03em] text-white">
+                        Let’s build
+                        <br />
+                        <span className="pf-outline-text">what’s next</span>
                         <span className="pf-gradient-text">.</span>
                     </h2>
                 </Link>

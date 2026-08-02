@@ -133,7 +133,7 @@ const KksystemsNavbar = () => {
                     <EnitexaMark height={22} />
                 </a>
 
-                <div className="hidden items-center gap-5 lg:flex xl:gap-7">
+                <div className="hidden items-center gap-6 lg:flex xl:gap-8">
                     {NAV_LINKS.map((link) => {
                         const active = linkIsActive(link);
                         return (
@@ -141,11 +141,10 @@ const KksystemsNavbar = () => {
                                 key={link.title}
                                 href={link.href}
                                 onClick={(e) => handleNavClick(e, link.href)}
-                                className={`enitexa-nav-link-item group pf-mono relative text-[10.5px] uppercase tracking-[0.22em] transition-colors duration-300 ${
-                                    active ? 'text-indigo-300' : 'text-slate-400 hover:text-white'
+                                className={`enitexa-nav-link-item group pf-mono relative text-[10px] uppercase tracking-[0.2em] transition-colors duration-300 ${
+                                    active ? 'text-white' : 'text-slate-500 hover:text-white'
                                 }`}
                             >
-                                <sup className="mr-1 text-[8px] text-indigo-400/60">{link.index}</sup>
                                 {link.title}
                                 <span
                                     className={`absolute -bottom-1.5 left-0 h-px bg-indigo-400 transition-all duration-500 ${

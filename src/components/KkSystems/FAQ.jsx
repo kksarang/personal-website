@@ -50,55 +50,52 @@ const FAQ = () => {
     };
 
     return (
-        <section className="relative bg-[#0A0B14] py-24">
-            {/* Inject SEO Structured Data */}
+        <section className="enitexa-editorial relative border-t border-white/[0.06] bg-[#0B0F19] py-20 sm:py-28">
             <script
                 type="application/ld+json"
                 dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
             />
 
-            {/* Background elements */}
-            <div className="absolute top-0 right-0 w-1/2 h-1/2 bg-indigo-600/5 rounded-bl-[100px] pointer-events-none" />
-
-            <div className="relative z-10 mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
-                <div className="mb-16 text-center">
-                    <div className="pf-mono mb-6 flex items-center justify-center gap-4 text-[11px] uppercase tracking-[0.35em] text-slate-400">
+            <div className="relative z-10 mx-auto max-w-[90rem] px-4 sm:px-10 lg:px-16">
+                <div className="mb-12 max-w-3xl sm:mb-16">
+                    <div className="pf-mono mb-6 flex items-center gap-3 text-[10px] uppercase tracking-[0.32em] text-slate-500 sm:text-[11px]">
                         <span className="text-indigo-300">(07)</span>
                         <span>FAQ</span>
+                        <span className="h-px flex-1 bg-white/[0.08]" />
                     </div>
-                    <h2 className="pf-display mb-6 text-[clamp(1.7rem,3.2vw,2.5rem)] font-bold text-white">
-                        Frequently asked <span className="pf-outline-text">questions.</span>
+                    <h2 className="pf-display text-[clamp(1.85rem,4.5vw,3.1rem)] font-extrabold leading-[1.02] tracking-[-0.03em] text-white">
+                        Questions, answered.
                     </h2>
-                    <p className="mx-auto max-w-2xl text-lg text-gray-400">
-                        Clear answers about our execution model, service coverage, and how Enitexa.Ai supports business growth.
+                    <p className="mt-5 max-w-xl text-sm leading-relaxed text-slate-400 sm:text-base">
+                        How we work, who we partner with, and what to expect from an Enitexa.Ai engagement.
                     </p>
                 </div>
 
-                <div className="border-t border-white/[0.08]">
+                <div className="max-w-4xl border-t border-white/[0.08]">
                     {faqData.map((faq, index) => {
                         const isOpen = activeIndex === index;
                         return (
                             <div key={index} className="border-b border-white/[0.08]">
                                 <button
-                                    className="group flex w-full items-baseline gap-5 py-6 text-left focus:outline-none sm:gap-8"
+                                    className="group flex w-full items-baseline gap-4 py-6 text-left focus:outline-none sm:gap-8"
                                     onClick={() => toggleFAQ(index)}
                                     aria-expanded={isOpen}
                                 >
                                     <span className={`pf-mono text-xs transition-colors duration-300 ${isOpen ? 'text-indigo-300' : 'text-slate-500'}`}>
                                         0{index + 1}
                                     </span>
-                                    <span className={`pf-display flex-1 text-lg font-bold transition-colors duration-300 sm:text-xl ${isOpen ? 'text-indigo-300' : 'text-white group-hover:text-indigo-300'}`}>
+                                    <span className={`pf-display flex-1 text-base font-bold transition-colors duration-300 sm:text-xl ${isOpen ? 'text-white' : 'text-white/90 group-hover:text-white'}`}>
                                         {faq.question}
                                     </span>
-                                    <div className={`flex-shrink-0 self-center transition-transform duration-300 ${isOpen ? 'rotate-180 text-indigo-300' : 'text-gray-500 group-hover:text-indigo-300'}`}>
-                                        {isOpen ? <Minus className="w-5 h-5" /> : <Plus className="w-5 h-5" />}
+                                    <div className={`flex-shrink-0 self-center transition-colors duration-300 ${isOpen ? 'text-indigo-300' : 'text-slate-600 group-hover:text-slate-300'}`}>
+                                        {isOpen ? <Minus className="h-5 w-5" /> : <Plus className="h-5 w-5" />}
                                     </div>
                                 </button>
 
                                 <div
                                     className={`overflow-hidden transition-all duration-300 ease-in-out ${isOpen ? 'max-h-96 opacity-100 pb-6' : 'max-h-0 opacity-0'}`}
                                 >
-                                    <p className="pl-10 pr-8 leading-relaxed text-slate-300 sm:pl-14">
+                                    <p className="max-w-2xl pl-10 text-sm leading-relaxed text-slate-400 sm:pl-14 sm:text-base">
                                         {faq.answer}
                                     </p>
                                 </div>
