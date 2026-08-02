@@ -380,6 +380,21 @@ body {
     color: #6366f1 !important;
   }
 
+  /* Positioning section light polish */
+  html:not(.dark) .enitexa-root .enitexa-positioning {
+    background:
+      radial-gradient(ellipse 60% 50% at 0% 20%, rgba(99, 102, 241, 0.08), transparent 55%),
+      radial-gradient(ellipse 50% 40% at 100% 80%, rgba(236, 72, 153, 0.05), transparent 50%),
+      #f7f8fb !important;
+  }
+  html:not(.dark) .enitexa-root .enitexa-positioning [class*='bg-[#070b14]'],
+  html:not(.dark) .enitexa-root .enitexa-positioning [class*='bg-[#070B14]'] {
+    background-color: rgba(255, 255, 255, 0.92) !important;
+  }
+  html:not(.dark) .enitexa-root .enitexa-positioning [class*='shadow-['] {
+    box-shadow: 0 24px 60px -36px rgba(15, 23, 42, 0.28) !important;
+  }
+
   /* Text opacity tiers used by the premium hero + sections */
   html:not(.dark) .enitexa-root .text-white\/70,
   html:not(.dark) .enitexa-root .text-white\/55 {
