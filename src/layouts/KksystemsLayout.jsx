@@ -134,10 +134,9 @@ const EnitexaFooter = () => (
             {/* Link columns */}
             <div className="grid grid-cols-2 gap-8 border-t border-white/[0.07] py-12 sm:gap-10 sm:py-14 md:grid-cols-5">
                 <div className="col-span-2">
-                    <p className="pf-display flex items-center gap-3 text-lg font-bold text-white sm:text-xl">
-                        <EnitexaMark size={28} />
-                        <span>Enitexa.Ai</span>
-                    </p>
+                    <div className="flex items-center">
+                        <EnitexaMark height={30} alt="Enitexa.Ai" />
+                    </div>
                     <p className="pf-mono mt-5 text-[10px] uppercase tracking-[0.3em] text-indigo-300/80">
                         Digital & Software Solutions
                     </p>

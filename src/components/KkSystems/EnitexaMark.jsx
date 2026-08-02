@@ -1,58 +1,67 @@
-import React, { useId } from 'react';
+import React from 'react';
+
+const WORDMARK_LIGHT = '/assets/enitexa-wordmark-light.png'; // white letters
+const WORDMARK_DARK = '/assets/enitexa-wordmark-dark.png'; // black letters
 
 /**
- * Enitexa.Ai brand mark — gradient hexagon with an inner "E" monogram.
- * Scales via the `size` prop (px) or className.
+ * Official Enitexa.Ai wordmark.
+ * - default: theme-aware (black on light, white on dark)
+ * - tone="light" | "dark": force a specific wordmark (for always-dark surfaces)
  */
-const EnitexaMark = ({ size = 28, className = '', withGlow = false }) => {
-    const uid = useId().replace(/:/g, '');
-    const gradId = `hexg-${uid}`;
+const EnitexaMark = ({
+    height = 22,
+    size,
+    className = '',
+    withGlow = false,
+    tone = 'auto',
+    alt = 'Enitexa.Ai',
+}) => {
+    const h = size ?? height;
+    const glowClass = withGlow ? 'drop-shadow-[0_0_18px_rgba(129,140,248,0.45)]' : '';
+    const style = { height: h, width: 'auto' };
+
+    if (tone === 'light') {
+        return (
+            <img
+                src={WORDMARK_LIGHT}
+                alt={alt}
+                style={style}
+                className={`inline-block ${glowClass} ${className}`}
+                draggable={false}
+            />
+        );
+    }
+
+    if (tone === 'dark') {
+        return (
+            <img
+                src={WORDMARK_DARK}
+                alt={alt}
+                style={style}
+                className={`inline-block ${glowClass} ${className}`}
+                draggable={false}
+            />
+        );
+    }
 
     return (
-        <svg
-            width={size}
-            height={size}
-            viewBox="0 0 64 64"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-            className={className}
-            aria-hidden="true"
-        >
-            <defs>
-                <linearGradient id={gradId} x1="8" y1="6" x2="56" y2="58" gradientUnits="userSpaceOnUse">
-                    <stop offset="0%" stopColor="#818cf8" />
-                    <stop offset="50%" stopColor="#a78bfa" />
-                    <stop offset="100%" stopColor="#f472b6" />
-                </linearGradient>
-                {withGlow && (
-                    <filter id={`glow-${uid}`} x="-40%" y="-40%" width="180%" height="180%">
-                        <feGaussianBlur stdDeviation="3" result="b" />
-                        <feMerge>
-                            <feMergeNode in="b" />
-                            <feMergeNode in="SourceGraphic" />
-                        </feMerge>
-                    </filter>
-                )}
-            </defs>
-
-            <g filter={withGlow ? `url(#glow-${uid})` : undefined}>
-                {/* Outer hexagon */}
-                <path
-                    d="M32 3 L57 17.5 V46.5 L32 61 L7 46.5 V17.5 Z"
-                    stroke={`url(#${gradId})`}
-                    strokeWidth="3.5"
-                    strokeLinejoin="round"
-                />
-                {/* Inner E monogram */}
-                <path
-                    d="M40 20 H24 V44 H40 M24 32 H36"
-                    stroke={`url(#${gradId})`}
-                    strokeWidth="4"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                />
-            </g>
-        </svg>
+        <span className={`relative inline-flex shrink-0 items-center ${glowClass} ${className}`}>
+            <img
+                src={WORDMARK_LIGHT}
+                alt={alt}
+                style={style}
+                className="hidden dark:inline-block"
+                draggable={false}
+            />
+            <img
+                src={WORDMARK_DARK}
+                alt=""
+                aria-hidden="true"
+                style={style}
+                className="inline-block dark:hidden"
+                draggable={false}
+            />
+        </span>
     );
 };
 

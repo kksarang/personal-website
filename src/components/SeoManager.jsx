@@ -8,6 +8,8 @@ const DEFAULTS = {
   image: 'https://sarangrajan.in/logo.png',
 };
 
+const ENITEXA_OG_IMAGE = 'https://sarangrajan.in/assets/enitexa-logo-dark-bg.jpg';
+
 const ENITEXA_BY_PATH = {
   '/enitexa.ai': {
     title: 'Enitexa.Ai | Mobile Apps, Websites & Digital Product Studio',
@@ -95,12 +97,13 @@ export default function SeoManager() {
     const title = page.title;
     const description = page.description;
     const url = `https://sarangrajan.in${normalized === '/' ? '/' : normalized}`;
-    const image = DEFAULTS.image;
+    const isEnitexa = normalized.startsWith('/enitexa.ai');
+    const image = isEnitexa ? ENITEXA_OG_IMAGE : DEFAULTS.image;
 
     document.title = title;
     upsertMeta('name', 'description', description);
     upsertMeta('property', 'og:type', 'website');
-    upsertMeta('property', 'og:site_name', normalized.startsWith('/enitexa.ai') ? 'Enitexa.Ai' : 'Sarang Rajan');
+    upsertMeta('property', 'og:site_name', isEnitexa ? 'Enitexa.Ai' : 'Sarang Rajan');
     upsertMeta('property', 'og:title', title);
     upsertMeta('property', 'og:description', description);
     upsertMeta('property', 'og:url', url);

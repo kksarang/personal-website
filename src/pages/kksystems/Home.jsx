@@ -82,11 +82,8 @@ const KksystemsHome = () => {
                                 <p className="pf-mono mb-4 text-[10px] uppercase tracking-[0.4em] text-white/40">
                                     Digital & Software Solutions
                                 </p>
-                                <h2 className="pf-display flex items-center gap-3 text-[clamp(1.75rem,8vw,3.75rem)] font-bold text-white sm:gap-4">
-                                    <EnitexaMark size={40} withGlow />
-                                    <span>
-                                        Enitexa.Ai
-                                    </span>
+                                <h2 className="flex items-center">
+                                    <EnitexaMark height={52} tone="light" withGlow alt="Enitexa.Ai" />
                                 </h2>
                             </div>
                             <div className="w-full max-w-[14rem] sm:w-56">

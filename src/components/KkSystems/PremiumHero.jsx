@@ -31,12 +31,9 @@ const HeroEmblem = () => {
                 </text>
             </svg>
 
-            {/* Center mark */}
-            <div className="absolute flex flex-col items-center gap-4">
-                <EnitexaMark size={110} withGlow />
-                <p className="pf-display text-2xl font-bold tracking-tight text-white">
-                    Enitexa.Ai
-                </p>
+            {/* Center wordmark */}
+            <div className="absolute flex items-center justify-center px-8">
+                <EnitexaMark height={40} withGlow alt="Enitexa.Ai" />
             </div>
 
             {/* Floating capability chips */}

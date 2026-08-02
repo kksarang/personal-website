@@ -127,10 +127,10 @@ const KksystemsNavbar = () => {
                 <a
                     href="/enitexa.ai"
                     onClick={(e) => handleNavClick(e, '/enitexa.ai')}
-                    className="enitexa-nav-brand pf-display flex min-w-0 items-center gap-2 text-sm font-bold tracking-tight text-white outline-none focus:outline-none focus-visible:outline-none sm:gap-2.5 sm:text-base"
+                    className="enitexa-nav-brand flex min-w-0 items-center outline-none focus:outline-none focus-visible:outline-none"
+                    aria-label="Enitexa.Ai home"
                 >
-                    <EnitexaMark size={22} />
-                    <span className="truncate">Enitexa.Ai</span>
+                    <EnitexaMark height={22} />
                 </a>
 
                 <div className="hidden items-center gap-5 lg:flex xl:gap-7">

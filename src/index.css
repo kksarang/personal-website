@@ -818,8 +818,8 @@ html.enitexa-site-scroll {
 }
 
 @media (max-width: 379px) {
-  .enitexa-root .enitexa-nav-brand span {
-    max-width: 7.5rem;
+  .enitexa-root .enitexa-nav-brand img {
+    height: 18px !important;
   }
 }
 
