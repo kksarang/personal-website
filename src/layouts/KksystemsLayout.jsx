@@ -100,7 +100,7 @@ const FOOTER_LINKS = [
 ];
 
 const EnitexaFooter = () => (
-    <footer className="enitexa-saas-shell-dark relative z-10 overflow-hidden border-t border-white/[0.08] bg-[#030408]">
+    <footer className="enitexa-footer relative z-10 overflow-hidden border-t border-white/[0.08] bg-[#030408]">
         <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-indigo-500/50 to-transparent" aria-hidden="true" />
         <div className="absolute left-1/2 top-0 h-72 w-[720px] -translate-x-1/2 rounded-full bg-indigo-500/[0.07] blur-[110px]" aria-hidden="true" />
 
@@ -120,7 +120,7 @@ const EnitexaFooter = () => (
                     <Link
                         to="/enitexa.ai/contact"
                         aria-label="Contact Enitexa.Ai"
-                        className="group flex h-24 w-24 items-center justify-center rounded-full border border-white/20 text-white transition-all duration-500 hover:border-indigo-400 hover:bg-indigo-500 sm:h-32 sm:w-32"
+                        className="enitexa-footer-orb group flex h-24 w-24 items-center justify-center rounded-full border border-white/20 text-white transition-all duration-500 hover:border-indigo-400 hover:bg-indigo-500 sm:h-32 sm:w-32"
                     >
                         <ArrowUpRight className="h-8 w-8 transition-transform duration-500 group-hover:translate-x-1 group-hover:-translate-y-1" />
                     </Link>
@@ -169,6 +169,7 @@ const EnitexaFooter = () => (
                     © {new Date().getFullYear()} Enitexa.Ai — All rights reserved
                 </p>
                 <button
+                    type="button"
                     onClick={() => (window.__lenis ? window.__lenis.scrollTo(0) : window.scrollTo({ top: 0, behavior: 'smooth' }))}
                     className="pf-mono flex items-center gap-2 uppercase tracking-[0.2em] transition-colors hover:text-white"
                 >

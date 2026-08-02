@@ -310,6 +310,7 @@ body {
   }
 
   html:not(.dark) .enitexa-root [class*="bg-[#030303]"],
+  html:not(.dark) .enitexa-root [class*="bg-[#030408]"],
   html:not(.dark) .enitexa-root [class*="bg-[#040713]"],
   html:not(.dark) .enitexa-root [class*="bg-[#05060c]"],
   html:not(.dark) .enitexa-root [class*="bg-[#060916]"],
@@ -460,10 +461,33 @@ body {
   /*
    * SaaS marketing & demo canvases intentionally stay dark inside light theme.
    * Global light-mode hacks invert `.text-white` / some backgrounds — revert inside this subtree.
+   * Site footer uses `.enitexa-footer` and follows light mode instead.
    */
   html:not(.dark) .enitexa-root .enitexa-saas-shell-dark {
     background-color: #070b17 !important;
     color: #f8fafc;
+  }
+
+  html:not(.dark) .enitexa-root .enitexa-footer {
+    background-color: #f8fafc !important;
+    color: #0f172a;
+    border-color: rgba(15, 23, 42, 0.1) !important;
+  }
+
+  html:not(.dark) .enitexa-root .enitexa-footer .enitexa-footer-orb {
+    border-color: rgba(15, 23, 42, 0.18) !important;
+    color: #0f172a !important;
+    background-color: #ffffff !important;
+  }
+
+  html:not(.dark) .enitexa-root .enitexa-footer .enitexa-footer-orb:hover {
+    border-color: rgba(99, 102, 241, 0.55) !important;
+    background-color: rgb(99, 102, 241) !important;
+    color: #ffffff !important;
+  }
+
+  html:not(.dark) .enitexa-root .enitexa-footer a:hover {
+    color: #312e81 !important;
   }
 
   /* SaaS shell typography overrides live after @tailwind utilities (end of file). */
