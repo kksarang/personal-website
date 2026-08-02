@@ -19,6 +19,9 @@ const PremiumCursor = () => {
     useEffect(() => {
         if (!enabled) return;
 
+        const root = document.querySelector('.enitexa-root');
+        root?.classList.add('enitexa-cursor-on');
+
         let mouseX = -100;
         let mouseY = -100;
         let ringX = -100;
@@ -58,6 +61,7 @@ const PremiumCursor = () => {
         return () => {
             window.removeEventListener('mousemove', onMove);
             cancelAnimationFrame(raf);
+            root?.classList.remove('enitexa-cursor-on');
         };
     }, [enabled]);
 

@@ -150,7 +150,13 @@ body {
     }
   }
 
-  .enitexa-root [class*="backdrop-blur"] {
+  /* Allow intentional glass on nav; keep heavy section blurs off on mobile via other rules */
+  .enitexa-root .enitexa-nav-shell {
+    -webkit-backdrop-filter: blur(18px) saturate(1.2);
+    backdrop-filter: blur(18px) saturate(1.2);
+  }
+
+  .enitexa-root [class*="backdrop-blur"]:not(.enitexa-nav-shell) {
     -webkit-backdrop-filter: none !important;
     backdrop-filter: none !important;
   }
@@ -258,15 +264,18 @@ body {
 
   /* Light mode overrides for the Enitexa.Ai site */
   html:not(.dark) .enitexa-root {
-    background: #f6f8ff;
+    background:
+      radial-gradient(ellipse 80% 50% at 10% -10%, rgba(99, 102, 241, 0.07), transparent 55%),
+      radial-gradient(ellipse 60% 40% at 90% 0%, rgba(14, 165, 233, 0.05), transparent 50%),
+      #f3f4f7;
     color: #0f172a;
   }
 
   html:not(.dark) .enitexa-root .enitexa-ambient {
     background:
-      radial-gradient(circle at 12% 18%, rgba(56, 189, 248, 0.08), transparent 40%),
-      radial-gradient(circle at 85% 20%, rgba(129, 140, 248, 0.12), transparent 42%),
-      radial-gradient(circle at 55% 78%, rgba(139, 92, 246, 0.08), transparent 38%);
+      radial-gradient(circle at 12% 18%, rgba(56, 189, 248, 0.06), transparent 40%),
+      radial-gradient(circle at 85% 20%, rgba(99, 102, 241, 0.08), transparent 42%),
+      radial-gradient(circle at 55% 78%, rgba(15, 23, 42, 0.03), transparent 38%);
   }
 
   html:not(.dark) .enitexa-root .enitexa-noise {
@@ -278,9 +287,11 @@ body {
   }
 
   html:not(.dark) .enitexa-root .enitexa-nav-shell {
-    background: rgba(248, 250, 252, 0.9) !important;
-    border-color: rgba(15, 23, 42, 0.14) !important;
-    box-shadow: 0 10px 24px rgba(15, 23, 42, 0.08);
+    background: rgba(255, 255, 255, 0.92) !important;
+    border-color: rgba(15, 23, 42, 0.1) !important;
+    box-shadow:
+      0 1px 0 rgba(255, 255, 255, 0.8) inset,
+      0 12px 32px rgba(15, 23, 42, 0.08);
   }
 
   html:not(.dark) .enitexa-root .enitexa-nav-brand {
@@ -314,8 +325,8 @@ body {
   html:not(.dark) .enitexa-root [class*="bg-[#040713]"],
   html:not(.dark) .enitexa-root [class*="bg-[#05060c]"],
   html:not(.dark) .enitexa-root [class*="bg-[#060916]"],
-  html:not(.dark) .enitexa-root [class*="bg-[#070B17]"],
   html:not(.dark) .enitexa-root [class*="bg-[#07080f]"],
+  html:not(.dark) .enitexa-root [class*="bg-[#070B17]"],
   html:not(.dark) .enitexa-root [class*="bg-[#0A0B14]"],
   html:not(.dark) .enitexa-root [class*="bg-[#0B0F19]"],
   html:not(.dark) .enitexa-root [class*="bg-[#0F111A]"],
@@ -324,7 +335,44 @@ body {
   html:not(.dark) .enitexa-root [class*="bg-[#131521]"],
   html:not(.dark) .enitexa-root [class*="bg-slate-950/"],
   html:not(.dark) .enitexa-root [class*="bg-black/"] {
-    background-color: rgba(255, 255, 255, 0.96) !important;
+    background-color: #ffffff !important;
+  }
+
+  /* Keep hero cinematic in light mode */
+  html:not(.dark) .enitexa-root .enitexa-premium-hero [class*="bg-[#05060c]"] {
+    background-color: #05060c !important;
+  }
+  html:not(.dark) .enitexa-root .enitexa-premium-hero .text-white {
+    color: #ffffff !important;
+  }
+  html:not(.dark) .enitexa-root .enitexa-premium-hero .text-white\/55 {
+    color: rgba(255, 255, 255, 0.55) !important;
+  }
+  html:not(.dark) .enitexa-root .enitexa-premium-hero .text-white\/35 {
+    color: rgba(255, 255, 255, 0.35) !important;
+  }
+  html:not(.dark) .enitexa-root .enitexa-premium-hero .text-indigo-300 {
+    color: #a5b4fc !important;
+  }
+  html:not(.dark) .enitexa-root .enitexa-premium-hero .fill-white\/35 {
+    fill: rgba(255, 255, 255, 0.35);
+  }
+  html:not(.dark) .enitexa-root .enitexa-premium-hero [class*="border-white/"] {
+    border-color: rgba(255, 255, 255, 0.14) !important;
+  }
+  html:not(.dark) .enitexa-root .enitexa-premium-hero .pf-outline-text {
+    -webkit-text-stroke: 1.5px rgba(255, 255, 255, 0.35);
+    color: transparent;
+  }
+
+  /* Kinetic strip stays as a dark editorial band */
+  html:not(.dark) .enitexa-root .enitexa-kinetic-strip {
+    background-color: #0b1020 !important;
+    border-color: rgba(15, 23, 42, 0.12) !important;
+  }
+  html:not(.dark) .enitexa-root .enitexa-kinetic-strip .pf-outline-text {
+    -webkit-text-stroke: 1.4px rgba(255, 255, 255, 0.28);
+    color: transparent;
   }
 
   /* Text opacity tiers used by the premium hero + sections */
@@ -469,9 +517,10 @@ body {
   }
 
   html:not(.dark) .enitexa-root .enitexa-footer {
-    background-color: #f8fafc !important;
+    background-color: #ffffff !important;
     color: #0f172a;
-    border-color: rgba(15, 23, 42, 0.1) !important;
+    border-color: rgba(15, 23, 42, 0.08) !important;
+    box-shadow: 0 -1px 0 rgba(15, 23, 42, 0.04);
   }
 
   html:not(.dark) .enitexa-root .enitexa-footer .enitexa-footer-orb {
@@ -846,8 +895,12 @@ html:not(.dark) .enitexa-root .enitexa-nav-shell button[class*='bg-white']:hover
   background-color: #312e81 !important;
   border-color: #312e81 !important;
 }
+html:not(.dark) .enitexa-root .enitexa-premium-hero .enitexa-premium-hero-secondary {
+  color: #ffffff !important;
+  border-color: rgba(255, 255, 255, 0.35) !important;
+}
 html:not(.dark) .enitexa-root nav .enitexa-contained-scroll {
-  background: rgba(248, 250, 252, 0.98) !important;
+  background: rgba(255, 255, 255, 0.98) !important;
   border-color: rgba(15, 23, 42, 0.12) !important;
 }
 
@@ -1000,6 +1053,10 @@ html:not(.dark) .enitexa-root ::selection {
 }
 
 /* Custom cursor */
+.enitexa-root.enitexa-cursor-on,
+.enitexa-root.enitexa-cursor-on * {
+  cursor: none !important;
+}
 .pf-cursor-dot,
 .pf-cursor-ring {
   position: fixed;

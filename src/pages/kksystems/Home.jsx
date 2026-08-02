@@ -4,7 +4,7 @@ import PremiumHero from '../../components/KkSystems/PremiumHero';
 import { Positioning, CoreOfferings } from '../../components/KkSystems/PremiumPositioning';
 import { PremiumSolutions, ProductLayer } from '../../components/KkSystems/PremiumSolutions';
 import { ImpactMetrics, HowWeWork, Industries, GlobalPresence } from '../../components/KkSystems/PremiumTrust';
-import { TechStack, WhyEnitexa, ERPDemoEntry, FinalCTA } from '../../components/KkSystems/PremiumFinal';
+import { TechStack, WhyEnitexa, ERPDemoEntry } from '../../components/KkSystems/PremiumFinal';
 import EnitexaValueStack from '../../components/KkSystems/EnitexaValueStack';
 import EnitexaMark from '../../components/KkSystems/EnitexaMark';
 import TrustedBy from '../../components/KkSystems/TrustedBy';
@@ -12,10 +12,10 @@ import Testimonials from '../../components/KkSystems/Testimonials';
 import FAQ from '../../components/KkSystems/FAQ';
 
 const sectionReveal = {
-    initial: { opacity: 0, y: 42, filter: 'blur(10px)' },
-    whileInView: { opacity: 1, y: 0, filter: 'blur(0px)' },
-    viewport: { once: true, amount: 0.18 },
-    transition: { duration: 0.75, ease: [0.22, 1, 0.36, 1] },
+    initial: { opacity: 0, y: 28 },
+    whileInView: { opacity: 1, y: 0 },
+    viewport: { once: true, amount: 0.16 },
+    transition: { duration: 0.65, ease: [0.22, 1, 0.36, 1] },
 };
 
 const RevealSection = ({ children }) => (
@@ -33,7 +33,7 @@ const MARQUEE_ITEMS = ['Mobile Apps', 'Web Platforms', 'AI Systems', 'ERP', 'Bra
 
 /* Giant kinetic type ribbon between hero and content */
 const KineticStrip = () => (
-    <div className="overflow-hidden border-y border-white/5 bg-[#07080f] py-7">
+    <div className="enitexa-kinetic-strip overflow-hidden border-y border-white/5 bg-[#07080f] py-7">
         <div className="pf-marquee">
             {[0, 1].map((dup) => (
                 <div key={dup} className="pf-marquee-track" aria-hidden={dup === 1}>
@@ -180,14 +180,9 @@ const KksystemsHome = () => {
                 <FAQ />
             </RevealSection>
 
-            {/* 15. Demo ERP Entry (Product Feel) */}
+            {/* 15. Demo ERP Entry */}
             <RevealSection>
                 <ERPDemoEntry />
-            </RevealSection>
-
-            {/* 16. Final CTA */}
-            <RevealSection>
-                <FinalCTA />
             </RevealSection>
         </div>
     );
