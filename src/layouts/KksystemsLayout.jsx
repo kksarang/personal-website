@@ -192,22 +192,23 @@ const KksystemsLayout = () => {
 
     return (
         <div className="enitexa-root relative flex min-h-screen flex-col overflow-x-hidden bg-white text-gray-900 dark:bg-[#040713] dark:text-white">
-            <PremiumCursor />
-            <div className="pf-grain" aria-hidden="true" />
-            <div className="pointer-events-none fixed inset-0 z-0">
-                <div className="enitexa-ambient absolute inset-0" />
-                <div className="absolute left-[-10%] top-[-10%] h-[260px] w-[260px] rounded-full bg-indigo-600/10 blur-[70px]" />
-                <div className="absolute bottom-[-16%] right-[-8%] h-[260px] w-[260px] rounded-full bg-cyan-500/10 blur-[75px]" />
-                <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(99,102,241,0.1),transparent_45%)]" />
-            </div>
-            <KksystemsNavbar />
-            <ScrollToSection />
+            {!appRoute && <PremiumCursor />}
+            {!appRoute && <div className="pf-grain" aria-hidden="true" />}
+            {!appRoute && (
+                <div className="pointer-events-none fixed inset-0 z-0">
+                    <div className="enitexa-ambient absolute inset-0" />
+                    <div className="absolute left-[-10%] top-[-10%] h-[260px] w-[260px] rounded-full bg-indigo-600/10 blur-[70px]" />
+                    <div className="absolute bottom-[-16%] right-[-8%] h-[260px] w-[260px] rounded-full bg-cyan-500/10 blur-[75px]" />
+                    <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(99,102,241,0.1),transparent_45%)]" />
+                </div>
+            )}
+            {!appRoute && <KksystemsNavbar />}
+            {!appRoute && <ScrollToSection />}
             <main className="relative z-10 min-h-0 min-w-0 w-full flex-1 pb-[env(safe-area-inset-bottom,0px)]">
                 <Outlet />
             </main>
-            <StickyCTA />
-
-            {location.pathname !== '/enitexa.ai/ai' && <EnitexaFooter />}
+            {!appRoute && <StickyCTA />}
+            {!appRoute && location.pathname !== '/enitexa.ai/ai' && <EnitexaFooter />}
         </div>
     );
 };
