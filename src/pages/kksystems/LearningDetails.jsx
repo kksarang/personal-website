@@ -1071,11 +1071,11 @@ function MobileLearningExperience({ navigate }) {
     };
 
     return (
-        <div className="space-y-8 pb-20 md:pb-0">
-            <section className="premium-surface gradient-stroke rounded-3xl p-7">
+        <div className="space-y-8 pb-28 md:pb-0">
+            <section className="premium-surface gradient-stroke rounded-2xl p-5 sm:rounded-3xl sm:p-7">
                 <p className="text-xs font-semibold uppercase tracking-[0.13em] text-indigo-300">Academy learning mode</p>
-                <h1 className="mt-2 text-4xl font-black leading-tight text-white">{mobileLearningExperienceData.title}</h1>
-                <p className="mt-3 text-base leading-relaxed text-slate-200">{mobileLearningExperienceData.subtitle}</p>
+                <h1 className="mt-2 text-[clamp(1.6rem,6vw,2.25rem)] font-black leading-tight text-white">{mobileLearningExperienceData.title}</h1>
+                <p className="mt-3 text-sm leading-relaxed text-slate-200 sm:text-base">{mobileLearningExperienceData.subtitle}</p>
                 <div className="mt-5 flex flex-wrap gap-2">
                     {mobileLearningExperienceData.conversionBadges.map((badge) => (
                         <span key={badge} className="rounded-full border border-indigo-300/25 bg-indigo-500/15 px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.12em] text-indigo-100">
@@ -1433,20 +1433,20 @@ function MobileLearningExperience({ navigate }) {
                 </div>
             </section>
 
-            <div className="fixed bottom-4 left-4 right-4 z-40 md:hidden">
+            <div className="fixed bottom-[calc(1rem+env(safe-area-inset-bottom,0px))] left-4 right-4 z-40 md:hidden">
                 <div className="rounded-2xl border border-indigo-300/35 bg-[rgba(10,15,31,0.92)] p-2.5 shadow-[0_10px_24px_rgba(15,23,42,0.18)]">
                     <div className="grid grid-cols-2 gap-2">
                         <button
                             type="button"
                             onClick={() => navigate('/enitexa.ai/contact')}
-                            className="rounded-full bg-indigo-600 px-3 py-2.5 text-xs font-semibold uppercase tracking-[0.12em] text-white"
+                            className="rounded-full bg-indigo-600 px-3 py-2.5 text-[10px] font-semibold uppercase tracking-[0.1em] text-white sm:text-xs sm:tracking-[0.12em]"
                         >
                             {mobileLearningExperienceData.stickyCta.primaryLabel}
                         </button>
                         <button
                             type="button"
                             onClick={() => navigate('/enitexa.ai/contact')}
-                            className="rounded-xl border border-emerald-300/35 bg-emerald-500/15 px-3 py-2.5 text-xs font-semibold uppercase tracking-[0.12em] text-emerald-100"
+                            className="rounded-xl border border-emerald-300/35 bg-emerald-500/15 px-3 py-2.5 text-[10px] font-semibold uppercase tracking-[0.1em] text-emerald-100 sm:text-xs sm:tracking-[0.12em]"
                         >
                             {mobileLearningExperienceData.stickyCta.secondaryLabel}
                         </button>

@@ -35,7 +35,7 @@ export default function ERPSolutions() {
             <span className="inline-flex items-center gap-1.5 rounded-full border border-cyan-500/30 bg-cyan-500/20 px-3 py-1 text-xs font-semibold uppercase tracking-widest text-cyan-300">
               <Layers className="h-3 w-3" /> Enterprise Platform
             </span>
-            <h2 className="mt-4 text-3xl font-black text-white">A single control layer for operations</h2>
+            <h2 className="mt-4 text-[clamp(1.5rem,4.5vw,1.875rem)] font-black text-white">A single control layer for operations</h2>
             <p className="mt-3 max-w-2xl text-slate-300">
               Build a custom business operating system that unifies your teams, workflows, and reporting with one reliable source of truth.
             </p>
@@ -86,17 +86,17 @@ export default function ERPSolutions() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.2, duration: 0.6 }}
-          className="rounded-3xl border border-indigo-300/25 bg-indigo-500/15 p-10 text-center"
+          className="rounded-2xl border border-indigo-300/25 bg-indigo-500/15 p-6 text-center sm:rounded-3xl sm:p-10"
         >
-          <h2 className="text-3xl font-bold mb-4">Experience Enitexa.Ai ERP Platform</h2>
-          <p className="mx-auto mb-8 max-w-3xl text-white/60 leading-relaxed">
+          <h2 className="mb-3 text-[clamp(1.35rem,4.5vw,1.875rem)] font-bold sm:mb-4">Experience Enitexa.Ai ERP Platform</h2>
+          <p className="mx-auto mb-6 max-w-3xl text-sm leading-relaxed text-white/60 sm:mb-8 sm:text-base">
             Explore our interactive ERP demo to see how dashboards, workflows, and analytics work together in one enterprise-grade system.
           </p>
           <button
             onClick={() => navigate("/enitexa.ai/erp/dashboard")}
-            className="mx-auto flex items-center gap-3 rounded-2xl bg-gradient-to-r from-indigo-500 to-purple-600 px-10 py-5 text-lg font-bold text-white shadow-2xl transition-all duration-300 hover:scale-105 active:scale-95"
+            className="mx-auto flex w-full max-w-sm items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-indigo-500 to-purple-600 px-6 py-3.5 text-sm font-bold text-white shadow-2xl transition-all duration-300 hover:scale-[1.02] active:scale-95 sm:w-auto sm:gap-3 sm:rounded-2xl sm:px-10 sm:py-5 sm:text-lg"
           >
-            <Rocket className="h-6 w-6" />
+            <Rocket className="h-5 w-5 sm:h-6 sm:w-6" />
             Launch ERP Demo
           </button>
         </motion.div>

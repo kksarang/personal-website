@@ -29,11 +29,11 @@ const ScrollToSection = () => {
 
 const PortfolioLayout = () => {
     return (
-        <div className="portfolio-root relative flex min-h-screen flex-col transition-colors duration-300">
+        <div className="portfolio-root relative flex min-h-screen flex-col overflow-x-hidden transition-colors duration-300">
             <div className="port-grain fixed inset-0 z-0" aria-hidden="true" />
             <Navbar />
             <ScrollToSection />
-            <main className="relative z-10 min-h-0 flex-1">
+            <main className="relative z-10 min-h-0 min-w-0 w-full flex-1 pb-[env(safe-area-inset-bottom,0px)]">
                 <Outlet />
             </main>
             <Footer />

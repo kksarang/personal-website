@@ -77,19 +77,19 @@ const KksystemsHome = () => {
                         transition={{ duration: 0.85, ease: [0.76, 0, 0.24, 1] }}
                         className="enitexa-intro-overlay fixed inset-0 z-[120] flex items-center justify-center bg-[#050505]"
                     >
-                        <div className="relative flex w-full max-w-4xl items-end justify-between px-10 sm:px-14">
-                            <div>
+                        <div className="relative flex w-full max-w-4xl flex-col gap-8 px-6 sm:flex-row sm:items-end sm:justify-between sm:px-14">
+                            <div className="min-w-0">
                                 <p className="pf-mono mb-4 text-[10px] uppercase tracking-[0.4em] text-white/40">
                                     Digital & Software Solutions
                                 </p>
-                                <h2 className="pf-display flex items-center gap-4 text-4xl font-bold text-white sm:text-6xl">
-                                    <EnitexaMark size={52} withGlow />
+                                <h2 className="pf-display flex items-center gap-3 text-[clamp(1.75rem,8vw,3.75rem)] font-bold text-white sm:gap-4">
+                                    <EnitexaMark size={40} withGlow />
                                     <span>
                                         Enitexa.Ai
                                     </span>
                                 </h2>
                             </div>
-                            <div className="w-40 sm:w-56">
+                            <div className="w-full max-w-[14rem] sm:w-56">
                                 <div className="overflow-hidden rounded-full bg-white/10">
                                     <Motion.div
                                         initial={{ width: '0%' }}

@@ -113,16 +113,16 @@ export default function MobileAppDevDetail() {
                     </div>
                 </section>
 
-                <section className="rounded-3xl border border-indigo-300/25 bg-indigo-500/15 p-8 text-center">
+                <section className="rounded-2xl border border-indigo-300/25 bg-indigo-500/15 p-5 text-center sm:rounded-3xl sm:p-8">
                     <p className="inline-flex items-center gap-2 text-xs uppercase tracking-[0.16em] text-indigo-200">
                         <Sparkles className="h-3.5 w-3.5" />
                         Next Step
                     </p>
-                    <h2 className="mt-3 text-3xl font-black text-white">Need a roadmap for your mobile product?</h2>
-                    <p className="mx-auto mt-3 max-w-2xl text-slate-200">Share your current stage and we’ll suggest the right delivery model, team setup, and timeline.</p>
+                    <h2 className="mt-3 text-[clamp(1.35rem,4.5vw,1.875rem)] font-black text-white">Need a roadmap for your mobile product?</h2>
+                    <p className="mx-auto mt-3 max-w-2xl text-sm text-slate-200 sm:text-base">Share your current stage and we’ll suggest the right delivery model, team setup, and timeline.</p>
                     <button
                         onClick={() => navigate('/enitexa.ai/contact')}
-                        className="mt-6 inline-flex items-center gap-2 rounded-full bg-indigo-600 px-6 py-3 text-sm font-semibold text-white transition hover:bg-indigo-500"
+                        className="mt-6 inline-flex w-full max-w-sm items-center justify-center gap-2 rounded-full bg-indigo-600 px-6 py-3 text-sm font-semibold text-white transition hover:bg-indigo-500 sm:w-auto"
                     >
                         <Rocket className="h-4 w-4" />
                         Book Mobile Strategy Call

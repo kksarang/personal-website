@@ -67,16 +67,18 @@ const EnitexaPageShell = ({
                             {title}
                         </h1>
                         {subtitle ? (
-                            <p className="mt-6 max-w-2xl text-lg leading-relaxed text-slate-400">{subtitle}</p>
+                            <p className="mt-5 max-w-2xl text-base leading-relaxed text-slate-400 sm:mt-6 sm:text-lg">
+                                {subtitle}
+                            </p>
                         ) : null}
 
-                        <div className="mt-12 grid gap-px overflow-hidden rounded-2xl border border-white/[0.08] bg-white/[0.08] sm:grid-cols-3">
+                        <div className="mt-8 grid gap-px overflow-hidden rounded-2xl border border-white/[0.08] bg-white/[0.08] sm:mt-12 sm:grid-cols-3">
                             {[
                                 ['Delivery style', 'Milestone-first execution'],
                                 ['Communication', 'Weekly product check-ins'],
                                 ['Focus', 'Business outcomes first'],
                             ].map(([label, value]) => (
-                                <div key={label} className="bg-[#070B17] px-6 py-5">
+                                <div key={label} className="bg-[#070B17] px-4 py-4 sm:px-6 sm:py-5">
                                     <p className="pf-mono text-[9px] uppercase tracking-[0.25em] text-slate-500">
                                         {label}
                                     </p>

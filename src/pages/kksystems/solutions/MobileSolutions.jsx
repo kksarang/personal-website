@@ -38,7 +38,7 @@ export default function MobileSolutions() {
               <Layers3 className="h-3.5 w-3.5" />
               Mobile delivery model
             </p>
-            <h2 className="mt-4 text-3xl font-black text-white">Build once, ship confidently</h2>
+            <h2 className="mt-4 text-[clamp(1.5rem,4.5vw,1.875rem)] font-black text-white">Build once, ship confidently</h2>
             <p className="mt-3 max-w-2xl text-slate-300">
               Enitexa.Ai teams combine product thinking with platform-level engineering to deliver stable, high-performance mobile apps that scale with your business.
             </p>
@@ -118,21 +118,21 @@ export default function MobileSolutions() {
           ))}
         </div>
 
-        <div className="premium-surface rounded-[2rem] p-10 relative overflow-hidden">
-          <div className="text-center mb-12 relative z-10">
-            <h2 className="text-4xl font-bold mb-4">How We Develop</h2>
-            <p className="text-white/40 max-w-xl mx-auto">A clear operating system that keeps delivery fast, transparent, and measurable.</p>
+        <div className="premium-surface relative overflow-hidden rounded-[1.5rem] p-5 sm:rounded-[2rem] sm:p-10">
+          <div className="relative z-10 mb-8 text-center sm:mb-12">
+            <h2 className="mb-3 text-[clamp(1.5rem,5vw,2.25rem)] font-bold sm:mb-4">How We Develop</h2>
+            <p className="mx-auto max-w-xl text-sm text-white/40 sm:text-base">A clear operating system that keeps delivery fast, transparent, and measurable.</p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-5 gap-8 relative z-10">
+          <div className="relative z-10 grid grid-cols-1 gap-6 sm:gap-8 md:grid-cols-5">
             {steps.map((step, i) => (
               <div key={i} className="relative">
-                <div className="text-6xl font-black text-white/[0.03] absolute -top-10 -left-6 pointer-events-none">0{i+1}</div>
-                <h4 className="text-lg font-bold mb-3 text-indigo-400 tracking-tight">{step.title}</h4>
-                <p className="text-white/40 text-sm leading-relaxed">{step.desc}</p>
+                <div className="pointer-events-none absolute -left-2 -top-6 text-5xl font-black text-white/[0.03] sm:-left-6 sm:-top-10 sm:text-6xl">0{i+1}</div>
+                <h4 className="mb-2 text-base font-bold tracking-tight text-indigo-400 sm:mb-3 sm:text-lg">{step.title}</h4>
+                <p className="text-sm leading-relaxed text-white/40">{step.desc}</p>
                 {i < steps.length - 1 && (
-                  <div className="hidden md:block absolute top-1/2 -right-4 translate-y-[-50%] text-white/10">
-                    <ArrowRight className="w-8 h-8 font-thin" />
+                  <div className="absolute top-1/2 hidden -right-4 translate-y-[-50%] text-white/10 md:block">
+                    <ArrowRight className="h-8 w-8 font-thin" />
                   </div>
                 )}
               </div>
@@ -140,10 +140,10 @@ export default function MobileSolutions() {
           </div>
         </div>
 
-        <div className="text-center rounded-3xl border border-indigo-300/25 bg-indigo-500/15 p-12">
-          <h2 className="text-3xl font-bold mb-6 tracking-tight">Ready to build your mobile future?</h2>
-          <button onClick={() => navigate('/enitexa.ai/contact')} className="px-10 py-5 bg-indigo-600 hover:bg-indigo-500 rounded-2xl text-lg font-bold text-white shadow-2xl hover:scale-105 active:scale-95 transition-all flex items-center gap-3 mx-auto">
-            <MessageSquare className="w-6 h-6" /> Book Architecture Review
+        <div className="rounded-2xl border border-indigo-300/25 bg-indigo-500/15 p-6 text-center sm:rounded-3xl sm:p-12">
+          <h2 className="mb-5 text-[clamp(1.35rem,4.5vw,1.875rem)] font-bold tracking-tight sm:mb-6">Ready to build your mobile future?</h2>
+          <button onClick={() => navigate('/enitexa.ai/contact')} className="mx-auto flex w-full max-w-sm items-center justify-center gap-2 rounded-xl bg-indigo-600 px-6 py-3.5 text-sm font-bold text-white shadow-2xl transition-all hover:bg-indigo-500 hover:scale-[1.02] active:scale-95 sm:w-auto sm:gap-3 sm:rounded-2xl sm:px-10 sm:py-5 sm:text-lg">
+            <MessageSquare className="h-5 w-5 sm:h-6 sm:w-6" /> Book Architecture Review
           </button>
         </div>
       </div>

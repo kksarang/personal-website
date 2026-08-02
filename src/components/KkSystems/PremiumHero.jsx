@@ -62,7 +62,7 @@ const PremiumHero = () => {
     return (
         <section
             id="home"
-            className="enitexa-premium-hero relative flex min-h-[100svh] items-center overflow-hidden pb-14 pt-32 sm:pt-32"
+            className="enitexa-premium-hero relative flex min-h-[100svh] items-center overflow-hidden pb-10 pt-28 sm:pb-14 sm:pt-32"
         >
             <div className="pointer-events-none absolute inset-0 bg-[#05060c]" />
             <div className="pf-dotgrid pointer-events-none absolute inset-0" aria-hidden />
@@ -75,10 +75,10 @@ const PremiumHero = () => {
                 aria-hidden
             />
 
-            <div className="relative z-10 mx-auto w-full max-w-[90rem] px-6 sm:px-10 lg:px-16">
+            <div className="relative z-10 mx-auto w-full max-w-[90rem] px-4 sm:px-10 lg:px-16">
                 {/* Meta strip */}
-                <div className="pf-mono mb-10 flex items-center justify-between text-[10px] uppercase tracking-[0.3em] text-white/35">
-                    <span>Digital & Software Solutions</span>
+                <div className="pf-mono mb-8 flex items-center justify-between gap-3 text-[9px] uppercase tracking-[0.22em] text-white/35 sm:mb-10 sm:text-[10px] sm:tracking-[0.3em]">
+                    <span className="min-w-0 truncate">Digital & Software Solutions</span>
                     <span className="hidden sm:flex items-center gap-2">
                         <span className="relative flex h-1.5 w-1.5">
                             <span className="absolute h-full w-full animate-ping rounded-full bg-emerald-400 opacity-75" />
@@ -88,12 +88,12 @@ const PremiumHero = () => {
                     </span>
                 </div>
 
-                <div className="grid grid-cols-1 items-center gap-12 lg:grid-cols-[1fr_minmax(300px,460px)] lg:gap-16">
+                <div className="grid grid-cols-1 items-center gap-10 lg:grid-cols-[1fr_minmax(300px,460px)] lg:gap-16">
                     <div className="min-w-0">
-                        <p className="pf-mono text-[11px] uppercase tracking-[0.4em] text-indigo-300">
+                        <p className="pf-mono text-[10px] uppercase tracking-[0.28em] text-indigo-300 sm:text-[11px] sm:tracking-[0.4em]">
                             Enitexa.Ai — Your extended tech team
                         </p>
-                        <h1 className="pf-display mt-6 text-[clamp(1.9rem,4vw,3.6rem)] font-extrabold leading-[1.02] text-white">
+                        <h1 className="pf-display mt-5 text-[clamp(1.75rem,7.2vw,3.6rem)] font-extrabold leading-[1.02] text-white sm:mt-6">
                             We build the
                             <br />
                             <span className="pf-outline-text">digital platforms</span>
@@ -101,40 +101,40 @@ const PremiumHero = () => {
                             <span className="pf-gradient-text">businesses run on.</span>
                         </h1>
 
-                        <p className="mt-8 max-w-xl text-base leading-relaxed text-white/55 sm:text-lg">
+                        <p className="mt-6 max-w-xl text-[0.95rem] leading-relaxed text-white/55 sm:mt-8 sm:text-lg">
                             App development, web platforms, branding, UI/UX, AI integrations,
                             automation, and growth systems — one unified partner for companies
                             that want to scale efficiently.
                         </p>
 
-                        <div className="mt-10 flex flex-col gap-4 sm:flex-row">
+                        <div className="mt-8 flex flex-col gap-3 sm:mt-10 sm:flex-row sm:gap-4">
                             <button
                                 type="button"
                                 onClick={() => navigate('/enitexa.ai/contact')}
                                 data-cursor="Book"
-                                className="group inline-flex items-center justify-center gap-2 rounded-full border border-white bg-white px-8 py-4 text-sm font-semibold text-black transition-all duration-500 hover:bg-transparent hover:text-white"
+                                className="group inline-flex items-center justify-center gap-2 rounded-full border border-white bg-white px-6 py-3.5 text-sm font-semibold text-black transition-all duration-500 hover:bg-transparent hover:text-white sm:px-8 sm:py-4"
                             >
                                 Book a strategy call
                                 <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
                             </button>
                             <Link
                                 to="/enitexa.ai/services"
-                                className="enitexa-premium-hero-secondary inline-flex items-center justify-center gap-2 rounded-full border border-white/[0.3] px-8 py-4 text-sm font-semibold text-white transition-all duration-500 hover:border-white hover:bg-white/[0.045]"
+                                className="enitexa-premium-hero-secondary inline-flex items-center justify-center gap-2 rounded-full border border-white/[0.3] px-6 py-3.5 text-sm font-semibold text-white transition-all duration-500 hover:border-white hover:bg-white/[0.045] sm:px-8 sm:py-4"
                             >
                                 Explore capabilities
                             </Link>
                         </div>
 
                         {/* Stats row */}
-                        <div className="mt-14 flex flex-wrap gap-8 border-t border-white/[0.08] pt-8 sm:gap-12">
+                        <div className="mt-10 flex flex-wrap gap-6 border-t border-white/[0.08] pt-7 sm:mt-14 sm:gap-12 sm:pt-8">
                             {[
                                 ['20+', 'Products shipped'],
                                 ['05+', 'Years of craft'],
                                 ['360°', 'Partner model'],
                             ].map(([value, label]) => (
-                                <div key={label}>
-                                    <p className="pf-display text-2xl font-bold text-white sm:text-3xl">{value}</p>
-                                    <p className="pf-mono mt-1.5 text-[9px] uppercase tracking-[0.25em] text-white/35">
+                                <div key={label} className="min-w-[5.5rem]">
+                                    <p className="pf-display text-xl font-bold text-white sm:text-3xl">{value}</p>
+                                    <p className="pf-mono mt-1.5 text-[8px] uppercase tracking-[0.2em] text-white/35 sm:text-[9px] sm:tracking-[0.25em]">
                                         {label}
                                     </p>
                                 </div>

@@ -19,7 +19,7 @@ const ScrollToSection = () => {
             const apply = () => {
                 if (!element) return;
                 const headerReserve =
-                    typeof window !== 'undefined' && window.matchMedia('(min-width: 768px)').matches ? 104 : 96;
+                    typeof window !== 'undefined' && window.matchMedia('(min-width: 1024px)').matches ? 104 : 96;
                 const y = element.getBoundingClientRect().top + window.scrollY - headerReserve;
                 if (window.__lenis) {
                     window.__lenis.scrollTo(Math.max(0, y), { immediate: true });
@@ -41,6 +41,10 @@ const ScrollToSection = () => {
 /* App-like routes (dashboards/demos) keep native scrolling for nested panes */
 const isAppRoute = (pathname) =>
     pathname.includes('/erp') || pathname.includes('/saas/demo') || pathname.includes('/learning/practice');
+
+/* Pages with their own mobile sticky bars — avoid stacking global StickyCTA */
+const hideGlobalStickyCta = (pathname) =>
+    pathname.includes('/learning/mobile-development');
 
 const useSmoothScroll = (enabled) => {
     useEffect(() => {
@@ -128,10 +132,10 @@ const EnitexaFooter = () => (
             </div>
 
             {/* Link columns */}
-            <div className="grid grid-cols-2 gap-10 border-t border-white/[0.07] py-14 md:grid-cols-5">
+            <div className="grid grid-cols-2 gap-8 border-t border-white/[0.07] py-12 sm:gap-10 sm:py-14 md:grid-cols-5">
                 <div className="col-span-2">
-                    <p className="pf-display flex items-center gap-3 text-xl font-bold text-white">
-                        <EnitexaMark size={30} />
+                    <p className="pf-display flex items-center gap-3 text-lg font-bold text-white sm:text-xl">
+                        <EnitexaMark size={28} />
                         <span>Enitexa.Ai</span>
                     </p>
                     <p className="pf-mono mt-5 text-[10px] uppercase tracking-[0.3em] text-indigo-300/80">
@@ -143,11 +147,11 @@ const EnitexaFooter = () => (
                     </p>
                 </div>
                 {FOOTER_LINKS.map((col) => (
-                    <div key={col.title}>
-                        <p className="pf-mono mb-5 text-[10px] uppercase tracking-[0.3em] text-white/30">
+                    <div key={col.title} className="min-w-0">
+                        <p className="pf-mono mb-4 text-[10px] uppercase tracking-[0.3em] text-white/30 sm:mb-5">
                             {col.title}
                         </p>
-                        <ul className="space-y-3">
+                        <ul className="space-y-2.5 sm:space-y-3">
                             {col.links.map((link) => (
                                 <li key={link.label}>
                                     <Link
@@ -183,6 +187,7 @@ const EnitexaFooter = () => (
 const KksystemsLayout = () => {
     const location = useLocation();
     const appRoute = isAppRoute(location.pathname);
+    const showStickyCta = !appRoute && !hideGlobalStickyCta(location.pathname);
     useSmoothScroll(!appRoute);
 
     useEffect(() => {
@@ -207,7 +212,7 @@ const KksystemsLayout = () => {
             <main className="relative z-10 min-h-0 min-w-0 w-full flex-1 pb-[env(safe-area-inset-bottom,0px)]">
                 <Outlet />
             </main>
-            {!appRoute && <StickyCTA />}
+            {showStickyCta && <StickyCTA />}
             {!appRoute && location.pathname !== '/enitexa.ai/ai' && <EnitexaFooter />}
         </div>
     );

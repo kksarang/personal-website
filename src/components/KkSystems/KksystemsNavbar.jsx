@@ -15,7 +15,7 @@ const scrollToAnchorId = (id) => {
     if (!raw || typeof window === 'undefined') return;
     const el = document.getElementById(raw);
     if (!el) return;
-    const headerReserve = window.matchMedia('(min-width: 768px)').matches
+    const headerReserve = window.matchMedia('(min-width: 1024px)').matches
         ? HEADER_SCROLL_RESERVE.mdUp
         : HEADER_SCROLL_RESERVE.sm;
     const apply = () => {
@@ -127,13 +127,13 @@ const KksystemsNavbar = () => {
                 <a
                     href="/enitexa.ai"
                     onClick={(e) => handleNavClick(e, '/enitexa.ai')}
-                    className="enitexa-nav-brand pf-display flex items-center gap-2.5 text-base font-bold tracking-tight text-white outline-none focus:outline-none focus-visible:outline-none"
+                    className="enitexa-nav-brand pf-display flex min-w-0 items-center gap-2 text-sm font-bold tracking-tight text-white outline-none focus:outline-none focus-visible:outline-none sm:gap-2.5 sm:text-base"
                 >
-                    <EnitexaMark size={24} />
-                    <span>Enitexa.Ai</span>
+                    <EnitexaMark size={22} />
+                    <span className="truncate">Enitexa.Ai</span>
                 </a>
 
-                <div className="hidden items-center gap-7 md:flex">
+                <div className="hidden items-center gap-5 lg:flex xl:gap-7">
                     {NAV_LINKS.map((link) => {
                         const active = linkIsActive(link);
                         return (
@@ -157,11 +157,11 @@ const KksystemsNavbar = () => {
                     })}
                 </div>
 
-                <div className="flex items-center gap-2">
+                <div className="flex shrink-0 items-center gap-2">
                     <Magnetic strength={0.25}>
                         <button
                             onClick={() => navigate('/enitexa.ai/contact')}
-                            className="group hidden items-center gap-1.5 rounded-full border border-white bg-white py-2 pl-4 pr-3 text-xs font-semibold text-black transition-all duration-500 hover:bg-transparent hover:text-white lg:inline-flex"
+                            className="group hidden items-center gap-1.5 rounded-full border border-white bg-white py-2 pl-4 pr-3 text-xs font-semibold text-black transition-all duration-500 hover:bg-transparent hover:text-white xl:inline-flex"
                         >
                             Start a project
                             <ArrowUpRight className="h-3.5 w-3.5 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
@@ -176,7 +176,7 @@ const KksystemsNavbar = () => {
                     </button>
                     <button
                         onClick={() => setIsOpen(!isOpen)}
-                        className="flex h-9 w-9 items-center justify-center rounded-full border border-white/10 text-slate-300 transition hover:border-indigo-300/45 hover:text-indigo-200 md:hidden"
+                        className="flex h-9 w-9 items-center justify-center rounded-full border border-white/10 text-slate-300 transition hover:border-indigo-300/45 hover:text-indigo-200 lg:hidden"
                         aria-label="Toggle menu"
                     >
                         {isOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
@@ -185,13 +185,13 @@ const KksystemsNavbar = () => {
             </div>
 
             {isOpen && (
-                <div className="enitexa-contained-scroll mx-auto mt-2 max-h-[calc(100dvh-120px-env(safe-area-inset-top,0px)-env(safe-area-inset-bottom,0px))] max-w-6xl overflow-y-auto rounded-2xl border border-white/10 bg-[rgba(4,6,14,0.96)] p-4 md:hidden">
+                <div className="enitexa-contained-scroll mx-auto mt-2 max-h-[calc(100dvh-120px-env(safe-area-inset-top,0px)-env(safe-area-inset-bottom,0px))] max-w-6xl overflow-y-auto rounded-2xl border border-white/10 bg-[rgba(4,6,14,0.96)] p-4 pb-[max(1rem,env(safe-area-inset-bottom,0px))] lg:hidden">
                     {NAV_LINKS.map((link, i) => (
                         <a
                             key={link.title}
                             href={link.href}
                             onClick={(e) => handleNavClick(e, link.href)}
-                            className="pf-display flex items-baseline gap-3 rounded-xl px-3 py-3 text-2xl font-bold text-white transition hover:bg-indigo-300/10 hover:text-indigo-200"
+                            className="pf-display flex items-baseline gap-3 rounded-xl px-3 py-3 text-xl font-bold text-white transition hover:bg-indigo-300/10 hover:text-indigo-200 sm:text-2xl"
                             style={{ transitionDelay: `${i * 30}ms` }}
                         >
                             <span className="pf-mono text-[10px] text-indigo-400">{link.index}</span>

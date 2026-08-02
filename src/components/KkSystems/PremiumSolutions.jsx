@@ -101,17 +101,17 @@ export const PremiumSolutions = () => {
     ];
 
     return (
-        <section id="services" className="bg-[#0B0F19] py-28">
+        <section id="services" className="bg-[#0B0F19] py-16 sm:py-24 lg:py-28">
             <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-                <div className="mx-auto mb-16 max-w-3xl text-center">
-                    <div className="pf-mono mb-6 flex items-center justify-center gap-4 text-[11px] uppercase tracking-[0.35em] text-slate-400">
+                <div className="mx-auto mb-10 max-w-3xl text-center sm:mb-16">
+                    <div className="pf-mono mb-5 flex items-center justify-center gap-3 text-[10px] uppercase tracking-[0.28em] text-slate-400 sm:mb-6 sm:gap-4 sm:text-[11px] sm:tracking-[0.35em]">
                         <span className="text-indigo-300">(04)</span>
                         <span>Services</span>
                     </div>
-                    <h2 className="pf-display mb-5 text-[clamp(1.7rem,3.2vw,2.5rem)] font-bold leading-[1.05] text-white">
+                    <h2 className="pf-display mb-4 text-[clamp(1.5rem,5.5vw,2.5rem)] font-bold leading-[1.05] text-white sm:mb-5">
                         Interactive digital <span className="pf-outline-text">solution stack.</span>
                     </h2>
-                    <p className="text-lg leading-relaxed text-gray-400">
+                    <p className="text-base leading-relaxed text-gray-400 sm:text-lg">
                         App development, digital presence, AI systems, and growth operations delivered under one premium execution model.
                     </p>
                 </div>

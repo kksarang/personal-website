@@ -61,7 +61,7 @@ export const HowWeWork = () => {
                     <h2 className="pf-display text-[clamp(1.7rem,3.2vw,2.5rem)] font-bold text-white mb-6">
                         How we <span className="pf-outline-text">work with you.</span>
                     </h2>
-                    <p className="text-xl text-gray-400 max-w-2xl mx-auto font-light leading-relaxed">
+                    <p className="mx-auto max-w-2xl text-base font-light leading-relaxed text-gray-400 sm:text-xl">
                         A practical process that keeps scope, quality, and delivery aligned.
                     </p>
                 </div>
