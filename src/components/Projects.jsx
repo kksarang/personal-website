@@ -16,7 +16,7 @@ const Projects = () => {
                 </div>
 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                    {projects.map((project, index) => (
+                    {projects.filter((project) => !project.hidden).map((project, index) => (
                         <div key={index} className="group relative bg-white dark:bg-slate-900 rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 flex flex-col h-full border border-gray-100 dark:border-slate-700">
                             <div className="h-48 bg-gradient-to-r from-indigo-500 to-purple-600 flex items-center justify-center">
                                 <div className="transform group-hover:scale-110 transition-transform duration-300">

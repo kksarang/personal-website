@@ -223,7 +223,7 @@ const EnitexaAI = () => {
                                 value={input}
                                 onChange={(e) => setInput(e.target.value)}
                                 onKeyDown={(e) => e.key === 'Enter' && handleSendMessage()}
-                                placeholder={`Ask Enitexa.Ai AI about ${activeMode === 'Assistant' ? 'your project' : activeMode.toLowerCase()}...`}
+                                placeholder={`Ask Enitexa.Ai about ${activeMode === 'Assistant' ? 'your project' : activeMode.toLowerCase()}...`}
                                 className="flex-1 bg-transparent border-none outline-none px-4 py-3 text-sm placeholder:text-white/20"
                             />
                             <button 
@@ -238,7 +238,7 @@ const EnitexaAI = () => {
                         </div>
                         <div className="mt-4 flex justify-center">
                             <p className="rounded-full border border-amber-300/35 bg-amber-300/10 px-4 py-1.5 text-[10px] font-semibold uppercase tracking-[0.16em] text-amber-200">
-                                Enitexa.Ai AI - Work In Progress (Started Last Month)
+                                Enitexa.Ai - Work In Progress (Started Last Month)
                             </p>
                         </div>
                     </div>

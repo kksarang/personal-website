@@ -82,7 +82,7 @@ const FOOTER_LINKS = [
     {
         title: 'Products',
         links: [
-            { label: 'Enitexa.Ai AI', to: '/enitexa.ai/ai' },
+            { label: 'Enitexa.Ai', to: '/enitexa.ai/ai' },
             { label: 'SaaS Platform', to: '/enitexa.ai/saas' },
             { label: 'ERP Demo', to: '/enitexa.ai/erp/dashboard' },
             { label: 'Learning', to: '/enitexa.ai/learning' },

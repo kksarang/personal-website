@@ -72,7 +72,7 @@ const PortfolioSection = () => {
     const navigate = useNavigate();
 
     // Premium projects for the Enitexa.Ai home "Work" strip
-    const featuredProjects = projects.filter((p) => p.featured).slice(0, 4);
+    const featuredProjects = projects.filter((p) => p.featured && !p.hidden).slice(0, 4);
 
     const handleProjectClick = (slug) => {
         // Multi-page routing directly via string path, avoiding hash collisions.

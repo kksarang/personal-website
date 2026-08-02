@@ -7,7 +7,7 @@ import EnitexaPageShell from '../../components/KkSystems/EnitexaPageShell';
 export default function WorkDetails() {
     const { id } = useParams();
     const navigate = useNavigate();
-    const project = projects.find((p) => p.slug === id);
+    const project = projects.find((p) => p.slug === id && !p.hidden);
 
     useEffect(() => {
         window.scrollTo(0, 0);

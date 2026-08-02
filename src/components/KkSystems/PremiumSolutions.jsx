@@ -1,5 +1,5 @@
 import React from 'react';
-import { ArrowRight, Smartphone, Monitor, PaintBucket, Share2, Target, Database, Cpu, Activity, Star, BrainCircuit, Search, LayoutDashboard, Shield, Shirt } from 'lucide-react';
+import { ArrowRight, Smartphone, Monitor, PaintBucket, Share2, Target, Database, Cpu, Activity, Star, BrainCircuit, Search, LayoutDashboard, Shield } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 import SpotlightCard from '../ui/SpotlightCard';
 
@@ -7,14 +7,6 @@ export const PremiumSolutions = () => {
     const navigate = useNavigate();
 
     const featuredSolutions = [
-        {
-            title: "Cleanso Laundry Software",
-            benefit: "White-label laundry apps, delivery, and POS — custom product planning for India, UAE & GCC.",
-            items: ["Customer booking app", "Delivery app", "CMS + POS", "Multi-store / franchise"],
-            icon: Shirt,
-            link: "/enitexa.ai/solutions/laundry",
-            tag: "New Product"
-        },
         {
             title: "Mobile App Development",
             benefit: "Scalable app ecosystems for consumer, enterprise, and startup use cases.",
@@ -31,6 +23,14 @@ export const PremiumSolutions = () => {
             link: "/enitexa.ai/services/website-development",
             tag: "Digital Presence"
         },
+        {
+            title: "Digital Marketing",
+            benefit: "Data-led growth campaigns engineered for leads, sales, and retention.",
+            items: ["Paid ads", "Lead funnels", "Performance analytics", "Campaign scaling"],
+            icon: Target,
+            link: "/enitexa.ai/services/digital-marketing",
+            tag: "Revenue Growth"
+        },
     ];
 
     const extendedSolutions = [
@@ -41,14 +41,6 @@ export const PremiumSolutions = () => {
             icon: PaintBucket,
             link: "/enitexa.ai/services/ui-ux-design",
             tag: "Experience Layer"
-        },
-        {
-            title: "Digital Marketing",
-            benefit: "Data-led growth campaigns engineered for leads, sales, and retention.",
-            items: ["Paid ads", "Lead funnels", "Performance analytics", "Campaign scaling"],
-            icon: Target,
-            link: "/enitexa.ai/services/digital-marketing",
-            tag: "Revenue Growth"
         },
         {
             title: "SEO Systems",

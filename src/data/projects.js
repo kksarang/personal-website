@@ -8,7 +8,8 @@ export const projects = [
         technologies: ["React.js", "Vite", "Tailwind CSS", "Product Marketing"],
         github: "https://kksarang.github.io/laundry/",
         playStore: null,
-        featured: true,
+        featured: false,
+        hidden: true,
         heroImage: "/assets/showcase/web_platform_premium.png",
         appDetails: {
             category: "SaaS Platform",

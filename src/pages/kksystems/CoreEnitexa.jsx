@@ -34,12 +34,12 @@ const differentiators = [
 
 const platformExtensions = [
     {
-        title: 'Enitexa.Ai AI',
+        title: 'Enitexa.Ai',
         description: 'An interactive assistant experience for architecture guidance, workflow ideation, and technical direction.',
         points: ['AI chat interface', 'Mode-based support', 'Project planning assistance'],
         icon: Bot,
         href: '/enitexa.ai/ai',
-        cta: 'Open Enitexa.Ai AI',
+        cta: 'Open Enitexa.Ai',
     },
     {
         title: 'Enitexa.Ai SaaS',
@@ -172,7 +172,7 @@ export default function CoreEnitexa() {
                         <span className="h-px flex-1 bg-white/[0.08]" />
                         <Layers3 className="h-4 w-4 text-indigo-300" />
                     </div>
-                    <h2 className="pf-display mb-2 text-[clamp(1.7rem,3.2vw,2.5rem)] font-bold text-white">Enitexa.Ai AI & SaaS</h2>
+                    <h2 className="pf-display mb-2 text-[clamp(1.7rem,3.2vw,2.5rem)] font-bold text-white">Enitexa.Ai & SaaS</h2>
                     <p className="mb-6 max-w-3xl text-sm text-slate-400">
                         These are dedicated Enitexa.Ai offerings and not hidden modules. You can open both pages directly from here.
                     </p>
