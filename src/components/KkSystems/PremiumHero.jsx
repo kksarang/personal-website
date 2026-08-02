@@ -12,7 +12,7 @@ const HeroEmblem = () => {
         <div className="relative flex items-center justify-center select-none" aria-hidden="true">
             {/* Soft glow backdrop */}
             <div className="absolute h-[420px] w-[420px] rounded-full bg-indigo-500/[0.12] blur-[90px]" />
-            <div className="absolute h-[260px] w-[260px] rounded-full bg-fuchsia-500/[0.08] blur-[70px]" />
+            <div className="absolute h-[260px] w-[260px] rounded-full bg-[#9eb0ff]/[0.08] blur-[70px]" />
 
             {/* Thin concentric rings */}
             <div className="absolute h-[380px] w-[380px] rounded-full border border-white/[0.05]" />
@@ -42,7 +42,7 @@ const HeroEmblem = () => {
                 <span className="pf-mono text-[9px] uppercase tracking-[0.2em] text-white/70">Apps</span>
             </div>
             <div className="pf-float absolute -right-5 top-1/2 flex items-center gap-2 rounded-full border border-white/10 bg-white/[0.04] px-4 py-2 backdrop-blur-sm [animation-delay:1.2s]">
-                <BrainCircuit className="h-3.5 w-3.5 text-fuchsia-300" />
+                <BrainCircuit className="h-3.5 w-3.5 text-[#9eb0ff]" />
                 <span className="pf-mono text-[9px] uppercase tracking-[0.2em] text-white/70">AI</span>
             </div>
             <div className="pf-float absolute bottom-12 left-6 flex items-center gap-2 rounded-full border border-white/10 bg-white/[0.04] px-4 py-2 backdrop-blur-sm [animation-delay:2.1s]">
@@ -64,11 +64,11 @@ const PremiumHero = () => {
             <div className="pointer-events-none absolute inset-0 bg-[#05060c]" />
             <div className="pf-dotgrid pointer-events-none absolute inset-0" aria-hidden />
             <div
-                className="pointer-events-none absolute -left-[12%] -top-[28%] h-[64%] w-[62%] rounded-full bg-indigo-500/[0.14] blur-[110px]"
+                className="pointer-events-none absolute -left-[12%] -top-[28%] h-[64%] w-[62%] rounded-full bg-[#7d96ff]/[0.12] blur-[110px]"
                 aria-hidden
             />
             <div
-                className="pointer-events-none absolute -bottom-[18%] -right-[8%] h-[52%] w-[54%] rounded-full bg-fuchsia-500/10 blur-[100px]"
+                className="pointer-events-none absolute -bottom-[18%] -right-[8%] h-[52%] w-[54%] rounded-full bg-[#c5cee8]/[0.06] blur-[100px]"
                 aria-hidden
             />
 

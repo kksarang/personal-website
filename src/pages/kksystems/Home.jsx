@@ -92,7 +92,7 @@ const KksystemsHome = () => {
                                         initial={{ width: '0%' }}
                                         animate={{ width: '100%' }}
                                         transition={{ duration: 1.5, ease: 'easeInOut' }}
-                                        className="h-1 bg-gradient-to-r from-indigo-400 via-violet-400 to-fuchsia-400"
+                                        className="h-1 bg-gradient-to-r from-[#c5cee8] via-[#9eb0ff] to-[#7d96ff]"
                                     />
                                 </div>
                             </div>

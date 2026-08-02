@@ -51,7 +51,7 @@ export const Positioning = () => {
                             <br />
                             <span className="pf-outline-text">Your execution</span>
                             <br />
-                            <span className="bg-gradient-to-r from-indigo-300 via-violet-300 to-fuchsia-300 bg-clip-text text-transparent">
+                            <span className="pf-gradient-text">
                                 partner.
                             </span>
                         </h2>
@@ -77,7 +77,7 @@ export const Positioning = () => {
 
                     {/* Progress rail */}
                     <div className="relative mb-10 hidden h-px bg-white/[0.08] sm:block" aria-hidden>
-                        <div className="absolute inset-y-0 left-0 w-full origin-left bg-gradient-to-r from-indigo-400/80 via-violet-400/50 to-transparent" />
+                        <div className="absolute inset-y-0 left-0 w-full origin-left bg-gradient-to-r from-[#9eb0ff]/80 via-[#7d96ff]/40 to-transparent" />
                     </div>
 
                     <div className="grid gap-0 border-t border-white/[0.08] sm:grid-cols-4 sm:border-t-0">

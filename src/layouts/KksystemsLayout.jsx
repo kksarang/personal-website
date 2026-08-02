@@ -104,9 +104,9 @@ const FOOTER_LINKS = [
 ];
 
 const EnitexaFooter = () => (
-    <footer className="enitexa-footer relative z-10 overflow-hidden border-t border-white/[0.08] bg-[#030408]">
-        <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-indigo-500/50 to-transparent" aria-hidden="true" />
-        <div className="absolute left-1/2 top-0 h-72 w-[720px] -translate-x-1/2 rounded-full bg-indigo-500/[0.07] blur-[110px]" aria-hidden="true" />
+    <footer className="enitexa-footer relative z-10 overflow-hidden border-t border-white/[0.08] bg-[#050507]">
+        <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-[#9eb0ff]/45 to-transparent" aria-hidden="true" />
+        <div className="absolute left-1/2 top-0 h-72 w-[720px] -translate-x-1/2 rounded-full bg-[#7d96ff]/[0.08] blur-[110px]" aria-hidden="true" />
 
         <div className="relative mx-auto max-w-[90rem] px-6 pt-20 sm:px-10 lg:px-16">
             {/* Giant CTA */}
@@ -197,15 +197,15 @@ const KksystemsLayout = () => {
     }, []);
 
     return (
-        <div className="enitexa-root relative flex min-h-screen flex-col overflow-x-hidden bg-white text-gray-900 dark:bg-[#040713] dark:text-white">
+        <div className="enitexa-root relative flex min-h-screen flex-col overflow-x-hidden">
             {!appRoute && <PremiumCursor />}
             {!appRoute && <div className="pf-grain" aria-hidden="true" />}
             {!appRoute && (
                 <div className="pointer-events-none fixed inset-0 z-0">
                     <div className="enitexa-ambient absolute inset-0" />
-                    <div className="absolute left-[-10%] top-[-10%] h-[260px] w-[260px] rounded-full bg-indigo-600/10 blur-[70px]" />
-                    <div className="absolute bottom-[-16%] right-[-8%] h-[260px] w-[260px] rounded-full bg-cyan-500/10 blur-[75px]" />
-                    <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(99,102,241,0.1),transparent_45%)]" />
+                    <div className="enitexa-theme-orb enitexa-theme-orb--a absolute" aria-hidden />
+                    <div className="enitexa-theme-orb enitexa-theme-orb--b absolute" aria-hidden />
+                    <div className="enitexa-theme-veil absolute inset-0" aria-hidden />
                 </div>
             )}
             {!appRoute && <KksystemsNavbar />}

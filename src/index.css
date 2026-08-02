@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&family=Syne:wght@500;600;700;800&family=JetBrains+Mono:wght@400;500;600&family=Outfit:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=IBM+Plex+Mono:wght@400;500;600&family=Inter:wght@400;500;600;700;800&family=Outfit:wght@400;500;600;700;800&family=Syne:wght@500;600;700;800&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -36,15 +36,36 @@ body {
 
 @layer components {
   .enitexa-display {
-    font-family: 'Syne', 'Space Grotesk', 'Inter', sans-serif;
-    letter-spacing: -0.02em;
+    font-family: 'Syne', 'DM Sans', sans-serif;
+    letter-spacing: -0.03em;
   }
 
   .enitexa-root {
+    /* Premium theme tokens — dark default */
+    --ex-bg: #07080c;
+    --ex-bg-soft: #0c0e14;
+    --ex-surface: #11141c;
+    --ex-surface-2: #161a24;
+    --ex-ink: #f2f1ed;
+    --ex-muted: rgba(242, 241, 237, 0.58);
+    --ex-faint: rgba(242, 241, 237, 0.34);
+    --ex-line: rgba(255, 255, 255, 0.09);
+    --ex-accent: #9eb0ff;
+    --ex-accent-strong: #7d96ff;
+    --ex-accent-dim: rgba(158, 176, 255, 0.12);
+    --ex-glow: rgba(125, 150, 255, 0.14);
+    --ex-cta: #f2f1ed;
+    --ex-cta-ink: #0a0b10;
+    --ex-shadow: 0 28px 80px -40px rgba(0, 0, 0, 0.65);
+
     overflow-x: hidden;
     overscroll-behavior-x: none;
-    /* manipulation: reliable vertical pan without pan-y quirks on nested overflow regions */
     touch-action: manipulation;
+    background: var(--ex-bg);
+    color: var(--ex-ink);
+    font-family: 'DM Sans', 'Inter', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
   }
 
   /* Long nested lists (demo sidebar, ERP side nav): isolate momentum scroll on mobile */
@@ -198,10 +219,35 @@ body {
 
   .enitexa-ambient {
     background:
-      radial-gradient(circle at 12% 18%, rgba(56, 189, 248, 0.08), transparent 34%),
-      radial-gradient(circle at 85% 20%, rgba(129, 140, 248, 0.1), transparent 36%),
-      radial-gradient(circle at 55% 78%, rgba(139, 92, 246, 0.08), transparent 32%);
+      radial-gradient(ellipse 70% 50% at 15% 0%, var(--ex-glow), transparent 55%),
+      radial-gradient(ellipse 55% 40% at 90% 10%, rgba(197, 206, 232, 0.05), transparent 50%),
+      radial-gradient(ellipse 50% 35% at 50% 100%, rgba(125, 150, 255, 0.04), transparent 55%);
     animation: none;
+  }
+
+  .enitexa-theme-orb {
+    border-radius: 9999px;
+    filter: blur(90px);
+    opacity: 0.55;
+  }
+  .enitexa-theme-orb--a {
+    left: -8%;
+    top: -6%;
+    width: 320px;
+    height: 320px;
+    background: var(--ex-glow);
+  }
+  .enitexa-theme-orb--b {
+    right: -6%;
+    bottom: -10%;
+    width: 300px;
+    height: 300px;
+    background: rgba(197, 206, 232, 0.06);
+  }
+  .enitexa-theme-veil {
+    background:
+      linear-gradient(180deg, transparent 0%, transparent 70%, color-mix(in srgb, var(--ex-bg) 55%, transparent) 100%),
+      radial-gradient(ellipse 80% 40% at 50% -10%, var(--ex-accent-dim), transparent 60%);
   }
 
   .enitexa-noise {
@@ -262,64 +308,80 @@ body {
     display: none;
   }
 
-  /* Light mode overrides for the Enitexa.Ai site */
+  /* Light mode — warm stone surfaces, sapphire accent (not purple wash) */
   html:not(.dark) .enitexa-root {
-    background:
-      radial-gradient(ellipse 80% 50% at 10% -10%, rgba(99, 102, 241, 0.07), transparent 55%),
-      radial-gradient(ellipse 60% 40% at 90% 0%, rgba(14, 165, 233, 0.05), transparent 50%),
-      #f3f4f7;
-    color: #0f172a;
+    --ex-bg: #f3f2ee;
+    --ex-bg-soft: #ebe9e3;
+    --ex-surface: #ffffff;
+    --ex-surface-2: #f7f6f2;
+    --ex-ink: #12141a;
+    --ex-muted: rgba(18, 20, 26, 0.62);
+    --ex-faint: rgba(18, 20, 26, 0.4);
+    --ex-line: rgba(18, 20, 26, 0.1);
+    --ex-accent: #3f51d8;
+    --ex-accent-strong: #2f3fbf;
+    --ex-accent-dim: rgba(63, 81, 216, 0.1);
+    --ex-glow: rgba(63, 81, 216, 0.09);
+    --ex-cta: #12141a;
+    --ex-cta-ink: #f3f2ee;
+    --ex-shadow: 0 24px 60px -36px rgba(18, 20, 26, 0.22);
+    background: var(--ex-bg);
+    color: var(--ex-ink);
   }
 
   html:not(.dark) .enitexa-root .enitexa-ambient {
     background:
-      radial-gradient(circle at 12% 18%, rgba(56, 189, 248, 0.06), transparent 40%),
-      radial-gradient(circle at 85% 20%, rgba(99, 102, 241, 0.08), transparent 42%),
-      radial-gradient(circle at 55% 78%, rgba(15, 23, 42, 0.03), transparent 38%);
+      radial-gradient(ellipse 70% 50% at 12% 0%, var(--ex-glow), transparent 55%),
+      radial-gradient(ellipse 50% 40% at 88% 8%, rgba(18, 20, 26, 0.03), transparent 50%);
   }
 
   html:not(.dark) .enitexa-root .enitexa-noise {
-    opacity: 0.03;
+    opacity: 0.035;
   }
 
   html:not(.dark) .enitexa-root .enitexa-grid {
-    opacity: 0.2;
+    opacity: 0.22;
   }
 
   html:not(.dark) .enitexa-root .enitexa-nav-shell {
-    background: rgba(255, 255, 255, 0.92) !important;
-    border-color: rgba(15, 23, 42, 0.1) !important;
+    background: rgba(255, 255, 255, 0.86) !important;
+    border-color: rgba(18, 20, 26, 0.1) !important;
     box-shadow:
-      0 1px 0 rgba(255, 255, 255, 0.8) inset,
-      0 12px 32px rgba(15, 23, 42, 0.08);
+      0 1px 0 rgba(255, 255, 255, 0.9) inset,
+      0 16px 40px -20px rgba(18, 20, 26, 0.14);
   }
 
   html:not(.dark) .enitexa-root .enitexa-nav-brand {
-    color: #0f172a;
+    color: var(--ex-ink);
     background: transparent;
     border-color: transparent;
   }
 
   html:not(.dark) .enitexa-root .enitexa-nav-link-item {
-    color: #334155 !important;
+    color: rgba(18, 20, 26, 0.55) !important;
+  }
+  html:not(.dark) .enitexa-root .enitexa-nav-link-item:hover,
+  html:not(.dark) .enitexa-root a.enitexa-nav-link-item.text-white {
+    color: var(--ex-ink) !important;
   }
 
   html:not(.dark) .enitexa-root .enitexa-theme-btn {
-    color: #334155 !important;
-    border-color: rgba(15, 23, 42, 0.16) !important;
+    color: rgba(18, 20, 26, 0.65) !important;
+    border-color: rgba(18, 20, 26, 0.14) !important;
   }
 
   html:not(.dark) .enitexa-root .enitexa-glass,
   html:not(.dark) .enitexa-root .premium-surface {
-    background: rgba(255, 255, 255, 0.92) !important;
-    border-color: rgba(15, 23, 42, 0.12) !important;
-    box-shadow: 0 8px 20px rgba(15, 23, 42, 0.06);
+    background: rgba(255, 255, 255, 0.9) !important;
+    border-color: rgba(18, 20, 26, 0.1) !important;
+    box-shadow: var(--ex-shadow);
   }
 
   html:not(.dark) .enitexa-root .gradient-stroke::before {
-    background: linear-gradient(120deg, rgba(99, 102, 241, 0.2), rgba(99, 102, 241, 0.12), rgba(99, 102, 241, 0.2));
+    background: linear-gradient(120deg, rgba(63, 81, 216, 0.28), rgba(63, 81, 216, 0.1), rgba(63, 81, 216, 0.24));
   }
 
+  /* Remap legacy dark hex shells → tonal light surfaces (not flat white) */
   html:not(.dark) .enitexa-root [class*="bg-[#030303]"],
   html:not(.dark) .enitexa-root [class*="bg-[#030408]"],
   html:not(.dark) .enitexa-root [class*="bg-[#040713]"],
@@ -335,71 +397,72 @@ body {
   html:not(.dark) .enitexa-root [class*="bg-[#131521]"],
   html:not(.dark) .enitexa-root [class*="bg-slate-950/"],
   html:not(.dark) .enitexa-root [class*="bg-black/"] {
-    background-color: #ffffff !important;
+    background-color: var(--ex-surface) !important;
   }
 
   /* Hero light-mode polish */
   html:not(.dark) .enitexa-root .enitexa-premium-hero {
     background:
-      radial-gradient(ellipse 70% 55% at 12% 10%, rgba(99, 102, 241, 0.12), transparent 55%),
-      radial-gradient(ellipse 55% 45% at 88% 20%, rgba(236, 72, 153, 0.08), transparent 50%),
-      #f5f6fa;
+      radial-gradient(ellipse 70% 55% at 12% 10%, var(--ex-glow), transparent 55%),
+      radial-gradient(ellipse 50% 40% at 90% 15%, rgba(18, 20, 26, 0.03), transparent 50%),
+      var(--ex-bg);
   }
   html:not(.dark) .enitexa-root .enitexa-premium-hero [class*="bg-[#05060c]"] {
     background-color: transparent !important;
   }
   html:not(.dark) .enitexa-root .enitexa-premium-hero .pf-dotgrid {
-    background-image: radial-gradient(rgba(100, 116, 139, 0.18) 1px, transparent 1px);
-    opacity: 0.55;
+    background-image: radial-gradient(rgba(18, 20, 26, 0.12) 1px, transparent 1px);
+    opacity: 0.65;
   }
   html:not(.dark) .enitexa-root .enitexa-premium-hero .text-indigo-300 {
-    color: #4f46e5 !important;
+    color: var(--ex-accent) !important;
   }
   html:not(.dark) .enitexa-root .enitexa-premium-hero .fill-white\/35 {
-    fill: rgba(71, 85, 105, 0.45);
+    fill: rgba(18, 20, 26, 0.35);
   }
   html:not(.dark) .enitexa-root .enitexa-premium-hero .pf-outline-text {
-    -webkit-text-stroke: 1.5px rgba(15, 23, 42, 0.45);
+    -webkit-text-stroke: 1.5px rgba(18, 20, 26, 0.38);
     color: transparent;
   }
   html:not(.dark) .enitexa-root .enitexa-premium-hero [class*='bg-indigo-500/'],
   html:not(.dark) .enitexa-root .enitexa-premium-hero [class*='bg-fuchsia-500/'] {
-    opacity: 0.55;
+    opacity: 0.35;
+    background-color: var(--ex-accent-dim) !important;
   }
 
   /* Kinetic strip light mode */
   html:not(.dark) .enitexa-root .enitexa-kinetic-strip {
-    background-color: #eef0f5 !important;
-    border-color: rgba(15, 23, 42, 0.08) !important;
+    background-color: var(--ex-bg-soft) !important;
+    border-color: var(--ex-line) !important;
   }
   html:not(.dark) .enitexa-root .enitexa-kinetic-strip .pf-outline-text {
-    -webkit-text-stroke: 1.4px rgba(15, 23, 42, 0.35);
+    -webkit-text-stroke: 1.4px rgba(18, 20, 26, 0.32);
     color: transparent;
   }
   html:not(.dark) .enitexa-root .enitexa-kinetic-strip .text-indigo-400 {
-    color: #6366f1 !important;
+    color: var(--ex-accent) !important;
   }
 
-  /* Editorial home + positioning light surfaces */
+  /* Editorial + positioning light surfaces */
   html:not(.dark) .enitexa-root .enitexa-positioning,
   html:not(.dark) .enitexa-root .enitexa-editorial {
     background:
-      radial-gradient(ellipse 80% 55% at 10% 0%, rgba(99, 102, 241, 0.08), transparent 55%),
-      #f4f5f8 !important;
+      radial-gradient(ellipse 80% 55% at 8% 0%, var(--ex-glow), transparent 55%),
+      var(--ex-bg) !important;
   }
   html:not(.dark) .enitexa-root .enitexa-positioning .pf-outline-text,
   html:not(.dark) .enitexa-root .enitexa-editorial .pf-outline-text {
-    -webkit-text-stroke-color: rgba(15, 23, 42, 0.28);
+    -webkit-text-stroke-color: rgba(18, 20, 26, 0.3);
     color: transparent;
   }
   html:not(.dark) .enitexa-root .enitexa-positioning [class*='border-white/[0.08]'],
   html:not(.dark) .enitexa-root .enitexa-positioning [class*='border-white/[0.1]'],
   html:not(.dark) .enitexa-root .enitexa-editorial [class*='border-white/[0.08]'],
   html:not(.dark) .enitexa-root .enitexa-editorial [class*='border-white/[0.06]'] {
-    border-color: rgba(15, 23, 42, 0.1) !important;
+    border-color: var(--ex-line) !important;
   }
   html:not(.dark) .enitexa-root .enitexa-editorial .bg-\[\#0B0F19\] {
-    background-color: #f4f5f8 !important;
+    background-color: var(--ex-surface) !important;
   }
 
   /* Text opacity tiers used by the premium hero + sections */
@@ -544,26 +607,28 @@ body {
   }
 
   html:not(.dark) .enitexa-root .enitexa-footer {
-    background-color: #ffffff !important;
-    color: #0f172a;
-    border-color: rgba(15, 23, 42, 0.08) !important;
-    box-shadow: 0 -1px 0 rgba(15, 23, 42, 0.04);
+    background:
+      radial-gradient(ellipse 60% 40% at 50% 0%, var(--ex-glow), transparent 55%),
+      var(--ex-surface) !important;
+    color: var(--ex-ink);
+    border-color: var(--ex-line) !important;
+    box-shadow: 0 -1px 0 rgba(18, 20, 26, 0.04);
   }
 
   html:not(.dark) .enitexa-root .enitexa-footer .enitexa-footer-orb {
-    border-color: rgba(15, 23, 42, 0.18) !important;
-    color: #0f172a !important;
-    background-color: #ffffff !important;
+    border-color: rgba(18, 20, 26, 0.16) !important;
+    color: var(--ex-ink) !important;
+    background-color: var(--ex-surface) !important;
   }
 
   html:not(.dark) .enitexa-root .enitexa-footer .enitexa-footer-orb:hover {
-    border-color: rgba(99, 102, 241, 0.55) !important;
-    background-color: rgb(99, 102, 241) !important;
+    border-color: var(--ex-accent) !important;
+    background-color: var(--ex-accent-strong) !important;
     color: #ffffff !important;
   }
 
   html:not(.dark) .enitexa-root .enitexa-footer a:hover {
-    color: #312e81 !important;
+    color: var(--ex-accent-strong) !important;
   }
 
   /* SaaS shell typography overrides live after @tailwind utilities (end of file). */
@@ -1019,35 +1084,32 @@ html:not(.dark) .enitexa-root nav .enitexa-contained-scroll {
    ============================================================ */
 
 .pf-mono {
-  font-family: 'JetBrains Mono', 'SFMono-Regular', Menlo, monospace;
+  font-family: 'IBM Plex Mono', 'SFMono-Regular', Menlo, monospace;
 }
 
-/* Branded text selection across the Enitexa.Ai sub-site — subtle, not a solid block */
+/* Branded text selection */
 .enitexa-root ::selection {
-  background: rgba(129, 140, 248, 0.28);
-  color: #eef2ff;
+  background: rgba(158, 176, 255, 0.28);
+  color: #f2f1ed;
 }
 html:not(.dark) .enitexa-root ::selection {
-  background: rgba(99, 102, 241, 0.22);
-  color: #1e1b4b;
+  background: rgba(63, 81, 216, 0.18);
+  color: #12141a;
 }
 
-/* Enitexa.Ai body copy: Space Grotesk for a premium reading face (headings stay Syne) */
-.enitexa-root {
-  font-family: 'Space Grotesk', 'Inter', sans-serif;
-}
 .enitexa-root p:not(.pf-mono):not(.pf-display),
 .enitexa-root li:not(.pf-mono),
 .enitexa-root td,
 .enitexa-root label:not(.pf-mono),
 .enitexa-root input,
 .enitexa-root textarea,
-.enitexa-root select {
-  font-family: 'Space Grotesk', 'Inter', sans-serif;
-  letter-spacing: -0.01em;
+.enitexa-root select,
+.enitexa-root button:not(.pf-mono):not(.pf-display) {
+  font-family: 'DM Sans', 'Inter', sans-serif;
+  letter-spacing: -0.011em;
 }
 .enitexa-root .pf-mono {
-  font-family: 'JetBrains Mono', 'SFMono-Regular', Menlo, monospace !important;
+  font-family: 'IBM Plex Mono', 'SFMono-Regular', Menlo, monospace !important;
 }
 .enitexa-root .pf-display,
 .enitexa-root h1,
@@ -1055,61 +1117,124 @@ html:not(.dark) .enitexa-root ::selection {
 .enitexa-root h3,
 .enitexa-root h4,
 .enitexa-root h5 {
-  font-family: 'Syne', 'Space Grotesk', sans-serif !important;
+  font-family: 'Syne', 'DM Sans', sans-serif !important;
 }
 
 .pf-display {
-  font-family: 'Syne', 'Space Grotesk', sans-serif;
-  letter-spacing: -0.03em;
+  font-family: 'Syne', 'DM Sans', sans-serif;
+  letter-spacing: -0.035em;
 }
 
-/* Every heading inside the Enitexa.Ai sub-site uses the Syne display face,
-   so inner pages match the revamped home typography without per-page edits. */
 .enitexa-root h1,
 .enitexa-root h2,
 .enitexa-root h3,
 .enitexa-root h4,
 .enitexa-root h5 {
-  font-family: 'Syne', 'Space Grotesk', sans-serif;
-  letter-spacing: -0.02em;
+  font-family: 'Syne', 'DM Sans', sans-serif;
+  letter-spacing: -0.03em;
+  color: var(--ex-ink);
 }
 
-/* Old-style bold display text (stat numbers, card titles in divs/spans)
-   also picks up the display face. */
 .enitexa-root .font-black,
 .enitexa-root .font-extrabold {
-  font-family: 'Syne', 'Space Grotesk', sans-serif;
-  letter-spacing: -0.02em;
-  font-weight: 800; /* Syne ships up to 800; avoid faux-bold synthesis */
+  font-family: 'Syne', 'DM Sans', sans-serif;
+  letter-spacing: -0.03em;
+  font-weight: 800;
 }
 
-/* Every uppercase tracked micro-label (eyebrows, badges, chips) across the
-   sub-site uses the monospace face from the new design system. */
 .enitexa-root .uppercase[class*="tracking-["] {
-  font-family: 'JetBrains Mono', 'SFMono-Regular', Menlo, monospace;
+  font-family: 'IBM Plex Mono', 'SFMono-Regular', Menlo, monospace;
 }
 
 /* Hollow / outline display text */
 .pf-outline-text {
   color: transparent;
-  -webkit-text-stroke: 1.5px rgba(15, 23, 42, 0.55);
+  -webkit-text-stroke: 1.4px rgba(18, 20, 26, 0.42);
 }
 .dark .pf-outline-text {
-  -webkit-text-stroke: 1.5px rgba(255, 255, 255, 0.3);
+  -webkit-text-stroke: 1.35px rgba(242, 241, 237, 0.32);
 }
 
-/* Animated gradient text */
+/* Restrained accent gradient — cool silver→sapphire, no pink rainbow */
 .pf-gradient-text {
-  background: linear-gradient(120deg, #818cf8, #c084fc, #f472b6, #818cf8);
-  background-size: 260% 260%;
+  background: linear-gradient(120deg, #c5cee8 0%, #9eb0ff 45%, #7d96ff 100%);
+  background-size: 180% 180%;
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
-  animation: pf-gradient-pan 7s ease infinite;
+  animation: pf-gradient-pan 10s ease infinite;
+}
+html:not(.dark) .enitexa-root .pf-gradient-text {
+  background: linear-gradient(120deg, #2f3fbf 0%, #3f51d8 50%, #5b6fe0 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
 }
 @keyframes pf-gradient-pan {
   0%, 100% { background-position: 0% 50%; }
   50% { background-position: 100% 50%; }
+}
+
+/* Global accent remaps for a calmer premium palette */
+.dark .enitexa-root .text-indigo-300,
+.dark .enitexa-root .text-indigo-200 {
+  color: var(--ex-accent) !important;
+}
+.dark .enitexa-root .text-indigo-400 {
+  color: var(--ex-accent-strong) !important;
+}
+.dark .enitexa-root .border-indigo-300\/25,
+.dark .enitexa-root .border-indigo-300\/35,
+.dark .enitexa-root .border-indigo-300\/40 {
+  border-color: rgba(158, 176, 255, 0.28) !important;
+}
+.dark .enitexa-root .bg-indigo-500\/10,
+.dark .enitexa-root .bg-indigo-500\/15 {
+  background-color: var(--ex-accent-dim) !important;
+}
+
+/* Dark nav denser glass */
+.dark .enitexa-root .enitexa-nav-shell {
+  background: rgba(7, 8, 12, 0.78) !important;
+  border-color: rgba(255, 255, 255, 0.1) !important;
+  box-shadow:
+    0 1px 0 rgba(255, 255, 255, 0.04) inset,
+    0 20px 50px -24px rgba(0, 0, 0, 0.7);
+}
+
+/* Premium primary CTAs */
+.enitexa-root button.rounded-full.bg-white,
+.enitexa-root a.rounded-full.bg-white {
+  background: var(--ex-cta) !important;
+  color: var(--ex-cta-ink) !important;
+  border-color: var(--ex-cta) !important;
+  box-shadow: 0 10px 30px -16px rgba(0, 0, 0, 0.45);
+}
+.enitexa-root button.rounded-full.bg-white:hover,
+.enitexa-root a.rounded-full.bg-white:hover {
+  background: transparent !important;
+  color: var(--ex-ink) !important;
+  border-color: var(--ex-ink) !important;
+}
+
+/* Dark hero depth */
+.dark .enitexa-root .enitexa-premium-hero {
+  background:
+    radial-gradient(ellipse 70% 55% at 12% 8%, var(--ex-glow), transparent 55%),
+    radial-gradient(ellipse 50% 40% at 90% 20%, rgba(197, 206, 232, 0.04), transparent 50%),
+    var(--ex-bg);
+}
+.dark .enitexa-root .enitexa-premium-hero [class*="bg-[#05060c]"] {
+  background-color: transparent !important;
+}
+.dark .enitexa-root .enitexa-positioning,
+.dark .enitexa-root .enitexa-editorial,
+.dark .enitexa-root .enitexa-kinetic-strip {
+  background-color: var(--ex-bg) !important;
+}
+.dark .enitexa-root .enitexa-footer {
+  background:
+    radial-gradient(ellipse 60% 40% at 50% 0%, var(--ex-glow), transparent 55%),
+    #050507 !important;
 }
 
 /* Subtle dot grid backdrop */
@@ -1120,14 +1245,22 @@ html:not(.dark) .enitexa-root ::selection {
   -webkit-mask-image: radial-gradient(ellipse at center, black 30%, transparent 78%);
 }
 
-/* Film-grain overlay */
+/* Film-grain overlay — denser in dark for material depth */
 .pf-grain {
   position: fixed;
   inset: 0;
   z-index: 80;
   pointer-events: none;
-  opacity: 0.05;
+  opacity: 0.045;
+  mix-blend-mode: overlay;
   background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+.dark .enitexa-root .pf-grain {
+  opacity: 0.07;
+}
+html:not(.dark) .enitexa-root .pf-grain {
+  opacity: 0.03;
+  mix-blend-mode: multiply;
 }
 
 /* Infinite marquee (duplicate .pf-marquee-track twice inside .pf-marquee) */
@@ -1180,7 +1313,7 @@ html:not(.dark) .enitexa-root ::selection {
   width: 6px;
   height: 6px;
   margin: -3px 0 0 -3px;
-  background: #6366f1;
+  background: #9eb0ff;
 }
 .pf-cursor-ring {
   display: flex;
@@ -1189,18 +1322,18 @@ html:not(.dark) .enitexa-root ::selection {
   width: 36px;
   height: 36px;
   margin: -18px 0 0 -18px;
-  border: 1px solid rgba(99, 102, 241, 0.55);
+  border: 1px solid rgba(158, 176, 255, 0.5);
   transition: width 0.3s ease, height 0.3s ease, margin 0.3s ease, background-color 0.3s ease;
 }
 .pf-cursor-ring.pf-cursor-active {
   width: 76px;
   height: 76px;
   margin: -38px 0 0 -38px;
-  background: rgba(99, 102, 241, 0.9);
+  background: rgba(125, 150, 255, 0.92);
   border-color: transparent;
 }
 .pf-cursor-label {
-  font-family: 'JetBrains Mono', monospace;
+  font-family: 'IBM Plex Mono', monospace;
   font-size: 10px;
   letter-spacing: 0.14em;
   text-transform: uppercase;
