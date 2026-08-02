@@ -18,7 +18,7 @@ const EnitexaMark = ({
 }) => {
     const h = size ?? height;
     const glowClass = withGlow ? 'drop-shadow-[0_0_18px_rgba(129,140,248,0.45)]' : '';
-    const style = { height: h, width: 'auto' };
+    const style = { height: h, width: 'auto', maxWidth: '100%' };
 
     if (tone === 'light') {
         return (

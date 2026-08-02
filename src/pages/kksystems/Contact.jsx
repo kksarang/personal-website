@@ -36,9 +36,9 @@ export default function Contact() {
                 </span>
             )}
         >
-            <div className="grid gap-8 lg:grid-cols-[0.95fr_1.05fr]">
-                <section className="space-y-5">
-                    <article className="rounded-3xl border border-white/[0.08] bg-[#0B0F19] p-7">
+            <div className="grid min-w-0 gap-6 sm:gap-8 lg:grid-cols-[0.95fr_1.05fr]">
+                <section className="min-w-0 space-y-5">
+                    <article className="rounded-2xl border border-white/[0.08] bg-[#0B0F19] p-5 sm:rounded-3xl sm:p-7">
                         <p className="pf-mono mb-2 text-[10px] uppercase tracking-[0.28em] text-slate-400">Direct Contact</p>
                         <div className="divide-y divide-white/[0.07]">
                             <ContactRow icon={Mail} label="Email" value="info.enitexa@gmail.com" href="mailto:info.enitexa@gmail.com" />
@@ -47,7 +47,7 @@ export default function Contact() {
                         </div>
                     </article>
 
-                    <article className="rounded-3xl border border-white/[0.08] bg-[#0B0F19] p-7">
+                    <article className="rounded-2xl border border-white/[0.08] bg-[#0B0F19] p-5 sm:rounded-3xl sm:p-7">
                         <p className="pf-mono mb-5 text-[10px] uppercase tracking-[0.28em] text-slate-400">How We Engage</p>
                         <ul className="space-y-3.5 text-sm text-slate-300">
                             <li className="flex items-start gap-3"><CheckCircle2 className="mt-0.5 h-4 w-4 shrink-0 text-emerald-300" /> Discovery call to align on goals and constraints</li>
@@ -56,7 +56,7 @@ export default function Contact() {
                         </ul>
                     </article>
 
-                    <article className="relative overflow-hidden rounded-3xl border border-white/[0.08] bg-[#0B0F19] p-7">
+                    <article className="relative overflow-hidden rounded-2xl border border-white/[0.08] bg-[#0B0F19] p-5 sm:rounded-3xl sm:p-7">
                         <div className="pf-dotgrid absolute inset-0 opacity-30" aria-hidden="true" />
                         <div className="relative">
                             <h3 className="pf-display text-xl font-bold text-white">Prefer a quick call?</h3>
@@ -77,7 +77,7 @@ export default function Contact() {
                     initial={{ opacity: 0, y: 16 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.4 }}
-                    className="rounded-3xl border border-white/[0.08] bg-[#0B0F19] p-6 md:p-9"
+                    className="min-w-0 rounded-2xl border border-white/[0.08] bg-[#0B0F19] p-5 sm:rounded-3xl sm:p-6 md:p-9"
                 >
                     <p className="pf-mono mb-2 text-[10px] uppercase tracking-[0.28em] text-indigo-300">Project Inquiry</p>
                     <h2 className="pf-display text-2xl font-bold text-white sm:text-3xl">Tell us what you’re building</h2>

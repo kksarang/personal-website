@@ -108,14 +108,14 @@ const EnitexaFooter = () => (
         <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-[#9eb0ff]/45 to-transparent" aria-hidden="true" />
         <div className="absolute left-1/2 top-0 h-72 w-[720px] -translate-x-1/2 rounded-full bg-[#7d96ff]/[0.08] blur-[110px]" aria-hidden="true" />
 
-        <div className="relative mx-auto max-w-[90rem] px-6 pt-20 sm:px-10 lg:px-16">
+        <div className="relative mx-auto max-w-[90rem] px-4 pt-16 sm:px-10 sm:pt-20 lg:px-16">
             {/* Giant CTA */}
-            <div className="flex flex-col items-start justify-between gap-10 pb-16 md:flex-row md:items-end">
-                <Link to="/enitexa.ai/contact" data-cursor="Say hi" className="group block">
-                    <p className="pf-mono mb-5 text-[11px] uppercase tracking-[0.35em] text-white/35">
+            <div className="flex flex-col items-start justify-between gap-8 pb-12 sm:gap-10 sm:pb-16 md:flex-row md:items-end">
+                <Link to="/enitexa.ai/contact" data-cursor="Say hi" className="group block min-w-0">
+                    <p className="pf-mono mb-4 text-[10px] uppercase tracking-[0.3em] text-white/35 sm:mb-5 sm:text-[11px] sm:tracking-[0.35em]">
                         Next step
                     </p>
-                    <h2 className="pf-cta-giant pf-display text-[clamp(2.1rem,5.5vw,4.25rem)] font-extrabold leading-[0.92] tracking-[-0.03em] text-white">
+                    <h2 className="pf-cta-giant pf-display text-[clamp(1.85rem,8vw,4.25rem)] font-extrabold leading-[0.92] tracking-[-0.03em] text-white">
                         Let’s build
                         <br />
                         <span className="pf-outline-text">what’s next</span>
@@ -126,18 +126,18 @@ const EnitexaFooter = () => (
                     <Link
                         to="/enitexa.ai/contact"
                         aria-label="Contact Enitexa.Ai"
-                        className="enitexa-footer-orb group flex h-24 w-24 items-center justify-center rounded-full border border-white/20 text-white transition-all duration-500 hover:border-indigo-400 hover:bg-indigo-500 sm:h-32 sm:w-32"
+                        className="enitexa-footer-orb group flex h-20 w-20 items-center justify-center rounded-full border border-white/20 text-white transition-all duration-500 hover:border-indigo-400 hover:bg-indigo-500 sm:h-32 sm:w-32"
                     >
-                        <ArrowUpRight className="h-8 w-8 transition-transform duration-500 group-hover:translate-x-1 group-hover:-translate-y-1" />
+                        <ArrowUpRight className="h-7 w-7 sm:h-8 sm:w-8 transition-transform duration-500 group-hover:translate-x-1 group-hover:-translate-y-1" />
                     </Link>
                 </Magnetic>
             </div>
 
             {/* Link columns */}
-            <div className="grid grid-cols-2 gap-8 border-t border-white/[0.07] py-12 sm:gap-10 sm:py-14 md:grid-cols-5">
+            <div className="grid grid-cols-2 gap-8 border-t border-white/[0.07] py-10 sm:gap-10 sm:py-14 md:grid-cols-5">
                 <div className="col-span-2">
-                    <div className="flex items-center">
-                        <EnitexaMark height={30} alt="Enitexa.Ai" />
+                    <div className="flex max-w-full items-center overflow-hidden">
+                        <EnitexaMark height={26} className="sm:[&_img]:h-[30px]" alt="Enitexa.Ai" />
                     </div>
                     <p className="pf-mono mt-5 text-[10px] uppercase tracking-[0.3em] text-indigo-300/80">
                         Digital & Software Solutions

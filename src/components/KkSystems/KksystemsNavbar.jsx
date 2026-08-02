@@ -77,6 +77,14 @@ const KksystemsNavbar = () => {
 
     useLockBodyScroll(isOpen);
 
+    useEffect(() => {
+        const onResize = () => {
+            if (window.matchMedia('(min-width: 1024px)').matches) setIsOpen(false);
+        };
+        window.addEventListener('resize', onResize);
+        return () => window.removeEventListener('resize', onResize);
+    }, []);
+
     const handleNavClick = (e, href) => {
         setIsOpen(false);
         e.preventDefault();
@@ -130,7 +138,7 @@ const KksystemsNavbar = () => {
                     className="enitexa-nav-brand flex min-w-0 items-center outline-none focus:outline-none focus-visible:outline-none"
                     aria-label="Enitexa.Ai home"
                 >
-                    <EnitexaMark height={22} />
+                    <EnitexaMark height={20} className="max-w-[9.5rem] sm:max-w-none [&_img]:max-w-full" />
                 </a>
 
                 <div className="hidden items-center gap-6 lg:flex xl:gap-8">
